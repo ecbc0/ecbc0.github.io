@@ -1,0 +1,453 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="(ℝ,+,⋅) algebraic structure orℝ∈ Set +ℝ2→ℝ⋅ℝ2→ℝ property-real-algebraThere are two ways to extend to ℝ𝑛Linear Algebraℝ𝑛∈ Set +(ℝ𝑛)2→ℝ𝑛⋅ℝ×ℝ𝑛→ℝ𝑛 property-linear-algebraExample Real 2-dimensional space. (𝑥𝑦),(𝑥′𝑦′)∈ℝ2,𝑎∈ℝ(𝑥𝑦)+(𝑥′𝑦′)&#x3D;(𝑥+𝑥′𝑦+𝑦′)𝑎(𝑥𝑦)&#x3D;(𝑎𝑥𝑎𝑦)and the distributive law. The construction of ℝ𝑛 property-linear-algebra uses the property-real-algebra of ℝAlgebra(ℝ𝑛)∈ Set +(ℝ𝑛)2→ℝ𝑛⋅(ℝ𝑛)2→ℝ𝑛 property-algebraExample &lt;complex-number&gt; Complex number. 𝑥+𝑦 i,𝑥′+𝑦′ i ∈ℂAddition is the same as ℝ2. Multiplication ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item-en/HTML-notice-en.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item-en/feature-en.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item-en/logic-en.html"><strong aria-hidden="true">2.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item-en/set-theory-en.html"><strong aria-hidden="true">3.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item-en/map-en.html"><strong aria-hidden="true">4.</strong> map</a></li><li class="chapter-item expanded "><a href="/item-en/order-en.html"><strong aria-hidden="true">5.</strong> order</a></li><li class="chapter-item expanded "><a href="/item-en/combinatorics-en.html"><strong aria-hidden="true">6.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item-en/real-numbers-en.html"><strong aria-hidden="true">7.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item-en/limit-sequence-en.html"><strong aria-hidden="true">8.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item-en/ℝ^n-en.html" class="active"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item-en/Euclidean-space-en.html"><strong aria-hidden="true">10.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item-en/Minkowski-space-en.html"><strong aria-hidden="true">11.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item-en/polynomial-en.html"><strong aria-hidden="true">12.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Euclidean-en.html"><strong aria-hidden="true">13.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Minkowski-en.html"><strong aria-hidden="true">14.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-struct-operation-en.html"><strong aria-hidden="true">15.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/ordinary-differential-equation-en.html"><strong aria-hidden="true">16.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item-en/volume-en.html"><strong aria-hidden="true">17.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item-en/integral-en.html"><strong aria-hidden="true">18.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item-en/divergence-en.html"><strong aria-hidden="true">19.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item-en/limit-net-en.html"><strong aria-hidden="true">20.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item-en/compact-en.html"><strong aria-hidden="true">21.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item-en/connected-en.html"><strong aria-hidden="true">22.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item-en/topology-struct-operation-en.html"><strong aria-hidden="true">23.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/exponential-en.html"><strong aria-hidden="true">24.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item-en/angle-en.html"><strong aria-hidden="true">25.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item-en/manifold-en.html"><strong aria-hidden="true">26.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item-en/metric-en.html"><strong aria-hidden="true">27.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item-en/metric-connection-en.html"><strong aria-hidden="true">28.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item-en/geodesic-derivative-en.html"><strong aria-hidden="true">29.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item-en/curvature-of-metric-en.html"><strong aria-hidden="true">30.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">31.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/constant-sectional-curvature-en.html"><strong aria-hidden="true">32.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item-en/simple-symmetric-space-en.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item-en/principal-bundle-en.html"><strong aria-hidden="true">34.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item-en/group-action-en.html"><strong aria-hidden="true">35.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item-en/stereographic-projection-en.html"><strong aria-hidden="true">36.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item-en/Hopf-bundle-en.html"><strong aria-hidden="true">37.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item-en/point-particle-non-relativity-en.html"><strong aria-hidden="true">38.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/point-particle-relativity-en.html"><strong aria-hidden="true">39.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-en.html"><strong aria-hidden="true">40.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-current-en.html"><strong aria-hidden="true">41.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-non-relativity-en.html"><strong aria-hidden="true">42.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/projective-lightcone-en.html"><strong aria-hidden="true">43.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item-en/spacetime-momentum-spinor-representation-en.html"><strong aria-hidden="true">44.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item-en/Lorentz-group-en.html"><strong aria-hidden="true">45.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-en.html"><strong aria-hidden="true">46.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-current-en.html"><strong aria-hidden="true">47.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/electromagnetic-field-en.html"><strong aria-hidden="true">48.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item-en/Laplacian-of-tensor-field-en.html"><strong aria-hidden="true">49.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">50.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/interaction-en.html"><strong aria-hidden="true">51.</strong> interaction</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item-en/ℝ^n-en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><span><math><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo><mo>+</mo><mo>,</mo><mo>⋅</mo></mrow><mo>)</mo></mrow></math></span> algebraic structure or</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mi mathvariant="normal">ℝ</mi><mo>∈</mo><mtext> Set </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>→</mo><mi mathvariant="normal">ℝ</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋅</mo></mtd><mtd class="mathyml-align-right"><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>→</mo><mi mathvariant="normal">ℝ</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> property-real-algebra</mtext></mtd></mtr></mtable></math>
+  <p>There are two ways to extend to <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span></p>
+  <ul>
+    <li>Linear Algebra</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>∈</mo><mtext> Set </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋅</mo></mtd><mtd class="mathyml-align-right"><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> property-linear-algebra</mtext></mtd></mtr></mtable></math>
+    <p><strong>Example</strong> Real 2-dimensional space. <span><math><mrow><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr><mtr><mtd><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>∈</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>,</mo></mrow><mi>𝑎</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr><mtr><mtd><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑥</mi><mo>+</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑦</mi><mo>+</mo><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑎</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑎</mi><mi>𝑥</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mi>𝑦</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr></mtr></mtable></math>
+    <p>and the distributive law. The construction of <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> property-linear-algebra uses the property-real-algebra of <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  </div>
+  <ul>
+    <li>Algebra</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>∈</mo><mtext> Set </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋅</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> property-algebra</mtext></mtd></mtr></mtable></math>
+    <p><strong>Example</strong> <code data-typst-label="complex-number">&lt;complex-number></code> Complex number. <span><math><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><mrow><mtext> i</mtext><mo>,</mo></mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mtext> i </mtext><mo>∈</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span></p>
+    <p>Addition is the same as <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span>. Multiplication uses <span><math><mrow><msup><mtext>i </mtext><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span> or <span><math><mrow><mfrac><mn>1</mn><mtext>i </mtext></mfrac><mo>=</mo><mrow><mo>−</mo><mtext>i</mtext></mrow></mrow></math></span> and the distributive law</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><mtext> i</mtext></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mtext> i</mtext></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>−</mo><mi>𝑦</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mtext> i</mtext></mtd></mtr></mtable></math>
+    <p>one of motivation of complex-number or <span><math><mrow><msup><mi>𝑧</mi><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span> is the characteristic polynomial equation of <code>#link(&lt;harmonic-oscillator>)[]</code> <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝜔</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><strong>Example</strong> <code data-typst-label="split-complex-number">&lt;split-complex-number></code> Split-complex number. <span><math><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><mrow><msub><mtext> i</mtext><mtext> split</mtext></msub><mo>,</mo></mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>∈</mo><msub><mi mathvariant="normal">ℂ</mi><mtext> split</mtext></msub></mrow></math></span></p>
+    <p>Addition is the same as <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span>. Multiplication uses <span><math><mrow><msup><msub><mtext>i </mtext><mtext>split </mtext></msub><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math></span> or <span><math><mrow><mfrac><mn>1</mn><msub><mtext>i </mtext><mtext>split </mtext></msub></mfrac><mo>=</mo><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow></math></span> and the distributive law</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><msub><mtext> i</mtext><mtext> split</mtext></msub></mtd></mtr></mtable></math>
+  </div>
+  <p><code data-typst-label="linear">&lt;linear></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> linear structure</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>struct homomorphism := a mapping <span><math><mi>𝑓</mi></math></span> that preserves struct</p>
+    <p><strong>Example</strong> linear struct hom <span><math><mrow><mrow><mi>𝑓</mi><mo>:</mo></mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑚</mi></msup></mrow></math></span></p>
+    <ul>
+      <li><span><math><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span> map to <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑚</mi></msup></mrow></math></span></li>
+      <li><span><math><mrow><mo>+</mo><mo>:</mo><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span> map to <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mo>+</mo><mo>)</mo></mrow></mrow><mo>:</mo><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑚</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑚</mi></msup></mrow></math></span></li>
+    </ul>
+    <p>so <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span> map to <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mo>+</mo><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span> or abbreviated as <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>linear struct hom is also called linear mapping</p>
+    <p>bijection to itself + <span><math><mrow><mi>𝑓</mi><mo>,</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> hom = isomorphism</p>
+    <p>linear isomorphism of <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> := <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> algebraic structure</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Example</strong></p>
+    <ul>
+      <li><span><math><mi mathvariant="normal">ℂ</mi></math></span> complex numbers, <span><math><mi mathvariant="normal">ℍ</mi></math></span> quaternions, <span><math><mi mathvariant="normal">𝕆</mi></math></span> octonions</li>
+      <li>Matrix algebra. But conceptually and meaningfully, it doesn't seem like a good generalization of <span><math><mi mathvariant="normal">ℝ</mi></math></span> algebra. So we need other restrictions, e.g. normed algebra, composition algebra</li>
+    </ul>
+  </div>
+  <p><code data-typst-label="normed-algebra">&lt;normed-algebra></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>The multiplication of <span><math><mi mathvariant="normal">ℝ</mi></math></span> has the property <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi></mrow><mrow><mi>𝑦</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑦</mi><mo>|</mo></mrow></mrow></math></span></p>
+    <p>The <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> spatial quadratic form has the property <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑎</mi><mi>𝑥</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>𝑎</mi><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑥</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></p>
+    <p>For <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> algebra, we expect the property <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑥</mi><mi>𝑦</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑥</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑦</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></p>
+  </div>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li><span><math><mi mathvariant="normal">ℂ</mi></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>def complex conjugate <span><math><mrow><msup><mtext>i </mtext><mo>∗</mo></msup><mo>=</mo><mo>−</mo><mtext> i</mtext></mrow></math></span></p>
+    <p><span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><mtext> i</mtext></mrow><mo>)</mo></mrow><mo>∗</mo></msup><mo>≔</mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><msup><mtext> i </mtext><mo>∗</mo></msup><mo>=</mo><mi>𝑥</mi><mo>−</mo><mi>𝑦</mi><mtext> i</mtext></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑧</mi><msup><mi>𝑧</mi><mo>∗</mo></msup><mo>=</mo><msup><mi>𝑧</mi><mo>∗</mo></msup><mi>𝑧</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup></mrow></math></span>. This is <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> spatial</p>
+    <p><span><math><mrow><mrow><mo>|</mo><mi>𝑧</mi></mrow><mrow><msup><mi>𝑧</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><msup><mi>𝑧</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span> by</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>−</mo><mi>𝑦</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑥</mi><mn>2</mn></msup><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>𝑥</mi><mn>2</mn></msup><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <ul>
+    <li><span><math><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑧</mi><msup><mi>𝑧</mi><mo>∗</mo></msup><mo>=</mo><msup><mi>𝑧</mi><mo>∗</mo></msup><mi>𝑧</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><msup><mi>𝑦</mi><mn>2</mn></msup></mrow></math></span>. This is <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span> spacetime</p>
+    <p><span><math><mrow><mrow><mo>|</mo><mi>𝑧</mi></mrow><mrow><msup><mi>𝑧</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><msup><mi>𝑧</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span> by</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑦</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑦</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑥</mi><mn>2</mn></msup><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>𝑦</mi><mn>2</mn></msup><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><msup><mi>𝑦</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup><mo>−</mo><msup><mi>𝑦</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mn>2</mn></mrow></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>null elements have no multiplicative inverse</p>
+  </div>
+  <ul>
+    <li>
+      <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℂ</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow><mo>≃</mo><mi mathvariant="normal">𝕊</mi><mo>≃</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    </li>
+    <li>
+      <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mo>≃</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    </li>
+  </ul>
+  <p>New imaginary unit construction method</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Example</strong></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>Use a new imaginary unit <span><math><msub><mtext>i</mtext><mn>2</mn></msub></math></span> in the complex number <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msub><mtext> i</mtext><mn>1</mn></msub></mrow></math></span> with <span><math><mrow><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>1</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span></p>
+      <ul>
+        <li>
+          <p>Define other imaginary units <span><math><mrow><msub><mtext>i </mtext><mn>3</mn></msub><mo>≔</mo><msub><mtext> i </mtext><mn>1</mn></msub><msub><mtext> i</mtext><mn>2</mn></msub></mrow></math></span></p>
+        </li>
+        <li>
+          <p>Different imaginary units anticommute <span><math><mrow><msub><mtext>i </mtext><mn>2</mn></msub><msub><mtext> i </mtext><mn>1</mn></msub><mo>≔</mo><mo>−</mo><msub><mtext> i </mtext><mn>1</mn></msub><msub><mtext> i</mtext><mn>2</mn></msub></mrow></math></span></p>
+        </li>
+        <li>
+          <p>Invert the imaginary unit conjugate or <span><math><mrow><mfrac><mn>1</mn><mtext>i </mtext></mfrac><mo>=</mo><mrow><mo>−</mo><mtext>i</mtext></mrow></mrow></math></span></p>
+          <ul>
+            <li><span><math><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>2</mn></msub><mo>)</mo></mrow><mo>∗</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo></mtd><mtd class="mathyml-align-left"><msub><mtext> i</mtext><mn>2</mn></msub></mtd></mtr></mtable></math></span></li>
+            <li><span><math><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>3</mn></msub><mo>)</mo></mrow><mo>∗</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo></mtd><mtd class="mathyml-align-left"><msub><mtext> i</mtext><mn>3</mn></msub></mtd></mtr></mtable></math></span></li>
+          </ul>
+        </li>
+      </ul>
+      <p>Anti-commutation + conjugate inversion makes <span><math><mrow><msup><mi>𝑥</mi><mo>∗</mo></msup><mi>𝑥</mi><mo>=</mo><mi>𝑥</mi><msup><mi>𝑥</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span>, and also gives <span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∗</mo></msup><mo>=</mo><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mo>∗</mo></mrow></msup><msup><mi>𝑥</mi><mo>∗</mo></msup></mrow></math></span></p>
+      <p>Imaginary unit associativity <span><math><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><msub><mtext> i</mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>)</mo></mrow><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow></math></span></p>
+      <p>Satisfies norm multiplication <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi></mrow><mrow><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span></p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><msub><mtext> i </mtext><mn>1</mn></msub><msub><mtext> i </mtext><mn>2</mn></msub><msub><mtext> i </mtext><mn>1</mn></msub><msub><mtext> i </mtext><mn>2</mn></msub><mo>=</mo><mo>−</mo><msubsup><mtext> i </mtext><mn>1</mn><mn>2</mn></msubsup><msubsup><mtext> i </mtext><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mtext> i</mtext><mn>2</mn><mn>2</mn></msubsup></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>2</mn></msub><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mn>1</mn></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> give </mtext><msup><mrow><mo>(</mo><msub><mtext> i </mtext><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mo>−</mo><mn>1</mn><mtext> and </mtext><mi mathvariant="normal">ℍ</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msub><mtext> i </mtext><mn>2</mn></msub><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>+</mo><mn>1</mn></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> give </mtext><msup><mrow><mo>(</mo><msub><mtext> i </mtext><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mo>+</mo><mn>1</mn><mtext> and </mtext><msub><mi mathvariant="normal">ℍ</mi><mtext> split </mtext></msub><mtext> with </mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow><mtext> signature</mtext></mtd></mtr></mtable></math>
+    </div>
+    <p><strong>Example</strong> If split complex <span><math><mrow><msubsup><mtext>i </mtext><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow></math></span> is used, then <span><math><mrow><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>3</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mo>−</mo><msubsup><mtext> i </mtext><mn>1</mn><mn>2</mn></msubsup><msubsup><mtext> i </mtext><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mo>−</mo><msubsup><mtext> i</mtext><mn>2</mn><mn>2</mn></msubsup></mrow></math></span>, so <span><math><mrow><msubsup><mtext>i </mtext><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span> both give split quaternion</p>
+    <ul>
+      <li>
+        <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℍ</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">ℍ</mi></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mn>3</mn></msup><mo>↠</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><msub><mi mathvariant="normal">ℍ</mi><mtext>split</mtext></msub><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><msub><mi mathvariant="normal">ℍ</mi><mtext>split</mtext></msub></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>2</mn><mo>,</mo><mn>2</mn></mrow></msup><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>↠</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+    </ul>
+    <p><strong>Example</strong> Using a new imaginary unit <span><math><msub><mtext>i</mtext><mn>4</mn></msub></math></span> in quaternion <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msub><mtext> i </mtext><mn>1</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>2</mn></msub><msub><mtext> i </mtext><mn>2</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>3</mn></msub><msub><mtext> i</mtext><mn>3</mn></msub></mrow></math></span></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>Define other imaginary units</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mtext>i </mtext><mn>5</mn></msub></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><msub><mtext>i </mtext><mn>1</mn></msub><msub><mtext> i </mtext><mn>4</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mtext> i </mtext><mn>6</mn></msub></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><msub><mtext>i </mtext><mn>2</mn></msub><msub><mtext> i </mtext><mn>4</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mtext> i </mtext><mn>7</mn></msub></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><msub><mtext>i </mtext><mn>3</mn></msub><msub><mtext> i </mtext><mn>4</mn></msub></mtd></mtr><mtr></mtr></mtable></math>
+      <p>Anti-commutation of different imaginary units <span><math><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mtext> i </mtext><mi>𝑖</mi></msub><mo>≔</mo><mo>−</mo><msub><mtext> i </mtext><mi>𝑖</mi></msub><msub><mtext> i</mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow></math></span></p>
+      <p>Anti-associativity of different imaginary units <span><math><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>≔</mo><mo>−</mo><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><msub><mtext> i</mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>)</mo></mrow><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow></math></span> if <span><math><mrow><msub><mtext>i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><mo>≠</mo><mo>±</mo><msub><mtext> i </mtext><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow></math></span></p>
+      <p>Imaginary unit conjugate inversion <span><math><mrow><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mi>𝑖</mi></msub><mo>)</mo></mrow><mo>∗</mo></msup><mo>=</mo><mo>−</mo><msub><mtext> i</mtext><mi>𝑖</mi></msub></mrow></math></span></p>
+      <p>Anti-commutation + conjugate inversion makes <span><math><mrow><msup><mi>𝑥</mi><mo>∗</mo></msup><mi>𝑥</mi><mo>=</mo><mi>𝑥</mi><msup><mi>𝑥</mi><mo>∗</mo></msup><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span>, and also gives <span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∗</mo></msup><mo>=</mo><msup><mi>𝑥</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mo>∗</mo></mrow></msup><msup><mi>𝑥</mi><mo>∗</mo></msup></mrow></math></span></p>
+      <p><strong>Question</strong> Anti-associativity is needed for norm multiplication <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi></mrow><mrow><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span></p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><msub><mtext>i </mtext><mn>4</mn></msub><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span> gives octonion <span><math><mi mathvariant="normal">𝕆</mi></math></span>. split octonion similarly, with <span><math><mrow><mo>(</mo><mrow><mn>4</mn><mo>,</mo><mn>4</mn></mrow><mo>)</mo></mrow></math></span> signature</p>
+    </div>
+    <ul>
+      <li>
+        <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">𝕆</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">𝕆</mi></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mn>7</mn></msup><mo>↪</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow></mrow></mrow></math></span> (<strong>Question</strong>)</p>
+      </li>
+      <li>
+        <p><span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><msub><mi mathvariant="normal">𝕆</mi><mtext>split</mtext></msub><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> give <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><msub><mi mathvariant="normal">𝕆</mi><mtext>split</mtext></msub></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>4</mn><mo>,</mo><mn>4</mn></mrow></msup><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>↪</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>3</mn><mo>,</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+    </ul>
+    <p>What is obtained from <span><math><mi mathvariant="normal">ℍ</mi></math></span> and the associative law of imaginary units is another algebra <span><math><mrow><mi mathvariant="normal">ℍ</mi><mo>⊕</mo><mi mathvariant="normal">ℍ</mi></mrow></math></span>, which does <em>not</em> satisfy <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi></mrow><mrow><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span></p>
+    <p><strong>Question</strong> Anti-combination cannot be further extended to sixteen dimensions and beyond</p>
+  </div>
+  <p>The new imaginary unit construction method is not coordinate-free, so we need to consider the automorphism of imaginary units <span><math><mrow><mi>𝑓</mi><mo>:</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">𝕂</mi><mo>)</mo></mrow></mrow><mo>→</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">𝕂</mi><mo>)</mo></mrow></mrow></mrow></math></span> with <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mrow></math></span>. Since it preserves multiplication, it automatically preserves distance</p>
+  <p><strong>Example</strong> for <span><math><mi mathvariant="normal">ℂ</mi></math></span> it's <span><math><mrow><msub><mi mathvariant="normal">ℤ</mi><mn>2</mn></msub><mo>=</mo><mtext> O </mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> symmetric <span><math><mrow><mtext>i </mtext><mo>→</mo><mrow><mo>−</mo><mtext>i</mtext></mrow></mrow></math></span></p>
+  <p><strong>Question</strong></p>
+  <ul>
+    <li><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span> for <span><math><mi mathvariant="normal">ℍ</mi></math></span></li>
+    <li><span><math><msub><mi>𝐺</mi><mn>2</mn></msub></math></span> for <span><math><mi mathvariant="normal">𝕆</mi></math></span>. <span><math><mrow><mtext>dim </mtext><msub><mi>𝐺</mi><mn>2</mn></msub><mo>=</mo><mn>14</mn><mo>&lt;</mo><mn>21</mn><mo>=</mo><mtext> dim </mtext><mrow><mo>(</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p><span><math><msub><mi>𝐺</mi><mn>2</mn></msub></math></span> as automorphism of <span><math><mi mathvariant="normal">𝕆</mi></math></span> illustrates that, without additional structure, such as multiplication <span><math><mrow><mi>𝑥</mi><mo>⋅</mo><mi>𝑦</mi></mrow></math></span> and <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi></mrow><mo>⋅</mo><mrow><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mrow><mo>|</mo><mi>𝑦</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span>, only a simple linear space structure, it is impossible to give special groups like <span><math><msub><mi>𝐺</mi><mn>2</mn></msub></math></span>. (Although it is said that all compact groups can have matrix representations.)</p>
+  <p><code data-typst-label="affine">&lt;affine></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> affine structure</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Change the origin, translate</p>
+    <p>hom additionally keeps <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>−</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mo>−</mo><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mrow></math></span> abbreviated as <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

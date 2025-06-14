@@ -1,0 +1,53 @@
+<div>
+  <p><code data-typst-label="topology-subspace">&lt;topology-subspace></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>子拓扑 := let <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi>𝑋</mi></mrow></math></span>. 继承 <code>#link(&lt;topology>)[点网系统]</code> <span><math><mrow><msub><mtext>T </mtext><mi>𝑆</mi></msub><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑆</mi><mo>∩</mo><mi>𝐵</mi><mo>:</mo><mi>𝐵</mi><mo>∈</mo><msub><mtext> T</mtext><mi>𝑋</mi></msub></mrow><mo>}</mo></mrow></mrow></math></span></p>
+    <p>等价地定义, 子拓扑是使得嵌入映射 <span><math><mrow><mi>𝑆</mi><mo>↪</mo><mi>𝑋</mi></mrow></math></span> 连续的最小拓扑</p>
+  </div>
+  <p>子拓扑的继承性. <span><math><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><mi>𝑆</mi></mrow></math></span> 是 <span><math><msub><mtext>T</mtext><mi>𝑆</mi></msub></math></span> 子拓扑 &lt;==> <span><math><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><mi>𝑋</mi></mrow></math></span> 是 <span><math><msub><mtext>T</mtext><mi>𝑋</mi></msub></math></span> 子拓扑</p>
+  <p><em>Proof</em> 根据 <span><math><mo>∩</mo></math></span> 的结合性 + <span><math><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><mi>𝑆</mi><mo>⟺</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∩</mo><mi>𝑆</mi><mo>=</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+  <p><code data-typst-label="closed-in-subspace">&lt;closed-in-subspace></code> <code>#link(&lt;closed>)[]</code> in subspace 的刻画</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><mi>𝑆</mi><mo>⟹</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑆</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑆</mi><mo>∩</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><strong>Example</strong> <span><math><mrow><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mrow><mo>,</mo><msub><mtext>T</mtext><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></msub></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>≠</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mrow><mo>,</mo><msub><mtext>T</mtext><mi mathvariant="normal">ℝ</mi></msub></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>说明 <span><math><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> 可能存在 <code>#link(&lt;limit-point>)[极限点]</code> <span><math><mrow><mo>∉</mo><mi>𝑆</mi></mrow></math></span> or <span><math><mrow><mo>∈</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>∖</mo><mi>𝑆</mi></mrow></math></span> 但 <span><math><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑆</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> 极限点只能 <span><math><mrow><mo>∈</mo><mi>𝑆</mi></mrow></math></span></p>
+    <p><span><math><mi>𝑆</mi></math></span> 是闭集</p>
+    <ul>
+      <li>==> <span><math><mrow><mi>𝑆</mi><mo>=</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>⊃</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+      <li>==> <span><math><mrow><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑆</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>closed</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msub><mtext>T</mtext><mi>𝑋</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+    </ul>
+  </div>
+  <p><code data-typst-label="quotient-topology">&lt;quotient-topology></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><span><math><msub><mtext>T</mtext><mfrac><mi>𝑋</mi><mo>∼</mo></mfrac></msub></math></span> := 使得商映射 <span><math><mrow><mi>𝑋</mi><mo>↠</mo><mfrac><mi>𝑋</mi><mo>∼</mo></mfrac></mrow></math></span> 连续的最大拓扑, 即 <span><math><mrow><mi>𝐵</mi><mo>∈</mo><msub><mtext> T </mtext><mfrac><mi>𝑋</mi><mo>∼</mo></mfrac></msub><mo>⟺</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow><mo>∈</mo><msub><mtext> T</mtext><mi>𝑋</mi></msub></mrow></math></span></div>
+  <p><code data-typst-label="product-topology">&lt;product-topology></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><msub><mtext>T</mtext><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></msub></math></span> := 所有分量映射 <span><math><mrow><msub><mi>𝑓</mi><mi>𝑖</mi></msub><mo>:</mo><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow><mo>→</mo><mi>𝑋</mi></mrow></math></span> 连续的最小拓扑 i.e. 以集族</p>
+    <math display="block"><mrow><mo>{</mo><mrow><msubsup><mi>𝑓</mi><mi>𝑖</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow><mo>:</mo><mo>∃</mo><mi>𝑖</mi><mo>∈</mo><mrow><mi>𝐼</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><msub><mtext> T</mtext><mi>𝑖</mi></msub></mrow><mo>}</mo></mrow></math>
+    <p>为的有限交集生成点网系统</p>
+    <math display="block"><mrow><msubsup><mi>𝑓</mi><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><msub><mi>𝐵</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>)</mo></mrow><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msubsup><mi>𝑓</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><msub><mi>𝐵</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub></msub><mo>)</mo></mrow></mrow></math>
+    <p>因为 <span><math><msub><mi>𝑓</mi><mi>𝑖</mi></msub></math></span> 是分量映射</p>
+    <math display="block"><mrow><mo>∀</mo><msub><mi>𝐴</mi><mi>𝑗</mi></msub><mo>∈</mo><mrow><mrow><mtext>Subset</mtext><mrow><mo>(</mo><msub><mi>𝑋</mi><mi>𝑗</mi></msub><mo>)</mo></mrow></mrow><mo>,</mo></mrow><msub><mi>𝑓</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><msubsup><mi>𝑓</mi><mi>𝑖</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mtable><mtr><mtd class="mathyml-align-left"><mrow><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mtext> if </mtext><mi>𝑖</mi><mo>=</mo><mi>𝑗</mi></mrow></mtd></mtr><mtr><mtd class="mathyml-align-left"><mrow><msub><mi>𝑋</mi><mi>𝑖</mi></msub><mtext> if </mtext><mi>𝑖</mi><mo>≠</mo><mi>𝑗</mi></mrow></mtd></mtr></mtable></mrow></mrow></math>
+  </div>
+  <p>闭集的 product 也是闭集. by 极限点定义和 <code>and</code> 逻辑</p>
+  <p><span><math><msub><mi>𝑓</mi><mi>𝑖</mi></msub></math></span> image 不一定传递闭集. <strong>Example</strong> 闭集 <span><math><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑥</mi><mi>𝑦</mi><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow></math></span> 映射到 <span><math><mi>𝑥</mi></math></span> 轴得到非闭集 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mn>0</mn></mrow></math></span></p>
+  <p><code data-typst-label="sum-topology">&lt;sum-topology></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><munder displaystyle="false"><mo>⨆</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 的拓扑是使得嵌入 <span><math><mrow><msub><mi>𝑋</mi><mi>𝑖</mi></msub><mo>↪</mo><mrow><munder displaystyle="false"><mo>⨆</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></mrow></math></span> 连续的最大拓扑</p>
+    <p>所有 <span><math><mi>𝑖</mi></math></span> 的 <span><math><msub><mi>𝑋</mi><mi>𝑖</mi></msub></math></span> 的点网系统 <span><math><msub><mtext>T</mtext><mi>𝑖</mi></msub></math></span> 在 sum 空间的 copy 组成了 sum 空间的点网系统, 其中的集合的形式是 <span><math><mrow><msub><mo>⨆</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝐵</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+  </div>
+</div>

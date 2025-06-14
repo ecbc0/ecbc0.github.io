@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="cf. #link(&lt;Klein--Gordon-Lagrangian&gt;)[Action of scalar field]Symmetry and conserved currentsSpacetime translationSpacetime translation does not fix the ℝ1,3 &amp;quot;boundary&amp;quot;. The variation is non-zero. Similar to the case of time translation for a point particle𝑑𝑑𝑠∫ℝ1,3+𝑠𝑎𝑑𝑥(𝑓(𝑥))&#x3D;∫ℝ1,3𝑑𝑥(∂𝑥𝑓(𝑥)⋅𝑎)Generally, region change is given by exp(𝑎(𝑥)) #link(&lt;vector-field-as-δ-diffeomorphism&gt;)[by δ diffeomorphism] 𝑎(𝑥)𝑑𝑑𝑠∫exp(𝑠𝑎(𝑥))𝑈𝑑𝑥(𝑓(𝑥))&#x3D;∫𝑈𝑑𝑥(∂𝑥𝑓(𝑥)⋅𝑎(𝑥))Using the change of variable formula∫ℝ1,3+𝑠𝑎𝑑𝑥(𝑓(𝑥))&#x3D;∫ℝ1,3𝑑𝑥(𝑓(𝑥">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item-en/HTML-notice-en.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item-en/feature-en.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item-en/logic-en.html"><strong aria-hidden="true">2.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item-en/set-theory-en.html"><strong aria-hidden="true">3.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item-en/map-en.html"><strong aria-hidden="true">4.</strong> map</a></li><li class="chapter-item expanded "><a href="/item-en/order-en.html"><strong aria-hidden="true">5.</strong> order</a></li><li class="chapter-item expanded "><a href="/item-en/combinatorics-en.html"><strong aria-hidden="true">6.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item-en/real-numbers-en.html"><strong aria-hidden="true">7.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item-en/limit-sequence-en.html"><strong aria-hidden="true">8.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item-en/ℝ^n-en.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item-en/Euclidean-space-en.html"><strong aria-hidden="true">10.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item-en/Minkowski-space-en.html"><strong aria-hidden="true">11.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item-en/polynomial-en.html"><strong aria-hidden="true">12.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Euclidean-en.html"><strong aria-hidden="true">13.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Minkowski-en.html"><strong aria-hidden="true">14.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-struct-operation-en.html"><strong aria-hidden="true">15.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/ordinary-differential-equation-en.html"><strong aria-hidden="true">16.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item-en/volume-en.html"><strong aria-hidden="true">17.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item-en/integral-en.html"><strong aria-hidden="true">18.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item-en/divergence-en.html"><strong aria-hidden="true">19.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item-en/limit-net-en.html"><strong aria-hidden="true">20.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item-en/compact-en.html"><strong aria-hidden="true">21.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item-en/connected-en.html"><strong aria-hidden="true">22.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item-en/topology-struct-operation-en.html"><strong aria-hidden="true">23.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/exponential-en.html"><strong aria-hidden="true">24.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item-en/angle-en.html"><strong aria-hidden="true">25.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item-en/manifold-en.html"><strong aria-hidden="true">26.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item-en/metric-en.html"><strong aria-hidden="true">27.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item-en/metric-connection-en.html"><strong aria-hidden="true">28.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item-en/geodesic-derivative-en.html"><strong aria-hidden="true">29.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item-en/curvature-of-metric-en.html"><strong aria-hidden="true">30.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">31.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/constant-sectional-curvature-en.html"><strong aria-hidden="true">32.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item-en/simple-symmetric-space-en.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item-en/principal-bundle-en.html"><strong aria-hidden="true">34.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item-en/group-action-en.html"><strong aria-hidden="true">35.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item-en/stereographic-projection-en.html"><strong aria-hidden="true">36.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item-en/Hopf-bundle-en.html"><strong aria-hidden="true">37.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item-en/point-particle-non-relativity-en.html"><strong aria-hidden="true">38.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/point-particle-relativity-en.html"><strong aria-hidden="true">39.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-en.html"><strong aria-hidden="true">40.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-current-en.html" class="active"><strong aria-hidden="true">41.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-non-relativity-en.html"><strong aria-hidden="true">42.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/projective-lightcone-en.html"><strong aria-hidden="true">43.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item-en/spacetime-momentum-spinor-representation-en.html"><strong aria-hidden="true">44.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item-en/Lorentz-group-en.html"><strong aria-hidden="true">45.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-en.html"><strong aria-hidden="true">46.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-current-en.html"><strong aria-hidden="true">47.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/electromagnetic-field-en.html"><strong aria-hidden="true">48.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item-en/Laplacian-of-tensor-field-en.html"><strong aria-hidden="true">49.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">50.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/interaction-en.html"><strong aria-hidden="true">51.</strong> interaction</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item-en/scalar-field-current-en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>cf. <code>#link(&lt;Klein--Gordon-Lagrangian>)[Action of scalar field]</code></p>
+  <p>Symmetry and conserved currents</p>
+  <ul>
+    <li>Spacetime translation</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Spacetime translation does not fix the <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> "boundary". The variation is non-zero. Similar to the case of time translation for a point particle</p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msub><mo>∫</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Generally, region change is given by <span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> <code>#link(&lt;vector-field-as-δ-diffeomorphism>)[by δ diffeomorphism]</code> <span><math><mrow><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><munder displaystyle="true"><mo>∫</mo><mrow><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mi>𝑈</mi></mrow></munder><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><mi>𝑈</mi></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Using the change of variable formula</p>
+    <math display="block"><mrow><msub><mo>∫</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Swap differentiation and integration</p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>Apply it to</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>,</mo><mo>∂</mo></mrow><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>Consider the derivative of the action for a variation that is a translation in the <span><math><mrow><mi>𝜈</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span> direction. let <span><math><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi><mo>=</mo><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow></math></span>, first order derivative <span><math><mrow><mi mathvariant="normal">Δ</mi><mi>𝑆</mi><mo>=</mo></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜈</mi></msub><mi>𝐿</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi mathvariant="normal">ϕ</mi></mrow></mfrac><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>use product rule</p>
+    <math display="block"><mrow><msubsup><mo>∂</mo><mi>𝑥</mi><mo>†</mo></msubsup><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><msubsup><mo>∂</mo><mi>𝑥</mi><mo>†</mo></msubsup><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac></mrow><mo>)</mo></mrow><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi></mrow></math>
+    <p>use Lagrange-equation</p>
+    <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi mathvariant="normal">ϕ</mi></mrow></mfrac><mo>−</mo><msubsup><mo>∂</mo><mi>𝑥</mi><mo>†</mo></msubsup><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math>
+    <p>use divergence + zero boundary, to get</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜈</mi></msub><mi>𝐿</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msubsup><mo>∂</mo><mi>𝑥</mi><mo>†</mo></msubsup><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p><code data-typst-label="energy-momentum-tensor-KG">&lt;energy-momentum-tensor-KG></code></p>
+    <math display="block"><mrow><mi>𝑇</mi><mo>=</mo><msubsup><mi>𝑇</mi><mi>𝜈</mi><mi>𝜇</mi></msubsup><mo>=</mo><mrow><mo>{</mo><mtable><mtr><mtd class="mathyml-align-left"><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜇</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mtd><mtd class="mathyml-align-left"><mtext>  if  </mtext><mi>𝜇</mi><mo>≠</mo><mi>𝜈</mi></mtd></mtr><mtr><mtd class="mathyml-align-left"><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝐿</mi></mtd><mtd class="mathyml-align-left"><mtext>  if  </mtext><mi>𝜇</mi><mo>=</mo><mi>𝜈</mi></mtd></mtr></mtable></mrow></mrow></math>
+    <p>get</p>
+    <math display="block"><mrow><mn>0</mn><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msup><mo>∂</mo><mo>†</mo></msup><mi>𝑇</mi><mo>⋅</mo><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></math>
+    <p>for all <span><math><mrow><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow></math></span> as coordinate-frame, so <span><math><mrow><msup><mo>∂</mo><mo>†</mo></msup><mi>𝑇</mi><mo>=</mo><msub><mo>∂</mo><mi>𝜇</mi></msub><msubsup><mi>𝑇</mi><mi>𝜈</mi><mi>𝜇</mi></msubsup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>for <span><math><mrow><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mrow><mi mathvariant="normal">ϕ</mi><mo>,</mo></mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>⋅</mo><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>−</mo><msup><mi>𝑚</mi><mn>2</mn></msup><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></math></span> calculate</p>
+    <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜇</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi><mo>=</mo><mtext> Re </mtext><mrow><mo>(</mo><mrow><msup><mo>∂</mo><mi>𝜇</mi></msup><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></math>
+    <p>or <span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>It can be seen that this EM tensor, after the index is lowered, <span><math><mrow><msub><mi>𝑇</mi><mrow><mi>𝜇</mi><mi>𝜈</mi></mrow></msub><mo>=</mo><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝜇</mi></msub><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><msub><mo>∂</mo><mi>𝜈</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> is symmetric, so <span><math><mrow><msub><mi>𝑇</mi><mrow><mi>𝜇</mi><mi>𝜈</mi></mrow></msub><mo>=</mo><msub><mi>𝑇</mi><mrow><mi>𝜈</mi><mi>𝜇</mi></mrow></msub></mrow></math></span></p>
+    <p>In addition, the KG action <span><math><mi>𝐿</mi></math></span> is a real value, so its EM tensor is a real value</p>
+    <p>Assume that the EM tensor of <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> can be integrated over <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span>. Use the notation <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span>. energy</p>
+    <math display="block"><mrow><mi>𝐸</mi><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><msubsup><mi>𝑇</mi><mn>0</mn><mn>0</mn></msubsup><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mo>∂</mo><mn>0</mn></msub></mrow><mrow><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mrow><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><msup><mi>𝑚</mi><mn>2</mn></msup><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>General potential <span><math><mrow><msup><mi>𝑚</mi><mn>2</mn></msup><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span> => <span><math><mrow><mi>𝑉</mi><mrow><mo>(</mo><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>The energy of a relativistic scalar field is real and positive</p>
+    <p><code data-typst-label="conserved-spatial-integral-energy-KG">&lt;conserved-spatial-integral-energy-KG></code></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>Fixing the <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> coordinates, assume <span><math><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>0</mn></msubsup></math></span> is a quantity integrable over <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∂</mo><mn>0</mn></msub><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>0</mn></msubsup><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mn>0</mn></msub><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>0</mn></msubsup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mn>1</mn></msub><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>1</mn></msubsup><mo>+</mo><msub><mo>∂</mo><mn>2</mn></msub><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>2</mn></msubsup><mo>+</mo><msub><mo>∂</mo><mn>3</mn></msub><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>3</mn></msubsup></mrow><mo>)</mo></mrow><mtext>  by  </mtext><msup><mo>∂</mo><mo>†</mo></msup><msub><mi>𝑇</mi><mi>𝜇</mi></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑟</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mo>∫</mo><mrow><msup><mi mathvariant="normal">𝔹</mi><mn>3</mn></msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow></mrow></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mtext>div </mtext><msubsup><mi>𝑇</mi><mi>𝜇</mi><mi>𝑥</mi></msubsup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑟</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mo>∫</mo><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow></mrow></msub><mi>𝑑</mi><mtext> Vol </mtext><mrow><mo>(</mo><mrow><msubsup><mi>𝑇</mi><mi>𝜇</mi><mi>𝑥</mi></msubsup><mo>⋅</mo><mfrac><mi>𝑥</mi><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow></mfrac></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>As long as we assume that the flux density <span><math><mrow><mi>𝑟</mi><mo>→</mo><mo>∞</mo><mo>⟹</mo><msubsup><mi>𝑇</mi><mi>𝜇</mi><mi>𝑥</mi></msubsup><mo>⋅</mo><mfrac><mi>𝑥</mi><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow></mfrac><mo>→</mo><mn>0</mn></mrow></math></span>, then we have time invariance of <span><math><mrow><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>0</mn></msubsup><mo>)</mo></mrow></mrow></math></span></p>
+      <ul>
+        <li>
+          <p><span><math><mrow><msubsup><mi>𝑇</mi><mn>0</mn><mn>0</mn></msubsup><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mo>∂</mo><mn>0</mn></msub></mrow><mrow><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mrow><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><msup><mi>𝑚</mi><mn>2</mn></msup><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow></mrow></math></span>. Field energy conservation <span><math><mrow><msub><mo>∂</mo><mn>0</mn></msub><mi>𝐸</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+        </li>
+        <li>
+          <p><span><math><mrow><msubsup><mi>𝑇</mi><mi>𝑥</mi><mn>0</mn></msubsup><mo>=</mo><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mn>0</mn></msub><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span>. Field momentum (?) conservation</p>
+        </li>
+      </ul>
+    </div>
+    <p>Other <span><math><mi>𝑇</mi></math></span> components, e.g. <span><math><mrow><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><msubsup><mi>𝑇</mi><mi>𝜇</mi><mn>1</mn></msubsup><mo>)</mo></mrow></mrow></math></span>, are invariant along the <span><math><msub><mi>𝑥</mi><mn>1</mn></msub></math></span> direction. Use <span><math><msub><mo>∂</mo><mn>1</mn></msub></math></span>, the integral of <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msup></math></span> and its <span><math><mtext>div</mtext></math></span>. The limit of region approximation <span><math><munder displaystyle="false"><mtext>lim</mtext><mrow><mi>𝑟</mi><mo>→</mo><mo>∞</mo></mrow></munder></math></span> is for hyperbolic geodesic spheres (multi-radius)</p>
+    <p><strong>Example</strong> For plane wave expansion</p>
+    <math display="block"><mrow><mrow><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∫</mo><mtable><mtr><mtd><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>3</mn></msup></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">𝕊</mi><mrow><mo>(</mo><mrow><mtext>Im </mtext><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></munder><mi>𝑑</mi><mi>𝑝</mi><mi>𝑑</mi><mtext> i </mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mtext>i</mtext></mrow><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mi>𝑝</mi><mi>𝑥</mi><mtext> i</mtext></mrow></msup></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Energy is (<strong>Question</strong>)</p>
+    <math display="block"><mrow><mi>𝐸</mi><mo>=</mo><munder displaystyle="true"><mo>∫</mo><mtable><mtr><mtd><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>3</mn></msup></mtd></mtr><mtr><mtd><mrow><mi mathvariant="normal">𝕊</mi><mrow><mo>(</mo><mrow><mtext>Im </mtext><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></munder><mi>𝑑</mi><mi>𝑝</mi><mi>𝑑</mi><mtext> i </mtext><mrow><mo>(</mo><mrow><msubsup><mi>𝑝</mi><mn>0</mn><mn>2</mn></msubsup><msup><mrow><mo>|</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mtext>i</mtext></mrow><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math>
+  </div>
+  <ul>
+    <li>Rotation and boost</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>For fields, whether spatial rotation or boost, even if the Lagrangian is invariant, the action still changes</p>
+    <p>Now use the notation <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mn>0</mn></msub><mo>,</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span></p>
+    <ul>
+      <li>
+        <p>Spatial rotation of <span><math><mrow><mi>𝑖</mi><mo>,</mo><mi>𝑗</mi></mrow></math></span>. If <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑥</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑟</mi><mrow><mo>(</mo><mrow><mtext>cos </mtext><mrow><mi>𝑡</mi><mo>,</mo></mrow><mtext> sin </mtext><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></math></span>, then <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mo>=</mo><mi>𝑟</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext> sin </mtext><mrow><mi>𝑡</mi><mo>,</mo></mrow><mtext> cos </mtext><mi>𝑡</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mo>−</mo><mrow><msub><mi>𝑥</mi><mi>𝑗</mi></msub><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span>, so the tangent vector is <span><math><mrow><mo>−</mo><msub><mi>𝑥</mi><mi>𝑗</mi></msub><msub><mo>∂</mo><mi>𝑖</mi></msub><mo>+</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑗</mi></msub></mrow></math></span></p>
+        <p>Let <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> be the spatial rotation axis, then the tangent vector will be <span><math><mrow><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mo>∂</mo></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p>Boost of <span><math><mrow><mn>0</mn><mo>,</mo><mi>𝑖</mi></mrow></math></span>. If <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑟</mi><mrow><mo>(</mo><mrow><mtext>cosh </mtext><mrow><mi>𝑡</mi><mo>,</mo></mrow><mtext> sinh </mtext><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></math></span>, then <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mo>=</mo><mi>𝑟</mi><mrow><mo>(</mo><mrow><mtext>sinh </mtext><mrow><mi>𝑡</mi><mo>,</mo></mrow><mtext> cosh </mtext><mi>𝑡</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>,</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></math></span>, so the tangent vector is <span><math><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><msub><mo>∂</mo><mn>0</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>0</mn></msub><msub><mo>∂</mo><mi>𝑖</mi></msub></mrow></math></span></p>
+        <p>Let <span><math><mrow><mi>𝑛</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> be the spatial boost axis, then the tangent vector will be <span><math><mrow><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>∂</mo><mo>−</mo><mi>𝑥</mi><msub><mo>∂</mo><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></math></span> (The <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> spacetime metric has negative definite space)</p>
+      </li>
+    </ul>
+    <p>Now use the notation <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span>. The tangent vectors for rotation and boost are collectively denoted as <span><math><mrow><mo>[</mo><mrow><mi>𝑥</mi><mo>,</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mo>]</mo></mrow></math></span>, acting as δ spacetime rotation <span><math><mrow><mtext>so</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> on the field <span><math><mi mathvariant="normal">ϕ</mi></math></span>, as a δ diffeomorphism</p>
+    <math display="block"><mrow><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mrow><mo>[</mo><mrow><mi>𝑥</mi><mo>,</mo><mo>∂</mo></mrow><mo>]</mo></mrow><mi>𝐿</mi></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi mathvariant="normal">ϕ</mi></mrow></mfrac><mo>⋅</mo><mrow><mo>[</mo><mrow><mi>𝑥</mi><mo>,</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mo>]</mo></mrow><mi mathvariant="normal">ϕ</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑥</mi></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><msub><mo>∂</mo><mi>𝑥</mi></msub><mrow><mo>[</mo><mrow><mi>𝑥</mi><mo>,</mo><msub><mo>∂</mo><mi>𝑥</mi></msub></mrow><mo>]</mo></mrow><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Using the KG equation, rearranging terms, we get the zero-divergence conserved current</p>
+    <p><code data-typst-label="angular-momentum-KG">&lt;angular-momentum-KG></code> let <span><math><mi>𝑇</mi></math></span> be the energy-momentum tensor of the KG field. The angular momentum of the field</p>
+    <math display="block"><mrow><mi>𝑀</mi><mo>=</mo><mrow><mo>[</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑇</mi></mrow><mo>]</mo></mrow></mrow></math>
+    <p>or</p>
+    <math display="block"><mrow><msubsup><mi>𝑀</mi><mrow><mi>𝜇</mi><mi>𝜈</mi></mrow><mi>𝜆</mi></msubsup><mo>=</mo><mrow><mo>[</mo><mrow><msub><mi>𝑥</mi><mi>𝜇</mi></msub><mo>,</mo><msubsup><mi>𝑇</mi><mi>𝜈</mi><mi>𝜆</mi></msubsup></mrow><mo>]</mo></mrow></mrow></math>
+  </div>
+  <ul>
+    <li>Current of KG field under gauge field</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span> be the solution of KG eq. The phase change <span><math><mrow><msup><mi>𝑒</mi><mrow><mi>𝜃</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msup><mrow><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> and its δ change <span><math><mrow><mi>𝜃</mi><mi mathvariant="normal">ϕ</mi></mrow></math></span> belong to variations near the solution with fixed boundaries, so</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mo>−</mo><mi>𝜃</mi><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mo>⋅</mo><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>⋅</mo><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝜃</mi><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mo>⋅</mo><mo>∂</mo><mi>𝜃</mi></mtd></mtr></mtable></math>
+    <p>Using product rule + divergence + Stokes' theorem + zero boundary</p>
+    <math display="block"><mrow><mn>0</mn><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mo>∂</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mi>𝜃</mi></mrow><mo>)</mo></mrow></mrow></math>
+    <p>for all <span><math><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℂ</mi><mo>)</mo></mrow></mrow></math></span> valued function <span><math><mrow><mi>𝜃</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span>, therefore</p>
+    <math display="block"><mrow><mo>∀</mo><mi>𝑥</mi><mo>∈</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>,</mo></mrow><msup><mo>∂</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+    <p><span><math><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow></math></span> is called the 4-current of the KG field <code data-typst-label="current-gauge-KG">&lt;current-gauge-KG></code></p>
+    <p><span><math><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><mo>∂</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>=</mo><mo>−</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><mo>∂</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>Fixing the <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> coordinates, and considering the 4-current components as quantities integrable over <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span>, then the zero component, i.e., charge conservation, holds <code data-typst-label="conserved-spatial-integral-charge-KG">&lt;conserved-spatial-integral-charge-KG></code></p>
+    <math display="block"><mrow><mn>0</mn><mo>=</mo><msub><mo>∂</mo><mi>𝑡</mi></msub><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup><msub><mo>∂</mo><mi>𝑡</mi></msub><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi mathvariant="normal">ϕ</mi><msub><mo>∂</mo><mi>𝑡</mi></msub><msup><mi mathvariant="normal">ϕ</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><mi>𝑡</mi></msub><mi>𝑄</mi></mrow></math>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

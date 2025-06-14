@@ -1,0 +1,545 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="&lt;analytic-struct-product&gt; 积空间不对称性: 𝑉≠𝑊 &#x3D;&#x3D;&gt; 没有 𝑉⊙𝑊只好使用 (⊙𝑛𝑉)⊗(⊙𝑚𝑊) 和偏微分something like𝑑𝑙𝑓(𝑥,𝑦):𝑣,𝑤⇝∑𝑛+𝑚&#x3D;𝑙(𝑙𝑛,𝑚)∂𝑛+𝑚𝑓∂𝑣𝑛∂𝑤𝑚(𝑥,𝑦)(𝑣𝑛⊗𝑤𝑚)&lt;mulitplication-analytic&gt;𝕂→𝕂(∑𝑛∈ℕ𝑎𝑛𝑣𝑛)(∑𝑚∈ℕ𝑏𝑚𝑣𝑚)&#x3D;∑𝑙∈ℕ𝑐𝑙𝑣𝑙with 𝑐𝑙&#x3D;∑𝑛+𝑚&#x3D;𝑙𝑎𝑛𝑏𝑚收敛半径至少是 min(𝑅𝐴,𝑅𝐵)(联系于 Cauchy product. 尝试寻找更好的证明方法)𝑐1&#x3D;𝑎1𝑏0+𝑎0𝑏1恢复微分中的 1𝑛!, ∑𝑎𝑛𝑣𝑛∼∑1𝑛!𝑑𝑛𝑓(𝑥)(𝑣𝑛)&#x3D;&#x3D;&gt; &lt;Leibniz-law-1d&gt;𝑑(𝑓𝑔)(𝑥)(𝑣)&#x3D;(𝑑𝑓(𝑥)(𝑣))𝑔(𝑥)+𝑓(𝑥)(𝑑𝑔(𝑥)(𝑣)), or∂(𝑓𝑔)∂𝑣&#x3D;∂𝑓∂𝑣𝑔+𝑓∂𝑔∂𝑣, or(𝑓𝑔)′&#x3D;𝑓′𝑔+𝑓𝑔′𝕂𝑑→𝕂(∑𝑛∈ℕ𝑎𝑛𝑣𝑛)(∑𝑚∈ℕ𝑏𝑚𝑣𝑚)&#x3D;∑𝑙∈ℕ𝑐𝑙𝑣𝑙收集 𝑛+𝑚 重张量 𝐴𝑛(𝑣1⋯𝑣𝑛)𝐵𝑚(𝑣𝑛+1⋯𝑣𝑛+𝑚)let ∀𝑖,𝑣𝑖&#x3D;𝑣 得到 𝑛+𝑚 多项式 𝐴𝑛(𝑣𝑛)𝐵𝑚(𝑣𝑚)&#x3D;&#x3D;&gt; 𝐶𝑙(𝑣">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html" class="active"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/analytic-struct-operation", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><code data-typst-label="analytic-struct-product">&lt;analytic-struct-product></code> 积空间</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>不对称性: <span><math><mrow><mi>𝑉</mi><mo>≠</mo><mi>𝑊</mi></mrow></math></span> ==> 没有 <span><math><mrow><mi>𝑉</mi><mo>⊙</mo><mi>𝑊</mi></mrow></math></span></p>
+    <p>只好使用 <span><math><mrow><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><mi>𝑉</mi></mrow><mo>)</mo></mrow><mo>⊗</mo><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑚</mi></msup><mi>𝑊</mi></mrow><mo>)</mo></mrow></mrow></math></span> 和偏微分</p>
+    <p>something like</p>
+    <math display="block"><mrow><msup><mi>𝑑</mi><mi>𝑙</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mo>:</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⇝</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi><mo>=</mo><mi>𝑙</mi></mrow></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑙</mi><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑚</mi></mrow></mfrac><mo>)</mo></mrow><mfrac><mrow><msup><mo>∂</mo><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>∂</mo><msup><mi>𝑤</mi><mi>𝑚</mi></msup></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>⊗</mo><msup><mi>𝑤</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow></mrow></math>
+  </div>
+  <p><code data-typst-label="mulitplication-analytic">&lt;mulitplication-analytic></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li><span><math><mrow><mi mathvariant="normal">𝕂</mi><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mrow><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑚</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑏</mi><mi>𝑚</mi></msub><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑙</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑐</mi><mi>𝑙</mi></msub><msup><mi>𝑣</mi><mi>𝑙</mi></msup></mrow></math>
+      <p>with <span><math><mrow><msub><mi>𝑐</mi><mi>𝑙</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi><mo>=</mo><mi>𝑙</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msub><mi>𝑏</mi><mi>𝑚</mi></msub></mrow></math></span></p>
+      <p>收敛半径至少是 <span><math><mrow><mi mathvariant="normal">min</mi><mrow><mo>(</mo><mrow><msub><mi>𝑅</mi><mi>𝐴</mi></msub><mo>,</mo><msub><mi>𝑅</mi><mi>𝐵</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      <p>(联系于 Cauchy product. 尝试寻找更好的证明方法)</p>
+      <p><span><math><mrow><msub><mi>𝑐</mi><mn>1</mn></msub><mo>=</mo><msub><mi>𝑎</mi><mn>1</mn></msub><msub><mi>𝑏</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><msub><mi>𝑏</mi><mn>1</mn></msub></mrow></math></span></p>
+      <p>恢复微分中的 <span><math><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></math></span>, <span><math><mrow><mo>∑</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>∼</mo><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
+      <p>==> <code data-typst-label="Leibniz-law-1d">&lt;Leibniz-law-1d></code></p>
+      <p><span><math><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span>, or</p>
+      <p><span><math><mrow><mfrac><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝑓</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac><mi>𝑔</mi><mo>+</mo><mi>𝑓</mi><mfrac><mrow><mo>∂</mo><mi>𝑔</mi></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac></mrow></math></span>, or</p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑓</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑔</mi><mo>+</mo><mi>𝑓</mi><msup><mi>𝑔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+    </div>
+    <ul>
+      <li><span><math><mrow><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mrow><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑚</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑏</mi><mi>𝑚</mi></msub><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑙</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑐</mi><mi>𝑙</mi></msub><msup><mi>𝑣</mi><mi>𝑙</mi></msup></mrow></math>
+      <p>收集 <span><math><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></math></span> 重张量 <span><math><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      <p>let <span><math><mrow><mo>∀</mo><mrow><mi>𝑖</mi><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>=</mo><mi>𝑣</mi></mrow></math></span> 得到 <span><math><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></math></span> 多项式 <span><math><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑚</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
+      <p>==> <span><math><mrow><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi><mo>=</mo><mi>𝑙</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑚</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
+      <p><span><math><mrow><msub><mi>𝐶</mi><mn>1</mn></msub><mi>𝑣</mi><mo>=</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><msub><mi>𝐵</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝐴</mi><mn>0</mn></msub><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow></math></span></p>
+      <p>==> <code data-typst-label="Leibniz-law">&lt;Leibniz-law></code> <span><math><mrow><mfrac><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝑓</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac><mi>𝑔</mi><mo>+</mo><mi>𝑓</mi><mfrac><mrow><mo>∂</mo><mi>𝑔</mi></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac></mrow></math></span></p>
+    </div>
+  </div>
+  <p><code data-typst-label="mulitplication-inverse-analytic">&lt;mulitplication-inverse-analytic></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span>, <span><math><mrow><mi>𝑓</mi><mo>=</mo><mo>∑</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span>, <span><math><mrow><msub><mi>𝐴</mi><mn>0</mn></msub><mo>≠</mo><mn>0</mn></mrow></math></span></p>
+    <p>use <span><math><mrow><mi>𝑓</mi><mo>=</mo><mn>1</mn><mo>−</mo><mi>𝑔</mi></mrow></math></span> and <span><math><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑔</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>+</mo><mi>𝑔</mi><mo>+</mo><msup><mi>𝑔</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo></mrow></math></span></p>
+    <p>or 直接计算</p>
+    <p>let <span><math><mrow><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>=</mo><mo>∑</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow></math></span>, <span><math><mrow><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>⋅</mo><mi>𝑓</mi><mo>=</mo><mn>1</mn></mrow></math></span>, use 乘法</p>
+    <p><span><math><mrow><mi>𝑚</mi><mo>=</mo><mn>0</mn></mrow></math></span>: <span><math><mrow><mn>1</mn><mo>=</mo><msub><mi>𝐴</mi><mn>0</mn></msub><msub><mi>𝐵</mi><mn>0</mn></msub></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑚</mi><mo>≥</mo><mn>1</mn></mrow></math></span>: <span><math><mrow><mn>0</mn><mo>=</mo><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi><mo>=</mo><mi>𝑙</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msub><mi>𝐵</mi><mi>𝑚</mi></msub></mrow></math></span></p>
+    <p>==> <span><math><mrow><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><msub><mi>𝐴</mi><mn>0</mn></msub></mfrac><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mi>𝑚</mi></msubsup><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msub><mi>𝐵</mi><mrow><mi>𝑚</mi><mo>−</mo><mi>𝑛</mi></mrow></msub></mrow></math></span>, use induction <span><math><mrow><msub><mi>𝐵</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mrow><mi>𝑚</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span></p>
+    <p><code data-typst-label="differential-of-multiplication-inverse">&lt;differential-of-multiplication-inverse></code> use Leibniz law</p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><mn>0</mn><mo>=</mo><msub><mo>∂</mo><mi>𝑣</mi></msub><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>⋅</mo><mi>𝑓</mi></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><mi>𝑣</mi></msub><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>)</mo></mrow><mi>𝑓</mi><mo>+</mo><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><msub><mo>∂</mo><mi>𝑣</mi></msub><mi>𝑓</mi><mo>⟹</mo><msub><mo>∂</mo><mi>𝑣</mi></msub><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><msup><mi>𝑓</mi><mn>2</mn></msup></mfrac><msub><mo>∂</mo><mi>𝑣</mi></msub><mi>𝑓</mi></mrow></math></span>, or</p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mo>−</mo><mfrac><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑓</mi><mn>2</mn></msup></mfrac></mrow></math></span></p>
+      <p>in particular, <span><math><mrow><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><msup><mi>𝑥</mi><mn>2</mn></msup></mfrac></mrow></math></span></p>
+    </div>
+    <p>收敛半径</p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>try 归纳证明 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mo>|</mo></mrow><mo>≤</mo><msup><mi>𝑅</mi><mi>𝑚</mi></msup></mrow></math></span></p>
+      <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝐴</mi><mn>0</mn></msub><mo>|</mo><mo>|</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mi>𝑚</mi></msubsup><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><mo>|</mo><msub><mi>𝐵</mi><mrow><mi>𝑚</mi><mo>−</mo><mi>𝑛</mi></mrow></msub><mo>|</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mi>𝑚</mi></msubsup><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><msup><mi>𝑅</mi><mrow><mi>𝑚</mi><mo>−</mo><mi>𝑛</mi></mrow></msup><mspace width="1em"></mspace><mrow><mo>(</mo><mrow><mtext>by induction </mtext><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mrow><mi>𝑚</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑅</mi><mi>𝑚</mi></msup><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mi>𝑚</mi></msubsup><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑅</mi><mi>𝑚</mi></msup><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd></mtr></mtable></math></span></p>
+      <p>为完成归纳, use <span><math><mi>𝑅</mi></math></span> with <span><math><mrow><mfrac><mn>1</mn><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>0</mn></msub><mo>|</mo></mrow></mfrac><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>≤</mo><mn>1</mn></mrow></math></span></p>
+    </div>
+  </div>
+  <p><code data-typst-label="compose-op-analytic">&lt;compose-op-analytic></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li><span><math><mrow><mi mathvariant="normal">𝕂</mi><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>let <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mo>∑</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span>, <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mo>∑</mo><msub><mi>𝑏</mi><mi>𝑚</mi></msub><msup><mi>𝑤</mi><mi>𝑚</mi></msup></mrow></math></span></p>
+      <p>with <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑏</mi><mn>0</mn></msub><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>∘</mo></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><msub><mi>𝑏</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>𝑚</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑏</mi><mi>𝑚</mi></msub><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mrow><mo>(</mo><mrow><msubsup><mo>∑</mo><mrow><mi>𝑚</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑏</mi><mi>𝑚</mi></msub><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑐</mi><mn>0</mn></msub><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>𝑙</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑐</mi><mi>𝑙</mi></msub><msup><mi>𝑣</mi><mi>𝑙</mi></msup></mtd></mtr></mtable></math></span></p>
+      <p>where 复合后的 <span><math><msup><mi>𝑣</mi><mi>𝑙</mi></msup></math></span> 的所有可能来源</p>
+      <p><span><math><mrow><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>=</mo><msup><mrow><mo>(</mo><msup><mi>𝑣</mi><mn>1</mn></msup><mo>)</mo></mrow><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋯</mo><msup><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msup><mo>=</mo><msup><mi>𝑣</mi><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></msup></mrow></math></span> with <span><math><mrow><mi>𝑙</mi><mo>=</mo><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></math></span></p>
+      <p>从而只能来自 for <span><math><mrow><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></math></span></p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><mrow><msub><mi>𝑏</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑏</mi><mi>𝑙</mi></msub><msup><mi>𝑣</mi><mi>𝑙</mi></msup></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></msub><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msubsup><mi>𝑏</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝑏</mi><mi>𝑙</mi><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msubsup></mrow></math></span> (cf. <code>#link(&lt;multi-combination>)[]</code>)</p>
+      <p>==></p>
+      <math display="block"><mrow><msub><mi>𝑐</mi><mi>𝑙</mi></msub><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msubsup><mi>𝑏</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝑏</mi><mi>𝑙</mi><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msubsup><msup><mi>𝑣</mi><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></msup></mrow></math>
+      <p><span><math><mrow><msub><mi>𝑐</mi><mn>1</mn></msub><mo>=</mo><msub><mi>𝑎</mi><mn>1</mn></msub><msub><mi>𝑏</mi><mn>1</mn></msub></mrow></math></span>. 写为微分 <code data-typst-label="chain-rule-1d">&lt;chain-rule-1d></code></p>
+      <p><span><math><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span>, or</p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><msup><mi>𝑔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+    </div>
+    <ul>
+      <li><span><math><mrow><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mrow><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><mrow><msubsup><mi>𝐵</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝐵</mi><mi>𝑙</mi><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msubsup><mrow><mo>(</mo><msup><mi>𝑣</mi><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></msup><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+      <p>where <span><math><mrow><msubsup><mi>𝐵</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝐵</mi><mi>𝑙</mi><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msubsup><mrow><mo>(</mo><msup><mi>𝑣</mi><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></msup><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mrow><mo>⊙</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>⊙</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msup><mo>⊙</mo><mo>⋯</mo><mo>⊙</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mrow><mo>⊙</mo><mi>𝑙</mi></mrow></msup><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>⊙</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></msup></mrow></math></span></p>
+      <p><span><math><mrow><msub><mi>𝐶</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span>, 写为微分就是 <code data-typst-label="chain-rule">&lt;chain-rule></code></p>
+      <p><span><math><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      <p>一般的写为微分的形式</p>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+        <ul>
+          <li>
+            <p><span><math><mrow><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mo>∼</mo><mfrac><mn>1</mn><mrow><mi>𝑙</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑙</mi></msup><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+          </li>
+          <li>
+            <p><span><math><mrow><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>∼</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑘</mi></msup><mi>𝑓</mi></mrow></math></span></p>
+          </li>
+          <li>
+            <p><span><math><mrow><msub><mi>𝐵</mi><mi>𝑗</mi></msub><mo>∼</mo><mfrac><mn>1</mn><mrow><mi>𝑗</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑗</mi></msup><mi>𝑔</mi></mrow></math></span></p>
+          </li>
+        </ul>
+        <p>in <span><math><mrow><msup><mi>𝑑</mi><mi>𝑙</mi></msup><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow><mo>=</mo><mtext> formula of </mtext><msup><mi>𝑑</mi><mi>𝑘</mi></msup><mi>𝑓</mi><mo>,</mo><msup><mi>𝑑</mi><mi>𝑗</mi></msup><mi>𝑔</mi></mrow></math></span></p>
+        <p>将 <span><math><mrow><mrow><mi>𝑙</mi><mo>!</mo></mrow><mo>,</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac><mo>,</mo><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mi>𝑗</mi><mo>!</mo></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝑖</mi><mi>𝑗</mi></msub></msup></mrow></math></span> 提取</p>
+        <p>置于 <span><math><mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>𝑘</mi><mo>!</mo></mrow><mrow><msub><mi>𝑖</mi><mrow><mn>1</mn><mo>!</mo></mrow></msub><mo>⋯</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>!</mo></mrow></msub></mrow></mfrac></mrow></math></span></p>
+        <p>得到 <span><math><mfrac><mrow><mi>𝑙</mi><mo>!</mo></mrow><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>!</mo></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋅</mo><msub><mi>𝑖</mi><mrow><mn>1</mn><mo>!</mo></mrow></msub><mo>⋯</mo><msup><mrow><mo>(</mo><mrow><mi>𝑙</mi><mo>!</mo></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msup><mo>⋅</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>!</mo></mrow></msub></mrow></mfrac></math></span> (this is <em>not</em> <span><math><mrow><mfrac><mrow><mi>𝑙</mi><mo>!</mo></mrow><mrow><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mo>!</mo></mrow><mo>⋯</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mrow></mfrac><mo>=</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑙</mi><mrow><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow><mo>,</mo><mo>…</mo><mo>,</mo><mrow><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mrow></mfrac><mo>)</mo></mrow></mrow></math></span>)</p>
+        <math display="block"><mrow><msup><mi>𝑑</mi><mi>𝑙</mi></msup><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mfrac><mrow><mi>𝑙</mi><mo>!</mo></mrow><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>!</mo></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋅</mo><msub><mi>𝑖</mi><mrow><mn>1</mn><mo>!</mo></mrow></msub><mo>⋯</mo><msup><mrow><mo>(</mo><mrow><mi>𝑙</mi><mo>!</mo></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msup><mo>⋅</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>!</mo></mrow></msub></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑘</mi></msup><mi>𝑓</mi><msup><mrow><mo>(</mo><mrow><msup><mi>𝑑</mi><mn>1</mn></msup><mi>𝑔</mi></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋯</mo><msup><mrow><mo>(</mo><mrow><msup><mi>𝑑</mi><mi>𝑙</mi></msup><mi>𝑔</mi></mrow><mo>)</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub></msup></mrow></math>
+      </div>
+    </div>
+  </div>
+  <p><code data-typst-label="inverse-analytic">&lt;inverse-analytic></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑓</mi><mo>∼</mo><mo>∑</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span>, <span><math><mrow><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></mrow></math></span>, <span><math><mrow><msub><mi>𝐴</mi><mn>1</mn></msub><mo>∈</mo><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑑</mi><mo>,</mo><mi mathvariant="normal">𝕂</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>let <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>=</mo><mo>∑</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑚</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
+    <ul>
+      <li>一阶微分计算. <span><math><mrow><mi>𝑓</mi><mo>∘</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>∘</mo><mi>𝑓</mi><mo>=</mo><mn>𝟙</mn><mo>:</mo><mi>𝑣</mi><mo>⇝</mo><mi>𝑣</mi></mrow></math></span>, use 复合</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><mn>𝟙</mn><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mo>∑</mo><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
+      <p><span><math><mtable><mtr><mtd><msub><mi>𝐶</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><msub><mi>𝐶</mi><mn>1</mn></msub><mo>=</mo><mn>𝟙</mn></mtd></mtr><mtr><mtd><msub><mi>𝐶</mi><mi>𝑙</mi></msub><mo>=</mo><mn>0</mn><mo>,</mo><mo>∀</mo><mi>𝑙</mi><mo>≥</mo><mn>2</mn></mtd></mtr></mtable></math></span></p>
+      <p><span><math><mrow><mn>𝟙</mn><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>𝐶</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⟹</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>=</mo><msubsup><mi>𝐴</mi><mn>1</mn><mrow><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math></span> by <span><math><mrow><msub><mi>𝐴</mi><mn>1</mn></msub><mo>∈</mo><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑑</mi><mo>,</mo><mi mathvariant="normal">𝕂</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    </div>
+    <ul>
+      <li>高阶微分计算. use 归纳 for <span><math><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><msub><mi>𝐵</mi><mi>𝑙</mi></msub></math></span> 只来自</p>
+      <p><span><math><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math></span> and <span><math><mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span> ==> <span><math><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></math></span></p>
+      <p><span><math><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span></p>
+      <p><span><math><mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑙</mi><mrow><mn>0</mn><mo>,</mo><mo>…</mo><mo>,</mo><mi>𝑙</mi></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
+      <p>==> (省略 <span><math><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑙</mi></msup><mo>)</mo></mrow></math></span>)</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝐶</mi><mi>𝑙</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝐴</mi><mn>1</mn></msub><msub><mi>𝐵</mi><mi>𝑙</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>+</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝐴</mi><mi>𝑘</mi></msub><msubsup><mi>𝐵</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msubsup></mtd></mtr></mtable></math>
+      <p><span><math><mrow><msub><mi>𝐴</mi><mn>1</mn></msub><mo>∈</mo><mtext> GL</mtext></mrow></math></span> ==></p>
+      <math display="block"><mrow><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>=</mo><mo>−</mo><msubsup><mi>𝐴</mi><mn>1</mn><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝐴</mi><mi>𝑘</mi></msub><msubsup><mi>𝐵</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msubsup></mrow></math>
+    </div>
+    <p>由于可能不收敛, <span><math><mrow><mi>𝑓</mi><mo>∼</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span> 无法直接作为 <span><math><mrow><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></mrow></math></span> 函数</p>
+    <p>但是可以扩充到 <span><math><mrow><mi>𝑓</mi><mo>:</mo><msubsup><mo>⨁</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow><mo>→</mo><mtext> self</mtext></mrow></math></span></p>
+    <p>使得 <span><math><mrow><mi>𝑓</mi><mo>∘</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>∘</mo><mi>𝑓</mi><mo>=</mo><mn>𝟙</mn><mtext> of </mtext><msubsup><mo>⨁</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <ul>
+      <li>逆函数的收敛半径非零 (p.77 of ref-4)</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><strong>Reference</strong></p>
+      <math display="block"><mrow><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>=</mo><mo>−</mo><msubsup><mi>𝐴</mi><mn>1</mn><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝐴</mi><mi>𝑘</mi></msub><msubsup><mi>𝐵</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msubsup></mrow></math>
+      <p>==></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>|</mo><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>|</mo></mtd><mtd class="mathyml-align-right"><mo>≤</mo></mtd><mtd class="mathyml-align-left"><mfrac><mn>1</mn><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>|</mo></mrow></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>|</mo><mo>|</mo><msub><mi>𝐵</mi><mn>1</mn></msub><msup><mo>|</mo><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋯</mo><mo>|</mo><msub><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mo>|</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msup></mtd></mtr></mtable></math>
+      <p>use <span><math><mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><mo>∈</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></math></span> (indeed <span><math><mrow><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>)</p>
+      <p>构造 (几乎) <span><math><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></math></span> 的非零收敛半径的幂级数控制 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>|</mo></mrow><mo>≤</mo><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>,</mo></mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mi>𝑘</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑏</mi><mi>𝑘</mi></msub></mrow></math></span></p>
+      <p>if by induction, for <span><math><mrow><msub><mi>𝐴</mi><mn>2</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐴</mi><mi>𝑙</mi></msub></mrow></math></span>, <span><math><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mi>𝑗</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑏</mi><mi>𝑗</mi></msub></mrow></math></span></p>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+        <p>where <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑘</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mrow></math></span> with <span><math><mrow><mi>𝑘</mi><mo>≥</mo><mn>2</mn><mo>⟹</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>∈</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></math></span></p>
+        <p>其逆是 <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑗</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝑏</mi><mi>𝑗</mi></msub><msup><mi>𝑣</mi><mi>𝑗</mi></msup></mrow></math></span> with <span><math><mrow><mi>𝑗</mi><mo>≥</mo><mn>1</mn><mo>⟹</mo><msub><mi>𝑏</mi><mi>𝑗</mi></msub><mo>∈</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></math></span>. <span><math><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></math></span> to prove. 收敛半径非零 to prove</p>
+        <p>use case of <span><math><mrow><mi mathvariant="normal">𝕂</mi><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span></p>
+        <math display="block"><mrow><msub><mi>𝑏</mi><mi>𝑙</mi></msub><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><msub><mi>𝑎</mi><mn>1</mn></msub></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msubsup><mi>𝑏</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝑏</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msubsup></mrow></math>
+        <p>to get <span><math><mrow><msub><mi>𝑏</mi><mi>𝑗</mi></msub><mo>≥</mo><mn>0</mn></mrow></math></span>, use <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>&lt;</mo><mn>0</mn></mrow></math></span></p>
+      </div>
+      <p>==></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>|</mo></mrow></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>2</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑙</mi></mrow></munder><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑘</mi></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mo>⋅</mo><msub><mi>𝑖</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mi>𝑙</mi><mo>⋅</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub><mo>=</mo><mi>𝑙</mi></mrow></mtd></mtr></mtable></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑖</mi><mi>𝑙</mi></msub></mrow></mfrac><mo>)</mo></mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>|</mo><mo>|</mo><msub><mi>𝐵</mi><mn>1</mn></msub><msup><mo>|</mo><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>⋯</mo><mo>|</mo><msub><mi>𝐵</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mo>|</mo><msub><mi>𝑖</mi><mrow><mi>𝑙</mi><mo>−</mo><mn>1</mn></mrow></msub></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mo>−</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>|</mo></mrow></mfrac><msub><mi>𝑏</mi><mi>𝑙</mi></msub></mtd></mtr></mtable></math>
+      <p><span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>|</mo></mrow></mfrac></mrow></math></span>, <span><math><mrow><msub><mi>𝑏</mi><mn>1</mn></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mo>−</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow></mfrac></mrow></math></span></p>
+      <p>to get <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑏</mi><mi>𝑙</mi></msub></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑏</mi><mn>1</mn></msub></mrow></math></span>, use <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>≕</mo><mi>𝛼</mi></mrow></math></span></p>
+      <p>to get <span><math><mrow><mi>𝑘</mi><mo>≥</mo><mn>2</mn><mo>⟹</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub></mrow></math></span>, use <span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>=</mo><msup><mrow><mo>(</mo><mrow><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mn>2</mn></mrow></munder><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑘</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></msup></mrow><mo>}</mo></mrow></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup><mo>≕</mo><msup><mi>𝛽</mi><mi>𝑘</mi></msup></mrow></math></span></p>
+      <p>now prove 幂级数 <span><math><msub><mi>𝑎</mi><mi>𝑘</mi></msub></math></span> 的逆幂级数 <span><math><msub><mi>𝑏</mi><mi>𝑘</mi></msub></math></span> 收敛半径非零</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝛼</mi><mi>𝑣</mi><mo>+</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>2</mn></mrow></munder><msup><mi>𝛽</mi><mi>𝑘</mi></msup><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>∼</mo></mtd><mtd class="mathyml-align-right"><mi>𝛼</mi><mi>𝑣</mi><mo>+</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝛽</mi><mi>𝑣</mi></mrow></mfrac><mo>−</mo><mn>1</mn><mo>−</mo><mi>𝛽</mi><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝛼</mi><mi>𝑣</mi><mo>+</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝛽</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><mrow><mrow><mn>1</mn><mo>−</mo></mrow><mi>𝛽</mi><mi>𝑣</mi></mrow></mfrac></mtd></mtr></mtable></math>
+      <p>let <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝛼</mi><mi>𝑣</mi><mo>+</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝛽</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><mrow><mrow><mn>1</mn><mo>−</mo></mrow><mi>𝛽</mi><mi>𝑣</mi></mrow></mfrac><mo>∼</mo><mo>∑</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mrow></math></span>, <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>∼</mo><mo>∑</mo><msub><mi>𝑏</mi><mi>𝑗</mi></msub><msup><mi>𝑣</mi><mi>𝑗</mi></msup></mrow></math></span></p>
+      <p>为了求 <span><math><mi>𝑓</mi></math></span> 的逆映射 <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>𝑔</mi></mrow></math></span>, 解方程 <span><math><mrow><mi>𝛼</mi><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>+</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝛽</mi><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup><mrow><mn>1</mn><mo>−</mo><mi>𝛽</mi><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow></mrow></mfrac><mo>=</mo><mi>𝑣</mi></mrow></math></span></p>
+      <p>==> <span><math><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow></math></span> 的二次方程, 有两个根</p>
+      <p>use <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn><mo>⟹</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, 选取正确的根</p>
+      <math display="block"><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mo>−</mo><mrow><mo>(</mo><mrow><mi>𝛼</mi><mo>+</mo><mi>𝛽</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>−</mo><msup><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mi>𝛼</mi><mo>+</mo><mi>𝛽</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>𝛽</mi><mrow><mo>(</mo><mrow><mi>𝛽</mi><mo>−</mo><mi>𝛼</mi></mrow><mo>)</mo></mrow><mi>𝑣</mi></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow><mrow><mn>2</mn><mi>𝛽</mi><mrow><mo>(</mo><mrow><mi>𝛽</mi><mo>−</mo><mi>𝛼</mi></mrow><mo>)</mo></mrow></mrow></mfrac></mrow></math>
+      <p>use <span><math><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mo>∼</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><mrow><mo>(</mo><mfrac linethickness="0"><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑛</mi></mfrac><mo>)</mo></mrow><msup><mi>𝑤</mi><mi>𝑛</mi></msup></mrow></math></span> 收敛半径 <span><math><mn>1</mn></math></span> ==> <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>∼</mo><mo>∑</mo><msub><mi>𝑏</mi><mi>𝑗</mi></msub><msup><mi>𝑣</mi><mi>𝑗</mi></msup></mrow></math></span> 非零收敛半径</p>
+      <p>use <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mi>𝑙</mi></msub><mo>|</mo></mrow><mo>≤</mo><msub><mi>𝑏</mi><mi>𝑙</mi></msub></mrow></math></span> ==> <span><math><mrow><mo>∑</mo><msub><mi>𝐵</mi><mi>𝑗</mi></msub><msup><mi>𝑣</mi><mi>𝑗</mi></msup></mrow></math></span> 非零收敛半径</p>
+      <p>虽然这里无法给出确切的收敛半径, 但是对于纯微分方法, 压缩不动点原理证明逆函数的方法也不能给出确切的极大局部可逆区域</p>
+    </div>
+  </div>
+  <p><code data-typst-label="differential-of-inverse">&lt;differential-of-inverse></code></p>
+  <p><span><math><mtable><mtr><mtd><mn>𝟙</mn><mtext> of </mtext><mtext> power series space </mtext><mo>=</mo><mi>𝑓</mi><mo>∘</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mo>⟹</mo><mn>𝟙</mn><mtext> of </mtext><mtext> GL </mtext><mo>=</mo><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mi>𝑑</mi><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mo>⟹</mo><mi>𝑑</mi><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></math></span></p>
+  <p>or <span><math><mrow><msup><mrow><mo>(</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac></mrow></math></span></p>
+  <p><code data-typst-label="implicit-function">&lt;implicit-function></code></p>
+  <p>use <code>#link(&lt;analytic-struct-product>)[]</code></p>
+  <p><span><math><mrow><mrow><mi>𝐹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span> and <span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝐹</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mtext> GL</mtext></mrow></math></span></p>
+  <p>==> <span><math><mrow><mrow><mi>𝐹</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑓</mi></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝐹</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mfrac><mrow><mo>∂</mo><mi>𝐹</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑓</mi></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>微分和微分函数的计算不需要预先有级数</p>
+  <ul>
+    <li>
+      <p>有限点处收敛半径为零的 <span><math><msup><mi>𝐶</mi><mo>∞</mo></msup></math></span> 函数</p>
+      <p><span><math><mrow><mtext>exp </mtext><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span> 接上 <span><math><mn>0</mn></math></span></p>
+    </li>
+    <li>
+      <p>处处 <span><math><msup><mi>𝐶</mi><mo>∞</mo></msup></math></span> 但处处收敛半径 <span><math><mn>0</mn></math></span> 的函数</p>
+    </li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><a href="https://en.wikipedia.org/wiki/Non-analytic_smooth_function">wiki: Non-analytic_smooth_function</a></p>
+    <math display="block"><mrow><mrow><mi>𝐹</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>≔</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msup><mi>𝑒</mi><mrow><mo>−</mo><msqrt><msup><mn>2</mn><mi>𝑘</mi></msup></msqrt></mrow></msup><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><msup><mn>2</mn><mi>𝑘</mi></msup><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>Since the series <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msup><mi>𝑒</mi><mrow><mo>−</mo><msqrt><msup><mn>2</mn><mi>𝑘</mi></msup></msqrt></mrow></msup><msup><mrow><mo>(</mo><msup><mn>2</mn><mi>𝑘</mi></msup><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math></span> converges for forall <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, this function is easily seen to be of class <span><math><msup><mi>𝐶</mi><mo>∞</mo></msup></math></span>, by a standard inductive application of the Weierstrass M-test to demonstrate uniform convergence of each series of derivatives.</p>
+    <p>We now show that <span><math><mrow><mi>𝐹</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span> is not analytic at any dyadic rational multiple of <span><math><mi>𝜋</mi></math></span>, that is, at any <span><math><mrow><mi>𝑥</mi><mo>≔</mo><mi>𝜋</mi><mo>⋅</mo><mi>𝑝</mi><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>𝑞</mi></mrow></msup></mrow></math></span> with <span><math><mrow><mi>𝑝</mi><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span> and <span><math><mrow><mi>𝑞</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>.</p>
+    <p>Since the sum of the first q terms is analytic, we need only consider <span><math><mrow><msub><mi>𝐹</mi><mrow><mo>></mo><mi>𝑞</mi></mrow></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span>, the sum of the terms with <span><math><mrow><mi>𝑘</mi><mo>></mo><mi>𝑞</mi></mrow></math></span>.</p>
+    <p>For forall orders of derivation <span><math><mrow><mi>𝑛</mi><mo>=</mo><msup><mn>2</mn><mi>𝑚</mi></msup></mrow></math></span> with <span><math><mrow><mi>𝑚</mi><mo>∈</mo><mi>𝑁</mi></mrow></math></span>, <span><math><mrow><mi>𝑚</mi><mo>≥</mo><mn>2</mn></mrow></math></span> and <span><math><mrow><mi>𝑚</mi><mo>></mo><mfrac><mi>𝑞</mi><mn>2</mn></mfrac></mrow></math></span> we have</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msubsup><mi>𝐹</mi><mrow><mo>></mo><mi>𝑞</mi></mrow><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></msubsup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑘</mi><mo>></mo><mi>𝑞</mi></mrow></mtd></mtr></mtable></munder><msup><mi>𝑒</mi><mrow><mo>−</mo><msqrt><msup><mn>2</mn><mi>𝑘</mi></msup></msqrt></mrow></msup><msup><mrow><mo>(</mo><msup><mn>2</mn><mi>𝑘</mi></msup><mo>)</mo></mrow><mi>𝑛</mi></msup><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><msup><mn>2</mn><mi>𝑘</mi></msup><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑘</mi><mo>></mo><mi>𝑞</mi></mrow></mtd></mtr></mtable></munder><msup><mi>𝑒</mi><mrow><mo>−</mo><msqrt><msup><mn>2</mn><mi>𝑘</mi></msup></msqrt></mrow></msup><msup><mrow><mo>(</mo><msup><mn>2</mn><mi>𝑘</mi></msup><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≥</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑒</mi><mrow><mo>−</mo><mi>𝑛</mi></mrow></msup><msup><mi>𝑛</mi><mrow><mn>2</mn><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mrow><mtext>as </mtext><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>where we used the fact that <span><math><mrow><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><msup><mn>2</mn><mi>𝑘</mi></msup><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></span> for forall <span><math><mrow><msup><mn>2</mn><mi>𝑘</mi></msup><mo>></mo><msup><mn>2</mn><mi>𝑞</mi></msup></mrow></math></span>, and we bounded the first sum from below by the term with <span><math><mrow><msup><mn>2</mn><mi>𝑘</mi></msup><mo>=</mo><msup><mn>2</mn><mrow><mn>2</mn><mi>𝑚</mi></mrow></msup><mo>=</mo><msup><mi>𝑛</mi><mn>2</mn></msup></mrow></math></span>.</p>
+    <p>As a consequence, at any such <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>,</p>
+    <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mfrac><mrow><mo>|</mo><msubsup><mi>𝐹</mi><mrow><mo>></mo><mi>𝑞</mi></mrow><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></msubsup><mo>|</mo></mrow><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mo>∞</mo></mrow></math>
+    <p>Since the set of analyticity of a function is an open set, and since dyadic rationals are dense, we conclude that <span><math><msub><mi>𝐹</mi><mrow><mo>></mo><mi>𝑞</mi></mrow></msub></math></span>, and hence <span><math><mi>𝐹</mi></math></span>, is nowhere analytic in <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  </div>
+  <ul>
+    <li>连续但处处不可微</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><a href="https://en.wikipedia.org/wiki/Weierstrass_function">wiki: Weierstrass_function</a></p>
+    <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><munderover displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>∞</mo></munderover><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑏</mi><mi>𝑛</mi></msup><mi>𝜋</mi><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>where <span><math><mrow><mn>0</mn><mo>&lt;</mo><mi>𝑎</mi><mo>&lt;</mo><mn>1</mn></mrow></math></span>, <span><math><mi>𝑏</mi></math></span> is positive odd integer, and <span><math><mrow><mi>𝑎</mi><mi>𝑏</mi><mo>></mo><mrow><mn>1</mn><mo>+</mo></mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>𝜋</mi></mrow></math></span></p>
+  </div>
+  <ul>
+    <li>
+      <p><span><math><mi>𝑘</mi></math></span> 阶可微但不 <span><math><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></math></span> 阶可微: 使用 Weierstrass 函数的各阶积分</p>
+    </li>
+    <li>
+      <p><span><math><mi>𝑘</mi></math></span> 阶可微但 <span><math><mi>𝑘</mi></math></span> 阶不连续可微 (虽然 <span><math><mi>𝑘</mi></math></span> 阶可微蕴含 <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> 阶连续可微): 使用 <span><math><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mtext> sin </mtext><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></mrow></math></span>, <span><math><mn>1</mn></math></span> 阶可微但不 <span><math><mn>1</mn></math></span> 阶连续可微, 使用其各阶积分</p>
+    </li>
+    <li>
+      <p>连续同胚但不微分同胚不解析同胚. <span><math><msup><mi>𝑥</mi><mn>3</mn></msup></math></span></p>
+    </li>
+    <li>
+      <p>微分同胚但不解析同胚. 光滑但处处不解析函数中取 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>≠</mo><mn>0</mn></mrow></math></span> 的部分得到局部微分同胚. 局部到全局 by 用 <span><math><mfrac><mi>𝑥</mi><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac></math></span> 得到 <span><math><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 的解析同胚</p>
+    </li>
+  </ul>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

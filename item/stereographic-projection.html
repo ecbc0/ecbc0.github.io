@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="使用二次型反演 |𝑥|𝑥|𝑥|⇝1|𝑥|𝑥|𝑥|. 共形变换的一种𝕊𝑛−1 南北极球极投影坐标. 𝕊𝑛−1⟶ℝ𝑛−1𝑥⟿𝜉. 𝑁 or 𝑆&#x3D;𝑝&#x3D;(∓1,0), 共线 𝑝−𝑥𝑝−(0,𝜉)&#x3D;𝜆, 解给出映射𝕊𝑛−1⟶ℝ𝑛−1(𝑥1,…,𝑥𝑛)⟿𝑥2,…,𝑥𝑛1±𝑥1|𝜉|2&#x3D;|𝑥2,…,𝑥𝑛|2(1±𝑥1)2&#x3D;1−𝑥12(1±𝑥1)21+|𝜉|2&#x3D;2±𝑥1(1±𝑥1)2ℝ𝑛−1⟶𝕊𝑛−1𝜉⟿±(1−|𝜉|2),𝜉1+|𝜉|2transition-function 是二次型反演ℝ𝑛−1⟶ℝ𝑛−1𝜉⟿1±𝑥11∓𝑥1𝜉&#x3D;𝜉|𝜉|2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html" class="active"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/stereographic-projection", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <img src="../image/stereographic-projection-1.jpeg" width="40%"><img src="../image/stereographic-projection-2.jpeg" width="50%">
+  <p>使用二次型反演 <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mfrac><mi>𝑥</mi><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow></mfrac><mo>⇝</mo><mfrac><mn>1</mn><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow></mfrac><mfrac><mi>𝑥</mi><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow></mfrac></mrow></math></span>. 共形变换的一种</p>
+  <p><span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span> 南北极球极投影坐标. <span><math><mtable><mtr><mtd><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mi>𝜉</mi></mtd></mtr></mtable></math></span>. <span><math><mrow><mi>𝑁</mi><mtext> or </mtext><mi>𝑆</mi><mo>=</mo><mi>𝑝</mi><mo>=</mo><mrow><mo>(</mo><mrow><mo>∓</mo><mrow><mn>1</mn><mo>,</mo></mrow><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span>, 共线 <span><math><mrow><mfrac><mrow><mi>𝑝</mi><mo>−</mo><mi>𝑥</mi></mrow><mrow><mi>𝑝</mi><mo>−</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝜉</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mi>𝜆</mi></mrow></math></span>, 解给出映射</p>
+  <math display="block"><mtable><mtr><mtd><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mfrac><mrow><msub><mi>𝑥</mi><mn>2</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mfrac></mtd></mtr></mtable></math>
+  <p><span><math><mrow><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mfrac><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>2</mn></msub></mrow><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msubsup><mi>𝑥</mi><mn>1</mn><mn>2</mn></msubsup></mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup></mfrac></mrow></math></span></p>
+  <p><span><math><mrow><mn>1</mn><mo>+</mo><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mn>2</mn><mfrac><mrow><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup></mfrac></mrow></math></span></p>
+  <math display="block"><mtable><mtr><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mi>𝜉</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mfrac><mrow><mo>±</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mo>,</mo><mi>𝜉</mi></mrow><mrow><mn>1</mn><mo>+</mo><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mfrac></mtd></mtr></mtable></math>
+  <p>transition-function 是二次型反演</p>
+  <math display="block"><mtable><mtr><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mi>𝜉</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mfrac><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mrow><mn>1</mn><mo>∓</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mfrac><mi>𝜉</mi><mo>=</mo><mfrac><mi>𝜉</mi><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac></mrow></mtd></mtr></mtable></math>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

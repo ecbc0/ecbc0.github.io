@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="&lt;quadratic-form&gt; ℝ𝑛 二次型 alias &lt;metric&gt; 度规 alias 内积 &lt;inner-product&gt;Example ℝ2,ℝ3 距离 (𝑥𝑦𝑧)⇝𝑥2+𝑦2+𝑧2Example ℝ1,3 spacetime metric (𝑡𝑥𝑦𝑧)⇝𝑐2⋅𝑡2−(𝑥2+𝑦2+𝑧2)双线性函数, 二次型metric 常用记号 𝑔(𝑥,𝑦),⟨𝑥,𝑦⟩. 在坐标中记为 𝑔𝑖𝑗𝑥𝑖𝑦𝑗坐标下 metric 𝑔 可以表示为矩阵 𝐺 和矩阵乘法 (𝑋,𝑌)⇝𝑋⊺𝐺𝑌&lt;signature-inertial&gt; signature (𝑝,𝑞) 在 GL(𝑛,ℝ) 下不变. 对称矩阵 𝐺 的特征值和对角化 (10−1) 其中 𝑛+ 个 1, 𝑛0 个 0, 𝑛− 个 −1. 可以理解为群作用的 orbit 分类&lt;quadratic-form-non-degenerated&gt; 非退化 :&#x3D; signature 中 𝑁0&#x3D;0退化的二次型可以限制在 𝑛++𝑛− 子空间中得到非退化以下等价metric 非退化&lt;quadratic-form-dual&gt; 是双射𝑉⟶Lin(𝑉→ℝ) or 𝑉⊺𝑣⟿⟨𝑣,⟩ or ⟨𝑣| ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html" class="active"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/metric", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><code data-typst-label="quadratic-form">&lt;quadratic-form></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 二次型 <strong>alias</strong> <code data-typst-label="metric">&lt;metric></code> 度规 <strong>alias</strong> 内积 <code data-typst-label="inner-product">&lt;inner-product></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Example</strong> <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>,</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> 距离 <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr><mtr><mtd><mi>𝑧</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑧</mi><mn>2</mn></msup></mrow></math></span></p>
+    <p><strong>Example</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> spacetime metric <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑡</mi></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr><mtr><mtd><mi>𝑧</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑐</mi><mn>2</mn></msup><mo>⋅</mo><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑧</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>双线性函数, 二次型</p>
+    <p>metric 常用记号 <span><math><mrow><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mrow><mo>⟨</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>⟩</mo></mrow></mrow></math></span>. 在坐标中记为 <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub><msub><mi>𝑦</mi><mi>𝑗</mi></msub></mrow></math></span></p>
+    <p>坐标下 metric <span><math><mi>𝑔</mi></math></span> 可以表示为矩阵 <span><math><mi>𝐺</mi></math></span> 和矩阵乘法 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑋</mi><mo>⊺</mo></msup><mi>𝐺</mi><mi>𝑌</mi></mrow></math></span></p>
+    <p><code data-typst-label="signature-inertial">&lt;signature-inertial></code> signature <span><math><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></math></span> 在 <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 下不变. 对称矩阵 <span><math><mi>𝐺</mi></math></span> 的特征值和对角化 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 其中 <span><math><msub><mi>𝑛</mi><mo>+</mo></msub></math></span> 个 <span><math><mn>1</mn></math></span>, <span><math><msub><mi>𝑛</mi><mn>0</mn></msub></math></span> 个 <span><math><mn>0</mn></math></span>, <span><math><msub><mi>𝑛</mi><mo>−</mo></msub></math></span> 个 <span><math><mrow><mo>−</mo><mn>1</mn></mrow></math></span>. 可以理解为群作用的 orbit 分类</p>
+    <p><code data-typst-label="quadratic-form-non-degenerated">&lt;quadratic-form-non-degenerated></code> 非退化 := signature 中 <span><math><mrow><msub><mi>𝑁</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>退化的二次型可以限制在 <span><math><mrow><msub><mi>𝑛</mi><mo>+</mo></msub><mo>+</mo><msub><mi>𝑛</mi><mo>−</mo></msub></mrow></math></span> 子空间中得到非退化</p>
+    <p>以下等价</p>
+    <ul>
+      <li>metric 非退化</li>
+      <li>
+        <p><code data-typst-label="quadratic-form-dual">&lt;quadratic-form-dual></code> 是双射</p>
+        <math display="block"><mtable><mtr><mtd><mi>𝑉</mi></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><mi>𝑉</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mtext> or </mtext><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></mtd></mtr><mtr><mtd><mi>𝑣</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>⟩</mo></mrow><mtext> or </mtext><mrow><mo>⟨</mo><mrow><mi>𝑣</mi></mrow><mo>|</mo></mrow><mtext> or </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>)</mo></mrow></mrow><mtext> or </mtext><msup><mi>𝑣</mi><mo>♭</mo></msup></mrow></mtd></mtr></mtable></math>
+        <p>相对于 metric dual 映射记为 <span><math><msup><mi>𝑣</mi><mo>♭</mo></msup></math></span>, metric dual 的逆映射记为 <span><math><msup><mi>𝛼</mi><mo>♯</mo></msup></math></span></p>
+      </li>
+      <li>二次型矩阵可逆</li>
+      <li><span><math><mrow><mtext>det </mtext><mi>𝐺</mi><mo>≠</mo><mn>0</mn></mrow></math></span></li>
+    </ul>
+    <p>固定一个非退化二次型时, 结构群 <span><math><mrow><mo>≃</mo><mtext> O </mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span>. 保持两个方向就得到 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>metric 矩阵 <span><math><mi>𝑔</mi></math></span> 的逆 <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span>. 在坐标中记为 <span><math><mrow><mi>𝑔</mi><mo>⇝</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span> 和 <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⇝</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup></mrow></math></span></p>
+  <p><span><math><mrow><mi>𝑔</mi><mo>⋅</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mn>𝟙</mn><mo>=</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><mi>𝑔</mi></mrow></math></span> ==> 在坐标中 <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msup><mo>=</mo><mrow><msubsup><mi>𝛿</mi><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msubsup><mo>=</mo></mrow><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math></span></p>
+  <p>let 向量空间的基 <span><math><mrow><msub><mi>𝑒</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑒</mi><mi>𝑛</mi></msub><mo>∈</mo><mi>𝑉</mi></mrow></math></span> 的对偶基 <span><math><mrow><msup><mi>𝑒</mi><mn>1</mn></msup><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msup><mi>𝑒</mi><mi>𝑛</mi></msup><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝑉</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span> := <span><math><mrow><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow><mo>=</mo><msubsup><mi>𝛿</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup></mrow></math></span></p>
+  <p>let <span><math><mrow><mi>𝛼</mi><mo>=</mo><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup></mrow></math></span> then</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝛼</mi><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msubsup><mi>𝛿</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑗</mi></msub></mtd></mtr></mtable></math>
+  <p><code data-typst-label="rasing-and-lowring-index">&lt;rasing-and-lowring-index></code> 升降指标</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>quadratic-form-dual 在坐标中的矩阵表示</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><msup><mi>𝑣</mi><mo>⊺</mo></msup><mi>𝑔</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑣</mi><mn>1</mn></msup></mtd><mtd><mo>⋯</mo></mtd><mtd><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑛</mi></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑛</mi></mrow></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mn>1</mn></mrow></msub></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mi>𝑛</mi></mrow></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>其中 <span><math><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow></math></span> 是降指标. 或者</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mo>,</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><mi>𝑔</mi><mi>𝑣</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑛</mi></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑛</mi></mrow></msub></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑣</mi><mn>1</mn></msup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑗</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑗</mi></mrow></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>注意 metric 矩阵是对称 <span><math><mrow><msup><mi>𝑔</mi><mo>⊺</mo></msup><mo>=</mo><mi>𝑔</mi></mrow></math></span> or <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mi>𝑖</mi></mrow></msub></mrow></math></span></p>
+    <p><span><math><msub><mi>𝑣</mi><mi>𝑖</mi></msub></math></span> 是 <span><math><msup><mi>𝑣</mi><mo>♭</mo></msup></math></span> 的对偶基表示的系数, 因为 <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><msub><mi>𝑒</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow></math></span>, 或者用 <span><math><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></math></span> 是 <span><math><mi>𝑔</mi></math></span> 在对偶基 <span><math><mrow><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mo>⊗</mo><msup><mi>𝑒</mi><mi>𝑗</mi></msup></mrow></math></span> 的系数</p>
+    <p>对于 metric 矩阵的逆, 定义 dual 空间 <span><math><msup><mi>𝑉</mi><mo>⊺</mo></msup></math></span> 的 metric <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span>, 满足</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mo>♭</mo></msup><mo>,</mo><msup><mi>𝑤</mi><mo>♭</mo></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mi>𝑤</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑣</mi><mo>⊺</mo></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑔</mi></mrow><mo>)</mo></mrow><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑣</mi><mo>⊺</mo></msup><mi>𝑔</mi><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>在坐标中</p>
+    <ul>
+      <li><span><math><mrow><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msub><mi>𝛽</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow></math></span></li>
+      <li><span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msup><mi>𝛼</mi><mi>𝑖</mi></msup><msup><mi>𝛽</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span></li>
+      <li><span><math><mrow><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝛽</mi><mi>𝑖</mi></msup></mrow></math></span></li>
+      <li><span><math><mrow><msup><mi>𝛼</mi><mi>𝑖</mi></msup><msub><mi>𝛽</mi><mi>𝑖</mi></msub></mrow></math></span></li>
+    </ul>
+    <p><span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> 的 metric dual 就是 <span><math><mi>𝑔</mi></math></span> metric dual <span><math><mo>♭</mo></math></span> 的逆 <span><math><mo>♯</mo></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑣</mi></mtd><mtd class="mathyml-align-left"><mo>⇝</mo></mtd><mtd class="mathyml-align-right"><mi>𝑔</mi><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⇝</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑔</mi><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑣</mi></mtd></mtr></mtable></math>
+    <p>因此也有升指标 <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mo>♭</mo></msup><mo>,</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><msub><mi>𝑣</mi><mi>𝑗</mi></msub><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><mo>=</mo><msup><mi>𝑣</mi><mi>𝑖</mi></msup></mrow></math></span></p>
+    <p>也可以反过来, 从 <span><math><mi>𝑏</mi></math></span> 的逆 <span><math><mo>♯</mo></math></span> 出发, 证明它是 <span><math><msup><mi>𝑉</mi><mo>⊺</mo></msup></math></span> 的某个 metric 的 metric dual, 且这个 metric 在矩阵表示下是 <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span></p>
+    <p>metric <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><msub><mi>𝑒</mi><mi>𝑖</mi></msub><msub><mi>𝑒</mi><mi>𝑗</mi></msub></mrow></math></span> 在 <span><math><msup><mrow><mo>(</mo><msup><mi>𝑉</mi><mrow><mo>⊺</mo><mo>⊙</mo><mn>2</mn></mrow></msup><mo>)</mo></mrow><mo>⊺</mo></msup></math></span> 的 metric 下的 metric dual 是 <span><math><mrow><mi>𝑔</mi><mo>=</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup><msup><mi>𝑒</mi><mi>𝑗</mi></msup><mo>∈</mo><msup><mrow><mo>(</mo><msup><mi>𝑉</mi><mrow><mo>⊙</mo><mn>2</mn></mrow></msup><mo>)</mo></mrow><mo>⊺</mo></msup></mrow></math></span>. 反过来也一样</p>
+  </div>
+  <p><code data-typst-label="tensor">&lt;tensor></code> 多重线性 (兼容集合积的 <code>and</code> 逻辑) + 最小独立无关 (生成基)</p>
+  <math display="block"><mtable><mtr><mtd><mrow><msub><mi>𝑉</mi><mn>1</mn></msub><mo>×</mo><mo>⋯</mo><mo>×</mo><msub><mi>𝑉</mi><mi>𝑘</mi></msub></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><msub><mi>𝑉</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑉</mi><mi>𝑘</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow></mtd></mtr></mtable></math>
+  <p>导出基 <span><math><mrow><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mrow></math></span> 与导出基的系数 <span><math><msup><mi>𝑇</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msup></math></span></p>
+  <p>由张量的性质</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub></mrow><mo>)</mo></mrow><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mrow><mo>)</mo></mrow><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mtd></mtr></mtable></math>
+  <p><code data-typst-label="tensor-induced-quadratic-form">&lt;tensor-induced-quadratic-form></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>将向量空间的二次型 <span><math><mi>𝑔</mi></math></span> 导出到张量空间 <span><math><mrow><msup><mi>𝑉</mi><mrow><mo>⊗</mo><mi>𝐼</mi></mrow></msup><mo>⊗</mo><msup><mi>𝑉</mi><mrow><mo>⊺</mo><mo>⊗</mo><mi>𝐽</mi></mrow></msup></mrow></math></span> 的二次型</p>
+    <math display="block"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝛼</mi><mi>𝑗</mi></msub><mo>,</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑤</mi><mi>𝑖</mi></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝛽</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑤</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msub><mi>𝛼</mi><mi>𝑗</mi></msub><mo>,</mo><msub><mi>𝛽</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>遍历所有正交基 <span><math><mrow><msub><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⊗</mo><msub><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></msub><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup></mrow></math></span> with</p>
+    <math display="block"><mrow><msup><mrow><mo>⟨</mo><mrow><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msup><mrow><mo>⟨</mo><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⟩</mo></mrow><mn>2</mn></msup><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mrow><mo>⟨</mo><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math>
+    <p>得到 signature</p>
+  </div>
+  <p><code data-typst-label="rasing-and-lowring-index-tensor">&lt;rasing-and-lowring-index-tensor></code> 张量也可以 metric dual 升降指标</p>
+  <p><strong>Example</strong> 降指标 <span><math><mrow><msubsup><mi>𝑇</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup><mo>⇝</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msubsup><mi>𝑇</mi><mi>𝑗</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msubsup><mo>=</mo><msub><mi>𝑇</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math></span></p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

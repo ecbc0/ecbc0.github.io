@@ -1,0 +1,195 @@
+<div>
+  <p><code data-typst-label="orientation-of-real-linear-space">&lt;orientation-of-real-linear-space></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 方向</p>
+  <p><span><math><mrow><mi>𝐴</mi><mo>∈</mo><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mtext> det </mtext><mi>𝐴</mi><mo>≠</mo><mn>0</mn></mrow></math></span></p>
+  <p><span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mn>0</mn><mo>=</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub></mrow></math></span></p>
+  <p><span><math><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msup><mtext> det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>)</mo></mrow><mo>⊔</mo><msup><mtext> det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>)</mo></mrow></mrow></math></span></p>
+  <p>有两个方向. 对于 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 向量基, 交换一次顺序 <span><math><mrow><msub><mi>𝑒</mi><mi>𝑖</mi></msub><mo>↔</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub></mrow></math></span> 会使得方向改变, 引入 <span><math><mrow><mo>−</mo><mn>1</mn></mrow></math></span> 因子. 这和交错张量有相似之处. 方向定义为基的同向 quotient, 等价于 <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的 <span><math><mrow><msup><mtext>det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>)</mo></mrow><mo>⊔</mo><msup><mtext> det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>)</mo></mrow></mrow></math></span> 分解</p>
+  <p><code data-typst-label="orientation-of-boundary-of-simplex">&lt;orientation-of-boundary-of-simplex></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>simplx 有向边界. simplex <span><math><mrow><mo>{</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></math></span> 边界 <span><math><mrow><mo>{</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>∖</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>}</mo></mrow></math></span> 的方向是, 给边界所在的 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 仿射子空间定义方向, 使得内部 <span><math><mi>𝐴</mi></math></span> 在 <span><math><mi>𝑛</mi></math></span> 维正方向, 外部 <span><math><msup><mi>𝐴</mi><mo>∁</mo></msup></math></span> 在 <span><math><mi>𝑛</mi></math></span> 维负方向</p>
+    <p>如果对边界的边界继续定义方向, 就会发现相邻方向抵消</p>
+    <p>simplex 顶点根据 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>→</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>→</mo><mo>⋯</mo><mo>→</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></math></span> 可以构造 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 有向基. 置换使得方向相差 <span><math><mrow><mtext>sign</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <p>选取 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></math></span> 为 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 正方向后, 边界的方向是 <span><math><mrow><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑖</mi><mo>−</mo><mn>1</mn></mrow></msup><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>∖</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+    <p>对 box 也类似</p>
+    <p><strong>Example</strong> 四面体, 右手定则, 拇指指向四面体内部得到边界方向 (图片的顶点的指标从 <span><math><mn>1</mn></math></span> 而不是 <span><math><mn>0</mn></math></span> 开始)</p>
+    <img src="../image/orientation-of-simplex.jpg" width="100%">
+  </div>
+  <p><code data-typst-label="orientable-low-dim-polyhera">&lt;orientable-low-dim-polyhera></code> 多面体 <code>#link(&lt;orientation-of-boundary-of-simplex>)[可定向]</code> 定义为, 用 simplex 构造多面体时, 能够对所有 <span><math><mi>𝑘</mi></math></span> simplex 定义兼容的方向, 使得相邻两个 <span><math><mi>𝑘</mi></math></span> simplex <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 的 <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> 相接边界 simplex 的方向兼容 i.e. 方向 <span><math><mi>𝑂</mi></math></span> 对应 simplex <span><math><mi>𝐴</mi></math></span> 的内部和 simplex <span><math><mi>𝐵</mi></math></span> 的外部. 方向 <span><math><mrow><mo>−</mo><mi>𝑂</mi></mrow></math></span> 对应 simplex <span><math><mi>𝐵</mi></math></span> 的内部和 simplex <span><math><mi>𝐴</mi></math></span> 的外部. i.e. simplex 分割有良定义内部和外部</p>
+  <p><code data-typst-label="Mobius-strip">&lt;Mobius-strip></code> <strong>Example</strong> 不可定向的 Mobius 型多面体 (image modified from wiki)</p>
+  <img src="../image/Moebius.svg" width="50%">
+  <p>不管怎么定义每个 <span><math><mi>𝑘</mi></math></span> simplex 的方向, 都存在一对相邻 <span><math><mi>𝑘</mi></math></span> simplex <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 的 <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> 相接边界 simplex 的方向不兼容. i.e. simplex 分割没有良定义的内部和外部</p>
+  <p>从初始 <span><math><mi>𝑘</mi></math></span> simplex 开始, 不断传递地对相邻 <span><math><mi>𝑘</mi></math></span> simplex 定义兼容的方向, 绕一圈会导致相接边界 simplex 的方向不兼容. 方向 <span><math><mi>𝑂</mi></math></span> 都对应 <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 内部, 方向 <span><math><mrow><mo>−</mo><mi>𝑂</mi></mrow></math></span> 都对应 <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 外部</p>
+  <p><code data-typst-label="simplex-chain">&lt;simplex-chain></code> simplex chain</p>
+  <p><code data-typst-label="boundary-operator">&lt;boundary-operator></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>边界算子 <span><math><mo>∂</mo></math></span></p>
+    <p>boundary <span><math><mrow><msub><mi>𝑐</mi><mi>𝑘</mi></msub><mo>=</mo><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>𝑐</mi><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></span></p>
+    <p><strong>Example</strong></p>
+    <ul>
+      <li>
+        <p>boundary-op-not-injective</p>
+        <img src="../image/boundary-op-not-injective-1.jpg" width="70%"><img src="../image/boundary-op-not-injective-2.jpeg" width="80%">
+      </li>
+      <li>
+        <p><code data-typst-label="tri-intersect-boundary">&lt;tri-intersect-boundary></code></p>
+        <img src="../image/tri-intersect-boundary.jpg" width="40%">
+      </li>
+    </ul>
+    <p>cycle <span><math><mrow><mo>∂</mo><mi>𝑐</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mrow><msup><mo>∂</mo><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><msub><mo>∂</mo><mi>𝑘</mi></msub><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mrow><mtext>im </mtext><mo>∂</mo><mo>⊂</mo><mtext> ker </mtext><mo>∂</mo></mrow></math></span> or <span><math><mrow><mtext>im </mtext><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⊂</mo><mtext> ker </mtext><msub><mo>∂</mo><mi>𝑘</mi></msub></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="simplex-homology">&lt;simplex-homology></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>k-th homology <span><math><mrow><msub><mi>𝐻</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mtext>ker </mtext><msub><mo>∂</mo><mi>𝑘</mi></msub></mrow><mrow><mtext>im </mtext><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></mfrac></mrow></math></span></p>
+    <p>where <span><math><mrow><mtext>ker </mtext><mrow><msub><mo>∂</mo><mi>𝑘</mi></msub><mo>,</mo></mrow><mtext> im </mtext><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></span> 在 <span><math><mi>𝑘</mi></math></span> chain 空间</p>
+    <p>由于几何意义, 只需要 <span><math><mi mathvariant="normal">ℤ</mi></math></span> 系数</p>
+  </div>
+  <p><code data-typst-label="real-linear-space-trivial-homology">&lt;real-linear-space-trivial-homology></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> is trivial homology <span><math><mrow><mo>∀</mo><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mrow><mi>𝑛</mi><mo>,</mo></mrow><msub><mi>𝐻</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><mtext>ker </mtext><msub><mo>∂</mo><mi>𝑘</mi></msub><mo>=</mo><mtext> im </mtext><msub><mo>∂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math></span> or in <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span>, <span><math><mi>𝑐</mi></math></span> 的边界是零 &lt;==> <span><math><mi>𝑐</mi></math></span> 是边界</p>
+    <p>Try to prove it by purely affine orientation &amp; combinatorics technique, avoid Euclidean topology</p>
+  </div>
+  <p><code data-typst-label="existence-and-uniqueness-of-n-simplex-chain-with-boundary">&lt;existence-and-uniqueness-of-n-simplex-chain-with-boundary></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span>, uniqueness <span><math><mi>𝑛</mi></math></span> chain of <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> boundary</p>
+    <math display="block"><mrow><msub><mi>𝐻</mi><mi>𝑛</mi></msub><mo>=</mo><mn>0</mn><mo>⟹</mo><mtext> ker </mtext><msub><mo>∂</mo><mi>𝑛</mi></msub><mo>=</mo><mtext> im </mtext><msub><mo>∂</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math>
+    <p>so existence of boundary of nonzero <span><math><mi>𝑛</mi></math></span> chain</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑐</mi><mo>∈</mo><msub><mi>𝐶</mi><mi>𝑛</mi></msub><mo>,</mo><mo>∂</mo><mi>𝑐</mi><mo>=</mo><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>⟹</mo></mtd><mtd class="mathyml-align-right"><mi>𝑐</mi><mo>∈</mo><mtext> ker </mtext><msub><mo>∂</mo><mi>𝑛</mi></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟹</mo></mtd><mtd class="mathyml-align-right"><mi>𝑐</mi><mo>=</mo><mn>0</mn></mtd></mtr></mtable></math>
+    <p>and uniqueness of <span><math><mi>𝑛</mi></math></span> dim region surround by <span><math><mrow><mtext>codim </mtext><mo>=</mo><mn>1</mn></mrow></math></span> boundary</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mrow><mi>𝑐</mi><mo>,</mo><msup><mi>𝑐</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><msub><mi>𝐶</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑛</mi></msub><mi>𝑐</mi><mo>=</mo><msub><mo>∂</mo><mi>𝑛</mi></msub><msup><mi>𝑐</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟹</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∂</mo><mi>𝑛</mi></msub><mrow><mo>(</mo><mrow><mi>𝑐</mi><mo>−</mo><msup><mi>𝑐</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟹</mo></mtd><mtd class="mathyml-align-right"><mi>𝑐</mi><mo>−</mo><msup><mi>𝑐</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mtext> ker </mtext><msub><mo>∂</mo><mi>𝑛</mi></msub><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟹</mo></mtd><mtd class="mathyml-align-right"><mi>𝑐</mi><mo>=</mo><msup><mi>𝑐</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr></mtable></math>
+  </div>
+  <p><code data-typst-label="homology-hole">&lt;homology-hole></code> 对于集合 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 减去有限个或可数个分离的线性子空间或者多面体, homology 不是零</p>
+  <img src="../image/homology-hole.jpeg" width="100%">
+  <p>simplex 散度算子 as 边界算子的对偶 <span><math><mrow><mrow><mo>⟨</mo><mrow><mo>∂</mo><mi>𝜎</mi><mo>,</mo><mi>𝜔</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>⟨</mo><mrow><mi>𝜎</mi><mo>,</mo><msup><mo>∂</mo><mo>†</mo></msup><mi>𝜔</mi></mrow><mo>⟩</mo></mrow></mrow></math></span> for <span><math><mi>𝑘</mi></math></span> simplex <span><math><mi>𝜎</mi></math></span> &amp; simplicial <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> form <span><math><mi>𝜔</mi></math></span> on <span><math><mrow><mo>∂</mo><mi>𝜎</mi></mrow></math></span>. (考虑修改边界算子的记号, 免于与微分记号冲突)</p>
+  <p><code data-typst-label="homology-divergence-operator">&lt;homology-divergence-operator></code> 在 <span><math><mrow><mi>𝑘</mi><mo>=</mo><mi>𝑛</mi></mrow></math></span> 时只有一种选择 <span><math><mrow><msup><mo>∂</mo><mo>†</mo></msup><mi>𝜔</mi><mo>=</mo><mfrac><mrow><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝜎</mi></mrow></msub><mi>𝜔</mi></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝜎</mi><mo>)</mo></mrow></mrow></mfrac><mtext> Vol</mtext></mrow></math></span>. recall <span><math><mi>𝑛</mi></math></span> form 等价于纯量函数</p>
+  <p>在 <span><math><mrow><mi>𝑘</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 时可能很难处理</p>
+  <p>对于微分子流形来说, 则变得不难处理了. 此时散度算子类似物是外微分算子 <span><math><mi>𝑑</mi></math></span>. 直觉上是某种 <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝜎</mi><mo>→</mo><mi>𝑥</mi></mrow></munder><mfrac><mrow><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝜎</mi></mrow></msub><mi>𝜔</mi></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝜎</mi><mo>)</mo></mrow></mrow></mfrac><mtext> Vol</mtext></mrow></math></span>, where <span><math><mtext>Vol</mtext></math></span> 是流形上的 volume. <span><math><mi>𝜎</mi></math></span> 不限制于 simplex, 而是一大类区域</p>
+  <p><strong>Question</strong> 即使流形上如果尚未定义 <span><math><mtext>Vol</mtext></math></span> 或者尚未定义 metric, 这个式子在坐标系里只用 box 的 <span><math><mtext>Vol</mtext></math></span> (包括低一维的边界的 <span><math><mtext>Vol</mtext></math></span>) 就能得到结果是, <span><math><mi>𝑛</mi></math></span> form <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi></mrow></math></span> 的定义是坐标无关的. 或者说, 外微分的定义不依赖于 volume form 或者 metric 的选取, 只依赖于流形的微分结构. 反过来, 坐标里的 volume form 也可以延拓到整个流形</p>
+  <p><code data-typst-label="exterior-differential">&lt;exterior-differential></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>在坐标里利用 box 计算 <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝜎</mi><mo>→</mo><mi>𝑥</mi></mrow></munder><mfrac><mrow><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝜎</mi></mrow></msub><mi>𝜔</mi></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝜎</mi><mo>)</mo></mrow></mrow></mfrac><mtext> Vol</mtext></mrow></math></span>, 全部坐标趋于 <span><math><mn>0</mn></math></span>, 每个坐标轴方向都变成计算对某些东西的偏微分 <span><math><msub><mo>∂</mo><mi>𝑖</mi></msub></math></span></p>
+    <p>结果是 <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>=</mo><mi>𝑑</mi><mrow><mo>(</mo><mrow><msub><mi>𝜔</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>∧</mo><mo>⋯</mo><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msup></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mi>𝜔</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msup><mo>∧</mo><mo>⋯</mo><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msup></mrow></math></span></p>
+    <p>进一步简化暂略</p>
+    <p><strong>Question</strong> simplex 中心仿射坐标下, 外微分是形式是什么?</p>
+  </div>
+  <p><code data-typst-label="Stokes-theorem">&lt;Stokes-theorem></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">for <code>#link(&lt;orientable>)[可定向]</code> 的几乎处处解析的带边流形, Stokes 定理 <span><math><mrow><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑀</mi></mrow></msub><mi>𝜔</mi><mo>=</mo><msub><mo>∫</mo><mi>𝑀</mi></msub><mi>𝑑</mi><mi>𝜔</mi></mrow></math></span> or <span><math><mrow><mrow><mo>⟨</mo><mrow><mo>∂</mo><mi>𝑀</mi><mo>,</mo><mi>𝜔</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>⟨</mo><mrow><mi>𝑀</mi><mo>,</mo><mi>𝑑</mi><mi>𝜔</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></div>
+  <p>也许初看起来很奇怪, 这是有效的, 先无穷小 <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>≔</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝜎</mi><mo>→</mo><mi>𝑥</mi></mrow></munder><mfrac><mrow><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝜎</mi></mrow></msub><mi>𝜔</mi></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝜎</mi><mo>)</mo></mrow></mrow></mfrac></mrow></math></span> 再积分 <span><math><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝜔</mi><mo>≔</mo><mtext> lim </mtext><mo>∑</mo><mo>⋯</mo></mrow></math></span>, 但是一维微积分基本定理就是这样的</p>
+  <p>但是一维区间的分割, 一维区间的边界, 一维区间的边界的积分, 都太简单了, 高维没那么简单</p>
+  <p><code data-typst-label="Stokes-theorem-simple">&lt;Stokes-theorem-simple></code> 对于高维, 如果是弯曲的, 则很困难. 先处理直的东西 i.e. simplex or 平行体. 分割也是同类型区域, 边界抵消也很简单. 再类似于一维, 用微分中值定理近似 compact 控制即可. 这样就证明了 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> simplex or 平行体的 Stokes 定理</p>
+  <p><code data-typst-label="Stokes-theorem-proof">&lt;Stokes-theorem-proof></code> <strong>Question</strong></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>使用流形上的对 form 积分的定义所使用的近似方法 <code>#link(&lt;integral-on-manfold>)[]</code></p>
+    <p>近似地分解为 simplex or box, 然后用 simplex 的 stokes 定理 + 内部边界抵消, 就只剩下真正的流形的边界</p>
+    <p>需要使用 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> form <span><math><mi>𝜔</mi></math></span> 对子流形的积分 <code>#link(&lt;integral-on-submanfold>)[]</code></p>
+    <p>边界上的逼近可能需要特别注意. 例如, 应该让边界上的逼近使用中心在边界上的 simplex (box) 以及微分 at 边界上的点</p>
+    <p>大概需要 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> form 的某种 Sobolev 控制?</p>
+  </div>
+  <p>我并没有对没有边界的流形处理 Stokes 定理, 并没有定义 <span><math><mrow><mo>∂</mo><mi>𝑀</mi><mo>≔</mo><mo>∅</mo><mo>∧</mo><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑀</mi></mrow></msub><mi>𝜔</mi><mo>≔</mo><msub><mo>∫</mo><mo>∅</mo></msub><mi>𝜔</mi><mo>=</mo><mn>0</mn></mrow></math></span>. 没有的边界流形 <strong>Example</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span></p>
+  <p>边界算子与外微分的对应性质</p>
+  <p>homology</p>
+  <p>cohomology</p>
+  <p><code data-typst-label="coboundary-operator">&lt;coboundary-operator></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>coboundary <span><math><mrow><msub><mi>𝜔</mi><mi>𝑘</mi></msub><mo>=</mo><msub><mi>𝑑</mi><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></msub><msub><mi>𝜔</mi><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span></p>
+    <p>cocycle <span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>=</mo><mn>0</mn></mrow></math></span>. 直观是这一点的 form 的散度是零</p>
+    <p><span><math><mrow><msup><mi>𝑑</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><msub><mi>𝑑</mi><mi>𝑘</mi></msub><msub><mi>𝑑</mi><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mrow><mtext>im </mtext><mi>𝑑</mi><mo>⊂</mo><mtext> ker </mtext><mi>𝑑</mi></mrow></math></span> or <span><math><mrow><mtext>im </mtext><msub><mi>𝑑</mi><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⊂</mo><mtext> ker </mtext><msub><mi>𝑑</mi><mi>𝑘</mi></msub></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="de-Rham-cohomolgy">&lt;de-Rham-cohomolgy></code> k-th de Rham cohomology <span><math><mrow><msup><mi>𝐻</mi><mi>𝑘</mi></msup><mrow><mo>(</mo><mi>𝑀</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mtext>ker </mtext><msub><mi>𝑑</mi><mi>𝑘</mi></msub></mrow><mrow><mtext>im </mtext><msub><mi>𝑑</mi><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac></mrow></math></span></p>
+  <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span>, cohomology trivial <span><math><mrow><mo>∀</mo><mi>𝑘</mi><mo>=</mo><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mrow><mi>𝑛</mi><mo>,</mo></mrow><msup><mi>𝐻</mi><mi>𝑘</mi></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><code data-typst-label="cohomology-hole">&lt;cohomology-hole></code> 带 "洞" 的 form. <strong>Example</strong> in <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span>, <span><math><mrow><mi>𝑑</mi><mfrac><mn>1</mn><mi>𝑟</mi></mfrac></mrow></math></span> or <span><math><mrow><mfrac><mrow><mo>−</mo><msub><mi>𝑥</mi><mn>2</mn></msub></mrow><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac><mi>𝑑</mi><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mfrac><msub><mi>𝑥</mi><mn>1</mn></msub><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac><mi>𝑑</mi><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></math></span> 在 <span><math><mrow><mi>𝑥</mi><mo>=</mo><mn>0</mn></mrow></math></span> 是奇点. 在非 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的流形, 可能即使函数没有奇点, form 和 Stokes 定理也能将流形的洞表现出来. <strong>Example</strong> <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></math></span> or <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup><mo>×</mo><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></mrow></math></span></p>
+  <p>metric 流形的情况</p>
+  <p>对 <span><math><mi>𝑘</mi></math></span> form <span><math><mi>𝜔</mi></math></span> 的积分相当于对 <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝜔</mi><mo>,</mo><msub><mtext> Vol</mtext><mi>𝑘</mi></msub></mrow><mo>⟩</mo></mrow><msub><mtext> Vol</mtext><mi>𝑘</mi></msub></mrow></math></span> 的积分</p>
+  <p><code data-typst-label="Hodge-star">&lt;Hodge-star></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Hodge star 算子 as form 的正交补对偶</p>
+    <p><span><math><mrow><mo>⋆</mo><mo>:</mo><msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mi>𝑘</mi></msup><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>→</mo><msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msup><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></mrow></math></span></p>
+    <p><span><math><mrow><mo>⋆</mo><mi>𝜔</mi></mrow></math></span> with <span><math><mrow><mi>𝜔</mi><mo>∧</mo><mo>⋆</mo><mi>𝜔</mi><mo>=</mo><mrow><mo>⟨</mo><mrow><mi>𝜔</mi><mo>,</mo><mi>𝜔</mi></mrow><mo>⟩</mo></mrow><msub><mtext> Vol</mtext><mi>𝑛</mi></msub></mrow></math></span> ==> <span><math><mrow><mi>𝜔</mi><mo>∧</mo><mo>⋆</mo><mi>𝜂</mi><mo>=</mo><mrow><mo>⟨</mo><mrow><mi>𝜔</mi><mo>,</mo><mi>𝜂</mi></mrow><mo>⟩</mo></mrow><msub><mtext> Vol</mtext><mi>𝑛</mi></msub></mrow></math></span></p>
+    <p><span><math><mrow><msup><mo>⋆</mo><mn>2</mn></msup><mo>=</mo><mn>𝟙</mn></mrow></math></span> ==> <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝜔</mi><mo>,</mo><mi>𝜂</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>⟨</mo><mrow><mo>⋆</mo><mi>𝜔</mi><mo>,</mo><mo>⋆</mo><mi>𝜂</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mo>⋆</mo><msub><mtext> Vol </mtext><mi>𝑘</mi></msub><mo>=</mo><msub><mtext> Vol</mtext><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msub></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="flux">&lt;flux></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>对 <span><math><mi>𝑘</mi></math></span> form <span><math><mi>𝜔</mi></math></span> 积分 -> 对 <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝜔</mi><mo>,</mo><msub><mtext> Vol</mtext><mi>𝑘</mi></msub></mrow><mo>⟩</mo></mrow><msub><mtext> Vol</mtext><mi>𝑘</mi></msub></mrow></math></span> 积分 -> 对 <span><math><mrow><mrow><mo>⟨</mo><mrow><mo>⋆</mo><mrow><mi>𝜔</mi><mo>,</mo></mrow><mo>⋆</mo><msub><mtext> Vol</mtext><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msub></mrow><mo>⟩</mo></mrow><msub><mtext> Vol</mtext><mi>𝑘</mi></msub></mrow></math></span> 积分, 解释为通过 <span><math><msub><mtext>Vol</mtext><mi>𝑘</mi></msub></math></span> 的正交补 <span><math><mrow><mo>⋆</mo><msub><mtext> Vol </mtext><mi>𝑘</mi></msub><mo>=</mo><msub><mtext> Vol</mtext><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msub></mrow></math></span> 的量 <span><math><mrow><mo>⟨</mo><mrow><mo>⋆</mo><mi>𝜔</mi><mo>,</mo><msub><mtext> Vol</mtext><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msub></mrow><mo>⟩</mo></mrow></math></span> 对 <span><math><msub><mtext>Vol</mtext><mi>𝑘</mi></msub></math></span> 积分, i.e. 通量</p>
+    <p>用 <code>#link(&lt;metric-dual>)[]</code> <span><math><mrow><mrow><msup><mrow><mo>(</mo><mrow><mo>⋆</mo><mi>𝜔</mi></mrow><mo>)</mo></mrow><mo>♯</mo></msup><mo>,</mo></mrow><msup><mrow><mo>(</mo><msub><mtext> Vol </mtext><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><mo>♯</mo></msup><mo>∈</mo><msup><mo>⋀</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></msup><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span> 代表通量 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow></math></span> 交错张量, 内积代表量 <span><math><msup><mrow><mo>(</mo><mrow><mo>⋆</mo><mi>𝜔</mi></mrow><mo>)</mo></mrow><mo>♯</mo></msup></math></span> 在通量方向 <span><math><msup><mrow><mo>(</mo><msub><mtext>Vol</mtext><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><mo>♯</mo></msup></math></span> 上的正交投影</p>
+  </div>
+  <p><strong>Example</strong> in Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span>, <span><math><mrow><msup><mo>⋀</mo><mn>1</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>≃</mo><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>.</p>
+  <ul>
+    <li><span><math><mn>0</mn></math></span> form</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>∈</mo><msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>1</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>⟷</mo><msup><mrow><mo>(</mo><mrow><mo>⋆</mo><mi>𝑑</mi><mi>𝜔</mi></mrow><mo>)</mo></mrow><mo>♯</mo></msup><mo>=</mo><mtext> grad </mtext><mi>𝜔</mi><mo>∈</mo><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p>坐标</p>
+    <math display="block"><mrow><mtext>grad </mtext><mi>𝑓</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msub><mo>∂</mo><mn>1</mn></msub><mi>𝑓</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mo>∂</mo><mn>2</mn></msub><mi>𝑓</mi></mrow></mtd></mtr><mtr><mtd><mrow><msub><mo>∂</mo><mn>3</mn></msub><mi>𝑓</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+    <p>Stokes 定理 <code data-typst-label="gradient">&lt;gradient></code></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝜔</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝜔</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mn>0</mn></msub><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑀</mi></mrow></msub><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑀</mi></msub><mi>𝑑</mi><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑙</mi></msub><mrow><mo>⟨</mo><mrow><mtext>grad </mtext><mi>𝜔</mi><mo>,</mo><mi>𝑑</mi><mi>𝑙</mi></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <ul>
+    <li><span><math><mn>1</mn></math></span> form</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>∈</mo><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>⟷</mo><msup><mrow><mo>(</mo><mrow><mo>⋆</mo><mi>𝑑</mi><mi>𝜔</mi></mrow><mo>)</mo></mrow><mo>♯</mo></msup><mo>=</mo><mtext> curl </mtext><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>∈</mo><msup><mo>⋀</mo><mn>1</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p>坐标</p>
+    <math display="block"><mrow><mtext>curl </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>3</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msub><mo>∂</mo><mn>2</mn></msub><msub><mi>𝑣</mi><mn>3</mn></msub><mo>−</mo><msub><mo>∂</mo><mn>3</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mo>∂</mo><mn>3</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub><mo>−</mo><msub><mo>∂</mo><mn>1</mn></msub><msub><mi>𝑣</mi><mn>3</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mo>∂</mo><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub><mo>−</mo><msub><mo>∂</mo><mn>2</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+    <p><span><math><mrow><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>∈</mo><msup><mo>⋀</mo><mn>1</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p>Stokes 定理 <code data-typst-label="curl">&lt;curl></code></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑆</mi></mrow></msub><mrow><mo>⟨</mo><mrow><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>,</mo><mi>𝑑</mi><mi>𝑙</mi></mrow><mo>⟩</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑀</mi></mrow></msub><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑀</mi></msub><mi>𝑑</mi><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑆</mi></msub><mrow><mo>⟨</mo><mrow><mtext>curl </mtext><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>,</mo><mi>𝑑</mi><mi>𝑆</mi></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+    <p>where <span><math><mrow><mi>𝑛</mi><mo>=</mo><mo>⋆</mo><msub><mtext> Vol </mtext><mn>2</mn></msub><mo>=</mo><msub><mtext> Vol</mtext><mn>1</mn></msub></mrow></math></span></p>
+  </div>
+  <ul>
+    <li><span><math><mn>2</mn></math></span> form</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑑</mi><mi>𝜔</mi><mo>∈</mo><msup><mo>⋀</mo><mn>3</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>⟷</mo><msup><mrow><mo>(</mo><mrow><mo>⋆</mo><mi>𝑑</mi><mi>𝜔</mi></mrow><mo>)</mo></mrow><mo>♯</mo></msup><mo>=</mo><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>∈</mo><msup><mo>⋀</mo><mn>0</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p>坐标</p>
+    <math display="block"><mrow><mtext>div </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>3</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mo>∂</mo><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub><mo>+</mo><msub><mo>∂</mo><mn>3</mn></msub><msub><mi>𝑣</mi><mn>3</mn></msub></mrow></math>
+    <p><span><math><mrow><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>∈</mo><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p>Stokes 定理 <code data-typst-label="divergence">&lt;divergence></code></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑉</mi></mrow></msub><mrow><mo>⟨</mo><mrow><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>,</mo><mi>𝑑</mi><mi>𝑆</mi></mrow><mo>⟩</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mrow><mo>∂</mo><mi>𝑀</mi></mrow></msub><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑀</mi></msub><mi>𝑑</mi><mi>𝜔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∫</mo><mi>𝑉</mi></msub><mrow><mo>⟨</mo><mrow><mtext>div </mtext><msup><mi>𝜔</mi><mo>♯</mo></msup><mo>,</mo><mi>𝑑</mi><mi>𝑉</mi></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p>in Minkowski <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span>, <span><math><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>≃</mo><msup><mo>⋀</mo><mrow><mn>4</mn><mo>−</mo><mn>2</mn></mrow></msup><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span></p>
+</div>

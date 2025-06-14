@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="cf. #link(&lt;curvature-of-metric.typ&gt;)[]&lt;Einstein-Lagrangian&gt; :&#x3D; (scal −2Λ)𝑑 Vol. 在坐标中 𝑑 Vol &#x3D;|𝑔|𝑑𝑥Question 纯量曲率用于作用量, 有什么好的解释吗?作用量包含 𝑔 的二阶微分, 所以不能用一般的一阶微分 action 理论scalar-curvature 不是 homology-scalar-curvature, 后者的积分 (比例于 𝜒(𝑀)?) is homology invariant, 故总是变分到零, have trivial eqProp 对 𝑔 的变分 Δ scal ∼− Ric + divergence term,Δ|𝑔|∼12|𝑔|𝑔所以 product rule 给出Prop Einstein-Lagrangian 中 Δ(scal |𝑔|)∼|𝑔|(Ric −12 scal 𝑔)+ divergence termProofProp det 的微分是 ∂det(𝐴)&#x3D; det 𝐴tr(𝐴−1∂𝐴)&#x3D; det 𝐴tr(∂ log 𝐴)Proofdet(𝑋)&#x3D;det(𝐴)det(𝐴−1𝑋) ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html" class="active"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html" class="active"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/Einstein-metric", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>cf. <code>#link(&lt;curvature-of-metric.typ>)[]</code></p>
+  <p><code data-typst-label="Einstein-Lagrangian">&lt;Einstein-Lagrangian></code> := <span><math><mrow><mrow><mo>(</mo><mrow><mtext>scal </mtext><mo>−</mo><mn>2</mn><mi mathvariant="normal">Λ</mi></mrow><mo>)</mo></mrow><mi>𝑑</mi><mtext> Vol</mtext></mrow></math></span>. 在坐标中 <span><math><mrow><mi>𝑑</mi><mtext> Vol </mtext><mo>=</mo><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mi>𝑑</mi><mi>𝑥</mi></mrow></math></span></p>
+  <p><strong>Question</strong> 纯量曲率用于作用量, 有什么好的解释吗?</p>
+  <p>作用量包含 <span><math><mi>𝑔</mi></math></span> 的二阶微分, 所以不能用一般的一阶微分 action 理论</p>
+  <p>scalar-curvature 不是 homology-scalar-curvature, 后者的积分 (比例于 <span><math><mrow><mi>𝜒</mi><mrow><mo>(</mo><mi>𝑀</mi><mo>)</mo></mrow></mrow></math></span>?) is homology invariant, 故总是变分到零, have trivial eq</p>
+  <p><strong>Prop</strong> 对 <span><math><mi>𝑔</mi></math></span> 的变分 <span><math><mrow><mi mathvariant="normal">Δ</mi><mtext> scal </mtext><mo>∼</mo><mo>−</mo><mtext> Ric </mtext><mo>+</mo><mrow><mtext> divergence term</mtext><mo>,</mo></mrow><mrow><mi mathvariant="normal">Δ</mi><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mo>∼</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mi>𝑔</mi></mrow></math></span></p>
+  <p>所以 product rule 给出</p>
+  <p><strong>Prop</strong> Einstein-Lagrangian 中 <span><math><mrow><mi mathvariant="normal">Δ</mi><mrow><mo>(</mo><mrow><mtext>scal </mtext><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mo>∼</mo><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mrow><mo>(</mo><mrow><mtext>Ric </mtext><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> scal </mtext><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo>+</mo><mtext> divergence term</mtext></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Prop</strong> <span><math><mtext>det</mtext></math></span> 的微分是 <span><math><mrow><mo>∂</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>=</mo><mtext> det </mtext><mi>𝐴</mi><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>∂</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mtext> det </mtext><mi>𝐴</mi><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><mo>∂</mo><mtext> log </mtext><mi>𝐴</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><em>Proof</em></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><mrow><mtext>det</mtext><mrow><mo>(</mo><mi>𝑋</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mrow><mtext>det</mtext><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> and <span><math><mrow><mo>∂</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mn>𝟙</mn><mo>)</mo></mrow></mrow><mo>=</mo><mtext> tr</mtext></mrow></math></span>. 所以</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>∂</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><mtext>at </mtext><mi>𝐴</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>direct </mtext><mi mathvariant="normal">Δ</mi><mi>𝑋</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>=</mo></mtd><mtd class="mathyml-align-left"><mo>∂</mo><mtext> det </mtext><mrow><mo>(</mo><mrow><mtext>at </mtext><mn>𝟙</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>direct </mtext><mo>∂</mo><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑋</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>at </mtext><mi>𝐴</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>direct </mtext><mi mathvariant="normal">Δ</mi><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>=</mo></mtd><mtd class="mathyml-align-left"><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    </div>
+    <p>所以 volume form 的变分是</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi mathvariant="normal">Δ</mi><mo>|</mo><mi>𝑔</mi><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi mathvariant="normal">Δ</mi><mo>|</mo><mtext>det </mtext><mi>𝑔</mi><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>|</mo><mtext>det </mtext><mi>𝑔</mi><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>将 <span><math><mtext>Ric</mtext></math></span> 作为矩阵, 则 adjoint <span><math><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup></math></span> 可以写为</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>scal </mtext></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mtext> Ric </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p><strong>Prop</strong> <span><math><mrow><mi>𝐴</mi><mo>⇝</mo><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 的微分是 <span><math><mrow><mo>−</mo><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mo>∂</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span>. <em>Proof</em> 使用 <span><math><mrow><mn>0</mn><mo>=</mo><mo>∂</mo><mn>𝟙</mn><mo>=</mo><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow><mo>=</mo><mo>∂</mo><mi>𝐴</mi><mo>⋅</mo><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mi>𝐴</mi><mo>⋅</mo><mo>∂</mo><mrow><mo>(</mo><msup><mi>𝐴</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow></mrow></math></span></p>
+    <p>所以 scalar-curvature 的变分是</p>
+    <math display="block"><mrow><mrow><mi mathvariant="normal">Δ</mi><mtext>scal </mtext></mrow><mo>=</mo><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>对以下进行繁琐的计算</p>
+    <ul>
+      <li><span><math><mrow><mi mathvariant="normal">Δ</mi><mtext> Ric </mtext><mo>=</mo><mi mathvariant="normal">Δ</mi><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+      <li><span><math><mrow><mi mathvariant="normal">Δ</mi><mi>𝑅</mi></mrow></math></span></li>
+      <li><span><math><mrow><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">Γ</mi></mrow></math></span></li>
+    </ul>
+    <p>这可能对计算是有用的 <span><math><mrow><mo>∇</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>∇</mo></mrow></math></span> and <span><math><mrow><mo>∇</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>∇</mo></mrow></math></span></p>
+    <math display="block"><mrow><mtext>tr </mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mtext> Ric</mtext></mrow><mo>)</mo></mrow><mo>=</mo><msup><mo>∇</mo><mo>†</mo></msup><mo>∇</mo><mtext> tr </mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo>+</mo><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow></math>
+    <p>是散度量 (cf. <code>#link(&lt;Laplacian-of-tensor-field.typ>)[]</code> for <span><math><mrow><msup><mo>∇</mo><mo>†</mo></msup><mo>,</mo><msub><mo>∇</mo><mo>⊙</mo></msub><mo>,</mo><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup></mrow></math></span>)</p>
+    <ul>
+      <li><span><math><mrow><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mrow><mi>𝑔</mi><mo>,</mo></mrow><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+      <li><span><math><mrow><mrow><mtext>tr</mtext><mrow><mo>(</mo><mrow><mo>−</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mrow><mi>𝑔</mi><mo>,</mo></mrow><mo>−</mo><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+    </ul>
+    <p>==></p>
+    <ul>
+      <li><span><math><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mrow><mi>𝑔</mi><mo>,</mo></mrow><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+      <li><span><math><mrow><mi mathvariant="normal">Δ</mi><mtext> scal </mtext><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mrow><mi>𝑔</mi><mo>,</mo></mrow><mo>−</mo><mtext> Ric</mtext></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mtext> divergence term</mtext></mrow></math></span></li>
+    </ul>
+    <p>令作用量的变分是零</p>
+    <math display="block"><mrow><mn>0</mn><mo>=</mo><mo>−</mo><mo>∫</mo><mi>𝑑</mi><mi>𝑥</mi><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mi>𝑔</mi><mo>,</mo><mtext> Ric </mtext><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>−</mo><mi mathvariant="normal">Λ</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow></math>
+  </div>
+  <p>forall <span><math><mrow><mi mathvariant="normal">Δ</mi><mi>𝑔</mi></mrow></math></span>, 所以</p>
+  <p><code data-typst-label="Einstein-equation">&lt;Einstein-equation></code> <code data-typst-label="Einstein-metric">&lt;Einstein-metric></code></p>
+  <math display="block"><mrow><mtext>Ric </mtext><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>−</mo><mi mathvariant="normal">Λ</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math>
+  <p>等价于 (by taking <span><math><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup></math></span>)</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>Ric </mtext></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mn>2</mn><mi mathvariant="normal">Λ</mi></mrow><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>⋅</mo><mi>𝑔</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>⋅</mo><mi>𝑔</mi></mtd></mtr></mtable></math>
+  <p>with <span><math><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mtext> scal</mtext></mrow></math></span></p>
+  <p>i.e. <span><math><mtext>Ric</mtext></math></span> 常值比例于 <span><math><mi>𝑔</mi></math></span> 且 scalar-curvature 是常数</p>
+  <p>等价地</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>tr-free-Ric </mtext></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> scal </mtext></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mn>2</mn><mi mathvariant="normal">Λ</mi></mrow><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac></mtd></mtr></mtable></math>
+  <p>i.e. trace-free Ricci-curvature 是零, 且 scalar-curvature 是常数</p>
+  <p>Einstein-equation 是 <span><math><mi>𝑔</mi></math></span> 的二阶非线性 PDE</p>
+  <p>when <span><math><mrow><mi>𝑛</mi><mo>=</mo><mn>4</mn></mrow></math></span>, <span><math><mrow><mtext>Ric </mtext><mo>=</mo><mi mathvariant="normal">Λ</mi><mo>⋅</mo><mi>𝑔</mi></mrow></math></span> with <span><math><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mtext> scal</mtext></mrow></math></span></p>
+  <p>存在相互作用时, 尽管 <span><math><mrow><mi>𝑇</mi><mo>=</mo><mtext> Ric </mtext><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>−</mo><mi mathvariant="normal">Λ</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑔</mi><mo>≠</mo><mn>0</mn></mrow></math></span>, 仍然有散度是零 <span><math><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mi>𝑔</mi></math></span> 不需要是 Einstein-metric</p>
+    <p>δ diffeomorphism <span><math><mi>𝑋</mi></math></span> 会生成 metric 的一阶无穷小量 <span><math><mrow><mi mathvariant="normal">Δ</mi><mi>𝑔</mi><mo>=</mo><msub><mo>∇</mo><mo>⊙</mo></msub><mi>𝑋</mi></mrow></math></span></p>
+    <p>因为 Einstein 作用量是微分同胚不变的, 所以 δ diffeomorphism <span><math><mi>𝑋</mi></math></span> 变分的结果是零</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mrow><mi>𝑔</mi><mo>,</mo></mrow><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow><mi>𝑑</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝑔</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mrow><mi>𝑋</mi><mo>,</mo></mrow><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow><mi>𝑑</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝑔</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑋</mi><mo>,</mo></mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow><mi>𝑑</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝑔</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>forall <span><math><mi>𝑋</mi></math></span>, 所以 <span><math><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <math display="block"><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mrow><mo>(</mo><mrow><mtext>Ric </mtext><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>−</mo><mi mathvariant="normal">Λ</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+    <p>这将会给出</p>
+    <math display="block"><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mtext> Ric </mtext><mo>=</mo><msub><mo>∇</mo><mo>⊙</mo></msub><mtext> scal</mtext></mrow></math>
+  </div>
+  <p><strong>Prop</strong> 对于 Einstein 作用量, δ-isometry 的能动张量将会是零</p>
+  <p>moduli-space-of-Einstein-metric := diffeomorphism 作用于 metric 空间的 orbit 空间, 限制在 Einstein-metric space. isotropy-group is isometry</p>
+  <p><strong>Question</strong> 即使我们知道每个流形的所有 Einstein-metric, 也仍然不知道应该选择哪个流形</p>
+  <p><strong>Question</strong> constant-sectional-curvature or simple-symmetric-space 的流形分类似乎是令人满意的</p>
+  <p>当 dimension <span><math><mrow><mo>≥</mo><mn>4</mn></mrow></math></span> 存在流形不允许 constant-sectional-curvature metric 但允许 Einstein-metric</p>
+  <p><code data-typst-label="Schwarzschild-metric">&lt;Schwarzschild-metric></code> in <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> := 渐进平直静态球对称, 作为 non-relativity gravity in <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 的最简单推广. 在空间 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 使用球坐标</p>
+  <math display="block"><mrow><mi>𝑔</mi><mo>=</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝑚</mi></mrow><mi>𝑟</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑑</mi><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝑚</mi></mrow><mi>𝑟</mi></mfrac></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑑</mi><msup><mi>𝑟</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msub><mi>𝑔</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub></mrow><mo>)</mo></mrow></mrow></math>
+  <p>with <span><math><mrow><mtext>scal </mtext><mo>=</mo><mn>0</mn></mrow></math></span> and <span><math><mrow><mtext>Ric </mtext><mo>=</mo><mn>0</mn></mrow></math></span>. 从而只有 conformal curvature</p>
+  <p>推广到 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span>?</p>
+  <math display="block"><mrow><mi>𝑔</mi><mo>=</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝑚</mi></mrow><msup><mi>𝑟</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>3</mn></mrow></msup></mfrac></mrow><mo>)</mo></mrow><mi>𝑑</mi><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝑚</mi></mrow><msup><mi>𝑟</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>3</mn></mrow></msup></mfrac></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑑</mi><msup><mi>𝑟</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msub><mi>𝑔</mi><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></msup></msub></mrow><mo>)</mo></mrow></mrow></math>
+  <p><code data-typst-label="Schwarzschild-metric-derivation">&lt;Schwarzschild-metric-derivation></code> (ref-9, ch.4)</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>假设 metric 球对称</p>
+    <math display="block"><mrow><mi>𝑔</mi><mo>=</mo><msub><mi>𝑓</mi><mi>𝑡</mi></msub><msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow><mn>2</mn></msup><mi>𝑑</mi><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑓</mi><mi>𝑟</mi></msub><msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow><mn>2</mn></msup><mi>𝑑</mi><msup><mi>𝑟</mi><mn>2</mn></msup><mo>+</mo><msub><mi>𝑓</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub><msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow><mn>2</mn></msup><msub><mi>𝑔</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Einstein 方程 with <span><math><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mn>0</mn></mrow></math></span> 给出 <span><math><mrow><msub><mi>𝑓</mi><mi>𝑟</mi></msub><mo>=</mo><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑎</mi><msub><mi>𝑓</mi><mi>𝑡</mi></msub></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo></mrow><msub><mi>𝑓</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub><mo>=</mo><mi>𝑟</mi></mrow></math></span></p>
+    <p>渐进平坦 i.e. 逼近 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> metric <span><math><mrow><mi>𝑑</mi><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑟</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msub><mi>𝑔</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub></mrow><mo>)</mo></mrow></mrow></math></span> when <span><math><mrow><mi>𝑟</mi><mo>→</mo><mo>∞</mo></mrow></math></span>, 给出 <span><math><mrow><mi>𝑎</mi><mo>=</mo><mn>1</mn></mrow></math></span>, 然后 Einstein 方程给出 <span><math><mrow><msub><mi>𝑓</mi><mi>𝑡</mi></msub><msup><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝑚</mi></mrow><mi>𝑟</mi></mfrac></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="Schwarzschild-metric-approximate-to-Newton-gravity">&lt;Schwarzschild-metric-approximate-to-Newton-gravity></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>为了逼近 non-relativity, 恢复一些常量 <span><math><mrow><mrow><mi>𝐺</mi><mo>,</mo><mi>𝑐</mi><mo>,</mo><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>=</mo><mi>𝑐</mi><mi>𝑡</mi></mrow></math></span>. 此时 Schwarzschild-metric</p>
+    <math display="block"><mrow><mi>𝑔</mi><mo>=</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝐺</mi><mi>𝑀</mi></mrow><mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑟</mi></mrow></mfrac></mrow><mo>)</mo></mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑑</mi><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝐺</mi><mi>𝑀</mi></mrow><mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑟</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑑</mi><msup><mi>𝑟</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msub><mi>𝑔</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>在时间坐标, 对这个 metric, 从相对论点粒子作用量近似到非相对论</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑚</mi><mi>𝑐</mi><mo>|</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑚</mi><msup><mi>𝑐</mi><mn>2</mn></msup><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝐺</mi><mi>𝑀</mi></mrow><mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑟</mi></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><msup><mi>𝑐</mi><mn>2</mn></msup></mfrac><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mn>2</mn><mi>𝐺</mi><mi>𝑀</mi></mrow><mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑟</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><msubsup><mi>𝑣</mi><mi>𝑟</mi><mn>2</mn></msubsup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msubsup><mi>𝑣</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mn>2</mn></msubsup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑚</mi><msup><mi>𝑐</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mn>2</mn><mi>𝐺</mi><mi>𝑀</mi></mrow><mrow><msup><mi>𝑐</mi><mn>2</mn></msup><mi>𝑟</mi></mrow></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mi>𝑐</mi><mn>2</mn></msup></mfrac><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mi>𝑟</mi><mn>2</mn></msubsup><mo>+</mo><msup><mi>𝑟</mi><mn>2</mn></msup><msubsup><mi>𝑣</mi><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mn>2</mn></msubsup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝑜</mi><mrow><mo>(</mo><mfrac><mn>1</mn><msup><mi>𝑐</mi><mn>2</mn></msup></mfrac><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑚</mi><msup><mi>𝑐</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mi>𝑣</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mrow><mi>𝐺</mi><mi>𝑀</mi><mi>𝑚</mi></mrow><mi>𝑟</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <ul>
+      <li><span><math><mrow><mi>𝑚</mi><msup><mi>𝑐</mi><mn>2</mn></msup></mrow></math></span> 是静能量, 将会变分到 <span><math><mn>0</mn></math></span></li>
+      <li><span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mi>𝑣</mi><mn>2</mn></msup></mrow></math></span> 是非相对论点粒子的动能</li>
+      <li><span><math><mrow><mo>−</mo><mfrac><mrow><mi>𝐺</mi><mi>𝑀</mi><mi>𝑚</mi></mrow><mi>𝑟</mi></mfrac></mrow></math></span> 是非相对论引力势能</li>
+      <li><span><math><mrow><mi>𝑜</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> 在极限 <span><math><munder displaystyle="false"><mtext>lim</mtext><mrow><mi>𝑐</mi><mo>→</mo><mo>∞</mo></mrow></munder></math></span> 时消失</li>
+    </ul>
+  </div>
+  <p>一些 Einstein-metric 例子</p>
+  <ul>
+    <li><code>#link(&lt;constant-sectional-curvature-imply-Einstein-metric>)[常值截面曲率]</code></li>
+    <li><code>#link(&lt;simple-symmetric-space>)[]</code></li>
+  </ul>
+  <p>Einstein ==> harmonics. Einstein-equation satisfy eq defined by Lagrangian <span><math><mrow><mrow><mo>|</mo><mi>𝑅</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mi>𝑑</mi><mtext> Vol</mtext></mrow></math></span></p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="&lt;projective-cone&gt; (图)Cone(𝑝,𝑞)≔{𝑥∈ℝ𝑝,𝑞:𝑔(𝑥,𝑥)&#x3D;0}Cone-ℙ(𝑝,𝑞)≔{[𝑥]∈ℝℙ𝑝+𝑞:𝑥∈ Cone(𝑝,𝑞)}可以等价地理解为 positive-cone &amp;amp; positive quotientCone-ℙ(𝑝,𝑞)≃{[𝜆𝑥]:𝑔(𝑥,𝑥)&#x3D;0∧𝜆&gt;0}SO(𝑝,𝑞) induce bijective of Cone-ℙ(𝑝,𝑞)Proof Cone-ℙ⊂ℝℙ, SO ⊂ GL, GL induce bijective of 1d linear subspaceidentity 𝟙∈ GL induce 𝟙∈ℝℙ&lt;complex-struct-of-4d-projective-lightcone&gt; 4d projective-lightcone 的复结构 (图)椭圆型 Cone-ℙ(1,3)≃𝕊2≃ℂℙ1双曲型 Cone-ℙ(1,3)∖Cone-ℙ(1,2)≃ℍ𝕪2双曲型的情况有分离的两枝. 从未来光锥截面到过去光锥截面之间存在奇点区域 Cone-ℙ(1,2)是否有 ℂℙ1 类似物? 但是 ℍ𝕪2 是 Euclidean 型流形, 不适合分裂复数 ℂ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html" class="active"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/projective-lightcone", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><code data-typst-label="projective-cone">&lt;projective-cone></code> (图)</p>
+  <ul>
+    <li><span><math><mrow><mrow><mtext>Cone</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mo>:</mo><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mrow><mo>[</mo><mi>𝑥</mi><mo>]</mo></mrow><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑝</mi><mo>+</mo><mi>𝑞</mi></mrow></msup><mo>:</mo><mi>𝑥</mi><mo>∈</mo><mtext> Cone</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p>可以等价地理解为 positive-cone &amp; positive quotient</p>
+  <math display="block"><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mo>{</mo><mrow><mrow><mo>[</mo><mrow><mi>𝜆</mi><mi>𝑥</mi></mrow><mo>]</mo></mrow><mo>:</mo><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn><mo>∧</mo><mi>𝜆</mi><mo>></mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math>
+  <p><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> induce bijective of <span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mo>⊂</mo><mrow><mrow><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℙ</mi></mrow><mo>,</mo></mrow><mtext> SO </mtext><mo>⊂</mo><mtext> GL</mtext></mrow></math></span>, <span><math><mtext>GL</mtext></math></span> induce bijective of 1d linear subspace</p>
+  <p>identity <span><math><mrow><mn>𝟙</mn><mo>∈</mo><mtext> GL</mtext></mrow></math></span> induce <span><math><mrow><mn>𝟙</mn><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℙ</mi></mrow></mrow></math></span></p>
+  <p><code data-typst-label="complex-struct-of-4d-projective-lightcone">&lt;complex-struct-of-4d-projective-lightcone></code> 4d projective-lightcone 的复结构 (图)</p>
+  <ul>
+    <li>椭圆型 <span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mo>≃</mo><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></mrow></math></span></li>
+    <li>双曲型 <span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>∖</mo><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>2</mn></msup></mrow></math></span><br>双曲型的情况有分离的两枝. 从未来光锥截面到过去光锥截面之间存在奇点区域 <span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span><br>是否有 <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span> 类似物? 但是 <span><math><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>2</mn></msup></math></span> 是 Euclidean 型流形, 不适合分裂复数 <span><math><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></math></span> 的 <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span> signature, 而且 <code>#link(&lt;stereographic-projective-hyperbolic>)[双曲球极投影]</code> 似乎挺复杂的<br>既然光锥能截出 <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></math></span>, 那么失去 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>2</mn></msup><mo>=</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msup><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> 对应 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> 的那种对称性是合理的</li>
+  </ul>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li><span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>使用 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math></span> 截取 lightcone <span><math><mrow><mrow><mtext>Cone</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>0</mn><mn>2</mn></msubsup><mo>−</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑥</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>3</mn><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span>, 得到类空截面 <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>3</mn><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span></p>
+      <p><span><math><mn>1</mn></math></span> 可以替换为其它非零实数, 结果等价</p>
+    </div>
+    <ul>
+      <li><span><math><mrow><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>∖</mo><mrow><mtext>Cone-</mtext><mi mathvariant="normal">ℙ</mi></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>≃</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>2</mn></msup></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>使用 <span><math><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math></span> 截取 lightcone, 得到 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>0</mn><mn>2</mn></msubsup><mo>−</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑥</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>3</mn><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span>. 分为未来和过去两枝</p>
+      <p><span><math><mrow><mrow><mtext>Cone</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>0</mn><mn>2</mn></msubsup><mo>−</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑥</mi><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑥</mi><mn>3</mn><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span> 的射影无法被 <span><math><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math></span> 截到</p>
+    </div>
+    <ul>
+      <li><span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup><mo>≃</mo><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><code>#link(&lt;stereographic-projection>)[球极投影]</code> transition-function 是二次型反演</p>
+      <math display="block"><mtable><mtr><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mi>𝜉</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mfrac><mrow><mn>1</mn><mo>±</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mrow><mn>1</mn><mo>∓</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mfrac><mi>𝜉</mi><mo>=</mo><mfrac><mi>𝜉</mi><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac></mrow></mtd></mtr></mtable></math>
+      <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>:</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></mrow><mo>}</mo></mrow></mrow></math></span> and its coordinate</p>
+      <p>coordinate 1 <span><math><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑤</mi><mo>≠</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span>, coordinate map <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>∈</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span></p>
+      <p>coordinate 2 <span><math><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑧</mi><mo>≠</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span>, coordinate map <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac><mo>∈</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span></p>
+      <p>transition-function <span><math><mrow><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>⇝</mo><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span>, or <span><math><mrow><mi>𝜉</mi><mo>⇝</mo><mfrac><mn>1</mn><mi>𝜉</mi></mfrac><mo>=</mo><mfrac><msup><mi>𝜉</mi><mo>∗</mo></msup><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac></mrow></math></span>, i.e. <span><math><mi mathvariant="normal">ℂ</mi></math></span> 的乘法逆. <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span> 是 complex manifold</p>
+      <p>vs <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></math></span> 球极投影 transition-function <span><math><mrow><mi>𝜉</mi><mo>⇝</mo><mfrac><mn>1</mn><msup><mi>𝜉</mi><mo>∗</mo></msup></mfrac><mo>=</mo><mfrac><mi>𝜉</mi><mrow><mo>|</mo><mi>𝜉</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac></mrow></math></span></p>
+      <p>更直接的 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup><mo>→</mo><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></mrow></math></span> 坐标之间的映射, cf. <code>#link(&lt;Hopf-bundle>)[]</code></p>
+    </div>
+  </div>
+  <p><code data-typst-label="linear-fractional">&lt;linear-fractional></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 作用在 <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mi>𝑑</mi></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑎</mi><mi>𝑧</mi><mo>+</mo><mi>𝑏</mi><mi>𝑤</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑐</mi><mi>𝑧</mi><mo>+</mo><mi>𝑑</mi><mi>𝑤</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>, 使用 <span><math><mi mathvariant="normal">ℂ</mi></math></span> 乘法逆将其限制于 <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span>, in coordinate 1 <span><math><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑤</mi><mo>≠</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup><mo>,</mo><mo>⟶</mo><mo>,</mo><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></mtd></mtr><mtr><mtd><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>,</mo><mo>⟿</mo><mo>,</mo><mfrac><mrow><mi>𝑎</mi><mi>𝑧</mi><mo>+</mo><mi>𝑏</mi><mi>𝑤</mi></mrow><mrow><mi>𝑐</mi><mi>𝑧</mi><mo>+</mo><mi>𝑑</mi><mi>𝑤</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>𝑎</mi><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>+</mo><mi>𝑏</mi></mrow><mrow><mi>𝑐</mi><mfrac><mi>𝑧</mi><mi>𝑤</mi></mfrac><mo>+</mo><mi>𝑑</mi></mrow></mfrac></mtd></mtr></mtable></math>
+    <p>in coordinate 2 <span><math><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑧</mi><mo>≠</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup><mo>,</mo><mo>⟶</mo><mo>,</mo><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></mtd></mtr><mtr><mtd><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac><mo>,</mo><mo>⟿</mo><mo>,</mo><mfrac><mrow><mi>𝑐</mi><mi>𝑧</mi><mo>+</mo><mi>𝑑</mi><mi>𝑤</mi></mrow><mrow><mi>𝑎</mi><mi>𝑧</mi><mo>+</mo><mi>𝑏</mi><mi>𝑤</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>𝑐</mi><mo>+</mo><mi>𝑑</mi><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac></mrow><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac></mrow></mfrac></mtd></mtr></mtable></math>
+  </div>
+  <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑑</mi></mtd><mtd><mi>𝑐</mi></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 带有相同的 <span><math><mtext>det</mtext></math></span></p>
+  <p><span><math><mi mathvariant="normal">𝕆</mi></math></span> 需要另作处理, <span><math><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">𝕆</mi></mrow><mo>)</mo></mrow></mrow></math></span> 复合不能表示为通常的矩阵乘法</p>
+  <p>伸缩 <span><math><mrow><mi>𝜆</mi><mo>∈</mo><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mn>0</mn><mo>,</mo><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mi>𝑑</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> 给出相同的 linear-fractional, 所以 <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 可以 quotient 到 <span><math><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> or <span><math><mfrac><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><msub><mi mathvariant="normal">ℤ</mi><mn>2</mn></msub></mfrac></math></span></p>
+  <p><strong>Prop</strong> (ref-13, p.172–174)</p>
+  <ul>
+    <li>
+      <p><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> 作用于 <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span> in coordinate 可以表示为 <span><math><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> <code>#link(&lt;linear-fractional>)[]</code></p>
+    </li>
+    <li>
+      <p><span><math><mrow><mfrac><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><msub><mi mathvariant="normal">ℤ</mi><mn>2</mn></msub></mfrac><mo>=</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span> <code data-typst-label="Lorentz-group-spinor-representation">&lt;Lorentz-group-spinor-representation></code></p>
+    </li>
+  </ul>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span>, 3 rotation <span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><msub><mi>𝜃</mi><mi>𝑖</mi></msub><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></math></span>, 3 boost <span><math><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><msub><mi>𝜑</mi><mi>𝑖</mi></msub><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span>, where <span><math><msub><mi>𝜃</mi><mi>𝑖</mi></msub></math></span> is rotation in <span><math><msub><mi>𝑥</mi><mi>𝑖</mi></msub></math></span> direction, <span><math><msub><mi>𝜑</mi><mi>𝑖</mi></msub></math></span> is boost in <span><math><msub><mi>𝑥</mi><mi>𝑖</mi></msub></math></span> direction</p>
+    <p><code data-typst-label="rotation-boost-spinor-representation">&lt;rotation-boost-spinor-representation></code></p>
+    <p>3 rotation 3 boost 作用在射影光锥的 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math></span> 截出来的 <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></math></span>, 计算其在 (其中一个) 球极投影坐标 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>≃</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span> 的表示</p>
+    <ul>
+      <li>rotation in <span><math><msub><mi>𝑥</mi><mn>1</mn></msub></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <ul>
+        <li><span><math><msup><mi>𝑒</mi><mrow><mi>𝜃</mi><mtext> i</mtext></mrow></msup></math></span> act on <span><math><mrow><msub><mi>𝑥</mi><mn>2</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>3</mn></msub><mtext> i </mtext><mo>∈</mo><mi mathvariant="normal">ℂ</mi><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span></li>
+        <li><span><math><mrow><mi>𝐴</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi><mtext> i</mtext></mrow></msup></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑒</mi><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi><mtext> i</mtext></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> i </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span> (with eigenvalue <span><math><mrow><mo>±</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> i</mtext></mrow></math></span> and eigenstate <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> as base of <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>)</li>
+      </ul>
+    </div>
+    <ul>
+      <li>boost in <span><math><msub><mi>𝑥</mi><mn>1</mn></msub></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <ul>
+        <li><span><math><msup><mi>𝑒</mi><mrow><mi>𝜑</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow></msup></math></span> act on <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>∈</mo><msub><mi mathvariant="normal">ℂ</mi><mtext> split </mtext></msub><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span></li>
+        <li><span><math><mrow><mi>𝐴</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜑</mi></mrow></msup></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mtext> i </mtext><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></li>
+      </ul>
+    </div>
+    <p>因为选择了 <span><math><msub><mi>𝑥</mi><mn>1</mn></msub></math></span> 方向来构造球极投影, <span><math><mrow><msub><mi>𝑥</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝑥</mi><mn>3</mn></msub></mrow></math></span> 方向的情况会更复杂一些 (以下我没有进行计算检验)</p>
+    <ul>
+      <li>
+        <p>rotation in <span><math><msub><mi>𝑥</mi><mn>2</mn></msub></math></span></p>
+        <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>i </mtext><mtext> sin </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr><mtr><mtd><mrow><mtext>i </mtext><mtext> sin </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>cos </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> i </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p>rotation in <span><math><msub><mi>𝑥</mi><mn>3</mn></msub></math></span></p>
+        <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mo>−</mo><mtext> sin </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>cos </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p>boost in <span><math><msub><mi>𝑥</mi><mn>2</mn></msub></math></span></p>
+        <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cosh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>sinh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sinh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>cosh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mtext> i </mtext><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p>boost in <span><math><msub><mi>𝑥</mi><mn>3</mn></msub></math></span></p>
+        <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cosh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mo>−</mo><mtext> i </mtext><mtext> sinh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr><mtr><mtd><mrow><mtext>i </mtext><mtext> sinh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd><mtd><mrow><mtext>cosh </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜃</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> act on <span><math><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></math></span>, 生成元 <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> i </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mtext> i </mtext><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+    </ul>
+    <p>可见 <span><math><mrow><mrow><mtext>sl</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mo>+</mo><mtext> i </mtext><mrow><mtext>su</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>比较 <span><math><mtext>exp</mtext></math></span> of <span><math><mrow><mtext>sl</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mtext>exp</mtext></math></span> of <span><math><mrow><mtext>so</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>, 至少局部地同构 <span><math><mrow><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><mo>↔</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <ul>
+      <li>
+        <p>for <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑎</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>sl</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+        <math display="block"><mrow><mtext>exp </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑎</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mtext> cosh </mtext><mi>𝜔</mi><mn>𝟙</mn><mo>+</mo><mfrac><mrow><mtext>sinh </mtext><mi>𝜔</mi></mrow><mi>𝜔</mi></mfrac><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑎</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+        <p>where <span><math><mrow><msup><mi>𝜔</mi><mn>2</mn></msup><mo>=</mo><mo>−</mo><mtext> det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑎</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p><span><math><mrow><mtext>so</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> have form <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd><mtd><msup><mi>𝑏</mi><mo>⊺</mo></msup></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑟</mi></mtd></mtr></mtable><mo>)</mo></mrow></math></span> where <span><math><mrow><mi>𝑟</mi><mo>∈</mo><mrow><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mi>𝑏</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> (ref-2, Vol.1, p.180)</p>
+      </li>
+      <li>
+        <p>from <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> to <span><math><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span>. 从后面的 <span><math><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> to <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> 中反解出来. 或者用 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> <code>#link(&lt;polar-decomposition-of-Lorentz-group>)[Polar decomposition]</code> to rotation boost + <code>#link(&lt;Euler-angle-Lorentz-group>)[Euler 角]</code></p>
+      </li>
+      <li>
+        <p>from <span><math><mrow><mi>𝐴</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mi>𝑑</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> to <span><math><mrow><mi mathvariant="normal">Λ</mi><mo>∈</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span>, where <span><math><mrow><mi>𝑎</mi><mi>𝑑</mi><mo>−</mo><mi>𝑏</mi><mi>𝑐</mi><mo>=</mo><mn>1</mn></mrow></math></span></p>
+      </li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>使用 <code>#link(&lt;spacetime-momentum-spinor-representation>)[]</code> 直接计算 <span><math><mrow><mi>𝐴</mi><msub><mi>𝑝</mi><mtext> spin </mtext></msub><msup><mi>𝐴</mi><mo>†</mo></msup><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd><msubsup><mi mathvariant="normal">Λ</mi><mi>𝜈</mi><mi>𝜇</mi></msubsup><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> tr </mtext><mrow><mo>(</mo><mrow><msub><mi>𝜎</mi><mi>𝜇</mi></msub><mi>𝐴</mi><msub><mi>𝜎</mi><mi>𝜈</mi></msub><msup><mi>𝐴</mi><mo>†</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> tr </mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><msub><mi>𝜎</mi><mi>𝜈</mi></msub><msup><mi>𝐴</mi><mo>†</mo></msup><msub><mi>𝜎</mi><mi>𝜇</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mrow><mo>|</mo><mi>𝑎</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑏</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑐</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑑</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑏</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑐</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑏</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑐</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mrow><mo>|</mo><mi>𝑎</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑏</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msup><mi>𝑐</mi><mn>2</mn></msup><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑑</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑐</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑑</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑐</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑑</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑐</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑐</mi><mo>∗</mo></msup><mo>−</mo><mi>𝑏</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑐</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑑</mi><mo>∗</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑐</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑑</mi><mo>∗</mo></msup><mo>−</mo><mi>𝑏</mi><msup><mi>𝑐</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑐</mi><mo>∗</mo></msup><mo>−</mo><mi>𝑏</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo>|</mo><mi>𝑎</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑏</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑐</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑑</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑏</mi><mo>∗</mo></msup><mo>−</mo><mi>𝑐</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mn>2</mn><mrow><mtext>Im</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑏</mi><mo>∗</mo></msup><mo>−</mo><mi>𝑐</mi><msup><mi>𝑑</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mrow><mrow><mo>|</mo><mi>𝑎</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑏</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑐</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑑</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    </div>
+  </div>
+  <p><span><math><mrow><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>,</mo><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></mrow></math></span> 使用 Euclidean type topology, 因为 <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></math></span> metric 继承自 space-like <span><math><mrow><mrow><mo>{</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span> 继承自 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> metric</p>
+  <p><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> 是 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></mrow></math></span> conformal 变换群, 在球极投影坐标中表示为 linear-fractional</p>
+  <p>为计算 metric 的 conformal 变换因子, use <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span> coordinate and 3 rotation, 3 boost …</p>
+  <p><code data-typst-label="isotropy-on-projective-lightcone">&lt;isotropy-on-projective-lightcone></code> <strong>Prop</strong> <span><math><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 作用在 projective-lightcone <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mn>1</mn></msup></math></span>, <code>#link(&lt;isotropy>)[]</code> 类似于 <span><math><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><mo>⋊</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo><mrow><mtext>SL</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 是 <code>#link(&lt;action-surjective>)[满射作用]</code>, orbit 数 <span><math><mn>1</mn></math></span>, 所以计算 isotropy <code>#link(&lt;isotropy-in-same-orbit-is-isom>)[只需要考虑]</code> 一点</p>
+    <p>使用点 <span><math><mrow><mi>𝑧</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mn>0</mn><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup></mrow></math></span>, 在坐标 <span><math><mrow><mo>{</mo><mrow><mi>𝜆</mi><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑧</mi></mtd></mtr><mtr><mtd><mi>𝑤</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℂ</mi><mn>2</mn></msup><mo>:</mo><mi>𝑧</mi><mo>≠</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span>, <span><math><mrow><mfrac><mi>𝑤</mi><mi>𝑧</mi></mfrac><mo>=</mo><mn>0</mn></mrow></math></span>, 对应光锥射影上的点 <span><math><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span></p>
+    <p><span><math><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mi>𝑐</mi></mtd><mtd><mi>𝑑</mi></mtd></mtr></mtable><mo>)</mo></mrow></math></span> is isotropy <span><math><mrow><mfrac><mrow><mi>𝑐</mi><mi>𝑧</mi><mo>+</mo><mi>𝑑</mi><mi>𝑤</mi></mrow><mrow><mi>𝑎</mi><mi>𝑧</mi><mo>+</mo><mi>𝑏</mi><mi>𝑤</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><mi>𝑐</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>所以 Isotropy</p>
+    <math display="block"><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow></math>
+    <p>类似于 <span><math><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow><mo>⋊</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span> 是因为</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow><mo>†</mo></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow><msup><mi>𝑎</mi><mn>2</mn></msup><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow><mi>𝑏</mi><mo>+</mo><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>the group multiplication is</p>
+    <math display="block"><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mi>𝑏</mi></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑎</mi><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></mtd><mtd><mrow><mi>𝑎</mi><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><msup><mi>𝑎</mi><mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mrow><mo>(</mo><mrow><mi>𝑎</mi><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow><mo>)</mo></mrow></mrow></math>
+    <p>使用对应 <span><math><mrow><mi>𝑎</mi><mo>→</mo><mrow><msup><mi>𝑎</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mo>,</mo></mrow><mi>𝑏</mi><mo>→</mo><mi>𝑏</mi><msup><mi>𝑎</mi><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup></mrow></math></span> i.e. <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>→</mo><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑎</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mtd><mtd><mrow><mi>𝑏</mi><msup><mi>𝑎</mi><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><msup><mi>𝑎</mi><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> 将会给出通常的 semi-direct product <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>⋊</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span>, i.e. <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mi>𝑎</mi><mo>,</mo></mrow><msup><mi>𝑏</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>+</mo><mi>𝑏</mi><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

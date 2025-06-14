@@ -1,0 +1,75 @@
+<div>
+  <p>向量场 <span><math><mi>𝑌</mi></math></span> 在方向 <span><math><mi>𝑋</mi></math></span> 的导数的定义问题</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mi>𝑝</mi></math></span> 附近的向量场 <span><math><mi>𝑌</mi></math></span>, 在 <span><math><mi>𝑋</mi></math></span> 方向, 尝试在坐标里求导数 <span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝑌</mi></mrow><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑡</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mi>𝑡</mi></mfrac><mrow><mo>(</mo><mrow><mi>𝑌</mi><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>+</mo><mi>𝑡</mi><mi>𝑋</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑝</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>然而, <code>#link(&lt;difference-polynomial>)[difference]</code> 操作不线性兼容于一般 diffeomorphism 的换坐标</p>
+    <p>但是在 metric-manifold, 有特殊的坐标 — <code>#link(&lt;geodesic-coordinate>)[测地线坐标]</code>. <span><math><mi>𝑝</mi></math></span> 的不同测地线坐标的变换方式是 <span><math><mtext>SO</mtext></math></span>, 是线性的</p>
+  </div>
+  <p><code data-typst-label="geodesic-derivative">&lt;geodesic-derivative></code> 测地线导数 <strong>alias</strong> <code data-typst-label="Levi-Civita-derivative">&lt;Levi-Civita-derivative></code> Levi-Civita 导数 :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>在 <span><math><mi>𝑝</mi></math></span> 点测地线坐标, 在 <span><math><mi>𝑝</mi></math></span> 点的导数, <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mo>≔</mo><mfrac><mrow><mo>∂</mo><mi>𝑌</mi></mrow><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac></mrow></math></span></p>
+    <p>也可以对 <code>#link(&lt;tensor>)[]</code> 场求导数 <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑇</mi></mrow></math></span>. 根据张量结构带有的纯量乘法, 计算可以使用 <code>#link(&lt;Leibniz-law>)[product-rule]</code> <strong>Example</strong> <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mrow><mo>(</mo><mrow><mi>𝑌</mi><mo>⊗</mo><mi>𝑍</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>⊗</mo><mi>𝑍</mi><mo>+</mo><mi>𝑌</mi><mo>⊗</mo><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑍</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p><strong>Prop</strong> <span><math><mrow><mo>∇</mo><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math></span>. <em>Proof</em> 在测地线坐标 <span><math><mrow><mo>∂</mo><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑝</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><strong>Prop</strong> <span><math><mrow><mo>∇</mo><mtext> Vol </mtext><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><mo>∇</mo><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mtext>det </mtext></mrow><mrow><mi>𝑔</mi><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mn>1</mn></msup><mo>∧</mo><mo>⋯</mo><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><strong>Prop</strong> 协变导数兼容于 metric-dual e.g. <span><math><mrow><mo>∇</mo><mi>𝑔</mi><mi>𝑣</mi><mo>=</mo><mi>𝑔</mi><mo>∇</mo><mi>𝑣</mi></mrow></math></span> since <span><math><mrow><mo>∇</mo><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p>可能需要其它坐标来计算测地线坐标, 从而也可能需要其它坐标来表示测地线导数</p>
+  <p><code data-typst-label="geodesic-derivative-in-general-coordinate">&lt;geodesic-derivative-in-general-coordinate></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>用一般坐标 <span><math><mi>𝑥</mi></math></span> 计算出测地线坐标 <span><math><mi>𝑦</mi></math></span>, 然后在坐标 <span><math><mi>𝑦</mi></math></span>, 测地线导数是</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑌</mi></mrow><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>−</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>⋅</mo><mi>𝑌</mi></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> by product-rule</mtext></mtd></mtr></mtable></math>
+    <p>使用 <code>#link(&lt;connection-transformation>)[联络的变换]</code></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mo>∂</mo><mi>𝑦</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>⋅</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝑦</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>⋅</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>==> <span><math><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mfrac><mrow><mi>𝑑</mi><mi>𝑥</mi></mrow><mrow><mi>𝑑</mi><mi>𝑦</mi></mrow></mfrac></mrow></math></span></p>
+    <p>使用 <span><math><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑋</mi><mo>)</mo></mrow><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow></mrow></math></span>. 代入 <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span> 的计算</p>
+    <math display="block"><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>+</mo><msup><mi>𝑋</mi><mo>⊺</mo></msup><mo>⋅</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow></math>
+    <p><span><math><mi>𝑝</mi></math></span> 切空间将 <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span> 线性转换 <span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span> 到 <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span>, 但保持 in coordinate <span><math><mi>𝑥</mi></math></span>, but keep <span><math><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow></math></span> in coordinate <span><math><mi>𝑦</mi></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>+</mo><msup><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>⋅</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mo>∂</mo><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mfrac><mrow><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><msup><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⊺</mo></msup><mo>⋅</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mrow><mi>𝑌</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>或者写为, 在一般坐标, 测地线导数</p>
+    <math display="block"><mrow><mo>∇</mo><mo>=</mo><mo>∂</mo><mo>+</mo><mi mathvariant="normal">Γ</mi></mrow></math>
+    <p>对于 coordinate-frame</p>
+    <math display="block"><mrow><msub><mo>∇</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow></mfrac></msub><mfrac><mo>∂</mo><mrow><mo>∂</mo><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></mfrac><mo>=</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mi>𝑗</mi></msubsup><mfrac><mo>∂</mo><mrow><mo>∂</mo><msup><mi>𝑥</mi><mi>𝑗</mi></msup></mrow></mfrac></mrow></math>
+    <p>有无更直观的解释, 而不是直接使用联络的变换?</p>
+    <p>如果只看线性兼容, 那么有很多 <code>#link(&lt;principal-bundle-connection>)[线性 connection]</code>, 重合于 geodesic-derivative 的是 metric-connection</p>
+  </div>
+  <p><code data-typst-label="geodesic-derivative-of-co-vector">&lt;geodesic-derivative-of-co-vector></code> <strong>Prop</strong> 对于 co-vector 场</p>
+  <math display="block"><mrow><mo>∇</mo><mo>=</mo><mo>∂</mo><mo>−</mo><mi mathvariant="normal">Γ</mi></mrow></math>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Question</strong> 类似于 vector 场的情况. 使用变换 <span><math><mrow><mrow><mi>𝛼</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝛼</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac></mrow></math></span> 和 product-rule <span><math><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝛼</mi><mo>⋅</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝛼</mi></mrow><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mo>⋅</mo><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝛼</mi><mo>⋅</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑋</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>对于 co-vector coordinate-frame</p>
+    <math display="block"><mrow><msub><mo>∇</mo><mfrac><mo>∂</mo><mrow><mo>∂</mo><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow></mfrac></msub><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>=</mo><mo>−</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msubsup><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑗</mi></msup></mrow></math>
+  </div>
+  <p><code data-typst-label="parallel-transport-metric-connection">&lt;parallel-transport-metric-connection></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>平行运输 as "沿曲线零变化率" <span><math><mrow><msub><mo>∇</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><msub><mrow><mo>(</mo><mrow><mo>∂</mo><mo>+</mo><mi mathvariant="normal">Γ</mi></mrow><mo>)</mo></mrow><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span> where <span><math><mrow><mi>𝑋</mi><mo>=</mo><mrow><mi>𝑋</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><msub><mo>∇</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span> 是 ODE</p>
+    <p>根据计算 (?) 可以从平行运输 + 微商恢复协变导数</p>
+  </div>
+  <p><code data-typst-label="orthonormal-frame">&lt;orthonormal-frame></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>metric-connection 的平行运输保持 metric</p>
+    <p>可以用来构造规范正交标架</p>
+    <p>可以证明流形 metric 一一对应的到流形上的 <span><math><mtext>SO</mtext></math></span> principal-bundle 结构</p>
+    <p>但是有更具体且可操作的计算结果吗? 关于在测地线坐标用平行运输计算规范正交标架</p>
+    <p>规范正交标架可能会用于弯曲流形的 spinor 的一些简化计算 e.g. Pauli-matrix <span><math><msup><mi>𝜎</mi><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span></p>
+  </div>
+</div>

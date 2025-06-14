@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="Example Euclidean 解析流形, 球面 𝕊𝑛 的多种坐标函数图坐标, 函数方程 |𝑥|2&#x3D;1 and 隐函数定理. e.g. 𝑦&#x3D;1−𝑥2 for 𝕊1⊂ℝ2#link(&lt;stereographic-projection&gt;)[球极投影]极坐标. 从 𝕊1 的三角函数开始, 归纳地构造新的纬度测地线坐标Example ℝ3 的参数曲线曲面. 解析函数 𝑓:ℝ2→ℝ3, 𝑑𝑓≠0 &#x3D;&#x3D;&gt; 局部参数是局部解析同胚&lt;manifold&gt; :&#x3D; minimal structure to define manifold, 一族同维数坐标卡覆盖 𝑀, 用 Euclidean or Minkowski or 二次型解析的转换函数&lt;orientable&gt; 可定向 :&#x3D; 在切丛中可以解析地定义 #link(&lt;orientation&gt;)[]等价于 Diff 的 det−1(ℝ&lt;0)⊔ det−1(ℝ&gt;0) 分解等价于存在坐标覆盖, 每个 transition function 微分 𝑑𝑓∈ SOExample #link(&lt;Mobius-strip&gt;)[] 不可定向带边流形如果内部可定向, 则边界也可定向. 直觉上, ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html" class="active"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/manifold", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><strong>Example</strong> Euclidean 解析流形, 球面 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 的多种坐标</p>
+  <ul>
+    <li>函数图坐标, 函数方程 <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math></span> and 隐函数定理. e.g. <span><math><mrow><mi>𝑦</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></span> for <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span></li>
+    <li><code>#link(&lt;stereographic-projection>)[球极投影]</code></li>
+    <li>极坐标. 从 <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></math></span> 的三角函数开始, 归纳地构造新的纬度</li>
+    <li>测地线坐标</li>
+  </ul>
+  <p><strong>Example</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 的参数曲线曲面. 解析函数 <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>, <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>≠</mo><mn>0</mn></mrow></math></span> ==> 局部参数是局部解析同胚</p>
+  <p><code data-typst-label="manifold">&lt;manifold></code> := minimal structure to define manifold, 一族同维数坐标卡覆盖 <span><math><mi>𝑀</mi></math></span>, 用 Euclidean or Minkowski or 二次型解析的转换函数</p>
+  <p><code data-typst-label="orientable">&lt;orientable></code> 可定向 := 在切丛中可以解析地定义 <code>#link(&lt;orientation>)[]</code></p>
+  <p>等价于 <span><math><mtext>Diff</mtext></math></span> 的 <span><math><mrow><msup><mtext>det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>)</mo></mrow><mo>⊔</mo><msup><mtext> det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>)</mo></mrow></mrow></math></span> 分解</p>
+  <p>等价于存在坐标覆盖, 每个 transition function 微分 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>∈</mo><mtext> SO</mtext></mrow></math></span></p>
+  <p><strong>Example</strong> <code>#link(&lt;Mobius-strip>)[]</code> 不可定向</p>
+  <p>带边流形如果内部可定向, 则边界也可定向. 直觉上, 边界的局部有相同的内部 + 内部可定向 ==> 边界的局部有相同方向 ==> 边界方向被决定了</p>
+  <p><code data-typst-label="manifold-with-boundary">&lt;manifold-with-boundary></code> 带边流形. 坐标可以是 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维超平面包围的区域, 转换函数需要能够导出 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维子空间里的转换函数. 通常使用几乎处处解析来处理一些奇点</p>
+  <p><code data-typst-label="metric-manifold">&lt;metric-manifold></code> 流形上的 metric 是在每个切空间定义 metric, 等价于在流形切丛上选择 orthonormal frame bundle. 对 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> oritentable, 可以选择 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> 可定向的标架丛</p>
+  <p>metric 可以继承自 submanifold 或 quotient manifold of <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup></math></span></p>
+  <p><strong>Example</strong> …</p>
+  <p>即使用二次型拓扑和微分定义了流形, 也仍然有很多不同的 metric. 一种性质良好的 metric 是 <code>#link(&lt;Einstein-metric.typ>)[]</code></p>
+  <p><code data-typst-label="isometry">&lt;isometry></code> := diffeomorphism 保持 metric <span><math><mi>𝑔</mi></math></span>. 通常也假设保持可定向流形的方向</p>
+  <p>微分同胚作用于 metric space, isometry 是这个群作用的 <code>#link(&lt;isotropy>)[]</code></p>
+  <p>不同曲率的 metric 不能在相同的 orbit. 特别地, 零曲率和非零曲率的 metric 不能在相同的 oribt</p>
+  <p><code data-typst-label="δ-isometry">&lt;δ-isometry></code> <strong>alias</strong> <code data-typst-label="Killing-field">&lt;Killing-field></code></p>
+  <p>将会用于流形上的作用量守恒流</p>
+  <p><strong>Question</strong> δ-isometry 和 isometry 群的维数 <span><math><mrow><mo>≤</mo><mtext> dim </mtext><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mo>⋊</mo><mtext> SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><strong>Example</strong> 一些具体的流形</p>
+  <p>二次型流形 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><msup><mi>𝑟</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>(cf. ref-10 ref-11). group <span><math><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo><mtext>U</mtext><mo>,</mo><mtext>SU</mtext><mo>,</mo><mtext>Sp</mtext><mo>,</mo><mtext>SL</mtext><mo>,</mo><msub><mi>𝐺</mi><mn>2</mn></msub></mrow></math></span>. exp coordinate</p>
+  <p><code data-typst-label="Grassmannian-manifold">&lt;Grassmannian-manifold></code> <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></math></span> act on <span><math><mi>𝑘</mi></math></span> subspace <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑘</mi><mo>)</mo></mrow></mrow><mo>×</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mrow></mfrac></math></span> (orientable)</p>
+  <p><code data-typst-label="Stiefel-manifold">&lt;Stiefel-manifold></code> tautological frame bundle <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mfrac></math></span></p>
+  <p>tautological bundle</p>
+  <p>推广到 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 二次型的情况</p>
+  <p>lens space</p>
+  <p>连续同胚但不微分同胚. <strong>Example</strong> 四元数 <span><math><mi mathvariant="normal">ℍ</mi></math></span> 版本的 <code>#link(&lt;Hopf-bundle>)[]</code> 的多种修改给出了例子之 called exotic 7-shpere</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

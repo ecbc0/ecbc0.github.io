@@ -1,0 +1,449 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="为了处理 ℝ1,𝑛 的幂级数, 需要先处理值域 ℝ1,𝑛 的级数暂时只处理类时未来的情况&lt;sum-preserve-time-future&gt; let 𝑣,𝑤 类时未来, then 𝑣+𝑤 类时未来⟨𝑣+𝑤⟩2&#x3D;⟨𝑣⟩2+⟨𝑤⟩2+2⟨𝑣,𝑤⟩⟨𝑣,𝑤⟩&gt;0|𝑣+𝑤|≥|𝑣|+|𝑤| (#link(&lt;quadratic-form-inequality-Minkowski&gt;)[三角不等式])|𝑣+𝑤|&gt;|𝑣|,|𝑤|let 𝑥𝑛 类时未来 or 0then 𝑥1+⋯+𝑥𝑛 类时未来 or 0|𝑥1+⋯+𝑥𝑛|≥|𝑥1|+⋯+|𝑥𝑛||𝑥1+⋯+𝑥𝑛|≥|𝑥1+⋯+𝑥𝑛−1|, or 𝑛⇝|𝑥1+⋯+𝑥𝑛|≥0 单调递增 &lt;increasing-length-of-time-future-series&gt;let 𝑣,𝑤 time future, not co-linear. span(𝑣,𝑤)≃ℝ1,1 cf. #link(&lt;signature-of-2d-subspace-of-spacetime&gt;)[]通过 SO(1,𝑛) 变换, 可以假设测地线球的中心是 (0,…,0,1)&lt;sum-preserve-angle">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html" class="active"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/analytic-Minkowski", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>为了处理 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的幂级数, 需要先处理值域 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的级数</p>
+  <p>暂时只处理类时未来的情况</p>
+  <p><code data-typst-label="sum-preserve-time-future">&lt;sum-preserve-time-future></code> let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 类时未来, then <span><math><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow></math></span> 类时未来</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>></mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>≥</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span> (<code>#link(&lt;quadratic-form-inequality-Minkowski>)[三角不等式]</code>)</p>
+    <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo><mo>,</mo><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>let <span><math><msub><mi>𝑥</mi><mi>𝑛</mi></msub></math></span> 类时未来 or <span><math><mn>0</mn></math></span></p>
+  <p>then <span><math><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></math></span> 类时未来 or <span><math><mn>0</mn></math></span></p>
+  <p><span><math><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>≥</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
+  <p><span><math><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>≥</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>|</mo></mrow></mrow></math></span>, or <span><math><mrow><mi>𝑛</mi><mo>⇝</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>≥</mo><mn>0</mn></mrow></math></span> 单调递增 <code data-typst-label="increasing-length-of-time-future-series">&lt;increasing-length-of-time-future-series></code></p>
+  <p>let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> time future, not co-linear. <span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> cf. <code>#link(&lt;signature-of-2d-subspace-of-spacetime>)[]</code></p>
+  <p>通过 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow></mrow></math></span> 变换, 可以假设测地线球的中心是 <span><math><mrow><mo>(</mo><mrow><mn>0</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mrow><mn>0</mn><mo>,</mo></mrow><mn>1</mn></mrow><mo>)</mo></mrow></math></span></p>
+  <p><code data-typst-label="sum-preserve-angle-range">&lt;sum-preserve-angle-range></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 的方向 <span><math><mrow><mrow><mfrac><mi>𝑣</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mfrac><mo>,</mo></mrow><mfrac><mi>𝑤</mi><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></mrow></math></span> 包含在 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 的测地线球 <span><math><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mi>𝑅</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>]</mo></mrow><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>==> <span><math><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow></math></span> 的方向 <span><math><mfrac><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></math></span> 在测地线球 <span><math><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mi>𝑅</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>]</mo></mrow><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><strong>Question</strong> 有更直接的证明吗?</p>
+    <p>let</p>
+    <p><span><math><mtable><mtr><mtd><mi>𝑣</mi><mo>=</mo><mo>|</mo><mi>𝑣</mi><mo>|</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mi>𝑤</mi><mo>=</mo><mo>|</mo><mi>𝑤</mi><mo>|</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math></span></p>
+    <p>let <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><mo>|</mo><mo>,</mo></mrow><mrow><mo>|</mo><mi>𝜓</mi><mo>|</mo></mrow><mo>≤</mo><mi>𝑅</mi></mrow></math></span></p>
+    <p>双曲线的测地线长度 <span><math><mi>𝑟</mi></math></span> 是双射. 双曲线映射到到空间轴是单射. 复合后是 <span><math><mrow><mtext>sinh </mtext><mi>𝑟</mi></mrow></math></span> 保持单调的双射</p>
+    <img src="../image/hyperbolic-to-space-bijective.jpeg" width="60%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>argh </mtext><mrow><mo>(</mo><mfrac><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>→</mo></mtd><mtd class="mathyml-align-right"><mtext>im </mtext><mfrac><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></mtd><mtd class="mathyml-align-left"><mrow><mo>(</mo><mrow><mtext>im </mtext><mtext> of </mtext><msub><mi mathvariant="normal">ℂ</mi><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mtext> sinh </mtext><mi mathvariant="normal">ϕ</mi><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> sinh </mtext><mi>𝜓</mi></mrow><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> cosh </mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><mo>−</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mfrac></mtd><mtd class="mathyml-align-left"><mtext> cosh </mtext><mo>≥</mo><mn>1</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mtext> sinh </mtext><mi>𝑅</mi><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> sinh </mtext><mi>𝑅</mi></mrow><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> cosh </mtext><mrow><mo>(</mo><mrow><mi>𝑅</mi><mo>−</mo><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mtext>sinh </mtext><mi>𝑅</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mo>|</mo><mrow><mtext>argh </mtext><mrow><mo>(</mo><mfrac><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mi>𝑅</mi></mtd></mtr></mtable></math>
+  </div>
+  <p>let <span><math><msub><mi>𝑥</mi><mi>𝑛</mi></msub></math></span> 方向 <span><math><mfrac><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mfrac></math></span> in <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow></mrow></math></span> 测地线球 <span><math><mi mathvariant="normal">𝔹</mi></math></span></p>
+  <p>==> <span><math><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>∈</mo><mi mathvariant="normal">𝔹</mi></mrow></math></span></p>
+  <p><em>Proof</em> use <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></mrow><mo>)</mo></mrow></mrow></math></span> signature <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span>, 嵌入 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span>, 归纳</p>
+  <p><code data-typst-label="quadratic-form-inequality-Minkowski-another">&lt;quadratic-form-inequality-Minkowski-another></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 的方向 in <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 测地线球 <span><math><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mi>𝑅</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>]</mo></mrow><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>==> <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  </div>
+  <p><em>Proof</em> use <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> cosh </mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><mo>−</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></math></span> cf. <code>#link(&lt;hyperbolic-cosine-formula>)[]</code></p>
+  <p>let <span><math><msub><mi>𝑥</mi><mi>𝑛</mi></msub></math></span> time future, 方向 <span><math><mfrac><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mfrac></math></span> 在 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow></mrow></math></span> 测地线球 <span><math><mi mathvariant="normal">𝔹</mi></math></span> with 半径 <span><math><mi>𝑅</mi></math></span></p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mn>2</mn><munder displaystyle="true"><mo>∑</mo><mrow><mn>1</mn><mo>≤</mo><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi><mo>≤</mo><mi>𝑛</mi></mrow></munder><mrow><mo>⟨</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑥</mi><mi>𝑗</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow><munder displaystyle="true"><mo>∑</mo><mrow><mn>1</mn><mo>≤</mo><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi><mo>≤</mo><mi>𝑛</mi></mrow></munder><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>|</mo><mo>|</mo><msub><mi>𝑥</mi><mi>𝑗</mi></msub><mo>|</mo></mtd></mtr><mtr></mtr></mtable></math>
+  <p>==> use <span><math><mrow><mtext>cosh </mtext><mo>≥</mo><mn>1</mn></mrow></math></span></p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+  <p><code data-typst-label="absolute-convergence-Minkowski-distance">&lt;absolute-convergence-Minkowski-distance></code> <span><math><mrow><msubsup><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>|</mo></mrow><mo>&lt;</mo><mo>∞</mo></mrow></math></span> ==> <code>#link(&lt;increasing-length-of-time-future-series>)[单调递增]</code> 有界 <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>&lt;</mo><mo>∞</mo></mrow></math></span> 存在极限</p>
+  <p><code data-typst-label="Minkowski-power-series">&lt;Minkowski-power-series></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><msubsup><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>|</mo></mrow><mo>&lt;</mo><mo>∞</mo></mrow></math></span></p>
+    <ul>
+      <li>距离 <span><math><mrow><mrow><mo>|</mo><mi>𝑦</mi><mo>|</mo></mrow><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></math></span> 极限存在 (上一个定理)</li>
+      <li>方向 <span><math><mrow><mfrac><mi>𝑦</mi><mrow><mo>|</mo><mi>𝑦</mi><mo>|</mo></mrow></mfrac><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></mfrac><mo>∈</mo><mi mathvariant="normal">𝔹</mi></mrow></math></span>, 极限存在待证明</li>
+    </ul>
+    <p>have property</p>
+    <ul>
+      <li><span><math><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> time future</li>
+      <li><span><math><mrow><mrow><munder displaystyle="false"><mtext>lim</mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mo>|</mo><mi>𝑦</mi></mrow><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>|</mo><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    </ul>
+    <p>称为 Minkowski 级数收敛 <span><math><mrow><msubsup><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>=</mo><mi>𝑦</mi></mrow></math></span></p>
+  </div>
+  <p><em>Proof</em> of convergence in direction space</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li>方向 <span><math><mfrac><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></mfrac></math></span> 收敛</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><strong>Question</strong> 有无更直接的证明</p>
+      <p>use <code>#link(&lt;isom-top-hyperbolic-Euclidean>)[]</code>. <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 距离限制在 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow></mrow></math></span> 等价于作为 Riemman manifold 的测地线距离, <span><math><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup></math></span> 两个元素相减是 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 类空</p>
+      <p>we prove <span><math><mfrac><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></mfrac></math></span> Cauchy in <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>&lt;</mo><mo>∞</mo></mrow></math></span> ==> <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></math></span> 是 Cauchy 序列</p>
+      <p>==> all <span><math><mrow><mi>𝜀</mi><mo>></mo><mn>0</mn></mrow></math></span>, exist <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, all <span><math><mrow><mi>𝑚</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span><br><span><math><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+      <p>let</p>
+      <p><span><math><mrow><mi>𝑣</mi><mo>=</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub></mrow></math></span>. use <span><math><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup></math></span> 两点相减是 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 类空</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mfrac><mi>𝑣</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mfrac><mo>−</mo><mfrac><mi>𝑤</mi><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mn>2</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mo>⟨</mo><mrow><mfrac><mi>𝑣</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mfrac><mo>,</mo><mfrac><mi>𝑤</mi><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn><mrow><mo>(</mo><mfrac><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></mfrac><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>use <span><math><mrow><mfrac><mn>1</mn><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>|</mo></mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></mfrac><mo>≤</mo><mfrac><mn>1</mn><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mo>|</mo><mn>2</mn></msup></mrow></mfrac></mrow></math></span> (or other) 不影响极限 <span><math><mrow><munder displaystyle="false"><mo>→</mo><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mn>0</mn></mrow></math></span></p>
+      <p>use <code>#link(&lt;sum-preserve-time-future>)[]</code>. <span><math><mrow><mi>𝑤</mi><mo>−</mo><mi>𝑣</mi></mrow></math></span> 类时, <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow></math></span>. use <code>#link(&lt;triangel-inequality-Minkowski>)[三角不等式]</code> <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>≥</mo><mrow><mo>|</mo><mi>𝑤</mi></mrow><mo>−</mo><mrow><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow></math></span>, use Cauchy <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+      <p>==> <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi></mrow><mo>−</mo><mrow><mi>𝑣</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+      <p>==> <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi></mrow><mo>−</mo><mrow><mi>𝑣</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>≤</mo><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><msup><mi>𝜀</mi><mn>2</mn></msup></mrow></math></span></p>
+      <p>==> <span><math><mrow><mn>0</mn><mo>≤</mo><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mrow><mo>|</mo><mi>𝑤</mi></mrow><mo>−</mo><mrow><mi>𝑣</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>&lt;</mo><msup><mi>𝜀</mi><mn>2</mn></msup></mrow></math></span></p>
+      <p>==> <span><math><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mo>&lt;</mo><msup><mi>𝜀</mi><mn>2</mn></msup></mrow></math></span></p>
+      <p>==> <span><math><mfrac><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></mfrac></math></span> Cauchy in <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    </div>
+    <ul>
+      <li>内积收敛</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>let <span><math><mrow><mi>𝑦</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑦</mi><mo>|</mo></mrow><mtext> exph </mtext><mi mathvariant="normal">ϕ</mi></mrow></math></span><br>let <span><math><mrow><mi>𝑧</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><mo>|</mo></mrow><mtext> exph </mtext><mi>𝜓</mi></mrow></math></span> time future<br>for <span><math><mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>→</mo><mi>𝑦</mi></mrow></math></span> use 双曲余弦</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>,</mo><mi>𝑧</mi></mrow><mo>⟩</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑦</mi><mo>|</mo><mo>|</mo><mi>𝑧</mi><mo>|</mo><mtext> cosh </mtext><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>−</mo><mrow><mi>𝜓</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mo>|</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>|</mo><mo>|</mo><mi>𝑧</mi><mo>|</mo><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub></mrow><mo>−</mo><mrow><mi>𝜓</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> distance </mtext><mo>|</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>|</mo><mo>∧</mo><mtext> direction </mtext><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>,</mo><mi>𝑧</mi></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+    </div>
+    <ul>
+      <li><span><math><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> 类时</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>−</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msubsup><mi>𝑦</mi><mi>𝑛</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑚</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>(</mo><mrow><msubsup><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑦</mi><mi>𝑛</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑚</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>−</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+      <p>where <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>−</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>≥</mo><mn>0</mn></mrow></math></span></p>
+    </div>
+    <ul>
+      <li><span><math><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> 未来</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>,</mo><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mo>−</mo><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑚</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow><mo>−</mo><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑚</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>−</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+      <p>where <span><math><mrow><mrow><mo>⟨</mo><mrow><msub><mi>𝑦</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>−</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mo>=</mo><mrow><mo>⟨</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mi>𝑚</mi></mrow></msub><mo>,</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mo>≥</mo><mn>0</mn></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim</mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>(</mo><mrow><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msubsup><mi>𝑦</mi><mi>𝑛</mi><mn>2</mn></msubsup><mo>−</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑦</mi><mo>,</mo><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
+    </div>
+  </div>
+  <p>处理幂级数</p>
+  <p>let <span><math><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>∈</mo><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p><code data-typst-label="Minkowski-analytic">&lt;Minkowski-analytic></code> Minkowski 解析</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span> (零阶不影响)</p>
+    <p>let 测地线坐标 <span><math><mrow><mrow><mtext>argh</mtext><mo>:</mo></mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+    <p>目标的 <span><math><msub><mi>𝐴</mi><mi>𝑛</mi></msub></math></span> property</p>
+    <ul>
+      <li>
+        <p><span><math><mi>𝑣</mi></math></span> time future ==> <span><math><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span> time future</p>
+      </li>
+      <li>
+        <p>定义范数给出绝对收敛</p>
+      </li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>use 几何级数控制 like <code>#link(&lt;linear-map-induced-norm>)[the case of Euclidean]</code></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mtable><mtr><mtd><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup></mrow></mtd></mtr><mtr><mtd><mrow><mrow><mo>|</mo><mtext>argh</mtext></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>|</mo><mo>≤</mo><mi>𝑅</mi></mrow></mtd></mtr></mtable></munder><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>|</mo><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mrow><mo>|</mo><mrow><mtext>argh</mtext><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>≤</mo><mi>𝑅</mi></mrow></munder><mfrac><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mrow></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mi>𝜌</mi><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msup><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo><msup><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></math>
+      <p>==> <span><math><mrow><mrow><mo>|</mo><mrow><mtext>argh</mtext><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>&lt;</mo><mi>𝑅</mi></mrow></math></span> and <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mi>𝜌</mi><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow></mrow></mrow></math></span> ==> <span><math><mrow><mo>∑</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>|</mo><mo>≤</mo><mo>∑</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mi>𝜌</mi><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow></mrow></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mi>𝜌</mi><mrow><mo>(</mo><mi>𝑅</mi><mo>)</mo></mrow></mrow></mfrac></mrow></mfrac><mo>−</mo><mn>1</mn><mo>&lt;</mo><mo>∞</mo></mrow></math></span></p>
+    </div>
+    <ul>
+      <li><strong>Question</strong> 类似 Euclidean 的情况, 收敛半径内蕴含 Minkowski 连续性 i.e. 距离和方向的连续, 而且有绝对一致收敛性质</li>
+    </ul>
+  </div>
+  <p><strong>Example</strong> <strong>Question</strong></p>
+  <ul>
+    <li>
+      <p><span><math><mtext>exph</mtext></math></span> is <span><math><mrow><msub><mi mathvariant="normal">ℂ</mi><mtext>split </mtext></msub><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> Minkowski 解析</p>
+    </li>
+    <li>
+      <p>类似复分析, <span><math><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></math></span> 解析 ==> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span> Minkowski 解析</p>
+    </li>
+    <li>
+      <p>类似于 Euclidean 的情况, PDE, 特征函数, 特殊函数可能会给出更多 Minkowski-analytic 的例子</p>
+    </li>
+  </ul>
+  <p><strong>Question</strong> let <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑑</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑑</mi></mrow></msup></mrow></math></span> Euclidean 解析 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>+</mo><mi>𝑑</mi></mrow></msup></math></span>, <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>∈</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑑</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> ==> <span><math><mi>𝑓</mi></math></span> Minkowski 解析?</p>
+  <p><strong>Question</strong> 对于 Minkowski 解析, 考虑对应到 Euclidean 的 <code>#link(&lt;analytic-continuation>)[]</code>, <code>#link(&lt;power-series-space>)[]</code>, <code>#link(&lt;analytic-space>)[]</code></p>
+  <p>多了 <span><math><mrow><mrow><mo>|</mo><mrow><mtext>argh</mtext><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>≤</mo><mi>𝑅</mi></mrow></math></span>, 参数 <span><math><mi>𝑅</mi></math></span></p>
+  <p>级数 or 函数三角不等式可能需要加上参数 <span><math><mrow><mtext>cosh </mtext><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow></math></span> 修正的版本</p>
+  <p>解析函数空间的网的逼近时还需要 <span><math><mrow><mi>𝑅</mi><mo>→</mo><mo>∞</mo></mrow></math></span> 作为整个方向空间的极限</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

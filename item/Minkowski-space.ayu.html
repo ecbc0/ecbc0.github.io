@@ -1,0 +1,492 @@
+<div>
+  <p>子空间 <span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>↪</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup></mrow></math></span></p>
+  <p>以下等价</p>
+  <ul>
+    <li><span><math><mrow><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></math></span></li>
+    <li><span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> not co-linear</li>
+    <li><span><math><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi><mo>≠</mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <p>if <span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span>, 可能</p>
+  <ul>
+    <li>
+      <p>2 time(-like)<br><strong>Example</strong></p>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>, where <span><math><mrow><mn>0</mn><mo>&lt;</mo><mrow><mo>|</mo><mi>𝑏</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi>𝑎</mi><mo>|</mo></mrow></mrow></math></span><br><span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>𝑎</mi><mn>2</mn></msup><mo>−</mo><msup><mi>𝑏</mi><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span><br>可以线性生成 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></math></span></div>
+    </li>
+    <li>1 time, 1 space<br><strong>Example</strong> <span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span></li>
+    <li>1 time, 1 null<br><strong>Example</strong> <span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span></li>
+    <li>2 null<br><strong>Example</strong> <span><math><mrow><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup><mo>,</mo></mrow><mi>𝑣</mi><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi>𝑎</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>. 注意 <span><math><mrow><mi>𝑣</mi><mo>⋅</mo><mi>𝑤</mi><mo>=</mo><mn>2</mn><msup><mi>𝑎</mi><mn>2</mn></msup><mo>≠</mo><mn>0</mn></mrow></math></span>. signature <span><math><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></math></span></li>
+    <li>2 space.<br><strong>Example</strong><br><span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>, where <span><math><mrow><mn>0</mn><mo>&lt;</mo><mrow><mo>|</mo><mi>𝑎</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi>𝑏</mi><mo>|</mo></mrow></mrow></math></span></li>
+    <li>other cases (symmetry of time <span><math><mo>⟷</mo></math></span> space)</li>
+  </ul>
+  <p>考虑一般的 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 中的 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="signature-of-2d-subspace-of-spacetime">&lt;signature-of-2d-subspace-of-spacetime></code> <strong>Prop</strong> Minkowski <span><math><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow></math></span> 在 <span><math><mrow><mtext>dim </mtext><mo>=</mo><mn>2</mn></mrow></math></span> 的 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的可能 signature 是</p>
+  <ul>
+    <li><span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span></li>
+    <li><span><math><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow></math></span></li>
+    <li><span><math><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow></math></span></li>
+  </ul>
+  <p><strong>Prop</strong> time-like 只正交于 space-like</p>
+  <p>let <span><math><mi>𝑣</mi></math></span> time-like. 使用正交分解, let <span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><mo>,</mo></mrow><mi>𝑤</mi><mo>=</mo><msub><mi>𝑤</mi><mn>0</mn></msub><mo>+</mo><mi>𝑤</mi></mrow></math></span> then <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mi>𝑤</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></math></span> ==> <span><math><mi>𝑤</mi></math></span> space-like</p>
+  <p><strong>Prop</strong> light-like <span><math><mi>𝑣</mi></math></span> 不正交于</p>
+  <ul>
+    <li>time-like</li>
+    <li>与自身共线 <span><math><mrow><mi>𝑘</mi><mi>𝑣</mi></mrow></math></span> 之外的 light-like</li>
+  </ul>
+  <p><em>Proof</em> (ref-7, (ref-9, p.13))</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>根据情况取一个正交分解 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>=</mo><msub><mi mathvariant="normal">ℝ</mi><mtext> time </mtext></msub><mo>⊕</mo><msubsup><mi mathvariant="normal">ℝ</mi><mtext> space</mtext><mi>𝑛</mi></msubsup></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑣</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑣</mi><mn>0</mn></msub><mo>+</mo><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑤</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑤</mi><mn>0</mn></msub><mo>+</mo><mi>𝑤</mi></mtd></mtr></mtable></math>
+    <ul>
+      <li><span><math><mi>𝑤</mi></math></span> time-like ==> let <span><math><mrow><mi>𝑤</mi><mo>=</mo><msub><mi>𝑤</mi><mn>0</mn></msub></mrow></math></span> ==> <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>≠</mo><mn>0</mn></mrow></math></span></li>
+      <li><span><math><mi>𝑤</mi></math></span> light-like</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mtable><mtr><mtd><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd><mn>0</mn></mtd><mtd><mo>⟹</mo></mtd><mtd><msubsup><mi>𝑣</mi><mn>0</mn><mn>2</mn></msubsup></mtd><mtd><mo>=</mo></mtd><mtd><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd><mn>0</mn></mtd><mtd><mo>⟹</mo></mtd><mtd><msubsup><mi>𝑤</mi><mn>0</mn><mn>2</mn></msubsup></mtd><mtd><mo>=</mo></mtd><mtd><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mn>0</mn></mtd><mtd><mo>⟹</mo></mtd><mtd><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+      <p>我们证明 <span><math><mrow><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>=</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>−</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>=</mo></mtd><mtd class="mathyml-align-left"><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>−</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>∈</mo></mtd><mtd class="mathyml-align-left"><msubsup><mi mathvariant="normal">ℝ</mi><mtext> space</mtext><mi>𝑛</mi></msubsup></mtd></mtr></mtable></math>
+      <p>but</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>−</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>=</mo></mtd><mtd class="mathyml-align-left"><msubsup><mi>𝑤</mi><mn>0</mn><mn>2</mn></msubsup><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>+</mo><msubsup><mi>𝑣</mi><mn>0</mn><mn>2</mn></msubsup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>=</mo></mtd><mtd class="mathyml-align-left"><mn>0</mn></mtd></mtr></mtable></math>
+      <p>space-like 但长度零, 所以 <span><math><mrow><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>−</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+      <p>==> <span><math><mrow><msub><mi>𝑤</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑣</mi><mo>−</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>⋅</mo><mi>𝑤</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    </div>
+  </div>
+  <p><strong>Prop</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的二维子空间的 signature 不可能是 <span><math><mrow><mn>1</mn><mo>,</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><mn>0</mn><mo>,</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em> 用上一个定理</p>
+  <p><strong>Prop</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的两个不共线 time-like <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 的展开 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的 signature 是 <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span></p>
+  <p><em>Proof</em> 以其中一个为初始的基来生成 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 正交基, 但 signature 不能是 <span><math><mrow><mn>1</mn><mo>,</mo><mn>0</mn></mrow></math></span>, 所以只能是 <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span></p>
+  <p><span><math><mi>𝑣</mi></math></span> 的射影 <span><math><mrow><mrow><mo>{</mo><mrow><mi>𝑘</mi><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup><mo>:</mo><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>}</mo></mrow><mo>⊂</mo><mtext> cone</mtext></mrow></math></span></p>
+  <p><strong>Prop</strong> let <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span>, let <span><math><mi>𝑤</mi></math></span> time-like or light-like with <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 不共线. 则 <span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>⊄</mo><mtext> cone</mtext></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>已知 <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>≠</mo><mn>0</mn></mrow></math></span></p>
+    <p>在光锥上等价于解变量 <span><math><mi>𝑏</mi></math></span> 的二次方程 <span><math><mrow><mn>0</mn><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>𝑎</mi><mi>𝑣</mi><mo>+</mo><mi>𝑏</mi><mi>𝑤</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mi>𝑎</mi><mi>𝑏</mi><mo>⋅</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>+</mo><msup><mi>𝑏</mi><mn>2</mn></msup><mo>⋅</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mi>𝑏</mi><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>⋅</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mi>𝑎</mi><mo>⋅</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑏</mi><mo>≠</mo><mn>0</mn><mo>⟹</mo><mi>𝑏</mi><mo>=</mo><mrow><mo>{</mo><mtable><mtr><mtd class="mathyml-align-left"><mo>−</mo><mfrac><mrow><mi>𝑎</mi><mo>⋅</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mfrac></mtd><mtd class="mathyml-align-left"><mtext> if </mtext><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>≠</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-left"><mi mathvariant="normal">ℝ</mi></mtd><mtd class="mathyml-align-left"><mtext> if </mtext><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+  </div>
+  <p><strong>Prop</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的两个不共线 light-like <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 的展开 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的 signature 是 <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span> or <span><math><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow></msup></math></span> Euclidean 没有 light-like, 所以无其它可能性</p>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li><span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span> 的 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>±</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span></li>
+    <li><span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msup></math></span> 的 <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>. 相减得到正交基 <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="simultaneity-relativity">&lt;simultaneity-relativity></code> 相对论同时性</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>use 正交基延拓</p>
+    <p>in <span><math><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></math></span>, <span><math><mrow><mtext>dim </mtext><mo>=</mo><mi>𝑛</mi></mrow></math></span> space-like 子空间的正交补是 <span><math><mrow><mtext>dim </mtext><mo>=</mo><mn>1</mn></mrow></math></span> time-like 子空间</p>
+    <ul>
+      <li>
+        <p>(<span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><msup><mi>𝑣</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span> space-like &lt;==> 存在 time-like <span><math><mi>𝑤</mi></math></span> 同时正交于 <span><math><mrow><mi>𝑣</mi><mo>,</mo><msup><mi>𝑣</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span>)</p>
+      </li>
+      <li>
+        <p>(<span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><msup><mi>𝑣</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> not space-like &lt;==> 不存在 time-like <span><math><mi>𝑤</mi></math></span> 同时正交于 space-like <span><math><mrow><mi>𝑣</mi><mo>,</mo><msup><mi>𝑣</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span>)</p>
+      </li>
+    </ul>
+    <p>直观: 不同 space-like 子空间 <span><math><mrow><mi>𝑆</mi><mo>,</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 无法使用兼容的时间计算方式 or <span><math><mrow><mi>𝑆</mi><mo>,</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 的 time-like 正交补不相同</p>
+  </div>
+  <p>use <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 正交分解</p>
+  <p><span><math><mrow><mi>𝑣</mi><mo>=</mo><msub><mi>𝑣</mi><mn>0</mn></msub><mo>+</mo><mi>𝑣</mi></mrow></math></span></p>
+  <p><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>=</mo><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>−</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+  <ul>
+    <li><span><math><mrow><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>,</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow><mo>≥</mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>分类讨论 <span><math><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></math></span>. 内积的时间相乘的符号决定内积的符号</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>−</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  </div>
+  <ul>
+    <li><span><math><mrow><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>,</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow><mo>≤</mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>分类讨论 <span><math><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>)</mo></mrow></mrow></math></span>. 内积的空间相乘的符号决定内积的符号</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><mo>−</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>0</mn></msub><msub><mi>𝑤</mi><mn>0</mn></msub><mo>−</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>sign</mtext><mrow><mo>(</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p>in Euclidean, we have <code>#link(&lt;quadratic-form-inequality-Euclidean>)[内积不等式]</code> <span><math><mrow><mo>|</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><msup><mo>|</mo><mn>2</mn></msup><mo>≤</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span> ==> <code>#link(&lt;triangle-inequality-Euclidean>)[三角不等式]</code> <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo><mo>+</mo><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <p>in signature <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 二次型, 这一般不成立</p>
+  <p>将 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 二次型 <code>#link(&lt;tensor-induced-quadratic-form>)[导出]</code> 到交错二阶线性</p>
+  <p><span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mtext> det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑤</mi><mi>𝑣</mi></mrow></mtd><mtd><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></p>
+  <p><code data-typst-label="quadratic-form-inequality-Minkowski">&lt;quadratic-form-inequality-Minkowski></code> 内积不等式</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span>, let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> not co-linear, so <span><math><mrow><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></math></span></p>
+    <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 二次型限制在 <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 上, signature</p>
+    <ul>
+      <li><span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+      <li><span><math><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+    </ul>
+  </div>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></math></span> ==> <span><math><mrow><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><mtext> span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mfrac linethickness="0"><mn>2</mn><mn>2</mn></mfrac><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
+    <p><span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 二次型导出到 <span><math><mrow><msup><mo>⋀</mo><mn>2</mn></msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>signature</p>
+    <ul>
+      <li>
+        <p><span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span> of <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> ==> <span><math><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></math></span> of <span><math><mrow><msup><mo>⋀</mo><mn>2</mn></msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+        <p><em>Proof</em></p>
+        <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span> of <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 正交基 <span><math><mrow><msub><mi>𝑒</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑒</mi><mn>1</mn></msub></mrow></math></span>, <span><math><mrow><msubsup><mi>𝑒</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mrow><mn>1</mn><mo>,</mo></mrow><msubsup><mi>𝑒</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span> ==> <span><math><mrow><msup><mo>⋀</mo><mn>2</mn></msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 正交基 <span><math><mrow><msub><mi>𝑒</mi><mn>0</mn></msub><mo>∧</mo><msub><mi>𝑒</mi><mn>1</mn></msub></mrow></math></span>, <span><math><mrow><msup><mrow><mo>(</mo><mrow><msub><mi>𝑒</mi><mn>0</mn></msub><mo>∧</mo><msub><mi>𝑒</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><msubsup><mi>𝑒</mi><mn>0</mn><mn>2</mn></msubsup><mo>⋅</mo><msubsup><mi>𝑒</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></span></div>
+        <p>==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow></math></span>, i.e. 内积不等式</p>
+      </li>
+      <li>
+        <p><span><math><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow></math></span> of <span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> ==> <span><math><mrow><mo>(</mo><mrow><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></math></span> of <span><math><mrow><msup><mo>⋀</mo><mn>2</mn></msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+        <p>==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span></p>
+      </li>
+    </ul>
+  </div>
+  <p><code data-typst-label="triangel-inequality-Minkowski">&lt;triangel-inequality-Minkowski></code> 三角不等式</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></p>
+    <ul>
+      <li>2 time</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≔</mo><msup><mrow><mo>(</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+      <ul>
+        <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>></mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span></li>
+        <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+      </ul>
+    </div>
+    <ul>
+      <li>1 time, 1 null</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+      <ul>
+        <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>></mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+        <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span></li>
+      </ul>
+    </div>
+  </div>
+  <p><em>Proof</em> of 2 time-like</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>,</mo></mrow><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≔</mo><msup><mrow><mo>(</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+    <ul>
+      <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>></mo><mn>0</mn></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>></mo><mn>0</mn></mrow></math></span></p>
+      <p>use <code>#link(&lt;quadratic-form-inequality-Minkowski>)[]</code> <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>&lt;</mo><mn>0</mn></mrow></math></span></p>
+      <p>==> <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+      <p>==></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>></mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+      <p>==></p>
+      <math display="block"><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math>
+    </div>
+    <ul>
+      <li><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span></p>
+      <p>==> <span><math><mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mrow></math></span></p>
+      <p>==></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>&lt;</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+      <p><span><math><mrow><mtext>sign </mtext><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span> 不确定</p>
+      <p><strong>Example</strong> let <span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>. let <span><math><mi>𝑤</mi></math></span> 过去 time-like</p>
+      <ul>
+        <li>
+          <p><span><math><mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⟹</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+        </li>
+        <li>
+          <p><span><math><mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mfrac><mn>1</mn><mn>2</mn></mfrac></mtd></mtr></mtable><mo>)</mo></mrow><mo>⟹</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></mrow></math></span></p>
+        </li>
+        <li>
+          <p><span><math><mrow><mi>𝑤</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>⟹</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></math></span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p>Euclidean 空间已经可以讨论不同的收敛方向 e.g. 序列 <span><math><mfrac><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mfrac></math></span> 是否收敛到 <span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span>. 螺旋线 like 的东西在方向空间不收敛</p>
+  <p>Euclidean 空间在所有 <span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span> 方向收敛到一点 &lt;==> 在所有方向一致地收敛到一点, by compactness of <span><math><mrow><mrow><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo></mrow><msup><mrow><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+  <p>Minkowski 空间方向空间 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> is non compact. 虽然我们尚未定义 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> 的网</p>
+  <p>Minkowski 空间的 <code>#link(&lt;net>)[]</code> 需要足够远离光锥 <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p>let <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>/</mo><mtext>space</mtext></mrow><mo>)</mo></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>=</mo><mo>±</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>对于收敛的类时方向, 可以分开</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li>未来: <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>=</mo><mrow><mn>1</mn><mo>,</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>></mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span></li>
+      <li>过去: <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>past</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>=</mo><mrow><mn>1</mn><mo>,</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>&lt;</mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span></li>
+      <li>混合: <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> quotient 掉双叶 <span><math><mrow><mo>±</mo><mi>𝑣</mi></mrow></math></span>, 成为 projective space 式的方向空间</li>
+    </ul>
+  </div>
+  <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span></p>
+  <p>let <span><math><mrow><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mo>≔</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mn>1</mn></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup><mo>:</mo><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn><mo>,</mo><mi>𝑡</mi><mo>></mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="hyperbolic-complex">&lt;hyperbolic-complex></code> 双曲复数. cf. <code>#link(&lt;split-complex-number>)[]</code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mo>≃</mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>=</mo><mi>𝑥</mi><mn>𝟙</mn><mo>+</mo><mi>𝑦</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow></math></span></p>
+    <ul>
+      <li><span><math><mrow><mn>𝟙</mn><mo>⋅</mo><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>=</mo><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>⋅</mo><mn>𝟙</mn><mo>=</mo><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow></math></span></li>
+      <li><span><math><mrow><msup><msub><mtext>i </mtext><mtext>split </mtext></msub><mn>2</mn></msup><mo>=</mo><mn>𝟙</mn></mrow></math></span></li>
+      <li><span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑦</mi><mn>1</mn></msub><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>2</mn></msub><mo>+</mo><msub><mi>𝑦</mi><mn>2</mn></msub><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span> 按分配率展开</li>
+    </ul>
+  </div>
+  <p><code data-typst-label="hyperbolic-exp">&lt;hyperbolic-exp></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mtext>exph </mtext><mi>𝑧</mi><mo>≔</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑧</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+    <p>use 二项式</p>
+    <ul>
+      <li>
+        <p><span><math><mrow><mtext>exph </mtext><mrow><mo>(</mo><mrow><mi>𝑧</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mtext>exph </mtext><mi>𝑧</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mtext>exph </mtext><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p><span><math><mrow><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><msub><mtext> i </mtext><mtext> split </mtext></msub><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>exph</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><mtext>split </mtext></msub><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+      </li>
+      <li>
+        <p><span><math><mrow><mtext>exph </mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow><mo>=</mo><mtext> cosh </mtext><mi mathvariant="normal">ϕ</mi><mo>+</mo><mrow><mo>(</mo><mrow><mtext>sinh </mtext><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow><msub><mtext> i </mtext><mtext> split </mtext></msub><mo>∈</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span>, <span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>. by <span><math><mrow><msup><mtext>cosh </mtext><mn>2</mn></msup><mo>−</mo><msup><mtext> sinh </mtext><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math></span></p>
+        <p><code data-typst-label="polor-coordinate-hyperbolic">&lt;polor-coordinate-hyperbolic></code></p>
+        <img src="../image/polor-coordinate-hyperbolic.jpeg" width="50%">
+        <p>双曲极坐标 <span><math><mrow><mi>𝑣</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>𝑣</mi><msup><mi>𝑣</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><msup><mn>2</mn><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></msup></mrow></math></span>, <span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>. <span><math><mi mathvariant="normal">ϕ</mi></math></span> can come from <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 测地线长度参数. 也称为双曲角度 <code data-typst-label="hyperbolic-angle">&lt;hyperbolic-angle></code></p>
+        <p>极坐标即距离和方向的分解</p>
+        <p><span><math><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></math></span> 不是 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 测地线长度, 而是 <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> 的长度</p>
+      </li>
+    </ul>
+  </div>
+  <p><code data-typst-label="hyperbolic-isom">&lt;hyperbolic-isom></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>group isomorphism (比较复数的情况)</p>
+    <ul>
+      <li><span><math><mi mathvariant="normal">ℝ</mi></math></span></li>
+      <li><span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span></li>
+      <li><span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></li>
+      <li><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span></li>
+    </ul>
+    <p><span><math><mrow><mtext>exph </mtext><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow><msub><mtext>i</mtext><mtext>split</mtext></msub></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>⇝</mo><mtext> sinh </mtext><mi mathvariant="normal">ϕ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup><mo>−</mo><msup><mi>𝑒</mi><mrow><mo>−</mo><mi mathvariant="normal">ϕ</mi></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span> 单调递增</p>
+    <p>解二次方程 <span><math><mrow><mi>𝑥</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup><mo>−</mo><mfrac><mn>1</mn><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup></mfrac></mrow><mo>)</mo></mrow><mo>⟺</mo><msup><mrow><mo>(</mo><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>𝑥</mi><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup><mo>−</mo><mn>1</mn></mrow></math></span> 得到逆映射</p>
+    <p><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>=</mo><msup><mtext> sinh</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mtext> log </mtext><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>inverse <span><math><mrow><mtext>argh </mtext><mo>:</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mtext>argh</mtext><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><mi>𝑥</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mtext> log </mtext><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p><strong>Question</strong> 模仿 <span><math><mi mathvariant="normal">ℂ</mi></math></span> 用球极投影和 <span><math><msup><mi mathvariant="normal">tan</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span>, <span><math><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></math></span> 用 <code>#link(&lt;stereographic-projective-hyperbolic>)[双曲投影]</code> 和 <span><math><msup><mtext>tanh</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> 来处理双曲角度 or 测地线长度映射 <span><math><mtext>argh</mtext></math></span></p>
+  </div>
+  <p><span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 的测地线坐标就是 <span><math><mrow><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><msub><mtext>i </mtext><mtext>split </mtext></msub><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">ϕ</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+  <p>记号冲突. 测地线坐标也通常用记号 <span><math><mtext>exp</mtext></math></span>, 但不是用 <span><math><mrow><mtext>i</mtext><mo>,</mo><msub><mtext>i</mtext><mtext>split</mtext></msub></mrow></math></span> 代数去定义的</p>
+  <p>测地线坐标是 Riemman 同构 or Euclidean 同构</p>
+  <p><span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span> compact &lt;==> <span><math><mrow><mfrac><mn>1</mn><msub><mtext>i </mtext><mtext>split </mtext></msub></mfrac><mtext> logh </mtext><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> compact</p>
+  <p>双曲极坐标 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mtext>time</mtext><mo>,</mo><mtext>future</mtext></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mi mathvariant="normal">ℝ</mi><mrow><mo>(</mo><mrow><mo>≥</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow><mo>×</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span></p>
+  <math display="block"><mtable><mtr><mtd><mrow><mrow><mi mathvariant="normal">ℝ</mi><mrow><mo>(</mo><mrow><mo>≥</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow><mo>×</mo><mi mathvariant="normal">ℝ</mi></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><mi>𝑟</mi><mo>,</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑟</mi><mrow><mtext>exph</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑟</mi><mrow><mo>(</mo><mrow><mtext>cosh </mtext><mrow><mi mathvariant="normal">ϕ</mi><mo>,</mo></mrow><mtext> sinh </mtext><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  <p>net structure of <span><math><mrow><mn>0</mn><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>距离 <span><math><mrow><mi>𝑟</mi><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><mo>|</mo></mrow></mrow></math></span>, 方向空间 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> or 其射影 <span><math><mrow><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi mathvariant="normal">ℙ</mi></mrow></math></span>, 测地线长度 <span><math><mi mathvariant="normal">ϕ</mi></math></span> 都是 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> invariant. <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> 是 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 的 isometry group</p>
+    <p>远离光锥 <span><math><mrow><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> 地定义 (time,future) <code>#link(&lt;net>)[网]</code></p>
+    <p><span><math><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑟</mi></mrow><mo>]</mo></mrow><mo>×</mo><mrow><mo>[</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mrow><mi>𝑅</mi><mo>,</mo></mrow><mi mathvariant="normal">ϕ</mi><mo>+</mo><mi>𝑅</mi></mrow><mo>]</mo></mrow></mrow></math></span>. <span><math><mi>𝑅</mi></math></span> 作为测地线球半径</p>
+    <p>or 距离空间 <span><math><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></math></span> 和方向空间 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 的 product net struct</p>
+    <p>极限方式</p>
+    <ul>
+      <li><span><math><mrow><mi>𝑟</mi><mo>→</mo><mn>0</mn></mrow></math></span> 距离连续</li>
+      <li><span><math><mrow><mi>𝑅</mi><mo>→</mo><mn>0</mn></mrow></math></span> 方向连续</li>
+    </ul>
+  </div>
+  <p>in <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span>, 类时类空基本上是对称的, 所以 space like net 也是类似的</p>
+  <p><span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> ((time,future),(time,future)) 连续 at <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span> :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>in 双曲极坐标</p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><mi>𝜀</mi><mo>,</mo><mi mathvariant="normal">Ε</mi><mo>></mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>∃</mo><mi>𝛿</mi><mo>,</mo><mi mathvariant="normal">Δ</mi><mo>></mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>∀</mo><mi>𝑟</mi><mo>&lt;</mo><mi>𝛿</mi><mo>,</mo><mi>𝑅</mi><mo>&lt;</mo><mi mathvariant="normal">Δ</mi></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑓</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mtext>argh </mtext></mrow><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow><mo>|</mo><mo>&lt;</mo><mi mathvariant="normal">Ε</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p>推广到高维</p>
+  <p>二次流形 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> 的切空间可以定义为正交于径向的 (仿射) 子空间</p>
+  <p>二次流形 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> 的测地线的定义不需要流形技术, 只需要用测地线 as 截线 of 截面 span by (径向 + 切向) + 嵌入的双曲线 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 及其测地线长度. <strong>Question</strong> 是否有好的解释?</p>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> type</p>
+  <img src="../image/quadratic-manifold-geodesic.jpeg" width="30%">
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> type</p>
+  <img src="../image/quadratic-manifold-geodesic-1.jpeg" width="30%"><img src="../image/quadratic-manifold-geodesic-2.jpeg" width="30%"><img src="../image/quadratic-manifold-geodesic-3.jpeg" width="30%">
+  <p><code data-typst-label="geodesic-of-quadratic-manifold">&lt;geodesic-of-quadratic-manifold></code> <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 测地线</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>0</mn><mn>2</mn></msubsup><mo>−</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑥</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mo>⋯</mo><mo>+</mo><msubsup><mi>𝑥</mi><mi>𝑛</mi><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span></p>
+    <p>正交补空间 <span><math><mrow><msup><mi>𝑣</mi><mo>⟂</mo></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span>, <span><math><mi>𝑛</mi></math></span> 维类空</p>
+    <p>仿射空间 <span><math><mrow><mi>𝑣</mi><mo>+</mo><msup><mi>𝑣</mi><mo>⟂</mo></msup></mrow></math></span> as 切空间 of <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span></p>
+    <p>let <span><math><mrow><mi>𝑤</mi><mo>∈</mo><msup><mi>𝑣</mi><mo>⟂</mo></msup></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
+    <p><span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> 是二维子空间, signature <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span>, 并与 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 相交得到嵌入的 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span></p>
+    <p>得到 <span><math><mi>𝑣</mi></math></span> 基点 <span><math><mi>𝑤</mi></math></span> 方向的测地线</p>
+    <math display="block"><mrow><mi mathvariant="normal">ϕ</mi><mo>⇝</mo><mi>𝑣</mi><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow><mo>+</mo><mi>𝑤</mi><mrow><mtext>sinh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow></mrow></math>
+  </div>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 测地线球</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <math display="block"><mrow><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑣</mi><mtext> cosh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow><mo>+</mo><mi>𝑤</mi><mtext> sinh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow><mo>:</mo><mi>𝑤</mi><mo>∈</mo><msup><mi>𝑣</mi><mo>⟂</mo></msup><mo>,</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>=</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">ϕ</mi><mo>≤</mo><mi>𝑅</mi></mrow><mo>}</mo></mrow></mrow></math>
+    <p>where <span><math><mrow><msup><mi>𝑣</mi><mo>⟂</mo></msup><mo>≃</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>,</mo></mrow><mrow><mo>{</mo><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+  </div>
+  <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的 (time,future)-like net struct</p>
+  <img src="../image/polor-coordinate-hyperbolic.jpeg" width="40%"><img src="../image/Minkowski-net.jpeg" width="30%">
+  <p>双曲极坐标 as 距离空间 <span><math><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></math></span> 和方向空间 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 的 product net struct</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑟</mi></mrow><mo>]</mo></mrow><mo>×</mo><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>极限方式: <span><math><mrow><mi>𝑟</mi><mo>→</mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mi>𝑅</mi><mo>→</mo><mn>0</mn></mrow></math></span>. or 距离连续 + 方向连续</p>
+  </div>
+  <p><span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></mrow></math></span> (time,future),(time,future) 连续 at <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span> :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>in 双曲极坐标 (time,future)</p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><mi>𝜀</mi><mo>,</mo><mi mathvariant="normal">Ε</mi><mo>></mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>∃</mo><mi>𝛿</mi><mo>,</mo><mi mathvariant="normal">Δ</mi><mo>></mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>∀</mo><mi>𝑟</mi><mo>&lt;</mo><mi>𝛿</mi><mo>,</mo><mi>𝑅</mi><mo>&lt;</mo><mi mathvariant="normal">Δ</mi></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑓</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mtext>argh </mtext></mrow><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow><mo>|</mo><mo>&lt;</mo><mi mathvariant="normal">Ε</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p>let <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">ℚ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>{</mo><mrow><msubsup><mi>𝑥</mi><mn>0</mn><mn>2</mn></msubsup><mo>−</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑥</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mo>⋯</mo><mo>+</mo><msubsup><mi>𝑥</mi><mi>𝑛</mi><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>正交补空间 <span><math><mrow><msup><mi>𝑣</mi><mo>⟂</mo></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+  <p>仿射空间 <span><math><mrow><mi>𝑣</mi><mo>+</mo><msup><mi>𝑣</mi><mo>⟂</mo></msup></mrow></math></span> as 切空间 of <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span></p>
+  <p>let <span><math><mrow><mi>𝑤</mi><mo>∈</mo><msup><mi>𝑣</mi><mo>⟂</mo></msup></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
+  <ul>
+    <li><span><math><mi>𝑤</mi></math></span> 类时</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> signature <span><math><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> 与 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 相交得到嵌入的 <span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span></p>
+    <p>得到 <span><math><mi>𝑣</mi></math></span> 基点 <span><math><mi>𝑤</mi></math></span> 方向的测地线</p>
+    <math display="block"><mrow><mi mathvariant="normal">ϕ</mi><mo>⇝</mo><mi>𝑤</mi><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow><mo>+</mo><mi>𝑣</mi><mrow><mtext>sinh</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow></mrow></math>
+  </div>
+  <ul>
+    <li><span><math><mi>𝑤</mi></math></span> 类空</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></math></span> signature <span><math><mrow><mn>0</mn><mo>,</mo><mn>2</mn></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span> 与 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 相交得到嵌入的 <span><math><mi mathvariant="normal">𝕊</mi></math></span></p>
+    <p>得到 <span><math><mi>𝑣</mi></math></span> 基点 <span><math><mi>𝑤</mi></math></span> 方向的测地线</p>
+    <math display="block"><mrow><mi mathvariant="normal">ϕ</mi><mo>⇝</mo><mi>𝑤</mi><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow><mo>+</mo><mi>𝑣</mi><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi mathvariant="normal">ϕ</mi><mo>)</mo></mrow></mrow></mrow></math>
+  </div>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 不是 Euclidean type metric 流形, 所以测地线球的概念需要修改</p>
+  <p>space like 方向空间 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 的测地线坐标 <span><math><mrow><msup><mi>𝑣</mi><mo>⟂</mo></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span>, 根据维数归纳, 使用 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span> 的 net struct, 得到 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 的 local net struct</p>
+  <p>由于 net 是 product type 分解的, 所以归纳下去大概会分解到多个一维半径, 称之为 <code data-typst-label="multi-radius-geodesic-ball">&lt;multi-radius-geodesic-ball></code>. 分解顺序会影响吗?</p>
+  <p>然后尝试用双曲极坐标 i.e. 距离和方向的 product net struct 定义 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的 space-like net struct</p>
+  <p>然后可以定义 <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></mrow></math></span> (space,space)-like 连续 at <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, 或简称 space-like 连续</p>
+  <p><span><math><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></math></span> signature 的情况应该是类似的</p>
+  <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></math></span> 的类时网和类空网并不等价</p>
+  <p><span><math><mrow><mrow><mi>𝑓</mi><mo>:</mo></mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></mrow></math></span> Minkowski 连续定义为 time-like 连续 and space-like 连续</p>
+  <p>Minkowski 连续同胚定义为 <span><math><mrow><mi>𝑓</mi><mo>,</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 都是 Minkowski 连续</p>
+  <p>all <span><math><mrow><mi>𝑓</mi><mo>∈</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 都是连续且同胚</p>
+  <p><span><math><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span> 一般线性函数可能不 Minkowski 连续</p>
+  <p>测地线坐标 or 双曲极坐标按照定义是局部 Minkowski 同胚或局部 Euclidean 同胚</p>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 是 Riemman manifold, const negative curvature</p>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> 是 Lorentz manifold, const positive curvature</p>
+  <p><span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>space</mtext><mo>)</mo></mrow></mrow></math></span> <strong>alias</strong> de Sitter space</p>
+  <p><code data-typst-label="hyperbolic-cosine-formula">&lt;hyperbolic-cosine-formula></code> 双曲余弦公式</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>∈</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span></p>
+    <p>let <span><math><mrow><mi>𝑣</mi><mo>=</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow><mo>,</mo><mi>𝑤</mi><mo>=</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>⋅</mo><msup><mi>𝑤</mi><mo>∗</mo></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>Re</mtext><mrow><mo>(</mo><mrow><mtext>exph </mtext><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>let <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 未来 time-like. <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≔</mo><msup><mrow><mo>(</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mfrac><mi>𝑣</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mfrac><mo>,</mo><mfrac><mi>𝑤</mi><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mfrac></mrow><mo>∈</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mfrac><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></mfrac><mo>=</mo><mrow><mtext>cosh</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>余弦公式</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mfrac><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow><mtext> cosh </mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p><code data-typst-label="isom-top-hyperbolic-Euclidean">&lt;isom-top-hyperbolic-Euclidean></code></p>
+  <p><span><math><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></math></span> 在 <span><math><mrow><msub><mi mathvariant="normal">ℂ</mi><mtext>split </mtext></msub><mo>=</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></mrow></math></span> 距离下的极限结构 <span><math><mo>≃</mo></math></span> 测地线距离 <span><math><mo>≃</mo></math></span> Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>1</mn></msup></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>∈</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow></mrow></math></span>, <span><math><mrow><mi>𝑣</mi><mo>=</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow><mo>,</mo><mi>𝑤</mi><mo>=</mo><mtext> exph </mtext><mrow><mo>(</mo><mrow><mi>𝜓</mi><msub><mtext> i</mtext><mtext> split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mtext> cosh</mtext><mrow><mo>(</mo><mrow><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn><mtext>  by  </mtext><mtext> cosh </mtext><mo>≥</mo><mn>1</mn></mtd></mtr></mtable></math>
+    <p>let <span><math><mrow><mrow><mtext>dist</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>≔</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+    <p>use <span><math><mrow><mtext>cosh </mtext><mi mathvariant="normal">ϕ</mi><mo>=</mo><mn>1</mn><mo>⟺</mo><mi mathvariant="normal">ϕ</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>dist</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi mathvariant="normal">ϕ</mi><mo>=</mo><mi>𝜓</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi>𝑣</mi><mo>=</mo><mi>𝑤</mi></mtd></mtr></mtable></math>
+    <p>use <span><math><mrow><mtext>cosh </mtext><mi mathvariant="normal">ϕ</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msup><mi>𝑒</mi><mi mathvariant="normal">ϕ</mi></msup><mo>+</mo><msup><mi>𝑒</mi><mrow><mo>−</mo><mi mathvariant="normal">ϕ</mi></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span> 连续性</p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><mi>𝜀</mi><mo>></mo><mn>0</mn><mo>,</mo><mo>∃</mo><mi>𝛿</mi><mo>></mo><mn>0</mn><mo>,</mo><mo>∀</mo><mi mathvariant="normal">ϕ</mi><mo>,</mo><mi>𝜓</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mtd></mtr><mtr><mtd><mo>|</mo><mi mathvariant="normal">ϕ</mi><mo>−</mo><mi>𝜓</mi><mo>|</mo><mo>&lt;</mo><mi>𝛿</mi><mo>⟹</mo><mrow><mtext>dist</mtext><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow><mo>&lt;</mo><mi>𝜀</mi></mtd></mtr></mtable></math>
+  </div>
+  <p>推广到 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow></msup></mrow></math></span>, Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>use 测地线坐标</p>
+    <p>similar to <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow></msup></math></span>, try to prove</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mtext> cosh</mtext><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>−</mo><mrow><mi>𝜓</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
+    <p>where</p>
+    <ul>
+      <li><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>,</mo><mi>𝜓</mi></mrow></math></span> 是 <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> 的测地线坐标</li>
+      <li><span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>−</mo><mrow><mi>𝜓</mi><mo>|</mo></mrow></mrow></math></span> 是测地线坐标中的 Euclid 距离</li>
+    </ul>
+  </div>
+  <p>球面 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 的球极投影的基点在 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 上. 需要两个以上的坐标卡覆盖全部 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span></p>
+  <p><code data-typst-label="stereographic-projective-hyperbolic">&lt;stereographic-projective-hyperbolic></code> time-like 双曲面 <span><math><mrow><msup><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mi>𝑛</mi></msup><mrow><mo>(</mo><mtext>time</mtext><mo>)</mo></mrow></mrow></math></span> 考虑球极投影, 两个基点分别在两枝双曲面上, 且投影在光锥方向形成分隔的奇点</p>
+  <img src="../image/stereographic-projective-hyperbolic-time-like.jpg" width="50%">
+  <p>space-like 双曲面, 用 space-like 基点来定义双曲投影, 而且投影坐标卡是低一维的 Minkowski 空间</p>
+  <p>转换函数应该是 Minkowski 连续同胚?</p>
+  <img src="../image/stereographic-projective-hyperbolic-space-like.jpg" width="50%">
+  <p>对 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>2</mn></mrow></msup></math></span> 的情况进行 3d 作图, 画出基点的光锥 (注意是光锥是 "纵向" 的)</p>
+  <p>即使画图的直观可能难, 解析计算应该是不难的</p>
+  <p><span><math><mtext>exph</mtext></math></span> 可以推广到 <span><math><mrow><msup><mi mathvariant="normal">ℍ</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>2</mn><mo>,</mo><mn>2</mn></mrow></msup></mrow></math></span> and <span><math><mrow><msup><mi mathvariant="normal">𝕆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≃</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>4</mn><mo>,</mo><mn>4</mn></mrow></msup></mrow></math></span>?</p>
+</div>

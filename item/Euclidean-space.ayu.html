@@ -1,0 +1,206 @@
+<div>
+  <p>使用 <code>#link(&lt;tensor-induced-quadratic-form>)[]</code> 的交错化</p>
+  <math display="block"><mrow><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub><mo>,</mo><msub><mi>𝑤</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑤</mi><mi>𝑘</mi></msub></mrow><mo>⟩</mo></mrow><mo>=</mo><mtext> det </mtext><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑤</mi><mi>𝑗</mi></msub></mrow><mo>⟩</mo></mrow></mrow></math>
+  <p>遍历所有 <span><math><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></math></span>, 正交基 <span><math><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow></math></span> with <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo>⟨</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>⟩</mo></mrow><mn>2</mn></msup><mo>⋯</mo><msup><mrow><mo>⟨</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span>, 得到 signature</p>
+  <p>let <span><math><mrow><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span>. <span><math><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow></math></span> span <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> &lt;==> <span><math><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi><mo>≠</mo><mn>0</mn></mrow></math></span></p>
+  <p><strong>Abbreviation</strong> <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>≔</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>,</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>≔</mo><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑣</mi></mrow><mo>⟩</mo></mrow><mo>,</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≔</mo><msup><mrow><mo>(</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+  <p><code data-typst-label="quadratic-form-inequality-Euclidean">&lt;quadratic-form-inequality-Euclidean></code> 内积不等式 (Euclidean). <span><math><mrow><mn>0</mn><mo>≤</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>∧</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mtext> det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd><mrow><mo>⟨</mo><mrow><mi>𝑤</mi><mo>,</mo><mi>𝑣</mi></mrow><mo>⟩</mo></mrow></mtd><mtd><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>−</mo><msup><mrow><mo>⟨</mo><mrow><mi>𝑤</mi><mo>,</mo><mi>𝑣</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span>. i.e. <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><mi>𝑤</mi><mo>,</mo><mi>𝑣</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>≤</mo><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math></span> or <span><math><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="triangle-inequality-Euclidean">&lt;triangle-inequality-Euclidean></code> 三角不等式 (Euclidean)</p>
+  <ul>
+    <li>
+      <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi></mrow><mo>+</mo><mrow><mi>𝑤</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow></math></span></p>
+      <p><em>Proof</em></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>⟩</mo></mrow><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≥</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mi>𝑣</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>2</mn><mo>|</mo><mi>𝑣</mi><mo>|</mo><mo>|</mo><mi>𝑤</mi><mo>|</mo><mo>+</mo><msup><mrow><mo>⟨</mo><mi>𝑤</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+    </li>
+    <li>
+      <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi></mrow><mo>−</mo><mrow><mi>𝑤</mi><mo>|</mo></mrow><mo>≥</mo><mrow><mo stretchy="true" minsize="120%">|</mo><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝑤</mi><mo>|</mo><mo stretchy="true" minsize="120%">|</mo></mrow></mrow></math></span></p>
+      <p><em>Proof</em></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑣</mi><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi><mo>|</mo><mo>+</mo><mo>|</mo><mi>𝑤</mi><mo>|</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑤</mi><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑣</mi><mo>−</mo><mi>𝑤</mi><mo>|</mo><mo>+</mo><mo>|</mo><mi>𝑣</mi><mo>|</mo></mtd></mtr></mtable></math>
+    </li>
+  </ul>
+  <p><code data-typst-label="Euclidean-space-topology">&lt;Euclidean-space-topology></code> Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></math></span> 拓扑. <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span> 在 <span><math><mrow><mi>𝑎</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></mrow></math></span> 连续 :=</p>
+  <math display="block"><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝛿</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∀</mo><mi>𝑥</mi><mo>:</mo><mrow><mo>|</mo><mi>𝑥</mi></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mi>𝛿</mi><mo>,</mo></mrow><mrow><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math>
+  <p>let <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></mrow></math></span></p>
+  <p><code data-typst-label="closure">&lt;closure></code> 闭包 := <span><math><mrow><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>:</mo><munder displaystyle="false"><mi mathvariant="normal">inf</mi><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mo>|</mo><mi>𝑥</mi><mo>−</mo><mi>𝑎</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="closed-set">&lt;closed-set></code> 闭集 := <span><math><mrow><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
+  <p>(open) closed(𝔹) <span><math><mrow><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>:</mo><mrow><mo>|</mo><mi>𝑥</mi></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝑟</mi></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="open-set">&lt;open-set></code> 开集 <span><math><mrow><mi>𝑈</mi><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></mrow></math></span> := <span><math><mrow><mo>∀</mo><mi>𝑥</mi><mo>∈</mo><mrow><mi>𝑈</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝑟</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow><mo>⊂</mo><mi>𝑈</mi></mrow></math></span></p>
+  <p><span><math><mi>𝐴</mi></math></span> open &lt;==> <span><math><msup><mi>𝐴</mi><mo>∁</mo></msup></math></span> closed</p>
+  <p><code data-typst-label="interval">&lt;interval></code> 区间指 <span><math><mi mathvariant="normal">ℝ</mi></math></span> 的子集 <span><math><mi>𝐼</mi></math></span> with property 序不中断</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mi>𝐼</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>≤</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>≤</mo><mi>𝑥</mi><mo>≤</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><mi>𝑥</mi><mo>∈</mo><mi>𝐼</mi></mrow></math>
+  <p><code data-typst-label="best-interval-decomposition">&lt;best-interval-decomposition></code> <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 的最优区间分解</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>def <span><math><mrow><mtext>Interval </mtext><mo>⊂</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℝ</mi><mo>)</mo></mrow></mrow></mrow></math></span> as 所有区间的集合, 包括 open, closed, half open half closed, single point</p>
+    <p>def <span><math><mrow><mtext>J </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝐼</mi><mo>⊂</mo><mi>𝐴</mi><mo>:</mo><mi>𝐼</mi><mo>∈</mo><mtext> Interval</mtext></mrow><mo>}</mo></mrow></mrow></math></span></p>
+    <p>由单点区间的存在, <span><math><mrow><mtext>J </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span> and <span><math><mrow><mo>⋃</mo><mtext> J </mtext><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p><span><math><mrow><mtext>J </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span> 有 <span><math><mo>⊂</mo></math></span> <code>#link(&lt;linear-order>)[线序链]</code>. 对每个极大线序链取 <span><math><mo>⋃</mo></math></span> 都会继续得到区间. 这些区间的集合记为 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span> and <span><math><mrow><mo>⨆</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p><span><math><mtext>I</mtext></math></span> 的区间都是不相交的, 分解方式是唯一的, 于是这些区间组成 <span><math><mi>𝐴</mi></math></span> 的最优区间分解</p>
+    <ul>
+      <li>当 <span><math><mrow><mrow><mo>|</mo><mtext>I </mtext></mrow><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>|</mo><mo>=</mo><mn>1</mn></mrow></math></span> 时, <span><math><mi>𝐴</mi></math></span> 是区间, 连通</li>
+      <li>当 <span><math><mrow><mrow><mo>|</mo><mtext>I </mtext></mrow><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>|</mo><mo>></mo><mn>1</mn></mrow></math></span> 时, <span><math><mi>𝐴</mi></math></span> 不连通. <strong>Example</strong> <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mn>0</mn><mo>=</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>⊔</mo><mrow><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>,</mo></mrow><mi mathvariant="normal">ℚ</mi><mo>=</mo><msub><mo>⨆</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow></msub><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow></mrow></math></span></li>
+    </ul>
+    <p>如果 <span><math><mi>𝐴</mi></math></span> 是闭集, 则 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span> 的区间都是闭区间</p>
+  </div>
+  <p>recall <span><math><mo>⊂</mo></math></span> 的 <code>#link(&lt;linear-order>)[]</code> <code>#link(&lt;nested-closed-interval-theorem>)[闭区间套的交集非空]</code></p>
+  <p><code data-typst-label="bounded-closed-interval-is-compact">&lt;bounded-closed-interval-is-compact></code> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 有界闭区间 ==> <code>#link(&lt;compact>)[]</code></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mtext>B</mtext></math></span> 是 <span><math><mi>𝐴</mi></math></span> 的 <code>#link(&lt;net>)[]</code>. let <span><math><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></math></span></p>
+    <p>由 <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 有界闭, <span><math><mrow><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mo>⊂</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p>取最优闭区间分解 <span><math><mrow><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mo>⨆</mo><mtext> I </mtext><mrow><mo>(</mo><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mo>)</mo></mrow></mrow></math></span></p>
+    <p>对所有 <span><math><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></math></span> 的分解闭区间, 考虑任何 <span><math><mo>⊂</mo></math></span> 极大线序链 <code>#link(&lt;maximal-linear-order>)[]</code> <span><math><mtext>C</mtext></math></span></p>
+    <p>根据 <code>#link(&lt;nested-closed-interval-theorem>)[]</code>, <span><math><mo>⊂</mo></math></span> 线序的闭区间套的交集是非空闭区间 <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+    <p>类似 <code>#link(&lt;closed-interval-net-theorem>)[]</code> 的证明, 证明 <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> 是极小的闭区间, 从而 <span><math><mo>⊂</mo></math></span> 每个 <span><math><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="compact-imply-subsequence-converge">&lt;compact-imply-subsequence-converge></code> <span><math><mi>𝐴</mi></math></span> compact ==> 序列 <span><math><mrow><mrow><mo>{</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> 存在子序列收敛. 对 net 同理</p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>=</mo><mrow><mo>{</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow></mrow></math></span> 组成网 <span><math><mtext>B</mtext></math></span></p>
+    <p><span><math><mi>𝐴</mi></math></span> compact ==> <span><math><mrow><msub><mo>⋂</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msub><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msub><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+    <p>let <span><math><mrow><mi>𝑥</mi><mo>∈</mo><msub><mo>⋂</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msub><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msub></mrow></math></span></p>
+    <p>use 闭包 <span><math><msub><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msub></math></span> 的定义</p>
+    <math display="block"><mrow><mi>𝑥</mi><mo>∈</mo><msub><mover accent="true"><mi>𝐵</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msub><mo>⟺</mo><mo>∀</mo><msub><mi>𝜀</mi><mi>𝑛</mi></msub><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><msub><mi>𝑖</mi><mi>𝑛</mi></msub><mo>></mo><mrow><msub><mi>𝑖</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo></mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub></msub></mrow><mo>−</mo><mrow><mi>𝑥</mi><mo>|</mo></mrow><mo>&lt;</mo><msub><mi>𝜀</mi><mi>𝑛</mi></msub></mrow></math>
+    <p>let <span><math><mrow><msub><mi>𝜀</mi><mi>𝑛</mi></msub><mo>→</mo><mn>0</mn></mrow></math></span></p>
+    <p>==> <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∀</mo><mi>𝑛</mi><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub></msub></mrow><mo>−</mo><mrow><mi>𝑥</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+  </div>
+  <ul>
+    <li>单位闭球 <span><math><mrow><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>≤</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span></li>
+    <li>单位球面 <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="circle-is-compact">&lt;circle-is-compact></code> <span><math><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></math></span> compact</p>
+  <p><em>Proof</em> <span><math><mrow><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mi>𝜃</mi></mrow></msup><mo>:</mo><mi mathvariant="normal">ℝ</mi><mo>→</mo><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></mrow></math></span> 连续</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></math></span> 连续同构于 <span><math><mfrac><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℤ</mi></mfrac></math></span> (<code>#link(&lt;quotient-topology>)[]</code>) 连续同构于 <span><math><mfrac><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mn>1</mn></msup><msup><mi mathvariant="normal">𝕊</mi><mn>0</mn></msup></mfrac></math></span> i.e. <span><math><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>=</mo><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mn>1</mn></msup></mrow></math></span> 塌缩端点 <span><math><mrow><mrow><mo>{</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>=</mo><msup><mi mathvariant="normal">𝕊</mi><mn>0</mn></msup></mrow></math></span> (quotient-topology)</p>
+    <p><span><math><mrow><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mn>1</mn></msup><mo>=</mo><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span> 有界闭区间 compact ==> quotient <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup><mo>=</mo><mfrac><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕊</mi><mn>0</mn></msup></mfrac></mrow></math></span> compact. by <code>#link(&lt;quotient-topology-preserve-compact>)[quotient 保持 compact]</code></p>
+  </div>
+  <p><code data-typst-label="closed-ball-sphere-is-compact">&lt;closed-ball-sphere-is-compact></code></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mn>1</mn></msup><mo>,</mo></mrow><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></mrow></math></span> compact. 归纳假设 <span><math><mrow><mrow><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mi>𝑛</mi></msup><mo>,</mo></mrow><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span> compact</p>
+    <ul>
+      <li><span><math><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></math></span> compact</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mrow><mi>𝑓</mi><mo>:</mo><mtable><mtr><mtd><mrow><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup><mo>×</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑟</mi><mo>⋅</mo><mi>𝑥</mi></mrow></mtd></mtr></mtable></mrow></math>
+      <p>(画图) 连续. quotient 原点 <span><math><mrow><mn>0</mn><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span> 后得到同构</p>
+      <p><span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup><mo>×</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span> compact. by <code>#link(&lt;product-topology-preserve-compact>)[]</code></p>
+      <p><span><math><mrow><mfrac><mrow><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup><mo>×</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow><mrow><mo>{</mo><mrow><mn>0</mn><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mo>}</mo></mrow></mfrac><mo>≃</mo><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span> compact</p>
+    </div>
+    <ul>
+      <li><span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></math></span> compact</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>用极坐标从 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 构造 <span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></math></span>, 经过 quotient, 得到 <span><math><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></math></span> compact</p>
+      <p>另一种方法 <span><math><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></math></span> 边界 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 塌缩到一点得到 <span><math><mrow><mfrac><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mfrac><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span> compact</p>
+      <p><em>Proof</em></p>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+        <p><span><math><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mfrac><mi>𝑥</mi><mo>:</mo><msup><mi mathvariant="normal">𝔹</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>↔</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span> 将球面 <span><math><mrow><mi mathvariant="normal">𝕊</mi><mrow><mo>(</mo><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mo>)</mo></mrow></mrow></math></span> 映射到球面 <span><math><msup><mi mathvariant="normal">𝕊</mi><mfrac><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></mfrac></msup></math></span> and <span><math><mrow><mfrac><mi>𝑟</mi><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑟</mi><mn>2</mn></msup></mrow></mfrac><mo>:</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>↔</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></math></span></p>
+        <p>球极投影 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>↔</mo><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>∖</mo><mi>𝑁</mi></mrow></math></span></p>
+        <p>复合后的 <span><math><mrow><msup><mi mathvariant="normal">𝔹</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>∖</mo><mi>𝑁</mi></mrow></math></span> 映射加上 <span><math><mrow><mo>∂</mo><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span> 映射到 <span><math><mi>𝑁</mi></math></span>, 得到的 <span><math><mrow><msup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">𝕊</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span> 映射仍然连续, quotient 后是双射</p>
+      </div>
+    </div>
+  </div>
+  <p>射影空间 (Euclidean) compact. <em>Proof</em> <span><math><mrow><msup><mrow><mi mathvariant="normal">ℝ</mi><mi mathvariant="normal">ℙ</mi></mrow><mi>𝑛</mi></msup><mo>≔</mo><mfrac><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mo>{</mo><mrow><mi>𝑘</mi><mi>𝑥</mi></mrow><mo>}</mo></mrow></mfrac><mo>≃</mo><mfrac><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup><mrow><mo>{</mo><mrow><mo>±</mo><mi>𝑥</mi></mrow><mo>}</mo></mrow></mfrac></mrow></math></span></p>
+  <p>同理 <span><math><msup><mrow><mi mathvariant="normal">ℂ</mi><mi mathvariant="normal">ℙ</mi></mrow><mi>𝑛</mi></msup></math></span> (and <span><math><mrow><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">ℙ</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">𝕆</mi><mi mathvariant="normal">ℙ</mi></mrow></mrow></math></span>)</p>
+  <p><code data-typst-label="Euclidean-set-distance">&lt;Euclidean-set-distance></code> <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>≔</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mo>|</mo><mi>𝑥</mi><mo>−</mo><mi>𝑦</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <ul>
+    <li><code data-typst-label="bounded">&lt;bounded></code> 有界 := <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>&lt;</mo><mo>∞</mo></mrow></math></span></li>
+    <li><code data-typst-label="unbounded">&lt;unbounded></code> 无界 := <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mo>∞</mo></mrow></math></span></li>
+  </ul>
+  <p><span><math><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></math></span> is <span><math><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mo>⋊</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span> invariant</p>
+  <p><span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span> by 球极投影</p>
+  <p>平移不改变 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow></mrow></math></span> 的无穷远 <span><math><mo>∞</mo></math></span> (而只是 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span> 的共形映射, 共形群 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow></mrow></math></span>)</p>
+  <p>in Euclidean topology of <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+  <ul>
+    <li>有界 &lt;==> 远离 <span><math><mo>∞</mo></math></span> &lt;==> <span><math><mrow><mo>∞</mo><mo>∉</mo><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover></mrow></math></span></li>
+    <li>无界 &lt;==> <span><math><mrow><mo>∞</mo><mo>∈</mo><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="Euclidean-space-compact-iff-bounded-closed">&lt;Euclidean-space-compact-iff-bounded-closed></code> <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span> compact &lt;==> <span><math><mi>𝐴</mi></math></span> 有界闭集</p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li>&lt;==</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 有界闭集 <span><math><mi>𝐴</mi></math></span> 对应到 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow></mrow></math></span> 的闭集且不包括 <span><math><mo>∞</mo></math></span></p>
+      <p><span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> compact + <code>#link(&lt;closed-set-in-compact-space-is-compact>)[]</code> ==> <span><math><mi>𝐴</mi></math></span> is compact in <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span></p>
+      <p>从 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow></mrow></math></span> topology 限制回到 subspace <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> topology + <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+      <p>得到 <span><math><mi>𝐴</mi></math></span> compact</p>
+    </div>
+    <ul>
+      <li>==></li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <ul>
+        <li>闭集</li>
+      </ul>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+        <p>let <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover></mrow></math></span></p>
+        <p><span><math><mrow><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow><mo>∩</mo><mi>𝐴</mi></mrow></math></span> 组成 <span><math><mi>𝐴</mi></math></span> 的网. 注意可能 <span><math><mrow><mi>𝑥</mi><mo>∉</mo><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow><mo>∩</mo><mi>𝐴</mi></mrow></math></span></p>
+        <ul>
+          <li>
+            <p>compact ==> <span><math><mrow><mo>∅</mo><mo>≠</mo><msub><mo>⋂</mo><mrow><mi>𝑟</mi><mo>></mo><mn>0</mn></mrow></msub><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow><mo>∩</mo><mi>𝐴</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span></p>
+          </li>
+          <li>
+            <p><span><math><mrow><msub><mo>⋂</mo><mrow><mi>𝑟</mi><mo>></mo><mn>0</mn></mrow></msub><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo stretchy="true">̄</mo></mover><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑥</mi></mrow></math></span></p>
+          </li>
+        </ul>
+        <p>==> <span><math><mrow><mo>∅</mo><mo>≠</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow><mo>∩</mo><mi>𝐴</mi><mo>⟹</mo><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span></p>
+      </div>
+      <ul>
+        <li>有界</li>
+      </ul>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></math></span> 开球不包含 <span><math><mo>∞</mo></math></span>. 开球族 <span><math><mrow><mo>{</mo><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑟</mi><mo>></mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></math></span> 覆盖 <span><math><mi>𝐴</mi></math></span>. 取 <code>#link(&lt;compact-finite-open-cover>)[有限覆盖]</code>, 仍然不包含 <span><math><mo>∞</mo></math></span></div>
+    </div>
+  </div>
+  <p>let <span><math><mtext>B</mtext></math></span> be net of <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span></p>
+  <p><code data-typst-label="nested-closed-set-theorem">&lt;nested-closed-set-theorem></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的有界闭集套的交集非空. 其交集也是闭集, 可以理解为 <span><math><mo>⊂</mo></math></span> 线序链闭集套的最小元</p>
+  <p><code data-typst-label="closed-net-theorem">&lt;closed-net-theorem></code> <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的有界闭集网的交集非空 <em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">将 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 闭集对应到 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>⊔</mo><mrow><mo>{</mo><mo>∞</mo><mo>}</mo></mrow><mo>≃</mo><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></mrow></math></span> 闭集, <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> compact, 所以闭集套 or 闭集网交集非空. 有界使得不收敛到 <span><math><mo>∞</mo></math></span></div>
+  <p><code data-typst-label="limit-distance-vanish-net">&lt;limit-distance-vanish-net></code> := <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></munder><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p>or <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span>. 网的尾部有界</p>
+  <p>序列可以根据尾部组成网 <span><math><mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>=</mo><mrow><mo>{</mo><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow></mrow></math></span></p>
+</div>

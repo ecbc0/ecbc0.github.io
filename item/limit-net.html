@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="&lt;net&gt;B a net of 𝐴 :&#x3D; B ⊂Subset(𝐴) (a collection of subset of 𝐴) with property∀𝐵∈ B,𝐵≠∅∀𝐵1,…,𝐵𝑛∈ B,∃𝐵∈ B,𝐵⊂𝐵1∩⋯∩𝐵𝑛(含义: 收敛到极限之前非空. 如果 B 元素无限那么有限交集控制着收敛方向, 尽管可能 ∅&#x3D;⋂ B. 如果 B &#x3D;{𝐵1,…,𝐵𝑛} 元素有限那么 ∅≠𝐵1∩⋯∩𝐵𝑛∈ B)Example 𝑋&#x3D;ℕ, 网 B &#x3D;{𝑛,𝑛+1,⋯}𝑛&#x3D;0..∞点网 or 包含点 𝑥∈𝑋 的网 B (𝑥)≔∀𝐵∈ B (𝑥),𝑥∈𝐵网 B 细于 B′ :&#x3D; ∀𝐵′∈ B′,∃𝐵∈ B,𝐵⊂𝐵′并且这蕴含 ⋂ B ⊂⋂ B′&lt;net-same-limit&gt; B,B′ 极限相同 :&#x3D; 相互细于并不是所有极限相同的网都有用. 集合论上可用 ∪ 构造出新的极限相同的网, 但有很多冗余任何网都可以补充所有的有限交集 {𝐵1∩⋯∩𝐵𝑛:𝑛∈ℕ,𝐵1,…,𝐵𝑛∈ B} 成为新的网, 并保持相同的极限&lt;hom-limit&gt; 网之间的极限同态 :&#x3D;𝑓:𝑋→𝑌. 网 𝑓(B𝑋) 细于 B𝑌∀𝐵𝑌∈ B 𝑌∃𝐵𝑋∈ B 𝑋𝑓(𝐵">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html" class="active"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/limit-net", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><code data-typst-label="net">&lt;net></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mtext>B</mtext></math></span> a net of <span><math><mi>𝐴</mi></math></span> := <span><math><mrow><mtext>B </mtext><mo>⊂</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></mrow></math></span> (a collection of subset of <span><math><mi>𝐴</mi></math></span>) with property</p>
+    <ul>
+      <li><span><math><mrow><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>≠</mo><mo>∅</mo></mrow></math></span></li>
+      <li><span><math><mrow><mo>∀</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>⊂</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub></mrow></math></span></li>
+      <li>(含义: 收敛到极限之前非空. 如果 <span><math><mtext>B</mtext></math></span> 元素无限那么有限交集控制着收敛方向, 尽管可能 <span><math><mrow><mo>∅</mo><mo>=</mo><mo>⋂</mo><mtext> B</mtext></mrow></math></span>. 如果 <span><math><mrow><mtext>B </mtext><mo>=</mo><mrow><mo>{</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></mrow></math></span> 元素有限那么 <span><math><mrow><mo>∅</mo><mo>≠</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span>)</li>
+    </ul>
+  </div>
+  <p><strong>Example</strong> <span><math><mrow><mi>𝑋</mi><mo>=</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, 网 <span><math><mrow><mtext>B </mtext><mo>=</mo><msub><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub></mrow></math></span></p>
+  <p>点网 or 包含点 <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑋</mi></mrow></math></span> 的网 <span><math><mrow><mtext>B </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>≔</mo><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mtext> B </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p>网 <span><math><mtext>B</mtext></math></span> 细于 <span><math><msup><mtext>B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></math></span> := <span><math><mrow><mo>∀</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mrow><msup><mtext> B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>⊂</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span><br>并且这蕴含 <span><math><mrow><mo>⋂</mo><mtext> B </mtext><mo>⊂</mo><mo>⋂</mo><msup><mtext> B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+  <p><code data-typst-label="net-same-limit">&lt;net-same-limit></code> <span><math><mrow><mtext>B</mtext><mo>,</mo><msup><mtext>B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 极限相同 := 相互细于</p>
+  <p>并不是所有极限相同的网都有用. 集合论上可用 <span><math><mo>∪</mo></math></span> 构造出新的极限相同的网, 但有很多冗余</p>
+  <p>任何网都可以补充所有的有限交集 <span><math><mrow><mo>{</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>:</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mtext> B</mtext></mrow><mo>}</mo></mrow></math></span> 成为新的网, 并保持相同的极限</p>
+  <p><code data-typst-label="hom-limit">&lt;hom-limit></code> 网之间的极限同态 :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow></math></span>. 网 <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mtext>B</mtext><mi>𝑋</mi></msub><mo>)</mo></mrow></mrow></math></span> 细于 <span><math><msub><mtext>B</mtext><mi>𝑌</mi></msub></math></span></p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mo>∈</mo><msub><mtext> B </mtext><mi>𝑌</mi></msub></mtd></mtr><mtr><mtd><mo>∃</mo><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>∈</mo><msub><mtext> B </mtext><mi>𝑋</mi></msub></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>)</mo></mrow></mrow><mo>⊂</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mtext> or </mtext><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>⊂</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p><span><math><mo>⊂</mo></math></span> 用点来描述就是 <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub></mrow></math></span></p>
+  </div>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li>序列 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 收敛 <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mi>𝑎</mi></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>使用包含 <span><math><mi>𝑎</mi></math></span> 的所有区间 <span><math><mrow><msub><mtext>B </mtext><mi mathvariant="normal">ℝ</mi></msub><mo>=</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mrow><msub><mtext>B </mtext><mi mathvariant="normal">ℕ</mi></msub><mo>=</mo><msub><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub></mrow></math></span>, 则 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 极限同态</p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><mrow><mi>𝐼</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mo>∃</mo><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mo>∈</mo><msub><mtext> B </mtext><mi mathvariant="normal">ℕ</mi></msub></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mrow><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo></mrow><mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mo>⊂</mo><mrow><mi>𝐼</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  </div>
+  <ul>
+    <li><span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 函数极限</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi mathvariant="normal">ℝ</mi><mo>→</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑦</mi></mrow></math></span>, 从 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span> 到 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><msub><mi>𝐼</mi><mi>𝑦</mi></msub><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mo>∃</mo><msub><mi>𝐼</mi><mi>𝑥</mi></msub><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝐼</mi><mi>𝑥</mi></msub><mo>)</mo></mrow></mrow><mo>⊂</mo><msub><mi>𝐼</mi><mi>𝑦</mi></msub></mtd></mtr></mtable></math>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

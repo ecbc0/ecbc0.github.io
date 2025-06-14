@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="Euclidean ℝ2 的方向空间是 𝕊&#x3D;𝕊1旋转是 ℝ2 的保持方向空间 𝕊 的 (保持方向) #link(&lt;isometry&gt;)[] 的部分ℝ2 的 isometry 是 SO(2)⋊ℝ2 (可以证明 ℝ2 isometry 蕴含 #link(&lt;affine&gt;)[仿射])旋转是 SO(2)SO(2) 的元素 (𝑎−𝑏𝑏𝑎) with 𝑎2+𝑏2&#x3D;1. 集合论上等价于 𝕊乘法上也是兼容的 (𝑎−𝑏𝑏𝑎)(10)&#x3D;(𝑎𝑏)≃(𝑎−𝑏𝑏𝑎)&#x3D;(𝑎−𝑏𝑏𝑎)(11)SO(2) 的元素的乘法等价于 ℂ 的长度 1 元素的乘法. recall ℂ 是 #link(&lt;normed-algebra&gt;)[] |𝑎𝑏|&#x3D;|𝑎||𝑏|Question &lt;angle&gt;可能不是完美的动机将 ℝ2 metric 限制在 𝕊 得到 #link(&lt;metric-manifold&gt;)[]直觉上, 在 Euclidean ℝ2, 我们可以 &amp;quot;旋转&amp;quot;, 并且旋转的复合对应 &amp;quot;角度&amp;quot; 的相加后者应该是 𝕊 的 #link(&lt;Killing-field&gt;)[] 的 exp :ℝ→ Isom 𝕊 作为单参数同态到 𝕊 的 isometry用 #l">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html" class="active"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/angle", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> 的方向空间是 <span><math><mrow><mi mathvariant="normal">𝕊</mi><mo>=</mo><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup></mrow></math></span></p>
+  <p>旋转是 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> 的保持方向空间 <span><math><mi mathvariant="normal">𝕊</mi></math></span> 的 (保持方向) <code>#link(&lt;isometry>)[]</code> 的部分</p>
+  <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> 的 isometry 是 <span><math><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mo>⋊</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span> (可以证明 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> isometry 蕴含 <code>#link(&lt;affine>)[仿射]</code>)</p>
+  <p>旋转是 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span></p>
+  <p><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span> 的元素 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow></math></span> with <span><math><mrow><msup><mi>𝑎</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑏</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math></span>. 集合论上等价于 <span><math><mi mathvariant="normal">𝕊</mi></math></span></p>
+  <p>乘法上也是兼容的 <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>≃</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mrow><mo>−</mo><mi>𝑏</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑏</mi></mtd><mtd><mi>𝑎</mi></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span></p>
+  <p><span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span> 的元素的乘法等价于 <span><math><mi mathvariant="normal">ℂ</mi></math></span> 的长度 <span><math><mn>1</mn></math></span> 元素的乘法. recall <span><math><mi mathvariant="normal">ℂ</mi></math></span> 是 <code>#link(&lt;normed-algebra>)[]</code> <span><math><mrow><mrow><mo>|</mo><mi>𝑎</mi></mrow><mrow><mi>𝑏</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑎</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑏</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <p><strong>Question</strong> <code data-typst-label="angle">&lt;angle></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>可能不是完美的动机</p>
+    <p>将 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> metric 限制在 <span><math><mi mathvariant="normal">𝕊</mi></math></span> 得到 <code>#link(&lt;metric-manifold>)[]</code></p>
+    <p>直觉上, 在 Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span>, 我们可以 "旋转", 并且旋转的复合对应 "角度" 的相加</p>
+    <p>后者应该是 <span><math><mi mathvariant="normal">𝕊</mi></math></span> 的 <code>#link(&lt;Killing-field>)[]</code> 的 <span><math><mrow><mtext>exp </mtext><mo>:</mo><mi mathvariant="normal">ℝ</mi><mo>→</mo><mtext> Isom </mtext><mi mathvariant="normal">𝕊</mi></mrow></math></span> 作为单参数同态到 <span><math><mi mathvariant="normal">𝕊</mi></math></span> 的 isometry</p>
+    <p>用 <code>#link(&lt;geodesic>)[测地线]</code> 计算 <span><math><mtext>exp</mtext></math></span>. 用例如 <code>#link(&lt;stereographic-projection>)[球极投影坐标]</code> 计算测地线. 对于 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 为起点的测地线, 结果记为 <code data-typst-label="trigonometric-function">&lt;trigonometric-function></code> 三角函数 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span>. 用 <code>#link(&lt;inverse-analytic>)[反函数定理]</code> 可以计算 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 的在 <span><math><mrow><mi>𝑡</mi><mo>=</mo><mn>0</mn></mrow></math></span> 的幂级数展开</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∑</mo><mfrac><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑛</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mi>𝑡</mi><mrow><mn>2</mn><mi>𝑛</mi></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∑</mo><mfrac><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mi>𝑡</mi><mrow><mn>2</mn><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mtd></mtr></mtable></math>
+    <p>同态体现在, 根据幂级数</p>
+    <math display="block"><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>+</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mrow><mtext>sin</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>+</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>+</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>+</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑠</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑠</mi><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑠</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑠</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+    <p>或者使用 <code data-typst-label="Euler-formula">&lt;Euler-formula></code> <span><math><mrow><mtext>exp </mtext><mtext> i </mtext><mi>𝑡</mi><mo>=</mo><mtext> cos </mtext><mi>𝑡</mi><mo>+</mo><mtext> i </mtext><mtext> sin </mtext><mi>𝑡</mi><mo>≃</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mo>−</mo><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mtext>sin</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd><mrow><mtext>cos</mtext><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>, 然后用 <span><math><mi mathvariant="normal">ℂ</mi></math></span> <code>#link(&lt;exponential>)[指数函数]</code> 和复数乘法 <span><math><mrow><mtext>exp </mtext><mtext> i </mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>+</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mo>=</mo><mtext> exp </mtext><mtext> i </mtext><mi>𝑠</mi><mo>⋅</mo><mtext> exp </mtext><mtext> i </mtext><mi>𝑡</mi></mrow></math></span></p>
+  </div>
+  <p>于是 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>↠</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mo>≃</mo><mi mathvariant="normal">𝕊</mi><mo>≃</mo><mtext> U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">ℂ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>双曲角度同理 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>↔</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>≃</mo><mrow><mi mathvariant="normal">ℍ</mi><mi mathvariant="normal">𝕪</mi></mrow><mo>≃</mo><mtext> U </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><msub><mi mathvariant="normal">ℂ</mi><mtext>split</mtext></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

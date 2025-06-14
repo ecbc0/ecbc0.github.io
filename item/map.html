@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="composition (函数复合)let𝐴⟶𝑓𝐵⟶𝑔𝐶define𝐴⟶(𝑔∘𝑓)𝐶𝑎⟿𝑔(𝑓(𝑎))定义 proposition, 参数 𝑓:𝐴→𝐵单射 :&#x3D; ∀𝑎,𝑎′∈𝐴,𝑓(𝑎)&#x3D;𝑓(𝑎′)⟹𝑎&#x3D;𝑎′. 记号 𝑓:𝐴↪𝐵满射 :&#x3D; ∀𝑏∈𝐵,∃𝑎∈𝐴,𝑓(𝑎)&#x3D;𝑏. 记号 𝑓:𝐴↠𝐵双射 :&#x3D; 单射 and 满射. 记号 𝑓:𝐴↔𝐵. 此时有逆映射 𝑓−1:𝐵↔𝐴&lt;cardinal&gt;|𝐴|&#x3D;|𝐵|≔bijective(𝐴→𝐵)≠∅. or 存在双射 𝑓:𝐴↔𝐵|𝐴|≤|𝐵|≔injective(𝐴→𝐵)≠∅. or 存在单射 𝑓:𝐴↪𝐵|𝐴|≥|𝐵|≔surjective(𝐴→𝐵)≠∅. or 存在满射 𝑓:𝐴↠𝐵单射和满射的对称surjective(𝐴→𝐵)≠∅⟺injective(𝐵→𝐴)≠∅or 存在满射 𝑓:𝐴↠𝐵 &lt;&#x3D;&#x3D;&gt; 存在单射 𝑔:𝐵↪𝐴&lt;cardinal-always-comparable&gt; 元素数量序 &lt; 的三分 or 序总是 #link(&lt;order-comparable&gt;)[可比较]∀𝐴,𝐵∈ Set,(|𝐴|&#x3D;|𝐵|)⊕(|𝐴|&lt;|𝐵|)⊕(|𝐵|&lt;|𝐴|)&lt;finite&gt; ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html" class="active"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/map", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>composition (函数复合)</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let</p>
+    <math display="block"><mrow><mi>𝐴</mi><mover displaystyle="true"><mo>⟶</mo><mi>𝑓</mi></mover><mi>𝐵</mi><mover displaystyle="true"><mo>⟶</mo><mi>𝑔</mi></mover><mi>𝐶</mi></mrow></math>
+    <p>define</p>
+    <math display="block"><mtable><mtr><mtd><mi>𝐴</mi></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>∘</mo><mi>𝑓</mi></mrow><mo>)</mo></mrow><mi>𝐶</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑎</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  </div>
+  <p>定义 proposition, 参数 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow></math></span></p>
+  <ul>
+    <li>单射 := <span><math><mrow><mo>∀</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow><mo>⟹</mo><mi>𝑎</mi><mo>=</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span>. 记号 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↪</mo><mi>𝐵</mi></mrow></math></span></li>
+    <li>满射 := <span><math><mrow><mo>∀</mo><mi>𝑏</mi><mo>∈</mo><mrow><mi>𝐵</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑏</mi></mrow></math></span>. 记号 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↠</mo><mi>𝐵</mi></mrow></math></span></li>
+    <li>双射 := 单射 and 满射. 记号 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↔</mo><mi>𝐵</mi></mrow></math></span>. 此时有逆映射 <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>:</mo><mi>𝐵</mi><mo>↔</mo><mi>𝐴</mi></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="cardinal">&lt;cardinal></code></p>
+  <ul>
+    <li><span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>≔</mo><mrow><mtext>bijective</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span>. or 存在双射 <span><math><mrow><mrow><mi>𝑓</mi><mo>:</mo></mrow><mi>𝐴</mi><mo>↔</mo><mi>𝐵</mi></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>≔</mo><mrow><mtext>injective</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span>. or 存在单射 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↪</mo><mi>𝐵</mi></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>≥</mo><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>≔</mo><mrow><mtext>surjective</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span>. or 存在满射 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↠</mo><mi>𝐵</mi></mrow></math></span></li>
+    <li>
+      <p>单射和满射的对称</p>
+      <math display="block"><mrow><mrow><mtext>surjective</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo><mo>⟺</mo><mrow><mtext>injective</mtext><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>→</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo></mrow></math>
+      <p>or 存在满射 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>↠</mo><mi>𝐵</mi></mrow></math></span> &lt;==> 存在单射 <span><math><mrow><mi>𝑔</mi><mo>:</mo><mi>𝐵</mi><mo>↪</mo><mi>𝐴</mi></mrow></math></span></p>
+    </li>
+  </ul>
+  <p><code data-typst-label="cardinal-always-comparable">&lt;cardinal-always-comparable></code> 元素数量序 <span><math><mo>&lt;</mo></math></span> 的三分 or 序总是 <code>#link(&lt;order-comparable>)[可比较]</code></p>
+  <math display="block"><mrow><mo>∀</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>∈</mo><mrow><mtext> Set</mtext><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mo>⊕</mo><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mo>⊕</mo><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+  <p><code data-typst-label="finite">&lt;finite></code> := <span><math><mrow><mo>∃</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mo>|</mo><mrow><mo>{</mo><mrow><mrow><mn>0</mn><mo>,</mo></mrow><mrow><mn>1</mn><mo>,</mo></mrow><mrow><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>|</mo></mrow></math></span>. also let <span><math><mrow><mo>|</mo><mrow><mo>{</mo><mrow><mrow><mn>0</mn><mo>,</mo></mrow><mrow><mn>1</mn><mo>,</mo></mrow><mrow><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>}</mo></mrow><mo>|</mo><mo>=</mo><mi>𝑛</mi></mrow></math></span></p>
+  <p>finite &lt;==> <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>&lt;</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span></p>
+  <p><span><math><mi>𝐴</mi></math></span> 是有限集 ==> (<span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>→</mo><mi>𝐴</mi></mrow></math></span> 是单射 or 满射 &lt;==> <span><math><mi>𝑓</mi></math></span> 是双射)</p>
+  <p><strong>Example</strong> <span><math><mi mathvariant="normal">ℕ</mi></math></span> 是无限集, <span><math><mtable><mtr><mtd><mi mathvariant="normal">ℕ</mi></mtd><mtd><mrow></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow></mrow></mtd><mtd><mi mathvariant="normal">ℕ</mi></mtd></mtr><mtr><mtd><mi>𝑛</mi></mtd><mtd><mrow></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow></mrow></mtd><mtd><mrow><mn>2</mn><mi>𝑛</mi></mrow></mtd></mtr></mtable></math></span> 是单射 and 不是满射, so 不是双射</p>
+  <ul>
+    <li>可数无限 := <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow></mrow></math></span></li>
+    <li><code data-typst-label="uncountable">&lt;uncountable></code> 不可数 := <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>></mo><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow></mrow></math></span></li>
+    <li><code data-typst-label="countable">&lt;countable></code> 可数 := <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow></mrow></math></span> i.e. 有限 or 可数无限</li>
+  </ul>
+  <p>保持可数的操作. let <span><math><mrow><mo>∀</mo><mi>𝑖</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, <span><math><msub><mi>𝐴</mi><mi>𝑖</mi></msub></math></span> 可数. 以下集合可数</p>
+  <ul>
+    <li>union: <span><math><mrow><msub><mi>𝐴</mi><mn>1</mn></msub><mo>∪</mo><mo>⋯</mo><mo>∪</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow></math></span>, <span><math><mrow><msub><mo>⋃</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span></li>
+    <li>product: <span><math><mrow><msub><mi>𝐴</mi><mn>1</mn></msub><mo>×</mo><mo>⋯</mo><mo>×</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow></math></span>, <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="range">&lt;range></code> <span><math><mrow><mrow><mtext>Range</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi><mo>:</mo><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑏</mi><mo>=</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span>. <strong>alias</strong> image of <span><math><mi>𝑓</mi></math></span>, <span><math><mrow><mtext>im</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow></math></span>, <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="codomain">&lt;codomain></code> <span><math><mrow><mrow><mtext>co-domain</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝐵</mi></mrow></math></span>. <strong>alias</strong> range 值域</p>
+  <p>let <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span></p>
+  <p><code data-typst-label="image">&lt;image></code> 像 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑏</mi><mo>∈</mo><mrow><mi>𝐵</mi><mo>:</mo></mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝑆</mi><mo>,</mo></mrow><mi>𝑏</mi><mo>=</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>let <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p><code data-typst-label="inverse-image">&lt;inverse-image></code> 逆像 <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mo>∃</mo><mi>𝑏</mi><mo>∈</mo><mrow><mi>𝑆</mi><mo>,</mo></mrow><mi>𝑏</mi><mo>=</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝑆</mi></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mo>∃</mo><mi>𝑏</mi><mo>∈</mo><mi>𝑆</mi><mo>,</mo><mi>𝑏</mi><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi>𝑎</mi><mo>∈</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow></mtd></mtr></mtable></math></span></p>
+  <p>==></p>
+  <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑆</mi><mi>𝐴</mi></msub><mo>)</mo></mrow></mrow><mo>⊂</mo><msub><mi>𝑆</mi><mi>𝐵</mi></msub></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><msub><mi>𝑆</mi><mi>𝐴</mi></msub><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><msub><mi>𝑆</mi><mi>𝐵</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><msub><mi>𝑆</mi><mi>𝐴</mi></msub><mo>,</mo><mi>𝑎</mi><mo>∈</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi>𝑆</mi><mi>𝐵</mi></msub><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑆</mi><mi>𝐴</mi></msub><mo>⊂</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi>𝑆</mi><mi>𝐵</mi></msub><mo>)</mo></mrow></mtd></mtr></mtable></math></span></p>
+  <p>逆像 <span><math><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> 保持 <span><math><mrow><mo>∪</mo><mo>,</mo><mo>∩</mo><mo>,</mo><mo>∖</mo></mrow></math></span>, e.g.<br></p>
+  <math display="block"><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∪</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow><mo>∪</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></math>
+  <p>像 <span><math><mi>𝑓</mi></math></span> 只保持 <span><math><mo>∪</mo></math></span>, 对于其它</p>
+  <ul>
+    <li><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∩</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>⊂</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow></mrow><mo>∩</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∖</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>⊂</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑆</mi><mo>)</mo></mrow></mrow><mo>∖</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><msup><mi>𝑆</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="cardinal-increase">&lt;cardinal-increase></code> <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mrow></math></span> (cf. <code>#link(&lt;cardinal>)[]</code>)</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>→</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></mrow></math></span> 不是满射 &lt;==> <span><math><mrow><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>∖</mo><mrow><mtext>range</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+    <math display="block"><mrow><mi mathvariant="normal">Ω</mi><mo>:</mo><mtable><mtr><mtd><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mtext> Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mi>𝑓</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr></mtable></mrow></math>
+    <p>find <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow></math></span> so that <span><math><mrow><mrow><mi mathvariant="normal">Ω</mi><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>∉</mo><mrow><mtext>Range</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mi mathvariant="normal">Ω</mi><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>∉</mo><mrow><mtext>Range</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>⟺</mo><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>≠</mo><mrow><mi mathvariant="normal">Ω</mi><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>to always have a element in set <span><math><mrow><mi mathvariant="normal">Ω</mi><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow></math></span> that not in set <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span>, we can define</p>
+    <p><span><math><mrow><mrow><mi mathvariant="normal">Ω</mi><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑥</mi><mo>∉</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>划分 <span><math><mi>𝑋</mi></math></span>. 直接 <span><math><mrow><mi>𝑋</mi><mo>=</mo><mo>⨆</mo><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 或按照映射 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow></math></span> 的像集的逆像 <span><math><mrow><msub><mo>⨆</mo><mrow><mi>𝑦</mi><mo>∈</mo><mi>𝑌</mi></mrow></msub><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="quotient">&lt;quotient></code> quotient <span><math><mrow><mi>𝑥</mi><mo>∼</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> := <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> or <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span></p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

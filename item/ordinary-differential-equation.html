@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="separable ODE in 1 dimension𝑑𝑥𝑑𝑡&#x3D;𝑓(𝑡)𝑔(𝑥)⟶1𝑔(𝑥)𝑑𝑥&#x3D;𝑓(𝑡)𝑑𝑡⟶𝑥&#x3D;𝐺−1(𝐹(𝑡))where 𝐺&#x3D;∫1𝑔(𝑥)𝑑𝑥,𝐹&#x3D;∫𝑓(𝑡)𝑑𝑡, 初值未定Example𝑓(𝑡)&#x3D;𝑎,𝑔(𝑥)&#x3D;𝑥. 𝑥(𝑡)&#x3D;𝑥(0)exp(𝑎𝑡)𝑓(𝑡)&#x3D;1,𝑔(𝑥)&#x3D;𝑥2. 𝑥(𝑡)&#x3D;11𝑥(0)−𝑡&lt;invariant-of-vector-field &gt;let 𝑈 open in ℝ𝑛vector-field is analytic function 𝑣:𝑈→ℝ𝑛∂𝑣(𝑥)𝑓(𝑥)&#x3D;𝑑𝑓(𝑥)𝑣(𝑥)&#x3D;𝑣(𝑓(𝑥))Question maybe exp like, Taylor series of vector field𝑓(𝑥)&#x3D;𝑥+𝑣(𝑥)+12!∂𝑣(𝑥)𝑣(𝑥)+13!∂𝑣(𝑥)(∂𝑣(𝑥)𝑣(𝑥))+⋯&#x3D;𝑥+∑𝑛&#x3D;0∞1(𝑛+1)!(∂𝑣(𝑥))𝑛𝑣(𝑥)𝑛+1 polynomial like (∂𝜆𝑣(𝑥))𝑛𝜆𝑣(𝑥)&#x3D;𝜆𝑛+1(∂𝑣(𝑥))𝑛𝑣(𝑥)Examplecompare to the result from separable ODE in 1 dim">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html" class="active"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/ordinary-differential-equation", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>separable ODE in 1 dimension</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mrow><mi>𝑑</mi><mi>𝑥</mi></mrow><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>⟶</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mfrac><mi>𝑑</mi><mi>𝑥</mi><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mi>𝑑</mi><mi>𝑡</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟶</mo></mtd><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>=</mo><msup><mi>𝐺</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝐹</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  <p>where <span><math><mrow><mi>𝐺</mi><mo>=</mo><mo>∫</mo><mfrac><mn>1</mn><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mfrac><mi>𝑑</mi><mrow><mi>𝑥</mi><mo>,</mo></mrow><mi>𝐹</mi><mo>=</mo><mo>∫</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></math></span>, 初值未定</p>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑎</mi><mo>,</mo></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑥</mi></mrow></math></span>. <span><math><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>,</mo></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></math></span>. <span><math><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mfrac><mn>1</mn><mrow><mi>𝑥</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></mfrac><mo>−</mo><mi>𝑡</mi></mrow></mfrac></mrow></math></span></li>
+  </ul>
+  <p><code data-typst-label="invariant-of-vector-field ">&lt;invariant-of-vector-field ></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mi>𝑈</mi></math></span> open in <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span></p>
+    <p>vector-field is analytic function <span><math><mrow><mi>𝑣</mi><mo>:</mo><mi>𝑈</mi><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+    <math display="block"><mrow><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p><strong>Question</strong> maybe <span><math><mtext>exp</mtext></math></span> like, Taylor series of vector field</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>+</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mo>!</mo></mrow></mfrac><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><mfrac><mn>1</mn><mrow><mn>3</mn><mo>!</mo></mrow></mfrac><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>+</mo><mo>⋯</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>+</mo><munderover displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></munderover><mfrac><mn>1</mn><mrow><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p><span><math><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></math></span> polynomial like <span><math><mrow><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝜆</mi><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mi>𝜆</mi><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>𝜆</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p><strong>Example</strong></p>
+  <p>compare to the result from separable ODE in 1 dimension</p>
+  <ul>
+    <li><span><math><mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>𝐴</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mi>𝐴</mi><mo>∈</mo><mrow><mtext>gl</mtext><mrow><mo>(</mo><mrow><mi>𝑑</mi><mo>,</mo><mi mathvariant="normal">𝕂</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>expect <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mi>𝑡</mi></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span> for <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span>, expect <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mrow><mtext>exp</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑑</mi><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mi>𝐴</mi></mrow></math></span>, <span><math><mrow><mi>𝑛</mi><mo>≥</mo><mn>2</mn><mo>⟹</mo><msup><mi>𝑑</mi><mi>𝑘</mi></msup><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝐴</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝐴</mi><mn>2</mn></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr></mtable></math></span></p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mn>2</mn></msup><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑑</mi><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mn>2</mn></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝐴</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝐴</mi><mn>3</mn></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr></mtable></math></span></p>
+    <p>…</p>
+    <p><span><math><mrow><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝐴</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mn>𝟙</mn><mo>+</mo><mi>𝐴</mi><mo>+</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mo>!</mo></mrow></mfrac><msup><mi>𝐴</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝐴</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mtext>exp </mtext><mi>𝐴</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mtext>exp </mtext><mi>𝐴</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝐴</mi><mrow><mo>(</mo><mrow><mtext>exp</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑣</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></span></p>
+    <p><strong>Example</strong> <code data-typst-label="harmonic-oscillator">&lt;harmonic-oscillator></code></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>谐振子 <span><math><mrow><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̈</mo></mover><mo>=</mo><mo>∓</mo><msup><mi>𝜔</mi><mn>2</mn></msup><mi>𝑥</mi></mrow></math></span> 一阶化</p>
+      <math display="block"><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑣</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>∓</mo><msup><mi>𝜔</mi><mn>2</mn></msup></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑣</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+      <p>with 三角情况</p>
+      <math display="block"><mrow><mtext>exp </mtext><mi>𝑡</mi><mrow><mo>(</mo><mtable><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><msup><mi>𝜔</mi><mn>2</mn></msup></mrow></mtd><mtd><mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mtext>cos </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></mtd><mtd><mrow><mfrac><mn>1</mn><mi>𝜔</mi></mfrac><mtext> sin </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi>𝜔</mi><mtext> sin </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></mtd><mtd><mrow><mtext>cos </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
+      <p>从而</p>
+      <math display="block"><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑥</mi><mn>0</mn></msub><mtext> cos </mtext><mi>𝜔</mi><mi>𝑡</mi><mo>+</mo><mfrac><msub><mi>𝑣</mi><mn>0</mn></msub><mi>𝜔</mi></mfrac><mtext> sin </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></math>
+      <p>或者写为复指数的形式</p>
+      <math display="block"><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>−</mo><mtext> i </mtext><mfrac><msub><mi>𝑣</mi><mn>0</mn></msub><mi>𝜔</mi></mfrac></mrow><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><mtext> i </mtext><mfrac><msub><mi>𝑣</mi><mn>0</mn></msub><mi>𝜔</mi></mfrac></mrow><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup><mo>≕</mo><mi>𝑎</mi><mrow><mo>(</mo><mrow><mrow><mi>𝜔</mi><mo>,</mo></mrow><mtext> i</mtext></mrow><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup><mo>+</mo><mi>𝑎</mi><mrow><mo>(</mo><mrow><mrow><mi>𝜔</mi><mo>,</mo></mrow><mrow><mo>−</mo><mtext>i</mtext></mrow></mrow><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup></mrow></math>
+      <p>双曲情况类似</p>
+      <p>谐振子方程的特征多项式方程是 <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>±</mo><msup><mi>𝜔</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>=</mo><mo>±</mo><msup><mi>𝜔</mi><mn>2</mn></msup></mrow></math></span>. 我们对三角情况 <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝜔</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> pr <span><math><mrow><mi>𝜉</mi><mo>=</mo><mo>±</mo><mtext> i </mtext><mi>𝜔</mi></mrow></math></span> 感兴趣, 其原型是 <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></span> or <span><math><mrow><msup><mi>𝜉</mi><mn>2</mn></msup><mo>=</mo><mo>±</mo><mtext> i</mtext></mrow></math></span></p>
+      <p>在谐振子 <span><math><mi>𝑥</mi></math></span> 是实数值的情况, 对于复指数形式, 为了维持在 <span><math><mi mathvariant="normal">ℝ</mi></math></span>, 当 <span><math><mrow><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>0</mn></msub></mrow><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 时, <span><math><msup><mi>𝑒</mi><mrow><mo>±</mo><mtext> i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup></math></span> 前面的系数互为复共轭 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>±</mo><mfrac><msub><mi>𝑣</mi><mn>0</mn></msub><mrow><mtext>i </mtext><mi>𝜔</mi></mrow></mfrac></mrow></math></span></p>
+    </div>
+  </div>
+  <ul>
+    <li><span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>, <span><math><mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>expect <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>−</mo><mi>𝑡</mi></mrow></mfrac></mrow></math></span> for <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span>, expect <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mfrac><mi>𝑥</mi><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac></mrow></math></span></p>
+    <p><span><math><mrow><mrow><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow><mo>=</mo><msup><mi>𝑣</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>2</mn><mo>⋅</mo><msup><mi>𝑥</mi><mn>3</mn></msup></mrow></math></span></p>
+    <p><span><math><mrow><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mo>(</mo><mrow><mrow><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mi>𝑣</mi></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mn>2</mn><msup><mi>𝑥</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>⋅</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><msup><mi>𝑥</mi><mn>4</mn></msup></mrow></math></span></p>
+    <p>…</p>
+    <p><span><math><mrow><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow><mo>⋅</mo><msup><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>2</mn></mrow></msup></mrow></math></span></p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>+</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><mfrac><mn>1</mn><mrow><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mrow><mo>(</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∑</mo><mrow><mi>𝑚</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msup><mi>𝑥</mi><mi>𝑚</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>1</mn><mo>−</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac></mtd></mtr></mtable></math></span></p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup><msup><mi>𝑥</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mfrac><mi>𝑥</mi><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑣</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></span></p>
+  </div>
+  <p><strong>Question</strong></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑥</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> 中间的 <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></math></span> 应该对应伸缩的向量场 <span><math><mrow><mi>𝑡</mi><mo>⋅</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> 的情况</p>
+    <p>单参数同态嵌入 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>:</mo><mi mathvariant="normal">ℝ</mi><mo>↪</mo><mtext> Diff</mtext></mrow></math></span></p>
+    <p><span><math><mrow><mo>−</mo><mi>𝑣</mi></mrow></math></span> 和初值 <span><math><mrow><mi>𝑦</mi><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> 给出 <span><math><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span>. <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mo>−</mo><mi>𝑡</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  </div>
+  <p><span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></math></span> is called flow. exp 道路发射状坐标</p>
+  <p><code data-typst-label="vector-field-as-δ-diffeomorphism">&lt;vector-field-as-δ-diffeomorphism></code> 在 <span><math><mn>𝟙</mn></math></span> 附近, 向量场是微分同胚群的坐标 <span><math><mrow><mi>𝑣</mi><mo>⇝</mo><mtext> exp </mtext><mi>𝑣</mi></mrow></math></span>, 类似于 <code>#link(&lt;geodesic-coordinate>)[]</code></p>
+  <p>ODE</p>
+  <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math>
+  <p><a href="https://en.wikipedia.org/wiki/Cauchy-Kovalevskaya_theorem">wiki:Cauchy-Kowalevski theorem</a>, 收敛半径估计使用了特殊上界控制方法, 类似 <code>#link(&lt;analytic-inverse>)[]</code> 中所作的</p>
+  <p><span><math><mrow><mrow><mi>𝐹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝛾</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mi>𝑐</mi><mi>𝑥</mi></mrow><mrow><mi>𝑥</mi><mo>−</mo><mi>𝛾</mi></mrow></mfrac></mrow></math></span>, <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mi>𝛾</mi><mo>=</mo><mrow><mi>𝐹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝛾</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> ==> <span><math><mrow><mrow><mi>𝛾</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑥</mi><mo>−</mo><msup><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>𝑐</mi><mi>𝑡</mi><mi>𝑥</mi></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
+  <p><code data-typst-label="integral-curve">&lt;integral-curve></code> ODE 解的 Picard 迭代 (<a href="https://en.wikipedia.org/wiki/Picard–Lindelöf_theorem">wiki</a>) 表示 or 积分曲线 e.g.</p>
+  <math display="block"><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></munder><msubsup><mo>∫</mo><mn>0</mn><mi>𝑡</mi></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mi>𝑛</mi></msub><msubsup><mo>∫</mo><mn>0</mn><msub><mi>𝑡</mi><mi>𝑛</mi></msub></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⋯</mo><msubsup><mo>∫</mo><mn>0</mn><msub><mi>𝑡</mi><mn>0</mn></msub></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mo>,</mo></mrow><mo>⋯</mo><mi>𝑓</mi><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>,</mo></mrow><mi>𝑥</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⋯</mo></mrow><mo>)</mo></mrow></mrow></mrow></math>
+  <p>如果是线性 ODE 则 (<strong>alias</strong> Dyson 级数)</p>
+  <math display="block"><mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></munder><msubsup><mo>∫</mo><mn>0</mn><mi>𝑡</mi></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mi>𝑛</mi></msub><msubsup><mo>∫</mo><mn>0</mn><msub><mi>𝑡</mi><mi>𝑛</mi></msub></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⋯</mo><msubsup><mo>∫</mo><mn>0</mn><msub><mi>𝑡</mi><mn>0</mn></msub></msubsup><mi>𝑑</mi><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mi>𝐴</mi><mrow><mo>(</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mo>)</mo></mrow></mrow><mo>⋯</mo><mrow><mi>𝐴</mi><mrow><mo>(</mo><msub><mi>𝑡</mi><mn>1</mn></msub><mo>)</mo></mrow></mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></mrow></math>
+  <p>线性 ODE. 常系数 ODE 的解可以写出 by 转为一阶微分方程组 + Jordan normal form</p>
+  <p><code data-typst-label="Lie-bracket">&lt;Lie-bracket></code> Lie bracket</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>作为 <code>#link(&lt;conjugate-action>)[]</code> of <span><math><mtext>Diff</mtext></math></span> 的生成元</p>
+    <p><span><math><mtext>Diff</mtext></math></span> 的共轭作用 <span><math><mrow><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑓</mi></mrow><mo>⇝</mo><mi>𝑓</mi><mi>𝑔</mi><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+    <p>微分 := <span><math><mrow><mrow><mtext>ad</mtext><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑤</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>]</mo></mrow></mrow></math></span></p>
+    <p>注意 <span><math><mrow><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑓</mi></mrow><mo>⇝</mo><mi>𝑔</mi><mi>𝑓</mi><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 是不同的映射, 如果考虑 <span><math><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑓</mi></mrow></math></span> 的顺序的话</p>
+    <p><span><math><mrow><mrow><mo>[</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>]</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑤</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>−</mo><msub><mo>∂</mo><mrow><mi>𝑤</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></msub><mrow><mi>𝑣</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>[</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>]</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mi>𝑤</mi><mo>,</mo><mi>𝑣</mi></mrow><mo>]</mo></mrow></mrow></math></span></p>
+    <p>for <span><math><mrow><mtext>GL</mtext><mo>,</mo><mtext>gl</mtext></mrow></math></span>, <span><math><mrow><mrow><mo>[</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>]</mo></mrow><mo>∼</mo><mi>𝐴</mi><mi>𝐵</mi><mo>−</mo><mi>𝐵</mi><mi>𝐴</mi></mrow></math></span></p>
+  </div>
+  <p><code data-typst-label="Lie-derivative">&lt;Lie-derivative></code> Lie derivative <strong>alias</strong> drag derivative</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mi>𝑣</mi></math></span> 生成单参数微分同胚 <span><math><mrow><mi>𝑡</mi><mo>⇝</mo><msub><mi>𝑓</mi><mi>𝑡</mi></msub><mo>∈</mo><mtext> Diff</mtext></mrow></math></span></p>
+    <p>let <span><math><mrow><msub><mi>𝑤</mi><mi>𝑡</mi></msub><mo>=</mo><mi>𝑑</mi><msubsup><mi>𝑓</mi><mi>𝑡</mi><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><mrow><msub><mi>𝑓</mi><mi>𝑡</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>:</mo><mrow><mtext> base</mtext><mo>,</mo></mrow><mi>𝑤</mi><mrow><mo>(</mo><mrow><msub><mi>𝑓</mi><mi>𝑡</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>:</mo><mtext> vector</mtext></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><msub><mi>𝐿</mi><mi>𝑣</mi></msub><mrow><mo>(</mo><mi>𝑤</mi><mo>)</mo></mrow><mo>≔</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑡</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mi>𝑡</mi></mfrac><mrow><mo>(</mo><mrow><msub><mi>𝑤</mi><mi>𝑡</mi></msub><mo>−</mo><msub><mi>𝑤</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><msub><mi>𝐿</mi><mi>𝑣</mi></msub><mrow><mo>(</mo><mi>𝑤</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>]</mo></mrow></mrow></math></span></p>
+    <p>Jacobi identity <span><math><mrow><msub><mi>𝐿</mi><mrow><mo>[</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>]</mo></mrow></msub><mo>=</mo><mrow><mo>[</mo><mrow><msub><mi>𝐿</mi><mi>𝑣</mi></msub><mo>,</mo><msub><mi>𝐿</mi><mi>𝑤</mi></msub></mrow><mo>]</mo></mrow></mrow></math></span> or <span><math><mrow><mrow><mo>[</mo><mrow><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo></mrow><mrow><mo>[</mo><mrow><msub><mi>𝑣</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝑤</mi><mn>3</mn></msub></mrow><mo>]</mo></mrow></mrow><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><mrow><mrow><msub><mi>𝑣</mi><mn>3</mn></msub><mo>,</mo></mrow><mrow><mo>[</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>]</mo></mrow></mrow><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><mrow><mrow><msub><mi>𝑣</mi><mn>2</mn></msub><mo>,</mo></mrow><mrow><mo>[</mo><mrow><msub><mi>𝑣</mi><mn>3</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>]</mo></mrow></mrow><mo>]</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>可以对 tensor field 也定义 Lie derivative …</p>
+  </div>
+  <p><code data-typst-label="linear-PDE-integrable-condition">&lt;linear-PDE-integrable-condition></code> 相关于二阶导数的对称性. 这个条件使得一阶线性 PDE 的解可以来自接连的 ODE 积分曲线, 且结果不依赖于道路的选取</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

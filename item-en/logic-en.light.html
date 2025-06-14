@@ -1,0 +1,370 @@
+<div>
+  <p>Propositional Logic</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Examples of Natural Language</p>
+    <table>
+      <tr>
+        <td><strong>Proposition</strong></td>
+        <td><strong>Boolean Value (bool)</strong></td>
+      </tr>
+      <tr>
+        <td>Humans are organisms</td>
+        <td>True, true, 1</td>
+      </tr>
+      <tr>
+        <td>Iron is an organism</td>
+        <td>False, false, 0</td>
+      </tr>
+    </table>
+    <p>Digital circuits represent bool</p>
+    <table>
+      <tr>
+        <td><strong>Circuit Value</strong></td>
+        <td><strong>bool</strong></td>
+      </tr>
+      <tr>
+        <td>High Level</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Low Level</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <p>I won't deal with the hardware implementation of digital circuits here. I don't know the details either.</p>
+  </div>
+  <p><code data-typst-label="logic-operator">&lt;logic-operator></code> logical and, or, not</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <ul>
+      <li>And, <span><math><mo>∧</mo></math></span>, <code>and</code>, logical conjunction</li>
+      <li>Or, <span><math><mo>∨</mo></math></span>, <code>or</code>, logical disjunction</li>
+      <li>Not, <span><math><mo>¬</mo></math></span>, <code>not</code>, logical negation</li>
+    </ul>
+    <p>Examples of Natural Language</p>
+    <table>
+      <tr>
+        <td><strong>Proposition</strong></td>
+        <td><strong>Boolean Value</strong></td>
+      </tr>
+      <tr>
+        <td>Humans are organisms <strong>and</strong> 1 is a natural number</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Humans are organisms <strong>and</strong> 1 = 2</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <p>Formal Language</p>
+    <table>
+      <tr>
+        <td><span><math><mi>𝑝</mi></math></span></td>
+        <td><span><math><mi>𝑞</mi></math></span></td>
+        <td><span><math><mrow><mi>𝑝</mi><mo>∧</mo><mi>𝑞</mi></mrow></math></span></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td><span><math><mi>𝑝</mi></math></span></td>
+        <td><span><math><mi>𝑞</mi></math></span></td>
+        <td><span><math><mrow><mi>𝑝</mi><mo>∨</mo><mi>𝑞</mi></mrow></math></span></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td><span><math><mi>𝑝</mi></math></span></td>
+        <td><span><math><mrow><mo>¬</mo><mi>𝑝</mi></mrow></math></span></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+    </table>
+    <p>Representation of <span><math><mrow><mo>∧</mo><mo>,</mo><mo>∨</mo><mo>,</mo><mo>¬</mo></mrow></math></span> in digital circuits and logic gates</p>
+    <img src="../image/gate.jpeg" width="60%">
+    <p>Are gates designed to prevent reverse current?</p>
+    <p>The <code>not</code> gate converts a low level to a high level, indicating that the hardware implementation of the gate requires external energy and needs to be powered on</p>
+    <p>"Redundancy" e.g. we can use <span><math><mrow><mrow><mo>¬</mo><mo>,</mo></mrow><mo>∧</mo></mrow></math></span> to represent <span><math><mo>∨</mo></math></span></p>
+    <p>Circuit gate implementations start with <code>not,nand</code> or <span><math><mrow><mrow><mo>¬</mo><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mo>¬</mo><mo>∧</mo></mrow><mo>)</mo></mrow></mrow></math></span>. But I think maintaining the symmetry of <span><math><mrow><mrow><mo>∧</mo><mo>,</mo></mrow><mo>∨</mo></mrow></math></span> is useful, cognitively or in terms of negative duals.</p>
+  </div>
+  <p><code data-typst-label="computability">&lt;computability></code> Computability of Circuits</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Logic gates can be used to create any <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑛</mi></msup><mo>→</mo><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑚</mi></msup></mrow></math></span> function</p>
+    <p>(image from p.85 of ref-1)</p>
+    <img src="../image/compute-function-input.jpeg" width="30%"><img src="../image/decoder.jpeg" width="30%">
+    <ul>
+      <li>Construction of <span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑛</mi></msup></math></span> input</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><span><math><mi>𝑛</mi></math></span> circuits <span><math><mrow><msub><mi>𝐴</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐴</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span> require at most <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> <code>and</code> gates <span><math><mrow><msub><mi>𝑌</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑌</mi><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span>. Some functions only need a portion of the <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> inputs, in which case some lines are not connected.</p>
+      <p><span><math><mrow><mi>𝑛</mi><mo>⇝</mo><msup><mn>2</mn><mi>𝑛</mi></msup></mrow></math></span> represents the "multiplication" property of <span><math><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></math></span> value parallel circuits</p>
+    </div>
+    <ul>
+      <li>Construction of <span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mn>1</mn></msup></math></span> output</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>In the input, connect the wires that you want to output to 1 to the or gate</p>
+      <p><strong>Example</strong> <code>not xor</code></p>
+      <img src="../image/compute-function-output.jpeg" width="30%">
+    </div>
+    <p>Exclusive or, ⊕, <code>xor</code></p>
+    <table>
+      <tr>
+        <td><span><math><mi>𝑝</mi></math></span></td>
+        <td><span><math><mi>𝑞</mi></math></span></td>
+        <td><span><math><mrow><mi>𝑝</mi><mo>⊕</mo><mi>𝑞</mi></mrow></math></span></td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    <ul>
+      <li>Construction of <span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑚</mi></msup></math></span> output. Just connect the required wires to <span><math><mi>𝑚</mi></math></span> or games</li>
+    </ul>
+    <p>If the function does not require complete <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑛</mi></msup><mo>→</mo><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑚</mi></msup></mrow></math></span>, the circuit calculation components do not necessarily have to be constructed in this fixed way. It can be further simplified and the use of gates can be reduced depending on the situation. But I won't go into details here</p>
+  </div>
+  <p>A symbolic representation of multiple input or output lines in a computing unit</p>
+  <img src="../image/multi-lines-symbol.jpeg">
+  <p><code data-typst-label="control-circuit">&lt;control-circuit></code> Control circuit, selector or multiplexer (multiplexer)</p>
+  <p><span><math><mrow><mi>𝑆</mi><mo>=</mo><mn>0</mn></mrow></math></span> outputs <span><math><msub><mi>𝐷</mi><mn>0</mn></msub></math></span> to <span><math><mi>𝑌</mi></math></span>, <span><math><mrow><mi>𝑆</mi><mo>=</mo><mn>1</mn></mrow></math></span> outputs <span><math><msub><mi>𝐷</mi><mn>1</mn></msub></math></span> to <span><math><mi>𝑌</mi></math></span></p>
+  <img src="../image/multiplexer-function.jpeg" width="20%"><img src="../image/multiplexer-impl.jpeg" width="25%">
+  <p><span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> inputs <span><math><mrow><msub><mi>𝐷</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐷</mi><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span> require <span><math><mi>𝑛</mi></math></span> control circuits <span><math><mrow><msub><mi>𝑆</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑆</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span></p>
+  <p><code data-typst-label="De-Morgan-law">&lt;De-Morgan-law></code> negative dual law or De Morgan's law</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  <p>Proven by exhaustion, just like how humans count numbers is actually also exhaustion. Same below</p>
+  <p><code data-typst-label="boolean-algebra">&lt;boolean-algebra></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>bool algebra is denoted as <span><math><mrow><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mrow><mo>,</mo><mo>+</mo><mo>,</mo><mo>⋅</mo></mrow></mrow></math></span> or <span><math><mrow><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mrow><mo>,</mo><mo>∨</mo><mo>,</mo><mo>∧</mo></mrow></mrow></math></span></p>
+    <p><code data-typst-label="bool-distributive-law">&lt;bool-distributive-law></code> distributive law</p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi><mo>⋅</mo><mi>𝐶</mi><mo>+</mo><mi>𝐵</mi><mo>⋅</mo><mi>𝐶</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or </mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∧</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>Its negative dual</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>⋅</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi><mo>⋅</mo><mi>𝐶</mi><mo>+</mo><mi>𝐵</mi><mo>⋅</mo><mi>𝐶</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or </mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∨</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>Inductively</p>
+      <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑛</mi></mrow></munder><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑚</mi></mrow></munder><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑛</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑚</mi></mrow></munder><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math>
+      <p>and e.g. <span><math><mrow><msub><mo>⋀</mo><mi>𝑖</mi></msub><msub><mo>⋁</mo><mi>𝑗</mi></msub><msub><mo>⋀</mo><mi>𝑘</mi></msub><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi><mi>𝑘</mi></mrow></msub><mo>=</mo><mo>⋯</mo></mrow></math></span></p>
+    </div>
+    <p><code data-typst-label="bool-commutative-law">&lt;bool-commutative-law></code> Commutative law <span><math><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi><mo>=</mo><mi>𝐵</mi><mo>+</mo><mi>𝐴</mi></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
+    <p><code data-typst-label="bool-associative-law">&lt;bool-associative-law></code> Associative law <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝐶</mi><mo>=</mo><mi>𝐴</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>+</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
+  </div>
+  <p><code data-typst-label="periodic-circuit">&lt;periodic-circuit></code> Periodic circuit</p>
+  <img src="../image/periodic-circuit.jpeg" width="60%">
+  <p>Implemented by crystal oscillator</p>
+  <p><code data-typst-label="memory-circuit">&lt;memory-circuit></code> Circuit memory</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Black box model</p>
+    <img src="../image/memory-1.jpeg" width="60%">
+    <p>Possible implementation</p>
+    <img src="../image/memory-2.jpeg" width="70%">
+    <ul>
+      <li>Use a ring circuit to reuse the 1/0 value of <span><math><mrow><mi>𝑎</mi><mo>,</mo><mover accent="true"><mi>𝑎</mi><mo>¯</mo></mover></mrow></math></span> from the previous cycle</li>
+      <li>Inverter (<code>not</code> gate) ensures current direction and prevents 1 from decaying (through external energy)</li>
+      <li>In order to write 0 to an existing 1, you need to write 1 to <span><math><mover accent="true"><mtext>write</mtext><mo>¯</mo></mover></math></span> to get <span><math><mrow><mover accent="true"><mi>𝑎</mi><mo>¯</mo></mover><mo>=</mo><mn>1</mn></mrow></math></span>, and then invert it to <span><math><mrow><mi>𝑎</mi><mo>=</mo><mn>0</mn></mrow></math></span></li>
+      <li>Need a higher write voltage than the voltage in the loop to overwrite the previously existing <span><math><mn>1</mn></math></span>? e.g. use a higher voltage <span><math><mrow><mover accent="true"><mtext>write </mtext><mo>¯</mo></mover><mo>=</mo><mn>1</mn></mrow></math></span> to overwrite the existing <span><math><mrow><mi>𝑎</mi><mo>=</mo><mn>1</mn></mrow></math></span></li>
+    </ul>
+    <p><code data-typst-label="finite-machine">&lt;finite-machine></code> Finite State Machine</p>
+    <p><code data-typst-label="i/o">&lt;i/o></code> The input of a circuit may come from the outside world (e.g. sensors, keyboards), and the output of the circuit may also reach the outside world (e.g. signal lights, screens)</p>
+    <p>The rhythm of external input is usually inconsistent with the rhythm of the computer's internal periodic circuit, so the external input needs to pass through synchronization components first</p>
+  </div>
+  <p><code data-typst-label="memory-array">&lt;memory-array></code> Memory array</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Binary, order, natural number. <strong>Example</strong> <span><math><msup><mn>2</mn><mn>3</mn></msup></math></span> is the number of steps from 000, 001, 010 to 111, although this assumes that we can recognize three bits. <span><math><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>=</mo><munder><munder accent="true"><mrow><mn>2</mn><mo>⋯</mo><mn>2</mn></mrow><mo>⏟</mo></munder><mrow><mi>𝑛</mi><mtext>-fold</mtext></mrow></munder></mrow></math></span>, <span><math><mrow><mn>101</mn><mo>=</mo><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mn>0</mn><mo>⋅</mo><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mn>0</mn></msup><mo>=</mo><mn>4</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>5</mn></mrow></math></span></p>
+    <p>The range of natural numbers contained in multiple bits, for example, 3 bits of <span><math><mrow><mrow><mn>0</mn><mo>,</mo></mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mn>7</mn></mrow></math></span> as parameters, to correspond to the real world content. <strong>Example</strong> Computer's character representation e.g. ASCII, Unicode, the position and color of the light-emitting points on the screen</p>
+    <img src="../image/ASCII.jpeg">
+    <p>(image modified from wiki media about ASCII)</p>
+    <p>In practical applications, multiple bits per address are better than 1 bit per address, or a two-dimensional memory array is more efficient than one-dimensional</p>
+    <img src="../image/memory-array.jpeg" width="20%">
+  </div>
+  <p><code data-typst-label="instruction">&lt;instruction></code> Instruction</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Usually represented by multi-bit data written in an address in memory to indicate certain circuit tasks</p>
+    <p>Some common circuit tasks</p>
+    <ul>
+      <li>Addition of natural numbers</li>
+      <li>Determine whether the bit data meets the required conditions</li>
+      <li>Jump to the execution of other instructions</li>
+    </ul>
+    <p>Assume an instruction is completed in one circuit cycle (single-cycle computer)</p>
+    <p><strong>Example</strong> <code>add</code> instruction. <code>add x_1 x_2</code>. The bit data of the instruction is divided into three regions, representing different types of information</p>
+    <img src="../image/add-instruction.jpeg" width="70%"><img src="../image/add-instruction-computer.jpeg" width="80%">
+    <ol>
+      <li>
+        <p>Read the <code>add</code> instruction</p>
+        <ul>
+          <li><code>add</code> instruction at <code>adress_0</code> (<code>add x_1 x_2</code> and <code>adress_1, adress 2</code> are from the source code and compiler generation)</li>
+          <li>The value <code>adress_0</code> stored in the fixed memory address <code>adress_of_instruction</code> is read, the data in the index area of the <code>add</code> instruction is sent to the control signal element (control unit), then the control signal is calculated and output (too many details, see ref-1)</li>
+        </ul>
+      </li>
+      <li>
+        <p>Execute the <code>add</code> instruction</p>
+        <ul>
+          <li>The output control signal is input to the control circuit element of the memory, reading <code>x_1</code> in <code>adress_1</code> and <code>x_2</code> in <code>adress_2</code> from the memory, and inputting them to the arithmetic element (ALU)</li>
+          <li>According to the output control signal, the output of the arithmetic element <code>x_1 + x_2</code> is written to <code>adress_1</code></li>
+        </ul>
+      </li>
+      <li>
+        <p>Enter and read the instruction of the next cycle</p>
+        <ul>
+          <li>The value <code>adress_0</code> stored in <code>adress_of_instruction</code> is sent to the arithmetic element by a well-designed circuit, calculating <code>adress_0 + 1</code> i.e. the next instruction address, which is written into the data in <code>adress_of_instruction</code>. <code>adress_0 + 1</code> will be executed in the next circuit cycle</li>
+        </ul>
+      </li>
+    </ol>
+    <p>Other instructions may have more than two data areas (non-instruction index area)</p>
+  </div>
+  <p>Instruction stream</p>
+  <p><strong>Example</strong> <code data-typst-label="loop">&lt;loop></code> Loop</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>The speed of a periodic circuit is far greater than human speed (1 GHz = 10^9 cycles per second)</p>
+    <p>Loops in high-level programming languages</p>
+    <pre>i : int = 0;<br>while (i &lt; 10) {<br>    i = i + 1;<br>} // result = 10</pre>
+    <img src="../image/while-computer.jpeg" width="90%">
+    <ol>
+      <li>
+        <p>Reading instructions</p>
+        <p>The <code>bgt</code> (branch_grater_than) instruction is stored in <code>adress_0</code>. (Instructions are generated from source code and compilers.) <code>10</code> is in one data area of <code>bgt</code>, while the number of instruction streams <code>3</code> required for the while loop is in another data area of <code>bgt</code>.</p>
+      </li>
+      <li>
+        <p>Executing instructions</p>
+        <p>Executing the conditional judgment <span><math><mrow><mi>𝑖</mi><mo>&lt;</mo><mn>10</mn></mrow></math></span></p>
+        <p>Read <code>i</code> and <code>10</code>, compare their sizes in the arithmetic element, give a control signal based on the result, combined with the control signal given by the <code>bgt</code> index area</p>
+        <p>Perform different tasks based on the result of the conditional judgment</p>
+        <ul>
+          <li>When <span><math><mrow><mi>𝑖</mi><mo>&lt;</mo><mn>10</mn></mrow></math></span></li>
+        </ul>
+        <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+          <p>The arithmetic element outputs a control signal based on this judgment, changing the value stored in <code>adress_of_instruction</code> to the address of the next instruction <code>adress_0 + 1</code></p>
+          <ul>
+            <li>
+              <p>The instruction at <code>adress_0 + 1</code> is to perform the task <span><math><mrow><msub><mi>𝑖</mi><mtext>new </mtext></msub><mo>=</mo><msub><mi>𝑖</mi><mtext> old </mtext></msub><mo>+</mo><mn>1</mn></mrow></math></span></p>
+              <p>Use the <code>add</code> instruction to calculate <code>i + 1</code> and write it back to <code>adress_1</code></p>
+            </li>
+            <li>
+              <p>After executing <code>add</code>, we need to return to the judgment of the next loop <span><math><mrow><mi>𝑖</mi><mo>&lt;</mo><mrow><mn>10</mn><mo>?</mo></mrow></mrow></math></span></p>
+              <p>The next instruction after the <code>add</code> instruction is the <code>jump</code> instruction. The result of the execution is to modify the value of <code>adress_of_instruction</code> to <code>adress_0</code>, implementing the jump of the instruction and performing the judgment of the next loop <span><math><mrow><mi>𝑖</mi><mo>&lt;</mo><mrow><mn>10</mn><mo>?</mo></mrow></mrow></math></span></p>
+            </li>
+          </ul>
+        </div>
+        <ul>
+          <li>When <span><math><mrow><mi>𝑖</mi><mo>≥</mo><mn>10</mn></mrow></math></span></li>
+        </ul>
+        <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">The arithmetic element outputs a control signal based on this judgment, changing the value stored in <code>adress_of_instruction</code> to <code>adress_0 + 3</code>, breaking out of the while loop, and executing the subsequent instructions</div>
+      </li>
+    </ol>
+  </div>
+  <p><code data-typst-label="compile">&lt;compile></code> <code data-typst-label="parse">&lt;parse></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>Use a parser to verify the correctness of the token stream language, essentially it's traversing all language rules, or using a generated finite state machine</p>
+    <p>The operation of the parser requires generating large and complex data structures in memory (some figurative descriptions: tables, nodes, trees)</p>
+    <p>If the data stream is source code of a high-level programming language, an instruction stream can also be generated based on this data structure. This is called compilation (compile), but parse and compile are often used interchangeably</p>
+    <p>If the language rules are very complex, the language rules can be classified and decomposed (multiple times), first traversing the classification, and then traversing the rules within the classification. <strong>Example</strong> Separate into "syntax check" and "semantics check"</p>
+  </div>
+  <p>An enlightening example of the concept of abstraction and API: The items around you can be used conveniently without knowing the manufacturing principle because they are designed that way</p>
+  <p>Computers, in addition to the advantage of high-speed periodic circuits, have other advantages, such as the capacity of memory (1 GB = 2^(30+3) bit = 8589934592 bit) and persistence (power-on time)</p>
+  <p>They are part of reason why proof assistant are useful for human</p>
+  <p>Complex data structures and calculation functions can be constructed in memory. It may also be useful for many other fields.</p>
+  <p>The motivation for variables or variable names is that humans cannot remember so many addresses. Variable names are designed to assist humans with semantics and allow the computer to convert variable names into addresses, based on the variable's position in the overall program logic.</p>
+  <p>Variables or variable names allow the values stored in memory to be reused through addresses, rather than being one-time use</p>
+</div>

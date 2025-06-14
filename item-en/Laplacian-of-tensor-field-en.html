@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="Gradient and divergence are 𝐿2 adjoint to each other.∫𝑑 Vol 𝑔(𝑋,∂𝑓)&#x3D;∫𝑑 Vol 𝑔(∂†𝑋,𝑓)or∫𝑑 Vol 𝑔(𝑋, grad 𝑓)&#x3D;−∫𝑑 Vol 𝑔(div 𝑋,𝑓)Generalize to general tensors. For example, suppose &amp;quot;covariant differentiation&amp;quot; adds (⊤𝑀)⊺ to the first position, i.e.∇: tensor →(⊤𝑀)⊺⊗ tensorThen the adjoint is∇†:(⊤𝑀)⊺⊗ tensor → tensorlet ⟨,⟩𝐿2&#x3D;∫𝑑 Vol 𝑔(,)adjoint :&#x3D;For every 𝑆∈ tensor, the linear function(𝑇⇝⟨∇𝑇,𝑆⟩𝐿2)∈ tensor⊺has a metric-dual∇†𝑆∈ tensorSuch that the linear function can be expressed as𝑇⇝⟨𝑇,∇†𝑆⟩Which is the Lagrangian f">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item-en/HTML-notice-en.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item-en/feature-en.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item-en/logic-en.html"><strong aria-hidden="true">2.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item-en/set-theory-en.html"><strong aria-hidden="true">3.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item-en/map-en.html"><strong aria-hidden="true">4.</strong> map</a></li><li class="chapter-item expanded "><a href="/item-en/order-en.html"><strong aria-hidden="true">5.</strong> order</a></li><li class="chapter-item expanded "><a href="/item-en/combinatorics-en.html"><strong aria-hidden="true">6.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item-en/real-numbers-en.html"><strong aria-hidden="true">7.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item-en/limit-sequence-en.html"><strong aria-hidden="true">8.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item-en/ℝ^n-en.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item-en/Euclidean-space-en.html"><strong aria-hidden="true">10.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item-en/Minkowski-space-en.html"><strong aria-hidden="true">11.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item-en/polynomial-en.html"><strong aria-hidden="true">12.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Euclidean-en.html"><strong aria-hidden="true">13.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-Minkowski-en.html"><strong aria-hidden="true">14.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item-en/analytic-struct-operation-en.html"><strong aria-hidden="true">15.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/ordinary-differential-equation-en.html"><strong aria-hidden="true">16.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item-en/volume-en.html"><strong aria-hidden="true">17.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item-en/integral-en.html"><strong aria-hidden="true">18.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item-en/divergence-en.html"><strong aria-hidden="true">19.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item-en/limit-net-en.html"><strong aria-hidden="true">20.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item-en/compact-en.html"><strong aria-hidden="true">21.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item-en/connected-en.html"><strong aria-hidden="true">22.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item-en/topology-struct-operation-en.html"><strong aria-hidden="true">23.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item-en/exponential-en.html"><strong aria-hidden="true">24.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item-en/angle-en.html"><strong aria-hidden="true">25.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item-en/manifold-en.html"><strong aria-hidden="true">26.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item-en/metric-en.html"><strong aria-hidden="true">27.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item-en/metric-connection-en.html"><strong aria-hidden="true">28.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item-en/geodesic-derivative-en.html"><strong aria-hidden="true">29.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item-en/curvature-of-metric-en.html"><strong aria-hidden="true">30.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">31.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/constant-sectional-curvature-en.html"><strong aria-hidden="true">32.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item-en/simple-symmetric-space-en.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item-en/principal-bundle-en.html"><strong aria-hidden="true">34.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item-en/group-action-en.html"><strong aria-hidden="true">35.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item-en/stereographic-projection-en.html"><strong aria-hidden="true">36.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item-en/Hopf-bundle-en.html"><strong aria-hidden="true">37.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item-en/point-particle-non-relativity-en.html"><strong aria-hidden="true">38.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/point-particle-relativity-en.html"><strong aria-hidden="true">39.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-en.html"><strong aria-hidden="true">40.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-current-en.html"><strong aria-hidden="true">41.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/scalar-field-non-relativity-en.html"><strong aria-hidden="true">42.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item-en/projective-lightcone-en.html"><strong aria-hidden="true">43.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item-en/spacetime-momentum-spinor-representation-en.html"><strong aria-hidden="true">44.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item-en/Lorentz-group-en.html"><strong aria-hidden="true">45.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-en.html"><strong aria-hidden="true">46.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item-en/spinor-field-current-en.html"><strong aria-hidden="true">47.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item-en/electromagnetic-field-en.html"><strong aria-hidden="true">48.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item-en/Laplacian-of-tensor-field-en.html" class="active"><strong aria-hidden="true">49.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item-en/Einstein-metric-en.html"><strong aria-hidden="true">50.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item-en/interaction-en.html"><strong aria-hidden="true">51.</strong> interaction</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item-en/Laplacian-of-tensor-field-en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>Gradient and divergence are <span><math><msup><mi>𝐿</mi><mn>2</mn></msup></math></span> adjoint to each other.</p>
+  <p><span><math><mrow><mo>∫</mo><mi>𝑑</mi><mtext> Vol </mtext><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑋</mi><mo>,</mo></mrow><mo>∂</mo><mi>𝑓</mi></mrow><mo>)</mo></mrow><mo>=</mo><mo>∫</mo><mi>𝑑</mi><mtext> Vol </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msup><mo>∂</mo><mo>†</mo></msup><mrow><mi>𝑋</mi><mo>,</mo></mrow><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p>or</p>
+  <p><span><math><mrow><mo>∫</mo><mi>𝑑</mi><mtext> Vol </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑋</mi><mo>,</mo></mrow><mtext> grad </mtext><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mo>−</mo><mo>∫</mo><mi>𝑑</mi><mtext> Vol </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mtext>div </mtext><mrow><mi>𝑋</mi><mo>,</mo></mrow><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p>Generalize to general tensors. For example, suppose "covariant differentiation" adds <span><math><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></math></span> to the first position, i.e.</p>
+  <p><span><math><mrow><mo>∇</mo><mo>:</mo><mtext> tensor </mtext><mo>→</mo><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>⊗</mo><mtext> tensor</mtext></mrow></math></span></p>
+  <p>Then the adjoint is</p>
+  <p><span><math><mrow><msup><mo>∇</mo><mo>†</mo></msup><mo>:</mo><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>⊗</mo><mtext> tensor </mtext><mo>→</mo><mtext> tensor</mtext></mrow></math></span></p>
+  <p>let <span><math><mrow><msub><mrow><mo>⟨</mo><mo>,</mo><mo>⟩</mo></mrow><msup><mi>𝐿</mi><mn>2</mn></msup></msub><mo>=</mo><mo>∫</mo><mi>𝑑</mi><mtext> Vol </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mo>,</mo><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p>adjoint :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>For every <span><math><mrow><mi>𝑆</mi><mo>∈</mo><mtext> tensor</mtext></mrow></math></span>, the linear function</p>
+    <math display="block"><mrow><mrow><mo>(</mo><mrow><mi>𝑇</mi><mo>⇝</mo><msub><mrow><mo>⟨</mo><mrow><mo>∇</mo><mrow><mi>𝑇</mi><mo>,</mo></mrow><mi>𝑆</mi></mrow><mo>⟩</mo></mrow><msup><mi>𝐿</mi><mn>2</mn></msup></msub></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mtext> tensor</mtext><mo>⊺</mo></msup></mrow></math>
+    <p>has a metric-dual</p>
+    <math display="block"><mrow><msup><mo>∇</mo><mo>†</mo></msup><mi>𝑆</mi><mo>∈</mo><mtext> tensor</mtext></mrow></math>
+    <p>Such that the linear function can be expressed as</p>
+    <math display="block"><mrow><mi>𝑇</mi><mo>⇝</mo><mrow><mo>⟨</mo><mrow><mrow><mi>𝑇</mi><mo>,</mo></mrow><msup><mo>∇</mo><mo>†</mo></msup><mi>𝑆</mi></mrow><mo>⟩</mo></mrow></mrow></math>
+  </div>
+  <p>Which is the Lagrangian for Laplacian? We can arbitrarily add the action mass term <span><math><mrow><msup><mi>𝑚</mi><mn>2</mn></msup><mrow><mo>|</mo><mi>𝑇</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow></math></span>.</p>
+  <ul>
+    <li><span><math><mrow><mrow><mo>|</mo><mo>∇</mo></mrow><mrow><mi>𝑇</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mi>𝑑</mi><mtext> Vol</mtext></mrow></math></span>. eq <span><math><mrow><msup><mo>∇</mo><mo>†</mo></msup><mo>∇</mo><mi>𝑇</mi></mrow></math></span> or <span><math><mrow><msup><mo>∇</mo><mrow><mo>†</mo><mi>𝜇</mi></mrow></msup><msub><mo>∇</mo><mi>𝜇</mi></msub><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>|</mo><msup><mo>∇</mo><mo>†</mo></msup></mrow><mrow><mi>𝑇</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mi>𝑑</mi><mtext> Vol</mtext></mrow></math></span>. eq <span><math><mrow><mo>∇</mo><msup><mo>∇</mo><mo>†</mo></msup><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><msub><mo>∇</mo><mi>𝜇</mi></msub><msup><mo>∇</mo><mrow><mo>†</mo><mi>𝜇</mi></mrow></msup><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mo>∇</mo></mrow><mrow><mi>𝑇</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msup><mo>∇</mo><mo>†</mo></msup></mrow><mrow><mi>𝑇</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mi>𝑑</mi><mtext> Vol</mtext></mrow></math></span>. eq <span><math><mrow><mrow><mo>(</mo><mrow><msup><mo>∇</mo><mo>†</mo></msup><mo>∇</mo><mo>+</mo><mo>∇</mo><msup><mo>∇</mo><mo>†</mo></msup></mrow><mo>)</mo></mrow><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span> or <span><math><mrow><mrow><mo>(</mo><mrow><msup><mo>∇</mo><mrow><mo>†</mo><mi>𝜇</mi></mrow></msup><msub><mo>∇</mo><mi>𝜇</mi></msub><mo>+</mo><msub><mo>∇</mo><mi>𝜇</mi></msub><msup><mo>∇</mo><mrow><mo>†</mo><mi>𝜇</mi></mrow></msup></mrow><mo>)</mo></mrow><mi>𝑇</mi><mo>=</mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <p>Special case</p>
+  <math display="block"><mrow><mo>∇</mo><mo>:</mo><mover displaystyle="true"><mo>⨂</mo><mi>𝑘</mi></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>→</mo><mover displaystyle="true"><mo>⨂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></mrow></math>
+  <p>adjoint</p>
+  <math display="block"><mrow><msup><mo>∇</mo><mo>†</mo></msup><mo>:</mo><mover displaystyle="true"><mo>⨂</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>→</mo><mover displaystyle="true"><mo>⨂</mo><mi>𝑘</mi></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></mrow></math>
+  <p>In coordinates</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>∇</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mi>𝑖</mi></msubsup><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>⊗</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>∇</mo><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mi>𝑎</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><mo>−</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mi>𝑖</mi></msubsup></mrow><mo>)</mo></mrow><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>⊗</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msup></mtd></mtr></mtable></math>
+  <p>adjoint</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mo>∇</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑖</mi></mrow><mi>𝑖</mi></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"><msup><mo>∇</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><mrow><mo>(</mo><mrow><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>−</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑖</mi></mrow><mi>𝑖</mi></msubsup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  <p><span><math><mrow><mo>−</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msubsup><mi mathvariant="normal">Γ</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mi>𝑗</mi></msubsup><mo>=</mo><mfrac><mn>1</mn><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow></mfrac><msub><mo>∂</mo><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><span><math><mrow><mo>⊙</mo><mo>,</mo><mo>∧</mo></mrow></math></span> are the basic building blocks for constructing mixed symmetry.</p>
+  <p>Using algebraic techniques, define</p>
+  <math display="block"><mtable><mtr><mtd><msub><mo>∇</mo><mo>⊙</mo></msub><mo>:</mo><mover displaystyle="true"><mo>⨀</mo><mi>𝑘</mi></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>→</mo><mover displaystyle="true"><mo>⨀</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></mtd></mtr><mtr><mtd><msub><mo>∇</mo><mo>∧</mo></msub><mo>:</mo><mover displaystyle="true"><mo>⋀</mo><mi>𝑘</mi></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><mo>→</mo><mover displaystyle="true"><mo>⋀</mo><mrow><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow></mover><msup><mrow><mo>(</mo><mrow><mo>⊤</mo><mi>𝑀</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup></mtd></mtr></mtable></math>
+  <p>Using</p>
+  <math display="block"><mrow><mrow><mtext>sym</mtext><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊗</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math>
+  <p>Define</p>
+  <math display="block"><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mo>=</mo><mrow><mtext> sym</mtext><mo>∇</mo></mrow></mrow></math>
+  <p>In coordinates</p>
+  <math display="block"><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mi>𝑖</mi></msubsup><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msup></mrow></math>
+  <p>and</p>
+  <math display="block"><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mi>𝑎</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msub><mo>−</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mi>𝑖</mi></msubsup></mrow><mo>)</mo></mrow><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msup></mrow></math>
+  <p>"product rule"</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∇</mo><mo>⊙</mo></msub><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-left"><msub><mo>∇</mo><mo>⊙</mo></msub><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+  <p>Then define the adjoint <span><math><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup></math></span>. Also there is</p>
+  <math display="block"><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mo>=</mo><mrow><mtext> sym</mtext><msup><mo>∇</mo><mo>†</mo></msup></mrow></mrow></math>
+  <p>"product rule" (<strong>Question</strong>)</p>
+  <math display="block"><mrow><msubsup><mo>∇</mo><mo>⊙</mo><mo>†</mo></msubsup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow><mo>=</mo><msup><mo>∇</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>⊙</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>+</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>⊙</mo><msup><mo>∇</mo><mo>†</mo></msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></math>
+  <p><span><math><mrow><msub><mo>∇</mo><mo>∧</mo></msub><mo>=</mo><mrow><mtext> alt</mtext><mo>∇</mo></mrow></mrow></math></span></p>
+  <p>But <span><math><mrow><msub><mo>∇</mo><mo>∧</mo></msub><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><msubsup><mi mathvariant="normal">Γ</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mi>𝑖</mi></msubsup><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></msup><mo>=</mo><mn>0</mn></mrow></math></span>, due to the symmetry of <span><math><mi mathvariant="normal">Γ</mi></math></span>.</p>
+  <p>So <span><math><mrow><msub><mo>∇</mo><mo>∧</mo></msub><mo>=</mo><mi>𝑑</mi></mrow></math></span> is the exterior derivative.</p>
+  <p>In coordinates <span><math><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mi>𝑑</mi><msup><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow></math></span></p>
+  <p><span><math><mi>𝑑</mi></math></span> also has an adjoint <span><math><msup><mi>𝑑</mi><mo>†</mo></msup></math></span></p>
+  <p>The Lagrangian for the Laplacian of <span><math><mrow><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mo>,</mo></mrow><mi>𝑑</mi></mrow></math></span>?</p>
+  <ul>
+    <li><span><math><mrow><mo>|</mo><mrow><mi>𝑃</mi><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow></mrow><msup><mo>|</mo><mn>2</mn></msup></mrow></math></span>. eq <span><math><mrow><msup><mi>𝑃</mi><mo>†</mo></msup><mi>𝑃</mi><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>|</mo><msup><mi>𝑃</mi><mo>†</mo></msup></mrow><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow><msup><mo>|</mo><mn>2</mn></msup></mrow></math></span>. eq <span><math><mrow><mi>𝑃</mi><msup><mi>𝑃</mi><mo>†</mo></msup><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    <li><span><math><mrow><mrow><mo>|</mo><mrow><mi>𝑃</mi><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow></mrow><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msup><mi>𝑃</mi><mo>†</mo></msup></mrow><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow><msup><mo>|</mo><mn>2</mn></msup></mrow></math></span>. eq <span><math><mrow><mrow><mo>(</mo><mrow><msup><mi>𝑃</mi><mo>†</mo></msup><mi>𝑃</mi><mo>+</mo><mi>𝑃</mi><msup><mi>𝑃</mi><mo>†</mo></msup></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑇</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <p>The variables in the Lagrangian should probably use <span><math><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mrow><mi>𝑇</mi><mo>,</mo></mrow><mi>𝑑</mi><mi>𝜔</mi></mrow></math></span> instead of <span><math><mrow><mo>∇</mo><mi>𝑇</mi></mrow></math></span></p>
+  <p>The differentiation of the Lagrangian should probably use <span><math><mrow><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mo>⊙</mo></msub><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow></mfrac><mo>,</mo></mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝜔</mi></mrow><mo>)</mo></mrow></mrow></mfrac></mrow></math></span> instead of <span><math><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mrow><mo>(</mo><mrow><mo>∇</mo><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow></mfrac></math></span></p>
+  <p>For scalar fields as zeroth-order tensor fields, assume <span><math><mrow><mo>∂</mo><mo>=</mo><mi>𝑑</mi><mo>=</mo><mo>∇</mo></mrow></math></span> and <span><math><mrow><msup><mo>∂</mo><mo>†</mo></msup><mo>=</mo><msup><mi>𝑑</mi><mo>†</mo></msup><mo>=</mo><msup><mo>∇</mo><mo>†</mo></msup><mo>=</mo><mn>0</mn></mrow></math></span>. At this time</p>
+  <ul>
+    <li><span><math><mrow><mo>∂</mo><msup><mo>∂</mo><mo>†</mo></msup><mo>=</mo><mn>0</mn></mrow></math></span></li>
+    <li><span><math><mrow><msup><mo>∂</mo><mo>†</mo></msup><mo>∂</mo><mo>+</mo><mo>∂</mo><msup><mo>∂</mo><mo>†</mo></msup><mo>=</mo><msup><mo>∂</mo><mo>†</mo></msup><mo>∂</mo></mrow></math></span></li>
+  </ul>
+  <p>In coordinates</p>
+  <ul>
+    <li>
+      <p>gradient <span><math><mrow><mtext>grad </mtext><mi>𝑓</mi><mo>=</mo><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><msub><mo>∂</mo><mi>𝑖</mi></msub><mi>𝑓</mi></mrow><mo>)</mo></mrow><msub><mo>∂</mo><mi>𝑗</mi></msub></mrow></math></span></p>
+    </li>
+    <li>
+      <p>divergence <span><math><mrow><mtext>div </mtext><mi>𝑋</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow></mfrac><msub><mo>∂</mo><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><msup><mi>𝑋</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    </li>
+    <li>
+      <p>Laplacian <span><math><mrow><mo>∆</mo><mi>𝑓</mi><mo>=</mo><mtext> div </mtext><mtext> grad </mtext><mi>𝑓</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow></mfrac><msub><mo>∂</mo><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><msub><mo>∂</mo><mi>𝑗</mi></msub><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    </li>
+  </ul>
+  <p>At the origin of geodesic coordinates, <span><math><mrow><mi>𝑔</mi><mo>=</mo><mrow><mi>𝜂</mi><mo>,</mo></mrow><mo>∂</mo><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <ul>
+    <li>
+      <p>gradient <span><math><mrow><mtext>grad </mtext><mi>𝑓</mi><mo>=</mo><msub><mi>𝜀</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑖</mi></msub><mi>𝑓</mi></mrow><mo>)</mo></mrow><msub><mo>∂</mo><mi>𝑖</mi></msub></mrow></math></span> where <span><math><mrow><msub><mi>𝜀</mi><mi>𝑖</mi></msub><mo>∈</mo><mrow><mo>{</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span> is the <span><math><mi>𝑖</mi></math></span>-th component of the quadratic form of <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span>.</p>
+    </li>
+    <li>
+      <p>divergence <span><math><mrow><mtext>div </mtext><mi>𝑋</mi><mo>=</mo><msub><mo>∂</mo><mi>𝑖</mi></msub><msup><mi>𝑋</mi><mi>𝑖</mi></msup></mrow></math></span></p>
+    </li>
+    <li>
+      <p>harmonician <span><math><mrow><mo>∆</mo><mi>𝑓</mi><mo>=</mo><mtext> div </mtext><mtext> grad </mtext><mi>𝑓</mi><mo>=</mo><msub><mi>𝜀</mi><mi>𝑖</mi></msub><msubsup><mo>∂</mo><mi>𝑖</mi><mn>2</mn></msubsup><mi>𝑓</mi></mrow></math></span></p>
+    </li>
+  </ul>
+  <p>The same is true in flat metric coordinates.</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<div>
+  <p>自然数 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 的加法</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mi>𝑎</mi></math></span> 是数 <span><math><mi>𝑎</mi></math></span> 次 <span><math><mn>1</mn></math></span>, <span><math><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow></math></span> 是先数 <span><math><mi>𝑎</mi></math></span> 次, 再数 <span><math><mi>𝑏</mi></math></span> 次</p>
+    <ul>
+      <li>结合律: <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝑐</mi><mo>=</mo><mi>𝑎</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>+</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+      <li>交换律: <span><math><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi><mo>=</mo><mi>𝑏</mi><mo>+</mo><mi>𝑎</mi></mrow></math></span></li>
+    </ul>
+  </div>
+  <p><em>Proof</em> 在现实世界的直观是, 对于数数 <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>, 无论怎样把数数任务手动分成几个子任务, 都不会影响结果, 而且总的分解方式有限. 加法结合律和交换律只是其中的特殊情况. 就像我们通过数数来认识自然数一样, 我们总是可以通过数数认识交换律和结合律. 所有东西都 reduce to 完全加法分解的情况, 只有大量 <span><math><mn>1</mn></math></span> 的交换律和结合律</p>
+  <p>对计算机来说似乎难以表达这种直观, 但似乎所有的有限结果一定会正确. 类似于 <code>#link(&lt;natural-number>)[自然数中所做的]</code>, 为了让计算机能用有限的字符和内存以及有限的时间 (以及潜在的无限时间) 去表达这种对所有自然数成立的性质, 需要定义它是 true proposition</p>
+  <p><em>Proof</em> 在现实世界的直观是, 对于数数 <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>, 无论怎样把数数任务手动分成几个子任务, 都不会影响结果, 而且总的分解方式有限. 加法结合律和交换律只是其中的特殊情况</p>
+  <p>自然数 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 的乘法</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑎</mi><mo>⋅</mo><mi>𝑏</mi></mrow></math></span> 是数 <span><math><mi>𝑎</mi></math></span> 次的数 <span><math><mi>𝑏</mi></math></span> 次</p>
+    <p>也满足交换律和结合律. 在现实世界的直观是 "二维和三维矩形", 对于数数 <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>, 无论分解成怎么样的 product 分解的子任务, 都不影响结果. 所以乘法交换律和结合律只是完全乘法分解 i.e. 素数分解的特殊情况, 而且总分解次数有限</p>
+  </div>
+  <p>自然数运算分配律</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑐</mi><mo>=</mo><mi>𝑎</mi><mo>⋅</mo><mi>𝑐</mi><mo>+</mo><mi>𝑏</mi><mo>⋅</mo><mi>𝑐</mi></mrow></math></span></p>
+    <p>直观是用二维矩形的边长的 sum 分解</p>
+  </div>
+  <p>整数 <span><math><mi mathvariant="normal">ℤ</mi></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">数轴有两个方向</div>
+  <p>有理数 <span><math><mi mathvariant="normal">ℚ</mi></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mi>𝑛</mi></math></span> 等分操作, 乘法的逆 <span><math><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></math></span></p>
+    <p>不要混淆于 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span> 的除, 余, 那是一个数 <span><math><mi>𝑎</mi></math></span> 另一个数 <span><math><mi>𝑏</mi></math></span> 的逐次减法, 而不是等分</p>
+  </div>
+  <p>实数 <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>实数的一种直观是长度</p>
+    <p>鉴于实数的直观性, 可以认为它存在, 用很多公理去定义实数 i.e. 假设 true proposition. 但也可以从有理数 "恢复" 实数</p>
+  </div>
+  <p>无理数的例子</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>代数整数 <span><math><mrow><mtext>algebraic-integer </mtext><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>:</mo><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo></mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+    <p>代数整数里的 "整数" 是因为 <span><math><mrow><mtext>algebraic-integer </mtext><mo>∩</mo><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span></p>
+    <p><em>Proof</em> (p.43 of ref-8)</p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>取 <span><math><mrow><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span> 互素. <span><math><mrow><mi>𝑥</mi><mo>=</mo><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></mrow></math></span> 代入方程, 乘 <span><math><msup><mi>𝑞</mi><mi>𝑛</mi></msup></math></span></p>
+      <math display="block"><mtable><mtr><mtd><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>𝑞</mi><msup><mi>𝑝</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><msup><mi>𝑞</mi><mi>𝑛</mi></msup><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>=</mo><mo>−</mo><mi>𝑞</mi><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑝</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><msup><mi>𝑞</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>右边被 <span><math><mi>𝑞</mi></math></span> 整除. 但 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 互素, 所以 <span><math><mrow><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span> 或 <span><math><mrow><mi>𝑝</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span>.</p>
+      <p><span><math><mrow><mi>𝑝</mi><mo>≠</mo><mo>±</mo><mn>1</mn><mo>⟹</mo><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span></p>
+      <p><span><math><mrow><mi>𝑝</mi><mo>=</mo><mo>±</mo><mn>1</mn><mo>⟹</mo><mo>±</mo><mn>1</mn><mo>=</mo><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>=</mo><mi>𝑞</mi><mo>⋅</mo><mtext> some-integer </mtext><mo>⟹</mo><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span></p>
+      <p>从而 <span><math><mrow><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span>. 从而 <span><math><mrow><mi>𝑥</mi><mo>=</mo><mo>±</mo><mi>𝑝</mi><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span></p>
+    </div>
+    <p>特殊情况 <span><math><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span>. 但是 <span><math><mrow><msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math></span> 且 <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mo>≥</mo><mn>2</mn><mo>⟹</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>≥</mo><mn>4</mn></mrow></math></span></p>
+    <p>所以 <span><math><mrow><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow><mo>=</mo><mo>∅</mo></mrow></math></span> 即 <span><math><msqrt><mn>2</mn></msqrt></math></span> 不是有理数</p>
+  </div>
+  <p>代数数 <span><math><mrow><mtext>algebraic-number </mtext><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>:</mo><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑥</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo></mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>注意不要求 <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span>, 不限制 <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span>, 包含所有有理数 <span><math><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></math></span>, 部分无理数 e.g. <span><math><msqrt><mn>2</mn></msqrt></math></span></p>
+  <p>代数数 <span><math><mtext>algebraic-number</mtext></math></span> 是可数集, 实数 <span><math><mi mathvariant="normal">ℝ</mi></math></span> 是不可数集</p>
+  <p>超越数 <span><math><mrow><mtext>transcendental-number </mtext><mo>≔</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mtext> algebraic-number </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span>. <span><math><mrow><mi>𝑒</mi><mo>,</mo><mi>𝜋</mi></mrow></math></span> 是超越数</p>
+  <p>十进制, 二进制 vs 区间套 vs 分割</p>
+  <p>十进制 (区间套) 似乎很直观</p>
+  <p>然而十进制并不能原生地处理 <span><math><mrow><mi>𝑒</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+  <p>很多不同 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 区间套有相同极限, e.g. <span><math><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>]</mo></mrow></math></span> vs <span><math><mrow><mo>[</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>,</mo><mn>0</mn></mrow><mo>]</mo></mrow></math></span>, 需要 limit-distance-vanish 系 quotient. let <span><math><mrow><mtext>distance </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mo>|</mo><mi>𝑥</mi></mrow><mo>−</mo><mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow></math></span></p>
+  <p>let <span><math><mrow><msub><mi>𝐴</mi><mn>0</mn></msub><mo>⊃</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>⋯</mo><mo>,</mo><msub><mi>𝐵</mi><mn>0</mn></msub><mo>⊃</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>⋯</mo></mrow></math></span> and <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>)</mo></mrow></mrow><mo>,</mo><mrow><mtext>distance</mtext><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, limit-distance-vanish 关系 (<strong>alias</strong> Cauchy 收敛)</p>
+  <math display="block"><mrow><mo>∀</mo><mrow><mo>(</mo><mrow><mi>𝜀</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝜀</mi><mo>></mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>,</mo><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∀</mo><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑚</mi></mrow><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>∪</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math>
+  <p>可以把 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 有理数区间套改为一般的长度 <code>#link(&lt;hom-limit>)[极限]</code> 趋于零的有理数区间 <span><math><mo>⊂</mo></math></span> <code>#link(&lt;maximal-linear-order>)[线序链]</code> 或者更一般的长度趋于零的有理数区间 (极大的) <code>#link(&lt;net>)[网]</code></p>
+  <p>有理数区间是子集 <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span> with property 序不中断</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mi>𝐴</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mi>𝑐</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑐</mi><mo>&lt;</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><mi>𝑐</mi><mo>∈</mo><mi>𝐴</mi></mrow></math>
+  <p>从操作简单性来说, 应该用 Dedekind-cut. "操作简单" 是指</p>
+  <ul>
+    <li>let <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>, <span><math><mrow><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow><mo>↔</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow></mrow></math></span> 一一对应</li>
+    <li><span><math><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow></mrow><mo>)</mo></mrow><mo>∩</mo><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi mathvariant="normal">ℚ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow><mo>=</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow></math></span></li>
+    <li>所以 <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 和 <span><math><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow></math></span> 一一对应</li>
+  </ul>
+  <p><code data-typst-label="Dedekind-cut">&lt;Dedekind-cut></code> 无理数 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span> 一一对应到 <span><math><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℚ</mi><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mo>∀</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>,</mo><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑥</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math></span>. 将 <span><math><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></math></span> 重新记为 <span><math><mrow><mo>(</mo><mrow><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>,</mo></mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow><mo>)</mo></mrow></math></span></p>
+  </div>
+  <p>实数 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>≔</mo><mi mathvariant="normal">ℚ</mi><mo>⊔</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <ul>
+    <li><code data-typst-label="order-real">&lt;order-real></code> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 序 <span><math><mrow><mi>𝑥</mi><mo>&lt;</mo><mi>𝑦</mi><mo>⟺</mo><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊊</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p>let</p>
+  <math display="block"><mtable><mtr><mtd><mi>𝐴</mi><mo>+</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>+</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr><mtr><mtd><mi>𝐴</mi><mo>⋅</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>⋅</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr></mtable></math>
+  <ul>
+    <li><code data-typst-label="add-real">&lt;add-real></code> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 加法. let <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext>expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>−</mo><mi>𝑥</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>−</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>,</mo></mrow><mo>−</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext>expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mrow><mo>−</mo><mi>𝑥</mi></mrow></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mrow><mo>−</mo><mi>𝑥</mi></mrow></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math></div>
+  <p>由于 <span><math><mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span> 的存在, 乘法不保持序. 但是 <span><math><mrow><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>,</mo></mrow><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub></mrow></math></span> 的乘法保持序. 先处理 <span><math><mrow><mo>></mo><mn>0</mn></mrow></math></span> 的情况, 再用反射 <span><math><mrow><mo>−</mo><mi>𝑥</mi></mrow></math></span> 得到 <span><math><mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span> 的情况</p>
+  <ul>
+    <li><code data-typst-label="multiply-real">&lt;multiply-real></code> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 乘法. let <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>></mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  "><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>⋅</mo><mi>𝑦</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mi>𝑦</mi></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mi>𝑦</mi><mo>,</mo><mo>∞</mo></mrow></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mfrac><mo>,</mo><mfrac><mn>1</mn><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></msub></mfrac></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math></div>
+  <p><span><math><mrow><mi mathvariant="normal">ℤ</mi><mo>,</mo><mi mathvariant="normal">ℚ</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 的 <span><math><mrow><mo>+</mo><mo>,</mo><mo>⋅</mo></mrow></math></span> 都有结合律, 交换律, 分配律</p>
+  <p><span><math><mi mathvariant="normal">ℝ</mi></math></span> 完备性 <code data-typst-label="completeness-real">&lt;completeness-real></code></p>
+  <p><code data-typst-label="exact-bound">&lt;exact-bound></code> 确界原理</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 有上界</p>
+    <p><span><math><mrow><mo>∃</mo><mi>𝑥</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><msub><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></msub><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑎</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub></mrow></math></span></p>
+    <p>上确界 <span><math><mrow><mi mathvariant="normal">sup</mi><mi>𝐴</mi><mo>≔</mo><mi>𝑥</mi></mrow></math></span></p>
+    <ul>
+      <li><span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>≤</mo><mi mathvariant="normal">sup</mi><mi>𝐴</mi></mrow></math></span></li>
+      <li><span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi mathvariant="normal">sup</mi><mi>𝐴</mi><mo>−</mo><mi>𝜀</mi><mo>&lt;</mo><mi>𝑎</mi><mo>≤</mo><mi mathvariant="normal">sup</mi><mi>𝐴</mi></mrow></math></span></li>
+    </ul>
+    <p><code data-typst-label="monotone-convergence">&lt;monotone-convergence></code> 单调有界 <code>#link(&lt;limit-sequence-real>)[收敛]</code> <em>Proof</em> use 确界原理</p>
+  </div>
+  <p><code data-typst-label="nested-closed-interval-theorem">&lt;nested-closed-interval-theorem></code> 闭区间套定理</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">无论是 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 区间套还是 <span><math><mo>⊂</mo></math></span> 线序链区间套, 线序意味着区间端点单调性, 对端点用上确界 <span><math><msub><mi>𝑎</mi><mn>1</mn></msub></math></span> 下确界 <span><math><msub><mi>𝑎</mi><mn>0</mn></msub></math></span> with <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>≤</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow></math></span> 得到闭区间套交集是闭区间 <span><math><mrow><mrow><mo>[</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow><mo>]</mo></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span>. <span><math><mrow><mo>[</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow><mo>]</mo></mrow></math></span> 可以理解为 <span><math><mo>⊂</mo></math></span> 线序链区间套的最小元</div>
+  <p><code data-typst-label="closed-interval-net-theorem">&lt;closed-interval-net-theorem></code> 闭区间 <code>#link(&lt;net>)[网]</code> <span><math><mtext>B</mtext></math></span> 交集非空 <span><math><mrow><mo>⋂</mo><mtext> B </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>对网 <span><math><mtext>B</mtext></math></span> 补充所有的有限交集</p>
+    <p>取一个 <code>#link(&lt;maximal-linear-order>)[极大线序链]</code> <span><math><mtext>C</mtext></math></span>. 由闭区间套定理, 其交集是非空闭区间 <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+    <p>由 <span><math><mtext>C</mtext></math></span> 的线序极大性, 直觉上, 闭区间 <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> 将小于所有 <span><math><mtext>B</mtext></math></span> 的闭区间, 从而 <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>⊂</mo><mo>⋂</mo><mtext> B</mtext></mrow></math></span></p>
+    <p><span><math><mrow><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></math></span>, 我们证明 <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>⊂</mo><mi>𝐵</mi></mrow></math></span></p>
+    <p>定义闭区间线序链 <span><math><mrow><msub><mtext>C </mtext><mi>𝐵</mi></msub><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>∈</mo><mtext> B </mtext><mo>:</mo><mi>𝐶</mi><mo>∈</mo><mtext> C</mtext></mrow><mo>}</mo></mrow></mrow></math></span>. <span><math><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊂</mo><mi>𝐵</mi></mrow></math></span>. 我们证明 <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>=</mo><mo>⋂</mo><mtext> C</mtext></mrow></math></span></p>
+    <p>反证法. 假设 <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>⊊</mo><mo>⋂</mo><mtext> C</mtext></mrow></math></span>. 那么 <span><math><mrow><mo>⋂</mo><msub><mtext> C</mtext><mi>𝐵</mi></msub></mrow></math></span> 的 小/大 端点 大/小 于 <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> 的 小/大 端点</p>
+    <p><span><math><mo>⊂</mo></math></span> 线序链满足 <span><math><mrow><msub><mo>⋂</mo><mrow><mi>𝐴</mi><mo>⊃</mo><msub><mi>𝐴</mi><mn>0</mn></msub></mrow></msub><mi>𝐴</mi><mo>=</mo><msub><mi>𝐴</mi><mn>0</mn></msub></mrow></math></span></p>
+    <ul>
+      <li>如果闭区间 <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>∉</mo><mtext> B</mtext></mrow></math></span>, 那么对端点使用 <span><math><mi mathvariant="normal">ℝ</mi></math></span> 确界原理</li>
+    </ul>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <math display="block"><mtable><mtr><mtd><mo>∃</mo><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub></mtd></mtr><mtr><mtd><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><mtext> B </mtext></mtd></mtr><mtr><mtd><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>=</mo><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊃</mo><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub></mrow></munder><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊊</mo><mo>⋂</mo><mtext> C</mtext></mtd></mtr></mtable></math>
+      <p>存在 <span><math><mrow><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span> 属于 <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span>, 矛盾于 <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> 是 <span><math><mo>⊂</mo></math></span> 极大线序链</p>
+    </div>
+    <ul>
+      <li>如果闭区间 <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span>, 同理矛盾</li>
+    </ul>
+  </div>
+  <p>let <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>:</mo><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+  <p>def <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 序列 <span><math><mrow><mi>𝑘</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math></span> 单调递减, <span><math><mrow><mi>𝑘</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">inf</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math></span> 单调递增</p>
+  <p><code data-typst-label="limsup">&lt;limsup></code> 上极限</p>
+  <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≔</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math>
+  <p><code data-typst-label="liminf">&lt;liminf></code> 下极限</p>
+  <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≔</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li>
+      <p><span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>1</mn></mtd></mtr></mtable></math>
+    </li>
+    <li>
+      <p><span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup></mrow></math></span></p>
+      <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><mn>2</mn></mrow></math>
+    </li>
+  </ul>
+  <p>对于 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 序列定义 <span><math><mrow><mrow><mtext>distance</mtext><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow></mrow><mo>≔</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑚</mi><mo>,</mo><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow></mrow></math></span></p>
+  <p>对于一般 net 定义 <span><math><mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow></math></span></p>
+  <p><code data-typst-label="limit-distance-vanish-sequence">&lt;limit-distance-vanish-sequence></code> := <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>|</mo><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>. i.e. tail distance vanish</p>
+  <p><code data-typst-label="limit-distance-vanish-net">&lt;limit-distance-vanish-net></code> := <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+  <p><code data-typst-label="Cauchy-completeness-real">&lt;Cauchy-completeness-real></code> limit-distance-vanish 序列 or net 收敛</p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>无界 ==> <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∀</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝑛</mi><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mrow><mo>|</mo><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>≥</mo><mi>𝜀</mi></mrow></math></span></p>
+    <p>==> limit-distance-vanish 序列有界</p>
+    <p>==> 单调增减有界序列 <span><math><mrow><mi>𝑛</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">inf</mi><mrow><mi>𝑚</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub><mo>}</mo></mrow><mo>,</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mi>𝑚</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub><mo>}</mo></mrow></mrow></math></span> 有极限 <span><math><mrow><munder displaystyle="false"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≤</mo><munder displaystyle="false"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow></mrow></math></span></p>
+    <p>limit-distance-vanish 性质 ==> <span><math><mrow><munder displaystyle="false"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><mi>𝑎</mi></mrow></math></span></p>
+    <p>从而 <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> 收敛到 <span><math><mi>𝑎</mi></math></span></p>
+    <p>对网, 由闭区间网定理, let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><msub><mo>⋂</mo><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></msub><mi>𝐵</mi><mo>≠</mo><mo>∅</mo></mrow></math></span>. 使用 limit-distance-vanish-net 得到 net 收敛 <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></munder><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><msub><mi>𝑎</mi><mi>𝐵</mi></msub><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝐵</mi></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  </div>
+  <p>反过来, 收敛序列是 limit-distance-vanish 的. by 三角不等式 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <p>序列 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> or net <span><math><mtext>B</mtext></math></span> 收敛到 <span><math><mi>𝑎</mi></math></span> &lt;==> limit-distance-vanish</p>
+  <p><code data-typst-label="uncountable-real">&lt;uncountable-real></code> 实数不可数 <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi mathvariant="normal">ℝ</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>已经证明了 <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℕ</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mrow></math></span>. cf. <code>#link(&lt;cardinal-increase>)[]</code></p>
+    <p>recall <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup><mo>≃</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mtext> bool</mtext></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℕ</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>|</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℝ</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi></mrow><mo>→</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi mathvariant="normal">ℝ</mi><mo>|</mo></mrow></mrow></math></span></p>
+    <p><em>Proof</em></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>根据区间套定理, 实数的二进制小数点表示: <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>.</mo><msub><mi>𝑎</mi><mn>1</mn></msub><msub><mi>𝑎</mi><mn>2</mn></msub><mo>…</mo></mrow></math></span> 第 <span><math><mi>𝑛</mi></math></span> 位取 <span><math><mrow><mn>0</mn><mo>⇝</mo><mn>0</mn><mo>⋅</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>𝑛</mi></msup></mfrac></mrow></math></span> 或 <span><math><mrow><mn>1</mn><mo>⇝</mo><mn>1</mn><mo>⋅</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>𝑛</mi></msup></mfrac></mrow></math></span></p>
+      <p>==> <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup><mo>≃</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span>. 其中, 把二进制中可能的两种等价的选择 quotient</p>
+      <p><span><math><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>≃</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> by 线性映射 or 仿射映射</p>
+      <p><span><math><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>≃</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> by <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mfrac><mi>𝑥</mi><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></p>
+      <p><span><math><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℕ</mi></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span></p>
+      <p><em>Proof</em></p>
+      <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+        <math display="block"><mrow><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>,</mo></mrow><mrow><msub><mi>𝑛</mi><mn>2</mn></msub><mo>,</mo></mrow><mo>…</mo></mrow><mo>)</mo></mrow><mo>⇝</mo><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑛</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mrow></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math>
+        <p>它代表二进制中, <span><math><mn>1</mn></math></span> 出现的第一个位置是 <span><math><msub><mi>𝑛</mi><mn>1</mn></msub></math></span>, 第二个位置是 <span><math><msub><mi>𝑛</mi><mn>2</mn></msub></math></span> …</p>
+        <p>对比 <span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup></math></span>, <span><math><mrow><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑚</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑚</mi><mn>2</mn></msub></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math></span> vs <span><math><mrow><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑛</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mrow></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math></span></p>
+        <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑚</mi><mn>1</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑛</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mi>𝑚</mi><mn>2</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋯</mo></mtd></mtr></mtable></math>
+        <p>距离 <span><math><mrow><msub><mi>𝑛</mi><mrow><mi>𝑖</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>𝑚</mi><mrow><mi>𝑖</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>𝑚</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+      </div>
+    </div>
+  </div>
+</div>

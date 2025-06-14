@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="在平直空间经常混合线性和仿射. 类似地, 在平直空间, 多项式也是如此. 零阶多项式对应着仿射的使用先处理一维实数的情况ℕ 指数幂函数 𝑘∈ℕ,ℝ⟶ℝ𝑣⟿𝑣𝑘&lt;polynomial-function-1d&gt; 多项式函数是幂函数的有限线性组合. (仿射) 基点 𝑥, (向量) 偏移 𝑣𝑓(𝑥+𝑣)&#x3D;𝑎0+𝑎1𝑣+⋯+𝑎𝑛𝑣𝑛&#x3D;∑𝑘&#x3D;0..𝑛𝑎𝑘𝑣𝑘𝑓(𝑥)&#x3D;𝑎0多项式函数表示并不是仿射不变的, i.e. 切换基点 𝑥⇝𝑥+Δ&#x3D;𝑦 会得到相同阶数但系数不同的多项式函数表示. 伸缩 𝑣⇝𝜆𝑣 也是如此&lt;change-base-point-polynomial&gt; 切换基点 𝑥⇝𝑥+Δ&#x3D;𝑦𝑓(𝑥+𝑣)&#x3D;𝑎0(𝑥)+𝑎1(𝑥)𝑣+⋯+𝑎𝑛(𝑥)𝑣𝑛𝑓(𝑦+𝑤)&#x3D;𝑎0(𝑦)+𝑎1(𝑦)𝑤+⋯+𝑎𝑛(𝑦)𝑤𝑛表示相同的仿射函数𝑥+𝑣&#x3D;𝑦+𝑤⟹𝑓(𝑥+𝑣)&#x3D;𝑓(𝑦+𝑤)则𝑎𝑝(𝑦)&#x3D;𝑎𝑝(𝑥+Δ)&#x3D;∑𝑘&#x3D;𝑝..𝑛𝑎𝑘(𝑥)(𝑘𝑝)Δ𝑘−𝑝Proof 𝑓(𝑦+𝑣)&#x3D;𝑓(𝑥+(Δ+𝑣)) 展开计算, 为对比系数, 收集 𝑣 幂函数项, by 求和的交换∑𝑘&#x3D;0..𝑛𝑎𝑘(𝑥)(𝑣+Δ)𝑘&#x3D;∑𝑘&#x3D;0..𝑛𝑎𝑘(𝑥)∑𝑝&#x3D;0..𝑘(𝑘">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html" class="active"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/polynomial", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p>在平直空间经常混合线性和仿射. 类似地, 在平直空间, 多项式也是如此. 零阶多项式对应着仿射的使用</p>
+  <p>先处理一维实数的情况</p>
+  <p><span><math><mi mathvariant="normal">ℕ</mi></math></span> 指数幂函数 <span><math><mrow><mi>𝑘</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mtable><mtr><mtd><mi mathvariant="normal">ℝ</mi></mtd><mtd><mo>⟶</mo></mtd><mtd><mi mathvariant="normal">ℝ</mi></mtd></mtr><mtr><mtd><mi>𝑣</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mtd></mtr></mtable></mrow></math></span></p>
+  <p><code data-typst-label="polynomial-function-1d">&lt;polynomial-function-1d></code> 多项式函数是幂函数的有限线性组合. (仿射) 基点 <span><math><mi>𝑥</mi></math></span>, (向量) 偏移 <span><math><mi>𝑣</mi></math></span></p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub></mtd></mtr></mtable></math>
+  <p>多项式函数表示并不是仿射不变的, i.e. 切换基点 <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>𝑦</mi></mrow></math></span> 会得到相同阶数但系数不同的多项式函数表示. 伸缩 <span><math><mrow><mi>𝑣</mi><mo>⇝</mo><mi>𝜆</mi><mi>𝑣</mi></mrow></math></span> 也是如此</p>
+  <p><code data-typst-label="change-base-point-polynomial">&lt;change-base-point-polynomial></code> 切换基点 <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>𝑦</mi></mrow></math></span></p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mi>𝑤</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><msup><mi>𝑤</mi><mi>𝑛</mi></msup></mtd></mtr></mtable></math>
+  <p>表示相同的仿射函数</p>
+  <math display="block"><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi><mo>=</mo><mi>𝑦</mi><mo>+</mo><mi>𝑤</mi><mo>⟹</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>+</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
+  <p>则</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mi>𝑝</mi></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mi>𝑝</mi></msub><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mi>𝑝</mi><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mi>𝑝</mi></mfrac><mo>)</mo></mrow><msup><mi mathvariant="normal">Δ</mi><mrow><mi>𝑘</mi><mo>−</mo><mi>𝑝</mi></mrow></msup></mtd></mtr></mtable></math>
+  <p><em>Proof</em> <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 展开计算, 为对比系数, 收集 <span><math><mi>𝑣</mi></math></span> 幂函数项, by 求和的交换</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><msup><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><munder displaystyle="true"><mo>∑</mo><mrow><mrow><mi>𝑝</mi><mo>=</mo></mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑘</mi></mrow></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mi>𝑝</mi></mfrac><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑝</mi></msup><msup><mi mathvariant="normal">Δ</mi><mrow><mi>𝑘</mi><mo>−</mo><mi>𝑝</mi></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑝</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑘</mi><mo>=</mo><mi>𝑝</mi><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑘</mi><mi>𝑝</mi></mfrac><mo>)</mo></mrow><msup><mi mathvariant="normal">Δ</mi><mrow><mi>𝑘</mi><mo>−</mo><mi>𝑝</mi></mrow></msup></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mtd></mtr></mtable></math>
+  <p>如果在坐标中以 <span><math><mn>0</mn></math></span> 为基点 and 改用符号 <span><math><mrow><mi>𝑣</mi><mo>⇝</mo><mi>𝑥</mi></mrow></math></span>, 则多项式函数表示为 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mi>𝑥</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow></math></span></p>
+  <p>从多项式 as 有限线性组合推广到可数无限线性组合, 称为函数的 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 指数幂级数</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>≈</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable></math>
+  <p>有些函数的定义并不直接来自 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 指数幂级数, <strong>Example</strong> <span><math><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo><mfrac><mn>1</mn><mi>𝑧</mi></mfrac></mrow></math></span></p>
+  <p>除了 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 作为可数无限数据, 还可以用 <span><math><mrow><mrow><mi mathvariant="normal">ℤ</mi><mo>,</mo></mrow><mi mathvariant="normal">ℚ</mi></mrow></math></span>. <span><math><mi mathvariant="normal">ℕ</mi></math></span> 指数幂函数 <span><math><msup><mi>𝑣</mi><mi>𝑘</mi></msup></math></span> 改为 <span><math><mi mathvariant="normal">ℚ</mi></math></span> 指数幂函数 <span><math><msup><mi>𝑣</mi><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></msup></math></span></p>
+  <ul>
+    <li>
+      <p><span><math><mrow><msup><mi>𝑣</mi><mrow><mo>−</mo><mi>𝑘</mi></mrow></msup><mo>=</mo><mfrac><mn>1</mn><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mfrac></mrow></math></span> 需要乘法逆</p>
+    </li>
+    <li>
+      <p><span><math><mrow><msup><mi>𝑣</mi><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></msup><mo>=</mo><mroot><mi>𝑣</mi><mi>𝑘</mi></mroot></mrow></math></span> 需要解方程 <span><math><mrow><msup><mi>𝑤</mi><mi>𝑘</mi></msup><mo>=</mo><mi>𝑣</mi></mrow></math></span> 且需要处理解的数量是否唯一的问题</p>
+    </li>
+    <li>
+      <p><span><math><msup><mi>𝑣</mi><mrow><mo>−</mo><mi>𝑘</mi></mrow></msup></math></span> 在 <span><math><mrow><mi>𝑣</mi><mo>=</mo><mn>0</mn></mrow></math></span> 无界</p>
+    </li>
+    <li>
+      <p><span><math><mrow><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac><mo>∉</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> 时, 多次导数不会中断 <span><math><mrow><mo>∀</mo><mrow><mi>𝑛</mi><mo>,</mo></mrow><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></msup><mo>⇝</mo><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac><mo>⋯</mo><mrow><mo>(</mo><mrow><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac><mo>−</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mrow><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac><mo>−</mo><mi>𝑛</mi></mrow></msup><mo>≠</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    </li>
+  </ul>
+  <p>这里暂时只处理 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 幂级数, 并简称幂级数</p>
+  <p>现在处理高维的情况 i.e. <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span></p>
+  <p>如果值域是 <span><math><mi mathvariant="normal">ℝ</mi></math></span> 则还可以额外定义函数的乘法 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑓</mi><mi>𝑔</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> 和乘法逆 <span><math><mrow><mrow><mo>(</mo><mfrac><mn>1</mn><mi>𝑓</mi></mfrac><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mfrac></mrow></math></span></p>
+  <p>首先尝试将多项式函数和幂级数的定义基于张量 i.e. 多重线性</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑘</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></mrow></math>
+  <p>如无必要, 暂时不需要对所有阶的张量取线性直和 <span><math><msub><mo>⨁</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub></math></span> (被称为张量代数)</p>
+  <p><code data-typst-label="polynomial-function">&lt;polynomial-function></code> 使用值域 <span><math><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></math></span> 和多重线性函数 <span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>∈</mo><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>)</mo></mrow><mrow><mo>⊗</mo><mi>𝑘</mi></mrow></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span>. 基点 <span><math><mi>𝑥</mi></math></span>, 偏移 <span><math><mi>𝑣</mi></math></span>, 定义多项式函数</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mrow><mo>⊗</mo><mi>𝑛</mi></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑘</mi></msub><msup><mi>𝑣</mi><mrow><mo>⊗</mo><mi>𝑘</mi></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mn>0</mn></msub></mtd></mtr></mtable></math>
+  <p>仿射变换, 即, 改变基点 i.e. 平移, 或者线性变换 i.e. <span><math><mtext>GL</mtext></math></span> (包括了伸缩), 都不改变多项式的阶数</p>
+  <p><span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mi>𝑣</mi><mo>,</mo></mrow><msub><mi>𝑎</mi><mn>2</mn></msub><msup><mi>𝑣</mi><mrow><mo>⊗</mo><mn>2</mn></mrow></msup><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span> 可能不共线</p>
+  <p>推广到 <span><math><mi mathvariant="normal">ℂ</mi></math></span> 是简单的. <span><math><mrow><mi mathvariant="normal">ℍ</mi><mo>,</mo><mi mathvariant="normal">𝕆</mi></mrow></math></span> 的情况, 由于非交换和非结合, 高维线性代数和张量都需要新的处理方法</p>
+  <p>可能有不同的张量给出相同的多项式, 但是对称张量是唯一对应的</p>
+  <p>改变记号</p>
+  <ul>
+    <li><span><math><mrow><msup><mi>𝑣</mi><mrow><mo>⊙</mo><mi>𝑘</mi></mrow></msup><mo>⇝</mo><msup><mi>𝑣</mi><mi>𝑘</mi></msup></mrow></math></span> <code data-typst-label="power-tensor">&lt;power-tensor></code></li>
+    <li><span><math><mrow><mi>𝑣</mi><mo>⊙</mo><mi>𝑤</mi><mo>⇝</mo><mi>𝑣</mi><mi>𝑤</mi></mrow></math></span></li>
+  </ul>
+  <p>从 <span><math><mi>𝑛</mi></math></span> 阶单项式 or 幂张量 <span><math><msup><mi>𝑣</mi><mi>𝑛</mi></msup></math></span> 恢复到 <span><math><mi>𝑛</mi></math></span> 阶对称张量 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 的方法是, 差分 (difference)</p>
+  <p><span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 的 <span><math><mi>𝑛</mi></math></span> 阶单项式 <span><math><msup><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></math></span> 中有一项 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span>, 但是有很多其它的干扰项</p>
+  <p>整个问题对 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 对称, 所以应该用对称的构造</p>
+  <p>在二阶 <span><math><mrow><msup><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><msubsup><mi>𝑣</mi><mn>1</mn><mn>2</mn></msubsup><mo>−</mo><msubsup><mi>𝑣</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>2</mn><msub><mi>𝑣</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow></math></span></p>
+  <p><code data-typst-label="difference-symmetric-tensor">&lt;difference-symmetric-tensor></code> 对称张量 <span><math><mi>𝑛</mi></math></span> 阶差分</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐼</mi><mo>⊂</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow><mo>−</mo><mi>𝑛</mi></mrow></msup><msup><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup><mo>=</mo><mrow><mo>{</mo><mtable><mtr><mtd class="mathyml-align-left"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mtext> if </mtext><mi>𝑚</mi><mo>&lt;</mo><mi>𝑛</mi></mtd></mtr><mtr><mtd class="mathyml-align-left"><mrow><mi>𝑛</mi><mo>!</mo></mrow><mo>⋅</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mtd><mtd class="mathyml-align-left"><mtext> if </mtext><mi>𝑚</mi><mo>=</mo><mi>𝑛</mi></mtd></mtr><mtr><mtd class="mathyml-align-left"><mo>≠</mo><mn>0</mn></mtd><mtd class="mathyml-align-left"><mtext> else</mtext></mtd></mtr></mtable></mrow></mrow></math>
+  <p><strong>Question</strong> <span><math><mi>𝑛</mi></math></span> 阶差分有什么直观的理解吗?</p>
+  <p><code data-typst-label="successive-difference">&lt;successive-difference></code> <span><math><mi>𝑛</mi></math></span> 阶差分可以写为 <span><math><mi>𝑛</mi></math></span> 次的一阶差分</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝐼</mi><mi>𝑛</mi></msub><mo>⊂</mo><mrow><mo>{</mo><mi>𝑛</mi><mo>}</mo></mrow></mrow></munder><mo>⋯</mo><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝐼</mi><mn>1</mn></msub><mo>⊂</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><msub><mi>𝐼</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋯</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><msub><mi>𝐼</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>∈</mo><msub><mi>𝐼</mi><mn>1</mn></msub></mrow></munder><msub><mi>𝑣</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mi>𝑛</mi></msub><mo>∈</mo><msub><mi>𝐼</mi><mi>𝑛</mi></msub></mrow></munder><msub><mi>𝑣</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub></msub></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math>
+  <p>where <span><math><mrow><msub><mi>𝐼</mi><mi>𝑘</mi></msub><mo>⊂</mo><mrow><mo>{</mo><mi>𝑘</mi><mo>}</mo></mrow><mo>⟺</mo><msub><mi>𝐼</mi><mi>𝑘</mi></msub><mo>∈</mo><mrow><mtext>Subset</mtext><mrow><mo>{</mo><mi>𝑘</mi><mo>}</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mrow><mrow><mo>∅</mo><mo>,</mo></mrow><mrow><mo>{</mo><mi>𝑘</mi><mo>}</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span>, <span><math><mrow><msub><mo>∑</mo><mrow><msub><mi>𝑖</mi><mi>𝑘</mi></msub><mo>∈</mo><mo>∅</mo></mrow></msub><msub><mi>𝑣</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub><mo>=</mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mi>𝐼</mi><mo>≔</mo><msub><mo>⋃</mo><mrow><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝐼</mi><mi>𝑘</mi></msub><mo>⊂</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>由于求和的交换性, 逐次差分的顺序不影响最终结果</p>
+  <p><em>Proof</em> of <code>#link(&lt;difference-symmetric-tensor>)[]</code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐼</mi><mo>⊂</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow><mo>−</mo><mi>𝑛</mi></mrow></msup><msup><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐼</mi><mo>⊂</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow><mo>−</mo><mi>𝑛</mi></mrow></msup><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝜇</mi><mo>:</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow><mo>→</mo><mi>𝐴</mi></mrow></munder><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mi>𝑚</mi><mo>)</mo></mrow></mrow></msub></mtd></mtr></mtable></math>
+    <p>强行写为对所有 <span><math><mrow><mi>𝜇</mi><mo>:</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow><mo>→</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></math></span> 求和, 附带 weight 来计算重复次数</p>
+    <math display="block"><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝜇</mi><mo>:</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow><mo>→</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></munder><mrow><mtext>weight</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow><mo>⋅</mo><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mi>𝑚</mi><mo>)</mo></mrow></mrow></msub></mrow></math>
+    <p>where 权重对每个 <span><math><mi>𝜇</mi></math></span> 定义为</p>
+    <math display="block"><mrow><mrow><mtext>weight</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><munder displaystyle="true"><mo>∑</mo><mtable><mtr><mtd><mrow><mi>𝐼</mi><mo>∈</mo><mtext> Subset</mtext><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow><mo>:</mo></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow><mo>⊂</mo><mi>𝐼</mi></mrow></mtd></mtr></mtable></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow></msup></mrow></math>
+    <p>对任何非空有限集 <span><math><mi>𝑋</mi></math></span>, <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝑋</mi></mrow></msub><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p><em>Proof</em></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p><code>#link(&lt;combination>)[]</code> <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝑋</mi></mrow></math></span> &lt;==> for each <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mrow><mo>|</mo><mi>𝑋</mi><mo>|</mo></mrow></mrow></math></span> 有 <span><math><mrow><mo>(</mo><mfrac linethickness="0"><mrow><mo>|</mo><mi>𝑋</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></mfrac><mo>)</mo></mrow></math></span> 种选择</p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝑋</mi></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mrow><mo>|</mo><mi>𝑋</mi><mo>|</mo></mrow></mrow></munder><mrow><mo>(</mo><mfrac linethickness="0"><mrow><mo>|</mo><mi>𝑋</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></mfrac><mo>)</mo></mrow><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝑋</mi><mo>|</mo></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
+    </div>
+    <p>for <span><math><mrow><mo>{</mo><mrow><mi>𝐼</mi><mo>∈</mo><mtext> Subset</mtext><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow><mo>:</mo><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow><mo>⊂</mo><mi>𝐼</mi></mrow><mo>}</mo></mrow></math></span></p>
+    <p>define <span><math><mrow><mrow><mi>𝐴</mi><mrow><mo>(</mo><mi>𝐼</mi><mo>)</mo></mrow></mrow><mo>≔</mo><mi>𝐼</mi><mo>∖</mo><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow></mrow></math></span></p>
+    <p>define <span><math><mrow><mi>𝑋</mi><mo>≔</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mrow><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow><mo>∖</mo><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝐴</mi><mrow><mo>(</mo><mi>𝐼</mi><mo>)</mo></mrow></mrow></math></span> 是双射</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><mi>𝐼</mi></mrow><mo>∖</mo><mrow><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow><mo>|</mo></mrow></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup><mo>⋅</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow></msup></mtd></mtr></mtable></math>
+    <p>权重</p>
+    <math display="block"><mrow><mrow><mtext>weight</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>⋅</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow><mo>|</mo></mrow></msup><mo>⋅</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝑋</mi></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mrow></math><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>weight</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi>𝑋</mi><mo>≠</mo><mo>∅</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝜇</mi><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑚</mi></mrow><mo>}</mo></mrow></mrow><mo>⊊</mo><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></mtd></mtr></mtable></math>
+    <p>最后的条件</p>
+    <ul>
+      <li><span><math><mrow><mi>𝑚</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 时对所有 <span><math><mi>𝜇</mi></math></span> 一定成立</li>
+      <li><span><math><mrow><mi>𝑚</mi><mo>=</mo><mi>𝑛</mi></mrow></math></span> 时, 只有 <span><math><mi>𝜇</mi></math></span> 是双射时才成立 i.e. <span><math><mi>𝜇</mi></math></span> 是所有 <span><math><mi>𝑛</mi></math></span> 阶置换, 此时 <span><math><mrow><mrow><mtext>weight</mtext><mrow><mo>(</mo><mi>𝜇</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></span></li>
+    </ul>
+    <p>对称张量使得 <span><math><mrow><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝜇</mi><mrow><mo>(</mo><mi>𝑚</mi><mo>)</mo></mrow></mrow></msub><mo>=</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span></p>
+    <p><span><math><mi>𝑛</mi></math></span> 阶置换有 <span><math><mrow><mi>𝑛</mi><mo>!</mo></mrow></math></span> 个</p>
+  </div>
+  <p><strong>对称</strong> 多重线性函数 <span><math><msub><mi>𝑎</mi><mi>𝑚</mi></msub></math></span> 的 <strong>对称性</strong> 使得 <code>#link(&lt;difference-symmetric-tensor>)[差分]</code> 的性质能够被继承</p>
+  <p><code data-typst-label="difference-polynomial">&lt;difference-polynomial></code> <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 的 <span><math><mi>𝑛</mi></math></span> 阶差分是 <span><math><mrow><mrow><mi>𝑛</mi><mo>!</mo></mrow><mo>⋅</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup><mo>,</mo></mrow><mi>𝑚</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 的 <span><math><mi>𝑛</mi></math></span> 阶差分是 <span><math><mn>0</mn></math></span></p>
+  <p>由此得到, 多项式函数决定其多重对称线性函数表示 <em>Proof</em> 先 <span><math><mi>𝑛</mi></math></span> 差分得到相同的 <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span>, 两者同时移除 <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> 后, 仍然是相同的多项式函数, 阶数 <span><math><mrow><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span>, 继续 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 差分得到相同的 <span><math><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></math></span> …</p>
+  <p>对于幂级数, 有限阶差分总是无法给出零</p>
+  <p>形式上, 可以利用除法和极限来消除高阶项</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><msup><mi>𝑡</mi><mi>𝑛</mi></msup></mfrac><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mrow><mo>(</mo><mrow><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mrow><mo>(</mo><mrow><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msup><mi>𝑣</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>𝑡</mi><mo>+</mo><mo>⋯</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑡</mi><mo>→</mo><mn>0</mn></mrow></munder></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable></math>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

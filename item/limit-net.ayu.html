@@ -1,0 +1,50 @@
+<div>
+  <p><code data-typst-label="net">&lt;net></code></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mtext>B</mtext></math></span> a net of <span><math><mi>𝐴</mi></math></span> := <span><math><mrow><mtext>B </mtext><mo>⊂</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></mrow></math></span> (a collection of subset of <span><math><mi>𝐴</mi></math></span>) with property</p>
+    <ul>
+      <li><span><math><mrow><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>≠</mo><mo>∅</mo></mrow></math></span></li>
+      <li><span><math><mrow><mo>∀</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>⊂</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub></mrow></math></span></li>
+      <li>(含义: 收敛到极限之前非空. 如果 <span><math><mtext>B</mtext></math></span> 元素无限那么有限交集控制着收敛方向, 尽管可能 <span><math><mrow><mo>∅</mo><mo>=</mo><mo>⋂</mo><mtext> B</mtext></mrow></math></span>. 如果 <span><math><mrow><mtext>B </mtext><mo>=</mo><mrow><mo>{</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></mrow></math></span> 元素有限那么 <span><math><mrow><mo>∅</mo><mo>≠</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span>)</li>
+    </ul>
+  </div>
+  <p><strong>Example</strong> <span><math><mrow><mi>𝑋</mi><mo>=</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, 网 <span><math><mrow><mtext>B </mtext><mo>=</mo><msub><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub></mrow></math></span></p>
+  <p>点网 or 包含点 <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑋</mi></mrow></math></span> 的网 <span><math><mrow><mtext>B </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>≔</mo><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mtext> B </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p>网 <span><math><mtext>B</mtext></math></span> 细于 <span><math><msup><mtext>B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></math></span> := <span><math><mrow><mo>∀</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mrow><msup><mtext> B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mi>𝐵</mi><mo>⊂</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span><br>并且这蕴含 <span><math><mrow><mo>⋂</mo><mtext> B </mtext><mo>⊂</mo><mo>⋂</mo><msup><mtext> B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+  <p><code data-typst-label="net-same-limit">&lt;net-same-limit></code> <span><math><mrow><mtext>B</mtext><mo>,</mo><msup><mtext>B</mtext><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 极限相同 := 相互细于</p>
+  <p>并不是所有极限相同的网都有用. 集合论上可用 <span><math><mo>∪</mo></math></span> 构造出新的极限相同的网, 但有很多冗余</p>
+  <p>任何网都可以补充所有的有限交集 <span><math><mrow><mo>{</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>:</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>∈</mo><mtext> B</mtext></mrow><mo>}</mo></mrow></math></span> 成为新的网, 并保持相同的极限</p>
+  <p><code data-typst-label="hom-limit">&lt;hom-limit></code> 网之间的极限同态 :=</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow></math></span>. 网 <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mtext>B</mtext><mi>𝑋</mi></msub><mo>)</mo></mrow></mrow></math></span> 细于 <span><math><msub><mtext>B</mtext><mi>𝑌</mi></msub></math></span></p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mo>∈</mo><msub><mtext> B </mtext><mi>𝑌</mi></msub></mtd></mtr><mtr><mtd><mo>∃</mo><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>∈</mo><msub><mtext> B </mtext><mi>𝑋</mi></msub></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>)</mo></mrow></mrow><mo>⊂</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mtext> or </mtext><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>⊂</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p><span><math><mo>⊂</mo></math></span> 用点来描述就是 <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><msub><mi>𝐵</mi><mi>𝑋</mi></msub><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><msub><mi>𝐵</mi><mi>𝑌</mi></msub></mrow></math></span></p>
+  </div>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li>序列 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 收敛 <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mi>𝑎</mi></mrow></math></span></li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>使用包含 <span><math><mi>𝑎</mi></math></span> 的所有区间 <span><math><mrow><msub><mtext>B </mtext><mi mathvariant="normal">ℝ</mi></msub><mo>=</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mrow><msub><mtext>B </mtext><mi mathvariant="normal">ℕ</mi></msub><mo>=</mo><msub><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub></mrow></math></span>, 则 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 极限同态</p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><mrow><mi>𝐼</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mo>∃</mo><mrow><mo>{</mo><mrow><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mo>∈</mo><msub><mtext> B </mtext><mi mathvariant="normal">ℕ</mi></msub></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mrow><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo></mrow><mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo></mrow><mo>⋯</mo></mrow><mo>}</mo></mrow><mo>⊂</mo><mrow><mi>𝐼</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+  </div>
+  <ul>
+    <li><span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 函数极限</li>
+  </ul>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>let <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi mathvariant="normal">ℝ</mi><mo>→</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑦</mi></mrow></math></span>, 从 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span> 到 <span><math><mrow><mtext>I </mtext><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd><mo>∀</mo><msub><mi>𝐼</mi><mi>𝑦</mi></msub><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mo>∃</mo><msub><mi>𝐼</mi><mi>𝑥</mi></msub><mo>∈</mo><mtext> I </mtext><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝐼</mi><mi>𝑥</mi></msub><mo>)</mo></mrow></mrow><mo>⊂</mo><msub><mi>𝐼</mi><mi>𝑦</mi></msub></mtd></mtr></mtable></math>
+  </div>
+</div>

@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js coal">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="Example #link(&lt;interval&gt;)[] #link(&lt;best-interval-decomposition&gt;)[]&lt;connected&gt; 连通 or 极限连通 :&#x3D; 极限点集分解不再可能 or 闭集分解不再可能𝑋&#x3D;⨆𝑖∈𝐼𝐴𝑖 with 𝐴𝑖 closed &#x3D;&#x3D;&gt; |𝐼|&#x3D;1直观的说法是, 连通 &#x3D; 不能给出任何实质的分解. 对任何集合分解 𝑋&#x3D;⨆𝐴𝑖, 由 𝑋&#x3D;⋃𝐴̄𝑖 + 连通, 每个 𝐴𝑖 必定和某个其它的某个 𝐴𝑗 在极限点之后相接: ∃𝑗≠𝑖,𝐴̄𝑖∩𝐴̄𝑗≠∅闭集分解的每个 𝐴𝑖 是开集Proof 𝐴𝑖&#x3D;𝑋∖⋃𝑖′≠𝑖𝐴𝑖′¯连通的定义等价于分解为两个闭集的版本𝑋&#x3D;𝐴⊔𝐴′ with 𝐴,𝐴′ closed &#x3D;&#x3D;&gt; (𝑋&#x3D;𝐴)∨(𝑋&#x3D;𝐴′)Proof 对分解取极限得到 ⋁𝑖∈𝐼𝑋&#x3D;𝐴𝑖连通子集 :&#x3D; 拓扑子空间连通Example ℝ 连通. ℝ 存在连通和不连通集. 连通集可能不是 Tℝ 闭集&lt;real-connected-is-interval&gt; ℝ 的连通集就是区间 Proof by 区间连通 + 最优区间分解 + 最优区间分解中区间数 &gt;1 不连通&lt;connected-im">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('coal')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html" class="active"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item/connected", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <p><strong>Example</strong> <code>#link(&lt;interval>)[]</code> <code>#link(&lt;best-interval-decomposition>)[]</code></p>
+  <p><code data-typst-label="connected">&lt;connected></code> 连通 or 极限连通 := 极限点集分解不再可能 or 闭集分解不再可能</p>
+  <p><span><math><mrow><mi>𝑋</mi><mo>=</mo><msub><mo>⨆</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span> with <span><math><msub><mi>𝐴</mi><mi>𝑖</mi></msub></math></span> closed ==> <span><math><mrow><mrow><mo>|</mo><mi>𝐼</mi><mo>|</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
+  <p>直观的说法是, 连通 = 不能给出任何实质的分解. 对任何集合分解 <span><math><mrow><mi>𝑋</mi><mo>=</mo><mo>⨆</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span>, 由 <span><math><mrow><mi>𝑋</mi><mo>=</mo><mo>⋃</mo><msub><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover><mi>𝑖</mi></msub></mrow></math></span> + 连通, 每个 <span><math><msub><mi>𝐴</mi><mi>𝑖</mi></msub></math></span> 必定和某个其它的某个 <span><math><msub><mi>𝐴</mi><mi>𝑗</mi></msub></math></span> 在极限点之后相接: <span><math><mrow><mo>∃</mo><mi>𝑗</mi><mo>≠</mo><mrow><mi>𝑖</mi><mo>,</mo></mrow><msub><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover><mi>𝑖</mi></msub><mo>∩</mo><msub><mover accent="true"><mi>𝐴</mi><mo stretchy="true">̄</mo></mover><mi>𝑗</mi></msub><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+  <p>闭集分解的每个 <span><math><msub><mi>𝐴</mi><mi>𝑖</mi></msub></math></span> 是开集</p>
+  <p><em>Proof</em> <span><math><mrow><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>=</mo><mi>𝑋</mi><mo>∖</mo><mover accent="true"><mrow><msub><mo>⋃</mo><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≠</mo><mi>𝑖</mi></mrow></msub><msub><mi>𝐴</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>¯</mo></mover></mrow></math></span></p>
+  <p>连通的定义等价于分解为两个闭集的版本</p>
+  <p><span><math><mrow><mi>𝑋</mi><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> with <span><math><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> closed ==> <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>=</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>=</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><em>Proof</em> 对分解取极限得到 <span><math><mrow><msub><mo>⋁</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><mi>𝑋</mi><mo>=</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+  <p>连通子集 := 拓扑子空间连通</p>
+  <p><strong>Example</strong> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 连通. <span><math><mi mathvariant="normal">ℝ</mi></math></span> 存在连通和不连通集. 连通集可能不是 <span><math><msub><mtext>T</mtext><mi mathvariant="normal">ℝ</mi></msub></math></span> 闭集</p>
+  <p><code data-typst-label="real-connected-is-interval">&lt;real-connected-is-interval></code> <span><math><mi mathvariant="normal">ℝ</mi></math></span> 的连通集就是区间 <em>Proof</em> by 区间连通 + 最优区间分解 + 最优区间分解中区间数 <span><math><mrow><mo>></mo><mn>1</mn></mrow></math></span> 不连通</p>
+  <p><code data-typst-label="connected-imply-closure-connected">&lt;connected-imply-closure-connected></code> <span><math><mi>𝑆</mi></math></span> 是连通集 ==> <span><math><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover></math></span> 是连通集</p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p><span><math><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover></math></span> close ==> <span><math><msub><mtext>T</mtext><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover></msub></math></span> 闭集是 <span><math><msub><mtext>T</mtext><mi>𝑋</mi></msub></math></span> 闭集</p>
+    <p>let 闭集分解 <span><math><mrow><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+    <p><span><math><msub><mtext>T</mtext><mi>𝑆</mi></msub></math></span> 闭集分解 <span><math><mrow><mi>𝑆</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∩</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>⊔</mo><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∩</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span> and <span><math><mi>𝑆</mi></math></span> 连通 ==> 其中一个是空集, say <span><math><mrow><mi>𝑆</mi><mo>∩</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mo>∅</mo></mrow></math></span> so <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p>但 <span><math><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover></math></span> 是包含 <span><math><mi>𝑆</mi></math></span> 的最小闭集, so <span><math><mrow><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mi>𝐴</mi></mrow></math></span> and <span><math><mrow><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mo>∅</mo></mrow></math></span></p>
+  </div>
+  <p><span><math><mover accent="true"><mi>𝑆</mi><mo stretchy="true">̄</mo></mover></math></span> 不是连通集 ==> <span><math><mi>𝑆</mi></math></span> 不是连通集</p>
+  <p><code data-typst-label="connected-componet">&lt;connected-componet></code> 连通分支分解 := 极限点集的分解的极限 <span><math><mrow><mi>𝑋</mi><mo>=</mo><mtext> lim </mtext><msub><mo>⨆</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span>, 使得每个极限点集 <span><math><msub><mi>𝐴</mi><mi>𝑖</mi></msub></math></span> 不可再分解 i.e. 连通</p>
+  <p>确实是 <code>#link(&lt;net>)[网]</code> 意义上的唯一极限. 网来自 <span><math><mi>𝑋</mi></math></span> 的两个闭集分解可以取共同加细分解 + 闭集对有限交集封闭</p>
+  <p><span><math><mi>𝑆</mi></math></span> is <span><math><msub><mtext>T</mtext><mi>𝑆</mi></msub></math></span> 连通 or <span><math><mi>𝑆</mi></math></span> 不可 <span><math><msub><mtext>T</mtext><mi>𝑆</mi></msub></math></span> 闭集分解 and <span><math><msub><mtext>T</mtext><mi>𝑋</mi></msub></math></span> 有闭集分解 <span><math><mrow><mi>𝐴</mi><mo>⊔</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> ==> <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>⊂</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>⊕</mo><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>⊂</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><msub><mtext>T</mtext><mi>𝑆</mi></msub></math></span> 的闭集分解 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∩</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>⊔</mo><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>∩</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span> 导致其中一个集合是空集</p>
+  <p><span><math><mi>𝐴</mi></math></span> 是极限连通集 ==> <span><math><mi>𝐴</mi></math></span> 在 <span><math><mi>𝑋</mi></math></span> 的唯一一个极限连通分支里</p>
+  <p><em>Proof</em> <span><math><mi>𝐴</mi></math></span> 的点必定在 <span><math><mi>𝑋</mi></math></span> 从而在某个连通分支里</p>
+  <p>==> 即使 <span><math><mi>𝑋</mi></math></span> 仅仅只是分解为连通集合, 也已经是连通分支分解</p>
+  <p>有共同点 <span><math><mi>𝑥</mi></math></span> 的连通集 <span><math><msub><mi>𝑆</mi><mi>𝑖</mi></msub></math></span> 的并集 <span><math><mrow><msub><mo>⋃</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝑆</mi><mi>𝑖</mi></msub></mrow></math></span> 连通</p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>recall <code>#link(&lt;topology-subspace>)[子拓扑的继承性]</code>. 所以连通也继承</p>
+    <p>所以只需要处理 <span><math><mrow><msub><mo>⋃</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝑆</mi><mi>𝑖</mi></msub><mo>=</mo><mi>𝑋</mi></mrow></math></span> 的情况</p>
+  </div>
+  <p><em>Proof</em> 包含 <span><math><mi>𝑥</mi></math></span> 的连通集都在同一个连通分支里面. 说明 <span><math><mrow><msub><mo>⋃</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝑆</mi><mi>𝑖</mi></msub><mo>=</mo><mi>𝑋</mi></mrow></math></span> 只有一个连通分支, 从而连通</p>
+  <p>连通分支是连通集族的 <span><math><mo>⊂</mo></math></span> <code>#link(&lt;maximal-linear-order>)[极大线序]</code> 的极大元</p>
+  <p>连续函数的 image 传递连通</p>
+  <p>连续函数 inverse-image 传递非连通 as 逆否命题</p>
+  <p><em>Proof</em> 闭集分解 <span><math><mrow><mi>𝑌</mi><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> ==> 闭集分解 <span><math><mrow><mi>𝑋</mi><mo>=</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>⊔</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></math></span></p>
+  <p>==> <code data-typst-label="mean-value-theorem-continuous">&lt;mean-value-theorem-continuous></code> 连续函数介值. 连续函数 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝑋</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 的像 <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑋</mi><mo>)</mo></mrow></mrow></math></span> 连通 <code>#link(&lt;real-connected-is-interval>)[从而]</code> 是区间</p>
+  <p>如果 <span><math><mi>𝑌</mi></math></span> 任何两点都在某个连通子集 <span><math><mi>𝑆</mi></math></span> 中, 则 <span><math><mi>𝑌</mi></math></span> 连通. <em>Proof</em> let <span><math><mrow><mi>𝑌</mi><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> with <span><math><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> closed, 证明 <span><math><mrow><mi>𝐴</mi><mo>∨</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mo>∅</mo></mrow></math></span>. 或者 <span><math><mrow><mi>𝑌</mi><mo>=</mo><msub><mo>⋃</mo><mrow><mi>𝑦</mi><mo>∈</mo><mi>𝑌</mi></mrow></msub><mrow><mi>𝑆</mi><mrow><mo>(</mo><mrow><msub><mi>𝑦</mi><mn>0</mn></msub><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> and 有共同点 <span><math><msub><mi>𝑦</mi><mn>0</mn></msub></math></span> 的连通集 <span><math><mrow><mi>𝑆</mi><mrow><mo>(</mo><mrow><msub><mi>𝑦</mi><mn>0</mn></msub><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的并集是连通的</p>
+  <p>==> let <span><math><mi>𝑋</mi></math></span> 连通. 如果 <span><math><mi>𝑌</mi></math></span> 任何两点都在某个连续函数连通像 <span><math><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑋</mi><mo>)</mo></mrow></mrow></math></span> 中, 则 <span><math><mi>𝑌</mi></math></span> 连通</p>
+  <p>==> 道路连通</p>
+  <p><code data-typst-label="product-topology-preserve-connected">&lt;product-topology-preserve-connected></code> <code>#link(&lt;product-topology>)[积拓扑]</code> 保持连通</p>
+  <p><em>Proof</em></p>
+  <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+    <p>使用共同点方法 + 每个 <span><math><msub><mi>𝑋</mi><mi>𝑖</mi></msub></math></span> 连通 ==> 所有 "十字形" 子集是连通的</p>
+    <math display="block"><mrow><msub><mi>𝐶</mi><mrow><msub><mi>𝑗</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mrow></msub><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><mrow><mo>{</mo><mtable><mtr><mtd class="mathyml-align-left"><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mtd><mtd class="mathyml-align-left"><mtext> if </mtext><mi>𝑖</mi><mo>=</mo><msub><mi>𝑗</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-left"><mrow><mo>{</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mtext> else</mtext></mtd></mtr></mtable></mrow></mrow></math>
+    <p>再次使用共同点方法, 十字形子集的并集 <span><math><mrow><mi>𝐶</mi><mo>=</mo><msub><mo>⋃</mo><mrow><msub><mi>𝑗</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mrow></msub><msub><mi>𝐶</mi><mrow><msub><mi>𝑗</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mrow></msub></mrow></math></span> 组成了连通子集</p>
+    <p><span><math><mrow><mover accent="true"><mi>𝐶</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></mrow></math></span> and <code>#link(&lt;connected-imply-closure-connected>)[]</code> ==> <span><math><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 连通</p>
+    <p><em>Proof</em> of <span><math><mrow><mover accent="true"><mi>𝐶</mi><mo stretchy="true">̄</mo></mover><mo>=</mo><mi>𝑋</mi></mrow></math></span></p>
+    <div style="
+    border-left: 1px solid #94828233;
+    padding-left: 1em
+  ">
+      <p>只需要证明 <span><math><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 点网系统的每个集相交于某个十字形 <span><math><msub><mi>𝐶</mi><mrow><msub><mi>𝑗</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mrow></msub></math></span></p>
+      <p><span><math><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 的点网系统的集合是</p>
+      <math display="block"><mrow><msubsup><mi>𝑓</mi><msub><mi>𝑖</mi><mn>1</mn></msub><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><msub><mi>𝐵</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>)</mo></mrow><mo>∩</mo><mo>⋯</mo><mo>∩</mo><msubsup><mi>𝑓</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub><mrow><mo>−</mo><mn>1</mn></mrow></msubsup><mrow><mo>(</mo><msub><mi>𝐵</mi><msub><mi>𝑖</mi><mi>𝑛</mi></msub></msub><mo>)</mo></mrow></mrow></math>
+      <p>它相交于十字形 <span><math><msub><mi>𝐶</mi><mrow><msub><mi>𝑗</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑗</mi><mi>𝑛</mi></msub></mrow></msub></math></span></p>
+    </div>
+  </div>
+  <p>let 连通分支分解 <span><math><mrow><msub><mi>𝑋</mi><mi>𝑖</mi></msub><mo>=</mo><msub><mo>∏</mo><mrow><mi>𝑗</mi><mo>∈</mo><mrow><mi>𝐽</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub><msub><mi>𝐴</mi><mrow><mrow><mi>𝑖</mi><mo>,</mo></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span></p>
+  <p><span><math><mrow><munder displaystyle="false"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑋</mi><mi>𝑖</mi></msub></mrow></math></span> 的所有连通分支是</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝐴</mi><mrow><mrow><mi>𝑖</mi><mo>,</mo></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub><mo>:</mo><mi>𝑗</mi><mo>∈</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></munder><mrow><mi>𝐽</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></math>
+  <p><em>Proof</em> 使用 <code>#link(&lt;dependent-distributive>)[]</code> <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mo>⨆</mo><mrow><mi>𝑗</mi><mo>∈</mo><mi>𝐽</mi></mrow></msub><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mo>,</mo><mrow><mi>𝑗</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub><mo>=</mo><msub><mo>⨆</mo><mrow><mi>𝑗</mi><mo>∈</mo><mi>𝐽</mi></mrow></msub><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mo>,</mo><mrow><mi>𝑗</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span> and 连通的 product 连通, 所以 <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>∈</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝐴</mi><mrow><mrow><mi>𝑖</mi><mo>,</mo></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span> 连通, 从而已经不能再分解</p>
+  <p>定义 (how?) <span><math><mrow><mi>𝑓</mi><mo>∈</mo><mrow><mi>𝐶</mi><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 的拓扑或极限点之后 (should be something compact open topology?)</p>
+  <p><code data-typst-label="homotopy">&lt;homotopy></code> 同伦 or 极限点同伦 := <span><math><mrow><mi>𝐶</mi><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow></mrow></math></span> 是极限连通的</p>
+  <p><strong>Example</strong> <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>∖</mo><mn>0</mn></mrow></math></span> 同伦到 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span></p>
+  <p><code data-typst-label="homotopy-class">&lt;homotopy-class></code> := <span><math><mrow><mi>𝐶</mi><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow></mrow></math></span> 的连通分支</p>
+  <p>由于复合保持连续, 复合导出 <span><math><mrow><mi>𝐶</mi><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>→</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow></mrow></math></span> 上的运算. 证明是否良定义. 有时可逆, 使得是群运算</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>
