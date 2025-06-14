@@ -1,9 +1,10 @@
 <div>
-  <p><code data-typst-label="affine-combination">&lt;affine-combination></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>  <code>affine-combination</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>仿射组合</p>
     <math display="block"><mtable><mtr><mtd><munder displaystyle="true"><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi></mrow></munder><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>⋅</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mtd></mtr><mtr><mtd><msub><mi>𝑡</mi><mn>0</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑡</mi><mi>𝑁</mi></msub><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>,</mo><munder displaystyle="true"><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi></mrow></munder><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>=</mo><mn>1</mn></mtd></mtr></mtable></math>
     <p>是良定义的仿射点, 或者说坐标定义不依赖于原点的选择. 设 <span><math><msub><mi>𝑥</mi><mi>𝑖</mi></msub></math></span> 的坐标是 <span><math><msub><mi>𝑣</mi><mi>𝑖</mi></msub></math></span>. 换原点 <span><math><mrow><msub><mi>𝑣</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>=</mo><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow></math></span></p>
@@ -13,12 +14,9 @@
     <p>可以逐次迭代 or 分解 e.g. 三角形 <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑥</mi><mn>2</mn></msub><mo>+</mo><msub><mi>𝑡</mi><mn>3</mn></msub><msub><mi>𝑥</mi><mn>3</mn></msub><mo>⟷</mo><msub><mi>𝑠</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑥</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑥</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mi>𝑠</mi><mn>2</mn></msub><msub><mi>𝑥</mi><mn>3</mn></msub></mrow></math></span>. 且分解操作可交换. 且可以分解为多个 <span><math><mrow><mo>≥</mo><mn>1</mn></mrow></math></span> 阶的</p>
     <img src="../image/affine-combination-2.jpeg" width="30%">
   </div>
-  <p><code data-typst-label="affine-coordinate">&lt;affine-coordinate></code> <span><math><msub><mi>𝑡</mi><mi>𝑖</mi></msub></math></span> 可以认为是基于点 <span><math><msub><mi>𝑥</mi><mi>𝑖</mi></msub></math></span> 的一种坐标. 仿射坐标. <strong>alias</strong> 重心坐标 <code data-typst-label="barycentric-coordinate">&lt;barycentric-coordinate></code></p>
-  <p><code data-typst-label="affine-independent">&lt;affine-independent></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>affine-coordinate</code><em>_(tag)</em>   <span><math><msub><mi>𝑡</mi><mi>𝑖</mi></msub></math></span> 可以认为是基于点 <span><math><msub><mi>𝑥</mi><mi>𝑖</mi></msub></math></span> 的一种坐标. 仿射坐标. <strong>alias</strong> 重心坐标   <code>barycentric-coordinate</code><em>_(tag)</em>  </p>
+  <p>  <code>affine-independent</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>仿射无关 := <span><math><msub><mi>𝑥</mi><mi>𝑘</mi></msub></math></span> 不能表示为 <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi><mo>∖</mo><mi>𝑘</mi></mrow></msub><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow></math></span></p>
     <p>仿射无关将对应到选取其中一个点 e.g. <span><math><msub><mi>𝑥</mi><mn>0</mn></msub></math></span> 为原点后的 <span><math><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>−</mo><msub><mi>𝑥</mi><mn>0</mn></msub></mrow></math></span> 的线性无关</p>
     <p>如果是仿射无关, 则顶点对应 <span><math><mrow><msub><mi>𝑡</mi><mi>𝑘</mi></msub><mo>=</mo><mn>1</mn><mo>∧</mo><msub><mi>𝑡</mi><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑁</mi><mo>∖</mo><mi>𝑘</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
@@ -26,19 +24,16 @@
     <p>对于 <span><math><mi>𝑛</mi></math></span> 维仿射空间 <span><math><mi>𝑉</mi></math></span> 的 <span><math><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></math></span> 仿射无关点的坐标, <span><math><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑡</mi><mi>𝑛</mi></msub></mrow></math></span> 一一对应 <span><math><mi>𝑉</mi></math></span> 的仿射点</p>
     <p>如果是 <span><math><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑡</mi><mi>𝑁</mi></msub><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><msub><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi></mrow></msub><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>=</mo><mn>0</mn></mrow></math></span>, 虽然此时坐标 <span><math><mrow><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow></math></span> 不会因换原点而改变, 但不是仿射点</p>
   </div>
-  <p><code data-typst-label="affine-map-point-ver">&lt;affine-map-point-ver></code> <strong>alias</strong> <code data-typst-label="simplicial-map">&lt;simplicial-map></code> 设 <span><math><mrow><msub><mi>𝑦</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow></math></span> 是另一个仿射空间的点. 仿射映射由 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑦</mi><mi>𝑖</mi></msub></mrow></math></span> 决定, 其它点的情况可以由它们通过仿射同态生成得到</p>
+  <p>  <code>affine-map-point-ver</code><em>_(tag)</em>   <strong>alias</strong>   <code>simplicial-map</code><em>_(tag)</em>   设 <span><math><mrow><msub><mi>𝑦</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑦</mi><mi>𝑛</mi></msub></mrow></math></span> 是另一个仿射空间的点. 仿射映射由 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑦</mi><mi>𝑖</mi></msub></mrow></math></span> 决定, 其它点的情况可以由它们通过仿射同态生成得到</p>
   <math display="block"><mrow><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>⇝</mo><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑦</mi><mi>𝑖</mi></msub></mrow></math>
-  <p><code data-typst-label="center-of-affine-point-set">&lt;center-of-affine-point-set></code> <span><math><mrow><msub><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi></mrow></msub><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span> 的中心点是 <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>𝑁</mi></mfrac></mrow></math></span></p>
-  <p><code data-typst-label="convex-hull">&lt;convex-hull></code> := 额外 <span><math><mrow><mn>0</mn><mo>≤</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>≤</mo><mn>1</mn></mrow></math></span></p>
-  <p><code data-typst-label="simplex">&lt;simplex></code> := 由仿射无关的点构成的 convex hull</p>
+  <p>  <code>center-of-affine-point-set</code><em>_(tag)</em>   <span><math><mrow><msub><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑁</mi></mrow></msub><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span> 的中心点是 <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>𝑁</mi></mfrac></mrow></math></span></p>
+  <p>  <code>convex-hull</code><em>_(tag)</em>   := 额外 <span><math><mrow><mn>0</mn><mo>≤</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>≤</mo><mn>1</mn></mrow></math></span></p>
+  <p>  <code>simplex</code><em>_(tag)</em>   := 由仿射无关的点构成的 convex hull</p>
   <img src="../image/simplex.jpeg" width="70%">
-  <p><code data-typst-label="parallelogram">&lt;parallelogram></code> 平行体由于对称性, 可以从 <span><math><mrow><mn>2</mn><mi>𝑛</mi></mrow></math></span> 点 convex hull 描述简化为 <span><math><mi>𝑛</mi></math></span> 点描述, 在选取原点后</p>
+  <p>  <code>parallelogram</code><em>_(tag)</em>   平行体由于对称性, 可以从 <span><math><mrow><mn>2</mn><mi>𝑛</mi></mrow></math></span> 点 convex hull 描述简化为 <span><math><mi>𝑛</mi></math></span> 点描述, 在选取原点后</p>
   <math display="block"><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>,</mo></mrow><mn>0</mn><mo>≤</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mo>≤</mo><mn>1</mn></mrow></math><img src="../image/parallelogram.jpeg" width="25%">
-  <p><code data-typst-label="parallelogram-simplex-correspond">&lt;parallelogram-simplex-correspond></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>parallelogram-simplex-correspond</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>平行体可以 <span><math><mo>⨆</mo></math></span> 分解为 <span><math><mrow><mi>𝑛</mi><mo>!</mo></mrow></math></span> 个平移反射等价的 simplex</p>
     <img src="../image/shear-transformation.jpg" width="30%">
     <p><span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 点的 <span><math><mi>𝑛</mi></math></span> 排列</p>
@@ -50,35 +45,32 @@
     <p>反过来一个 simplex 也给出很多以其为 <span><math><mrow><mi>𝑛</mi><mo>!</mo></mrow></math></span> 块 simplex 其中一块的平行体</p>
     <p>这两种东西给出的结构强度是差不多的</p>
   </div>
-  <p><code data-typst-label="volume-of-parallelogram">&lt;volume-of-parallelogram></code> 对于 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的体积假设</p>
+  <p>  <code>volume-of-parallelogram</code><em>_(tag)</em>   对于 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的体积假设</p>
   <ul>
     <li>平移不变</li>
     <li>反射不变 (无向体积)</li>
     <li>有限 <span><math><mo>⨆</mo></math></span> -> 体积有限 <span><math><mo>∑</mo></math></span></li>
     <li>如果 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 不是线性无关, 则在低维的子空间, 从而 <span><math><mi>𝑛</mi></math></span> 阶体积定义为零</li>
   </ul>
-  <p><code data-typst-label="volume-of-simplex">&lt;volume-of-simplex></code> is <span><math><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></math></span> of volume-of-parallelogram</p>
-  <p><code data-typst-label="shear-transformation">&lt;shear-transformation></code> 平行体分解成 simplex 之后, 切割与平移, 形成新的同体积平行体. 称为剪切变换. e.g. <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span></p>
+  <p>  <code>volume-of-simplex</code><em>_(tag)</em>   is <span><math><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></math></span> of volume-of-parallelogram</p>
+  <p>  <code>shear-transformation</code><em>_(tag)</em>   平行体分解成 simplex 之后, 切割与平移, 形成新的同体积平行体. 称为剪切变换. e.g. <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span></p>
   <img src="../image/shear-transformation.jpg" width="30%">
   <p>(image from p.587 of ref-3)</p>
   <p>剪切变换体积不变在代数上是 e.g. <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>∧</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>=</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> or <span><math><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋱</mo></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span></p>
   <p>边的 <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo><mi mathvariant="normal">ℤ</mi><mo>,</mo><mi mathvariant="normal">ℚ</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 伸缩. e.g. <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑎</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
   <p>平行体的伸缩剪切对应到 <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span> 分解到初等线性变换, 也是 Gauss 消元法所用的 (尽管它们可以用于 <span><math><mrow><mi>𝑚</mi><mo>×</mo><mi>𝑛</mi></mrow></math></span> 矩阵)</p>
-  <p><code data-typst-label="volume-determinant">&lt;volume-determinant></code> 平行体 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 的体积变化 <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mtext> det </mtext><mi>𝐴</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p>  <code>volume-determinant</code><em>_(tag)</em>   平行体 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 的体积变化 <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mrow><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mtext> det </mtext><mi>𝐴</mi><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
   <p>选取 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的一个基 <span><math><mrow><msub><mi>𝑒</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑒</mi><mi>𝑛</mi></msub></mrow></math></span>, 以其生成的平行体体积为 <span><math><mn>1</mn></math></span>, 其它平行体 <span><math><mrow><mi>𝐴</mi><msub><mi>𝑒</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝐴</mi><msub><mi>𝑒</mi><mi>𝑛</mi></msub></mrow></math></span> 的体积是 <span><math><mrow><mtext>det </mtext><mi>𝐴</mi></mrow></math></span></p>
   <p>这是有向体积. <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>=</mo><mo>−</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∧</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 平行体的集合没变所以绝对体积没变, 但是 <span><math><mrow><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 和 <span><math><mrow><mrow><msub><mi>𝑣</mi><mn>2</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 方向相反</p>
   <p>有向体积 = 无向体积 + 计算方向因子</p>
   <p><span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></math></span> 线性相关 ==> 在低维子空间 ==> 零体积. 此时可以将 <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> GL</mtext></mrow></math></span> 拓展到 <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> Lin</mtext></mrow></math></span>, 并且零体积在代数上对应到 <span><math><mrow><mi>𝐴</mi><mo>∉</mo><mtext> GL </mtext><mo>⟺</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
   <p>对于 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的 <span><math><mi>𝑘</mi></math></span> 阶平行体和 simplex</p>
   <p>将平行体对应到 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的 <span><math><mi>𝑘</mi></math></span> 阶交错张量 <span><math><msup><mrow><mo>(</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mrow><mo>∧</mo><mi>𝑘</mi></mrow></msup></math></span> 的可分解元素 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow></math></span></p>
-  <p><code data-typst-label="try-to-define-volume-of-low-dim">&lt;try-to-define-volume-of-low-dim></code> 如何定义低维体积? 考虑两种方法. 类似于一次型 vs 二次型. 第一种类似对 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>2</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 定义 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow></math></span> or <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>𝑣</mi><mn>2</mn></msub><mo>|</mo></mrow></mrow></math></span>, 第二种类似于定义 <span><math><msup><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑣</mi><mn>2</mn><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math></span> or <span><math><mrow><mrow><mo>|</mo><msubsup><mi>𝑣</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>−</mo><mrow><msubsup><mi>𝑣</mi><mn>2</mn><mn>2</mn></msubsup><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></mrow></math></span></p>
+  <p>  <code>try-to-define-volume-of-low-dim</code><em>_(tag)</em>   如何定义低维体积? 考虑两种方法. 类似于一次型 vs 二次型. 第一种类似对 <span><math><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mn>2</mn></msub></mtd></mtr></mtable><mo>)</mo></mrow></math></span> 定义 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow></math></span> or <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>𝑣</mi><mn>2</mn></msub><mo>|</mo></mrow></mrow></math></span>, 第二种类似于定义 <span><math><msup><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑣</mi><mn>2</mn><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math></span> or <span><math><mrow><mrow><mo>|</mo><msubsup><mi>𝑣</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mo>−</mo><mrow><msubsup><mi>𝑣</mi><mn>2</mn><mn>2</mn></msubsup><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></mrow></math></span></p>
   <ol>
     <li value="1"><span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的一个基给出一个交错张量空间的基 <span><math><mrow><mrow><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>,</mo></mrow><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></mrow></math></span></li>
   </ol>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>用它来定义体积: 对每个 <span><math><mi>𝑘</mi></math></span>, 一个特殊的交错 <span><math><mi>𝑘</mi></math></span> 重线性函数 or <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的 <span><math><mi>𝑘</mi></math></span> form <span><math><msub><mtext>Vol</mtext><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑘</mi></mrow></msub></math></span>, 定义为 <span><math><mrow><msub><mtext>Vol </mtext><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑘</mi></mrow></msub><mrow><mo>(</mo><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, forall <span><math><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></math></span></p>
     <p>所以对于一般平行体 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub><mo>=</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub></mrow><mo>)</mo></mrow><mo>∧</mo><mo>⋯</mo><mo>∧</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow></mrow></math></span> 体积就是</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></munder><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or  </mtext></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>|</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></munder><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mrow><mo>|</mo></mrow></mtd></mtr></mtable></math>
@@ -98,10 +90,7 @@
   <ol>
     <li value="2">选取一个非退化二次型</li>
   </ol>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><code>#link(&lt;tensor-induced-quadratic-form>)[导出]</code> 交错空间的二次型 <span><math><mrow><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mtext> det </mtext><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑣</mi><mi>𝑗</mi></msub></mrow><mo>⟩</mo></mrow></mrow></math></span>. 无向体积 <span><math><mrow><mrow><mo>|</mo><mtext>det </mtext></mrow><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑣</mi><mi>𝑗</mi></msub></mrow><mo>⟩</mo></mrow><msup><mo>|</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span> or <span><math><msup><mrow><mo>|</mo><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>⟩</mo></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>⟩</mo></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math></span>. 根据规范正交基及其系数 <span><math><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub><mtext> det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow></math></span>, 写成标准二次型</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></munder><msup><mrow><mo>(</mo><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mtext> Vol</mtext><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑘</mi></mrow></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>|</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></munder><msup><mrow><mo>(</mo><mrow><mtext>det </mtext><mrow><mo>(</mo><mtable><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd><mtd><mo>⋯</mo></mtd><mtd><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mtd></mtr></mtable><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mn>1</mn></msub></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑒</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mtd></mtr></mtable></math>
     <p><span><math><mrow><msup><mrow><mo>⟨</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∧</mo><mo>⋯</mo><mo>∧</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></span> &lt;==> 体积零</p>
@@ -109,7 +98,7 @@
     <p>不同 signature 的体积定义会对 <span><math><mrow><mi>𝑘</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 阶的相同集合不同</p>
   </div>
   <p>两种体积的定义对 <span><math><mrow><mi>𝑘</mi><mo>=</mo><mi>𝑛</mi></mrow></math></span> 重合</p>
-  <p><code data-typst-label="convex-hull-decomposition">&lt;convex-hull-decomposition></code> convex hull 最优分解到 simplex, 方式非唯一. 麻烦的组合问题</p>
+  <p>  <code>convex-hull-decomposition</code><em>_(tag)</em>   convex hull 最优分解到 simplex, 方式非唯一. 麻烦的组合问题</p>
   <p><strong>Example</strong></p>
   <p><span><math><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></math></span> 的 <span><math><mn>4</mn></math></span> 个点</p>
   <img src="../image/convex-hull-decomposition-1.jpg" width="40%">
@@ -123,11 +112,8 @@
   <p>simplex 的减集可能不是 convex hull. 但仍然可以分解到 simplex</p>
   <p><strong>Example</strong></p>
   <img src="../image/simplex-substraction.jpg" width="20%">
-  <p><code data-typst-label="polyhedra">&lt;polyhedra></code> 多面体 :=</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>polyhedra</code><em>_(tag)</em>   多面体 :=</p>
+  <div class="indent">
     <img src="../image/polyhedra.jpeg" width="40%">
     <p>n simplex 有限并 with</p>
     <ul>
@@ -137,14 +123,11 @@
     </ul>
     <p>传递边界的维数是为了让多面体有最好的连通性</p>
   </div>
-  <p><code data-typst-label="low-dim-polyhedra">&lt;low-dim-polyhedra></code> 低维子多面体. 作为一种类似子流形的设置? i.e. <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑘</mi></msup></math></span> 维里 <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> 边界的相邻的 simplex 只有两个 -> 分段嵌入到 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span>. 若不然, 考虑例子三接边界</p>
+  <p>  <code>low-dim-polyhedra</code><em>_(tag)</em>   低维子多面体. 作为一种类似子流形的设置? i.e. <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑘</mi></msup></math></span> 维里 <span><math><mrow><mi>𝑘</mi><mo>−</mo><mn>1</mn></mrow></math></span> 边界的相邻的 simplex 只有两个 -> 分段嵌入到 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span>. 若不然, 考虑例子三接边界</p>
   <img src="../image/tri-intersect-boundary.jpg" width="40%">
   <p>可数推广 -> 可数多面体</p>
-  <p><code data-typst-label="polyhedra-measurable">&lt;polyhedra-measurable></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>polyhedra-measurable</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/measure-approximation.jpeg" width="30%">
     <p>多面体可测集 <span><math><mi>𝐴</mi></math></span>. 用可数多面体 <span><math><mi>𝑃</mi></math></span> 逼近, <code>#link(&lt;symmetric-set-minus>)[对称差]</code> <span><math><mrow><mi>𝐴</mi><mi mathvariant="normal">Δ</mi><mi>𝑃</mi></mrow></math></span> 用可数 simplex 覆盖作为测度估计误差</p>
     <p>集合 <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 定义距离 (ref-12)</p>
@@ -156,12 +139,9 @@
     <p><span><math><mrow><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∪</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>≤</mo><mrow><mi>𝑑</mi><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑑</mi><mrow><mo>(</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span> <em>Proof</em> by <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝑃</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><msup><mi>𝑃</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∪</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>⊂</mo><mrow><mo>(</mo><mrow><mi>𝑃</mi><mo>∪</mo><msup><mi>𝑃</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
     <p>注意, 这种可测集有好的连通性. 在一维中只有区间, 排除了 Smith–Volterra–Cantor 集等. 多面体可测集的并集等操作也受到限制</p>
   </div>
-  <p><code data-typst-label="Lebesgue-measurable">&lt;Lebesgue-measurable></code> 如果不使用传递连通, 则得到一般可测集的定义. alias: Lebesgue 可测集. 存在不可测集</p>
-  <p><code data-typst-label="Lebesgue-measure">&lt;Lebesgue-measure></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>Lebesgue-measurable</code><em>_(tag)</em>   如果不使用传递连通, 则得到一般可测集的定义. alias: Lebesgue 可测集. 存在不可测集</p>
+  <p>  <code>Lebesgue-measure</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>集合对称差满足</p>
     <p><span><math><mrow><mi>𝐵</mi><mi mathvariant="normal">Δ</mi><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>⊂</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mi mathvariant="normal">Δ</mi><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∪</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mi mathvariant="normal">Δ</mi><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
     <p>对应三角不等式 <span><math><mrow><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>,</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>≤</mo><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐵</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
@@ -178,12 +158,9 @@
     <p>如果使用逼近 <span><math><mi>𝐴</mi></math></span> 的多面体的 <code>#link(&lt;net>)[网]</code>, 则有 <code>#link(&lt;hom-limit>)[极限同态]</code> <span><math><mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>≔</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mrow><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝑃</mi></mrow><mo>)</mo></mrow></mrow><mo>→</mo><mn>0</mn></mrow></munder><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mi>𝑃</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
     <p>得到有限测度的定义. 无限测度的定义来自有限测度的可数逼近, 或 <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mo>∞</mo></mrow></msub><msub><mi>𝜀</mi><mi>𝑛</mi></msub><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span> 技术</p>
   </div>
-  <p><code data-typst-label="try-to-define-low-dim-measure">&lt;try-to-define-low-dim-measure></code> 尝试定义 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的 <span><math><mrow><mi>𝑘</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 维可测集. 由于 <span><math><mi>𝑘</mi></math></span> 区域的 codimension <span><math><mrow><mo>≠</mo><mn>0</mn></mrow></math></span>, 所以显然不能用集合差和 simplex 覆盖作为测度估计误差来逼近一般的 "<span><math><mi>𝑘</mi></math></span> 维集合"</p>
-  <p><code data-typst-label="pathologic-example-measure-of-boundary">&lt;pathologic-example-measure-of-boundary></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>try-to-define-low-dim-measure</code><em>_(tag)</em>   尝试定义 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> 的 <span><math><mrow><mi>𝑘</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 维可测集. 由于 <span><math><mi>𝑘</mi></math></span> 区域的 codimension <span><math><mrow><mo>≠</mo><mn>0</mn></mrow></math></span>, 所以显然不能用集合差和 simplex 覆盖作为测度估计误差来逼近一般的 "<span><math><mi>𝑘</mi></math></span> 维集合"</p>
+  <p>  <code>pathologic-example-measure-of-boundary</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>用 Euclidean metric 结构可以定义一些低维可测集, 但还是有病态例子 (暂时忽略细节, 自行 wiki)</p>
     <ul>
       <li>油漆悖论. 测度有限但边界的测度无限. 使用了无界区域</li>
@@ -195,11 +172,8 @@
       <li>无限楼梯逼近三角形斜边 <span><math><mrow><msqrt><mn>2</mn></msqrt><mo>=</mo><mn>2</mn></mrow></math></span> or 圆 (<span><math><mrow><mi>𝜋</mi><mo>=</mo><mn>4</mn></mrow></math></span>) or 只要大幅法向振荡, <span><math><mrow><msqrt><mn>2</mn></msqrt><mo>=</mo><mi>𝜋</mi><mo>=</mo><mo>∞</mo></mrow></math></span></li>
     </ul>
   </div>
-  <p><code data-typst-label="measure-theoretic-boundary">&lt;measure-theoretic-boundary></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>measure-theoretic-boundary</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>测度论边界. 维数 — 某种上确界 <span><math><mrow><mi>𝑑</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> — 可能不是自然数而是实数</p>
     <p>对多面体可测集, 直觉上, 边界 = 可测集的零测集 quotient 中的最大减最小 <span><math><mrow><mo>⋃</mo><mrow><mo>[</mo><mi>𝐴</mi><mo>]</mo></mrow><mo>∖</mo><mo>⋂</mo><mrow><mo>[</mo><mi>𝐴</mi><mo>]</mo></mrow></mrow></math></span></p>
     <p>对一般可测集, 直觉上, 边界 =</p>

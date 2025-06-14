@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="" class="sidebar-visible no-js coal">
+<html lang="" class="sidebar-visible no-js ayu">
 
 <head>
     <!-- Book generated using mdBook -->
@@ -9,7 +9,10 @@
 
     <!-- Custom HTML head -->
     <!-- Put your customized HTML <head> meta here. -->
-    <meta name="description" content="对人来说, 一种理解自然数的方式是数数 (counting)对计算机来说 (cf. #link(&lt;logic.typ&gt;)[]), 表示自然数的方式有周期电路算术元件 +1二进制然而, 自然数集的元素数量是无限的, 而 bit 和计算机内存是有限的. 人类的记忆也是有限的空间无限的问题: 现实无法构建空间无限的电路和内存. 即使能, 也受限于电流速度有限但是可以使用潜在无限的时间来实现 &amp;quot;潜无限&amp;quot;然而, 甚至存在集合的元素数量 #link(&lt;uncountable&gt;)[不可数]. Examplethe set of all subset of ℕ, Subset(ℕ)all function from ℕ to itself, ℕ→ℕ验证集合论语言的正确性需要 parser, 内存数据结构, 函数. 生成的计算机指令流的实现并不是这个目标范围的重点集合/类型的动机模块化和乘法分解以简化认知Example 自然语言的主谓宾 SVO (subject, predicate, object). 假设有 10 个名词和 10 个动词. 假设我们 &amp;quot;忘记了 SVO 规则&amp;quot;, 那么, 验证三个词的句子的语法正确性最多需要 ">
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}对人来说, 一种理解自然数的方式是数数 (counting)对计算机来说 (cf. #link(&lt;logic.typ&gt;)[]), 表示自然数的方式有周期电路算术元件 +1二进制然而, 自然数集的元素数量是无限的, 而 bit 和计算机内存是有限的. 人类的记忆也是有限的空间无限的问题: 现实无法构建空间无限的电路和内存. 即使能, 也受限于电流速度有限但是可以使用潜在无限的时间来实现 &amp;quot;潜无限&amp;quot;然而, 甚至存在集合的元素数量 #link(&lt;uncountable&gt;)[不可数]. Examplethe set of all subset of ℕ, Subset(ℕ)all function from ℕ to itself, ℕ→ℕ验证集合论语言的正确性需要 parser, 内存数据结构, 函数. 生成的计算机指令流的实现并不是这个目标范围的重点集合/类型的动机模块化和乘法分解以简化认知Example 自然语言的主谓宾 SVO (subject, predicate, object). 假设有 10 个名词和 10 个动词. 假设我们 &amp;quot;忘记了 SVO 规则&amp;quot;, 那么, 验证三个词的句子的语法正确性最多需要 103&#x3D;1000 次. 如果理解并使用 SVO 规则, 最多需要 23&#x3D;8 次如果集合的元素数量是无限的, 则集合/类型将概念有限化, 使得可以在有限时间内说出来复杂的 set theory object (集合论对象), proposition (命题) 被储存在变量名里, 所以还是需要人类去检查所有存储在变量名里面的复杂定义, 所以可读性很重要parser or 证明辅助程序能让人类从需要检阅所有步骤 reduce to 检阅定义, 跳过大量详细证明步骤, 就能确定证明结果的正确性. 这像 API 的情况人脑编译器能省略和补充省略, 用容易出错和遗忘来换取临时效率而且证明辅助还会有其它作用, 类似于, IDE/LSP/友好且互动的编译器错误信息/documentation 时代之前的编程是痛苦的, 数据和信息的组织和结构化和复用做得不好, 也没利用好计算机的强大记忆容量和时间  proposition_(tag)   proposition 是特殊的 (string, bool) product struct ((字符串, 真假值) 的逻辑乘积结构) 计算机数据结构. 对于数学语言, string field 使用特殊的构造规则来限制, 此 string 限制版本称为 formula因为我们无法直接判断一个猜测的真假, 所以我们需要一种具有未定义真假值的语言from 命题 to 未知命题的, 其真值部分被修改为 (bool, unknow) sum structAbbreviation true proposition 和 proposition 经常混用很多命题是无法被计算机自动推导出来的, 需要人类去寻找可能的路径, 输入到计算机中进行验证, 或者开发更多新的自动化证明方法我们将假设一些最开始的不需要证明的命题. 以及假设规则之使用现有命题构造新命题Abbreviation 使用相同的符号 ϕ for formula and proposition, &amp;quot;ϕ is true/false/unknow&amp;quot;, ϕ&#x3D;0/1/?  formula_(tag)  in (属于)let symbol (符号) 𝑎,𝐴 be type of math object, then 𝑎∈𝐴 is a formula𝑎∈𝐴 类似于 value : type or variable_name : type in programming languagesymbol ∈ 不是 math objectequal (等于)let 𝑎,𝑏 be object, then 𝑎&#x3D;𝑏 is a formulaand, or, not (且, 或, 非)let 𝑝,𝑞 be formula, then𝑝∧𝑞𝑝∨𝑞¬𝑞is formulaforall, exists (所有, 存在)设 𝑝(𝑎) 是用 𝑎 构造的公式 i.e. 在内存中读取 𝑎∈𝐴, 使用特殊的函数调用, 则⋀𝑎∈𝐴𝑝(𝑎)  or  ∀𝑎∈𝐴,𝑝(𝑎)⋁𝑎∈𝐴𝑝(𝑎)  or  ∃𝑎∈𝐴,𝑝(𝑎)is formulainference (推导) 𝑝⇒𝑞, equivalent (等价) 𝑝⇔𝑞 is formula以下讨论 math-object-construct-rule (数学对象构造规则) alias set-theory (集合论)  natural-number_(tag)   ℕnatrual number 0,1,2,… and natrual number set ℕ is object. 0,1,2,…∈ℕ is true proposition但是计算机无法处理无限. 为了让计算机能用有限的字符和内存去表示自然数集, 把 𝑛,ℕ 和 +1 函数作为内存地址里的有限 symbol, 定义以下为 true proposition0∈ℕ𝑛∈ℕ⟹𝑛+1∈ℕ等价于用指令流告诉计算机如何连续地 +1? 也联系到归纳法有限的字符的代价是潜在无限的时间, 总是借助了数数或者周期电路  empty_(tag)   ∅empty ∅ is object. let 𝑎 be a object, 𝑎∈∅ is false propositionThe definition of ∅ 方便用于 intersections ∩ e.g. 交集为空, 和有限集 𝐴 的 Subset(𝐴) 的元素数量, 2𝑛 比 2𝑛−1 方便定义语言展开𝑎≠𝑏≔¬(𝑎&#x3D;𝑏)𝑎∉𝐴≔¬(𝑎∈𝐴)由于 “定义语言展开” 很长, 因此通常 abbreviated to &amp;quot;definition&amp;quot; &amp;quot;def&amp;quot;其实 symbol &#x3D; 通常也被用来表示定义语言展开或者规定语言转化. 具体自然数的 &#x3D; 可以直接定义为用计算机电路比较内存的值  declare-element-of-set_(tag)  If 𝐴 is non empty 𝐴≠∅ (此信息来自 𝐴 的定义), we can define symbol 𝑎 and construct true proposition (let) 𝑎∈𝐴可以构造有限个 declare 语句  enum_(tag)   enumerate𝑎0,…,𝑎𝑛 is object then {𝑎0,…,𝑎𝑛} is a set表示为内存里的数列整个集合可以被这样调用: 记录第一个元素地址 + 数组长度作为电路周期数量, 每个电路周期读取一个元素formulas 𝑎0,…,𝑎𝑛∈{𝑎0,…,𝑎𝑛} are true propositions特别地, 单元素集合 𝑎∈{𝑎}define 𝐴⊂𝐵≔∀𝑎∈𝐴,𝑎∈𝐵  equivalent_(tag)   ⟺等价的一些使用. 对计算机数据来说, 可以穷举证明以下计算结果相等¬(¬𝑝)⟺𝑝¬(𝑝∧𝑞)⟺(¬𝑝)∨(¬𝑞)类似地, 为了表示 &amp;quot;无限元素&amp;quot; 的情况, 定义语言展开或者规定语言转化. 例如无限元素的 De Morgan law¬(⋀𝑎∈𝐴𝑝(𝑎))⟺⋁𝑎∈𝐴¬𝑝(𝑎) or ¬(∀𝑎∈𝐴,𝑝(𝑎))⟺∃𝑎∈𝐴,¬𝑝(𝑎)其中 &amp;quot;无限&amp;quot; 的概念有的限化是使用 #link(&lt;declare-element-of-set&gt;)[] 的符号串 𝑎∈𝐴formula, proposition 是内存里特殊的数据结构. 可以认为 math_object, formula, proposition 是编程语言的 type许多命题是等价的, 于是可以考虑命题的 &amp;quot;quotient&amp;quot; 类型, 但等价可能性是无限的, 是否可能从存在穷举算法, 首先要看它是否 #link(&lt;countable&gt;)[] …类似 ∧,∨,¬ 的冗余, set theory construction rules 也有可能有冗余, 或者说有很多等价的定义方式规定 (有限的)&#x3D; transitive :&#x3D; (𝑎&#x3D;𝑏)∧(𝑏&#x3D;𝑐)⟹(𝑎&#x3D;𝑐)⇔ transitive :&#x3D; (𝑝⇔𝑞)∧(𝑞⇔𝑟)⟹(𝑝⇔𝑟)follow #link(&lt;bool-algebra&gt;)[有限情况的 bool 的各种规则], 定义语言转换规则: let 𝑝(𝑎,𝑏) is formula built with independent/parallel 𝑎,𝑏 i.e. independent/parallel in memory read and used by specific cuntion, then  commutative-forall-exists_(tag)  ⋀𝑎∈𝐴⋀𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋀𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)same for ⋁  distributive-forall-exists_(tag)  ⋀𝑎∈𝐴⋁𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋁𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)注意, 我自己也觉得我无法完全清晰地处理下面的推导和证明的概念推导的自然语言例子如果下雨, 我不会出门下雨了所以我不会出门这个例子类似于 conditional branch (条件分支)rain : bool;out : bool;switch (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined};  inference_(tag)   对于数学语言, 那就是编译器读取到 formula 𝑝,𝑞编译器读取到 formula 𝑝⇒𝑞 is true proposition (可能来自定义)编译器读取到 formula 𝑝 is true proposition然后语言规则设置是, 编译器根据这种条件 (来自内存), 赋予 formula 𝑞 的 bool 值为 true i.e. 设置 𝑞 is true proposition  proof_(tag)   证明就是编译通过 𝑝⇒𝑞 is true proposition又一种等价 𝑝⇔𝑞≔(𝑝⇒𝑞)∧(𝑞⇒𝑝)  reverse-inference_(tag)   反向推导. 如果结果是我出门了, 那么肯定不是下雨的结果. 如果条件分支的结果是 out &#x3D; true, 这不是 rain &#x3D; true 的结果. 由于理想二进制计算机的 bool 值必定二选一, 所以只能是 rain &#x3D; false 的结果. 这可以被写为条件分支switch (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined};数学上, 反向推导写为 formula ¬𝑞⇒¬𝑝, 并定义等价到 𝑝⇒𝑞  reverse-proof_(tag)   反证明就是编译通过 ¬𝑝⇒¬𝑞 is true proposition演绎证明还需要三段论 (syllogism)所有生物都会死人是生物所以所有人都会死其中 &amp;quot;所有生物都会死&amp;quot; 是特殊构造的一种命题  syllogism_(tag)   三段论推导是语言规则编译器读取到 formula (∀𝑎∈𝐴,𝑝(𝑎)) is true proposition (可能来自定义 e.g. #link(&lt;union&gt;)[]))编译器读取到声明 let 𝑎′∈𝐴 is true proposition编译器读取到 formula 𝑝(𝑎′)然后编译器根据这种条件 (来自内存) 设置 𝑝(𝑎′) is true proposition也即, 编译器根据声明 (∀𝑎∈𝐴,𝑝(𝑎)) (可能 &amp;quot;无限&amp;quot;) 来实现对数据的具体构造 (有限)或者理解为, 这种规则和行为就是在定义 (∀𝑎∈𝐴,𝑝(𝑎)) 这种概念本身通常也被写为等价的规则 let 𝑎′∈𝐴, then 特殊的推导 formula (∀𝑎∈𝐴,𝑝(𝑎))⟹𝑝(𝑎′) is always true proposition. 这种形式通常被用于 #link(&lt;proof&gt;)[前面] 所说的 &amp;quot;证明就是编译通过 𝑝⇒𝑞 is true proposition&amp;quot;反向三段论: let 𝑎′∈𝐴, then 等价的 formula ¬𝑝(𝑎′)⟹¬(∀𝑎∈𝐴,𝑝(𝑎)) or ∃𝑎∈𝐴,¬𝑝(𝑎) is true proposition我们可能永远不知道一个 bool unknow 的 proposition 是否能被构造性地证明, i.e. 有限步骤编译成功target proposition 来自哪里? 可能是相关于现实世界的模型证明需要展开大量句子, 尽管计算机处理 string 是非常快的. 无论如何, 性能优化? 仅在需要时使用 (lazy load)? 两个 proposition 不相互依赖时, 并行 (parallel)? 假设已经证明过的结果 (incremental compilation)?A proposition has many proofs with different runtime data flow, 可以认为它们属于同一个 quotient proof of this proposition以下的 object construction rules, 除了交集, 一般都给出 non-emtpy sets  union_(tag)  define object ⋃𝐴 和语言展开𝑥∈𝑎∪𝑎′≔(𝑥∈𝑎)∨(𝑥∈𝑎′)𝑥∈⋃𝐴≔⋁𝑎∈𝐴𝑥∈𝑎≔∃𝑎∈𝐴,𝑥∈𝑎is non-emtpy unless ∀𝑎∈𝐴,𝑎&#x3D;∅𝐴∪𝐴&#x3D;𝐴我们不对 𝐴&#x3D;∅ 定义 union. 下同. 理由是 let 𝑎∈𝐴&#x3D;∅ is always false proposition, 这使得很多东西不能用  sum_(tag)  𝑥∈𝑎⊔𝑎′≔(𝑥∈𝑎)⊕(𝑥∈𝑎′)𝑥∈⨆𝐴≔⨁𝑎∈𝐴𝑥∈𝑎≔∃!𝑎∈𝐴,𝑥∈𝑎is non-emtpy unless ∀𝑎∈𝐴,𝑎&#x3D;∅in finite case, number of element |⨁1𝑛𝐴𝑖|&#x3D;∑1𝑛|𝐴𝑖|enum is special case of sum/union?  intersection_(tag)  𝑥∈𝑎∩𝑎′≔(𝑥∈𝑎)∧(𝑥∈𝑎′)𝑥∈⋂𝐴≔⋀𝑎∈𝐴𝑥∈𝑎≔∀𝑎∈𝐴,𝑥∈𝑎𝐴∩𝐴&#x3D;𝐴  product_(tag)  𝑥∈𝑎×𝑎′≔(𝑥(𝑎)∈𝑎)∧(𝑥(𝑎′)∈𝑎′)𝑥∈∏𝐴≔⋀𝑎∈𝐴𝑥(𝑎)∈𝑎≔∀𝑎∈𝐴,𝑥(𝑎)∈𝑎is non-emtpy unless ∃𝑎∈𝐴,𝑎&#x3D;∅ (related to   axiom-of-choice_(tag)   )Abbreviation 𝐴×𝐴&#x3D;𝐴2. in finite case, number of elements |∏1𝑛𝐴𝑖|&#x3D;∏1𝑛|𝐴𝑖|𝑥(𝑎) 表示将两个 symbol 作为一个组合 symbol 来读取  map_(tag)  let 𝐴,𝐵 is math object. 定义 map space 𝐴→𝐵, map 𝑓 as math object 的规则是𝑓∈(𝐴→𝐵)≔⋀𝑎∈𝐴𝑓(𝑎)∈𝐵≔∀𝑎∈𝐴,𝑓(𝑎)∈𝐵denoted by 𝑓:𝐴→𝐵denoted by 𝑓∈𝐵𝐴. in finite case, number of elements |𝐵𝐴|&#x3D;|𝐵||𝐴|𝑓,𝑓(𝑎),𝑓(𝑎)∈𝐵 的使用虽然看起来有问题, 但它们仍然在 symbol &amp;amp; symbol 串方面是可以定义的如果谈到 map 𝑓 具体代表什么, 由于非具体构造性, 没有一般编程语言那样的具体的 return, 或者 return 的是新定义的 symbol, math object, 语言展开  subset_(tag)  𝑆∈Subset(𝐴)≔𝑆⊂𝐴denoted by 2𝐴. 根据 #link(&lt;proposition-function&gt;)[] 等价于 map space 𝐴→{0,1}. in finite case, number of elements |2𝐴|&#x3D;2|𝐴|define ∅⊂𝐴 be true propositionmap space 和 subset 引入了高级别的无限一件初看反直觉的事情是, 我们似乎知道所有 𝑆⊂ℕ 或所有 𝑓:ℕ→ℕ, 却无法数出来 #link(&lt;cardinal-increase&gt;)[] #link(&lt;uncountable&gt;)[]. 但是, &amp;quot;知道所有 𝑆⊂ℕ&amp;quot; 究竟是什么意思? 事实上, 试着考虑 &amp;quot;一般方式之找一个 ℕ 的无限子集&amp;quot; 这一个问题, 就会发现这不是简单的类似地, 虽然可数已经可以定义一些实数 e.g. ∑1𝑛!&#x3D;𝑒, 但如果不借助 subset or map, 可数地构造无法得到全部 ℝ  proposition-function_(tag)  let 𝑎∈𝐴, 𝑝(𝑎):𝐴→{0,1} is already constructed{𝑎∈𝐴:𝑝(𝑎)} is object𝑥∈{𝑎∈𝐴:𝑝(𝑎)}≔(𝑥∈𝐴)∧𝑝(𝑥)define𝐴&#x3D;𝐵≔(𝑥∈𝐴)⟺(𝑥∈𝐵)&#x3D; 的其它用法内存里的 identifier 的别名内存里的函数返回值. so 1+1&#x3D;2 应该理解为 add function 的返回值是 2  hierarchy-order-of-set_(tag)  以上构造的 set 称为 zero (hierarchy) order set𝐴∈ Set or 𝐴∈ Set 0then let Set 0 be math object, in first order setSet 0∈ Set 1再次使用 object construction rules, 得到的东西也定义为属于 Set 1无论如何我们总是可以在编译器中构造这种带有类型和 bool 和各种规则的语言. 虽然还有编译器的编译器, 编译器的层数也可以是无限的 …let Set 1 be math object, Set 1∈ Set 2. 诸如此类 …ExampleSet × Set ∈ Set 1(Set → Set)∈ Set 1Group ∈ Set 1(𝐺,𝑚)∈ Group ≔𝐺∈ Set 𝑚∈ Set property-group-multiplication(𝐺,𝑚)(e.g.  𝑚∈(𝐺2→𝐺))可以被分成多句, 使得可以方便的加入/移除 property, 来得到不同的 structSet 0, Set 1,… 看起来像自然数集 ℕ, 所以应该再假设新的 hierarchy Set ℕ 吗? 然后对 Set ℕ, 继续使用 object construct rule …上面的构造规则会导致矛盾或者计算机死循环吗?一直无限地构造下去, 这种语言是否有终点?  universal-set_(tag)  是否存在 &amp;quot;set of every set&amp;quot;, a &amp;quot;universal set&amp;quot;? or &amp;quot;universal type&amp;quot;?使用 set theory rules 定义𝐴≔{𝑥∈ universal-set :¬(𝑥∈𝑥)}∈ universal-set然后让编译器去计算命题 𝐴∈𝐴 的 bool, 由于 𝐴∈ universal-set &#x3D; true, 编译器只计算 ¬(𝐴∈𝐴) 的 bool, 然后发现 not 函数, 所以计算 not 里面的 bool, 但这又回到了计算 𝐴∈𝐴 的 bool, 编译器可能选择进入电路死循环对于有限集, 𝑥∉𝑥 或者无法判断, e.g. {1}∉{1}, 因为 1≠{1}, 或者没有定义 𝑥∈1 is true proposition相关于自指悖论. Example &amp;quot;这个句子是错的&amp;quot; 给出计算机死循环this_sentence_is_false : bool &#x3D; false;loop:  switch (this_sentence_is_false) {    false &#x3D;&gt; this_sentence_is_false &#x3D; true,    true &#x3D;&gt; this_sentence_is_false &#x3D; false  }   goto loop};或者用分层绕过自指悖论 (this_sentence &#x3D; false) &#x3D; true. 认为它们是不同的句子和判断, 认为它并不能自指如果对于一个数我们能数出来, 我们就认为它是自然数如果能用有限步写出语言规则并构造出语言对象, 我们就认为是可构造的, 可说的. 对于集合论, 能够这样有限步构造出来的, 就称其为 math object (数学对象)对于自然数的无限的问题, 如果用数数或者归纳法或者周期电路来定义自然数, 的则把无限的问题推给了无限时间对于集合论语言, 假设 universal-set or universal-type 导致能构造出让电路进入死循环  dependent-distributive_(tag)  union &amp;amp; interset⋂𝑎∈𝐴⋃𝑥∈∏𝐴𝑥(𝑎)&#x3D;⋃𝑥∈∏𝐴⋂𝑎∈𝐴𝑥(𝑎)⋃𝑎∈𝐴⋂𝑥∈∏𝐴𝑥(𝑎)&#x3D;⋂𝑥∈∏𝐴⋃𝑎∈𝐴𝑥(𝑎)sum and product∏𝑎∈𝐴⨆𝑥∈∏𝐴𝑥(𝑎)&#x3D;⨆𝑥∈∏𝐴∏𝑎∈𝐴𝑥(𝑎)⨆𝑎∈𝐴∏𝑥∈∏𝐴𝑥(𝑎)&#x3D;∏𝑥∈∏𝐴⨆𝑎∈𝐴𝑥(𝑎)draft of proof: 展开, 使用 parallel distributive cf. #link(&lt;distributive-forall-exists&gt;)[]  set-minus_(tag)  𝐴∖𝐵≔{𝑥∈𝐴:𝑥∉𝐵}. if 𝐵⊂𝐴 then define 𝐵∁≔𝐴∖𝐵  symmetric-set-minus_(tag)  𝐴Δ𝐵≔(𝐴∖𝐵)⊔(𝐵∖𝐴)&#x3D;(𝐴∪𝐵)∖(𝐴∩𝐵)  coordinate-component_(tag)  product component∏𝐴⟶𝑎𝑥⟿𝑥(𝑎)sum component𝑎⟶⨆𝐴𝑥⟿𝑥(𝑎)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 
@@ -89,7 +92,7 @@
         <script>
             var path_to_root = "/";
             window.typstPathToRoot = path_to_root;
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "coal";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -129,7 +132,7 @@
             // todo: consistent theme between html and typst
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('coal')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -150,7 +153,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/HTML-notice.html">HTML-notice</a></li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html" class="active"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html" class="active"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -240,6 +243,10 @@
        window.typstBookRenderHtmlPage("/item/set-theory", appContainer);
     });
 </script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
   <p>对人来说, 一种理解自然数的方式是数数 (counting)</p>
   <p>对计算机来说 (cf. <code>#link(&lt;logic.typ>)[]</code>), 表示自然数的方式有</p>
   <ul>
@@ -257,10 +264,7 @@
   </ul>
   <p>验证集合论语言的正确性需要 parser, 内存数据结构, 函数. 生成的计算机指令流的实现并不是这个目标范围的重点</p>
   <p>集合/类型的动机</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li>
         <p>模块化和乘法分解以简化认知</p>
@@ -271,72 +275,54 @@
       </li>
     </ul>
   </div>
-  <p>复杂的 set theory object, proposition 被储存在变量名里, 所以还是需要人类去检查所有存储在变量名里面的复杂定义, 所以可读性很重要</p>
+  <p>复杂的 set theory object (集合论对象), proposition (命题) 被储存在变量名里, 所以还是需要人类去检查所有存储在变量名里面的复杂定义, 所以可读性很重要</p>
   <p>parser or 证明辅助程序能让人类从需要检阅所有步骤 reduce to 检阅定义, 跳过大量详细证明步骤, 就能确定证明结果的正确性. 这像 API 的情况</p>
   <p>人脑编译器能省略和补充省略, 用容易出错和遗忘来换取临时效率</p>
   <p>而且证明辅助还会有其它作用, 类似于, IDE/LSP/友好且互动的编译器错误信息/documentation 时代之前的编程是痛苦的, 数据和信息的组织和结构化和复用做得不好, 也没利用好计算机的强大记忆容量和时间</p>
-  <p><code data-typst-label="proposition">&lt;proposition></code> proposition 是特殊的 (string, bool) product struct 计算机数据结构. 对于数学语言, string field 使用特殊的构造规则来限制, 此 string 限制版本称为 formula</p>
+  <p>  <code>proposition</code><em>_(tag)</em>   proposition 是特殊的 (string, bool) product struct ((字符串, 真假值) 的逻辑乘积结构) 计算机数据结构. 对于数学语言, string field 使用特殊的构造规则来限制, 此 string 限制版本称为 formula</p>
   <p>因为我们无法直接判断一个猜测的真假, 所以我们需要一种具有未定义真假值的语言</p>
   <p>from 命题 to 未知命题的, 其真值部分被修改为 (bool, unknow) sum struct</p>
   <p><strong>Abbreviation</strong> true proposition 和 proposition 经常混用</p>
   <p>很多命题是无法被计算机自动推导出来的, 需要人类去寻找可能的路径, 输入到计算机中进行验证, 或者开发更多新的自动化证明方法</p>
   <p>我们将假设一些最开始的不需要证明的命题. 以及假设规则之使用现有命题构造新命题</p>
   <p><strong>Abbreviation</strong> 使用相同的符号 <span><math><mi mathvariant="normal">ϕ</mi></math></span> for formula and proposition, "<span><math><mi mathvariant="normal">ϕ</mi></math></span> is true/false/unknow", <span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>=</mo><mrow><mn>0</mn><mo>/</mo><mn>1</mn><mo>/</mo><mo>?</mo></mrow></mrow></math></span></p>
-  <p><code data-typst-label="formula">&lt;formula></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>formula</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <ul>
-      <li>in</li>
+      <li>in (属于)</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
-      <p>let symbol <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝐴</mi></mrow></math></span> be type of math object, then <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is a formula</p>
+    <div class="indent">
+      <p>let symbol (符号) <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝐴</mi></mrow></math></span> be type of math object, then <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is a formula</p>
       <p><span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> 类似于 <code>value : type</code> or <code>variable_name : type</code> in programming language</p>
       <p>symbol <span><math><mo>∈</mo></math></span> 不是 math object</p>
     </div>
     <ul>
-      <li>equal</li>
+      <li>equal (等于)</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">let <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow></math></span> be object, then <span><math><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow></math></span> is a formula</div>
+    <div class="indent">let <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow></math></span> be object, then <span><math><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow></math></span> is a formula</div>
     <ul>
-      <li>and, or, not</li>
+      <li>and, or, not (且, 或, 非)</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>let <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> be formula, then</p>
       <math display="block"><mtable><mtr><mtd><mi>𝑝</mi><mo>∧</mo><mi>𝑞</mi></mtd></mtr><mtr><mtd><mi>𝑝</mi><mo>∨</mo><mi>𝑞</mi></mtd></mtr><mtr><mtd><mo>¬</mo><mi>𝑞</mi></mtd></mtr></mtable></math>
       <p>is formula</p>
     </div>
     <ul>
-      <li>forall, exists</li>
+      <li>forall, exists (所有, 存在)</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
-      <p>let <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> be formula built with <span><math><mi>𝑎</mi></math></span> i.e. read <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> in memory, used by some specific function call, then</p>
+    <div class="indent">
+      <p>设 <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> 是用 <span><math><mi>𝑎</mi></math></span> 构造的公式 i.e. 在内存中读取 <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span>, 使用特殊的函数调用, 则</p>
       <math display="block"><mtable><mtr><mtd><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mtext>  or  </mtext><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mtext>  or  </mtext><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
       <p>is formula</p>
     </div>
     <ul>
-      <li>inference <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span>, equivalent <span><math><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi></mrow></math></span> is formula</li>
+      <li>inference (推导) <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span>, equivalent (等价) <span><math><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi></mrow></math></span> is formula</li>
     </ul>
   </div>
-  <p>以下讨论 math-object-construct-rule <strong>alias</strong> set-theory</p>
-  <p><code data-typst-label="natural-number">&lt;natural-number></code> <span><math><mi mathvariant="normal">ℕ</mi></math></span></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>以下讨论 math-object-construct-rule (数学对象构造规则) <strong>alias</strong> set-theory (集合论)</p>
+  <p>  <code>natural-number</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℕ</mi></math></span></p>
+  <div class="indent">
     <p>natrual number <span><math><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo></mrow></math></span> and natrual number set <span><math><mi mathvariant="normal">ℕ</mi></math></span> is object. <span><math><mrow><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo></mrow><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> is true proposition</p>
     <p>但是计算机无法处理无限. 为了让计算机能用有限的字符和内存去表示自然数集, 把 <span><math><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> 和 <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span> 函数作为内存地址里的有限 symbol, 定义以下为 true proposition</p>
     <ul>
@@ -346,11 +332,8 @@
     <p>等价于用指令流告诉计算机如何连续地 <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>? 也联系到归纳法</p>
     <p>有限的字符的代价是潜在无限的时间, 总是借助了数数或者周期电路</p>
   </div>
-  <p><code data-typst-label="empty">&lt;empty></code> <span><math><mo>∅</mo></math></span></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>empty</code><em>_(tag)</em>   <span><math><mo>∅</mo></math></span></p>
+  <div class="indent">
     <p>empty <span><math><mo>∅</mo></math></span> is object. let <span><math><mi>𝑎</mi></math></span> be a object, <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mo>∅</mo></mrow></math></span> is false proposition</p>
     <p>The definition of <span><math><mo>∅</mo></math></span> 方便用于 intersections <span><math><mo>∩</mo></math></span> e.g. 交集为空, 和有限集 <span><math><mi>𝐴</mi></math></span> 的 <span><math><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span> 的元素数量, <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> 比 <span><math><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></math></span> 方便</p>
   </div>
@@ -361,19 +344,13 @@
   </ul>
   <p>由于 “定义语言展开” 很长, 因此通常 abbreviated to "<strong>definition</strong>" "<strong>def</strong>"</p>
   <p>其实 symbol <span><math><mo>=</mo></math></span> 通常也被用来表示定义语言展开或者规定语言转化. 具体自然数的 <span><math><mo>=</mo></math></span> 可以直接定义为用计算机电路比较内存的值</p>
-  <p><code data-typst-label="declare-element-of-set">&lt;declare-element-of-set></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>declare-element-of-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>If <span><math><mi>𝐴</mi></math></span> is non empty <span><math><mrow><mi>𝐴</mi><mo>≠</mo><mo>∅</mo></mrow></math></span> (此信息来自 <span><math><mi>𝐴</mi></math></span> 的定义), we can define symbol <span><math><mi>𝑎</mi></math></span> and construct true proposition (let) <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span></p>
     <p>可以构造有限个 declare 语句</p>
   </div>
-  <p><code data-typst-label="enum">&lt;enum></code> enumerate</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>enum</code><em>_(tag)</em>   enumerate</p>
+  <div class="indent">
     <p><span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math></span> is object then <span><math><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></math></span> is a set</p>
     <p>表示为内存里的数列</p>
     <p>整个集合可以被这样调用: 记录第一个元素地址 + 数组长度作为电路周期数量, 每个电路周期读取一个元素</p>
@@ -381,11 +358,8 @@
     <p>特别地, 单元素集合 <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mrow><mo>{</mo><mi>𝑎</mi><mo>}</mo></mrow></mrow></math></span></p>
   </div>
   <p>define <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝐵</mi><mo>≔</mo><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐵</mi></mrow></math></span></p>
-  <p><code data-typst-label="equivalent">&lt;equivalent></code> <span><math><mo>⟺</mo></math></span></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>equivalent</code><em>_(tag)</em>   <span><math><mo>⟺</mo></math></span></p>
+  <div class="indent">
     <p>等价的一些使用. 对计算机数据来说, 可以穷举证明以下计算结果相等</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi>𝑝</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>∧</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
     <p>类似地, 为了表示 "无限元素" 的情况, 定义语言展开或者规定语言转化. 例如无限元素的 De Morgan law</p>
@@ -399,40 +373,31 @@
   <p><span><math><mo>=</mo></math></span> transitive := <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>=</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
   <p><span><math><mo>⇔</mo></math></span> transitive := <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑞</mi><mo>⇔</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
   <p>follow <code>#link(&lt;bool-algebra>)[有限情况的 bool 的各种规则]</code>, 定义语言转换规则: let <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></math></span> is formula built with independent/parallel <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow></math></span> i.e. independent/parallel in memory read and used by specific cuntion, then</p>
-  <p><code data-typst-label="commutative-forall-exists">&lt;commutative-forall-exists></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>commutative-forall-exists</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>⟺</mo><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
     <p>same for <span><math><mo>⋁</mo></math></span></p>
   </div>
-  <p><code data-typst-label="distributive-forall-exists">&lt;distributive-forall-exists></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  "><math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>⟺</mo><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
+  <p>  <code>distributive-forall-exists</code><em>_(tag)</em>  </p>
+  <div class="indent"><math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>⟺</mo><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
   <p>注意, 我自己也觉得我无法完全清晰地处理下面的推导和证明的概念</p>
   <p>推导的自然语言例子</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">如果下雨, 我不会出门<br>下雨了<br>所以我不会出门</div>
-  <p>这个例子类似于条件分支 (conditional branch)</p>
+  <div class="indent">如果下雨, 我不会出门<br>下雨了<br>所以我不会出门</div>
+  <p>这个例子类似于 conditional branch (条件分支)</p>
   <pre>rain : bool;<br>out : bool;<br>switch (rain) {<br>  true => out = false,<br>  false => out = undefined<br>};</pre>
-  <p><code data-typst-label="inference">&lt;inference></code> 对于数学语言, 那就是</p>
+  <p>  <code>inference</code><em>_(tag)</em>   对于数学语言, 那就是</p>
   <ul>
     <li>编译器读取到 formula <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span></li>
     <li>编译器读取到 formula <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition (可能来自定义)</li>
     <li>编译器读取到 formula <span><math><mi>𝑝</mi></math></span> is true proposition</li>
     <li>然后语言规则设置是, 编译器根据这种条件 (来自内存), 赋予 formula <span><math><mi>𝑞</mi></math></span> 的 bool 值为 true i.e. 设置 <span><math><mi>𝑞</mi></math></span> is true proposition</li>
   </ul>
-  <p><code data-typst-label="proof">&lt;proof></code> 证明就是编译通过 <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
+  <p>  <code>proof</code><em>_(tag)</em>   证明就是编译通过 <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
   <p>又一种等价 <span><math><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑞</mi><mo>⇒</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
-  <p><code data-typst-label="reverse-inference">&lt;reverse-inference></code> 反向推导. 如果结果是我出门了, 那么肯定不是下雨的结果. 如果条件分支的结果是 <code>out = true</code>, 这不是 <code>rain = true</code> 的结果. 由于理想二进制计算机的 bool 值必定二选一, 所以只能是 <code>rain = false</code> 的结果. 这可以被写为条件分支</p>
+  <p>  <code>reverse-inference</code><em>_(tag)</em>   反向推导. 如果结果是我出门了, 那么肯定不是下雨的结果. 如果条件分支的结果是 <code>out = true</code>, 这不是 <code>rain = true</code> 的结果. 由于理想二进制计算机的 bool 值必定二选一, 所以只能是 <code>rain = false</code> 的结果. 这可以被写为条件分支</p>
   <pre>switch (out) {<br>  true => rain = false,<br>  false => rain = undefined<br>};</pre>
   <p>数学上, 反向推导写为 formula <span><math><mrow><mo>¬</mo><mi>𝑞</mi><mo>⇒</mo><mo>¬</mo><mi>𝑝</mi></mrow></math></span>, 并定义等价到 <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span></p>
-  <p><code data-typst-label="reverse-proof">&lt;reverse-proof></code> 反证明就是编译通过 <span><math><mrow><mo>¬</mo><mi>𝑝</mi><mo>⇒</mo><mo>¬</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
+  <p>  <code>reverse-proof</code><em>_(tag)</em>   反证明就是编译通过 <span><math><mrow><mo>¬</mo><mi>𝑝</mi><mo>⇒</mo><mo>¬</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
   <p>演绎证明还需要三段论 (syllogism)</p>
   <ol>
     <li>所有生物都会死<br></li>
@@ -440,7 +405,7 @@
     <li>所以所有人都会死</li>
   </ol>
   <p>其中 "所有生物都会死" 是特殊构造的一种命题</p>
-  <p><code data-typst-label="syllogism">&lt;syllogism></code> 三段论推导是语言规则</p>
+  <p>  <code>syllogism</code><em>_(tag)</em>   三段论推导是语言规则</p>
   <ul>
     <li>编译器读取到 formula <span><math><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></math></span> is true proposition (可能来自定义 e.g. <code>#link(&lt;union>)[]</code>))</li>
     <li>编译器读取到声明 let <span><math><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is true proposition</li>
@@ -456,11 +421,8 @@
   <p>证明需要展开大量句子, 尽管计算机处理 string 是非常快的. 无论如何, 性能优化? 仅在需要时使用 (lazy load)? 两个 proposition 不相互依赖时, 并行 (parallel)? 假设已经证明过的结果 (incremental compilation)?</p>
   <p>A proposition has many proofs with different runtime data flow, 可以认为它们属于同一个 quotient proof of this proposition</p>
   <p>以下的 object construction rules, 除了交集, 一般都给出 non-emtpy sets</p>
-  <p><code data-typst-label="union">&lt;union></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>union</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/union.jpeg" width="30%">
     <p>define object <span><math><mrow><mo>⋃</mo><mi>𝐴</mi></mrow></math></span> 和语言展开</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>∪</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⋃</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
@@ -468,39 +430,27 @@
     <p><span><math><mrow><mi>𝐴</mi><mo>∪</mo><mi>𝐴</mi><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
     <p>我们不对 <span><math><mrow><mi>𝐴</mi><mo>=</mo><mo>∅</mo></mrow></math></span> 定义 union. 下同. 理由是 let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>=</mo><mo>∅</mo></mrow></math></span> is always false proposition, 这使得很多东西不能用</p>
   </div>
-  <p><code data-typst-label="sum">&lt;sum></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>sum</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/sum.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>⊔</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>⊕</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⨆</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⨁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>∃</mo><mo>!</mo></mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
     <p>is non-emtpy unless <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span></p>
     <p>in finite case, number of element <span><math><mrow><mrow><mo>|</mo><mrow><msubsup><mo>⨁</mo><mn>1</mn><mi>𝑛</mi></msubsup><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>|</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mn>1</mn><mi>𝑛</mi></msubsup><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
   </div>
   <p>enum is special case of sum/union?</p>
-  <p><code data-typst-label="intersection">&lt;intersection></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>intersection</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/intersection.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>∩</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⋂</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
     <p><span><math><mrow><mi>𝐴</mi><mo>∩</mo><mi>𝐴</mi><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="product">&lt;product></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>product</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/product.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>×</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
-    <p>is non-emtpy unless <span><math><mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span> (related to <code data-typst-label="axiom-of-choice">&lt;axiom-of-choice></code>)</p>
+    <p>is non-emtpy unless <span><math><mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span> (related to   <code>axiom-of-choice</code><em>_(tag)</em>   )</p>
     <p><strong>Abbreviation</strong> <span><math><mrow><mi>𝐴</mi><mo>×</mo><mi>𝐴</mi><mo>=</mo><msup><mi>𝐴</mi><mn>2</mn></msup></mrow></math></span>. in finite case, number of elements <span><math><mrow><mrow><mo>|</mo><mrow><msubsup><mo>∏</mo><mn>1</mn><mi>𝑛</mi></msubsup><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>|</mo></mrow><mo>=</mo><msubsup><mo>∏</mo><mn>1</mn><mi>𝑛</mi></msubsup><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
     <p><span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> 表示将两个 symbol 作为一个组合 symbol 来读取</p>
   </div>
-  <p><code data-typst-label="map">&lt;map></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>map</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/map.jpeg" width="30%">
     <p>let <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> is math object. 定义 map space <span><math><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow></math></span>, map <span><math><mi>𝑓</mi></math></span> as math object 的规则是</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑓</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mtd></mtr></mtable></math>
@@ -509,11 +459,8 @@
     <p><span><math><mrow><mrow><mi>𝑓</mi><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mrow></math></span> 的使用虽然看起来有问题, 但它们仍然在 symbol &amp; symbol 串方面是可以定义的</p>
     <p>如果谈到 map <span><math><mi>𝑓</mi></math></span> 具体代表什么, 由于非具体构造性, 没有一般编程语言那样的具体的 <code>return</code>, 或者 <code>return</code> 的是新定义的 symbol, math object, 语言展开</p>
   </div>
-  <p><code data-typst-label="subset">&lt;subset></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>subset</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <img src="../image/subset.jpeg" width="30%"><math display="block"><mrow><mi>𝑆</mi><mo>∈</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>≔</mo><mi>𝑆</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math>
     <p>denoted by <span><math><msup><mn>2</mn><mi>𝐴</mi></msup></math></span>. 根据 <code>#link(&lt;proposition-function>)[]</code> 等价于 map space <span><math><mrow><mi>𝐴</mi><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span>. in finite case, number of elements <span><math><mrow><mrow><mo>|</mo><msup><mn>2</mn><mi>𝐴</mi></msup><mo>|</mo></mrow><mo>=</mo><msup><mn>2</mn><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mrow></math></span></p>
     <p>define <span><math><mrow><mo>∅</mo><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> be true proposition</p>
@@ -521,11 +468,8 @@
   <p>map space 和 subset 引入了高级别的无限</p>
   <p>一件初看反直觉的事情是, 我们<em>似乎</em>知道所有 <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> 或所有 <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, 却无法数出来 <code>#link(&lt;cardinal-increase>)[]</code> <code>#link(&lt;uncountable>)[]</code>. 但是, "知道所有 <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>" 究竟是什么意思? 事实上, 试着考虑 "一般方式之找一个 <span><math><mi mathvariant="normal">ℕ</mi></math></span> 的无限子集" 这一个问题, 就会发现这不是简单的</p>
   <p>类似地, 虽然可数已经可以定义一些实数 e.g. <span><math><mrow><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>=</mo><mi>𝑒</mi></mrow></math></span>, 但如果不借助 subset or map, 可数地构造无法得到全部 <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
-  <p><code data-typst-label="proposition-function">&lt;proposition-function></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>proposition-function</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span>, <span><math><mrow><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>:</mo><mi>𝐴</mi><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span> is already constructed</p>
     <p><span><math><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></math></span> is object</p>
     <math display="block"><mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math>
@@ -537,11 +481,8 @@
     <li>内存里的 identifier 的别名</li>
     <li>内存里的函数返回值. so <span><math><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow></math></span> 应该理解为 add function 的返回值是 <span><math><mn>2</mn></math></span></li>
   </ol>
-  <p><code data-typst-label="hierarchy-order-of-set">&lt;hierarchy-order-of-set></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>hierarchy-order-of-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>以上构造的 set 称为 zero (hierarchy) order set</p>
     <p><span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> Set</mtext></mrow></math></span> or <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> Set </mtext><mn>0</mn></mrow></math></span></p>
     <p>then let <span><math><mrow><mtext>Set </mtext><mn>0</mn></mrow></math></span> be math object, in first order set</p>
@@ -563,11 +504,8 @@
   </div>
   <p>上面的构造规则会导致矛盾或者计算机死循环吗?</p>
   <p>一直无限地构造下去, 这种语言是否有终点?</p>
-  <p><code data-typst-label="universal-set">&lt;universal-set></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>universal-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>是否存在 "set of every set", a "universal set"? or "universal type"?</p>
     <p>使用 set theory rules 定义</p>
     <math display="block"><mrow><mi>𝐴</mi><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mtext> universal-set </mtext><mo>:</mo><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow><mo>∈</mo><mtext> universal-set</mtext></mrow></math>
@@ -581,24 +519,21 @@
   <p>如果能用有限步写出语言规则并构造出语言对象, 我们就认为是可构造的, 可说的. 对于集合论, 能够这样有限步构造出来的, 就称其为 math object (数学对象)</p>
   <p>对于自然数的无限的问题, 如果用数数或者归纳法或者周期电路来定义自然数, 的则把无限的问题推给了无限时间</p>
   <p>对于集合论语言, 假设 universal-set or universal-type 导致能构造出让电路进入死循环</p>
-  <p><code data-typst-label="dependent-distributive">&lt;dependent-distributive></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>dependent-distributive</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>union &amp; interset</p>
     <math display="block"><mrow><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math><math display="block"><mrow><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math>
     <p>sum and product</p>
     <math display="block"><mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math><math display="block"><mrow><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math>
     <p>draft of proof: 展开, 使用 parallel distributive cf. <code>#link(&lt;distributive-forall-exists>)[]</code></p>
   </div>
-  <p><code data-typst-label="set-minus">&lt;set-minus></code></p>
+  <p>  <code>set-minus</code><em>_(tag)</em>  </p>
   <img src="../image/set-minus.jpeg" width="30%">
   <p><span><math><mrow><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑥</mi><mo>∉</mo><mi>𝐵</mi></mrow><mo>}</mo></mrow></mrow></math></span>. if <span><math><mrow><mi>𝐵</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> then define <span><math><mrow><msup><mi>𝐵</mi><mo>∁</mo></msup><mo>≔</mo><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi></mrow></math></span></p>
-  <p><code data-typst-label="symmetric-set-minus">&lt;symmetric-set-minus></code></p>
+  <p>  <code>symmetric-set-minus</code><em>_(tag)</em>  </p>
   <img src="../image/set-symmetric-minus.jpeg" width="30%">
   <p><span><math><mrow><mi>𝐴</mi><mi mathvariant="normal">Δ</mi><mi>𝐵</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>⊔</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∖</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∪</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∖</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∩</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
-  <p><code data-typst-label="coordinate-component">&lt;coordinate-component></code></p>
+  <p>  <code>coordinate-component</code><em>_(tag)</em>  </p>
   <ul>
     <li>
       <p>product component</p>

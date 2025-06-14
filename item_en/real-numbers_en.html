@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}Natural number ℕ addition𝑎 is counting 𝑎 times 1, 𝑎+𝑏 is counting 𝑎 times first, then counting 𝑏 timesAssociative law: (𝑎+𝑏)+𝑐&#x3D;𝑎+(𝑏+𝑐)Commutative law: 𝑎+𝑏&#x3D;𝑏+𝑎Proof The intuition in the real world is that for counting +1, no matter how the counting task is manually divided into several subtasks, the result will not be affected, and the total decomposition methods are limited. The associative and commutative laws of addition are just special cases. Just as we recognize natural numbers by counting, we can always recognize the commutative and associative laws by counting. Everything reduces to the case of complete additive decomposition, with only the commutative and associative laws of a large number of 1s.It seems difficult for computers to express this intuition, but it seems that all finite results must be correct. Similar to what is done in #link(&lt;natural-number&gt;)[], in order for computers to express this property, which holds for all natural numbers, using finite characters, memory, and finite time (and potentially infinite time), it needs to be defined as a true proposition.The usual &amp;quot;proof&amp;quot; is to use the smallest assumption, the associative law of 1, (𝑎+𝑏)+1&#x3D;𝑎+(𝑏+1) or the definition of addition (𝑎+1)+𝑏&#x3D;(𝑎+𝑏)+1, and then deduce otherNatural number ℕ multiplication𝑎⋅𝑏 is counting 𝑎 times of counting 𝑏 timesIt also satisfies the commutative and associative laws. The intuition in the real world is &amp;quot;two-dimensional and three-dimensional rectangles&amp;quot;. For counting +1, no matter how it is decomposed into subtasks of product decomposition, it will not affect the result. Therefore, the commutative and associative laws of multiplication are just special cases of complete multiplication decomposition i.e. prime factorization, and the total number of decompositions is limitedDistributive law of natural number operations(𝑎+𝑏)⋅𝑐&#x3D;𝑎⋅𝑐+𝑏⋅𝑐The intuition is to decompose the side length of a two-dimensional rectangle into sumInteger ℤThe number axis has two directionsRational number ℚ𝑛 equal division operation, the inverse of multiplication 1𝑛Do not confuse it with the division and remainder of ℕ,ℤ, which is a successive subtraction of a number 𝑎 by another number 𝑏, rather than equal divisionReal number ℝOne intuition of real numbers is lengthGiven the intuitiveness of real numbers, we can assume that it exists and use many axioms to define real numbers i.e. assume a true proposition. But you can also &amp;quot;recover&amp;quot; real numbers from rational numbersExamples of irrational numbersAlgebraic integer algebraic-integer ≔{𝑥∈ℝ:(𝑥𝑛+𝑎𝑛−1𝑥𝑛−1+⋯+𝑎0&#x3D;0)∧(𝑎0,𝑎1,…,𝑎𝑛−1∈ℤ)}The &amp;quot;integer&amp;quot; in algebraic integer is because algebraic-integer ∩ℚ&#x3D;ℤProof (p.43 of ref-8)Take 𝑝,𝑞∈ℤ and make them relatively prime. Substitute 𝑥&#x3D;𝑝𝑞 into the equation, multiply by 𝑞𝑛𝑝𝑛+𝑎𝑛−1𝑞𝑝𝑛−1+⋯+𝑎0𝑞𝑛&#x3D;0𝑝𝑛&#x3D;−𝑞(𝑎𝑛−1𝑝𝑛−1+⋯+𝑎0𝑞𝑛−1)The right side is divisible by 𝑞. But 𝑝,𝑞 are relatively prime, so 𝑞&#x3D;±1 or 𝑝&#x3D;±1.𝑝≠±1⟹𝑞&#x3D;±1𝑝&#x3D;±1⟹±1&#x3D;𝑝𝑛&#x3D;𝑞⋅ some-integer ⟹𝑞&#x3D;±1So 𝑞&#x3D;±1. Thus 𝑥&#x3D;±𝑝∈ℤSpecial case {𝑥∈ℚ:𝑥2−2&#x3D;0}. But (±1)2&#x3D;1 and |𝑥|≥2⟹|𝑥|2≥4So {𝑥∈ℚ:𝑥2−2&#x3D;0}&#x3D;∅ that is 2 is not a rational numberAlgebraic number algebraic-number ≔{𝑥∈ℝ:(𝑎𝑛𝑥𝑛+𝑎𝑛−1𝑥𝑛−1+⋯+𝑎0&#x3D;0)∧(𝑎0,𝑎1,…,𝑎𝑛∈ℤ)}Note that 𝑎𝑛&#x3D;1 is not required, 𝑥∈ℚ is not restricted, including all rational numbers 𝑝𝑞, some irrational numbers e.g. 2Algebraic number algebraic-number is a countable set, real number ℝ is an uncountable setTranscendental number transcendental-number ≔ℝ∖ algebraic-number ≠∅. 𝑒,𝜋 are transcendental numbersDecimal, binary vs nested interval vs segmentationDecimal (nested interval) seems very intuitiveHowever, decimal cannot natively handle 𝑒&#x3D;∑𝑛&#x3D;0∞1𝑛!Many different ℕ nested intervals have the same limit, e.g. [0,1𝑛] vs [−1𝑛,0], need limit-distance-vanish system quotient. let distance (𝐴)&#x3D;sup𝑥,𝑥′∈𝐴|𝑥−𝑥′|let 𝐴0⊃𝐴1⋯,𝐵0⊃𝐵1⋯ and lim 𝑛→∞distance(𝐴𝑛),distance(𝐵𝑛)&#x3D;0, limit-distance-vanish relation (alias Cauchy convergence)∀(𝜀∈ℚ)∧(𝜀&gt;0),∃𝑁∈ℕ,∀𝑛,𝑚&gt;𝑁,distance(𝐴𝑛∪𝐵𝑚)&lt;𝜀You can change the ℕ rational number interval nesting to a general rational number interval whose length #link(&lt;hom-limit&gt;)[limit] tends to zero ⊂ #link(&lt;maximal-linear-order&gt;)[linearly ordered chain] or a more general rational number interval whose length tends to zero (maximal) #link(&lt;net&gt;)[net]A rational number interval is a subset 𝐴⊂ℚ with property order uninterrupted⋀𝑎,𝑏∈𝐴𝑎&lt;𝑏⋀𝑐∈ℚ𝑎&lt;𝑐&lt;𝑏𝑐∈𝐴From an operational simplicity perspective, Dedekind-cut should be used. &amp;quot;Operational simplicity&amp;quot; meanslet 𝑥∈ℝ, {𝑥}↔ℝ∖{𝑥} one-to-one correspondence(ℝ∖{𝑥})∩ℚ&#x3D;ℚ∖{𝑥}&#x3D;ℚ&lt;𝑥⊔ℚ&gt;𝑥So 𝑥∈ℝ and ℚ&lt;𝑥⊔ℚ&gt;𝑥 one-to-one correspondence  Dedekind-cut_(tag)   irrational number ℝ∖ℚ𝑥∈ℝ∖ℚ one-to-one corresponds to {(𝐴,𝐵)∈Subset(ℚ)2:(ℚ&#x3D;𝐴⊔𝐵)∧(∀(𝑎,𝑏)∈(𝐴,𝐵),𝑎&lt;𝑏)}𝑥≔(𝐴,𝐵). Record (𝐴,𝐵) as (ℚ&lt;𝑥,ℚ&gt;𝑥) againReal number ℝ≔ℚ⊔(ℝ∖ℚ)  order-real_(tag)   ℝ order 𝑥&lt;𝑦⟺(ℚ&lt;𝑥⊊ℚ&lt;𝑦)let𝐴+𝐴′≔{𝑎+𝑎′:(𝑎,𝑎′)∈(𝐴,𝐴′)}𝐴⋅𝐴′≔{𝑎⋅𝑎′:(𝑎,𝑎′)∈(𝐴,𝐴′)}  add-real_(tag)   ℝ addition. let 𝑥,𝑦∈ℝ𝑥+𝑦≔(ℚ&lt;𝑥+ℚ&lt;𝑦,ℚ&gt;𝑥+ℚ&gt;𝑦)expect (ℚ&lt;𝑥+𝑦,ℚ&gt;𝑥+𝑦)−𝑥≔(−ℚ&gt;𝑥,−ℚ&lt;𝑥)expect (ℚ&lt;−𝑥,ℚ&gt;−𝑥)Because of the existence of &lt;0, multiplication does not preserve order. But the multiplication of ℚ&gt;0,ℝ&gt;0 preserves order. First deal with the case of &gt;0, and then use reflection −𝑥 to get the case of &lt;0  multiply-real_(tag)   ℝ multiplication. let 𝑥,𝑦&gt;0𝑥⋅𝑦≔(ℚ(0,𝑥)⋅ℚ(0,𝑦),ℚ(𝑥,∞)⋅ℚ(𝑦,∞)) expect (ℚ(0,𝑥𝑦),ℚ(𝑥𝑦,∞))1𝑥≔(1ℚ(𝑥,∞),1ℚ(0,𝑥)) expect (ℚ(0,1𝑥),ℚ(1𝑥,∞))ℤ,ℚ,ℝ&#x27;s +,⋅ all have associativity, commutativity, and distributivityℝ completeness   completeness-real_(tag)    exact-bound_(tag)   Least-upper-bound propertylet 𝐴⊂ℝ have an upper bound∃𝑥∈ℝ,⋃𝑎∈𝐴ℚ&lt;𝑎&#x3D;ℚ&lt;𝑥Supremum sup𝐴≔𝑥∀𝑎∈𝐴,𝑎≤sup𝐴∀𝜀&gt;0,∃𝑎∈𝐴,sup𝐴−𝜀&lt;𝑎≤sup𝐴  monotone-convergence_(tag)   monotone bound #link(&lt;limit-sequence-real&gt;)[convergence] Proof use exact-bound  nested-closed-interval-theorem_(tag)   Nested interval theoremWhether it is ℕ nested intervals or ⊂ linearly ordered chain nested intervals, linear order means the monotonicity of interval endpoints, use supremum 𝑎1 and infimum 𝑎0 for the endpoints with 𝑎0≤𝑎1 to get the intersection of nested closed intervals is a closed interval [𝑎0,𝑎1]≠∅. [𝑎0,𝑎1] can be understood as the minimal element of ⊂ linear order chain nested closed sets  closed-interval-net-theorem_(tag)   Closed interval #link(&lt;net&gt;)[net] B intersection is non-empty ⋂ B ≠∅ProofSupplement the net B with all finite intersectionsTake a #link(&lt;maximal-linear-order&gt;)[maximal linearly ordered chain] C. By the nested interval theorem, its intersection is a non-empty closed interval ⋂ C ≠∅By the linear order maximality of C, intuitively, the closed interval ⋂ C will be smaller than all closed intervals of B, so ⋂ C ⊂⋂ B∀𝐵∈ B, we prove ⋂ C ⊂𝐵Define the closed interval linear ordered chain C 𝐵&#x3D;{𝐵∩𝐶∈ B :𝐶∈ C}. 𝐵∩𝐶⊂𝐵. We prove ⋂ C 𝐵&#x3D;⋂ CProof by contradiction. Assume ⋂ C 𝐵⊊⋂ C. Then the small/large endpoint of ⋂ C𝐵 is larger/smaller than the small/large endpoint of ⋂ CThe ⊂ linear ordered chain satisfies ⋂𝐴⊃𝐴0𝐴&#x3D;𝐴0If the closed interval ⋂ C 𝐵∉ B, then use the ℝ exact bound principle for the endpoints∃𝐵∩𝐶0∈ C 𝐵𝐵∩𝐶0∈ B 𝐵∩𝐶0&#x3D;⋂𝐵∩𝐶⊃𝐵∩𝐶0𝐵∩𝐶⊊⋂ CThere exists 𝐵∩𝐶0∈ B that belongs to ⋂ C, which contradicts that ⋂ C is a ⊂ maximal linear ordered chainIf the closed interval ⋂ C 𝐵∈ B, the same contradiction applieslet 𝑎𝑛:ℕ→ℝdef ℕ→ℝ sequence 𝑘⇝sup𝑘≥𝑛{𝑎𝑘} monotone decreasing, 𝑘⇝inf𝑘≥𝑛{𝑎𝑘} monotone increasing  limsup_(tag)   Upper limitlim sup𝑛→∞{𝑎𝑛}≔ lim 𝑛→∞sup𝑘≥𝑛{𝑎𝑘}&#x3D;inf𝑛∈ℕsup𝑘≥𝑛{𝑎𝑘}  liminf_(tag)   Lower limitlim inf𝑛→∞{𝑎𝑛}≔ lim 𝑛→∞inf𝑛≥𝑘{𝑎𝑘}&#x3D;sup𝑛∈ℕinf𝑛≥𝑘{𝑎𝑘}Example𝑎𝑘&#x3D;1+1𝑘sup𝑛∈ℕ{𝑎𝑛}&#x3D;2sup𝑛≥𝑘{𝑎𝑘}&#x3D;1+1𝑘 lim 𝑛→∞sup𝑛≥𝑘{𝑎𝑘}&#x3D;1𝑎𝑘&#x3D;1+(−1)𝑘lim sup𝑛→∞{𝑎𝑛}&#x3D;2For the ℕ sequence, define distance{𝑎𝑛,𝑎𝑛+1,…}≔sup𝑚,𝑚′≥𝑛|𝑎𝑚−𝑎𝑚′|For a general net, define distance(𝐵)&#x3D;sup𝑎,𝑎′∈𝐵|𝑎−𝑎′|  limit-distance-vanish-sequence_(tag)   :&#x3D; lim 𝑛→∞|{𝑎𝑛,𝑎𝑛+1,…}|&#x3D;0 i.e. tail distance vanish  limit-distance-vanish-net_(tag)   :&#x3D; ∀𝜀&gt;0,∃𝐵∈ B,distance(𝐵)&lt;𝜀  Cauchy-completeness-real_(tag)   limit-distance-vanish sequence or net convergesProofUnbounded &#x3D;&#x3D;&gt; ∀𝜀&gt;0,∀𝑁∈ℕ,∃𝑛&gt;𝑁,|{𝑎𝑛,𝑎𝑛+1,…}|≥𝜀&#x3D;&#x3D;&gt; The limit-distance-vanish sequence is bounded&#x3D;&#x3D;&gt; The monotonically increasing or decreasing bounded sequences 𝑛⇝inf𝑚≥𝑛{𝑎𝑚},sup𝑚≥𝑛{𝑎𝑚} have limits lim inf𝑛→∞{𝑎𝑛}≤lim sup𝑛→∞{𝑎𝑛}limit-distance-vanish property &#x3D;&#x3D;&gt; lim inf𝑛→∞{𝑎𝑛}&#x3D;lim sup𝑛→∞{𝑎𝑛}&#x3D;𝑎Thus 𝑎𝑛 converges to 𝑎For nets, by the closed interval net theorem, let 𝑎∈⋂𝐵∈ B𝐵≠∅. Using limit-distance-vanish-net, we obtain that the net converges lim 𝐵∈ Bsup𝑎𝐵∈𝐵|𝑎𝐵−𝑎|&#x3D;0Conversely, a convergent sequence is limit-distance-vanish. by the triangle inequality |𝑎𝑚−𝑎𝑚′|≤|𝑎𝑚−𝑎|+|𝑎𝑚′−𝑎|Sequence ℕ→ℝ or net B converges to 𝑎 &lt;&#x3D;&#x3D;&gt; limit-distance-vanish  uncountable-real_(tag)   The real number is uncountable |ℕ|&lt;|ℝ|It has been proved that |ℕ|&lt;|Subset(ℕ)|. cf. #link(&lt;cardinal-increase&gt;)[]recall {0,1}ℕ≃(ℕ→ bool)≃Subset(ℕ)|Subset(ℝ)|&#x3D;|ℕ→ℕ|&#x3D;|ℝ|ProofAccording to the nested interval theorem, the binary decimal point representation of real numbers: 𝑎0.𝑎1𝑎2… The 𝑛-th digit takes 0⇝0⋅12𝑛 or 1⇝1⋅12𝑛&#x3D;&#x3D;&gt; {0,1}ℕ≃[0,1]. Where, quotient the possible two equivalent choices in binary[0,1]≃(−1,1) by linear map or affine map(−1,1)≃ℝ by 𝑥⇝𝑥1−𝑥2(ℕ→ℕ)≃(0,1]Proof(𝑛1,𝑛2,…)⇝12𝑛1+12𝑛1+𝑛2+⋯It represents in binary, the first position where 1 appears is 𝑛1, the second position is 𝑛2 …Compare {0,1}ℕ, 12𝑚1+12𝑚2+⋯ vs 12𝑛1+12𝑛1+𝑛2+⋯𝑚1&#x3D;𝑛1𝑚2&#x3D;𝑛1+𝑛2⋯Distance 𝑛𝑖+1&#x3D;𝑚𝑖+1−𝑚𝑖">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html" class="active"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/real-numbers_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>Natural number <span><math><mi mathvariant="normal">ℕ</mi></math></span> addition</p>
+  <div class="indent">
+    <p><span><math><mi>𝑎</mi></math></span> is counting <span><math><mi>𝑎</mi></math></span> times <span><math><mn>1</mn></math></span>, <span><math><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow></math></span> is counting <span><math><mi>𝑎</mi></math></span> times first, then counting <span><math><mi>𝑏</mi></math></span> times</p>
+    <ul>
+      <li>Associative law: <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝑐</mi><mo>=</mo><mi>𝑎</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>+</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+      <li>Commutative law: <span><math><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi><mo>=</mo><mi>𝑏</mi><mo>+</mo><mi>𝑎</mi></mrow></math></span></li>
+    </ul>
+  </div>
+  <p><em>Proof</em> The intuition in the real world is that for counting <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>, no matter how the counting task is manually divided into several subtasks, the result will not be affected, and the total decomposition methods are limited. The associative and commutative laws of addition are just special cases. Just as we recognize natural numbers by counting, we can always recognize the commutative and associative laws by counting. Everything reduces to the case of complete additive decomposition, with only the commutative and associative laws of a large number of <span><math><mn>1</mn></math></span>s.</p>
+  <p>It seems difficult for computers to express this intuition, but it seems that all finite results must be correct. Similar to what is done in <code>#link(&lt;natural-number>)[]</code>, in order for computers to express this property, which holds for all natural numbers, using finite characters, memory, and finite time (and potentially infinite time), it needs to be defined as a true proposition.</p>
+  <p>The usual "proof" is to use the smallest assumption, the associative law of <span><math><mn>1</mn></math></span>, <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn><mo>=</mo><mi>𝑎</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> or the definition of addition <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝑏</mi><mo>=</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span>, and then deduce other</p>
+  <p>Natural number <span><math><mi mathvariant="normal">ℕ</mi></math></span> multiplication</p>
+  <div class="indent">
+    <p><span><math><mrow><mi>𝑎</mi><mo>⋅</mo><mi>𝑏</mi></mrow></math></span> is counting <span><math><mi>𝑎</mi></math></span> times of counting <span><math><mi>𝑏</mi></math></span> times</p>
+    <p>It also satisfies the commutative and associative laws. The intuition in the real world is "two-dimensional and three-dimensional rectangles". For counting <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span>, no matter how it is decomposed into subtasks of product decomposition, it will not affect the result. Therefore, the commutative and associative laws of multiplication are just special cases of complete multiplication decomposition i.e. prime factorization, and the total number of decompositions is limited</p>
+  </div>
+  <p>Distributive law of natural number operations</p>
+  <div class="indent">
+    <p><span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑐</mi><mo>=</mo><mi>𝑎</mi><mo>⋅</mo><mi>𝑐</mi><mo>+</mo><mi>𝑏</mi><mo>⋅</mo><mi>𝑐</mi></mrow></math></span></p>
+    <p>The intuition is to decompose the side length of a two-dimensional rectangle into sum</p>
+  </div>
+  <p>Integer <span><math><mi mathvariant="normal">ℤ</mi></math></span></p>
+  <div class="indent">The number axis has two directions</div>
+  <p>Rational number <span><math><mi mathvariant="normal">ℚ</mi></math></span></p>
+  <div class="indent">
+    <p><span><math><mi>𝑛</mi></math></span> equal division operation, the inverse of multiplication <span><math><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></math></span></p>
+    <p>Do not confuse it with the division and remainder of <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span>, which is a successive subtraction of a number <span><math><mi>𝑎</mi></math></span> by another number <span><math><mi>𝑏</mi></math></span>, rather than equal division</p>
+  </div>
+  <p>Real number <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  <div class="indent">
+    <p>One intuition of real numbers is length</p>
+    <p>Given the intuitiveness of real numbers, we can assume that it exists and use many axioms to define real numbers i.e. assume a true proposition. But you can also "recover" real numbers from rational numbers</p>
+  </div>
+  <p>Examples of irrational numbers</p>
+  <div class="indent">
+    <p>Algebraic integer <span><math><mrow><mtext>algebraic-integer </mtext><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>:</mo><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo></mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+    <p>The "integer" in algebraic integer is because <span><math><mrow><mtext>algebraic-integer </mtext><mo>∩</mo><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span></p>
+    <p><em>Proof</em> (p.43 of ref-8)</p>
+    <div class="indent">
+      <p>Take <span><math><mrow><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span> and make them relatively prime. Substitute <span><math><mrow><mi>𝑥</mi><mo>=</mo><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></mrow></math></span> into the equation, multiply by <span><math><msup><mi>𝑞</mi><mi>𝑛</mi></msup></math></span></p>
+      <math display="block"><mtable><mtr><mtd><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><mi>𝑞</mi><msup><mi>𝑝</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><msup><mi>𝑞</mi><mi>𝑛</mi></msup><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>=</mo><mo>−</mo><mi>𝑞</mi><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑝</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><msup><mi>𝑞</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+      <p>The right side is divisible by <span><math><mi>𝑞</mi></math></span>. But <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> are relatively prime, so <span><math><mrow><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span> or <span><math><mrow><mi>𝑝</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span>.</p>
+      <p><span><math><mrow><mi>𝑝</mi><mo>≠</mo><mo>±</mo><mn>1</mn><mo>⟹</mo><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span></p>
+      <p><span><math><mrow><mi>𝑝</mi><mo>=</mo><mo>±</mo><mn>1</mn><mo>⟹</mo><mo>±</mo><mn>1</mn><mo>=</mo><msup><mi>𝑝</mi><mi>𝑛</mi></msup><mo>=</mo><mi>𝑞</mi><mo>⋅</mo><mtext> some-integer </mtext><mo>⟹</mo><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span></p>
+      <p>So <span><math><mrow><mi>𝑞</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow></math></span>. Thus <span><math><mrow><mi>𝑥</mi><mo>=</mo><mo>±</mo><mi>𝑝</mi><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow></math></span></p>
+    </div>
+    <p>Special case <span><math><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow></math></span>. But <span><math><mrow><msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow></math></span> and <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mo>≥</mo><mn>2</mn><mo>⟹</mo><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>≥</mo><mn>4</mn></mrow></math></span></p>
+    <p>So <span><math><mrow><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi><mo>:</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>=</mo><mn>0</mn></mrow><mo>}</mo></mrow><mo>=</mo><mo>∅</mo></mrow></math></span> that is <span><math><msqrt><mn>2</mn></msqrt></math></span> is not a rational number</p>
+  </div>
+  <p>Algebraic number <span><math><mrow><mtext>algebraic-number </mtext><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>:</mo><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑥</mi><mi>𝑛</mi></msup><mo>+</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub><msup><mi>𝑥</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo></mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>∈</mo><mi mathvariant="normal">ℤ</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
+  <p>Note that <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span> is not required, <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span> is not restricted, including all rational numbers <span><math><mfrac><mi>𝑝</mi><mi>𝑞</mi></mfrac></math></span>, some irrational numbers e.g. <span><math><msqrt><mn>2</mn></msqrt></math></span></p>
+  <p>Algebraic number <span><math><mtext>algebraic-number</mtext></math></span> is a countable set, real number <span><math><mi mathvariant="normal">ℝ</mi></math></span> is an uncountable set</p>
+  <p>Transcendental number <span><math><mrow><mtext>transcendental-number </mtext><mo>≔</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mtext> algebraic-number </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span>. <span><math><mrow><mi>𝑒</mi><mo>,</mo><mi>𝜋</mi></mrow></math></span> are transcendental numbers</p>
+  <p>Decimal, binary vs nested interval vs segmentation</p>
+  <p>Decimal (nested interval) seems very intuitive</p>
+  <p>However, decimal cannot natively handle <span><math><mrow><mi>𝑒</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+  <p>Many different <span><math><mi mathvariant="normal">ℕ</mi></math></span> nested intervals have the same limit, e.g. <span><math><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>]</mo></mrow></math></span> vs <span><math><mrow><mo>[</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>,</mo><mn>0</mn></mrow><mo>]</mo></mrow></math></span>, need limit-distance-vanish system quotient. let <span><math><mrow><mtext>distance </mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mo>|</mo><mi>𝑥</mi></mrow><mo>−</mo><mrow><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow></math></span></p>
+  <p>let <span><math><mrow><msub><mi>𝐴</mi><mn>0</mn></msub><mo>⊃</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mo>⋯</mo><mo>,</mo><msub><mi>𝐵</mi><mn>0</mn></msub><mo>⊃</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>⋯</mo></mrow></math></span> and <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>)</mo></mrow></mrow><mo>,</mo><mrow><mtext>distance</mtext><mrow><mo>(</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, limit-distance-vanish relation (<strong>alias</strong> Cauchy convergence)</p>
+  <math display="block"><mrow><mo>∀</mo><mrow><mo>(</mo><mrow><mi>𝜀</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝜀</mi><mo>></mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>,</mo><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∀</mo><mrow><mi>𝑛</mi><mo>,</mo><mi>𝑚</mi></mrow><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>∪</mo><msub><mi>𝐵</mi><mi>𝑚</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math>
+  <p>You can change the <span><math><mi mathvariant="normal">ℕ</mi></math></span> rational number interval nesting to a general rational number interval whose length <code>#link(&lt;hom-limit>)[limit]</code> tends to zero <span><math><mo>⊂</mo></math></span> <code>#link(&lt;maximal-linear-order>)[linearly ordered chain]</code> or a more general rational number interval whose length tends to zero (maximal) <code>#link(&lt;net>)[net]</code></p>
+  <p>A rational number interval is a subset <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span> with property order uninterrupted</p>
+  <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>∈</mo><mi>𝐴</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><munder displaystyle="true"><mo>⋀</mo><mtable><mtr><mtd><mrow><mi>𝑐</mi><mo>∈</mo><mi mathvariant="normal">ℚ</mi></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑐</mi><mo>&lt;</mo><mi>𝑏</mi></mrow></mtd></mtr></mtable></munder><mi>𝑐</mi><mo>∈</mo><mi>𝐴</mi></mrow></math>
+  <p>From an operational simplicity perspective, Dedekind-cut should be used. "Operational simplicity" means</p>
+  <ul>
+    <li>let <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>, <span><math><mrow><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow><mo>↔</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow></mrow></math></span> one-to-one correspondence</li>
+    <li><span><math><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow></mrow><mo>)</mo></mrow><mo>∩</mo><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi mathvariant="normal">ℚ</mi><mo>∖</mo><mrow><mo>{</mo><mi>𝑥</mi><mo>}</mo></mrow><mo>=</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow></math></span></li>
+    <li>So <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> and <span><math><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow></math></span> one-to-one correspondence</li>
+  </ul>
+  <p>  <code>Dedekind-cut</code><em>_(tag)</em>   irrational number <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span></p>
+  <div class="indent">
+    <p><span><math><mrow><mi>𝑥</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow></math></span> one-to-one corresponds to <span><math><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℚ</mi><mo>)</mo></mrow></mrow><mn>2</mn></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℚ</mi><mo>=</mo><mi>𝐴</mi><mo>⊔</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mo>∀</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>,</mo><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑥</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math></span>. Record <span><math><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></math></span> as <span><math><mrow><mo>(</mo><mrow><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>,</mo></mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mrow><mo>)</mo></mrow></math></span> again</p>
+  </div>
+  <p>Real number <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>≔</mo><mi mathvariant="normal">ℚ</mi><mo>⊔</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>∖</mo><mi mathvariant="normal">ℚ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <ul>
+    <li>  <code>order-real</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℝ</mi></math></span> order <span><math><mrow><mi>𝑥</mi><mo>&lt;</mo><mi>𝑦</mi><mo>⟺</mo><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊊</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p>let</p>
+  <math display="block"><mtable><mtr><mtd><mi>𝐴</mi><mo>+</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>+</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr><mtr><mtd><mi>𝐴</mi><mo>⋅</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>⋅</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>:</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr></mtable></math>
+  <ul>
+    <li>  <code>add-real</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℝ</mi></math></span> addition. let <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></li>
+  </ul>
+  <div class="indent"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>+</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext>expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi><mo>+</mo><mi>𝑦</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>−</mo><mi>𝑥</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>−</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>,</mo></mrow><mo>−</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext>expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mrow><mo>−</mo><mi>𝑥</mi></mrow></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mrow><mo>−</mo><mi>𝑥</mi></mrow></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math></div>
+  <p>Because of the existence of <span><math><mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span>, multiplication does not preserve order. But the multiplication of <span><math><mrow><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>,</mo></mrow><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub></mrow></math></span> preserves order. First deal with the case of <span><math><mrow><mo>></mo><mn>0</mn></mrow></math></span>, and then use reflection <span><math><mrow><mo>−</mo><mi>𝑥</mi></mrow></math></span> to get the case of <span><math><mrow><mo>&lt;</mo><mn>0</mn></mrow></math></span></p>
+  <ul>
+    <li>  <code>multiply-real</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℝ</mi></math></span> multiplication. let <span><math><mrow><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>></mo><mn>0</mn></mrow></math></span></li>
+  </ul>
+  <div class="indent"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>⋅</mo><mi>𝑦</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub><mo>⋅</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑦</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mi>𝑦</mi></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mi>𝑦</mi><mo>,</mo><mo>∞</mo></mrow></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mfrac><mo>,</mo><mfrac><mn>1</mn><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></msub></mfrac></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"><mtext> expect </mtext><mrow><mo>(</mo><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></mrow><mo>)</mo></mrow></msub><mo>,</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo><mo>∞</mo></mrow><mo>)</mo></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math></div>
+  <p><span><math><mrow><mi mathvariant="normal">ℤ</mi><mo>,</mo><mi mathvariant="normal">ℚ</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>'s <span><math><mrow><mo>+</mo><mo>,</mo><mo>⋅</mo></mrow></math></span> all have associativity, commutativity, and distributivity</p>
+  <p><span><math><mi mathvariant="normal">ℝ</mi></math></span> completeness   <code>completeness-real</code><em>_(tag)</em>  </p>
+  <p>  <code>exact-bound</code><em>_(tag)</em>   Least-upper-bound property</p>
+  <div class="indent">
+    <p>let <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> have an upper bound</p>
+    <p><span><math><mrow><mo>∃</mo><mi>𝑥</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><msub><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></msub><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑎</mi></mrow></msub><mo>=</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub></mrow></math></span></p>
+    <p>Supremum <span><math><mrow><mi mathvariant="normal">sup</mi><mi>𝐴</mi><mo>≔</mo><mi>𝑥</mi></mrow></math></span></p>
+    <ul>
+      <li><span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>≤</mo><mi mathvariant="normal">sup</mi><mi>𝐴</mi></mrow></math></span></li>
+      <li><span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi mathvariant="normal">sup</mi><mi>𝐴</mi><mo>−</mo><mi>𝜀</mi><mo>&lt;</mo><mi>𝑎</mi><mo>≤</mo><mi mathvariant="normal">sup</mi><mi>𝐴</mi></mrow></math></span></li>
+    </ul>
+    <p>  <code>monotone-convergence</code><em>_(tag)</em>   monotone bound <code>#link(&lt;limit-sequence-real>)[convergence]</code> <em>Proof</em> use exact-bound</p>
+  </div>
+  <p>  <code>nested-closed-interval-theorem</code><em>_(tag)</em>   Nested interval theorem</p>
+  <div class="indent">Whether it is <span><math><mi mathvariant="normal">ℕ</mi></math></span> nested intervals or <span><math><mo>⊂</mo></math></span> linearly ordered chain nested intervals, linear order means the monotonicity of interval endpoints, use supremum <span><math><msub><mi>𝑎</mi><mn>1</mn></msub></math></span> and infimum <span><math><msub><mi>𝑎</mi><mn>0</mn></msub></math></span> for the endpoints with <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>≤</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow></math></span> to get the intersection of nested closed intervals is a closed interval <span><math><mrow><mrow><mo>[</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow><mo>]</mo></mrow><mo>≠</mo><mo>∅</mo></mrow></math></span>. <span><math><mrow><mo>[</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑎</mi><mn>1</mn></msub></mrow><mo>]</mo></mrow></math></span> can be understood as the minimal element of <span><math><mo>⊂</mo></math></span> linear order chain nested closed sets</div>
+  <p>  <code>closed-interval-net-theorem</code><em>_(tag)</em>   Closed interval <code>#link(&lt;net>)[net]</code> <span><math><mtext>B</mtext></math></span> intersection is non-empty <span><math><mrow><mo>⋂</mo><mtext> B </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>Supplement the net <span><math><mtext>B</mtext></math></span> with all finite intersections</p>
+    <p>Take a <code>#link(&lt;maximal-linear-order>)[maximal linearly ordered chain]</code> <span><math><mtext>C</mtext></math></span>. By the nested interval theorem, its intersection is a non-empty closed interval <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+    <p>By the linear order maximality of <span><math><mtext>C</mtext></math></span>, intuitively, the closed interval <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> will be smaller than all closed intervals of <span><math><mtext>B</mtext></math></span>, so <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>⊂</mo><mo>⋂</mo><mtext> B</mtext></mrow></math></span></p>
+    <p><span><math><mrow><mo>∀</mo><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></math></span>, we prove <span><math><mrow><mo>⋂</mo><mtext> C </mtext><mo>⊂</mo><mi>𝐵</mi></mrow></math></span></p>
+    <p>Define the closed interval linear ordered chain <span><math><mrow><msub><mtext>C </mtext><mi>𝐵</mi></msub><mo>=</mo><mrow><mo>{</mo><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>∈</mo><mtext> B </mtext><mo>:</mo><mi>𝐶</mi><mo>∈</mo><mtext> C</mtext></mrow><mo>}</mo></mrow></mrow></math></span>. <span><math><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊂</mo><mi>𝐵</mi></mrow></math></span>. We prove <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>=</mo><mo>⋂</mo><mtext> C</mtext></mrow></math></span></p>
+    <p>Proof by contradiction. Assume <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>⊊</mo><mo>⋂</mo><mtext> C</mtext></mrow></math></span>. Then the small/large endpoint of <span><math><mrow><mo>⋂</mo><msub><mtext> C</mtext><mi>𝐵</mi></msub></mrow></math></span> is larger/smaller than the small/large endpoint of <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span></p>
+    <p>The <span><math><mo>⊂</mo></math></span> linear ordered chain satisfies <span><math><mrow><msub><mo>⋂</mo><mrow><mi>𝐴</mi><mo>⊃</mo><msub><mi>𝐴</mi><mn>0</mn></msub></mrow></msub><mi>𝐴</mi><mo>=</mo><msub><mi>𝐴</mi><mn>0</mn></msub></mrow></math></span></p>
+    <ul>
+      <li>If the closed interval <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>∉</mo><mtext> B</mtext></mrow></math></span>, then use the <span><math><mi mathvariant="normal">ℝ</mi></math></span> exact bound principle for the endpoints</li>
+    </ul>
+    <div class="indent">
+      <math display="block"><mtable><mtr><mtd><mo>∃</mo><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub></mtd></mtr><mtr><mtd><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><mtext> B </mtext></mtd></mtr><mtr><mtd><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>=</mo><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊃</mo><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub></mrow></munder><mi>𝐵</mi><mo>∩</mo><mi>𝐶</mi><mo>⊊</mo><mo>⋂</mo><mtext> C</mtext></mtd></mtr></mtable></math>
+      <p>There exists <span><math><mrow><mi>𝐵</mi><mo>∩</mo><msub><mi>𝐶</mi><mn>0</mn></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span> that belongs to <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span>, which contradicts that <span><math><mrow><mo>⋂</mo><mtext> C</mtext></mrow></math></span> is a <span><math><mo>⊂</mo></math></span> maximal linear ordered chain</p>
+    </div>
+    <ul>
+      <li>If the closed interval <span><math><mrow><mo>⋂</mo><msub><mtext> C </mtext><mi>𝐵</mi></msub><mo>∈</mo><mtext> B</mtext></mrow></math></span>, the same contradiction applies</li>
+    </ul>
+  </div>
+  <p>let <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>:</mo><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+  <p>def <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> sequence <span><math><mrow><mi>𝑘</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math></span> monotone decreasing, <span><math><mrow><mi>𝑘</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">inf</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math></span> monotone increasing</p>
+  <p>  <code>limsup</code><em>_(tag)</em>   Upper limit</p>
+  <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≔</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑘</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math>
+  <p>  <code>liminf</code><em>_(tag)</em>   Lower limit</p>
+  <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≔</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">inf</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mrow></math>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li>
+      <p><span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></mrow></math></span></p>
+      <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑘</mi></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑛</mi><mo>≥</mo><mi>𝑘</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>}</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>1</mn></mtd></mtr></mtable></math>
+    </li>
+    <li>
+      <p><span><math><mrow><msub><mi>𝑎</mi><mi>𝑘</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup></mrow></math></span></p>
+      <math display="block"><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><mn>2</mn></mrow></math>
+    </li>
+  </ul>
+  <p>For the <span><math><mi mathvariant="normal">ℕ</mi></math></span> sequence, define <span><math><mrow><mrow><mtext>distance</mtext><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow></mrow><mo>≔</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑚</mi><mo>,</mo><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow></mrow></math></span></p>
+  <p>For a general net, define <span><math><mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mo>|</mo><mi>𝑎</mi></mrow><mo>−</mo><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow></math></span></p>
+  <p>  <code>limit-distance-vanish-sequence</code><em>_(tag)</em>   := <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>|</mo><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> i.e. tail distance vanish</p>
+  <p>  <code>limit-distance-vanish-net</code><em>_(tag)</em>   := <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝐵</mi><mo>∈</mo><mrow><mtext> B</mtext><mo>,</mo></mrow><mrow><mtext>distance</mtext><mrow><mo>(</mo><mi>𝐵</mi><mo>)</mo></mrow></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+  <p>  <code>Cauchy-completeness-real</code><em>_(tag)</em>   limit-distance-vanish sequence or net converges</p>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>Unbounded ==> <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∀</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝑛</mi><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mrow><mo>|</mo><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>,</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>,</mo><mo>…</mo></mrow><mo>}</mo></mrow><mo>|</mo></mrow><mo>≥</mo><mi>𝜀</mi></mrow></math></span></p>
+    <p>==> The limit-distance-vanish sequence is bounded</p>
+    <p>==> The monotonically increasing or decreasing bounded sequences <span><math><mrow><mi>𝑛</mi><mo>⇝</mo><munder displaystyle="false"><mi mathvariant="normal">inf</mi><mrow><mi>𝑚</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub><mo>}</mo></mrow><mo>,</mo><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><mi>𝑚</mi><mo>≥</mo><mi>𝑛</mi></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub><mo>}</mo></mrow></mrow></math></span> have limits <span><math><mrow><munder displaystyle="false"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>≤</mo><munder displaystyle="false"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow></mrow></math></span></p>
+    <p>limit-distance-vanish property ==> <span><math><mrow><munder displaystyle="false"><mi mathvariant="normal">lim inf</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><munder displaystyle="false"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>}</mo></mrow><mo>=</mo><mi>𝑎</mi></mrow></math></span></p>
+    <p>Thus <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> converges to <span><math><mi>𝑎</mi></math></span></p>
+    <p>For nets, by the closed interval net theorem, let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><msub><mo>⋂</mo><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></msub><mi>𝐵</mi><mo>≠</mo><mo>∅</mo></mrow></math></span>. Using limit-distance-vanish-net, we obtain that the net converges <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝐵</mi><mo>∈</mo><mtext> B</mtext></mrow></munder><munder displaystyle="false"><mi mathvariant="normal">sup</mi><mrow><msub><mi>𝑎</mi><mi>𝐵</mi></msub><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝐵</mi></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  </div>
+  <p>Conversely, a convergent sequence is limit-distance-vanish. by the triangle inequality <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑚</mi></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><msup><mi>𝑚</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <p>Sequence <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> or net <span><math><mtext>B</mtext></math></span> converges to <span><math><mi>𝑎</mi></math></span> &lt;==> limit-distance-vanish</p>
+  <p>  <code>uncountable-real</code><em>_(tag)</em>   The real number is uncountable <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mi mathvariant="normal">ℝ</mi><mo>|</mo></mrow></mrow></math></span></p>
+  <div class="indent">
+    <p>It has been proved that <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>&lt;</mo><mrow><mo>|</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℕ</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mrow></math></span>. cf. <code>#link(&lt;cardinal-increase>)[]</code></p>
+    <p>recall <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup><mo>≃</mo><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mtext> bool</mtext></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℕ</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mrow><mo>|</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℝ</mi><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi mathvariant="normal">ℕ</mi></mrow><mo>→</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi mathvariant="normal">ℝ</mi><mo>|</mo></mrow></mrow></math></span></p>
+    <p><em>Proof</em></p>
+    <div class="indent">
+      <p>According to the nested interval theorem, the binary decimal point representation of real numbers: <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mo>.</mo><msub><mi>𝑎</mi><mn>1</mn></msub><msub><mi>𝑎</mi><mn>2</mn></msub><mo>…</mo></mrow></math></span> The <span><math><mi>𝑛</mi></math></span>-th digit takes <span><math><mrow><mn>0</mn><mo>⇝</mo><mn>0</mn><mo>⋅</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>𝑛</mi></msup></mfrac></mrow></math></span> or <span><math><mrow><mn>1</mn><mo>⇝</mo><mn>1</mn><mo>⋅</mo><mfrac><mn>1</mn><msup><mn>2</mn><mi>𝑛</mi></msup></mfrac></mrow></math></span></p>
+      <p>==> <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup><mo>≃</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span>. Where, quotient the possible two equivalent choices in binary</p>
+      <p><span><math><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>≃</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> by linear map or affine map</p>
+      <p><span><math><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>≃</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> by <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mfrac><mi>𝑥</mi><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></mfrac></mrow></math></span></p>
+      <p><span><math><mrow><mrow><mo>(</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℕ</mi></mrow><mo>)</mo></mrow><mo>≃</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span></p>
+      <p><em>Proof</em></p>
+      <div class="indent">
+        <math display="block"><mrow><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>,</mo></mrow><mrow><msub><mi>𝑛</mi><mn>2</mn></msub><mo>,</mo></mrow><mo>…</mo></mrow><mo>)</mo></mrow><mo>⇝</mo><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑛</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mrow></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math>
+        <p>It represents in binary, the first position where <span><math><mn>1</mn></math></span> appears is <span><math><msub><mi>𝑛</mi><mn>1</mn></msub></math></span>, the second position is <span><math><msub><mi>𝑛</mi><mn>2</mn></msub></math></span> …</p>
+        <p>Compare <span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi mathvariant="normal">ℕ</mi></msup></math></span>, <span><math><mrow><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑚</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑚</mi><mn>2</mn></msub></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math></span> vs <span><math><mrow><mfrac><mn>1</mn><msup><mn>2</mn><msub><mi>𝑛</mi><mn>1</mn></msub></msup></mfrac><mo>+</mo><mfrac><mn>1</mn><msup><mn>2</mn><mrow><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mrow></msup></mfrac><mo>+</mo><mo>⋯</mo></mrow></math></span></p>
+        <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑚</mi><mn>1</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑛</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mi>𝑚</mi><mn>2</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝑛</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑛</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋯</mo></mtd></mtr></mtable></math>
+        <p>Distance <span><math><mrow><msub><mi>𝑛</mi><mrow><mi>𝑖</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>𝑚</mi><mrow><mi>𝑖</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>𝑚</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

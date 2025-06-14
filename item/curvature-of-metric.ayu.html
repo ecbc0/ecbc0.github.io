@@ -1,9 +1,10 @@
 <div>
-  <p><code data-typst-label="flat-metric">&lt;flat-metric></code> (ref-2, vol)</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>  <code>flat-metric</code><em>_(tag)</em>   (ref-2, vol)</p>
+  <div class="indent">
     <p>flat metric := 存在坐标使得 <span><math><mrow><mo>∀</mo><mrow><mi>𝑥</mi><mo>,</mo></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝜂</mi></mrow></math></span> 标准 metric</p>
     <p><span><math><msup><mi mathvariant="normal">𝕊</mi><mn>2</mn></msup></math></span> 的继承自 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 的子流形 metric 不是 <code>#link(&lt;flat-metric>)[]</code>, 而是 <code>#link(&lt;quadratic-manifold-is-constant-sectional-curvature>)[constant-sectional-curvature]</code>.</p>
     <p>何时存在 flat metric?</p>
@@ -29,10 +30,7 @@
     <p>这个性质, 加上 <span><math><mi>𝑝</mi></math></span> 的初值条件, 使得可以用 PDE 恢复 flat metric, i.e. 用于证明</p>
     <math display="block"><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><msup><mrow></mrow><mo>⊺</mo></msup></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
     <p><em>Proof</em></p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>product-rule 展开以上的微分</p>
       <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⋅</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>⊺</mo></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mrow><mo>(</mo><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⋅</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>⊺</mo></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><mrow><mo>(</mo><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> then use </mtext><mfrac><mo>∂</mo><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>⋅</mo><mrow><mo>(</mo><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi mathvariant="normal">Γ</mi><mo>,</mo></mrow><mo>)</mo></mrow><mo>+</mo><mo>∂</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mo>,</mo><mi mathvariant="normal">Γ</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⋅</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo>∂</mo><mi>𝑥</mi></mrow><mrow><mo>∂</mo><mi>𝑦</mi></mrow></mfrac><mo>)</mo></mrow><mo>⊺</mo></msup></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> see </mtext><mtext> #link(&lt;differenial-of-metric-inverse-vs-connection>)[link] </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
     </div>
@@ -48,11 +46,8 @@
   </div>
   <p>不存在 flate metric 坐标时, 则选取 <code>#link(&lt;Einstein-metric>)[]</code> 作为最小 <code>#link(&lt;scalar-curvature>)[纯量曲率]</code></p>
   <p>现在不假设 flat metric</p>
-  <p><code data-typst-label="curvature-of-metric">&lt;curvature-of-metric></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>curvature-of-metric</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>曲率 (<span><math><mi>𝑅</mi></math></span> from "Riemann")</p>
     <ul>
       <li><span><math><mrow><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo><mrow><mo>[</mo><mrow><mrow><msub><mo>∇</mo><mi>𝑖</mi></msub><mo>,</mo></mrow><msub><mo>∇</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>]</mo></mrow></mrow></math></span></li>
@@ -62,20 +57,14 @@
     <p>name-overload: 曲率 := 曲率的 <code>#link(&lt;metric-dual>)[]</code> <span><math><mrow><mi>𝑅</mi><mo>≔</mo><mi>𝑔</mi><mrow><mo>[</mo><mrow><msub><mo>∇</mo><mi>𝑖</mi></msub><mo>,</mo><msub><mo>∇</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>]</mo></mrow></mrow></math></span></p>
     <p>在坐标中 <span><math><mrow><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><mi>𝑖</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo><msub><mi>𝑔</mi><mrow><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑘</mi></mrow></msub><msubsup><mrow><mo>(</mo><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>)</mo></mrow><mi>𝑗</mi><mi>𝑘</mi></msubsup></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="flat-metric-iff-curvature-0">&lt;flat-metric-iff-curvature-0></code> flat-metric &lt;==> 曲率是零</p>
-  <p><code data-typst-label="curvature-determine-metric-locally">&lt;curvature-determine-metric-locally></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>flat-metric-iff-curvature-0</code><em>_(tag)</em>   flat-metric &lt;==> 曲率是零</p>
+  <p>  <code>curvature-determine-metric-locally</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>"flat-metric &lt;==> 曲率零" 可以推广到曲率决定局部 metric</p>
     <p>如果两个 metric <span><math><mrow><mi>𝑔</mi><mo>,</mo><msup><mi>𝑔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 及其曲率通过 <span><math><mrow><mi>𝑝</mi><mo>,</mo><msup><mi>𝑝</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 点之间局部微分同胚联系起来, 且微分是 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 切空间之间的 isometry, 则局部微分同胚是 <span><math><mrow><mi>𝑔</mi><mo>,</mo><msup><mi>𝑔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span> 的局部 isometry</p>
   </div>
-  <p><code data-typst-label="curvature-in-geodesic-coordinate">&lt;curvature-in-geodesic-coordinate></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>curvature-in-geodesic-coordinate</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>在测地线坐标的原点 <span><math><mi>𝑝</mi></math></span>, 通过计算, 通过</p>
     <ul>
       <li><code>#link(&lt;metric-connection>)[]</code> <span><math><mi mathvariant="normal">Γ</mi></math></span> 的定义和曲率 <span><math><mi>𝑅</mi></math></span> 定义</li>
@@ -87,21 +76,15 @@
     <math display="block"><mrow><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msub><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>+</mo><msub><mo>∂</mo><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>−</mo><msub><mo>∂</mo><mrow><mi>𝑖</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msub><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msub><mo>−</mo><msub><mo>∂</mo><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msub><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow><mo>)</mo></mrow></mrow></math>
   </div>
   <p>==> 如果在测地线坐标, metric 的 Taylor 展开二阶微分也是零 <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝜂</mi><mo>+</mo><mrow><mrow><mi>𝑜</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mn>2</mn></msup><mo>)</mo></mrow></mrow><mo>,</mo></mrow></mrow></math></span> 则曲率也是零 <span><math><mrow><mi>𝑅</mi><mo>=</mo><mn>0</mn></mrow></math></span>, 从而导致 flat-metric, 从而高阶微分也是零 <span><math><mrow><mrow><mi>𝑜</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mn>2</mn></msup><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
-  <p><code data-typst-label="symmetry-of-curvature">&lt;symmetry-of-curvature></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>symmetry-of-curvature</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <ul>
       <li><span><math><mrow><msub><mi>𝑅</mi><mrow><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow></mrow></msub><mo>=</mo></mrow></math></span></li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <ul>
-        <li><span><math><mrow><mo>−</mo><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>21</mn><mo>)</mo></mrow></mrow></msub><mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></li>
-        <li><span><math><mrow><mo>−</mo><mrow><msub><mi>𝑅</mi><mrow><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>21</mn><mo>)</mo></mrow></mrow></mrow></msub><mo>)</mo></mrow></mrow></math></span></li>
+        <li><span><math><mrow><mo>−</mo><msub><mi>𝑅</mi><mrow><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>21</mn><mo>)</mo></mrow></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span></li>
+        <li><span><math><mrow><mo>−</mo><msub><mi>𝑅</mi><mrow><mrow><mo>(</mo><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow></mrow><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>21</mn><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span></li>
         <li><span><math><msub><mi>𝑅</mi><mrow><mi>𝑗</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow></msub></math></span></li>
       </ul>
     </div>
@@ -112,10 +95,7 @@
     <ul>
       <li><span><math><mrow><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo></mrow></math></span></li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <ul>
         <li><span><math><mrow><mo>−</mo><msub><mi>𝑅</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑖</mi><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span></li>
         <li><span><math><mrow><mo>−</mo><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msub></mrow></math></span></li>
@@ -128,12 +108,9 @@
     <p>==> <span><math><mrow><mi>𝑅</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
   </div>
   <p><em>Proof</em> 在测地线坐标, 用 <span><math><mi mathvariant="normal">Γ</mi></math></span> or <span><math><mi>𝑔</mi></math></span> 表示的曲率 <span><math><mi>𝑅</mi></math></span> 的定义</p>
-  <p><code data-typst-label="algebraic-curvature-tensor">&lt;algebraic-curvature-tensor></code> 代数曲率张量定义为满足上述对称性 (ref-6, lect 8)</p>
-  <p><code data-typst-label="curvature-product">&lt;curvature-product></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>algebraic-curvature-tensor</code><em>_(tag)</em>   代数曲率张量定义为满足上述对称性 (ref-6, lect 8)</p>
+  <p>  <code>curvature-product</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>模仿 <code>#link(&lt;curvature-in-geodesic-coordinate>)[曲率在测地线坐标的定义]</code>, 对于二阶对称张量 <span><math><mrow><mrow><mi>𝑇</mi><mo>,</mo></mrow><mi>𝑆</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span> 定义 curvature-product</p>
     <math display="block"><mrow><msub><mrow><mo>(</mo><mrow><mi>𝑇</mi><mo>⧀</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><msub><mi>𝑖</mi><mn>2</mn></msub><msub><mi>𝑗</mi><mn>1</mn></msub><msub><mi>𝑗</mi><mn>2</mn></msub></mrow></msub><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mrow><mi>𝑖</mi><mo>,</mo></mrow><mi>𝑗</mi><mo>∈</mo><mrow><mn>2</mn><mo>!</mo></mrow></mrow></munder><mrow><mtext>sign</mtext><mrow><mo>(</mo><mi>𝑖</mi><mo>)</mo></mrow></mrow><mrow><mtext>sign</mtext><mrow><mo>(</mo><mi>𝑗</mi><mo>)</mo></mrow></mrow><msub><mi>𝑇</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><msub><mi>𝑗</mi><mn>1</mn></msub></mrow></msub><msub><mi>𝑆</mi><mrow><msub><mi>𝑖</mi><mn>2</mn></msub><msub><mi>𝑗</mi><mn>2</mn></msub></mrow></msub></mrow></math>
     <p>or</p>
@@ -145,7 +122,7 @@
   <p><strong>Def</strong> <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>1234</mn><mo>)</mo></mrow></mrow></msub><mo>)</mo></mrow></mrow><mo>≔</mo><msub><mo>∑</mo><mrow><mtext>cyclic </mtext><mrow><mo>(</mo><mn>123</mn><mo>)</mo></mrow></mrow></msub><msub><mi>𝑅</mi><mrow><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>123</mn><mo>)</mo></mrow></mrow><mrow><mi>𝑖</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow></mrow></mrow></msub></mrow></math></span></p>
   <ul>
     <li>
-      <p><span><math><mi>𝑓</mi></math></span> 将 <span><math><mrow><mi>𝑇</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span> 映射到自身且 <span><math><mrow><msup><mi>𝑓</mi><mn>2</mn></msup><mo>=</mo><mi>𝑓</mi></mrow></math></span>, i.e. <code>#link(&lt;linear-projection>)[]</code>, so <span><math><mrow><msup><mo>⨀</mo><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mtext> ker </mtext><mi>𝑓</mi><mo>⊕</mo><mtext> im </mtext><mi>𝑓</mi></mrow></math></span></p>
+      <p><span><math><mi>𝑓</mi></math></span> 将 <span><math><mrow><mi>𝑇</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span> 映射到自身且 <span><math><mrow><msup><mi>𝑓</mi><mn>2</mn></msup><mo>=</mo><mi>𝑓</mi></mrow></math></span>, i.e. <a href="https://en.wikipedia.org/wiki/Projection_(linear_algebra)">wiki:Projection_(linear_algebra)</a>, so <span><math><mrow><msup><mo>⨀</mo><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow><mo>=</mo><mtext> ker </mtext><mi>𝑓</mi><mo>⊕</mo><mtext> im </mtext><mi>𝑓</mi></mrow></math></span></p>
     </li>
     <li>
       <p><span><math><mrow><mtext>ker </mtext><mi>𝑓</mi><mo>=</mo><mtext> curvature</mtext></mrow></math></span></p>
@@ -154,16 +131,13 @@
       <p>对于交错张量 <span><math><mrow><mrow><mi>𝑇</mi><mo>,</mo><mi>𝑆</mi></mrow><mo>∈</mo><msup><mo>⋀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span>, <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑇</mi><mo>⊙</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑇</mi><mo>∧</mo><mi>𝑆</mi></mrow></math></span>, so <span><math><mrow><mrow><mtext>im</mtext><mrow><mo>(</mo><mi>𝑓</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mo>⋀</mo><mn>4</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span></p>
     </li>
   </ul>
-  <p><code data-typst-label="dimension-of-algebraic-curvature">&lt;dimension-of-algebraic-curvature></code> 使用 <span><math><mrow><mfrac><mtext>domain </mtext><mtext>kernel </mtext></mfrac><mo>≃</mo><mtext> image</mtext></mrow></math></span>, 有代数曲率张量空间的维数</p>
+  <p>  <code>dimension-of-algebraic-curvature</code><em>_(tag)</em>   使用 <span><math><mrow><mfrac><mtext>domain </mtext><mtext>kernel </mtext></mfrac><mo>≃</mo><mtext> image</mtext></mrow></math></span>, 有代数曲率张量空间的维数</p>
   <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mtext>dim</mtext><mrow><mo>(</mo><mtext>curvature </mtext><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mover displaystyle="true"><mo>⨀</mo><mn>2</mn></mover><mrow><mo>(</mo><mrow><mover displaystyle="true"><mo>⋀</mo><mn>2</mn></mover><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mover displaystyle="true"><mo>⋀</mo><mn>4</mn></mover><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>12</mn></mfrac><msup><mi>𝑛</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mi>𝑛</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
   <p>where <span><math><mrow><mi>𝑛</mi><mo>=</mo><mtext> dim </mtext><mi>𝑉</mi></mrow></math></span></p>
   <p>metric 是一种张量 <span><math><mrow><mi>𝑔</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span></p>
   <p>映射 <span><math><mrow><mi>𝑔</mi><mo>⧀</mo><mo>:</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup><mo>→</mo><mtext> curvature</mtext></mrow></math></span></p>
-  <p><code data-typst-label="adjoint-of-curvature-product">&lt;adjoint-of-curvature-product></code> <span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>:</mo><mtext> curvature </mtext><mo>→</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span> :=</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>adjoint-of-curvature-product</code><em>_(tag)</em>   <span><math><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mo>:</mo><mtext> curvature </mtext><mo>→</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span> :=</p>
+  <div class="indent">
     <p>对于 <span><math><mrow><mi>𝑇</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span> 和 <span><math><mrow><mi>𝑆</mi><mo>∈</mo><mtext> curvature</mtext></mrow></math></span> 和 <span><math><mrow><mrow><mtext>curvature</mtext><mo>,</mo><msup><mo>⨀</mo><mn>2</mn></msup></mrow><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span> 的 <code>#link(&lt;tensor-induced-metric>)[]</code></p>
     <math display="block"><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo><mrow><mi>𝑇</mi><mo>,</mo></mrow><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑇</mi><mo>,</mo></mrow><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
     <p>对每个 <span><math><mrow><mi>𝑆</mi><mo>∈</mo><mtext> curvature</mtext></mrow></math></span>, 线性函数</p>
@@ -188,40 +162,37 @@
   <p><span><math><mrow><mi>𝑔</mi><mo>⋅</mo></mrow></math></span> 是单射, <span><math><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup></math></span> 是满射</p>
   <p><span><math><mrow><mrow><mtext>dim</mtext><mrow><mo>(</mo><msup><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mtext>dim</mtext><mrow><mo>(</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
   <p><span><math><mrow><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⟂</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup><mo>=</mo><msup><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup></mrow></math></span></p>
-  <p><code data-typst-label="curvature-decomposition-space">&lt;curvature-decomposition-space></code></p>
+  <p>  <code>curvature-decomposition-space</code><em>_(tag)</em>  </p>
   <math display="block"><mrow><mtext>curvature </mtext><mo>=</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⟂</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⟂</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow></mrow></math>
-  <p>正交分解为张量空间, 且不可再这样分解 i.e. irreducible</p>
-  <p><code data-typst-label="curvature-decomposition">&lt;curvature-decomposition></code> forall <span><math><mrow><mi>𝑇</mi><mo>∈</mo><mtext> curvature</mtext></mrow></math></span>, exists <span><math><mrow><mi>𝑆</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span>, 正交分解 <span><math><mrow><mi>𝑇</mi><mo>=</mo><mi>𝑈</mi><mo>+</mo><mi>𝑔</mi><mo>⧀</mo><mi>𝑆</mi><mo>∈</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⊕</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <p>正交分解为子张量空间, 且不可再这样分解 i.e. irreducible</p>
+  <p>  <code>curvature-decomposition</code><em>_(tag)</em>   forall <span><math><mrow><mi>𝑇</mi><mo>∈</mo><mtext> curvature</mtext></mrow></math></span>, exists <span><math><mrow><mi>𝑆</mi><mo>∈</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></math></span>, 正交分解 <span><math><mrow><mi>𝑇</mi><mo>=</mo><mi>𝑈</mi><mo>+</mo><mi>𝑔</mi><mo>⧀</mo><mi>𝑆</mi><mo>∈</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⊕</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
   <p><em>Proof</em> if it's true then</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑇</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mi>𝑆</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mi>𝑆</mi><mo>+</mo><mi>𝑔</mi><mo>⋅</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></span></p>
     <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑇</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑔</mi></mrow><mo>)</mo></mrow></mrow><mo>⋅</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>2</mn><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>,</mo><mi>𝑆</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></span></p>
     <p><span><math><mrow><mi>𝑆</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>4</mn><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑇</mi><mo>−</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mi>𝑔</mi><mo>⋅</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑇</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
     <ul>
       <li>
-        <p><code data-typst-label="Ricci-curvature">&lt;Ricci-curvature></code> <span><math><mrow><mtext>Ric </mtext><mo>≔</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑅</mi></mrow></math></span></p>
+        <p>  <code>Ricci-curvature</code><em>_(tag)</em>   <span><math><mrow><mtext>Ric </mtext><mo>≔</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑅</mi></mrow></math></span></p>
         <p>在坐标中 <span><math><mrow><mrow><mtext>Ric</mtext><mrow><mo>(</mo><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span></p>
       </li>
       <li>
-        <p><code data-typst-label="scalar-curvature">&lt;scalar-curvature></code> <span><math><mrow><mtext>scal </mtext><mo>≔</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑅</mi></mrow></math></span></p>
+        <p>  <code>scalar-curvature</code><em>_(tag)</em>   <span><math><mrow><mtext>scal </mtext><mo>≔</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑅</mi></mrow></math></span></p>
         <p>在坐标中 <span><math><mrow><mtext>scal </mtext><mo>=</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span></p>
       </li>
       <li>
-        <p><code data-typst-label="conformal-curvature">&lt;conformal-curvature></code> <span><math><mrow><mi>𝑊</mi><mo>≔</mo><mi>𝑅</mi><mo>−</mo><mi>𝑔</mi><mo>⧀</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>Ric </mtext><mo>−</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⋅</mo><mtext> scal</mtext></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup></mrow></math></span> (named so because if it vanish then the metric conformally flat when <span><math><mrow><mi>𝑛</mi><mo>≥</mo><mn>4</mn></mrow></math></span>) (<span><math><mi>𝑊</mi></math></span> from "Weyl")</p>
+        <p>  <code>conformal-curvature</code><em>_(tag)</em>   <span><math><mrow><mi>𝑊</mi><mo>≔</mo><mi>𝑅</mi><mo>−</mo><mi>𝑔</mi><mo>⧀</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mrow><mo>(</mo><mrow><mtext>Ric </mtext><mo>−</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⋅</mo><mtext> scal</mtext></mrow><mo>)</mo></mrow><mo>∈</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup></mrow></math></span> (named so because if it vanish then the metric conformally flat when <span><math><mrow><mi>𝑛</mi><mo>≥</mo><mn>4</mn></mrow></math></span>) (<span><math><mi>𝑊</mi></math></span> from "Weyl")</p>
       </li>
     </ul>
     <p>类似地, 正交分解 <span><math><mrow><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup><mo>=</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⊕</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 是 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>−</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⋅</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑆</mi></mrow><mo>)</mo></mrow><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⋅</mo><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow><mo>†</mo></msup><mi>𝑆</mi></mrow></math></span></p>
     <p>trace-free Ricci-curvature <span><math><mrow><mtext>tr-free-Ric </mtext><mo>≔</mo><mtext> Ric </mtext><mo>−</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⋅</mo><mtext> scal </mtext><mo>∈</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup></mrow></math></span></p>
-    <p>曲率正交分解</p>
+    <p>曲率正交子张量空间分解</p>
     <p><span><math><mrow><mtext>curvature </mtext><mo>=</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⧀</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⊕</mo><msup><mrow><mtext>ker</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow><mo>†</mo></msup><mo>⊕</mo><mrow><mtext>im</mtext><mrow><mo>(</mo><mrow><mi>𝑔</mi><mo>⋅</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑅</mi><mo>=</mo></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mi>𝑊</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>⋅</mo><mi>𝑔</mi><mo>⧀</mo><mtext> tr-free-Ric </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mn>2</mn><mrow><mi>𝑛</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mrow></mfrac><mo>⋅</mo><mtext> scal </mtext><mo>⋅</mo><mi>𝑔</mi><mo>⧀</mo><mi>𝑔</mi></mtd></mtr></mtable></math>
     <p>quadratic-form</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑅</mi><msup><mo>|</mo><mn>2</mn></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑊</mi><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mfrac><mn>4</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>|</mo><mtext>tr-free-Ric</mtext><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mfrac><mn>2</mn><mrow><mi>𝑛</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><msup><mtext> scal </mtext><mn>2</mn></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>|</mo><mi>𝑊</mi><msup><mo>|</mo><mn>2</mn></msup><mo>+</mo><mfrac><mn>4</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></mfrac><mo>|</mo><mtext>Ric</mtext><msup><mo>|</mo><mn>2</mn></msup><mo>−</mo><mfrac><mn>2</mn><mrow><mi>𝑛</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><msup><mtext> scal</mtext><mn>2</mn></msup></mtd></mtr></mtable></math>
   </div>
-  <p><code data-typst-label="curvature-low-dimension">&lt;curvature-low-dimension></code> low dimension curvature</p>
+  <p>  <code>curvature-low-dimension</code><em>_(tag)</em>   low dimension curvature</p>
   <ul>
     <li>
       <p><span><math><mrow><mi>𝑛</mi><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>⟹</mo><mrow><mtext>dim</mtext><mrow><mo>(</mo><mtext> curvature </mtext><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
@@ -230,10 +201,7 @@
       <p><span><math><mrow><mi>𝑛</mi><mo>=</mo><mn>2</mn><mo>⟹</mo><mrow><mtext>dim</mtext><mrow><mo>(</mo><mtext> curvature </mtext><mo>)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></span> span by <span><math><mrow><mi>𝑔</mi><mo>⧀</mo><mi>𝑔</mi></mrow></math></span></p>
     </li>
   </ul>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li>
         <p><span><math><mrow><mi>𝑅</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> scal </mtext><mi>𝑔</mi><mo>⧀</mo><mi>𝑔</mi></mrow></math></span>, only type <span><math><mrow><msub><mi>𝑅</mi><mn>1212</mn></msub><mo>≠</mo><mn>0</mn></mrow></math></span>, and <span><math><mrow><mi>𝑔</mi><mo>⧀</mo><mi>𝑔</mi><mo>∼</mo><msub><mi>𝑔</mi><mn>11</mn></msub><msub><mi>𝑔</mi><mn>12</mn></msub><mo>−</mo><msubsup><mi>𝑔</mi><mn>12</mn><mn>2</mn></msubsup><mo>=</mo><mrow><mtext>det</mtext><mrow><mo>(</mo><mi>𝑔</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
@@ -246,10 +214,7 @@
   <ul>
     <li><span><math><mrow><mi>𝑛</mi><mo>=</mo><mn>3</mn><mo>⟹</mo><mrow><mtext>dim</mtext><mrow><mo>(</mo><mtext> curvature </mtext><mo>)</mo></mrow></mrow><mo>=</mo><mn>6</mn></mrow></math></span></li>
   </ul>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li>
         <p><span><math><mrow><mi>𝑔</mi><mo>⧀</mo><mo>:</mo><msup><mo>⨀</mo><mn>2</mn></msup><msup><mi>𝑉</mi><mo>⊺</mo></msup><mo>→</mo><mtext> curvature</mtext></mrow></math></span> 是双射</p>
@@ -264,10 +229,7 @@
   </div>
   <p>let <span><math><mrow><mfrac><mrow><mo>∂</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow><mrow><mo>∂</mo><msup><mi>𝑥</mi><mi>𝑗</mi></msup><mo>∂</mo><msup><mi>𝑥</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></mfrac><mo>=</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span></p>
   <p>metric 测地线坐标展开也有曲率的出现</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝜂</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>+</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mrow><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msup><mi>𝑣</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mn>2</mn></msup><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
     <p>且满足</p>
     <math display="block"><mrow><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mrow><mi>𝑗</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msup><mi>𝑣</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup><mo>=</mo><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msub><mi>𝑅</mi><mrow><mi>𝑖</mi><mi>𝑗</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msup><mi>𝑤</mi><mi>𝑗</mi></msup><msup><mi>𝑤</mi><msup><mi>𝑗</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math>

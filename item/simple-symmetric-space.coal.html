@@ -1,5 +1,10 @@
 <div>
-  <p><code data-typst-label="symmetric-space-locally">&lt;symmetric-space-locally></code> := <span><math><mrow><mo>∇</mo><mi>𝑅</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>cf. <a href="https://en.wikipedia.org/wiki/Symmetric_space">wiki:Symmetric_space</a> <a href="https://en.wikipedia.org/wiki/Simple_Lie_group">wiki:Simple_Lie_group</a></p>
+  <p>  <code>symmetric-space-locally</code><em>_(tag)</em>   := <span><math><mrow><mo>∇</mo><mi>𝑅</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
   <p><strong>Example</strong> quadratic manifold, simple-Lie-group and related symmetric-space</p>
   <p>constant-sectional-curvature ==> symmetric-space</p>
   <p>simple-Lie-group := Lie-algebra &amp; Lie-bracket cannot decompose</p>
@@ -11,18 +16,12 @@
   <p>simple-Lie-group &lt;==> Killing-form 非退化</p>
   <p>simple-Lie-group and its symmetric-space 的 Killing-form 是 Einstein-metric</p>
   <p><em>Proof</em> of simple-Lie-group 的情况</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li><span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mo>[</mo><mrow><mi>𝑋</mi><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>]</mo></mrow><mrow><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><mrow><mo>[</mo><mrow><mi>𝑋</mi><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>]</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> for Lie algebra <span><math><mrow><mi>𝑋</mi><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow></math></span></li>
     </ul>
     <p><em>Proof</em></p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>Lie-algebra ==> δ-isometry ==> for δ-group-action <span><math><mi>𝑋</mi></math></span>, <span><math><mrow><msub><mo>∂</mo><mi>𝑋</mi></msub><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
       <p>因为 Killing-form 是群作用生成的 metric 所以 Lie-derivative 是零 <span><math><mrow><msub><mi>𝐿</mi><mi>𝑋</mi></msub><mi>𝑔</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
       <p>对于 <span><math><mrow><mi>𝑋</mi><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow></math></span> 生成的场</p>
@@ -54,18 +53,12 @@
   </div>
   <p><strong>Prop</strong> <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>[</mo><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow><mo>]</mo></mrow></mrow></math></span> at <span><math><mn>𝟙</mn></math></span>, 同理对 <span><math><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow></math></span> 生成的场 (bi-invariant)</p>
   <p><em>Proof</em></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><strong>Prop</strong> <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
     <p>这给出 <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mo>+</mo><msub><mo>∇</mo><mi>𝑌</mi></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
     <p>with <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑌</mi><mo>−</mo><msub><mo>∇</mo><mi>𝑌</mi></msub><mi>𝑋</mi><mo>=</mo><mrow><mo>[</mo><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow><mo>]</mo></mrow></mrow></math></span>, 这给出 <span><math><mrow><mo>∇</mo><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>[</mo><mo>,</mo><mo>]</mo></mrow></mrow></math></span></p>
     <p><em>Proof</em> of <span><math><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑋</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>need <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑌</mi><mo>,</mo></mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
       <p>由于群作用生成 <span><math><mrow><mi>𝑔</mi><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow></math></span>, <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><mtext>at </mtext><mi>𝑝</mi></mrow><mo>)</mo></mrow><mo>≡</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><mtext>at </mtext><mn>𝟙</mn></mrow><mo>)</mo></mrow></mrow></math></span> 常值 ==> <span><math><mrow><mo>∂</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
       <p><span><math><mrow><mn>0</mn><mo>=</mo><msub><mo>∂</mo><mi>𝑋</mi></msub><mrow><mo>(</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mrow><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>,</mo></mrow><msub><mo>∇</mo><mi>𝑋</mi></msub><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">″</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
@@ -78,10 +71,7 @@
     </div>
   </div>
   <p><strong>Prop</strong> for simple-Lie-group</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>Lie algebra 生成的 bi-invariant vector field 的积分曲线都是 Killing-form 测地线, 因为</p>
     <ul>
       <li>测地线可以写为 <span><math><mrow><msub><mo>∇</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></msub><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>=</mo><mn>0</mn></mrow></math></span></li>

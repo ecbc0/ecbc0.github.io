@@ -1,0 +1,47 @@
+<div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>Binary relation := Propositional function <span><math><mrow><mi>𝑝</mi><mo>:</mo><mi>𝐴</mi><mo>×</mo><mi>𝐵</mi><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span> or a subset of <span><math><mrow><mi>𝐴</mi><mo>×</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p>when <span><math><mrow><mi>𝐴</mi><mo>×</mo><mi>𝐵</mi></mrow></math></span> it's called <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> is independent</p>
+  <p><span><math><mi>𝑛</mi></math></span>-ary relation is similar</p>
+  <p>  <code>order</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>Propositional function <span><math><mrow><mo>&lt;</mo><mo>:</mo><msup><mi>𝐴</mi><mn>2</mn></msup><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span> is an order := <span><math><mrow><mo>∀</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi><mo>,</mo><mi>𝑐</mi></mrow><mo>∈</mo><mi>𝐴</mi></mrow></math></span></p>
+    <ul>
+      <li>Transitive: <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>&lt;</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mi>𝑎</mi><mo>&lt;</mo><mi>𝑐</mi></mrow></math></span></li>
+      <li>Acyclic: <span><math><mrow><mo>¬</mo><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>&lt;</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>&lt;</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></li>
+    </ul>
+    <p>Can also use the equivalent <span><math><mo>≤</mo></math></span> version</p>
+  </div>
+  <p><strong>Example</strong></p>
+  <ul>
+    <li>
+      <p>Subset inclusion <span><math><mo>⊂</mo></math></span> or inclusion and not equal to <span><math><mo>⊊</mo></math></span> is an order</p>
+      <img src="../image/tree-diagram.svg" width="70%">
+      <p>image modified from wiki media about partial order</p>
+    </li>
+    <li><span><math><mrow><mo>&lt;</mo><mo>,</mo><mo>≤</mo></mrow></math></span> of <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo><mi mathvariant="normal">ℤ</mi><mo>,</mo><mi mathvariant="normal">ℚ</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></li>
+    <li>Tree diagram</li>
+  </ul>
+  <p>  <code>order-comparable</code><em>_(tag)</em>   <span><math><mrow><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mi>𝐴</mi></mrow></math></span> comparable := <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>≤</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>≤</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>  <code>comparable-component</code><em>_(tag)</em>   <span><math><mrow><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> is comparable-component := <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mo>∃</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>∈</mo><mrow><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>,</mo></mrow><mtext> comparable</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>⟹</mo><mi>𝑎</mi><mo>∈</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>Partial order can be decomposed into comparable-components that are not comparable to each other. Imagine two tree diagrams that have no relation</p>
+  <p>  <code>linear-order</code><em>_(tag)</em>   <span><math><mi>𝐴</mi></math></span> linear order</p>
+  <div class="indent">
+    <p><span><math><mrow><mo>∀</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mtext>comparable</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>Intuitively, a linear order has no branches, also called a "chain"</p>
+  </div>
+  <p>  <code>maximal-linear-order</code><em>_(tag)</em>   Maximal linear order chain</p>
+  <div class="indent">
+    <p>let <span><math><mrow><mi>𝐵</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> with <span><math><mo>&lt;</mo></math></span> linear order. <span><math><mi>𝐵</mi></math></span> is maximal-linear-order := the following definitions are equivalent</p>
+    <ul>
+      <li><span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑏</mi><mo>∈</mo><mrow><mi>𝐵</mi><mo>,</mo></mrow><mtext> comparable</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+      <li><span><math><mrow><mo>∀</mo><mtext> linear-order </mtext><mi>𝐶</mi><mo>⊂</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>⊂</mo><mi>𝐶</mi><mo>⟹</mo><mi>𝐵</mi><mo>=</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+    </ul>
+    <p>It cannot be used to decompose partial orders. Two maximal linear order chains can have intersecting parts</p>
+  </div>
+  <p>  <code>maximal-linear-order-exists</code><em>_(tag)</em>   maximal-linear-order chain alaways exists</p>
+  <div class="indent">related to <code>#link(&lt;axiom-of-choice>)[]</code>?</div>
+</div>

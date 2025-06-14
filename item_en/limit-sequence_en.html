@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}  sequence-real_(tag)   Real number sequence :&#x3D; ℕ→ℝ. Usually denoted as 𝑎𝑛. Depending on the situation, set it to start from 0 or from 1  limit-sequence-real_(tag)   Sequence 𝑎𝑛 limitlim 𝑛→∞𝑎𝑛&#x3D;𝑎≔∀𝜀&gt;0,∃𝑁∈ℕ,∀𝑛∈ℕ,|𝑎𝑛−𝑎|&lt;𝜀Operations of limitslim 𝑛→∞(𝑎𝑛+𝑏𝑛)&#x3D; lim 𝑛→∞𝑎𝑛+ lim 𝑛→∞𝑏𝑛lim 𝑛→∞𝑎𝑛⋅𝑏𝑛&#x3D; lim 𝑛→∞𝑎𝑛⋅ lim 𝑛→∞𝑏𝑛  rational-dense-in-real_(tag)   ℚ is dense in ℝ. ∀𝑥,𝑦∈ℝ,∃𝑚𝑛∈ℚ,𝑥&lt;𝑚𝑛&lt;𝑦Proof𝑥&lt;𝑦 #link(&lt;order-real&gt;)[equivalent to]ℚ&lt;𝑥⊊ℚ&lt;𝑦ℚ&gt;𝑥⊋ℚ&gt;𝑦Accurate to at most a little bit difference, there isℚ≈ℚ&lt;𝑥⊔ℚ&gt;𝑥≈ℚ&lt;𝑦⊔ℚ&gt;𝑦so ℚ&gt;𝑥∩ℚ&lt;𝑦≠∅&#x3D;&#x3D;&gt; ∀𝜀&gt;0,∃𝑚𝑛∈ℚ,0&lt;𝑚𝑛&lt;𝜀&#x3D;&#x3D;&gt;lim 𝑛→∞𝑚𝑛&#x3D;0∀𝜀&gt;0,∀𝑚∈ℕ,∃𝑛∈ℕ,𝑛𝜀&gt;𝑚 or lim 𝑛→∞𝑛𝜀&#x3D;∞𝑎&gt;1⟹ lim 𝑛→∞𝑎𝑛&#x3D;∞Proof 𝑥&gt;0⟹(1+𝑥)𝑛&#x3D;1+𝑛𝑥+⋯&gt;1+𝑛𝑥 and lim 𝑛→∞𝑛𝑥&#x3D;∞&#x3D;&#x3D;&gt; 0&lt;𝑎&lt;1⟹ lim 𝑛→∞𝑎𝑛&#x3D;0  geometric-series_(tag)   Geometric series 𝑥𝑛&#x3D;1+𝑎+𝑎2+⋯+𝑎𝑛. 0&lt;𝑎&lt;1⟹ lim 𝑛→∞𝑥𝑛&#x3D;11−𝑎Proof (1−𝑎)(1+𝑎+𝑎2+⋯+𝑎𝑛)&#x3D;1−𝑎𝑛+1, 𝑥𝑛&#x3D;1−𝑎𝑛+11−𝑎  geometric-series-test_(tag)   Geometric series convergence test. let 𝑎𝑛&gt;0. 𝑎𝑛+1𝑎𝑛&lt;𝑞&lt;1⟹ lim 𝑛→∞𝑎𝑛&#x3D;0Proof 𝑎𝑛&#x3D;𝑎𝑛𝑎𝑛−1⋯𝑎0𝑎1𝑎0⋯&lt;𝑞𝑛𝑎0  exponential-vs-power_(tag)   Exponential growth is faster than power. 𝑎&gt;1,𝑝∈ℕ⟹ lim 𝑛→∞𝑛𝑝𝑎𝑛&#x3D;0Proof define 𝑏𝑛&#x3D;𝑛𝑝𝑎𝑛use Geometric series convergence test 𝑏𝑛+1𝑏𝑛&#x3D;(𝑛+1𝑛)𝑝1𝑎⟶𝑛→∞1𝑎&lt;1  exponential-root-of-power-function_(tag)   lim 𝑛→∞𝑛1𝑛&#x3D;1Proof∀𝑎&gt;1, lim 𝑛→∞𝑛𝑎𝑛&#x3D;0∃𝑁∈ℕ,∀𝑛&gt;𝑁,𝑛&lt;𝑎𝑛1≤𝑛1𝑛&lt;𝑎&#x3D;&#x3D;&gt; 𝑎&gt;0⟹ lim 𝑛→∞𝑎1𝑛&#x3D;1ProofWhen 𝑎&gt;1, by lim 𝑛→∞𝑎1𝑛&lt; lim 𝑛→∞𝑛1𝑛When 𝑎&lt;1, use 1𝑎&gt;1  factorial-vs-exponential_(tag)   Factorial growth is faster than exponential. 𝑎∈ℝ⟹ lim 𝑛→∞𝑎𝑛𝑛!&#x3D;0Proof define 𝑏𝑛&#x3D;𝑎𝑛𝑛!. use Geometric series convergence test 𝑏𝑛+1𝑏𝑛&#x3D;𝑎𝑛→0&lt;1𝑛! corresponds to the number of bijections of {1,…,𝑛}, 𝑛𝑛 corresponds to the number of self-mappings of {1,…,𝑛}. 𝑛𝑛𝑛 etc. are similar  iterated-power-vs-factorial_(tag)   lim 𝑛→∞𝑛!𝑛𝑛&#x3D;0Proof define 𝑏𝑛&#x3D;⋯. use geometric series convergence test 𝑏𝑛+1𝑏𝑛&#x3D;(𝑛𝑛+1)𝑛→1𝑒&lt;1Comparison of growth rates, real number version𝑎&gt;1,𝑝∈ℝ&gt;0⟹ lim 𝑥→+∞𝑥𝑝𝑎𝑥&#x3D;0𝑎∈ℝ⟹ lim 𝑥→+∞𝑎𝑥𝑥!&#x3D;0 with 𝑥!&#x3D;Γ(𝑥+1)lim 𝑥→+∞𝑥!𝑥𝑥&#x3D;0  mean-inequality_(tag)   Mean inequality alias   AM-GM-inequality_(tag)  ∏𝑖&#x3D;1..𝑛𝑎𝑖≤(1𝑛∑𝑖&#x3D;1..𝑛𝑎𝑖)𝑛≤ obtains &#x3D; &lt;&#x3D;&#x3D;&gt; 𝑎1&#x3D;⋯&#x3D;𝑎𝑛&#x3D;1𝑛∑𝑖&#x3D;1..𝑛𝑎𝑖DimensionlessProof&lt;&#x3D;&#x3D;&gt; ∏𝑖&#x3D;1..𝑛(𝑎𝑖)1𝑛≤1𝑛∑𝑖&#x3D;1..𝑛𝑎𝑖&lt;&#x3D;&#x3D;&gt; ∏𝑖&#x3D;1..𝑛𝑎𝑖≤1𝑛∑𝑖&#x3D;1..𝑛(𝑎𝑖)𝑛Use differential method to calculate the extreme value. Consider the function(𝑎1)+⋯+(𝑎𝑛)𝑛−𝑛𝑎1⋯𝑎𝑛First derivative∂𝑖&#x3D;𝑛(𝑎𝑖𝑛−1−𝑎1⋯𝑎𝑛∖𝑎𝑖)The first derivative equals zero, solving the equation yields∂1&#x3D;⋯&#x3D;∂𝑛&#x3D;0⟹𝑎1&#x3D;⋯&#x3D;𝑎𝑛Second derivative∂𝑖∂𝑖&#x3D;𝑛(𝑛−1)𝑎𝑖𝑛−2∂𝑖∂𝑗&#x3D;−𝑛𝑎1⋯𝑎𝑛∖𝑎𝑖𝑎𝑗Determine the positive definiteness of the quadratic form ∂𝑖∂𝑗The 𝑛 multiplication factor can be extractedAll are 𝑛−2 order polynomial of 𝑎1,…,𝑎𝑛, and the first-order differential being zero makes 𝑎1&#x3D;⋯&#x3D;𝑎𝑛, so for judging positive definiteness, we only need to consider 𝑎1&#x3D;⋯&#x3D;𝑎𝑛&#x3D;1, the quadratic form(∂1∂1⋯∂1∂𝑛⋮⋱⋮∂𝑛∂1⋯∂𝑛∂𝑛)&#x3D;(𝑛−1−1⋯−1−1𝑛−1⋯−1⋮⋮⋱⋮−1−1⋯𝑛−1)(𝑏1⋮𝑏𝑛)⊺(𝑛−1−1⋯−1−1𝑛−1⋯−1⋮⋮⋱⋮−1−1⋯𝑛−1)(𝑏1⋮𝑏𝑛)&#x3D;(𝑛−1)(𝑏12+⋯+𝑏𝑛2)−2∑𝑖&lt;𝑗𝑏𝑖𝑏𝑗&#x3D;∑𝑖&lt;𝑗(𝑏𝑖2+𝑏𝑗2)−2∑𝑖&lt;𝑗𝑏𝑖𝑏𝑗&#x3D;∑𝑖&lt;𝑗(𝑏𝑖−𝑏𝑗)2So at 𝑎1&#x3D;⋯&#x3D;𝑎𝑛 the first derivative is zero and the second derivative is positive definite, the function will not become smaller nearby, so that&#x27;s the minimum, and it&#x27;s 0  best-multiplication-decomposition_(tag)   Optimal multiplication decompositionforall 𝑛 fixed 𝑎&#x3D;∑𝑖&#x3D;1..𝑛𝑎𝑖∈ℝquestion: which 𝑛 makes ∏𝑖&#x3D;1..𝑛𝑎𝑖 maximum?For each 𝑛∈ℕ, according to the mean inequality, 𝑎𝑛 should be used for equal addition to obtain the maximum ∏𝑖&#x3D;1..𝑛𝑎𝑖When what is the equal division number 𝑛, (𝑎𝑛)𝑛 has the maximum value?𝑔:𝑛⇝(𝑛+1)𝑛+1𝑛𝑛 monotonically increasingProof 𝑔(𝑛+1)𝑔(𝑛)&gt;1Function 𝑓:𝑛⇝(𝑎𝑛)𝑛Increasing when 𝑛∈ℕ:(𝑛+1)𝑛+1𝑛𝑛≤𝑎Decreasing when 𝑛∈ℕ:(𝑛+1)𝑛+1𝑛𝑛≥𝑎Therefore (𝑎𝑛)𝑛 takes the maximum value near 𝑛:(𝑛+1)𝑛+1𝑛𝑛&#x3D;𝑎Proof of the monotonic property of 𝑓𝑓(𝑛+1)𝑓(𝑛)&#x3D;𝑎⋅(𝑛+1)𝑛+1𝑛𝑛𝑓(𝑛+1)≥𝑓(𝑛)⟺𝑓(𝑛+1)𝑓(𝑛)≥1⟺𝑎≥(𝑛+1)𝑛+1𝑛𝑛Example 𝑔(𝑛)≥𝑔(1)&#x3D;4. Therefore, when 𝑎≤4, 1 equal division is the best(𝑛+1)𝑛+1𝑛𝑛∼𝑒⋅(𝑛+1) i.e. lim 𝑛→∞(𝑛+1)𝑛+1𝑛𝑛𝑛+1&#x3D; lim 𝑛→∞(𝑛+1𝑛)𝑛&#x3D;𝑒  natural-constant_(tag)   Natural constant 𝑒𝑒&#x3D; lim 𝑛→∞(𝑛+1𝑛)𝑛&#x3D;∑𝑛&#x3D;0∞1𝑛!ProofBinomial expansion(1+1𝑛)𝑛&#x3D;1+(𝑛1)1𝑛+(𝑛2)1𝑛2+⋯+(𝑛𝑛)1𝑛𝑛When 𝑘 is fixed, we havelim 𝑛→∞(𝑛𝑘)1𝑛𝑘&#x3D; lim 𝑛→∞1𝑘!𝑛⋅(𝑛−1)⋯(𝑛−𝑘+1)𝑛𝑘&#x3D;1𝑘!For each 𝑘∈ℕlim 𝑛→∞(1+1𝑛)𝑛≥10!+11!+⋯+1𝑘! lim 𝑛→∞(1+1𝑛)𝑛≥lim 𝑘→∞10!+11!+⋯+1𝑘!also(1+1𝑛)𝑛&lt;10!+11!+⋯+1𝑛!by (𝑛𝑘)1𝑛𝑘&#x3D;1𝑘!𝑛⋅(𝑛−1)⋯(𝑛−𝑘+1)𝑛𝑘&lt;1𝑘!Therefore lim 𝑛→∞(1+1𝑛)𝑛&#x3D; lim 𝑛→∞10!+11!+⋯+1𝑛!&#x3D;∑𝑛&#x3D;0∞1𝑛!∑𝑛&#x3D;0∞1𝑛! converges. 𝑎&gt;1, lim 𝑛→∞𝑎𝑛𝑛!&#x3D;0 &#x3D;&#x3D;&gt; at the tail 1𝑛!&lt;1𝑎𝑛 geometric series control  iterated-power-vs-factorial-more_(tag)   Comparison of the growth rate of factorial and iterated power 𝑒𝑛∼𝑛𝑛𝑛! or 𝑒&#x3D; lim 𝑛→∞𝑛(𝑛!)1𝑛so 𝑛!1𝑛∼1𝑒⋅𝑛, so lim 𝑛→∞𝑛!1𝑛&#x3D;∞Proof of 𝑒&#x3D; lim 𝑛→∞𝑛(𝑛!)1𝑛def 𝑓(𝑛)&#x3D;𝑛𝑛𝑛!𝑓(𝑛+1)𝑓(𝑛)&#x3D;(𝑛+1𝑛)𝑛→𝑒𝑓(𝑛)&#x3D;𝑓(𝑛)𝑓(𝑛−1)⋯𝑓(2)𝑓(1)𝑓(1)𝑓(1)&#x3D;1def 𝑎𝑛&#x3D;𝑓(𝑛+1)𝑓(𝑛)&#x3D;(𝑛+1𝑛)𝑛𝑛𝑛!1𝑛&#x3D;(𝑎1⋯𝑎𝑛−1)1𝑛&#x3D;(𝑎1⋯𝑎𝑛)1𝑛⋅1(𝑎𝑛)1𝑛&#x3D;(𝑎1⋯𝑎𝑛)1𝑛𝑛𝑛+1  sequence-multiplication-mean-limit_(tag)   Multiplication average does not change the limit(𝑎𝑛&gt;0)∧(lim 𝑛→∞𝑎𝑛&#x3D;𝑎)⟹ lim 𝑛→∞(𝑎1⋯𝑎𝑛)1𝑛&#x3D;𝑎Proof∀𝜀≥0,∃𝑁∈ℕ,∀𝑛&gt;𝑁,𝑎−𝜀≤𝑎𝑛≤𝑎+𝜀𝑎1⋯𝑎𝑛&#x3D;(𝑎1⋯𝑎𝑁)⋅(𝑎𝑁+1⋯𝑎𝑛)(𝑎1⋯𝑎𝑁)1𝑛(𝑎−𝜀)1−𝑁𝑛≤(𝑎1⋯𝑎𝑛)1𝑛≤(𝑎1⋯𝑎𝑁)1𝑛(𝑎+𝜀)1−𝑁𝑛lim 𝑛→∞(𝑎1⋯𝑎𝑁)1𝑛&#x3D;1lim 𝑛→∞1−𝑁𝑛&#x3D;1  sequence-addition-mean-limit_(tag)   Addition average lim 𝑛→∞𝑎𝑛&#x3D;𝑎⟹ lim 𝑛→∞1𝑛(𝑎1+⋯+𝑎𝑛)&#x3D;𝑎  harmonic-series-diverge_(tag)   Harmonic series diverges lim 𝑛→∞1+12+⋯+1𝑛&#x3D;+∞Proof 𝑎𝑛&#x3D;1+12+⋯+1𝑛 diverges because it is not #link(&lt;Cauchy-completeness-real&gt;)[limit-distance-vanish]. e.g.∀𝑛∈ℕ,𝑎2𝑛−𝑎𝑛&#x3D;1𝑛+1+⋯+12𝑛≥𝑛⋅12𝑛&#x3D;12  Euler-constant_(tag)   lim 𝑛→∞1+12+⋯+1𝑛− log 𝑛&#x3D;𝛾 converges as additive asymptotic. lim 𝑛→∞exp(1+12+⋯+1𝑛)𝑛&#x3D;𝑒𝛾 as multiplicative asymptoticProoflet 𝑎𝑛&#x3D;1+12+⋯+1𝑛− log 𝑛log 𝑛&#x3D; log 𝑛𝑛−1⋯21⋅1&#x3D;log(𝑛𝑛−1)+⋯+log(21)+log(1)Integral estimation1𝑛&lt;∫𝑛−1𝑛1𝑥&#x3D;log(𝑛𝑛−1)&lt;1𝑛−1𝑎𝑛 is bounded12+⋯+1𝑛&gt;log(𝑛)&gt;1+⋯+1𝑛−1−(12+⋯+1𝑛)&gt;− log 𝑛&gt;−(1+⋯+1𝑛−1)1&gt;1+12+⋯+1𝑛− log 𝑛&gt;1𝑛𝑎𝑛 is monotonically decreasing𝑎𝑛+1−𝑎𝑛&#x3D;1𝑛+1−log(𝑛+1𝑛)&lt;1𝑛+1−1𝑛+1&#x3D;0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html" class="active"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/limit-sequence_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>  <code>sequence-real</code><em>_(tag)</em>   Real number sequence := <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>. Usually denoted as <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span>. Depending on the situation, set it to start from <span><math><mn>0</mn></math></span> or from <span><math><mn>1</mn></math></span></p>
+  <p>  <code>limit-sequence-real</code><em>_(tag)</em>   Sequence <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> limit</p>
+  <math display="block"><mrow><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mi>𝑎</mi><mo>≔</mo><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∀</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>−</mo><mrow><mi>𝑎</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math>
+  <p>Operations of limits</p>
+  <ul>
+    <li><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>+</mo><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>+</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mrow></math></span></li>
+    <li><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>⋅</mo><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>⋅</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mrow></math></span></li>
+  </ul>
+  <p>  <code>rational-dense-in-real</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℚ</mi></math></span> is dense in <span><math><mi mathvariant="normal">ℝ</mi></math></span>. <span><math><mrow><mo>∀</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>∈</mo><mrow><mi mathvariant="normal">ℝ</mi><mo>,</mo></mrow><mo>∃</mo><mfrac><mi>𝑚</mi><mi>𝑛</mi></mfrac><mo>∈</mo><mrow><mi mathvariant="normal">ℚ</mi><mo>,</mo></mrow><mi>𝑥</mi><mo>&lt;</mo><mfrac><mi>𝑚</mi><mi>𝑛</mi></mfrac><mo>&lt;</mo><mi>𝑦</mi></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p><span><math><mrow><mi>𝑥</mi><mo>&lt;</mo><mi>𝑦</mi></mrow></math></span> <code>#link(&lt;order-real>)[equivalent to]</code></p>
+    <p><span><math><mtable><mtr><mtd><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊊</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub></mtd></mtr><mtr><mtd><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>⊋</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑦</mi></mrow></msub></mtd></mtr></mtable></math></span></p>
+    <p>Accurate to at most a little bit difference, there is</p>
+    <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mi mathvariant="normal">ℚ</mi></mtd><mtd class="mathyml-align-left"><mo>≈</mo></mtd><mtd class="mathyml-align-right"><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑥</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≈</mo></mtd><mtd class="mathyml-align-right"><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub><mo>⊔</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑦</mi></mrow></msub></mtd></mtr></mtable></math></span></p>
+    <p>so <span><math><mrow><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>></mo><mi>𝑥</mi></mrow></msub><mo>∩</mo><msub><mi mathvariant="normal">ℚ</mi><mrow><mo>&lt;</mo><mi>𝑦</mi></mrow></msub><mo>≠</mo><mo>∅</mo></mrow></math></span></p>
+  </div>
+  <p>==> <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mfrac><mi>𝑚</mi><mi>𝑛</mi></mfrac><mo>∈</mo><mrow><mi mathvariant="normal">ℚ</mi><mo>,</mo></mrow><mn>0</mn><mo>&lt;</mo><mfrac><mi>𝑚</mi><mi>𝑛</mi></mfrac><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
+  <p>==></p>
+  <ul>
+    <li>
+      <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mi>𝑚</mi><mi>𝑛</mi></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    </li>
+    <li>
+      <p><span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∀</mo><mi>𝑚</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∃</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mi>𝑛</mi><mi>𝜀</mi><mo>></mo><mi>𝑚</mi></mrow></math></span> or <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mi>𝑛</mi><mi>𝜀</mi><mo>=</mo><mo>∞</mo></mrow></math></span></p>
+    </li>
+  </ul>
+  <p><span><math><mrow><mi>𝑎</mi><mo>></mo><mn>1</mn><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mo>=</mo><mo>∞</mo></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><mrow><mi>𝑥</mi><mo>></mo><mn>0</mn><mo>⟹</mo><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><mn>1</mn><mo>+</mo><mi>𝑛</mi><mi>𝑥</mi><mo>+</mo><mo>⋯</mo><mo>></mo><mn>1</mn><mo>+</mo><mi>𝑛</mi><mi>𝑥</mi></mrow></math></span> and <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mi>𝑛</mi><mi>𝑥</mi><mo>=</mo><mo>∞</mo></mrow></math></span></p>
+  <p>==> <span><math><mrow><mn>0</mn><mo>&lt;</mo><mi>𝑎</mi><mo>&lt;</mo><mn>1</mn><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p>  <code>geometric-series</code><em>_(tag)</em>   Geometric series <span><math><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mi>𝑎</mi><mo>+</mo><msup><mi>𝑎</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mrow></math></span>. <span><math><mrow><mn>0</mn><mo>&lt;</mo><mi>𝑎</mi><mo>&lt;</mo><mn>1</mn><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑎</mi></mrow></mfrac></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>𝑎</mi><mo>+</mo><msup><mi>𝑎</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>+</mo><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span>, <span><math><mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>𝑎</mi></mrow></mfrac></mrow></math></span></p>
+  <p>  <code>geometric-series-test</code><em>_(tag)</em>   Geometric series convergence test. let <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>></mo><mn>0</mn></mrow></math></span>. <span><math><mrow><mfrac><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mfrac><mo>&lt;</mo><mi>𝑞</mi><mo>&lt;</mo><mn>1</mn><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac><mo>⋯</mo><mfrac><msub><mi>𝑎</mi><mn>0</mn></msub><msub><mi>𝑎</mi><mn>1</mn></msub></mfrac><msub><mi>𝑎</mi><mn>0</mn></msub><mo>⋯</mo><mo>&lt;</mo><msup><mi>𝑞</mi><mi>𝑛</mi></msup><msub><mi>𝑎</mi><mn>0</mn></msub></mrow></math></span></p>
+  <p>  <code>exponential-vs-power</code><em>_(tag)</em>   Exponential growth is faster than power. <span><math><mrow><mi>𝑎</mi><mo>></mo><mn>1</mn><mo>,</mo><mi>𝑝</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><msup><mi>𝑛</mi><mi>𝑝</mi></msup><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em> define <span><math><mrow><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><msup><mi>𝑛</mi><mi>𝑝</mi></msup><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mfrac></mrow></math></span></p>
+  <p>use Geometric series convergence test <span><math><mrow><mfrac><msub><mi>𝑏</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑝</mi></msup><mfrac><mn>1</mn><mi>𝑎</mi></mfrac><munder displaystyle="false"><mo>⟶</mo><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mn>1</mn><mi>𝑎</mi></mfrac><mo>&lt;</mo><mn>1</mn></mrow></math></span></p>
+  <p>  <code>exponential-root-of-power-function</code><em>_(tag)</em>   <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑛</mi><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mn>1</mn></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div class="indent"><span><math><mtable><mtr><mtd><mo>∀</mo><mi>𝑎</mi><mo>></mo><mn>1</mn><mo>,</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mi>𝑛</mi><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mfrac><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>,</mo><mo>∀</mo><mi>𝑛</mi><mo>></mo><mi>𝑁</mi><mo>,</mo><mi>𝑛</mi><mo>&lt;</mo><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd><mn>1</mn><mo>≤</mo><msup><mi>𝑛</mi><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>&lt;</mo><mi>𝑎</mi></mtd></mtr></mtable></math></span></div>
+  <p>==> <span><math><mrow><mi>𝑎</mi><mo>></mo><mn>0</mn><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑎</mi><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mn>1</mn></mrow></math></span></p>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>When <span><math><mrow><mi>𝑎</mi><mo>></mo><mn>1</mn></mrow></math></span>, by <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑎</mi><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>&lt;</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mi>𝑛</mi><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span></p>
+    <p>When <span><math><mrow><mi>𝑎</mi><mo>&lt;</mo><mn>1</mn></mrow></math></span>, use <span><math><mrow><mfrac><mn>1</mn><mi>𝑎</mi></mfrac><mo>></mo><mn>1</mn></mrow></math></span></p>
+  </div>
+  <p>  <code>factorial-vs-exponential</code><em>_(tag)</em>   Factorial growth is faster than exponential. <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em> define <span><math><mrow><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span>. use Geometric series convergence test <span><math><mrow><mfrac><msub><mi>𝑏</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mfrac><mo>=</mo><mfrac><mi>𝑎</mi><mi>𝑛</mi></mfrac><mo>→</mo><mn>0</mn><mo>&lt;</mo><mn>1</mn></mrow></math></span></p>
+  <p><span><math><mrow><mi>𝑛</mi><mo>!</mo></mrow></math></span> corresponds to the number of bijections of <span><math><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></math></span>, <span><math><msup><mi>𝑛</mi><mi>𝑛</mi></msup></math></span> corresponds to the number of self-mappings of <span><math><mrow><mo>{</mo><mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mi>𝑛</mi></mrow><mo>}</mo></mrow></math></span>. <span><math><msup><mi>𝑛</mi><msup><mi>𝑛</mi><mi>𝑛</mi></msup></msup></math></span> etc. are similar</p>
+  <p>  <code>iterated-power-vs-factorial</code><em>_(tag)</em>   <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mrow><mi>𝑛</mi><mo>!</mo></mrow><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+  <p><em>Proof</em> define <span><math><mrow><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mo>=</mo><mo>⋯</mo></mrow></math></span>. use geometric series convergence test <span><math><mrow><mfrac><msub><mi>𝑏</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mi>𝑛</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>→</mo><mfrac><mn>1</mn><mi>𝑒</mi></mfrac><mo>&lt;</mo><mn>1</mn></mrow></math></span></p>
+  <p>Comparison of growth rates, real number version</p>
+  <ul>
+    <li>
+      <p><span><math><mrow><mi>𝑎</mi><mo>></mo><mrow><mn>1</mn><mo>,</mo></mrow><mi>𝑝</mi><mo>∈</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑥</mi><mo>→</mo><mrow><mo>+</mo><mo>∞</mo></mrow></mrow></munder><mfrac><msup><mi>𝑥</mi><mi>𝑝</mi></msup><msup><mi>𝑎</mi><mi>𝑥</mi></msup></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    </li>
+    <li>
+      <p><span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑥</mi><mo>→</mo><mrow><mo>+</mo><mo>∞</mo></mrow></mrow></munder><mfrac><msup><mi>𝑎</mi><mi>𝑥</mi></msup><mrow><mi>𝑥</mi><mo>!</mo></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span> with <span><math><mrow><mrow><mi>𝑥</mi><mo>!</mo></mrow><mo>=</mo><mrow><mi mathvariant="normal">Γ</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    </li>
+    <li>
+      <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑥</mi><mo>→</mo><mrow><mo>+</mo><mo>∞</mo></mrow></mrow></munder><mfrac><mrow><mi>𝑥</mi><mo>!</mo></mrow><msup><mi>𝑥</mi><mi>𝑥</mi></msup></mfrac><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    </li>
+  </ul>
+  <p>  <code>mean-inequality</code><em>_(tag)</em>   Mean inequality <strong>alias</strong>   <code>AM-GM-inequality</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <math display="block"><mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>≤</mo><msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math>
+    <p><span><math><mo>≤</mo></math></span> obtains <span><math><mo>=</mo></math></span> &lt;==> <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+    <p>Dimensionless</p>
+  </div>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>&lt;==> <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msup><mrow><mo>(</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>≤</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+    <p>&lt;==> <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>≤</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msup><mrow><mo>(</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math></span></p>
+    <p>Use differential method to calculate the extreme value. Consider the function</p>
+    <math display="block"><mrow><mrow><mo>(</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo>)</mo></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><msup><mrow><mo>(</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>−</mo><mi>𝑛</mi><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math>
+    <p>First derivative</p>
+    <math display="block"><mrow><msub><mo>∂</mo><mi>𝑖</mi></msub><mo>=</mo><mi>𝑛</mi><mrow><mo>(</mo><mrow><msubsup><mi>𝑎</mi><mi>𝑖</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msubsup><mo>−</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>∖</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>The first derivative equals zero, solving the equation yields</p>
+    <math display="block"><mrow><msub><mo>∂</mo><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mo>∂</mo><mi>𝑛</mi></msub><mo>=</mo><mn>0</mn><mo>⟹</mo><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math>
+    <p>Second derivative</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑖</mi></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑛</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><msubsup><mi>𝑎</mi><mi>𝑖</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑗</mi></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mi>𝑛</mi><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>∖</mo><msub><mi>𝑎</mi><mi>𝑖</mi></msub><msub><mi>𝑎</mi><mi>𝑗</mi></msub></mtd></mtr></mtable></math>
+    <p>Determine the positive definiteness of the quadratic form <span><math><mrow><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑗</mi></msub></mrow></math></span></p>
+    <p>The <span><math><mi>𝑛</mi></math></span> multiplication factor can be extracted</p>
+    <p>All are <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>2</mn></mrow></math></span> order polynomial of <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math></span>, and the first-order differential being zero makes <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math></span>, so for judging positive definiteness, we only need to consider <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn></mrow></math></span>, the quadratic form</p>
+    <math display="block"><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msub><mo>∂</mo><mn>1</mn></msub><msub><mo>∂</mo><mn>1</mn></msub></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><msub><mo>∂</mo><mn>1</mn></msub><msub><mo>∂</mo><mi>𝑛</mi></msub></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mo>∂</mo><mi>𝑛</mi></msub><msub><mo>∂</mo><mn>1</mn></msub></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><msub><mo>∂</mo><mi>𝑛</mi></msub><msub><mo>∂</mo><mi>𝑛</mi></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑏</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow><mo>⊺</mo></msup><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑏</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><msubsup><mi>𝑏</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mo>⋯</mo><mo>+</mo><msubsup><mi>𝑏</mi><mi>𝑛</mi><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>−</mo><mn>2</mn><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝑏</mi><mi>𝑖</mi></msub><msub><mi>𝑏</mi><mi>𝑗</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi></mrow></munder><mrow><mo>(</mo><mrow><msubsup><mi>𝑏</mi><mi>𝑖</mi><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>𝑏</mi><mi>𝑗</mi><mn>2</mn></msubsup></mrow><mo>)</mo></mrow><mo>−</mo><mn>2</mn><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝑏</mi><mi>𝑖</mi></msub><msub><mi>𝑏</mi><mi>𝑗</mi></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi></mrow></munder><msup><mrow><mo>(</mo><mrow><msub><mi>𝑏</mi><mi>𝑖</mi></msub><mo>−</mo><msub><mi>𝑏</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr></mtable></math>
+    <p>So at <span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>=</mo><mo>⋯</mo><mo>=</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math></span> the first derivative is zero and the second derivative is positive definite, the function will not become smaller nearby, so that's the minimum, and it's <span><math><mn>0</mn></math></span></p>
+  </div>
+  <p>  <code>best-multiplication-decomposition</code><em>_(tag)</em>   Optimal multiplication decomposition</p>
+  <div class="indent">
+    <p>forall <span><math><mi>𝑛</mi></math></span> fixed <span><math><mrow><mi>𝑎</mi><mo>=</mo><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span></p>
+    <p>question: which <span><math><mi>𝑛</mi></math></span> makes <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow></math></span> maximum?</p>
+    <p>For each <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, according to the mean inequality, <span><math><mfrac><mi>𝑎</mi><mi>𝑛</mi></mfrac></math></span> should be used for equal addition to obtain the maximum <span><math><mrow><msub><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mi>𝑛</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑖</mi></msub></mrow></math></span></p>
+    <p>When what is the equal division number <span><math><mi>𝑛</mi></math></span>, <span><math><msup><mrow><mo>(</mo><mfrac><mi>𝑎</mi><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></math></span> has the maximum value?</p>
+    <p><span><math><mrow><mi>𝑔</mi><mo>:</mo><mi>𝑛</mi><mo>⇝</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac></mrow></math></span> monotonically increasing</p>
+    <p><em>Proof</em> <span><math><mrow><mfrac><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mfrac><mo>></mo><mn>1</mn></mrow></math></span></p>
+    <p>Function <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝑛</mi><mo>⇝</mo><msup><mrow><mo>(</mo><mfrac><mi>𝑎</mi><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math></span></p>
+    <ul>
+      <li>
+        <p>Increasing when <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>:</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mo>≤</mo><mi>𝑎</mi></mrow></math></span></p>
+      </li>
+      <li>
+        <p>Decreasing when <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>:</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mo>≥</mo><mi>𝑎</mi></mrow></math></span></p>
+      </li>
+    </ul>
+    <p>Therefore <span><math><msup><mrow><mo>(</mo><mfrac><mi>𝑎</mi><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></math></span> takes the maximum value near <span><math><mrow><mi>𝑛</mi><mo>:</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mo>=</mo><mi>𝑎</mi></mrow></math></span></p>
+    <p><em>Proof</em> of the monotonic property of <span><math><mi>𝑓</mi></math></span></p>
+    <div class="indent"><span><math><mtable><mtr><mtd><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mi>𝑎</mi><mo>⋅</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>≥</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mo>⟺</mo><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mfrac><mo>≥</mo><mn>1</mn><mo>⟺</mo><mi>𝑎</mi><mo>≥</mo><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac></mtd></mtr></mtable></math></span></div>
+    <p><strong>Example</strong> <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mo>≥</mo><mrow><mi>𝑔</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>4</mn></mrow></math></span>. Therefore, when <span><math><mrow><mi>𝑎</mi><mo>≤</mo><mn>4</mn></mrow></math></span>, 1 equal division is the best</p>
+  </div>
+  <p><span><math><mrow><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mo>∼</mo><mi>𝑒</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span> i.e. <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mfrac><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><mi>𝑒</mi></mrow></math></span></p>
+  <p>  <code>natural-constant</code><em>_(tag)</em>   Natural constant <span><math><mi>𝑒</mi></math></span></p>
+  <math display="block"><mrow><mi>𝑒</mi><mo>=</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><munderover displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></munderover><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>Binomial expansion</p>
+    <math display="block"><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><mn>1</mn><mo>+</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mn>1</mn></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>+</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mn>2</mn></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><msup><mi>𝑛</mi><mn>2</mn></msup></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><msup><mi>𝑛</mi><mi>𝑛</mi></msup></mfrac></mrow></math>
+    <p>When <span><math><mi>𝑘</mi></math></span> is fixed, we have</p>
+    <math display="block"><mrow><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mi>𝑘</mi></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><msup><mi>𝑛</mi><mi>𝑘</mi></msup></mfrac><mo>=</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac><mfrac><mrow><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋯</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><msup><mi>𝑛</mi><mi>𝑘</mi></msup></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac></mrow></math>
+    <p>For each <span><math><mrow><mi>𝑘</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd><mtd class="mathyml-align-left"><mo>≥</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mn>0</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd><mtd class="mathyml-align-left"><mo>≥</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑘</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mn>1</mn><mrow><mn>0</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac></mtd></mtr></mtable></math>
+    <p>also</p>
+    <math display="block"><mrow><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>&lt;</mo><mfrac><mn>1</mn><mrow><mn>0</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math>
+    <p>by <span><math><mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mi>𝑘</mi></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><msup><mi>𝑛</mi><mi>𝑘</mi></msup></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac><mfrac><mrow><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>⋯</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><msup><mi>𝑛</mi><mi>𝑘</mi></msup></mfrac><mo>&lt;</mo><mfrac><mn>1</mn><mrow><mi>𝑘</mi><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+    <p>Therefore <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mn>1</mn><mrow><mn>0</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>!</mo></mrow></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+    <p><span><math><mrow><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span> converges. <span><math><mrow><mi>𝑎</mi><mo>></mo><mrow><mn>1</mn><mo>,</mo></mrow><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span> ==> at the tail <span><math><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>&lt;</mo><mfrac><mn>1</mn><msup><mi>𝑎</mi><mi>𝑛</mi></msup></mfrac></mrow></math></span> geometric series control</p>
+  </div>
+  <p>  <code>iterated-power-vs-factorial-more</code><em>_(tag)</em>   Comparison of the growth rate of factorial and iterated power <span><math><mrow><msup><mi>𝑒</mi><mi>𝑛</mi></msup><mo>∼</mo><mfrac><msup><mi>𝑛</mi><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span> or <span><math><mrow><mi>𝑒</mi><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mi>𝑛</mi><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>!</mo></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mfrac></mrow></math></span></p>
+  <p>so <span><math><mrow><msup><mrow><mi>𝑛</mi><mo>!</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>∼</mo><mfrac><mn>1</mn><mi>𝑒</mi></mfrac><mo>⋅</mo><mi>𝑛</mi></mrow></math></span>, so <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mi>𝑛</mi><mo>!</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mo>∞</mo></mrow></math></span></p>
+  <p><em>Proof</em> of <span><math><mrow><mi>𝑒</mi><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mi>𝑛</mi><msup><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>!</mo></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mfrac></mrow></math></span></p>
+  <div class="indent">
+    <p>def <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><msup><mi>𝑛</mi><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+    <p><span><math><mtable><mtr><mtd><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>→</mo><mi>𝑒</mi></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mo>⋯</mo><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>𝑓</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
+    <p>def <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math></span></p>
+    <p><span><math><mrow><mfrac><mi>𝑛</mi><msup><mrow><mi>𝑛</mi><mo>!</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>⋅</mo><mfrac><mn>1</mn><msup><mrow><mo>(</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mfrac><mo>=</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mfrac><mi>𝑛</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow></math></span></p>
+    <p>  <code>sequence-multiplication-mean-limit</code><em>_(tag)</em>   Multiplication average does not change the limit</p>
+    <p><span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>></mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mi>𝑎</mi></mrow></math></span></p>
+    <p><em>Proof</em></p>
+    <div class="indent">
+      <p><span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>≥</mo><mrow><mn>0</mn><mo>,</mo></mrow><mo>∃</mo><mi>𝑁</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><mo>∀</mo><mi>𝑛</mi><mo>></mo><mrow><mi>𝑁</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>−</mo><mi>𝜀</mi><mo>≤</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>≤</mo><mi>𝑎</mi><mo>+</mo><mi>𝜀</mi></mrow></math></span></p>
+      <p><span><math><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub></mrow><mo>)</mo></mrow><mo>⋅</mo><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mrow><mi>𝑁</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+      <p><span><math><mrow><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><msup><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>−</mo><mi>𝜀</mi></mrow><mo>)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mfrac><mi>𝑁</mi><mi>𝑛</mi></mfrac></mrow></msup><mo>≤</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>≤</mo><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><msup><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>+</mo><mi>𝜀</mi></mrow><mo>)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mfrac><mi>𝑁</mi><mi>𝑛</mi></mfrac></mrow></msup></mrow></math></span></p>
+      <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msup><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑎</mi><mi>𝑁</mi></msub></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>=</mo><mn>1</mn></mrow></math></span></p>
+      <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mn>1</mn><mo>−</mo><mfrac><mi>𝑁</mi><mi>𝑛</mi></mfrac><mo>=</mo><mn>1</mn></mrow></math></span></p>
+    </div>
+  </div>
+  <p>  <code>sequence-addition-mean-limit</code><em>_(tag)</em>   Addition average <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mi>𝑎</mi><mo>⟹</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mrow><mo>(</mo><mrow><msub><mi>𝑎</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑎</mi></mrow></math></span></p>
+  <p>  <code>harmonic-series-diverge</code><em>_(tag)</em>   Harmonic series diverges <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>=</mo><mrow><mo>+</mo><mo>∞</mo></mrow></mrow></math></span></p>
+  <p><em>Proof</em> <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow></math></span> diverges because it is not <code>#link(&lt;Cauchy-completeness-real>)[limit-distance-vanish]</code>. e.g.</p>
+  <math display="block"><mrow><mo>∀</mo><mi>𝑛</mi><mo>∈</mo><mrow><mi mathvariant="normal">ℕ</mi><mo>,</mo></mrow><msub><mi>𝑎</mi><mrow><mn>2</mn><mi>𝑛</mi></mrow></msub><mo>−</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>𝑛</mi></mrow></mfrac><mo>≥</mo><mi>𝑛</mi><mo>⋅</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>𝑛</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math>
+  <p>  <code>Euler-constant</code><em>_(tag)</em>   <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>−</mo><mtext> log </mtext><mi>𝑛</mi><mo>=</mo><mi>𝛾</mi></mrow></math></span> converges as additive asymptotic. <span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mi>𝑛</mi></mfrac><mo>=</mo><msup><mi>𝑒</mi><mi>𝛾</mi></msup></mrow></math></span> as multiplicative asymptotic</p>
+  <p><em>Proof</em></p>
+  <div class="indent">
+    <p>let <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>=</mo><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>−</mo><mtext> log </mtext><mi>𝑛</mi></mrow></math></span></p>
+    <p><span><math><mrow><mtext>log </mtext><mi>𝑛</mi><mo>=</mo><mtext> log </mtext><mfrac><mi>𝑛</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>⋯</mo><mfrac><mn>2</mn><mn>1</mn></mfrac><mo>⋅</mo><mn>1</mn><mo>=</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mfrac><mi>𝑛</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow></mrow><mo>+</mo><mo>⋯</mo><mo>+</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mfrac><mn>2</mn><mn>1</mn></mfrac><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>Integral estimation</p>
+    <math display="block"><mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>&lt;</mo><msubsup><mo>∫</mo><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mi>𝑛</mi></msubsup><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>=</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mfrac><mi>𝑛</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow></mrow><mo>&lt;</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></math>
+    <p><span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> is bounded</p>
+    <math display="block"><mtable><mtr><mtd><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow></mtd><mtd><mo>></mo></mtd><mtd><mrow><mtext>log</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></mtd><mtd><mo>></mo></mtd><mtd><mrow><mn>1</mn><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>></mo></mtd><mtd><mrow><mo>−</mo><mtext> log </mtext><mi>𝑛</mi></mrow></mtd><mtd><mo>></mo></mtd><mtd><mrow><mo>−</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mo>></mo></mtd><mtd><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mo>⋯</mo><mo>+</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><mo>−</mo><mtext> log </mtext><mi>𝑛</mi></mrow></mtd><mtd><mo>></mo></mtd><mtd><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></mtd></mtr></mtable></math>
+    <p><span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> is monotonically decreasing</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>−</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mfrac><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mi>𝑛</mi></mfrac><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>&lt;</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>−</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

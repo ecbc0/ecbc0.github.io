@@ -1,0 +1,574 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}For people, one way to understand natural numbers is countingFor computers (cf. #link(&lt;logic.typ&gt;)[]), the ways to represent natural numbers arePeriodic circuitArithmetic component +1BinaryHowever, the number of elements in the set of natural numbers is infinite, while bits and computer memory are finite. Human memory is also finiteThe problem of infinite space: Reality cannot build circuits and memory with infinite space. Even if it could, it would be limited by the finite speed of electricity.But potentially infinite time can be used to achieve &amp;quot;potential infinity&amp;quot;However, there are even sets with an #link(&lt;uncountable&gt;)[uncountable] number of elements. Examplethe set of all subset of ℕ, Subset(ℕ)all function from ℕ to itself, ℕ→ℕVerifying the correctness of set theory language requires a parser, memory data structures, and functions. The implementation of the generated computer instruction stream is not the focus of this goal.Motivation for sets/typesModularization and multiplicative decomposition to simplify cognitionExample Natural language&#x27;s Subject-Verb-Object SVO (subject, predicate, object). Suppose there are 10 nouns and 10 verbs. Suppose we &amp;quot;forget the SVO rule&amp;quot;, then verifying the grammatical correctness of a three-word sentence requires at most 103&#x3D;1000 times. If we understand and use the SVO rule, it requires at most 23&#x3D;8 times.If the number of elements in a set is infinite, then the set/type limits the concept, making it possible to say it in a finite amount of timeComplex set theory objects, propositions are stored in variable names, so humans still need to check all the complex definitions stored in variable names, so readability is very importantParser or proof assistants can allow humans to reduce from reviewing all steps to reviewing definitions, skipping a large number of detailed proof steps, and then determine the correctness of the proof result. This is like the case of APIsThe human brain compiler can omit and supplement omissions, trading temporary efficiency for error-proneness and forgetfulnessAssistance also has other functions, like the case of, Programming before the era of IDE/LSP/friendly-and -interactive-compiler-error-messages/documentation was painful. The organization, structuring and reuse of data and information were not done well, and the powerful capacity and time of memory were not used well.  proposition_(tag)   proposition is a special (string, bool) product struct computer data structure. For mathematical language, the string field uses special construction rules to restrict it, and this restricted version of the string is called a formulaBecause we cannot directly judge the truth or falsehood of a guess, we need a language with undefined truth values.from proposition to unknown proposition, its truth value part is modified to (bool, unknow) sum structAbbreviation true proposition and proposition are often used interchangeablyMany propositions cannot be automatically derived by computers, and humans need to find possible paths, input them into the computer for verification, or develop more new automated proof methods.We will assume some initial propositions that do not need to be proven. And assume rules for constructing new propositions using existing propositions.Abbreviation Use the same symbol ϕ for formula and proposition, &amp;quot;ϕ is true/false/unknow&amp;quot;, ϕ&#x3D;0/1/?  formula_(tag)  inlet symbol 𝑎,𝐴 be type of math object, then 𝑎∈𝐴 is a formula𝑎∈𝐴 is similar to value : type or variable_name : type in programming languagesymbol ∈ is not math objectequallet 𝑎,𝑏 be object, then 𝑎&#x3D;𝑏 is a formulaand, or, notlet 𝑝,𝑞 be formula, then𝑝∧𝑞𝑝∨𝑞¬𝑞is formulaforall, existslet 𝑝(𝑎) be formula built with 𝑎 i.e. read 𝑎∈𝐴 in memory, used by some specific function call, then⋀𝑎∈𝐴𝑝(𝑎)  or  ∀𝑎∈𝐴,𝑝(𝑎)⋁𝑎∈𝐴𝑝(𝑎)  or  ∃𝑎∈𝐴,𝑝(𝑎)is formulainference 𝑝⇒𝑞, equivalent 𝑝⇔𝑞 is formulaThe following discusses math-object-construct-rule alias set-theory  natural-number_(tag)   ℕnatrual number 0,1,2,… and natrual number set ℕ is object. 0,1,2,…∈ℕ is true propositionBut computers cannot handle infinity. In order to allow computers to use limited characters and memory to represent natural numbers, let 𝑛,ℕ and +1 functions be finite symbols in the memory address, and define the following as true proposition0∈ℕ𝑛∈ℕ⟹𝑛+1∈ℕEquivalent to telling the computer how to continuously +1 with instruction streams? Also related to inductionThe cost of finite characters is potentially infinite time, always relying on counting or periodic circuits.  empty_(tag)   ∅empty ∅ is object. let 𝑎 be a object, 𝑎∈∅ is false propositionThe definition of ∅ is convenient for intersections ∩ e.g. the intersection is empty, and the number of elements of Subset(𝐴) of a finite set 𝐴, 2𝑛 is more convenient than 2𝑛−1Define language expansion𝑎≠𝑏≔¬(𝑎&#x3D;𝑏)𝑎∉𝐴≔¬(𝑎∈𝐴)Because “define language expansion” is very long, it is usually abbreviated to &amp;quot;definition&amp;quot; &amp;quot;def&amp;quot;In fact, the symbol &#x3D; is also commonly used to represent defining language expansion or specifying language transformation. Specifically, the &#x3D; of natural numbers can be directly defined as comparing the value of memory with computer circuits.  declare-element-of-set_(tag)  If 𝐴 is non empty 𝐴≠∅ (this information comes from the definition of 𝐴), we can define symbol 𝑎 and construct true proposition (let) 𝑎∈𝐴A finite number of declare statements can be constructed  enum_(tag)   enumerate𝑎0,…,𝑎𝑛 is object then {𝑎0,…,𝑎𝑛} is a setRepresented as a sequence of numbers in memoryThe entire set can be called in this way: record the address of the first element + the length of the array as the number of circuit cycles, and read one element per circuit cycleformulas 𝑎0,…,𝑎𝑛∈{𝑎0,…,𝑎𝑛} are true propositionsSpecifically, a single-element set 𝑎∈{𝑎}define 𝐴⊂𝐵≔∀𝑎∈𝐴,𝑎∈𝐵  equivalent_(tag)   ⟺Some equivalent uses. For computer data, it can be proved by exhaustion that the following calculation results are equal¬(¬𝑝)⟺𝑝¬(𝑝∧𝑞)⟺(¬𝑝)∨(¬𝑞)Similarly, in order to represent the case of &amp;quot;infinite elements&amp;quot;, define language expansion or specify language transformation. For example, De Morgan law of infinite elements¬(⋀𝑎∈𝐴𝑝(𝑎))⟺⋁𝑎∈𝐴¬𝑝(𝑎) or ¬(∀𝑎∈𝐴,𝑝(𝑎))⟺∃𝑎∈𝐴,¬𝑝(𝑎)The concept of &amp;quot;infinity&amp;quot; is limited by using the symbol string 𝑎∈𝐴 of #link(&lt;declare-element-of-set&gt;)[]formula, proposition is a special data structure in memory. It can be considered that math_object, formula, proposition are the type of programming languageMany propositions are equivalent, so we can consider the &amp;quot;quotient&amp;quot; type of propositions, but the possibility of equivalence is infinite, whether it is possible to have an exhaustive algorithm, first depends on whether it is #link(&lt;countable&gt;)[] …Similar to the redundancy of ∧,∨,¬, set theory construction rules may also have redundancy, or there are many equivalent definitionsSpecify (finite)&#x3D; transitive :&#x3D; (𝑎&#x3D;𝑏)∧(𝑏&#x3D;𝑐)⟹(𝑎&#x3D;𝑐)⇔ transitive :&#x3D; (𝑝⇔𝑞)∧(𝑞⇔𝑟)⟹(𝑝⇔𝑟)follow #link(&lt;bool-algebra&gt;)[various rules of bool in the finite case], define language transformation rules: let 𝑝(𝑎,𝑏) is formula built with independent/parallel 𝑎,𝑏 i.e. independent/parallel in memory read and used by specific cuntion, then  commutative-forall-exists_(tag)  ⋀𝑎∈𝐴⋀𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋀𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)same for ⋁  distributive-forall-exists_(tag)  ⋀𝑎∈𝐴⋁𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋁𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)Note that I myself also feel that I cannot completely clearly handle the concepts of derivation and proof belowNatural language example of derivationIf it rains, I won&#x27;t go outIt&#x27;s rainingSo I won&#x27;t go outThis example is similar to a conditional branchrain : bool;out : bool;switch (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined};  inference_(tag)   For mathematical language, that isThe compiler reads the formula 𝑝,𝑞The compiler reads the formula 𝑝⇒𝑞 is true proposition (may be custom)The compiler reads the formula 𝑝 is true propositionThen the language rule setting is that the compiler, according to this condition (from memory), assigns the bool value of the formula 𝑞 to true i.e. sets 𝑞 is true proposition  proof_(tag)   The proof is that compiling passes 𝑝⇒𝑞 is true propositionAnother kind of equivalence 𝑝⇔𝑞≔(𝑝⇒𝑞)∧(𝑞⇒𝑝)  reverse-inference_(tag)   Reverse inference. If the result is that I went out, then it is definitely not the result of rain. If the result of the conditional branch is out &#x3D; true, this is not the result of rain &#x3D; true. Since the bool value of an ideal binary computer must be one of two, it can only be the result of rain &#x3D; false. This can be written as a conditional branchswitch (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined};Mathematically, reverse inference is written as formula ¬𝑞⇒¬𝑝, and defined equivalent to 𝑝⇒𝑞  reverse-proof_(tag)   Proof by contradiction is that compiling passes ¬𝑝⇒¬𝑞 is true propositionDeductive proof also requires syllogismAll living things dieHumans are living thingsTherefore, all humans will dieWhere &amp;quot;all living things die&amp;quot; is a specially constructed proposition  syllogism_(tag)   Syllogistic reasoning is a language ruleThe compiler reads the formula (∀𝑎∈𝐴,𝑝(𝑎)) is true proposition (possibly from a definition e.g. #link(&lt;union&gt;)[]))The compiler reads the declaration let 𝑎′∈𝐴 is true propositionThe compiler reads the formula 𝑝(𝑎′)Then the compiler sets 𝑝(𝑎′) is true proposition according to this condition (from memory)That is, the compiler implements the specific construction of data (finite) according to the declaration (∀𝑎∈𝐴,𝑝(𝑎)) (possibly &amp;quot;infinite&amp;quot;)Or understand it as, this rule and behavior are defining the concept of (∀𝑎∈𝐴,𝑝(𝑎)) itselfIt is also usually written as the equivalent rule let 𝑎′∈𝐴, then the special inference formula (∀𝑎∈𝐴,𝑝(𝑎))⟹𝑝(𝑎′) is always true proposition. This form is often used in what #link(&lt;proof&gt;)[previously] said, &amp;quot;proving is compiling passes 𝑝⇒𝑞 is true proposition&amp;quot;Reverse syllogism: let 𝑎′∈𝐴, then the equivalent formula ¬𝑝(𝑎′)⟹¬(∀𝑎∈𝐴,𝑝(𝑎)) or ∃𝑎∈𝐴,¬𝑝(𝑎) is true propositionWe may never know whether a proposition of bool unknow can be constructively proved, i.e. compiled successfully in a limited number of stepsWhere does the target proposition come from? It may be related to a model of the real worldThe proof requires expanding a large number of sentences, although computers are very fast at processing strings. In any case, performance optimization? Use only when needed (lazy load)? Parallel (parallel) when two propositions are not interdependent? Assume already proven results (incremental compilation)?A proposition has many proofs with different runtime data flow, which can be considered to belong to the same quotient proof of this propositionThe following object construction rules, except for the intersection, generally give non-empty sets  union_(tag)  define object ⋃𝐴 and language expansion𝑥∈𝑎∪𝑎′≔(𝑥∈𝑎)∨(𝑥∈𝑎′)𝑥∈⋃𝐴≔⋁𝑎∈𝐴𝑥∈𝑎≔∃𝑎∈𝐴,𝑥∈𝑎is non-emtpy unless ∀𝑎∈𝐴,𝑎&#x3D;∅𝐴∪𝐴&#x3D;𝐴We do not define the union for 𝐴&#x3D;∅. Same below. The reason is that let 𝑎∈𝐴&#x3D;∅ is always a false proposition, which makes many things unusable  sum_(tag)  𝑥∈𝑎⊔𝑎′≔(𝑥∈𝑎)⊕(𝑥∈𝑎′)𝑥∈⨆𝐴≔⨁𝑎∈𝐴𝑥∈𝑎≔∃!𝑎∈𝐴,𝑥∈𝑎is non-emtpy unless ∀𝑎∈𝐴,𝑎&#x3D;∅in finite case, number of element |⨁1𝑛𝐴𝑖|&#x3D;∑1𝑛|𝐴𝑖|enum is special case of sum/union?  intersection_(tag)  𝑥∈𝑎∩𝑎′≔(𝑥∈𝑎)∧(𝑥∈𝑎′)𝑥∈⋂𝐴≔⋀𝑎∈𝐴𝑥∈𝑎≔∀𝑎∈𝐴,𝑥∈𝑎𝐴∩𝐴&#x3D;𝐴  product_(tag)  𝑥∈𝑎×𝑎′≔(𝑥(𝑎)∈𝑎)∧(𝑥(𝑎′)∈𝑎′)𝑥∈∏𝐴≔⋀𝑎∈𝐴𝑥(𝑎)∈𝑎≔∀𝑎∈𝐴,𝑥(𝑎)∈𝑎is non-emtpy unless ∃𝑎∈𝐴,𝑎&#x3D;∅ (related to   axiom-of-choice_(tag)   )Abbreviation 𝐴×𝐴&#x3D;𝐴2. in finite case, number of elements |∏1𝑛𝐴𝑖|&#x3D;∏1𝑛|𝐴𝑖|𝑥(𝑎) means reading two symbols as a combined symbol  map_(tag)  let 𝐴,𝐵 is math object. The rule for defining map space 𝐴→𝐵, map 𝑓 as math object is𝑓∈(𝐴→𝐵)≔⋀𝑎∈𝐴𝑓(𝑎)∈𝐵≔∀𝑎∈𝐴,𝑓(𝑎)∈𝐵denoted by 𝑓:𝐴→𝐵denoted by 𝑓∈𝐵𝐴. in finite case, number of elements |𝐵𝐴|&#x3D;|𝐵||𝐴|Although the usage of 𝑓,𝑓(𝑎),𝑓(𝑎)∈𝐵 seems problematic, they can still be defined in terms of symbol &amp;amp; symbol stringsIf we talk about what the map 𝑓 specifically represents, due to non-concrete constructiveness, there is no specific return like in general programming languages, or what return is a newly defined symbol, math object, language expansion  subset_(tag)  𝑆∈Subset(𝐴)≔𝑆⊂𝐴denoted by 2𝐴. According to #link(&lt;proposition-function&gt;)[] equivalent to map space 𝐴→{0,1}. in finite case, number of elements |2𝐴|&#x3D;2|𝐴|define ∅⊂𝐴 be true propositionmap space and subset introduce high-level infinityOne seemingly counterintuitive thing at first glance is that we seemingly know all 𝑆⊂ℕ or all 𝑓:ℕ→ℕ, but cannot count them #link(&lt;cardinal-increase&gt;)[] #link(&lt;uncountable&gt;)[]. However, what exactly does &amp;quot;know all 𝑆⊂ℕ&amp;quot; mean? In fact, trying to consider the question of &amp;quot;finding an infinite subset of ℕ in a general way&amp;quot; reveals that this is not simple.Similarly, although countable can already define some real numbers e.g. ∑1𝑛!&#x3D;𝑒, if not with the help of subset or map, countable construction cannot obtain all ℝ  proposition-function_(tag)  let 𝑎∈𝐴, 𝑝(𝑎):𝐴→{0,1} is already constructed{𝑎∈𝐴:𝑝(𝑎)} is object𝑥∈{𝑎∈𝐴:𝑝(𝑎)}≔(𝑥∈𝐴)∧𝑝(𝑥)define𝐴&#x3D;𝐵≔(𝑥∈𝐴)⟺(𝑥∈𝐵)Other usages of &#x3D;Alias of identifier in memoryReturn value of function in memory. so 1+1&#x3D;2 should be understood as the return value of the add function is 2  hierarchy-order-of-set_(tag)  The set constructed above is called a zero (hierarchy) order set𝐴∈ Set or 𝐴∈ Set 0then let Set 0 be math object, in first order setSet 0∈ Set 1Using object construction rules again, what we get is also defined as belonging to Set 1Anyway, we can always construct such a language with types and bool and various rules in the compiler. Although there are compilers for compilers, the number of compiler layers can also be infinite …let Set 1 be math object, Set 1∈ Set 2. And so on …ExampleSet × Set ∈ Set 1(Set → Set)∈ Set 1Group ∈ Set 1(𝐺,𝑚)∈ Group ≔𝐺∈ Set 𝑚∈ Set property-group-multiplication(𝐺,𝑚)(e.g.  𝑚∈(𝐺2→𝐺))Can be divided into multiple sentences, so that it is convenient to add/remove properties to get different structsSet 0, Set 1,… looks like the set of natural numbers ℕ, so should we assume a new hierarchy Set ℕ again? Then for Set ℕ, continue to use the object construct rule …Will the above construction rules lead to contradictions or computer deadlocks?If we keep constructing infinitely, does this language have an end?  universal-set_(tag)  Does there exist a &amp;quot;set of every set&amp;quot;, a &amp;quot;universal set&amp;quot;, a &amp;quot;universal-type&amp;quot;?Defined using set theory rules𝐴≔{𝑥∈ universal-set :¬(𝑥∈𝑥)}∈ universal-setThen let the compiler calculate the bool of the proposition 𝐴∈𝐴. Since 𝐴∈ universal-set &#x3D; true, the compiler only calculates the bool of ¬(𝐴∈𝐴), and then discovers the not function, so it calculates the bool inside not, but this returns to calculating the bool of 𝐴∈𝐴. The compiler may choose to enter a circuit dead loop.For finite sets, 𝑥∉𝑥 or cannot be judged, e.g. {1}∉{1}, because 1≠{1}, or there is no definition that 𝑥∈1 is a true proposition.Related to self-referential paradox. Example &amp;quot;This sentence is wrong&amp;quot; gives a computer dead loopthis_sentence_is_false : bool &#x3D; false;loop:  switch (this_sentence_is_false) {    false &#x3D;&gt; this_sentence_is_false &#x3D; true,    true &#x3D;&gt; this_sentence_is_false &#x3D; false  }   goto loop};Or use layering to bypass the self-referential paradox (this_sentence &#x3D; false) &#x3D; true. We consider them to be different sentences and judgments, believing that it cannot be self-referential.If we can count a number, we consider it a natural number.If language rules can be written and language objects constructed in a finite number of steps, we consider it constructible and expressible. For set theory, what can be constructed in such a finite number of steps is called a math object.Regarding the problem of infinite natural numbers, if natural numbers are defined by counting or induction or periodic circuits, then the problem of infinity is pushed to infinite time.For set theory language, assume that universal-set or universal-type leads to the construction of something that causes the circuit to enter an infinite loop.  dependent-distributive_(tag)  union &amp;amp; interset⋂𝑎∈𝐴⋃𝑥∈∏𝐴𝑥(𝑎)&#x3D;⋃𝑥∈∏𝐴⋂𝑎∈𝐴𝑥(𝑎)⋃𝑎∈𝐴⋂𝑥∈∏𝐴𝑥(𝑎)&#x3D;⋂𝑥∈∏𝐴⋃𝑎∈𝐴𝑥(𝑎)sum and product∏𝑎∈𝐴⨆𝑥∈∏𝐴𝑥(𝑎)&#x3D;⨆𝑥∈∏𝐴∏𝑎∈𝐴𝑥(𝑎)⨆𝑎∈𝐴∏𝑥∈∏𝐴𝑥(𝑎)&#x3D;∏𝑥∈∏𝐴⨆𝑎∈𝐴𝑥(𝑎)draft of proof: expand, use parallel distributive cf. #link(&lt;distributive-forall-exists&gt;)[]  set-minus_(tag)  𝐴∖𝐵≔{𝑥∈𝐴:𝑥∉𝐵}. if 𝐵⊂𝐴 then define 𝐵∁≔𝐴∖𝐵  symmetric-set-minus_(tag)  𝐴Δ𝐵≔(𝐴∖𝐵)⊔(𝐵∖𝐴)&#x3D;(𝐴∪𝐵)∖(𝐴∩𝐵)  coordinate-component_(tag)  product component(∏𝐴⟶𝑎𝑥⟿𝑥(𝑎))sum component𝑎⟶⨆𝐴𝑥⟿𝑥(𝑎)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html" class="active"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/set-theory_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>For people, one way to understand natural numbers is counting</p>
+  <p>For computers (cf. <code>#link(&lt;logic.typ>)[]</code>), the ways to represent natural numbers are</p>
+  <ul>
+    <li>Periodic circuit</li>
+    <li>Arithmetic component <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span></li>
+    <li>Binary</li>
+  </ul>
+  <p>However, the number of elements in the set of natural numbers is infinite, while bits and computer memory are finite. Human memory is also finite</p>
+  <p>The problem of infinite space: Reality cannot build circuits and memory with infinite space. Even if it could, it would be limited by the finite speed of electricity.</p>
+  <p>But potentially infinite time can be used to achieve "potential infinity"</p>
+  <p>However, there are even sets with an <code>#link(&lt;uncountable>)[uncountable]</code> number of elements. <strong>Example</strong></p>
+  <ul>
+    <li>the set of all subset of <span><math><mi mathvariant="normal">ℕ</mi></math></span>, <span><math><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℕ</mi><mo>)</mo></mrow></mrow></math></span></li>
+    <li>all function from <span><math><mi mathvariant="normal">ℕ</mi></math></span> to itself, <span><math><mrow><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span></li>
+  </ul>
+  <p>Verifying the correctness of set theory language requires a parser, memory data structures, and functions. The implementation of the generated computer instruction stream is not the focus of this goal.</p>
+  <p>Motivation for sets/types</p>
+  <div class="indent">
+    <ul>
+      <li>
+        <p>Modularization and multiplicative decomposition to simplify cognition</p>
+        <p><strong>Example</strong> Natural language's Subject-Verb-Object SVO (subject, predicate, object). Suppose there are 10 nouns and 10 verbs. Suppose we "forget the SVO rule", then verifying the grammatical correctness of a three-word sentence requires at most <span><math><mrow><msup><mn>10</mn><mn>3</mn></msup><mo>=</mo><mn>1000</mn></mrow></math></span> times. If we understand and use the SVO rule, it requires at most <span><math><mrow><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>8</mn></mrow></math></span> times.</p>
+      </li>
+      <li>
+        <p>If the number of elements in a set is infinite, then the set/type limits the concept, making it possible to say it in a finite amount of time</p>
+      </li>
+    </ul>
+  </div>
+  <p>Complex set theory objects, propositions are stored in variable names, so humans still need to check all the complex definitions stored in variable names, so readability is very important</p>
+  <p>Parser or proof assistants can allow humans to reduce from reviewing all steps to reviewing definitions, skipping a large number of detailed proof steps, and then determine the correctness of the proof result. This is like the case of APIs</p>
+  <p>The human brain compiler can omit and supplement omissions, trading temporary efficiency for error-proneness and forgetfulness</p>
+  <p>Assistance also has other functions, like the case of, Programming before the era of IDE/LSP/friendly-and -interactive-compiler-error-messages/documentation was painful. The organization, structuring and reuse of data and information were not done well, and the powerful capacity and time of memory were not used well.</p>
+  <p>  <code>proposition</code><em>_(tag)</em>   proposition is a special (string, bool) product struct computer data structure. For mathematical language, the string field uses special construction rules to restrict it, and this restricted version of the string is called a formula</p>
+  <p>Because we cannot directly judge the truth or falsehood of a guess, we need a language with undefined truth values.</p>
+  <p>from proposition to unknown proposition, its truth value part is modified to (bool, unknow) sum struct</p>
+  <p><strong>Abbreviation</strong> true proposition and proposition are often used interchangeably</p>
+  <p>Many propositions cannot be automatically derived by computers, and humans need to find possible paths, input them into the computer for verification, or develop more new automated proof methods.</p>
+  <p>We will assume some initial propositions that do not need to be proven. And assume rules for constructing new propositions using existing propositions.</p>
+  <p><strong>Abbreviation</strong> Use the same symbol <span><math><mi mathvariant="normal">ϕ</mi></math></span> for formula and proposition, "<span><math><mi mathvariant="normal">ϕ</mi></math></span> is true/false/unknow", <span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>=</mo><mrow><mn>0</mn><mo>/</mo><mn>1</mn><mo>/</mo><mo>?</mo></mrow></mrow></math></span></p>
+  <p>  <code>formula</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <ul>
+      <li>in</li>
+    </ul>
+    <div class="indent">
+      <p>let symbol <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝐴</mi></mrow></math></span> be type of math object, then <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is a formula</p>
+      <p><span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is similar to <code>value : type</code> or <code>variable_name : type</code> in programming language</p>
+      <p>symbol <span><math><mo>∈</mo></math></span> is not math object</p>
+    </div>
+    <ul>
+      <li>equal</li>
+    </ul>
+    <div class="indent">let <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow></math></span> be object, then <span><math><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow></math></span> is a formula</div>
+    <ul>
+      <li>and, or, not</li>
+    </ul>
+    <div class="indent">
+      <p>let <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> be formula, then</p>
+      <math display="block"><mtable><mtr><mtd><mi>𝑝</mi><mo>∧</mo><mi>𝑞</mi></mtd></mtr><mtr><mtd><mi>𝑝</mi><mo>∨</mo><mi>𝑞</mi></mtd></mtr><mtr><mtd><mo>¬</mo><mi>𝑞</mi></mtd></mtr></mtable></math>
+      <p>is formula</p>
+    </div>
+    <ul>
+      <li>forall, exists</li>
+    </ul>
+    <div class="indent">
+      <p>let <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> be formula built with <span><math><mi>𝑎</mi></math></span> i.e. read <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> in memory, used by some specific function call, then</p>
+      <math display="block"><mtable><mtr><mtd><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mtext>  or  </mtext><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mtext>  or  </mtext><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+      <p>is formula</p>
+    </div>
+    <ul>
+      <li>inference <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span>, equivalent <span><math><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi></mrow></math></span> is formula</li>
+    </ul>
+  </div>
+  <p>The following discusses math-object-construct-rule <strong>alias</strong> set-theory</p>
+  <p>  <code>natural-number</code><em>_(tag)</em>   <span><math><mi mathvariant="normal">ℕ</mi></math></span></p>
+  <div class="indent">
+    <p>natrual number <span><math><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo></mrow></math></span> and natrual number set <span><math><mi mathvariant="normal">ℕ</mi></math></span> is object. <span><math><mrow><mrow><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>…</mo></mrow><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> is true proposition</p>
+    <p>But computers cannot handle infinity. In order to allow computers to use limited characters and memory to represent natural numbers, let <span><math><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> and <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span> functions be finite symbols in the memory address, and define the following as true proposition</p>
+    <ul>
+      <li><span><math><mrow><mn>0</mn><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span></li>
+      <li><span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>⟹</mo><mi>𝑛</mi><mo>+</mo><mn>1</mn><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span></li>
+    </ul>
+    <p>Equivalent to telling the computer how to continuously <span><math><mrow><mo>+</mo><mn>1</mn></mrow></math></span> with instruction streams? Also related to induction</p>
+    <p>The cost of finite characters is potentially infinite time, always relying on counting or periodic circuits.</p>
+  </div>
+  <p>  <code>empty</code><em>_(tag)</em>   <span><math><mo>∅</mo></math></span></p>
+  <div class="indent">
+    <p>empty <span><math><mo>∅</mo></math></span> is object. let <span><math><mi>𝑎</mi></math></span> be a object, <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mo>∅</mo></mrow></math></span> is false proposition</p>
+    <p>The definition of <span><math><mo>∅</mo></math></span> is convenient for intersections <span><math><mo>∩</mo></math></span> e.g. the intersection is empty, and the number of elements of <span><math><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow></math></span> of a finite set <span><math><mi>𝐴</mi></math></span>, <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> is more convenient than <span><math><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></math></span></p>
+  </div>
+  <p>Define language expansion</p>
+  <ul>
+    <li><span><math><mrow><mi>𝑎</mi><mo>≠</mo><mi>𝑏</mi><mo>≔</mo><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+    <li><span><math><mrow><mi>𝑎</mi><mo>∉</mo><mi>𝐴</mi><mo>≔</mo><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mrow></math></span></li>
+  </ul>
+  <p>Because “define language expansion” is very long, it is usually abbreviated to "<strong>definition</strong>" "<strong>def</strong>"</p>
+  <p>In fact, the symbol <span><math><mo>=</mo></math></span> is also commonly used to represent defining language expansion or specifying language transformation. Specifically, the <span><math><mo>=</mo></math></span> of natural numbers can be directly defined as comparing the value of memory with computer circuits.</p>
+  <p>  <code>declare-element-of-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>If <span><math><mi>𝐴</mi></math></span> is non empty <span><math><mrow><mi>𝐴</mi><mo>≠</mo><mo>∅</mo></mrow></math></span> (this information comes from the definition of <span><math><mi>𝐴</mi></math></span>), we can define symbol <span><math><mi>𝑎</mi></math></span> and construct true proposition (let) <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p>A finite number of declare statements can be constructed</p>
+  </div>
+  <p>  <code>enum</code><em>_(tag)</em>   enumerate</p>
+  <div class="indent">
+    <p><span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow></math></span> is object then <span><math><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></math></span> is a set</p>
+    <p>Represented as a sequence of numbers in memory</p>
+    <p>The entire set can be called in this way: record the address of the first element + the length of the array as the number of circuit cycles, and read one element per circuit cycle</p>
+    <p>formulas <span><math><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mo>∈</mo><mrow><mo>{</mo><mrow><msub><mi>𝑎</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mo>}</mo></mrow></mrow></math></span> are true propositions</p>
+    <p>Specifically, a single-element set <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mrow><mo>{</mo><mi>𝑎</mi><mo>}</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>define <span><math><mrow><mi>𝐴</mi><mo>⊂</mo><mi>𝐵</mi><mo>≔</mo><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p>  <code>equivalent</code><em>_(tag)</em>   <span><math><mo>⟺</mo></math></span></p>
+  <div class="indent">
+    <p>Some equivalent uses. For computer data, it can be proved by exhaustion that the following calculation results are equal</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mi>𝑝</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>∧</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>Similarly, in order to represent the case of "infinite elements", define language expansion or specify language transformation. For example, De Morgan law of infinite elements</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mo>¬</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or </mtext><mo>¬</mo><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>⟺</mo></mtd><mtd class="mathyml-align-right"><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mo>¬</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>The concept of "infinity" is limited by using the symbol string <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span> of <code>#link(&lt;declare-element-of-set>)[]</code></p>
+  </div>
+  <p>formula, proposition is a special data structure in memory. It can be considered that math_object, formula, proposition are the type of programming language</p>
+  <p>Many propositions are equivalent, so we can consider the "quotient" type of propositions, but the possibility of equivalence is infinite, whether it is possible to have an exhaustive algorithm, first depends on whether it is <code>#link(&lt;countable>)[]</code> …</p>
+  <p>Similar to the redundancy of <span><math><mrow><mo>∧</mo><mo>,</mo><mo>∨</mo><mo>,</mo><mo>¬</mo></mrow></math></span>, set theory construction rules may also have redundancy, or there are many equivalent definitions</p>
+  <p>Specify (finite)</p>
+  <p><span><math><mo>=</mo></math></span> transitive := <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>=</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>=</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p><span><math><mo>⇔</mo></math></span> transitive := <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑞</mi><mo>⇔</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑟</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>follow <code>#link(&lt;bool-algebra>)[various rules of bool in the finite case]</code>, define language transformation rules: let <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></math></span> is formula built with independent/parallel <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow></math></span> i.e. independent/parallel in memory read and used by specific cuntion, then</p>
+  <p>  <code>commutative-forall-exists</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>⟺</mo><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>same for <span><math><mo>⋁</mo></math></span></p>
+  </div>
+  <p>  <code>distributive-forall-exists</code><em>_(tag)</em>  </p>
+  <div class="indent"><math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow><mo>⟺</mo><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑝</mi><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></div>
+  <p>Note that I myself also feel that I cannot completely clearly handle the concepts of derivation and proof below</p>
+  <p>Natural language example of derivation</p>
+  <div class="indent">If it rains, I won't go out<br>It's raining<br>So I won't go out</div>
+  <p>This example is similar to a conditional branch</p>
+  <pre>rain : bool;<br>out : bool;<br>switch (rain) {<br>  true => out = false,<br>  false => out = undefined<br>};</pre>
+  <p>  <code>inference</code><em>_(tag)</em>   For mathematical language, that is</p>
+  <ul>
+    <li>The compiler reads the formula <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span></li>
+    <li>The compiler reads the formula <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition (may be custom)</li>
+    <li>The compiler reads the formula <span><math><mi>𝑝</mi></math></span> is true proposition</li>
+    <li>Then the language rule setting is that the compiler, according to this condition (from memory), assigns the bool value of the formula <span><math><mi>𝑞</mi></math></span> to true i.e. sets <span><math><mi>𝑞</mi></math></span> is true proposition</li>
+  </ul>
+  <p>  <code>proof</code><em>_(tag)</em>   The proof is that compiling passes <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
+  <p>Another kind of equivalence <span><math><mrow><mi>𝑝</mi><mo>⇔</mo><mi>𝑞</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑞</mi><mo>⇒</mo><mi>𝑝</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>  <code>reverse-inference</code><em>_(tag)</em>   Reverse inference. If the result is that I went out, then it is definitely not the result of rain. If the result of the conditional branch is <code>out = true</code>, this is not the result of <code>rain = true</code>. Since the bool value of an ideal binary computer must be one of two, it can only be the result of <code>rain = false</code>. This can be written as a conditional branch</p>
+  <pre>switch (out) {<br>  true => rain = false,<br>  false => rain = undefined<br>};</pre>
+  <p>Mathematically, reverse inference is written as formula <span><math><mrow><mo>¬</mo><mi>𝑞</mi><mo>⇒</mo><mo>¬</mo><mi>𝑝</mi></mrow></math></span>, and defined equivalent to <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span></p>
+  <p>  <code>reverse-proof</code><em>_(tag)</em>   Proof by contradiction is that compiling passes <span><math><mrow><mo>¬</mo><mi>𝑝</mi><mo>⇒</mo><mo>¬</mo><mi>𝑞</mi></mrow></math></span> is true proposition</p>
+  <p>Deductive proof also requires syllogism</p>
+  <ol>
+    <li>All living things die<br></li>
+    <li>Humans are living things<br></li>
+    <li>Therefore, all humans will die</li>
+  </ol>
+  <p>Where "all living things die" is a specially constructed proposition</p>
+  <p>  <code>syllogism</code><em>_(tag)</em>   Syllogistic reasoning is a language rule</p>
+  <ul>
+    <li>The compiler reads the formula <span><math><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></math></span> is true proposition (possibly from a definition e.g. <code>#link(&lt;union>)[]</code>))</li>
+    <li>The compiler reads the declaration let <span><math><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mi>𝐴</mi></mrow></math></span> is true proposition</li>
+    <li>The compiler reads the formula <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></math></span></li>
+    <li>Then the compiler sets <span><math><mrow><mi>𝑝</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></math></span> is true proposition according to this condition (from memory)</li>
+  </ul>
+  <p>That is, the compiler implements the specific construction of data (finite) according to the declaration <span><math><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></math></span> (possibly "infinite")</p>
+  <p>Or understand it as, this rule and behavior are defining the concept of <span><math><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></math></span> itself</p>
+  <p>It is also usually written as the equivalent rule let <span><math><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mi>𝐴</mi></mrow></math></span>, then the special inference formula <span><math><mrow><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⟹</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow></mrow></math></span> is always true proposition. This form is often used in what <code>#link(&lt;proof>)[previously]</code> said, "proving is compiling passes <span><math><mrow><mi>𝑝</mi><mo>⇒</mo><mi>𝑞</mi></mrow></math></span> is true proposition"</p>
+  <p>Reverse syllogism: let <span><math><mrow><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>∈</mo><mi>𝐴</mi></mrow></math></span>, then the equivalent formula <span><math><mrow><mo>¬</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow></mrow><mo>⟹</mo><mo>¬</mo><mrow><mo>(</mo><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mtext> or </mtext><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mo>¬</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math></span> is true proposition</p>
+  <p>We may never know whether a proposition of bool unknow can be constructively proved, i.e. compiled successfully in a limited number of steps</p>
+  <p>Where does the target proposition come from? It may be related to a model of the real world</p>
+  <p>The proof requires expanding a large number of sentences, although computers are very fast at processing strings. In any case, performance optimization? Use only when needed (lazy load)? Parallel (parallel) when two propositions are not interdependent? Assume already proven results (incremental compilation)?</p>
+  <p>A proposition has many proofs with different runtime data flow, which can be considered to belong to the same quotient proof of this proposition</p>
+  <p>The following object construction rules, except for the intersection, generally give non-empty sets</p>
+  <p>  <code>union</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/union.jpeg" width="30%">
+    <p>define object <span><math><mrow><mo>⋃</mo><mi>𝐴</mi></mrow></math></span> and language expansion</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>∪</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⋃</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
+    <p>is non-emtpy unless <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝐴</mi><mo>∪</mo><mi>𝐴</mi><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
+    <p>We do not define the union for <span><math><mrow><mi>𝐴</mi><mo>=</mo><mo>∅</mo></mrow></math></span>. Same below. The reason is that let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>=</mo><mo>∅</mo></mrow></math></span> is always a false proposition, which makes many things unusable</p>
+  </div>
+  <p>  <code>sum</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/sum.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>⊔</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>⊕</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⨆</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⨁</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>∃</mo><mo>!</mo></mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
+    <p>is non-emtpy unless <span><math><mrow><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span></p>
+    <p>in finite case, number of element <span><math><mrow><mrow><mo>|</mo><mrow><msubsup><mo>⨁</mo><mn>1</mn><mi>𝑛</mi></msubsup><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>|</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mn>1</mn><mi>𝑛</mi></msubsup><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>enum is special case of sum/union?</p>
+  <p>  <code>intersection</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/intersection.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>∩</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>⋂</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
+    <p><span><math><mrow><mi>𝐴</mi><mo>∩</mo><mi>𝐴</mi><mo>=</mo><mi>𝐴</mi></mrow></math></span></p>
+  </div>
+  <p>  <code>product</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/product.jpeg" width="30%"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mi>𝑎</mi><mo>×</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow><mo>∈</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>)</mo></mrow><mo>∈</mo><msup><mi>𝑎</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝑎</mi></mtd></mtr></mtable></math>
+    <p>is non-emtpy unless <span><math><mrow><mo>∃</mo><mi>𝑎</mi><mo>∈</mo><mrow><mi>𝐴</mi><mo>,</mo></mrow><mi>𝑎</mi><mo>=</mo><mo>∅</mo></mrow></math></span> (related to   <code>axiom-of-choice</code><em>_(tag)</em>   )</p>
+    <p><strong>Abbreviation</strong> <span><math><mrow><mi>𝐴</mi><mo>×</mo><mi>𝐴</mi><mo>=</mo><msup><mi>𝐴</mi><mn>2</mn></msup></mrow></math></span>. in finite case, number of elements <span><math><mrow><mrow><mo>|</mo><mrow><msubsup><mo>∏</mo><mn>1</mn><mi>𝑛</mi></msubsup><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>|</mo></mrow><mo>=</mo><msubsup><mo>∏</mo><mn>1</mn><mi>𝑛</mi></msubsup><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
+    <p><span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></math></span> means reading two symbols as a combined symbol</p>
+  </div>
+  <p>  <code>map</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/map.jpeg" width="30%">
+    <p>let <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> is math object. The rule for defining map space <span><math><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow></math></span>, map <span><math><mi>𝑓</mi></math></span> as math object is</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑓</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mo>∀</mo><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mtd></mtr></mtable></math>
+    <p>denoted by <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐴</mi><mo>→</mo><mi>𝐵</mi></mrow></math></span></p>
+    <p>denoted by <span><math><mrow><mi>𝑓</mi><mo>∈</mo><msup><mi>𝐵</mi><mi>𝐴</mi></msup></mrow></math></span>. in finite case, number of elements <span><math><mrow><mrow><mo>|</mo><msup><mi>𝐵</mi><mi>𝐴</mi></msup><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝐵</mi><msup><mo>|</mo><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mrow></mrow></math></span></p>
+    <p>Although the usage of <span><math><mrow><mrow><mi>𝑓</mi><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>,</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow><mo>∈</mo><mi>𝐵</mi></mrow></math></span> seems problematic, they can still be defined in terms of symbol &amp; symbol strings</p>
+    <p>If we talk about what the map <span><math><mi>𝑓</mi></math></span> specifically represents, due to non-concrete constructiveness, there is no specific <code>return</code> like in general programming languages, or what <code>return</code> is a newly defined symbol, math object, language expansion</p>
+  </div>
+  <p>  <code>subset</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <img src="../image/subset.jpeg" width="30%"><math display="block"><mrow><mi>𝑆</mi><mo>∈</mo><mrow><mtext>Subset</mtext><mrow><mo>(</mo><mi>𝐴</mi><mo>)</mo></mrow></mrow><mo>≔</mo><mi>𝑆</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math>
+    <p>denoted by <span><math><msup><mn>2</mn><mi>𝐴</mi></msup></math></span>. According to <code>#link(&lt;proposition-function>)[]</code> equivalent to map space <span><math><mrow><mi>𝐴</mi><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span>. in finite case, number of elements <span><math><mrow><mrow><mo>|</mo><msup><mn>2</mn><mi>𝐴</mi></msup><mo>|</mo></mrow><mo>=</mo><msup><mn>2</mn><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></msup></mrow></math></span></p>
+    <p>define <span><math><mrow><mo>∅</mo><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> be true proposition</p>
+  </div>
+  <p>map space and subset introduce high-level infinity</p>
+  <p>One seemingly counterintuitive thing at first glance is that we <em>seemingly</em> know all <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> or all <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi mathvariant="normal">ℕ</mi><mo>→</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>, but cannot count them <code>#link(&lt;cardinal-increase>)[]</code> <code>#link(&lt;uncountable>)[]</code>. However, what exactly does "know all <span><math><mrow><mi>𝑆</mi><mo>⊂</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span>" mean? In fact, trying to consider the question of "finding an infinite subset of <span><math><mi mathvariant="normal">ℕ</mi></math></span> in a general way" reveals that this is not simple.</p>
+  <p>Similarly, although countable can already define some real numbers e.g. <span><math><mrow><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mo>=</mo><mi>𝑒</mi></mrow></math></span>, if not with the help of subset or map, countable construction cannot obtain all <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  <p>  <code>proposition-function</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>let <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span>, <span><math><mrow><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>:</mo><mi>𝐴</mi><mo>→</mo><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></mrow></math></span> is already constructed</p>
+    <p><span><math><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow></math></span> is object</p>
+    <math display="block"><mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>{</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>}</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mi>𝑝</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math>
+  </div>
+  <p>define</p>
+  <math display="block"><mrow><mi>𝐴</mi><mo>=</mo><mi>𝐵</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>⟺</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math>
+  <p>Other usages of <span><math><mo>=</mo></math></span></p>
+  <ol>
+    <li>Alias of identifier in memory</li>
+    <li>Return value of function in memory. so <span><math><mrow><mn>1</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></mrow></math></span> should be understood as the return value of the add function is <span><math><mn>2</mn></math></span></li>
+  </ol>
+  <p>  <code>hierarchy-order-of-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>The set constructed above is called a zero (hierarchy) order set</p>
+    <p><span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> Set</mtext></mrow></math></span> or <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> Set </mtext><mn>0</mn></mrow></math></span></p>
+    <p>then let <span><math><mrow><mtext>Set </mtext><mn>0</mn></mrow></math></span> be math object, in first order set</p>
+    <p><span><math><mrow><mtext>Set </mtext><mn>0</mn><mo>∈</mo><mtext> Set </mtext><mn>1</mn></mrow></math></span></p>
+    <p>Using object construction rules again, what we get is also defined as belonging to <span><math><mrow><mtext>Set </mtext><mn>1</mn></mrow></math></span></p>
+    <p>Anyway, we can always construct such a language with types and bool and various rules in the compiler. Although there are compilers for compilers, the number of compiler layers can also be infinite …</p>
+    <p>let <span><math><mrow><mtext>Set </mtext><mn>1</mn></mrow></math></span> be math object, <span><math><mrow><mtext>Set </mtext><mn>1</mn><mo>∈</mo><mtext> Set </mtext><mn>2</mn></mrow></math></span>. And so on …</p>
+    <p><strong>Example</strong></p>
+    <ul>
+      <li><span><math><mrow><mtext>Set </mtext><mo>×</mo><mtext> Set </mtext><mo>∈</mo><mtext> Set </mtext><mn>1</mn></mrow></math></span></li>
+      <li><span><math><mrow><mrow><mo>(</mo><mrow><mtext>Set </mtext><mo>→</mo><mtext> Set</mtext></mrow><mo>)</mo></mrow><mo>∈</mo><mtext> Set </mtext><mn>1</mn></mrow></math></span></li>
+      <li>
+        <p><span><math><mrow><mtext>Group </mtext><mo>∈</mo><mtext> Set </mtext><mn>1</mn></mrow></math></span><br></p>
+        <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mrow><mo>(</mo><mrow><mi>𝐺</mi><mo>,</mo><mi>𝑚</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mtext> Group </mtext><mo>≔</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mi>𝐺</mi><mo>∈</mo><mtext> Set </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mi>𝑚</mi><mo>∈</mo><mtext> Set </mtext></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mrow><mtext>property-group-multiplication</mtext><mrow><mo>(</mo><mrow><mi>𝐺</mi><mo>,</mo><mi>𝑚</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mtext>e.g.  </mtext><mi>𝑚</mi><mo>∈</mo><mrow><mo>(</mo><mrow><msup><mi>𝐺</mi><mn>2</mn></msup><mo>→</mo><mi>𝐺</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+        <p>Can be divided into multiple sentences, so that it is convenient to add/remove properties to get different structs</p>
+      </li>
+    </ul>
+    <p><span><math><mrow><mtext>Set </mtext><mrow><mn>0</mn><mo>,</mo></mrow><mtext> Set </mtext><mrow><mn>1</mn><mo>,</mo></mrow><mo>…</mo></mrow></math></span> looks like the set of natural numbers <span><math><mi mathvariant="normal">ℕ</mi></math></span>, so should we assume a new hierarchy <span><math><mrow><mtext>Set </mtext><mi mathvariant="normal">ℕ</mi></mrow></math></span> again? Then for <span><math><mrow><mtext>Set </mtext><mi mathvariant="normal">ℕ</mi></mrow></math></span>, continue to use the object construct rule …</p>
+  </div>
+  <p>Will the above construction rules lead to contradictions or computer deadlocks?</p>
+  <p>If we keep constructing infinitely, does this language have an end?</p>
+  <p>  <code>universal-set</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>Does there exist a "set of every set", a "universal set", a "universal-type"?</p>
+    <p>Defined using set theory rules</p>
+    <math display="block"><mrow><mi>𝐴</mi><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mtext> universal-set </mtext><mo>:</mo><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow><mo>∈</mo><mtext> universal-set</mtext></mrow></math>
+    <p>Then let the compiler calculate the bool of the proposition <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span>. Since <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> universal-set</mtext></mrow></math></span> = <code>true</code>, the compiler only calculates the bool of <span><math><mrow><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∈</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mrow></math></span>, and then discovers the <code>not</code> function, so it calculates the bool inside <code>not</code>, but this returns to calculating the bool of <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mi>𝐴</mi></mrow></math></span>. The compiler may choose to enter a circuit dead loop.</p>
+    <p>For finite sets, <span><math><mrow><mi>𝑥</mi><mo>∉</mo><mi>𝑥</mi></mrow></math></span> or cannot be judged, e.g. <span><math><mrow><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow><mo>∉</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></math></span>, because <span><math><mrow><mn>1</mn><mo>≠</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></math></span>, or there is no definition that <span><math><mrow><mi>𝑥</mi><mo>∈</mo><mn>1</mn></mrow></math></span> is a true proposition.</p>
+    <p>Related to self-referential paradox. <strong>Example</strong> "This sentence is wrong" gives a computer dead loop</p>
+    <pre>this_sentence_is_false : bool = false;<br>loop:<br>  switch (this_sentence_is_false) {<br>    false => this_sentence_is_false = true,<br>    true => this_sentence_is_false = false<br>  } <br>  goto loop<br>};</pre>
+    <p>Or use layering to bypass the self-referential paradox <code>(this_sentence = false) = true</code>. We consider them to be different sentences and judgments, believing that it cannot be self-referential.</p>
+  </div>
+  <p>If we can count a number, we consider it a natural number.</p>
+  <p>If language rules can be written and language objects constructed in a finite number of steps, we consider it constructible and expressible. For set theory, what can be constructed in such a finite number of steps is called a math object.</p>
+  <p>Regarding the problem of infinite natural numbers, if natural numbers are defined by counting or induction or periodic circuits, then the problem of infinity is pushed to infinite time.</p>
+  <p>For set theory language, assume that universal-set or universal-type leads to the construction of something that causes the circuit to enter an infinite loop.</p>
+  <p>  <code>dependent-distributive</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>union &amp; interset</p>
+    <math display="block"><mrow><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math><math display="block"><mrow><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⋂</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⋃</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math>
+    <p>sum and product</p>
+    <math display="block"><mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math><math display="block"><mrow><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑥</mi><mo>∈</mo><mo>∏</mo><mi>𝐴</mi></mrow></munder><munder displaystyle="true"><mo>⨆</mo><mrow><mi>𝑎</mi><mo>∈</mo><mi>𝐴</mi></mrow></munder><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow></math>
+    <p>draft of proof: expand, use parallel distributive cf. <code>#link(&lt;distributive-forall-exists>)[]</code></p>
+  </div>
+  <p>  <code>set-minus</code><em>_(tag)</em>  </p>
+  <img src="../image/set-minus.jpeg" width="30%">
+  <p><span><math><mrow><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi><mo>≔</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>∈</mo><mi>𝐴</mi><mo>:</mo><mi>𝑥</mi><mo>∉</mo><mi>𝐵</mi></mrow><mo>}</mo></mrow></mrow></math></span>. if <span><math><mrow><mi>𝐵</mi><mo>⊂</mo><mi>𝐴</mi></mrow></math></span> then define <span><math><mrow><msup><mi>𝐵</mi><mo>∁</mo></msup><mo>≔</mo><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi></mrow></math></span></p>
+  <p>  <code>symmetric-set-minus</code><em>_(tag)</em>  </p>
+  <img src="../image/set-symmetric-minus.jpeg" width="30%">
+  <p><span><math><mrow><mi>𝐴</mi><mi mathvariant="normal">Δ</mi><mi>𝐵</mi><mo>≔</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∖</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>⊔</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∖</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∪</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∖</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∩</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>  <code>coordinate-component</code><em>_(tag)</em>  </p>
+  <ul>
+    <li>
+      <p>product component</p>
+      <math display="block"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><mo>∏</mo><mi>𝐴</mi></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mi>𝑎</mi></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math>
+    </li>
+    <li>
+      <p>sum component</p>
+      <math display="block"><mtable><mtr><mtd><mi>𝑎</mi></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mo>⨆</mo><mi>𝐴</mi></mrow></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    </li>
+  </ul>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

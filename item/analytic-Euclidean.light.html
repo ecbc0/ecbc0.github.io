@@ -1,62 +1,48 @@
 <div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
   <p>幂级数 <span><math><mrow><msub><mo>∑</mo><mrow><mn>0</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 中的幂函数阶数不同, 引入了系数 <span><math><msub><mi>𝑎</mi><mi>𝑛</mi></msub></math></span> 的不对称性, 使得不一定适合级数重排? 虽然我们仍然会讨论绝对收敛</p>
   <p>一维情况开始</p>
   <p><code>#link(&lt;geometric-series>)[几何级数]</code></p>
   <math display="block"><mrow><mrow><mo>|</mo><mi>𝑎</mi><mo>|</mo></mrow><mo>&lt;</mo><mn>1</mn><mo>⟹</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msup><mi>𝑎</mi><mi>𝑛</mi></msup><mo>=</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑎</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>𝑎</mi></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑎</mi></mrow></mfrac></mrow></math>
   <p>in <span><math><mi mathvariant="normal">𝕂</mi></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑎</mi></mrow><mrow><mi>𝑏</mi><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑎</mi><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑏</mi><mo>|</mo></mrow></mrow></math></span></p>
   <p><span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>|</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup></mrow></math></span></p>
-  <p><code data-typst-label="convergence-radius-1d">&lt;convergence-radius-1d></code> 收敛半径</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>convergence-radius-1d</code><em>_(tag)</em>   收敛半径</p>
+  <div class="indent">
     <p>(cf. <code>#link(&lt;limsup>)[]</code>)</p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑅</mi></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow></mrow></mfrac><mo>∈</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mo>∞</mo></mrow><mo>]</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or  </mtext><mfrac><mn>1</mn><mi>𝑅</mi></mfrac></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow></mtd></mtr></mtable></math>
     <p>==> <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≤</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="absolute-convergence-analytic-1d">&lt;absolute-convergence-analytic-1d></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>absolute-convergence-analytic-1d</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝑅</mi></mrow></math></span> ==> <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 绝对收敛</p>
     <p><em>Proof</em></p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>use <code>#link(&lt;geometric-series-test>)[几何级数判别]</code> and <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>=</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≤</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac><mo>&lt;</mo><mn>1</mn></mrow></math></span></p>
       <math display="block"><mrow><mrow><mo>|</mo><mrow><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow><mo>|</mo></mrow><mo>≤</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msup><mrow><mo>(</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac></mrow></mfrac></mrow></math>
     </div>
     <p><span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>></mo><mi>𝑅</mi></mrow></math></span> ==> <span><math><mrow><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 绝对发散</p>
     <p><em>Proof</em> <span><math><mrow><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>≔</mo><munder displaystyle="false"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow></mrow></math></span> ==> <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> 中无限项 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≈</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>⟹</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>></mo><mn>1</mn><mo>⟹</mo><mrow><mo>|</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub></mrow><mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>|</mo></mrow><mo>></mo><mn>1</mn></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="uniformaly-absolutely-convergence-analytic">&lt;uniformaly-absolutely-convergence-analytic></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>uniformaly-absolutely-convergence-analytic</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>use <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>≤</mo><mi>𝑟</mi><mo>&lt;</mo><mi>𝑅</mi></mrow></math></span>. use <code>#link(&lt;geometric-serise-test>)[几何级数控制]</code></p>
     <p>in 半径 <span><math><mrow><mi>𝑟</mi><mo>&lt;</mo><mi>𝑅</mi></mrow></math></span> 的闭球 <span><math><mrow><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo>¯</mo></mover><mrow><mo>(</mo><mi>𝑟</mi><mo>)</mo></mrow></mrow></math></span>, <span><math><mrow><mo>∑</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 一致绝对收敛</p>
   </div>
   <p>多项式函数 <span><math><mrow><mi>𝑣</mi><mo>⇝</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mi>𝑁</mi></msubsup><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 是连续函数</p>
   <p>收敛半径内, 幂级数定义的函数</p>
   <p><span><math><mrow><mi>𝑣</mi><mo>⇝</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></msub><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span>, <span><math><mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝑅</mi></mrow></math></span></p>
-  <p><code data-typst-label="analytic-imply-continuous">&lt;analytic-imply-continuous></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>analytic-imply-continuous</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><span><math><mrow><mi>𝑅</mi><mo>></mo><mn>0</mn></mrow></math></span> ==> 连续</p>
     <p><span><math><mtable><mtr><mtd class="mathyml-align-right"><mo>|</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>|</mo></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>|</mo><mrow><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>−</mo><msub><mi>𝑎</mi><mn>0</mn></msub></mrow><mo>|</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msup><mrow><mo>(</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac><mo>)</mo></mrow><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac></mrow></mfrac><mo>−</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
     <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><mi>𝑣</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mfrac><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow><mi>𝑅</mi></mfrac></mrow></mfrac><mo>−</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow></math></span></p>
   </div>
   <p>将多项式的 <code>#link(&lt;change-base-point-polynomial>)[]</code> 推广到级数</p>
-  <p><code data-typst-label="change-base-point-analytic">&lt;change-base-point-analytic></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>change-base-point-analytic</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><span><math><mrow><mi>𝑅</mi><mo>></mo><mn>0</mn></mrow></math></span></p>
     <p>==> 幂级数 <span><math><mrow><mo>∑</mo><msub><mi>𝑎</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span> 切换基点到 <span><math><mrow><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mo>∈</mo><mrow><mi mathvariant="normal">𝔹</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑅</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 之后的幂级数</p>
     <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow><mo>)</mo></mrow><mrow><mo>+</mo><mi>𝑣</mi></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑚</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><mrow><mo>(</mo><mrow><munderover displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mi>𝑚</mi></mrow><mo>∞</mo></munderover><msub><mi>𝑎</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mfrac linethickness="0"><mi>𝑛</mi><mi>𝑚</mi></mfrac><mo>)</mo></mrow><msup><mi mathvariant="normal">Δ</mi><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑚</mi></mrow></msup></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup><mo>=</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑚</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></munder><msub><mi>𝑎</mi><mi>𝑚</mi></msub><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow></math>
@@ -91,11 +77,8 @@
   <p>注意 <span><math><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></math></span> 对称性, 例如 <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup></math></span> 的 <span><math><mrow><mtext>O </mtext><mrow><mo>(</mo><mi>𝑑</mi><mo>)</mo></mrow></mrow></math></span>, <span><math><msup><mi mathvariant="normal">ℂ</mi><mi>𝑑</mi></msup></math></span> 的 <span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mi>𝑑</mi><mo>)</mo></mrow></mrow></math></span></p>
   <p>将多项式函数 <code>#link(&lt;polynomial-function>)[]</code> 推广到幂级数 <span><math><mrow><mo>∑</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
   <p>不同于一维, 在高维, 一般没有 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>|</mo><mo>=</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><mrow><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mrow></mrow></math></span>. 甚至还没有定义 <span><math><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></math></span></p>
-  <p><code data-typst-label="linear-map-induced-norm">&lt;linear-map-induced-norm></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>linear-map-induced-norm</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>let <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊗</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
     <p><span><math><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></math></span> 定义为对所有方向 <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">𝕂</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑑</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 的一致控制系数. compactness of <span><math><msup><mrow><mi mathvariant="normal">𝕂</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑑</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span> 将会使得这种定义有意义 (and 无法直接用于一般 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 二次型方向空间 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>)</p>
     <math display="block"><mrow><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow><mo>≔</mo><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑣</mi><mo>∈</mo><msup><mrow><mi mathvariant="normal">𝕂</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑑</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></munder><mrow><mo>|</mo><mrow><mi>𝐴</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow><msub><mo>|</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></msub></mrow><mo>=</mo><munder displaystyle="true"><mi mathvariant="normal">sup</mi><mrow><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></mrow></munder><mfrac><mrow><mrow><mo>|</mo><mrow><mi>𝐴</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mrow><mrow><mrow><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mrow></mrow></mfrac></mrow></math>
@@ -108,13 +91,10 @@
     </ul>
     <p>和 <span><math><msup><mi mathvariant="normal">𝕂</mi><mn>1</mn></msup></math></span> 情况比较, <span><math><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></math></span> 的定义的可计算性低</p>
   </div>
-  <p><code data-typst-label="convergence-radius">&lt;convergence-radius></code> 收敛半径</p>
+  <p>  <code>convergence-radius</code><em>_(tag)</em>   收敛半径</p>
   <math display="block"><mrow><mi>𝑅</mi><mo>=</mo><mfrac><mn>1</mn><mrow><munder displaystyle="true"><mi mathvariant="normal">lim sup</mi><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow></mrow></mfrac></mrow></math>
-  <p><code data-typst-label="absolute-convergence-analytic">&lt;absolute-convergence-analytic></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>absolute-convergence-analytic</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><code>#link(&lt;absolute-convergence-analytic-1d>)[same as]</code> <span><math><msup><mi mathvariant="normal">𝕂</mi><mn>1</mn></msup></math></span></p>
     <ul>
       <li>
@@ -126,10 +106,7 @@
     </ul>
   </div>
   <p><em>Proof</em> (of 发散)</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>use <code>#link(&lt;linear-map-induced-norm>)[]</code> <span><math><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></math></span>, 存在 <span><math><mrow><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>∈</mo><msup><mrow><mi mathvariant="normal">𝕂</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑑</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 使 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mrow><mo>(</mo><msup><mrow><mo>(</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub><mo>)</mo></mrow><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>|</mo><mo>≈</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>|</mo></mrow></mrow></math></span></p>
     <p>use <span><math><mi mathvariant="normal">lim sup</mi></math></span> 定义, <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi></mrow></math></span> 中无限项 <span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≈</mo><mi mathvariant="normal">lim sup</mi><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mi>𝑅</mi></mfrac></mrow></math></span></p>
     <p>use passing to compact <span><math><msup><mrow><mi mathvariant="normal">𝕂</mi><mi mathvariant="normal">ℙ</mi></mrow><mrow><mi>𝑑</mi><mo>−</mo><mn>1</mn></mrow></msup></math></span> and <span><math><msub><mi>𝑣</mi><mi>𝑛</mi></msub></math></span> 子序列收敛到 <span><math><mi>𝑣</mi></math></span></p>
@@ -159,40 +136,31 @@
   <math display="block"><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mrow><mi>𝑛</mi><mo>!</mo></mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></math>
   <p>幂级数在收敛半径中一致绝对收敛, 从而可以交换极限</p>
   <p><span><math><mrow><munder displaystyle="false"><mtext>lim </mtext><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑡</mi><mi>𝑘</mi></msub><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub></mrow></mfrac></mrow></math></span> 可以恢复 <span><math><mi>𝑛</mi></math></span> 阶单项式</p>
-  <p><code data-typst-label="differential">&lt;differential></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>differential</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><span><math><mi>𝑛</mi></math></span> 阶微分 <span><math><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>∈</mo><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑛</mi><mo>!</mo></mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑡</mi><mi>𝑘</mi></msub><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub></mrow></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝐵</mi><mo>⊂</mo><mrow><mo>{</mo><mrow><mn>1</mn><mo>,</mo><mo>…</mo><mo>,</mo><mi>𝑛</mi></mrow><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mrow><mo>|</mo><mi>𝐵</mi><mo>|</mo></mrow><mo>−</mo><mi>𝑛</mi></mrow></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑏</mi><mo>∈</mo><mi>𝐵</mi></mrow></munder><msub><mi>𝑡</mi><mi>𝑏</mi></msub><msub><mi>𝑣</mi><mi>𝑏</mi></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
   </div>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  "><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑡</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mi>𝑡</mi></mfrac><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><msup><mi>𝑑</mi><mn>2</mn></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑡</mi><mn>2</mn></msub></mrow><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑡</mi><mn>2</mn></msub></mrow></mfrac></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>−</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>−</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></div>
+  <div class="indent"><math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><mi>𝑡</mi><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mi>𝑡</mi></mfrac><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><msup><mi>𝑑</mi><mn>2</mn></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>,</mo><msub><mi>𝑡</mi><mn>2</mn></msub></mrow><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑡</mi><mn>2</mn></msub></mrow></mfrac></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>−</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>1</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>−</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"></mtd><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>+</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></div>
   <p>差分和微分的定义可以用于任何函数, 不需要是由幂级数定义的函数</p>
-  <p><code data-typst-label="polynomial-expansion">&lt;polynomial-expansion></code> 多项式展开</p>
+  <p>  <code>polynomial-expansion</code><em>_(tag)</em>   多项式展开</p>
   <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>∼</mo><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math>
   <p><strong>alias</strong> 幂级数, Taylor 展开, Taylor 级数</p>
-  <p><code data-typst-label="polynomial-approximation">&lt;polynomial-approximation></code> 多项式逼近</p>
+  <p>  <code>polynomial-approximation</code><em>_(tag)</em>   多项式逼近</p>
   <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>∼</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn><mo>.</mo><mo>.</mo><mi>𝑁</mi></mrow></munder><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑁</mi></msup><mo>)</mo></mrow></mrow></mrow></math>
   <p><strong>alias</strong> Taylor 展开, Taylor 逼近, Taylor 多项式</p>
-  <p><code data-typst-label="derivative">&lt;derivative></code> 微商 <strong>alias</strong> 导数, 方向导数</p>
+  <p>  <code>derivative</code><em>_(tag)</em>   微商 <strong>alias</strong> 导数, 方向导数</p>
   <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><mi>𝑣</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>≔</mo><mi>𝑑</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mi>𝑣</mi><mo>)</mo></mrow><mo>=</mo><mtext> lim </mtext><mfrac><mn>1</mn><mi>𝑡</mi></mfrac><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
   <p>接连的差分和微商 <span><math><mrow><msup><mi>𝑑</mi><mn>2</mn></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo></mrow></math></span></p>
   <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mi>𝑑</mi><mn>2</mn></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><msub><mi>𝑡</mi><mn>2</mn></msub></munder><mfrac><mn>1</mn><msub><mi>𝑡</mi><mn>2</mn></msub></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝐵</mi><mn>2</mn></msub><mo>⊂</mo><mrow><mo>{</mo><mn>2</mn><mo>}</mo></mrow></mrow></munder><munder displaystyle="true"><mtext> lim </mtext><msub><mi>𝑡</mi><mn>1</mn></msub></munder><mfrac><mn>1</mn><msub><mi>𝑡</mi><mn>1</mn></msub></mfrac><munder displaystyle="true"><mo>∑</mo><mrow><msub><mi>𝐵</mi><mn>1</mn></msub><mo>⊂</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></munder><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>|</mo><msub><mi>𝐵</mi><mn>1</mn></msub><mo>|</mo><mo>+</mo><mo>|</mo><msub><mi>𝐵</mi><mn>2</mn></msub><mo>|</mo><mo>−</mo><mn>2</mn></mrow></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mo>…</mo></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><msub><mi>𝑡</mi><mn>2</mn></msub></munder><mfrac><mn>1</mn><msub><mi>𝑡</mi><mn>2</mn></msub></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mn>2</mn></msub><msub><mi>𝑣</mi><mn>2</mn></msub></mrow><mo>)</mo></mrow><mo>−</mo><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd></mtr></mtable></math>
   <p><code>#link(&lt;successive-difference>)[逐次差分]</code> 不依赖于顺序 + 极限交换 ==> <span><math><mrow><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>∂</mo><msub><mi>𝑣</mi><mn>2</mn></msub></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>2</mn></msub><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub></mrow></mfrac></mrow></math></span></p>
-  <p><code data-typst-label="successive-derivative">&lt;successive-derivative></code> 逐次微商</p>
+  <p>  <code>successive-derivative</code><em>_(tag)</em>   逐次微商</p>
   <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mrow><msup><mo>∂</mo><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><mo>∂</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≔</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext>lim </mtext><mrow><msub><mi>𝑡</mi><mi>𝑛</mi></msub><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><msub><mi>𝑡</mi><mi>𝑛</mi></msub></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><mo>∂</mo><msub><mi>𝑣</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mi>𝑛</mi></msub><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow><mo>−</mo><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><mo>∂</mo><msub><mi>𝑣</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
   <p>==> 幂级数的方向导数表示 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mfrac><mrow><msup><mo>∂</mo><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></math></span></p>
   <p>逐次微商的概念使用了不同点的切向量的相减, 隐含地用到了 connection 的概念</p>
-  <p><code data-typst-label="partial-derivative">&lt;partial-derivative></code> 偏导数</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>partial-derivative</code><em>_(tag)</em>   偏导数</p>
+  <div class="indent">
     <p>使用坐标. let <span><math><msub><mi>𝑒</mi><mi>𝑘</mi></msub></math></span> 是 <span><math><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></math></span> 的基. so <span><math><mrow><msub><mi>𝑡</mi><mi>𝑘</mi></msub><msub><mi>𝑒</mi><mi>𝑘</mi></msub></mrow></math></span> <span><math><mo>⟷</mo></math></span> 坐标 <span><math><mi>𝑘</mi></math></span> 分量 <span><math><msub><mi>𝑡</mi><mi>𝑘</mi></msub></math></span></p>
     <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑥</mi><mi>𝑘</mi></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>≔</mo><mfrac><mrow><mo>∂</mo><mi>𝑓</mi></mrow><mrow><mo>∂</mo><msub><mi>𝑒</mi><mi>𝑘</mi></msub></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><msub><mi>𝑡</mi><mi>𝑘</mi></msub><mo>→</mo><mn>0</mn></mrow></munder><mfrac><mn>1</mn><msub><mi>𝑡</mi><mi>𝑘</mi></msub></mfrac><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><msub><mi>𝑡</mi><mi>𝑘</mi></msub><msub><mi>𝑒</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow><mo>−</mo><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
     <p>and so on</p>
@@ -214,26 +182,20 @@
     </li>
   </ul>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>let <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac></mrow></math></span></p>
     <p><span><math><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑛</mi><mo>!</mo></mrow><msup><mrow><mo>(</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac><mo>)</mo></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
     <p><span><math><mrow><mfrac><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow></mfrac><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑛</mi><mo>!</mo></mrow></mrow></math></span></p>
     <p><span><math><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑣</mi></mrow></mfrac><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mn>0</mn><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>∼</mo><mo>∑</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><mfrac><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow></mfrac><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>=</mo><mo>∑</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span>, or</p>
     <p><span><math><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑥</mi></mrow></mfrac><mo>∼</mo><mo>∑</mo><msup><mi>𝑥</mi><mi>𝑛</mi></msup></mrow></math></span></p>
   </div>
-  <p>if use range space 坐标 <span><math><mrow><mi>𝑓</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑓</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑓</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> 那么一阶微分 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow></math></span> 表示为 Jacobi 矩阵 <code data-typst-label="Jacobi-matrix">&lt;Jacobi-matrix></code></p>
+  <p>if use range space 坐标 <span><math><mrow><mi>𝑓</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑓</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑓</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span> 那么一阶微分 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow></math></span> 表示为 Jacobi 矩阵   <code>Jacobi-matrix</code><em>_(tag)</em>  </p>
   <math display="block"><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>=</mo><mrow><mo>(</mo><mtable><mtr><mtd><mfrac><mrow><mo>∂</mo><msub><mi>𝑓</mi><mn>1</mn></msub></mrow><mrow><mo>∂</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd><mo>…</mo></mtd><mtd><mfrac><mrow><mo>∂</mo><msub><mi>𝑓</mi><mn>1</mn></msub></mrow><mrow><mo>∂</mo><msub><mi>𝑥</mi><mi>𝑑</mi></msub></mrow></mfrac></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mrow></mrow></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mfrac><mrow><mo>∂</mo><msub><mi>𝑓</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mrow><mo>∂</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mfrac></mtd><mtd><mo>…</mo></mtd><mtd><mfrac><mrow><mo>∂</mo><msub><mi>𝑓</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mrow><mo>∂</mo><msub><mi>𝑥</mi><mi>𝑑</mi></msub></mrow></mfrac></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math>
-  <p><code data-typst-label="differential-function">&lt;differential-function></code> 微分函数</p>
+  <p>  <code>differential-function</code><em>_(tag)</em>   微分函数</p>
   <math display="block"><mtable><mtr><mtd><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></mtd></mtr></mtable></math>
   <p>将值域 <span><math><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></math></span> 作为 linear space, 使用 power norm, 可以幂级数展开</p>
-  <p><code data-typst-label="successive-differential">&lt;successive-differential></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>successive-differential</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>isomorphism</p>
     <math display="block"><mtable><mtr><mtd><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑚</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><mtext> Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mrow><mo>(</mo><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup><mi>𝑓</mi></mrow></mtd></mtr></mtable></math>
     <p>with</p>
@@ -244,7 +206,7 @@
   <p><em>Proof</em> (draft) 导数的交换性 <span><math><mrow><mrow><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mo>,</mo></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mi>𝑚</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> and <span><math><mrow><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mo>,</mo></mrow><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msub></mrow><mo>)</mo></mrow></mrow></math></span>. norm estimation <span><math><mrow><mrow><mo>|</mo><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup></mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msub></mrow><mo>)</mo></mrow><mo>|</mo><mo>≤</mo><mrow><mo>|</mo><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup></mrow><mrow><mi>𝑓</mi><mo>|</mo></mrow><mrow><mo>|</mo><msub><mi>𝑣</mi><mn>1</mn></msub><mo>|</mo></mrow><mo>⋯</mo><mrow><mo>|</mo><msub><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msub><mo>|</mo></mrow></mrow></math></span></p>
   <p><strong>Abbreviation</strong> <span><math><mrow><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mrow><mo>(</mo><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup><mi>𝑓</mi></mrow></math></span> 尽管记号冲突</p>
   <p>==> 微分函数的幂级数 <span><math><mrow><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>𝑚</mi></msub><mfrac><mn>1</mn><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mi>𝑛</mi></mrow></msup><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
-  <p><code data-typst-label="anti-derivative">&lt;anti-derivative></code></p>
+  <p>  <code>anti-derivative</code><em>_(tag)</em>  </p>
   <ul>
     <li>
       <p><span><math><mrow><mi mathvariant="normal">𝕂</mi><mo>→</mo><mi mathvariant="normal">𝕂</mi></mrow></math></span></p>
@@ -255,7 +217,7 @@
       <p><span><math><mrow><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span> …</p>
     </li>
   </ul>
-  <p><code data-typst-label="mean-value-theorem-analytic-1d">&lt;mean-value-theorem-analytic-1d></code> 微分中值定理</p>
+  <p>  <code>mean-value-theorem-analytic-1d</code><em>_(tag)</em>   微分中值定理</p>
   <ul>
     <li>
       <p>介值 ver.</p>
@@ -267,10 +229,7 @@
     </li>
   </ul>
   <p><em>Proof</em></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>use <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>−</mo><mfrac><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow></mrow><mrow><mi>𝑏</mi><mo>−</mo><mi>𝑎</mi></mrow></mfrac></mrow></math></span> reduce to</p>
     <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn><mo>⟹</mo><mo>∃</mo><mi>𝑐</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi></mrow><mo>)</mo></mrow><mo>,</mo><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑐</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
     <ul>
@@ -281,21 +240,15 @@
     <p>介值定理使用了完整的 <span><math><mi mathvariant="normal">ℝ</mi></math></span> 的序</p>
     <p>绝对值估计所用的 <span><math><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></math></span> 的序可能没有足够的强度来得到微分中值定理</p>
   </div>
-  <p><code data-typst-label="fundamental-theorem-of-calculus">&lt;fundamental-theorem-of-calculus></code> 微积分基本定理</p>
+  <p>  <code>fundamental-theorem-of-calculus</code><em>_(tag)</em>   微积分基本定理</p>
   <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑏</mi><mo>)</mo></mrow></mrow><mo>−</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑎</mi><mo>)</mo></mrow></mrow><mo>=</mo><msubsup><mo>∫</mo><mi>𝑎</mi><mi>𝑏</mi></msubsup><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mi>𝑑</mi><mi>𝑥</mi></mrow></math>
   <p>微分中值定理 compact 一致线性控制 ver. + compact 分割一致逼近</p>
-  <p><code data-typst-label="mean-value-theorem-analytic">&lt;mean-value-theorem-analytic></code> 微分中值定理 for <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span>. 用嵌入的直线 <span><math><mrow><mi>𝑡</mi><mo>→</mo><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow></math></span> reduce to <span><math><mi mathvariant="normal">ℝ</mi></math></span> 的情况</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>mean-value-theorem-analytic</code><em>_(tag)</em>   微分中值定理 for <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span>. 用嵌入的直线 <span><math><mrow><mi>𝑡</mi><mo>→</mo><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow></math></span> reduce to <span><math><mi mathvariant="normal">ℝ</mi></math></span> 的情况</p>
+  <div class="indent">
     <ul>
       <li>一阶</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>+</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>𝑑</mi><mi>𝑡</mi><mtext> </mtext><msup><mi>𝑓</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mi>𝑣</mi></mrow></math>
       <p>by 微积分基本定理 and <code>#link(&lt;chain-rule-1d>)[]</code> and <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑣</mi></mrow></math></span></p>
       <p>remainder estimation, 一致线性控制</p>
@@ -304,10 +257,7 @@
     <ul>
       <li>高阶</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <math display="block"><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><munderover displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mi>𝑚</mi></munderover><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>+</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>𝑑</mi><mi>𝑡</mi><mfrac><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow></mrow></math>
       <p>by 分部积分</p>
       <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow><msubsup><mo>|</mo><mn>0</mn><mn>1</mn></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>𝑑</mi><mi>𝑡</mi><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mrow><mi>𝑚</mi><mo>−</mo><mn>1</mn></mrow></msup><mrow><mrow><mo>(</mo><mrow><mi>𝑚</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑚</mi></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mi>𝑚</mi></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>−</mo><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑡</mi></mrow><mo>)</mo></mrow><mi>𝑚</mi></msup><mrow><mi>𝑚</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mrow><mi>𝑚</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><msup><mi>𝑣</mi><mrow><mi>𝑚</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
@@ -316,16 +266,13 @@
     </div>
   </div>
   <p>let 幂级数 <span><math><mrow><mo>∑</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow></math></span></p>
-  <p><code data-typst-label="convergence-domain">&lt;convergence-domain></code> 收敛域 := <span><math><mrow><mo>{</mo><mrow><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>:</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑁</mi><mo>→</mo><mo>∞</mo></mrow></munder><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mi>𝑁</mi></msubsup><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mtext> converge</mtext></mrow><mo>}</mo></mrow></math></span></p>
+  <p>  <code>convergence-domain</code><em>_(tag)</em>   收敛域 := <span><math><mrow><mo>{</mo><mrow><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>:</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑁</mi><mo>→</mo><mo>∞</mo></mrow></munder><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>0</mn></mrow><mi>𝑁</mi></msubsup><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mtext> converge</mtext></mrow><mo>}</mo></mrow></math></span></p>
   <p>计算幂级数的切换基点后的系数使用了求和的交换</p>
   <p>for 多项式, 求和有限, 求和顺序交换, 从而切换基点良定义 <code>#link(&lt;change-base-point-polynomial>)[]</code></p>
   <p>但是, 无限求和的极限, 如果不是绝对收敛, 并不总是兼容于求和顺序改变 <code>#link(&lt;series-rearrangement>)[]</code></p>
   <p>幂级数切换基点可能导致收敛域改变</p>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <math display="block"><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow></mfrac><mo>=</mo><mo>∑</mo><msup><mi>𝑧</mi><mi>𝑛</mi></msup><mo>=</mo><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑧</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow></mfrac></mrow></math>
     <p>with <span><math><mrow><msup><mi>𝑧</mi><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>=</mo><mrow><mo>|</mo><mi>𝑧</mi><msup><mo>|</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝜃</mi></mrow></msup></mrow></math></span></p>
     <p>收敛域是 <span><math><mrow><mrow><mo>|</mo><mi>𝑧</mi><mo>|</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow></math></span></p>
@@ -343,17 +290,11 @@
   </div>
   <p>不断切换基点可以 "改变" 收敛到的值</p>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li><span><math><mrow><mtext>log </mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow><mo>)</mo></mrow><mo>∼</mo><mo>∑</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msup><mi>𝑧</mi><mi>𝑛</mi></msup></mrow></math></span></li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>let <span><math><mrow><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi mathvariant="normal">Δ</mi><mi>𝑚</mi></msub><mo>∈</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span> with <span><math><mrow><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi mathvariant="normal">Δ</mi><mi>𝑚</mi></msub><mo>=</mo><mn>0</mn></mrow></math></span></p>
       <p>let <span><math><mrow><mo>∑</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msup><mi>𝑧</mi><mi>𝑛</mi></msup></mrow></math></span> 逐次切换基点 <span><math><mrow><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mo>+</mo><msub><mi mathvariant="normal">Δ</mi><mn>2</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi mathvariant="normal">Δ</mi><mi>𝑚</mi></msub><mo>∈</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span>, 最后回到 <span><math><mn>0</mn></math></span></p>
       <p>if 每次位移 <span><math><msub><mi mathvariant="normal">Δ</mi><mrow><mi>𝑖</mi><mo>+</mo><mn>1</mn></mrow></msub></math></span> 都在基点 <span><math><mrow><msub><mi mathvariant="normal">Δ</mi><mn>1</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi mathvariant="normal">Δ</mi><mi>𝑖</mi></msub></mrow></math></span> 的收敛域, 并使用幂级数极限</p>
@@ -367,12 +308,9 @@
         <p><span><math><mrow><msup><mi>𝑧</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mo>=</mo><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mtext> log </mtext><mi>𝑧</mi></mrow></msup></mrow></math></span></p>
       </li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">绕 <span><math><mn>1</mn></math></span> 转 <span><math><mi>𝑘</mi></math></span> 圈得到 <span><math><mrow><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup><msup><mi>𝑧</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span>, by <span><math><mrow><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mn>2</mn><mi>𝑘</mi><mi>𝜋</mi><mtext> i</mtext></mrow></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup></mrow></math></span></div>
+    <div class="indent">绕 <span><math><mn>1</mn></math></span> 转 <span><math><mi>𝑘</mi></math></span> 圈得到 <span><math><mrow><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup><msup><mi>𝑧</mi><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span>, by <span><math><mrow><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⋅</mo><mn>2</mn><mi>𝑘</mi><mi>𝜋</mi><mtext> i</mtext></mrow></msup><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑘</mi></msup></mrow></math></span></div>
   </div>
-  <p><code data-typst-label="analytic-continuation">&lt;analytic-continuation></code></p>
+  <p>  <code>analytic-continuation</code><em>_(tag)</em>  </p>
   <ul>
     <li>
       <p>良定义的延拓区域: 不受切换基点的影响</p>
@@ -382,53 +320,38 @@
     </li>
   </ul>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li><span><math><mrow><mrow><mtext>log</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow><mo>)</mo></mrow></mrow><mo>∼</mo><mo>∑</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac><msup><mi>𝑧</mi><mi>𝑛</mi></msup></mrow></math></span> 收敛半径 <span><math><mn>1</mn></math></span></li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>不能良定义地延拓到 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></math></span>. by 绕 <span><math><mn>0</mn></math></span> 转 <span><math><mi>𝑘</mi></math></span> 圈得到 <span><math><mrow><mn>2</mn><mi>𝑘</mi><mi>𝜋</mi><mtext> i </mtext><mo>+</mo><mrow><mtext>log</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
       <p>极大良延拓区域是 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mrow><mo>{</mo><mrow><mi>𝑥</mi><mo>+</mo><mtext> i </mtext><mn>0</mn><mo>:</mo><mi>𝑥</mi><mo>≤</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>}</mo></mrow></mrow></math></span></p>
     </div>
     <ul>
       <li><span><math><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow></mfrac><mo>∼</mo><mo>∑</mo><msup><mi>𝑧</mi><mi>𝑛</mi></msup></mrow></math></span> 收敛半径 <span><math><mn>1</mn></math></span></li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>可以良定义地延拓到 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mrow><mo>{</mo><mn>1</mn><mo>}</mo></mrow></mrow></math></span>, 重合于用 <span><math><mi mathvariant="normal">ℂ</mi></math></span> 除法定义的 <span><math><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow></mfrac></math></span></p>
       <p><span><math><mrow><msub><mi>𝑑</mi><mi>𝑧</mi></msub><mrow><mtext>log</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝑧</mi></mrow></mfrac></mrow></math></span>, or <span><math><mrow><msub><mi>𝑑</mi><mi>𝑧</mi></msub><mrow><mtext>log</mtext><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mi>𝑧</mi></mfrac></mrow></math></span></p>
     </div>
     <ul>
       <li><span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mo>−</mo><mo>∞</mo><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mo>+</mo><mo>∞</mo></mrow><mo>)</mo></mrow></mrow></math></span> 已经是极大延拓</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p><span><math><mfrac><mn>1</mn><mi>𝑧</mi></mfrac></math></span> 的极大延拓是 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mn>0</mn></mrow></math></span></p>
       <p><span><math><mfrac><mn>1</mn><mi>𝑧</mi></mfrac></math></span> 的幂级数系数包含复数, 不同于 <span><math><mfrac><mn>1</mn><mi>𝑥</mi></mfrac></math></span> 只包含实数</p>
     </div>
   </div>
-  <p><code data-typst-label="analytic-function">&lt;analytic-function></code> 解析函数 := 幂级数任何点收敛半径非零 + 极大解析延拓</p>
-  <p><code data-typst-label="analytic-isomorphism">&lt;analytic-isomorphism></code> 解析同胚 := <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐷</mi><mo>↔</mo><msup><mi>𝐷</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
+  <p>  <code>analytic-function</code><em>_(tag)</em>   解析函数 := 幂级数任何点收敛半径非零 + 极大解析延拓</p>
+  <p>  <code>analytic-isomorphism</code><em>_(tag)</em>   解析同胚 := <span><math><mrow><mi>𝑓</mi><mo>:</mo><mi>𝐷</mi><mo>↔</mo><msup><mi>𝐷</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></math></span></p>
   <ul>
     <li>解析函数</li>
     <li><span><math><mrow><mo>∀</mo><mi>𝑥</mi><mo>∈</mo><mrow><mi>𝐷</mi><mo>,</mo></mrow><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>∈</mo><mrow><mtext>GL</mtext><mrow><mo>(</mo><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>)</mo></mrow></mrow></mrow></math></span></li>
     <li>same for <span><math><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span></li>
   </ul>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <ul>
       <li>
         <p><span><math><mrow><mi>𝐴</mi><mo>∈</mo><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑑</mi><mo>,</mo><mi mathvariant="normal">𝕂</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> 是解析同胚</p>
@@ -437,35 +360,23 @@
         <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>𝑥</mi><mn>3</mn></msup><mo>+</mo><mi>𝑥</mi></mrow></math></span></p>
       </li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p><span><math><mrow><mfrac><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><mi>𝑥</mi></mrow></mfrac><mo>=</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>></mo><mn>0</mn></mrow></math></span> ==> <span><math><mrow><mfrac><mrow><mi>𝑑</mi><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mrow><mi>𝑑</mi><mi>𝑦</mi></mrow></mfrac><mo>></mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mi>𝑓</mi><mo>,</mo><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span> 单调增 ==> <span><math><mi>𝑓</mi></math></span> 是 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span> 解析同胚</p>
       <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>𝑧</mi><mn>3</mn></msup><mo>+</mo><mi>𝑧</mi><mo>=</mo><mn>0</mn></mrow></math></span>, <span><math><mrow><mfrac><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><mi>𝑧</mi></mrow></mfrac><mo>=</mo><msup><mi>𝑧</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></math></span> in <span><math><mi mathvariant="normal">ℂ</mi></math></span> 有解 <span><math><mrow><mo>±</mo><mtext> i</mtext></mrow></math></span> ==> <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mrow><mo>(</mo><mrow><mo>±</mo><mtext> i</mtext></mrow><mo>)</mo></mrow><mo>∉</mo><mtext> GL</mtext></mrow></math></span> ==> <span><math><mi>𝑓</mi></math></span> 不是 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>→</mo><mi mathvariant="normal">ℂ</mi></mrow></math></span> 解析同胚</p>
     </div>
     <ul>
       <li><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑒</mi><mi>𝑥</mi></msup></mrow></math></span> with <span><math><mrow><mfrac><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><mi>𝑥</mi></mrow></mfrac><mo>=</mo><msup><mi>𝑒</mi><mi>𝑥</mi></msup><mo>></mo><mn>0</mn></mrow></math></span> 是 <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>→</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub></mrow></math></span> 解析同胚</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  "><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑒</mi><mi>𝑧</mi></msup></mrow></math></span> with <span><math><mrow><mfrac><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><mi>𝑧</mi></mrow></mfrac><mo>=</mo><msup><mi>𝑒</mi><mi>𝑧</mi></msup><mo>≠</mo><mn>0</mn></mrow></math></span> 是局部解析同胚, 但不是 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>→</mo><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mrow><mo>{</mo><mn>0</mn><mo>}</mo></mrow></mrow></math></span> 解析同胚. 非单射: <span><math><mrow><msup><mi>𝑒</mi><mn>0</mn></msup><mo>=</mo><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mn>2</mn><mi>𝜋</mi></mrow></msup><mo>=</mo><mn>1</mn></mrow></math></span></div>
+    <div class="indent"><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑒</mi><mi>𝑧</mi></msup></mrow></math></span> with <span><math><mrow><mfrac><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow><mrow><mi>𝑑</mi><mi>𝑧</mi></mrow></mfrac><mo>=</mo><msup><mi>𝑒</mi><mi>𝑧</mi></msup><mo>≠</mo><mn>0</mn></mrow></math></span> 是局部解析同胚, 但不是 <span><math><mrow><mi mathvariant="normal">ℂ</mi><mo>→</mo><mi mathvariant="normal">ℂ</mi><mo>∖</mo><mrow><mo>{</mo><mn>0</mn><mo>}</mo></mrow></mrow></math></span> 解析同胚. 非单射: <span><math><mrow><msup><mi>𝑒</mi><mn>0</mn></msup><mo>=</mo><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mn>2</mn><mi>𝜋</mi></mrow></msup><mo>=</mo><mn>1</mn></mrow></math></span></div>
   </div>
   <p>尝试对幂级数空间定义距离. 启发自</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>≤</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow></math></span></p>
     <p><span><math><mrow><mfrac><mn>1</mn><mi>𝑅</mi></mfrac><mo>=</mo><mi mathvariant="normal">lim sup</mi><mrow><mo>{</mo><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>}</mo></mrow></mrow></math></span></p>
     <p>三角不等式 <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi></mrow><mo>+</mo><mrow><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝐴</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></mrow></math></span> <em>Proof</em> by 两边 <span><math><mi>𝑛</mi></math></span> power, 二项式展开</p>
   </div>
-  <p><code data-typst-label="power-series-space">&lt;power-series-space></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>power-series-space</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>幂级数空间</p>
     <math display="block"><mrow><munderover displaystyle="true"><mo>⨁</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></munderover><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><msup><mo>⊙</mo><mi>𝑛</mi></msup><msup><mi mathvariant="normal">𝕂</mi><mi>𝑑</mi></msup><mo>→</mo><msup><mi mathvariant="normal">𝕂</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow></mrow></mrow></math>
     <p><code>#link(&lt;net>)[网]</code> (note: <span><math><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></math></span> is <code>#link(&lt;linear-map-induced-norm>)[]</code></p>
@@ -478,10 +389,7 @@
   <p>幂级数空间是 distance 空间 and complete. <em>Proof</em> by 继承自 <span><math><mrow><mo>|</mo><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span> of forall <span><math><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></math></span></p>
   <p><span><math><mtext>dist</mtext></math></span> 不是 norm, eg. <span><math><mrow><mrow><mo>|</mo><mi>𝜆</mi></mrow><mrow><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝜆</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></mrow></math></span></p>
   <p>收敛半径的接近 <span><math><mrow><msub><mi>𝑅</mi><mi>𝐴</mi></msub><mo>≈</mo><msub><mi>𝑅</mi><mi>𝐵</mi></msub></mrow></math></span></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mrow><mrow><mo>|</mo><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝐴</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝐴</mi></mrow><mo>−</mo><mrow><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></mrow></math></span></p>
     <p><span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>+</mo><mrow><mo>|</mo><mi>𝐴</mi></mrow><mo>−</mo><mrow><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></mrow></math></span></p>
     <p>==> <span><math><mrow><mrow><mo>|</mo><mi>𝐴</mi></mrow><mo>−</mo><mrow><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>≥</mo><mo>|</mo><mrow><mo>|</mo><mi>𝐴</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>−</mo><mrow><mo>|</mo><mi>𝐵</mi><msup><mo>|</mo><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow><mo>|</mo></mrow></math></span></p>
@@ -492,16 +400,10 @@
     <p>==> <span><math><mrow><msub><mi>𝑅</mi><mi>𝐴</mi></msub><mo>≈</mo><msub><mi>𝑅</mi><mi>𝐵</mi></msub></mrow></math></span></p>
   </div>
   <p>收敛的值的接近</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  "><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>|</mo><mrow><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>−</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>−</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>|</mo><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msup><mi>𝜀</mi><mi>𝑛</mi></msup><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝜀</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow></mfrac><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>→</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math></span></div>
-  <p><code data-typst-label="Sobolev-space">&lt;Sobolev-space></code> for Sobolev anayltic space, try use 几乎处处解析 + <span><math><mrow><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span> 作为控制函数去逼近目标函数 <span><math><mrow><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub><mo>−</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑔</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>≤</mo><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span>, where <span><math><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub></math></span> 是 <span><math><mi mathvariant="normal">ϕ</mi></math></span> 的 <code data-typst-label="weak-differential">&lt;weak-differential></code>. (note: <span><math><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></math></span> is <code>#link(&lt;linear-map-induced-norm>)[]</code>) 或者只用带解析型积分 norm 限制的几乎处处解析空间, 或者对此空间进行积分 norm 的 Cauchy 网完备化</p>
+  <div class="indent"><span><math><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>|</mo><mrow><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow><mo>−</mo><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mi>𝑣</mi><mi>𝑛</mi></msup><mo>)</mo></mrow></mrow><mo>|</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><mo>−</mo><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>|</mo><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>≤</mo></mtd><mtd class="mathyml-align-right"><msub><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></msub><msup><mi>𝜀</mi><mi>𝑛</mi></msup><mo>|</mo><mi>𝑣</mi><msup><mo>|</mo><mi>𝑛</mi></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>𝜀</mi><mrow><mo>|</mo><mi>𝑣</mi><mo>|</mo></mrow></mrow></mfrac><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>→</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math></span></div>
+  <p>  <code>Sobolev-space</code><em>_(tag)</em>   for Sobolev anayltic space, try use 几乎处处解析 + <span><math><mrow><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span> 作为控制函数去逼近目标函数 <span><math><mrow><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub><mo>−</mo><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑔</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup><mo>≤</mo><mo>∫</mo><msup><mrow><mo>|</mo><mrow><mfrac><mn>1</mn><mrow><mi>𝑛</mi><mo>!</mo></mrow></mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mi>𝑓</mi></mrow><mo>|</mo></mrow><mfrac><mn>1</mn><mi>𝑛</mi></mfrac></msup></mrow></math></span>, where <span><math><msub><mi mathvariant="normal">ϕ</mi><mi>𝑛</mi></msub></math></span> 是 <span><math><mi mathvariant="normal">ϕ</mi></math></span> 的   <code>weak-differential</code><em>_(tag)</em>   . (note: <span><math><mrow><mo>|</mo><mi>𝐴</mi><mo>|</mo></mrow></math></span> is <code>#link(&lt;linear-map-induced-norm>)[]</code>) 或者只用带解析型积分 norm 限制的几乎处处解析空间, 或者对此空间进行积分 norm 的 Cauchy 网完备化</p>
   <p>更弱的网控制</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>let <span><math><mrow><mi>𝑟</mi><mo>&lt;</mo><msub><mi>𝑅</mi><mi>𝐴</mi></msub></mrow></math></span></p>
     <p>use data <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝜀</mi></mrow></math></span> and new data <span><math><mi>𝑟</mi></math></span></p>
     <math display="block"><mrow><mo>{</mo><mrow><mi>𝐵</mi><mo>:</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑛</mi><mo>≥</mo><mn>1</mn></mrow></munder><mrow><mo>|</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝐵</mi><mi>𝑛</mi></msub><mo>|</mo></mrow><msup><mi>𝑟</mi><mi>𝑛</mi></msup><mo>&lt;</mo><mi>𝜀</mi></mrow><mo>}</mo></mrow></math>
@@ -509,10 +411,7 @@
   </div>
   <p>出于对称性的考虑, 解析的定义应该不依赖于特定的幂级数展开基点</p>
   <p>不同基点的幂级数距离控制对比</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>对基点 <span><math><mi>𝑥</mi></math></span>, 幂级数 <span><math><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> with <span><math><mrow><mrow><mtext>dist</mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>,</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝜀</mi></mrow></math></span></p>
     <p>同时切换基点到 <span><math><mrow><mi>𝑥</mi><mo>+</mo><mi mathvariant="normal">Δ</mi></mrow></math></span></p>
     <p>系数估计</p>
@@ -530,18 +429,12 @@
     <p>==> 一点 <span><math><mi>𝑥</mi></math></span> 的幂级数距离一致地控制区域 <span><math><mrow><msubsup><mo>⋃</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn></mrow><mi>𝑁</mi></msubsup><mover accent="true"><mi mathvariant="normal">𝔹</mi><mo>¯</mo></mover><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑟</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow></math></span> 的幂级数距离</p>
     <p>虽然这仍然无法保持解析延拓的良定义, e.g. <span><math><mrow><mtext>log</mtext><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="analytic-space">&lt;analytic-space></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>analytic-space</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>解析空间的网</p>
     <p>let <span><math><mi>𝑓</mi></math></span> 解析, with domain <span><math><msub><mi>𝐷</mi><mi>𝑓</mi></msub></math></span></p>
     <p><span><math><mi>𝑓</mi></math></span> 的 <code>#link(&lt;net>)[网]</code></p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <ul>
         <li>
           <p>let <span><math><mrow><mi>𝜀</mi><mo>></mo><mn>0</mn></mrow></math></span></p>
@@ -566,10 +459,10 @@
   <p>in 解析空间及其网</p>
   <ul>
     <li>
-      <p><code data-typst-label="inverse-op-continous-in-analytic-space">&lt;inverse-op-continous-in-analytic-space></code> <span><math><mrow><mi>𝑓</mi><mo>≈</mo><mi>𝑔</mi></mrow></math></span> ==> <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>≈</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
+      <p>  <code>inverse-op-continous-in-analytic-space</code><em>_(tag)</em>   <span><math><mrow><mi>𝑓</mi><mo>≈</mo><mi>𝑔</mi></mrow></math></span> ==> <span><math><mrow><msup><mi>𝑓</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>≈</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math></span></p>
     </li>
     <li>
-      <p><code data-typst-label="compose-op-continous-in-analytic-space">&lt;compose-op-continous-in-analytic-space></code> <span><math><mrow><msub><mi>𝑓</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑓</mi><mn>2</mn></msub></mrow></math></span> and <span><math><mrow><msub><mi>𝑔</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑔</mi><mn>2</mn></msub></mrow></math></span> ==> <span><math><mrow><msub><mi>𝑓</mi><mn>1</mn></msub><mo>∘</mo><msub><mi>𝑔</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑓</mi><mn>2</mn></msub><mo>∘</mo><msub><mi>𝑔</mi><mn>2</mn></msub></mrow></math></span></p>
+      <p>  <code>compose-op-continous-in-analytic-space</code><em>_(tag)</em>   <span><math><mrow><msub><mi>𝑓</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑓</mi><mn>2</mn></msub></mrow></math></span> and <span><math><mrow><msub><mi>𝑔</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑔</mi><mn>2</mn></msub></mrow></math></span> ==> <span><math><mrow><msub><mi>𝑓</mi><mn>1</mn></msub><mo>∘</mo><msub><mi>𝑔</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>𝑓</mi><mn>2</mn></msub><mo>∘</mo><msub><mi>𝑔</mi><mn>2</mn></msub></mrow></math></span></p>
     </li>
   </ul>
   <p>或者说, <span><math><mrow><msup><mrow></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo><mo>∘</mo></mrow></math></span> 算子都是解析空间的连续函数</p>
@@ -578,10 +471,7 @@
   <ul>
     <li>仿射线性</li>
   </ul>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝐴</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mi>𝑣</mi></mrow></math></span></p>
     <p>收敛半径 <span><math><mo>∞</mo></math></span></p>
     <p>任何基点的幂级数的一阶项都是 const <span><math><msub><mi>𝐴</mi><mn>1</mn></msub></math></span></p>
@@ -590,15 +480,12 @@
   <ul>
     <li>多项式映射</li>
   </ul>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝐴</mi><mn>0</mn></msub><mo>+</mo><msub><mi>𝐴</mi><mn>1</mn></msub><mi>𝑣</mi><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝐴</mi><mi>𝑛</mi></msub><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mrow></math></span></p>
     <p>收敛半径 <span><math><mo>∞</mo></math></span></p>
     <p>多项式函数空间内无法定义一致距离</p>
   </div>
-  <p><code data-typst-label="connected-analytic">&lt;connected-analytic></code> in 解析空间, <span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mo>−</mo><mo>∞</mo><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mo>+</mo><mo>∞</mo></mrow><mo>)</mo></mrow></mrow></math></span> 在不同的连通分支?</p>
+  <p>  <code>connected-analytic</code><em>_(tag)</em>   in 解析空间, <span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mo>−</mo><mo>∞</mo><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span> 和 <span><math><mrow><mrow><mfrac><mn>1</mn><mi>𝑥</mi></mfrac><mo>,</mo></mrow><mi>𝑥</mi><mo>∈</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mo>+</mo><mo>∞</mo></mrow><mo>)</mo></mrow></mrow></math></span> 在不同的连通分支?</p>
   <p>连通分支内奇点的性质在解析同胚下不变</p>
-  <p><code data-typst-label="homotopy-analytic">&lt;homotopy-analytic></code> 解析 <code>#link(&lt;homotopy>)[同伦]</code></p>
+  <p>  <code>homotopy-analytic</code><em>_(tag)</em>   解析 <code>#link(&lt;homotopy>)[同伦]</code></p>
 </div>

@@ -1,70 +1,50 @@
 <div>
-  <p><code data-typst-label="integral-piecewise-constant-function">&lt;integral-piecewise-constant-function></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">constant function <span><math><msub><mi>𝑓</mi><mi>𝑖</mi></msub></math></span> support on simplex <span><math><msub><mi>𝜎</mi><mi>𝑖</mi></msub></math></span> + <span><math><mrow><mi>𝑓</mi><mo>=</mo><mo>∑</mo><msub><mi>𝑓</mi><mi>𝑖</mi></msub><msub><mi>𝜎</mi><mi>𝑖</mi></msub></mrow></math></span> 可数无限组合 + <span><math><mrow><msub><mo>∫</mo><mi>𝜎</mi></msub><mi>𝑓</mi><mo>=</mo><mo>∑</mo><msub><mi>𝑓</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span> 绝对收敛</div>
-  <p><code data-typst-label="integral-simplicial-function">&lt;integral-simplicial-function></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">或者用连续分段仿射线性 or simplicial function e.g. for simplex with 顶点 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></math></span>, <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span>. 积分定义为根据顶点的值的平均 i.e. 仿射中心映射的结果 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mfrac><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><mtext>simp</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>  <code>integral-piecewise-constant-function</code><em>_(tag)</em>  </p>
+  <div class="indent">constant function <span><math><msub><mi>𝑓</mi><mi>𝑖</mi></msub></math></span> support on simplex <span><math><msub><mi>𝜎</mi><mi>𝑖</mi></msub></math></span> + <span><math><mrow><mi>𝑓</mi><mo>=</mo><mo>∑</mo><msub><mi>𝑓</mi><mi>𝑖</mi></msub><msub><mi>𝜎</mi><mi>𝑖</mi></msub></mrow></math></span> 可数无限组合 + <span><math><mrow><msub><mo>∫</mo><mi>𝜎</mi></msub><mi>𝑓</mi><mo>=</mo><mo>∑</mo><msub><mi>𝑓</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span> 绝对收敛</div>
+  <p>  <code>integral-simplicial-function</code><em>_(tag)</em>  </p>
+  <div class="indent">或者用连续分段仿射线性 or simplicial function e.g. for simplex with 顶点 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow></math></span>, <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mrow><mi>𝑓</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span>. 积分定义为根据顶点的值的平均 i.e. 仿射中心映射的结果 <span><math><mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mfrac><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mrow><mi>𝑛</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><mrow><mtext>simp</mtext><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span></div>
   <p>根据 simplex 交集和减集的分解, 分段常值函数的有限加减仍然是分段常值函数</p>
   <p>定义积分距离 <span><math><mrow><mrow><mo>‖</mo><mi>𝑓</mi></mrow><mo>−</mo><mrow><mi>𝑔</mi><msub><mo>‖</mo><mn>1</mn></msub></mrow><mo>=</mo><mo>∫</mo><mrow><mo>|</mo><mi>𝑓</mi></mrow><mo>−</mo><mrow><mi>𝑔</mi><mo>|</mo></mrow></mrow></math></span>. 或者用 <span><math><mn>2</mn></math></span> norm <span><math><mrow><mrow><mo>‖</mo><mi>𝑓</mi></mrow><mo>−</mo><mrow><mi>𝑔</mi><msub><mo>‖</mo><mn>2</mn></msub></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>∫</mo><mrow><mo>|</mo><mi>𝑓</mi></mrow><mo>−</mo><mrow><mi>𝑔</mi><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span></p>
-  <p><code data-typst-label="Lebesgue-integrable">&lt;Lebesgue-integrable></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>Lebesgue-integrable</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>∈</mo><msup><mi>𝐿</mi><mn>1</mn></msup></mrow></math></span> := <span><math><mrow><mo>∀</mo><mi>𝜀</mi><mo>></mo><mn>0</mn></mrow></math></span> 存在分段常值 <span><math><mrow><mi>𝑓</mi><mo>,</mo><mi>𝑔</mi></mrow></math></span> 使得 <span><math><mrow><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>−</mo><mrow><mi>𝑓</mi><mo>|</mo></mrow><mo>≤</mo><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow></mrow></math></span> 且 <span><math><mrow><mrow><mo>‖</mo><mi>𝑔</mi><mo>‖</mo></mrow><mo>=</mo><mo>∫</mo><mrow><mo>|</mo><mi>𝑔</mi><mo>|</mo></mrow><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span></p>
     <p>对 <span><math><msup><mi>𝐿</mi><mn>2</mn></msup></math></span> 同理</p>
     <p>在分段常值空间, 类似于可测集的定义, 对于积分距离, 三角不等式, 极限唯一</p>
   </div>
-  <p><code data-typst-label="Lebesgue-integral">&lt;Lebesgue-integral></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>Lebesgue-integral</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>使得可以定义 <span><math><mrow><mi>𝑓</mi><mo>→</mo><mi mathvariant="normal">ϕ</mi></mrow></math></span> 和 <span><math><mrow><mo>∫</mo><mi mathvariant="normal">ϕ</mi><mo>=</mo><munder displaystyle="false"><mtext> lim </mtext><mrow><mi>𝑓</mi><mo>→</mo><mi mathvariant="normal">ϕ</mi></mrow></munder><mo>∫</mo><mi>𝑓</mi></mrow></math></span></p>
     <p><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>∈</mo><msup><mi>𝐿</mi><mn>1</mn></msup><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>,</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow><mo>⟺</mo><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><mo>|</mo></mrow><mo>∈</mo><msup><mi>𝐿</mi><mn>1</mn></msup><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
     <p><span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>∈</mo><msup><mi>𝐿</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>,</mo><msup><mi mathvariant="normal">ℝ</mi><msup><mi>𝑑</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow><mo>)</mo></mrow><mo>⟺</mo><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><mo>|</mo></mrow><mo>∈</mo><msup><mi>𝐿</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow><mo>⟺</mo><mrow><mo>|</mo><mi mathvariant="normal">ϕ</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>∈</mo><msup><mi>𝐿</mi><mn>1</mn></msup><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mi>𝑑</mi></msup><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
   </div>
   <p><strong>Example</strong> 但是需要注意, 虽然积分距离 Cauchy 网总是积分收敛, 存在积分距离 Cauchy 网不逐点收敛到极限函数</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>二等分行走序列是积分距离 Cauchy 的, 测度趋于 <span><math><mn>0</mn></math></span></p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑓</mi><mn>1</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mn>𝟙</mn><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>]</mo></mrow></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mi>𝑓</mi><mn>2</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mn>𝟙</mn><mrow><mo>[</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mi>𝑓</mi><mn>3</mn></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mn>𝟙</mn><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><mo>]</mo></mrow></msub></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⋯</mo></mtd></mtr><mtr><mtd class="mathyml-align-right"><msub><mi>𝑓</mi><mrow><mn>2</mn><mo>+</mo><mo>⋯</mo><mo>+</mo><msup><mn>2</mn><mi>𝑘</mi></msup><mo>+</mo><mi>𝑝</mi></mrow></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mn>𝟙</mn><mrow><mo>[</mo><mrow><mrow><mfrac><mrow><mi>𝑝</mi><mo>−</mo><mn>1</mn></mrow><msup><mn>2</mn><mi>𝑘</mi></msup></mfrac><mo>,</mo></mrow><mfrac><mi>𝑝</mi><msup><mn>2</mn><mi>𝑘</mi></msup></mfrac></mrow><mo>]</mo></mrow></msub></mtd></mtr></mtable></math>
     <p>它不遵循逐点收敛的定义</p>
     <math display="block"><mtable><mtr><mtd><mo>∀</mo><mi>𝑥</mi><mo>∈</mo><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow><mo>,</mo><mo>∀</mo><mi>𝑁</mi><mo>∈</mo><mi mathvariant="normal">ℕ</mi><mo>,</mo><mo>∃</mo><mi>𝑖</mi><mo>,</mo><mi>𝑗</mi><mo>></mo><mi>𝑁</mi></mtd></mtr><mtr><mtd><msub><mi>𝑓</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn><mo>,</mo><msub><mi>𝑓</mi><mi>𝑗</mi></msub><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mtd></mtr></mtable></math>
     <p>虽然概念直觉上它收敛到空集</p>
   </div>
-  <p><code data-typst-label="integrable-exist-subnet-almost-everywhere-pointwise-convergence">&lt;integrable-exist-subnet-almost-everywhere-pointwise-convergence></code> (ref-5, p.129–130)</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">但是所有 <span><math><mrow><msup><mi>𝐿</mi><mn>1</mn></msup><mo>,</mo><msup><mi>𝐿</mi><mn>2</mn></msup></mrow></math></span> 积分距离 Cauchy 网中存在子网几乎处处逐点收敛到目标可积函数. 这来自, 在存在测度任意小的集合 <span><math><mi>𝐴</mi></math></span> 使得在 <span><math><msup><mi>𝐴</mi><mo>∁</mo></msup></math></span> 上绝对一致收敛</div>
+  <p>  <code>integrable-exist-subnet-almost-everywhere-pointwise-convergence</code><em>_(tag)</em>   (ref-5, p.129–130)</p>
+  <div class="indent">但是所有 <span><math><mrow><msup><mi>𝐿</mi><mn>1</mn></msup><mo>,</mo><msup><mi>𝐿</mi><mn>2</mn></msup></mrow></math></span> 积分距离 Cauchy 网中存在子网几乎处处逐点收敛到目标可积函数. 这来自, 在存在测度任意小的集合 <span><math><mi>𝐴</mi></math></span> 使得在 <span><math><msup><mi>𝐴</mi><mo>∁</mo></msup></math></span> 上绝对一致收敛</div>
   <p><span><math><mrow><msub><mn>𝟙</mn><mi>𝐴</mi></msub><mo>∈</mo><mrow><msup><mi>𝐿</mi><mn>1</mn></msup><mo>,</mo></mrow><msup><mi>𝐿</mi><mn>2</mn></msup></mrow></math></span> 定义出来的可测集是 Lebesgue 可测集, 可能不连通</p>
   <p>我们定义的是绝对可积. 其它的积分操作, 例如 <span><math><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mo>∞</mo></mrow><mo>∞</mo></msubsup><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msup></mrow></math></span>, 是基于绝对可积的特殊的极限操作, 和问题的环境有关</p>
   <p>线性换坐标 <span><math><mrow><mi>𝐴</mi><mo>∈</mo><mtext> GL</mtext></mrow></math></span> 给出积分变量替换公式 <span><math><mrow><mtext>det </mtext><mi>𝐴</mi></mrow></math></span></p>
-  <p><code data-typst-label="integral-on-form">&lt;integral-on-form></code> 如果认为是对 <span><math><mi>𝑛</mi></math></span> form 积分, i.e. form 作用在单位平行体上的值的积分, 则积分是 <span><math><mtext>GL</mtext></math></span> invariant 的</p>
-  <p>几乎处处解析</p>
-  <p><code data-typst-label="integral-change-of-variable-formula">&lt;integral-change-of-variable-formula></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>integral-on-form</code><em>_(tag)</em>   对于 <span><math><mi>𝑛</mi></math></span> 区域的积分, 函数对体积积分等价于对 <span><math><mi>𝑛</mi></math></span> form 积分. 如果认为是对 <span><math><mi>𝑛</mi></math></span> form 积分, 则积分是 <span><math><mtext>GL</mtext></math></span> invariant 的</p>
+  <p>  <code>integral-change-of-variable-formula</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>let <span><math><mi>𝑓</mi></math></span> 几乎处处解析</p>
     <p>积分的微分同胚的变量替换公式 <span><math><mrow><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></msub><mi>𝑓</mi><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></msub><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow><mrow><mo>|</mo><mtext>det </mtext></mrow><mi>𝑑</mi><mrow><mi mathvariant="normal">ϕ</mi><mo>|</mo></mrow></mrow></math></span> or <span><math><mrow><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></msub><mi>𝑑</mi><mi>𝑦</mi><mtext> </mtext><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></msub><mi>𝑑</mi><mi>𝑥</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mi>𝑓</mi><mo>∘</mo><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mrow><mo>|</mo><mtext>det </mtext></mrow><mi>𝑑</mi><mi mathvariant="normal">ϕ</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>|</mo></mrow></math></span></p>
     <p>将换坐标映射的微分 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi></mrow></math></span> at 每个 simplex 中心 as 仿射映射作用于定义域 simplex 得到值域 simplex 用于近似, 对有界区域对 <code>#link(&lt;mean-value-theorem-analytic>)[微分中值定理]</code> (高阶) 近似进行 compact 一致控制, 然后取分割极限 (ref-12, p.92–99)</p>
     <p>然后无界区域是来自有界区域的可数逼近, <span><math><mrow><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mo>∞</mo></mrow></msub><msub><mi>𝜀</mi><mi>𝑖</mi></msub><mo>&lt;</mo><mi>𝜀</mi></mrow></math></span> 技术</p>
     <p>如果认为是对 <span><math><mi>𝑛</mi></math></span> form 积分, 则积分变量替换等价于 <span><math><mi>𝑛</mi></math></span> form 积分 (cf. <code>#link(&lt;integral-on-form>)[]</code>) is 微分同胚 invariant</p>
   </div>
-  <p><code data-typst-label="integral-on-manfold">&lt;integral-on-manfold></code> <strong>Question</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>integral-on-manfold</code><em>_(tag)</em>   <strong>Question</strong></p>
+  <div class="indent">
     <p>根据变量替换公式, 流形上的坐标里的对 <span><math><mi>𝑛</mi></math></span> form 的积分 invariant (cf. <code>#link(&lt;integral-on-form>)[]</code>)</p>
     <p>但是如果想要对定义在整个 <code>#link(&lt;orientable>)[可定向]</code> 流形上的 <span><math><mi>𝑛</mi></math></span> form 进行积分, 应该怎么做?</p>
     <p>一种做法是, 类似 <code>#link(&lt;integral-change-of-variable-formula>)[变量替换公式]</code> 的证明, 坐标内, 线性近似 + compact 一致控制 + 分割极限, 然后可数覆盖逼近整个流形</p>
@@ -77,34 +57,28 @@
     <p>证明结果不依赖于坐标系统和线性近似逼近方式的选取</p>
   </div>
   <p>用 (不固定坐标轴的) 矩形和 simplex 定义的测度和积分都是等价的, 因为矩形和 simplex 可以相互可数逼近</p>
-  <p><code data-typst-label="Fubini-theorem">&lt;Fubini-theorem></code></p>
+  <p>  <code>Fubini-theorem</code><em>_(tag)</em>  </p>
   <math display="block"><mrow><msub><mo>∫</mo><mi>𝑋</mi></msub><mi>𝑑</mi><mi>𝑥</mi><msub><mo>∫</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mo>∫</mo><mrow><mi>𝑋</mi><mo>×</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mi>𝑑</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mo>∫</mo><msup><mi>𝑋</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mi>𝑑</mi><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><msub><mo>∫</mo><mi>𝑋</mi></msub><mi>𝑑</mi><mi>𝑥</mi><mrow><mi>𝑓</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><msup><mi>𝑥</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>)</mo></mrow></mrow></mrow></math>
   <p>因为矩形区域的分段常值是可 product 分解的, 再用绝对收敛的上界控制</p>
   <p>Fubini theorem 2 … (ref-5)</p>
   <p>Fubini 定理可以用于证明函数图形下方的体积计算就是对底部体积对高度函数积分</p>
   <p><strong>Example</strong> 极坐标, 2d, 3d, 双曲 …</p>
   <p>area coarea 公式 …</p>
-  <p><code data-typst-label="try-to-define-low-dim-integral">&lt;try-to-define-low-dim-integral></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
-    <p>尝试对 <span><math><mrow><mi>𝑘</mi><mo>&lt;</mo><mi>𝑛</mi></mrow></math></span> 维的 simplex or 平行体和 <span><math><mi>𝑘</mi></math></span> form 定义积分</p>
-    <p>form 作用于 simplex or 平行体就定义为 form 作用在 simplex 所在的 <span><math><mi>𝑘</mi></math></span> 方向的单位体积平行体 (如果存在)</p>
+  <p>  <code>low-dim-integral</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>form 对 <span><math><mi>𝑘</mi></math></span> simplex 的积分也是 invariant 的, 并不需要对低维 simplex 定义体积</p>
+    <p>constant 型 form</p>
     <p>simplicial map 型 <span><math><mi>𝑘</mi></math></span> form := 设 <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑥</mi><mi>𝑘</mi></msub></mrow></math></span> simplex 是顶点, 则 <span><math><mrow><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mo>∑</mo><msub><mi>𝑡</mi><mi>𝑖</mi></msub><mrow><mi>𝜔</mi><mrow><mo>(</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span></p>
-    <p>如果 <span><math><mi>𝑘</mi></math></span> chain 的一个顶点在相邻的 <span><math><mi>𝑘</mi></math></span> simplex 中 with 不同 <span><math><mi>𝑘</mi></math></span> 方向, 则这个顶点上的 <span><math><mi>𝑘</mi></math></span> form 有不同的作用值. or <span><math><mi>𝑘</mi></math></span> chain 并不对 <span><math><mi>𝑘</mi></math></span> 方向连续. 这不同于 <span><math><mi>𝑛</mi></math></span> 阶的情况, 余维数零所以 <span><math><mi>𝑛</mi></math></span> chain 都是相同的方向</p>
+    <p>类似 <span><math><mi>𝑛</mi></math></span> 阶的情况, <span><math><mi>𝑘</mi></math></span> chain 上的 simplicial map form 定义积分 <span><math><mrow><msub><mo>∫</mo><mi>𝜎</mi></msub><mi>𝜔</mi><mo>=</mo><mo>∑</mo><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><mtext>center of </mtext><msub><mi>𝜎</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>两个 <span><math><mi>𝑘</mi></math></span> simplex 即使相邻, 方向也可能不连续. 这不同于 <span><math><mi>𝑛</mi></math></span> 阶的情况, 余维数零所以 <span><math><mi>𝑛</mi></math></span> simplex 都是相同的方向</p>
+    <p>两个相邻的 <span><math><mi>𝑘</mi></math></span> simplex 的在共同顶点上, form 作用在这一点可能有不同的值. simplicial 型的积分的也等价于在顶点上取方向的平均</p>
     <p>良好的逼近应该需要让 <span><math><mi>𝑘</mi></math></span> 方向有良好的正则性, 但是没有额外结构的话似乎很难定义这种概念 (即使是 Grassmann 流形?)</p>
     <p>微分子流形结构可以简单消去这种 <span><math><mi>𝑘</mi></math></span> 方向不连续</p>
-    <p>不同的 <span><math><mi>𝑛</mi></math></span> 维 <span><math><mi>𝑘</mi></math></span> form 可能在一个 <span><math><mi>𝑘</mi></math></span> 方向有相同的作用值, 但是这层冗余可以消去 by 考虑作用在所有 <span><math><mi>𝑘</mi></math></span> 方向</p>
-    <p>类似 <span><math><mi>𝑛</mi></math></span> 阶的情况, <span><math><mi>𝑘</mi></math></span> chain 上的 simplicial map form 定义积分 <span><math><mrow><msub><mo>∫</mo><mi>𝜎</mi></msub><mi>𝜔</mi><mo>=</mo><mo>∑</mo><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><mtext>center of </mtext><msub><mi>𝜎</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mrow><mtext>Vol</mtext><mrow><mo>(</mo><msub><mi>𝜎</mi><mi>𝑖</mi></msub><mo>)</mo></mrow></mrow></mrow></math></span></p>
   </div>
-  <p><code data-typst-label="integral-on-submanfold">&lt;integral-on-submanfold></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>integral-on-submanfold</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>让 <span><math><mi>𝑛</mi></math></span> 维流形的 <span><math><mi>𝑘</mi></math></span> form 限制于 <span><math><mi>𝑘</mi></math></span> <code>#link(&lt;orientable>)[可定向]</code> 子流形的切空间 (cf. <code>#link(&lt;integral-on-manfold>)[]</code>)</p>
-    <p><span><math><mi>𝑀</mi></math></span> 的 <span><math><mi>𝑛</mi></math></span> form 等价于纯量函数, 但是 <span><math><mi>𝑀</mi></math></span> 的 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> form <span><math><mi>𝜔</mi></math></span> 应怎么积分控制? 尝试 <span><math><mrow><mrow><mi mathvariant="normal">sup</mi><mrow><mo>(</mo><mrow><mi>𝑆</mi><mtext> orientable </mtext><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mtext> submanifold</mtext></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mo>∫</mo><mi>𝑆</mi></msub><mrow><mo>|</mo><mi>𝜔</mi></mrow><mo>−</mo><mrow><msup><mi>𝜔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span>?</p>
+    <p><span><math><mi>𝑀</mi></math></span> 的 <span><math><mi>𝑛</mi></math></span> form 等价于纯量函数, 但是 <span><math><mi>𝑀</mi></math></span> 的 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> form <span><math><mi>𝜔</mi></math></span> 应怎么积分控制? 尝试 <span><math><mrow><mrow><mi mathvariant="normal">sup</mi><mrow><mo>(</mo><mrow><mi>𝑆</mi><mo>:</mo><mtext> orientable </mtext><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow><mtext> submanifold</mtext></mrow><mo>)</mo></mrow></mrow><mrow><mo>(</mo><mrow><msub><mo>∫</mo><mi>𝑆</mi></msub><mrow><mo>|</mo><mi>𝜔</mi></mrow><mo>−</mo><mrow><msup><mi>𝜔</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span>?</p>
     <p>如无必要, 暂时不引入额外的 metric 来定义 <span><math><mrow><msub><mo>∫</mo><mi>𝑀</mi></msub><msup><mrow><mo>(</mo><msup><mrow><mo>⟨</mo><mi>𝜔</mi><mo>⟩</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow></math></span> or <span><math><msup><mrow><mo>(</mo><mrow><msub><mo>∫</mo><mi>𝑀</mi></msub><msup><mrow><mo>⟨</mo><mi>𝜔</mi><mo>⟩</mo></mrow><mn>2</mn></msup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></math></span></p>
   </div>
 </div>

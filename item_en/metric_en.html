@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}  quadratic-form_(tag)   ℝ𝑛 Quadratic form alias   metric_(tag)   Metric alias Inner product   inner-product_(tag)  Example ℝ2,ℝ3 Distance (𝑥𝑦𝑧)⇝𝑥2+𝑦2+𝑧2Example ℝ1,3 spacetime metric (𝑡𝑥𝑦𝑧)⇝𝑐2⋅𝑡2−(𝑥2+𝑦2+𝑧2)Bilinear function, Quadratic formThe commonly used notation for metric is 𝑔(𝑥,𝑦),⟨𝑥,𝑦⟩. In coordinates, it is denoted as 𝑔𝑖𝑗𝑥𝑖𝑦𝑗Under coordinates, metric 𝑔 can be represented as matrix 𝐺 and matrix multiplication (𝑋,𝑌)⇝𝑋⊺𝐺𝑌  signature-inertial_(tag)   signature (𝑝,𝑞) is invariant under GL(𝑛,ℝ). The eigenvalues and diagonalization of symmetric matrix 𝐺 are (10−1) where there are 𝑛+ ones, 𝑛0 zeros, and 𝑛− negative ones. This can be understood as orbit classification of group action  quadratic-form-non-degenerated_(tag)   Non-degenerate :&#x3D; 𝑁0&#x3D;0 in signatureDegenerate quadratic forms can be restricted to the 𝑛++𝑛− subspace to become non-degenerateThe following are equivalentmetric is non-degenerate  quadratic-form-dual_(tag)   is a bijection𝑉⟶Lin(𝑉→ℝ) or 𝑉⊺𝑣⟿⟨𝑣,⟩ or ⟨𝑣| or 𝑔(𝑣,) or 𝑣♭The dual map relative to the metric is denoted as 𝑣♭, and the inverse map of the metric dual is denoted as 𝛼♯The quadratic form matrix is invertibledet 𝐺≠0When a non-degenerate quadratic form is fixed, the structure group ≃ O (𝑝,𝑞). Keeping two directions yields SO(𝑝,𝑞)The inverse of the metric matrix 𝑔 is 𝑔−1. In coordinates, it is denoted as 𝑔⇝𝑔𝑖𝑖′ and 𝑔−1⇝𝑔𝑖𝑖′𝑔⋅𝑔−1&#x3D;𝟙&#x3D;𝑔−1⋅𝑔 &#x3D;&#x3D;&gt; In coordinates 𝑔𝑖𝑗𝑔𝑖′𝑗&#x3D;𝛿𝑖𝑖′&#x3D;𝑔𝑖′𝑗𝑔𝑖𝑗let the dual basis 𝑒1,…,𝑒𝑛∈(𝑉→ℝ) of the basis 𝑒1,…,𝑒𝑛∈𝑉 of the vector space be defined as 𝑒𝑖(𝑒𝑗)&#x3D;𝛿𝑗𝑖let 𝛼&#x3D;𝛼𝑖𝑒𝑖 then𝛼(𝑒𝑗)&#x3D;𝛼𝑖𝑒𝑖(𝑒𝑗)&#x3D;𝛼𝑖𝛿𝑗𝑖&#x3D;𝛼𝑗  rasing-and-lowring-index_(tag)   Raising and lowering indicesquadratic-form-dual Matrix representation in coordinates𝑔(𝑣,)⇝𝑣⊺𝑔&#x3D;(𝑣1⋯𝑣𝑛)(𝑔11⋯𝑔1𝑛⋮⋱⋮𝑔𝑛1⋯𝑔𝑛𝑛)&#x3D;(𝑣𝑗𝑔𝑗1⋯𝑣𝑗𝑔𝑗𝑛)≔(𝑣1⋯𝑣𝑛)where 𝑣𝑗𝑔𝑖𝑗&#x3D;𝑣𝑖 is the lowered index. Or𝑔(,𝑣)⇝𝑔𝑣&#x3D;(𝑔11⋯𝑔1𝑛⋮⋱⋮𝑔𝑛1⋯𝑔𝑛𝑛)(𝑣1⋮𝑣𝑛)&#x3D;(𝑣𝑗𝑔1𝑗⋮𝑣𝑗𝑔𝑛𝑗)≔(𝑣1⋮𝑣𝑛)Note that the metric matrix is symmetric 𝑔⊺&#x3D;𝑔 or 𝑔𝑖𝑗&#x3D;𝑔𝑗𝑖𝑣𝑖 are the coefficients of 𝑣♭ represented by the dual basis, because 𝑔(𝑣,𝑒𝑖)&#x3D;𝑣𝑗𝑔𝑖𝑗&#x3D;𝑣𝑖, or using 𝑔𝑖𝑗 are the coefficients of 𝑔 in the dual basis 𝑒𝑖⊗𝑒𝑗For the inverse of the metric matrix, define the metric 𝑔−1 of the dual space 𝑉⊺, satisfying𝑔−1(𝑣♭,𝑤♭)&#x3D;(𝑔𝑣)⊺𝑔−1(𝑔𝑤)&#x3D;𝑣⊺(𝑔𝑔−1𝑔)𝑤&#x3D;𝑣⊺𝑔𝑤&#x3D;𝑔(𝑣,𝑤)In coordinates𝑔𝑖𝑖′𝛼𝑖𝛽𝑖′𝑔𝑖𝑖′𝛼𝑖𝛽𝑖′𝛼𝑖𝛽𝑖𝛼𝑖𝛽𝑖The metric dual of 𝑔−1 is the inverse ♯ of the metric dual ♭ of 𝑔𝑣⇝𝑔𝑣⇝𝑔−1𝑔𝑣&#x3D;𝑣Therefore, there is also a raised index 𝑔−1(𝑣♭,𝑒𝑗)&#x3D;𝑣𝑗𝑔𝑖𝑗&#x3D;𝑣𝑖Conversely, starting from the inverse ♯ of ♭, it can be proven that it is the metric dual of some metric in 𝑉⊺, and this metric is 𝑔−1 in matrix representationThe metric dual of the metric 𝑔−1&#x3D;𝑔𝑖𝑗𝑒𝑖𝑒𝑗 under the metric of (𝑉⊺⊙2)⊺ is 𝑔&#x3D;𝑔𝑖𝑗𝑒𝑖𝑒𝑗∈(𝑉⊙2)⊺. The reverse is also true  tensor_(tag)   Multilinearity (compatible with and logic of Cartesian product) + minimally independent (generating basis)𝑉1×⋯×𝑉𝑘⟶𝑉1⊗⋯⊗𝑉𝑘(𝑣1,…,𝑣𝑘)⟿𝑣1⊗⋯⊗𝑣𝑘Derived basis 𝑒1,𝑖1⊗⋯⊗𝑒𝑘,𝑖𝑘 and coefficients of derived basis 𝑇𝑖1⋯𝑖𝑘From the properties of tensors𝑣1⊗⋯⊗𝑣𝑘&#x3D;(𝑣1𝑖1𝑒1,𝑖1)⊗⋯⊗(𝑣𝑘𝑖𝑘𝑒𝑘,𝑖𝑘)&#x3D;(𝑣1𝑖1⋯𝑣𝑘𝑖𝑘)𝑒1,𝑖1⊗⋯⊗𝑒𝑘,𝑖𝑘  tensor-induced-quadratic-form_(tag)  derive the quadratic form 𝑔 of the vector space to the quadratic form of the tensor space 𝑉⊗𝐼⊗𝑉⊺⊗𝐽𝑔(⨂𝑖&#x3D;1..𝐼𝑣𝑖⊗⨂𝑗&#x3D;1..𝑗𝛼𝑗,⨂𝑖&#x3D;1..𝐼𝑤𝑖⊗⨂𝑗&#x3D;1..𝑗𝛽𝑗)&#x3D;∏𝑖&#x3D;1..𝐼𝑔(𝑣𝑖,𝑤𝑖)∏𝑖&#x3D;1..𝐽𝑔−1(𝛼𝑗,𝛽𝑗)Traverse all orthogonal bases ⨂𝑖&#x3D;1..𝐼𝑒𝑘𝑖⊗⨂𝑗&#x3D;1..𝐽𝑒𝑙𝑗 with⟨⨂𝑖&#x3D;1..𝐼𝑒𝑘𝑖⊗⨂𝑗&#x3D;1..𝐽𝑒𝑙𝑗⟩2&#x3D;∏𝑖&#x3D;1..𝐼⟨𝑒𝑘𝑖⟩2∏𝑗&#x3D;1..𝐽⟨𝑒𝑙𝑗⟩2get signature  rasing-and-lowring-index-tensor_(tag)   Tensors can also metric dual raise/lower indicesExample Lowering index 𝑇𝑗𝑖⇝𝑔𝑖𝑖′𝑇𝑗𝑖′&#x3D;𝑇𝑖𝑗">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html" class="active"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/metric_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>  <code>quadratic-form</code><em>_(tag)</em>   <span><math><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></math></span> Quadratic form <strong>alias</strong>   <code>metric</code><em>_(tag)</em>   Metric <strong>alias</strong> Inner product   <code>inner-product</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p><strong>Example</strong> <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>,</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> Distance <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr><mtr><mtd><mi>𝑧</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑧</mi><mn>2</mn></msup></mrow></math></span></p>
+    <p><strong>Example</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span> spacetime metric <span><math><mrow><mrow><mo>(</mo><mtable><mtr><mtd><mi>𝑡</mi></mtd></mtr><mtr><mtd><mi>𝑥</mi></mtd></mtr><mtr><mtd><mi>𝑦</mi></mtd></mtr><mtr><mtd><mi>𝑧</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑐</mi><mn>2</mn></msup><mo>⋅</mo><msup><mi>𝑡</mi><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><msup><mi>𝑥</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑦</mi><mn>2</mn></msup><mo>+</mo><msup><mi>𝑧</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>Bilinear function, Quadratic form</p>
+    <p>The commonly used notation for metric is <span><math><mrow><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo></mrow><mrow><mo>⟨</mo><mrow><mi>𝑥</mi><mo>,</mo><mi>𝑦</mi></mrow><mo>⟩</mo></mrow></mrow></math></span>. In coordinates, it is denoted as <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msub><mi>𝑥</mi><mi>𝑖</mi></msub><msub><mi>𝑦</mi><mi>𝑗</mi></msub></mrow></math></span></p>
+    <p>Under coordinates, metric <span><math><mi>𝑔</mi></math></span> can be represented as matrix <span><math><mi>𝐺</mi></math></span> and matrix multiplication <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑋</mi><mo>,</mo><mi>𝑌</mi></mrow><mo>)</mo></mrow><mo>⇝</mo><msup><mi>𝑋</mi><mo>⊺</mo></msup><mi>𝐺</mi><mi>𝑌</mi></mrow></math></span></p>
+    <p>  <code>signature-inertial</code><em>_(tag)</em>   signature <span><math><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></math></span> is invariant under <span><math><mrow><mtext>GL</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>,</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span>. The eigenvalues and diagonalization of symmetric matrix <span><math><mi>𝐺</mi></math></span> are <span><math><mrow><mo>(</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow></mrow></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>)</mo></mrow></math></span> where there are <span><math><msub><mi>𝑛</mi><mo>+</mo></msub></math></span> ones, <span><math><msub><mi>𝑛</mi><mn>0</mn></msub></math></span> zeros, and <span><math><msub><mi>𝑛</mi><mo>−</mo></msub></math></span> negative ones. This can be understood as orbit classification of group action</p>
+    <p>  <code>quadratic-form-non-degenerated</code><em>_(tag)</em>   Non-degenerate := <span><math><mrow><msub><mi>𝑁</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow></math></span> in signature</p>
+    <p>Degenerate quadratic forms can be restricted to the <span><math><mrow><msub><mi>𝑛</mi><mo>+</mo></msub><mo>+</mo><msub><mi>𝑛</mi><mo>−</mo></msub></mrow></math></span> subspace to become non-degenerate</p>
+    <p>The following are equivalent</p>
+    <ul>
+      <li>metric is non-degenerate</li>
+      <li>
+        <p>  <code>quadratic-form-dual</code><em>_(tag)</em>   is a bijection</p>
+        <math display="block"><mtable><mtr><mtd><mi>𝑉</mi></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><mrow><mtext>Lin</mtext><mrow><mo>(</mo><mrow><mi>𝑉</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow><mtext> or </mtext><msup><mi>𝑉</mi><mo>⊺</mo></msup></mrow></mtd></mtr><mtr><mtd><mi>𝑣</mi></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><mrow><mo>⟨</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>⟩</mo></mrow><mtext> or </mtext><mrow><mo>⟨</mo><mrow><mi>𝑣</mi></mrow><mo>|</mo></mrow><mtext> or </mtext><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>)</mo></mrow></mrow><mtext> or </mtext><msup><mi>𝑣</mi><mo>♭</mo></msup></mrow></mtd></mtr></mtable></math>
+        <p>The dual map relative to the metric is denoted as <span><math><msup><mi>𝑣</mi><mo>♭</mo></msup></math></span>, and the inverse map of the metric dual is denoted as <span><math><msup><mi>𝛼</mi><mo>♯</mo></msup></math></span></p>
+      </li>
+      <li>The quadratic form matrix is invertible</li>
+      <li><span><math><mrow><mtext>det </mtext><mi>𝐺</mi><mo>≠</mo><mn>0</mn></mrow></math></span></li>
+    </ul>
+    <p>When a non-degenerate quadratic form is fixed, the structure group <span><math><mrow><mo>≃</mo><mtext> O </mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span>. Keeping two directions yields <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  </div>
+  <p>The inverse of the metric matrix <span><math><mi>𝑔</mi></math></span> is <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span>. In coordinates, it is denoted as <span><math><mrow><mi>𝑔</mi><mo>⇝</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub></mrow></math></span> and <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⇝</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup></mrow></math></span></p>
+  <p><span><math><mrow><mi>𝑔</mi><mo>⋅</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mn>𝟙</mn><mo>=</mo><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><mi>𝑔</mi></mrow></math></span> ==> In coordinates <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msup><mo>=</mo><mrow><msubsup><mi>𝛿</mi><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msubsup><mo>=</mo></mrow><msup><mi>𝑔</mi><mrow><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mi>𝑗</mi></mrow></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math></span></p>
+  <p>let the dual basis <span><math><mrow><msup><mi>𝑒</mi><mn>1</mn></msup><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msup><mi>𝑒</mi><mi>𝑛</mi></msup><mo>∈</mo><mrow><mo>(</mo><mrow><mi>𝑉</mi><mo>→</mo><mi mathvariant="normal">ℝ</mi></mrow><mo>)</mo></mrow></mrow></math></span> of the basis <span><math><mrow><msub><mi>𝑒</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑒</mi><mi>𝑛</mi></msub><mo>∈</mo><mi>𝑉</mi></mrow></math></span> of the vector space be defined as <span><math><mrow><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow><mo>=</mo><msubsup><mi>𝛿</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup></mrow></math></span></p>
+  <p>let <span><math><mrow><mi>𝛼</mi><mo>=</mo><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup></mrow></math></span> then</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝛼</mi><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mrow><mo>(</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msubsup><mi>𝛿</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝛼</mi><mi>𝑗</mi></msub></mtd></mtr></mtable></math>
+  <p>  <code>rasing-and-lowring-index</code><em>_(tag)</em>   Raising and lowering indices</p>
+  <div class="indent">
+    <p>quadratic-form-dual Matrix representation in coordinates</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><msup><mi>𝑣</mi><mo>⊺</mo></msup><mi>𝑔</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑣</mi><mn>1</mn></msup></mtd><mtd><mo>⋯</mo></mtd><mtd><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑛</mi></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑛</mi></mrow></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mn>1</mn></mrow></msub></mrow></mtd><mtd><mo>⋯</mo></mtd><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mi>𝑛</mi></mrow></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>where <span><math><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow></math></span> is the lowered index. Or</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mo>,</mo><mi>𝑣</mi></mrow><mo>)</mo></mrow></mrow><mo>⇝</mo><mi>𝑔</mi><mi>𝑣</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑛</mi></mrow></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd><mtd><mo>⋱</mo></mtd><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mn>1</mn></mrow></msub></mtd><mtd><mo>⋯</mo></mtd><mtd><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑛</mi></mrow></msub></mtd></mtr></mtable><mo>)</mo></mrow><mrow><mo>(</mo><mtable><mtr><mtd><msup><mi>𝑣</mi><mn>1</mn></msup></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msup><mi>𝑣</mi><mi>𝑛</mi></msup></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mtable><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mn>1</mn><mi>𝑗</mi></mrow></msub></mrow></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><mrow><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑛</mi><mi>𝑗</mi></mrow></msub></mrow></mtd></mtr></mtable><mo>)</mo></mrow><mo>≔</mo><mrow><mo>(</mo><mtable><mtr><mtd><msub><mi>𝑣</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><mo>⋮</mo></mtd></mtr><mtr><mtd><msub><mi>𝑣</mi><mi>𝑛</mi></msub></mtd></mtr></mtable><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>Note that the metric matrix is symmetric <span><math><mrow><msup><mi>𝑔</mi><mo>⊺</mo></msup><mo>=</mo><mi>𝑔</mi></mrow></math></span> or <span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑔</mi><mrow><mi>𝑗</mi><mi>𝑖</mi></mrow></msub></mrow></math></span></p>
+    <p><span><math><msub><mi>𝑣</mi><mi>𝑖</mi></msub></math></span> are the coefficients of <span><math><msup><mi>𝑣</mi><mo>♭</mo></msup></math></span> represented by the dual basis, because <span><math><mrow><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><msub><mi>𝑒</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>𝑣</mi><mi>𝑗</mi></msup><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mi>𝑣</mi><mi>𝑖</mi></msub></mrow></math></span>, or using <span><math><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></math></span> are the coefficients of <span><math><mi>𝑔</mi></math></span> in the dual basis <span><math><mrow><msup><mi>𝑒</mi><mi>𝑖</mi></msup><mo>⊗</mo><msup><mi>𝑒</mi><mi>𝑗</mi></msup></mrow></math></span></p>
+    <p>For the inverse of the metric matrix, define the metric <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> of the dual space <span><math><msup><mi>𝑉</mi><mo>⊺</mo></msup></math></span>, satisfying</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mo>♭</mo></msup><mo>,</mo><msup><mi>𝑤</mi><mo>♭</mo></msup></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mi>𝑣</mi></mrow><mo>)</mo></mrow><mo>⊺</mo></msup><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><mi>𝑤</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑣</mi><mo>⊺</mo></msup><mrow><mo>(</mo><mrow><mi>𝑔</mi><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑔</mi></mrow><mo>)</mo></mrow><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑣</mi><mo>⊺</mo></msup><mi>𝑔</mi><mi>𝑤</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><mi>𝑣</mi><mo>,</mo><mi>𝑤</mi></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>In coordinates</p>
+    <ul>
+      <li><span><math><mrow><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msub><mi>𝛽</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow></math></span></li>
+      <li><span><math><mrow><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msup><mi>𝛼</mi><mi>𝑖</mi></msup><msup><mi>𝛽</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msup></mrow></math></span></li>
+      <li><span><math><mrow><msub><mi>𝛼</mi><mi>𝑖</mi></msub><msup><mi>𝛽</mi><mi>𝑖</mi></msup></mrow></math></span></li>
+      <li><span><math><mrow><msup><mi>𝛼</mi><mi>𝑖</mi></msup><msub><mi>𝛽</mi><mi>𝑖</mi></msub></mrow></math></span></li>
+    </ul>
+    <p>The metric dual of <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> is the inverse <span><math><mo>♯</mo></math></span> of the metric dual <span><math><mo>♭</mo></math></span> of <span><math><mi>𝑔</mi></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝑣</mi></mtd><mtd class="mathyml-align-left"><mo>⇝</mo></mtd><mtd class="mathyml-align-right"><mi>𝑔</mi><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>⇝</mo></mtd><mtd class="mathyml-align-right"><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>𝑔</mi><mi>𝑣</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑣</mi></mtd></mtr></mtable></math>
+    <p>Therefore, there is also a raised index <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msup><mi>𝑣</mi><mo>♭</mo></msup><mo>,</mo><msub><mi>𝑒</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><msub><mi>𝑣</mi><mi>𝑗</mi></msub><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><mo>=</mo><msup><mi>𝑣</mi><mi>𝑖</mi></msup></mrow></math></span></p>
+    <p>Conversely, starting from the inverse <span><math><mo>♯</mo></math></span> of <span><math><mo>♭</mo></math></span>, it can be proven that it is the metric dual of some metric in <span><math><msup><mi>𝑉</mi><mo>⊺</mo></msup></math></span>, and this metric is <span><math><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math></span> in matrix representation</p>
+    <p>The metric dual of the metric <span><math><mrow><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msup><msub><mi>𝑒</mi><mi>𝑖</mi></msub><msub><mi>𝑒</mi><mi>𝑗</mi></msub></mrow></math></span> under the metric of <span><math><msup><mrow><mo>(</mo><msup><mi>𝑉</mi><mrow><mo>⊺</mo><mo>⊙</mo><mn>2</mn></mrow></msup><mo>)</mo></mrow><mo>⊺</mo></msup></math></span> is <span><math><mrow><mi>𝑔</mi><mo>=</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><msup><mi>𝑒</mi><mi>𝑖</mi></msup><msup><mi>𝑒</mi><mi>𝑗</mi></msup><mo>∈</mo><msup><mrow><mo>(</mo><msup><mi>𝑉</mi><mrow><mo>⊙</mo><mn>2</mn></mrow></msup><mo>)</mo></mrow><mo>⊺</mo></msup></mrow></math></span>. The reverse is also true</p>
+  </div>
+  <p>  <code>tensor</code><em>_(tag)</em>   Multilinearity (compatible with <code>and</code> logic of Cartesian product) + minimally independent (generating basis)</p>
+  <math display="block"><mtable><mtr><mtd><mrow><msub><mi>𝑉</mi><mn>1</mn></msub><mo>×</mo><mo>⋯</mo><mo>×</mo><msub><mi>𝑉</mi><mi>𝑘</mi></msub></mrow></mtd><mtd><mo>⟶</mo></mtd><mtd><mrow><msub><mi>𝑉</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑉</mi><mi>𝑘</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow></mtd><mtd><mo>⟿</mo></mtd><mtd><mrow><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mrow></mtd></mtr></mtable></math>
+  <p>Derived basis <span><math><mrow><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mrow></math></span> and coefficients of derived basis <span><math><msup><mi>𝑇</mi><mrow><msub><mi>𝑖</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msup></math></span></p>
+  <p>From the properties of tensors</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑣</mi><mn>1</mn></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑣</mi><mi>𝑘</mi></msub></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub></mrow><mo>)</mo></mrow><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><msubsup><mi>𝑣</mi><mn>1</mn><msub><mi>𝑖</mi><mn>1</mn></msub></msubsup><mo>⋯</mo><msubsup><mi>𝑣</mi><mi>𝑘</mi><msub><mi>𝑖</mi><mi>𝑘</mi></msub></msubsup></mrow><mo>)</mo></mrow><msub><mi>𝑒</mi><mrow><mn>1</mn><mo>,</mo><msub><mi>𝑖</mi><mn>1</mn></msub></mrow></msub><mo>⊗</mo><mo>⋯</mo><mo>⊗</mo><msub><mi>𝑒</mi><mrow><mi>𝑘</mi><mo>,</mo><msub><mi>𝑖</mi><mi>𝑘</mi></msub></mrow></msub></mtd></mtr></mtable></math>
+  <p>  <code>tensor-induced-quadratic-form</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>derive the quadratic form <span><math><mi>𝑔</mi></math></span> of the vector space to the quadratic form of the tensor space <span><math><mrow><msup><mi>𝑉</mi><mrow><mo>⊗</mo><mi>𝐼</mi></mrow></msup><mo>⊗</mo><msup><mi>𝑉</mi><mrow><mo>⊺</mo><mo>⊗</mo><mi>𝐽</mi></mrow></msup></mrow></math></span></p>
+    <math display="block"><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝛼</mi><mi>𝑗</mi></msub><mo>,</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑤</mi><mi>𝑖</mi></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑗</mi></mrow></munder><msub><mi>𝛽</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><mrow><mi>𝑔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑣</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝑤</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mi>𝑔</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><mrow><msub><mi>𝛼</mi><mi>𝑗</mi></msub><mo>,</mo><msub><mi>𝛽</mi><mi>𝑗</mi></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Traverse all orthogonal bases <span><math><mrow><msub><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></msub><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⊗</mo><msub><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></msub><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup></mrow></math></span> with</p>
+    <math display="block"><mrow><msup><mrow><mo>⟨</mo><mrow><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⊗</mo><munder displaystyle="true"><mo>⨂</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup></mrow><mo>⟩</mo></mrow><mn>2</mn></msup><mo>=</mo><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐼</mi></mrow></munder><msup><mrow><mo>⟨</mo><msub><mi>𝑒</mi><msub><mi>𝑘</mi><mi>𝑖</mi></msub></msub><mo>⟩</mo></mrow><mn>2</mn></msup><munder displaystyle="true"><mo>∏</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝐽</mi></mrow></munder><msup><mrow><mo>⟨</mo><msup><mi>𝑒</mi><msub><mi>𝑙</mi><mi>𝑗</mi></msub></msup><mo>⟩</mo></mrow><mn>2</mn></msup></mrow></math>
+    <p>get signature</p>
+  </div>
+  <p>  <code>rasing-and-lowring-index-tensor</code><em>_(tag)</em>   Tensors can also metric dual raise/lower indices</p>
+  <p><strong>Example</strong> Lowering index <span><math><mrow><msubsup><mi>𝑇</mi><mi>𝑗</mi><mi>𝑖</mi></msubsup><mo>⇝</mo><msub><mi>𝑔</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><msubsup><mi>𝑇</mi><mi>𝑗</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msubsup><mo>=</mo><msub><mi>𝑇</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math></span></p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

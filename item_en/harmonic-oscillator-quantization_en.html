@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}Quantization of Schrodinger eq harmonic oscillator (ℝ)Commutation relation of raising and lowering operators a (± i)&#x3D;12(x ±1i 𝑚𝜔 p) and energy operator[H,a (i )]&#x3D;−ℏ𝜔 a ( i )[H,a (− i)]&#x3D;ℏ𝜔 a (−i)let a &#x3D; a (i). a †&#x3D; a (−i)let raising and lowering operators simplify to a (± i)&#x3D; x ±1 i  pEigenfunctions of the energy operatorStarting from the ground state a 𝜓&#x3D;0⟹𝜓&#x3D;𝜓0&#x3D;exp(−12𝑦2)Obtain the eigenfunctions of the next energy level through the raising operator a†𝜓𝑛&#x3D; a †𝑛𝜓&#x3D;(−1)𝑛𝑒12𝑦2𝑑𝑛𝑑𝑦𝑛𝑒−12𝑦2𝜓&#x3D;𝐻𝑛(𝑦)exp(−12𝑦2)where𝐻𝑛(𝑦)&#x3D;(−1)𝑛𝑒𝑦2𝑑𝑛𝑑𝑦𝑛𝑒−𝑦2is the Hermite polynomialEigenfunction normalization(12𝑛𝑛!(𝑚𝜔ℏ𝜋)12)12𝑒−12𝑚𝜔ℏ𝑥2𝐻𝑛((𝑚𝜔ℏ𝜋𝑥)12)Harmonic oscillator path integral quantizationIf the solution of the harmonic oscillator 𝑎(i )𝑒−i 𝜔𝑡+𝑎(−i)𝑒i 𝜔𝑡 uses fixed starting positions 𝑥0,𝑥1, then𝑎(i )&#x3D;𝑥1𝑒𝜔𝑡0 i−𝑥0𝑒𝜔𝑡1 i𝑒𝜔(𝑡1−𝑡0)(− i)−𝑒𝜔(𝑡1−𝑡0) iwhere 𝑒𝜔(𝑡1−𝑡0) i−𝑒𝜔(𝑡1−𝑡0)(− i)&#x3D;2 i  sin 𝜔(𝑡1−𝑡0)action (𝑧&#x3D;Re(𝑧)+ i Im(𝑧))𝑆cl (𝑡0,𝑡1,𝑥0,𝑥1)&#x3D;∫𝑡0𝑡1𝑑𝑡 12𝑚𝜔2⋅4 Re ⟨𝑎(− i)𝑒𝜔𝑡 i,𝑎( i )𝑒𝜔𝑡(− i)⟩&#x3D;12𝑚𝜔2⋅4⋅1𝜔(Im ⟨𝑎(− i)𝑒𝜔𝑡 i,𝑎( i )𝑒𝜔𝑡(− i)⟩)|𝑡0𝑡1&#x3D;12𝑚𝜔⋅(|𝑥1|2+|𝑥0|2) cos 𝜔(𝑡−𝑡0)−2 Re ⟨𝑥1,𝑥0⟩sin 𝜔(𝑡−𝑡0)where 2 cos 𝜔(𝑡−𝑡0)&#x3D;𝑒𝜔(𝑡1−𝑡0) i+𝑒𝜔(𝑡1−𝑡0)(− i)For time only depending on the difference 𝑡1−𝑡0  path-integral-quantization_(tag)  Propagator 𝐾 represents constructing a unitary using the Feynman path integral with Lagrangian. For the harmonic oscillator, use the Fourier transform method. cf. wiki:Path_integral_formulationlet 𝑇&#x3D;𝑡1−𝑡0For endpoints fixed but offset from the classical path, perform Fourier expansion 𝑥−𝑥 cl &#x3D;∑𝑛&#x3D;1∞𝑏𝑛sin(𝑛𝜋𝑡𝑇), action 𝑆(𝑏1,…,𝑏𝑛,…)&#x3D;𝑆 cl +∑12|𝑏𝑛|2𝑚2𝑇(𝑛2𝜋2𝑇2−𝜔2)𝐾(𝑇,𝑥0,𝑥)&#x3D; lim 𝑛→∞( unitary-factor)(𝑛)⋅∫ℝ𝑛𝑑𝑏𝑛⋯𝑑𝑏1 𝑒i ℏ𝑆(𝑏1,…,𝑏𝑛)&#x3D;(𝑚𝜔2𝜋ℏ i 𝑇)12𝑒i ℏ𝑆 cl∏𝑛&#x3D;1∞𝑛𝜋212∫ℝ𝑑𝑏𝑛exp(i 2ℏ|𝑏𝑛|2𝑚2𝑇(𝑛2𝜋2𝑇2−𝜔2))&#x3D;(𝑚𝜔2𝜋ℏ i  sin 𝜔𝑇)12exp(i 𝑚𝜔2ℏ⋅(|𝑥1|2+|𝑥0|2) cos 𝜔𝑇−2 Re ⟨𝑥1,𝑥0⟩sin 𝜔𝑇)Used Gauss integral + infinite product ∏𝑛&#x3D;1∞(1−𝑥2𝑛2)&#x3D;sin 𝜋𝑥𝜋𝑥  eigen-decomposition_(tag)  Characteristic equation given by 𝑒−𝐸ℎ𝑡 i𝜓(𝑥)H 𝜓&#x3D;𝐸𝜓Decomposition of H,𝑒− i 1ℏ H 𝑡,𝐾(𝑡0,𝑡,𝑥0,𝑥) given by characteristic orthonormal basis |𝑛⟩H &#x3D;∑𝑛𝐸𝑛|𝑛⟩⟨𝑛|𝑒− i 1ℏ H 𝑡&#x3D;∑𝑛𝑒− i 1ℏ𝐸𝑛𝑡|𝑛⟩⟨𝑛|𝐾&#x3D;∑𝑛𝑒− i 1ℏ𝐸𝑛𝑡⟨𝑥|𝑛⟩⟨𝑛|𝑥0⟩𝐾&#x3D;(𝑚𝜔𝜋ℏ)12𝑒− i 12𝜔𝑇𝑅(𝑒− i 𝜔𝑇) then let 𝑅 perform Taylor expansion, where 𝑒− i 12𝜔𝑇𝑒− i 𝑛𝜔𝑇&#x3D;𝑒− i (12+𝑛)𝜔𝑇 corresponds to energy level 𝐸𝑛&#x3D;(12+𝑛)ℏ𝜔If you are interested Question Quantization of ℂ harmonic oscillator and spin harmonic oscillator">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html" class="active"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/harmonic-oscillator-quantization_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>Quantization of Schrodinger eq harmonic oscillator (<span><math><mi mathvariant="normal">ℝ</mi></math></span>)</p>
+  <div class="indent">
+    <p>Commutation relation of raising and lowering operators <span><math><mrow><mtext>a </mtext><mrow><mo>(</mo><mrow><mo>±</mo><mtext> i</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mtext>x </mtext><mo>±</mo><mfrac><mn>1</mn><mrow><mtext>i </mtext><mi>𝑚</mi><mi>𝜔</mi></mrow></mfrac><mtext> p</mtext></mrow><mo>)</mo></mrow></mrow></math></span> and energy operator</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>[</mo><mrow><mrow><mtext>H</mtext><mo>,</mo><mtext>a </mtext></mrow><mrow><mo>(</mo><mtext>i </mtext><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mi mathvariant="normal">ℏ</mi><mi>𝜔</mi><mtext> a </mtext><mrow><mo>(</mo><mtext> i </mtext><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mrow><mo>[</mo><mrow><mrow><mtext>H</mtext><mo>,</mo><mtext>a </mtext></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow><mo>]</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi mathvariant="normal">ℏ</mi><mi>𝜔</mi><mtext> a </mtext><mrow><mo>(</mo><mrow><mo>−</mo><mtext>i</mtext></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>let <span><math><mrow><mtext>a </mtext><mo>=</mo><mtext> a </mtext><mrow><mo>(</mo><mtext>i</mtext><mo>)</mo></mrow></mrow></math></span>. <span><math><mrow><msup><mtext>a </mtext><mo>†</mo></msup><mo>=</mo><mtext> a </mtext><mrow><mo>(</mo><mrow><mo>−</mo><mtext>i</mtext></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <p>let raising and lowering operators simplify to <span><math><mrow><mtext>a </mtext><mrow><mo>(</mo><mrow><mo>±</mo><mtext> i</mtext></mrow><mo>)</mo></mrow><mo>=</mo><mtext> x </mtext><mo>±</mo><mfrac><mn>1</mn><mtext> i </mtext></mfrac><mtext> p</mtext></mrow></math></span></p>
+    <p>Eigenfunctions of the energy operator</p>
+    <p>Starting from the ground state <span><math><mrow><mtext>a </mtext><mi>𝜓</mi><mo>=</mo><mn>0</mn><mo>⟹</mo><mi>𝜓</mi><mo>=</mo><msub><mi>𝜓</mi><mn>0</mn></msub><mo>=</mo><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><msup><mi>𝑦</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>Obtain the eigenfunctions of the next energy level through the raising operator <span><math><msup><mtext>a</mtext><mo>†</mo></msup></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝜓</mi><mi>𝑛</mi></msub><mo>=</mo><msup><mtext> a </mtext><mrow><mo>†</mo><mi>𝑛</mi></mrow></msup><mi>𝜓</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><msup><mi>𝑒</mi><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>𝑦</mi><mn>2</mn></msup></mrow></msup><mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑑</mi><msup><mi>𝑦</mi><mi>𝑛</mi></msup></mrow></mfrac><msup><mi>𝑒</mi><mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><msup><mi>𝑦</mi><mn>2</mn></msup></mrow></msup><mi>𝜓</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msub><mi>𝐻</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><msup><mi>𝑦</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>where</p>
+    <math display="block"><mrow><msub><mi>𝐻</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><mi>𝑦</mi><mo>)</mo></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mi>𝑛</mi></msup><msup><mi>𝑒</mi><msup><mi>𝑦</mi><mn>2</mn></msup></msup><mfrac><msup><mi>𝑑</mi><mi>𝑛</mi></msup><mrow><mi>𝑑</mi><msup><mi>𝑦</mi><mi>𝑛</mi></msup></mrow></mfrac><msup><mi>𝑒</mi><mrow><mo>−</mo><msup><mi>𝑦</mi><mn>2</mn></msup></mrow></msup></mrow></math>
+    <p>is the Hermite polynomial</p>
+    <p>Eigenfunction normalization</p>
+    <math display="block"><mrow><msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mrow><mi>𝑛</mi><mo>!</mo></mrow></mrow></mfrac><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mi mathvariant="normal">ℏ</mi><mi>𝜋</mi></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><msup><mi>𝑒</mi><mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mi mathvariant="normal">ℏ</mi></mfrac><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msup><msub><mi>𝐻</mi><mi>𝑛</mi></msub><mrow><mo>(</mo><msup><mrow><mo>(</mo><mrow><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mi mathvariant="normal">ℏ</mi><mi>𝜋</mi></mrow></mfrac><mi>𝑥</mi></mrow><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mo>)</mo></mrow></mrow></math>
+  </div>
+  <p>Harmonic oscillator path integral quantization</p>
+  <p>If the solution of the harmonic oscillator <span><math><mrow><mrow><mi>𝑎</mi><mrow><mo>(</mo><mtext>i </mtext><mo>)</mo></mrow></mrow><msup><mi>𝑒</mi><mrow><mrow><mo>−</mo><mtext>i </mtext></mrow><mi>𝜔</mi><mi>𝑡</mi></mrow></msup><mo>+</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext>i</mtext></mrow><mo>)</mo></mrow></mrow><msup><mi>𝑒</mi><mrow><mtext>i </mtext><mi>𝜔</mi><mi>𝑡</mi></mrow></msup></mrow></math></span> uses fixed starting positions <span><math><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></math></span>, then</p>
+  <math display="block"><mrow><mrow><mi>𝑎</mi><mrow><mo>(</mo><mtext>i </mtext><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><msub><mi>𝑡</mi><mn>0</mn></msub><mtext> i</mtext></mrow></msup><mo>−</mo><msub><mi>𝑥</mi><mn>0</mn></msub><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><msub><mi>𝑡</mi><mn>1</mn></msub><mtext> i</mtext></mrow></msup></mrow><mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></msup><mo>−</mo><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mtext> i</mtext></mrow></msup></mrow></mfrac></mrow></math>
+  <p>where <span><math><mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mtext> i</mtext></mrow></msup><mo>−</mo><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></msup><mo>=</mo><mn>2</mn><mtext> i </mtext><mtext> sin </mtext><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></math></span></p>
+  <p>action (<span><math><mrow><mi>𝑧</mi><mo>=</mo><mrow><mtext>Re</mtext><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow><mo>+</mo><mtext> i </mtext><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow></mrow></math></span>)</p>
+  <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><msub><mi>𝑆</mi><mtext>cl </mtext></msub><mrow><mo>(</mo><mrow><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>,</mo></mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>,</mo></mrow><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><msub><mi>𝑥</mi><mn>1</mn></msub></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mtext> </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mi>𝜔</mi><mn>2</mn></msup><mo>⋅</mo><mn>4</mn><mtext> Re </mtext><mrow><mo>⟨</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow><mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mi>𝑡</mi><mtext> i</mtext></mrow></msup><mo>,</mo></mrow><mi>𝑎</mi><mrow><mo>(</mo><mtext> i </mtext><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></msup></mrow><mo>⟩</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mi>𝜔</mi><mn>2</mn></msup><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mfrac><mn>1</mn><mi>𝜔</mi></mfrac><mrow><mo>(</mo><mrow><mtext>Im </mtext><mrow><mo>⟨</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow><mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mi>𝑡</mi><mtext> i</mtext></mrow></msup><mo>,</mo></mrow><mi>𝑎</mi><mrow><mo>(</mo><mtext> i </mtext><mo>)</mo></mrow><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></msup></mrow><mo>⟩</mo></mrow></mrow><mo>)</mo></mrow><msubsup><mo>|</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><mi>𝜔</mi><mo>⋅</mo><mfrac><mrow><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>0</mn></msub><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mtext> cos </mtext><mi>𝜔</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mo>−</mo><mn>2</mn><mtext> Re </mtext><mrow><mo>⟨</mo><mrow><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>,</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>⟩</mo></mrow></mrow><mrow><mtext>sin </mtext><mi>𝜔</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow></mrow></mfrac></mtd></mtr></mtable></math>
+  <p>where <span><math><mrow><mn>2</mn><mtext> cos </mtext><mi>𝜔</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mtext> i</mtext></mrow></msup><mo>+</mo><msup><mi>𝑒</mi><mrow><mi>𝜔</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mo>−</mo><mtext> i</mtext></mrow><mo>)</mo></mrow></mrow></msup></mrow></math></span></p>
+  <p>For time only depending on the difference <span><math><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow></math></span></p>
+  <p>  <code>path-integral-quantization</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>Propagator <span><math><mi>𝐾</mi></math></span> represents constructing a unitary using the Feynman path integral with Lagrangian. For the harmonic oscillator, use the Fourier transform method. cf. <a href="https://en.wikipedia.org/wiki/Path_integral_formulation#Simple_harmonic_oscillator">wiki:Path_integral_formulation</a></p>
+    <p>let <span><math><mrow><mi>𝑇</mi><mo>=</mo><msub><mi>𝑡</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝑡</mi><mn>0</mn></msub></mrow></math></span></p>
+    <p>For endpoints fixed but offset from the classical path, perform Fourier expansion <span><math><mrow><mi>𝑥</mi><mo>−</mo><msub><mi>𝑥</mi><mtext> cl </mtext></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mrow><mtext>sin</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mi>𝜋</mi><mfrac><mi>𝑡</mi><mi>𝑇</mi></mfrac></mrow><mo>)</mo></mrow></mrow></mrow></math></span>, action <span><math><mrow><mrow><mi>𝑆</mi><mrow><mo>(</mo><mrow><msub><mi>𝑏</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mrow><mo>,</mo><mo>…</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><msub><mi>𝑆</mi><mtext> cl </mtext></msub><mo>+</mo><mo>∑</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>|</mo><msub><mi>𝑏</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup></mrow><mfrac><mi>𝑚</mi><mn>2</mn></mfrac><mi>𝑇</mi><mrow><mo>(</mo><mrow><mfrac><mrow><msup><mi>𝑛</mi><mn>2</mn></msup><msup><mi>𝜋</mi><mn>2</mn></msup></mrow><msup><mi>𝑇</mi><mn>2</mn></msup></mfrac><mo>−</mo><msup><mi>𝜔</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝐾</mi><mrow><mo>(</mo><mrow><mrow><mi>𝑇</mi><mo>,</mo></mrow><mrow><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo></mrow><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mtext> lim </mtext><mrow><mi>𝑛</mi><mo>→</mo><mo>∞</mo></mrow></munder><mrow><mo>(</mo><mtext> unitary-factor</mtext><mo>)</mo></mrow><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow><mo>⋅</mo><msub><mo>∫</mo><msup><mi mathvariant="normal">ℝ</mi><mi>𝑛</mi></msup></msub><mi>𝑑</mi><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mo>⋯</mo><mi>𝑑</mi><msub><mi>𝑏</mi><mn>1</mn></msub><mtext> </mtext><msup><mi>𝑒</mi><mrow><mfrac><mtext>i </mtext><mi mathvariant="normal">ℏ</mi></mfrac><mrow><mi>𝑆</mi><mrow><mo>(</mo><mrow><msub><mi>𝑏</mi><mn>1</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑏</mi><mi>𝑛</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></msup></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mn>2</mn><mi>𝜋</mi><mi mathvariant="normal">ℏ</mi><mtext> i </mtext><mi>𝑇</mi></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><msup><mi>𝑒</mi><mrow><mfrac><mtext>i </mtext><mi mathvariant="normal">ℏ</mi></mfrac><msub><mi>𝑆</mi><mtext> cl</mtext></msub></mrow></msup><munderover displaystyle="true"><mo>∏</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></munderover><mfrac><mrow><mi>𝑛</mi><mi>𝜋</mi></mrow><msup><mn>2</mn><mfrac><mn>1</mn><mn>2</mn></mfrac></msup></mfrac><msub><mo>∫</mo><mi mathvariant="normal">ℝ</mi></msub><mi>𝑑</mi><msub><mi>𝑏</mi><mi>𝑛</mi></msub><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mfrac><mtext>i </mtext><mrow><mn>2</mn><mi mathvariant="normal">ℏ</mi></mrow></mfrac><mrow><mo>|</mo><msub><mi>𝑏</mi><mi>𝑛</mi></msub><msup><mo>|</mo><mn>2</mn></msup></mrow><mfrac><mi>𝑚</mi><mn>2</mn></mfrac><mi>𝑇</mi><mrow><mo>(</mo><mrow><mfrac><mrow><msup><mi>𝑛</mi><mn>2</mn></msup><msup><mi>𝜋</mi><mn>2</mn></msup></mrow><msup><mi>𝑇</mi><mn>2</mn></msup></mfrac><mo>−</mo><msup><mi>𝜔</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mn>2</mn><mi>𝜋</mi><mi mathvariant="normal">ℏ</mi><mtext> i </mtext><mtext> sin </mtext><mi>𝜔</mi><mi>𝑇</mi></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mfrac><mrow><mtext>i </mtext><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mn>2</mn><mi mathvariant="normal">ℏ</mi></mrow></mfrac><mo>⋅</mo><mfrac><mrow><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>1</mn></msub><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>+</mo><mrow><mo>|</mo><msub><mi>𝑥</mi><mn>0</mn></msub><msup><mo>|</mo><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mtext> cos </mtext><mi>𝜔</mi><mi>𝑇</mi><mo>−</mo><mn>2</mn><mtext> Re </mtext><mrow><mo>⟨</mo><mrow><mrow><msub><mi>𝑥</mi><mn>1</mn></msub><mo>,</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>⟩</mo></mrow></mrow><mrow><mtext>sin </mtext><mi>𝜔</mi><mi>𝑇</mi></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>Used Gauss integral + infinite product <span><math><mrow><msubsup><mo>∏</mo><mrow><mi>𝑛</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></msubsup><mrow><mo>(</mo><mrow><mn>1</mn><mo>−</mo><mfrac><msup><mi>𝑥</mi><mn>2</mn></msup><msup><mi>𝑛</mi><mn>2</mn></msup></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mtext>sin </mtext><mi>𝜋</mi><mi>𝑥</mi></mrow><mrow><mi>𝜋</mi><mi>𝑥</mi></mrow></mfrac></mrow></math></span></p>
+  </div>
+  <p>  <code>eigen-decomposition</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>Characteristic equation given by <span><math><mrow><msup><mi>𝑒</mi><mrow><mrow><mo>−</mo><mfrac><mi>𝐸</mi><mi>ℎ</mi></mfrac></mrow><mi>𝑡</mi><mtext> i</mtext></mrow></msup><mrow><mi>𝜓</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <math display="block"><mrow><mtext>H </mtext><mi>𝜓</mi><mo>=</mo><mi>𝐸</mi><mi>𝜓</mi></mrow></math>
+    <p>Decomposition of <span><math><mrow><mrow><mtext>H</mtext><mo>,</mo></mrow><mrow><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mi mathvariant="normal">ℏ</mi></mfrac><mtext> H </mtext><mi>𝑡</mi></mrow></msup><mo>,</mo></mrow><mrow><mi>𝐾</mi><mrow><mo>(</mo><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>,</mo><mi>𝑡</mi><mo>,</mo><msub><mi>𝑥</mi><mn>0</mn></msub><mo>,</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow></mrow></math></span> given by characteristic orthonormal basis <span><math><mrow><mo>|</mo><mrow><mi>𝑛</mi></mrow><mo>⟩</mo></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>H </mtext></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mi>𝑛</mi></munder><msub><mi>𝐸</mi><mi>𝑛</mi></msub><mrow><mo>|</mo><mrow><mi>𝑛</mi></mrow><mo>⟩</mo></mrow><mrow><mo>⟨</mo><mrow><mi>𝑛</mi></mrow><mo>|</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mi mathvariant="normal">ℏ</mi></mfrac><mtext> H </mtext><mi>𝑡</mi></mrow></msup></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mi>𝑛</mi></munder><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mi mathvariant="normal">ℏ</mi></mfrac><msub><mi>𝐸</mi><mi>𝑛</mi></msub><mi>𝑡</mi></mrow></msup><mrow><mo>|</mo><mrow><mi>𝑛</mi></mrow><mo>⟩</mo></mrow><mrow><mo>⟨</mo><mrow><mi>𝑛</mi></mrow><mo>|</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝐾</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><munder displaystyle="true"><mo>∑</mo><mi>𝑛</mi></munder><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mi mathvariant="normal">ℏ</mi></mfrac><msub><mi>𝐸</mi><mi>𝑛</mi></msub><mi>𝑡</mi></mrow></msup><mrow><mo>⟨</mo><mrow><mi>𝑥</mi><mrow><mo>|</mo><mrow><mi>𝑛</mi></mrow><mo>⟩</mo></mrow><mrow><mo>⟨</mo><mrow><mi>𝑛</mi></mrow><mo>|</mo></mrow><msub><mi>𝑥</mi><mn>0</mn></msub></mrow><mo>⟩</mo></mrow></mtd></mtr></mtable></math>
+    <p><span><math><mrow><mi>𝐾</mi><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>𝑚</mi><mi>𝜔</mi></mrow><mrow><mi>𝜋</mi><mi mathvariant="normal">ℏ</mi></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></msup><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜔</mi><mi>𝑇</mi></mrow></msup><mrow><mi>𝑅</mi><mrow><mo>(</mo><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mi>𝜔</mi><mi>𝑇</mi></mrow></msup><mo>)</mo></mrow></mrow></mrow></math></span> then let <span><math><mi>𝑅</mi></math></span> perform Taylor expansion, where <span><math><mrow><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝜔</mi><mi>𝑇</mi></mrow></msup><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mi>𝑛</mi><mi>𝜔</mi><mi>𝑇</mi></mrow></msup><mo>=</mo><msup><mi>𝑒</mi><mrow><mo>−</mo><mtext> i </mtext><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow><mi>𝜔</mi><mi>𝑇</mi></mrow></msup></mrow></math></span> corresponds to energy level <span><math><mrow><msub><mi>𝐸</mi><mi>𝑛</mi></msub><mo>=</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mi>𝑛</mi></mrow><mo>)</mo></mrow><mi mathvariant="normal">ℏ</mi><mi>𝜔</mi></mrow></math></span></p>
+  </div>
+  <p>If you are interested <strong>Question</strong> Quantization of <span><math><mi mathvariant="normal">ℂ</mi></math></span> harmonic oscillator and spin harmonic oscillator</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

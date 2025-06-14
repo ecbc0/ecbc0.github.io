@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content=".indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}Non-relativistic spacetime ℝ×ℝ3  action-point-particle-non-relativity_(tag)   Action of path 𝑡⇝𝑥(𝑡)∫𝑑𝑡(12𝑚𝑥̇2−𝑈(𝑥))let 𝑋(𝑡) be a time-varying vector field or time-varying δ diffeomorphism, or (1,𝑋(𝑡,𝑥1..3)) is a special type of vector field of non-relativistic spacetime ℝ×ℝ3let 𝑋(𝑡) is zero at the boundary — fix the endpoints of the pathlet the differential of the action be zero0&#x3D;∂𝑆⋅𝑋(𝑡)&#x3D;∫𝑑𝑡(∂∂𝑥̇(12𝑚𝑥̇2)⋅𝑋̇−∂𝑈∂𝑥(𝑥)⋅𝑋)where ∂∂𝑥̇(12𝑚𝑥̇2)&#x3D;𝑚𝑥̇use product rule𝑑𝑑𝑡((𝑚𝑥̇)⋅𝑋)&#x3D;𝑚𝑥̈⋅𝑋+𝑚𝑥̇⋅𝑋̇and 𝑋(𝑡) is zero at the boundary, such that∫𝑑𝑡(𝑑𝑑𝑡(𝑚𝑥̇)⋅𝑋)&#x3D;0So the differential of the action is0&#x3D;−∫𝑑𝑡((𝑚𝑥̈+𝑑𝑈𝑑𝑥)𝑋)holds for all δ diffeomorphism 𝑋(𝑡), thus giving the Lagrange-equation (alias Euler–Lagrange-equation), for non-relativistic point particles,   Newton-equation_(tag)  𝑚𝑥̈+∂𝑈∂𝑥&#x3D;0The momentum part of the action ∫𝑑𝑡(12𝑚𝑥̇2) does not use the volume-form of ℝ3, but instead uses the quadratic form |𝑥̇|2 of ℝ3 and the volume-form #𝑑𝑡 of time ℝThe Lagrangian can be written as a function 𝐿(𝑥,𝑥̇)&#x3D;12𝑚𝑥̇2−𝑈(𝑥) (a function on the tangent bundle)  point-particle-Lagrange-equation_(tag)  For a general 𝐿, repeat the above process. Action∫𝑑𝑡(𝐿(𝑥,𝑥̇))Differential of the action∫𝑑𝑡(∂𝐿∂𝑥⋅𝑋+∂𝐿∂𝑥̇⋅𝑋̇)use𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋)&#x3D;(𝑑𝑑𝑡∂𝐿∂𝑥̇)⋅𝑋+∂𝐿∂𝑥̇⋅𝑋̇is zero at the boundary + integral is zero for all δ diffeomorphism 𝑋 &#x3D;&#x3D;&gt;   point-particle-Lagrange-equation_(tag)  ∂𝐿∂𝑥−𝑑𝑑𝑡∂𝐿∂𝑥̇&#x3D;0Euclidean metric-manifoldGeneralize to Euclidean metric-manifoldNeeds #link(&lt;metric-connection&gt;)[]Although the metric volume form is not used, due to the form of the kinetic energy part of the action, it is still related to the metric geodesicSymmetry and conserved quantityHandling the symmetry of non-relativistic spacetime ℝ×ℝ3 alias the Galileo group, generated from the translation of ℝ×ℝ3, rotation, non-relativistic boostlet 𝑡⇝𝑥(𝑡) be the solution to the action equationNote that the variation of 𝑥(𝑡) along the symmetry may make it no longer a solution to the equation, i.e., the symmetric δ diffeomorphism may not be zero at the boundary, i.e., it will change the endpoints of the path, so the relevant derivative of the action at the solution 𝑥(𝑡) may not be zeroTime translationIn non-relativity, the mapping that preserves the measure and direction of time ℝ is the time translation 𝑡⇝𝑡+𝑎δ variation of the integral area   calculation-1-action-point-particle-non-relativity_(tag)  𝑑𝑑𝑠∫𝑡0+𝑠𝑎𝑡1+𝑠𝑎𝑑𝑡(𝐿(𝑡))&#x3D;(𝐿(𝑡1)−𝐿(𝑡0))⋅𝑎&#x3D;∫𝑡0𝑡1𝑑𝑡(𝑑𝑑𝑡𝐿(𝑡)⋅𝑎)The first equation can come from the fundamental theorem of calculus + derivative of composite functionsIn general, changing the region 𝐼 by exp(𝑎(𝑡)) #link(&lt;vector-field-as-δ-diffeomorphism&gt;)[by δ diffeomorphism] 𝑎(𝑡)𝑑𝑑𝑠∫exp(𝑠𝑎(𝑡))𝐼𝑑𝑡(𝑓(𝑡))&#x3D;∫𝐼𝑑𝑡(𝑑𝑑𝑡𝑓(𝑡)⋅𝑎(𝑡))On the other side, use #link(&lt;integral-change-of-variable-formula&gt;)[change of variable formula]∫𝑡0+𝑠𝑎𝑡1+𝑠𝑎𝑑𝑡(𝐿(𝑡))&#x3D;∫𝑡0𝑡1𝑑𝑡(𝐿(𝑡+𝑠𝑎))Apply it to𝐿(𝑡)&#x3D;𝐿(𝑥(𝑡),𝑥̇(𝑡))Then use the exchange of differential and integral𝑑𝑑𝑠∫𝑡0𝑡1𝑑𝑡&#x3D;∫𝑡0𝑡1𝑑𝑡𝑑𝑑𝑠Derivative of composite function 𝑑𝑑𝑠𝐿(𝑥(𝑡+𝑠𝑎),𝑥̇(𝑡+𝑠𝑎))&#x3D;∂𝐿∂𝑥𝑥̇𝑎+𝑑𝐿𝑑𝑥̇𝑥̈𝑎is the variation of the action on the (changing endpoints) δ differentiation 𝑑𝑑𝑠(0)𝑥(𝑡+𝑠𝑎)&#x3D;𝑎𝑥̇(𝑡)&#x3D;𝑋(𝑡) at the solution 𝑥(𝑡)   calculation-2-action-point-particle-non-relativity_(tag)  𝑑𝑑𝑠∫𝑡0+𝑠𝑎𝑡1+𝑠𝑎𝑑𝑡(𝐿(𝑡))&#x3D;∫𝑑𝑡(∂𝐿∂𝑥⋅𝑋+∂𝐿∂𝑥̇⋅𝑋̇)&#x3D;∫𝑑𝑡((∂𝐿∂𝑥−𝑑𝑑𝑡∂𝐿∂𝑥̇)⋅𝑋+𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋)) by product-rule of 𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋)&#x3D;∫𝑑𝑡(𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋)) Lagrange-equation ∂𝐿∂𝑥−𝑑𝑑𝑡∂𝐿∂𝑥̇&#x3D;0recall𝑑𝑑𝑠∫𝑡0+𝑠𝑎𝑡1+𝑠𝑎𝑑𝑡(𝐿(𝑡))&#x3D;𝐿(𝑡)|𝑡0𝑡1⋅𝑎&#x3D;∫𝑡0𝑡1𝑑𝑡(𝑑𝑑𝑡𝐿(𝑡)⋅𝑎)use 𝑋&#x3D;𝑎𝑥̇, merge the previous item with the next item∫𝑡0𝑡1𝑑𝑡𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋)&#x3D;(∂𝐿∂𝑥̇⋅𝑥̇⋅𝑎)|𝑡0𝑡1Get(∂𝐿∂𝑥̇⋅𝑥̇−𝐿)|𝑡0𝑡1⋅𝑎&#x3D;0Quantity𝐸&#x3D;∂𝐿∂𝑥̇⋅𝑥̇−𝐿Called the energy of the action 𝐿, is invariant along time 𝑡, forall 𝑎∈ℝ, i.e. conserved. This is true for 𝑡0&lt;𝑡1 also imply 𝑑𝑑𝑡𝐸&#x3D;0For 𝐿&#x3D;12𝑚𝑥̇(𝑡)2−𝑈(𝑥(𝑡)) the energy is   energy-point-particle-non-relativity_(tag)  𝐸&#x3D;𝑚𝑥̇2−(12𝑚𝑥̇2−𝑈)&#x3D;12𝑚𝑥̇2+𝑈Homogeneity of Time &#x3D;&#x3D;&gt; Conservation of EnergySpatial translationKinetic energy part of the action∫𝑑𝑡(12𝑚𝑥̇2)Although the spatial translation δ diffeomorphism is not zero at the boundary or changes the path endpoints, the time endpoints remain unchanged, and spatial translation does not change kinetic energy. with 𝑥+𝑠𝑎, 𝑑𝑑𝑡(𝑥+𝑠𝑎)&#x3D;𝑥̇𝑑𝑑𝑠(𝑠&#x3D;0)∫𝑡0𝑡1𝑑𝑡(12𝑚(𝑑𝑑𝑡(𝑥+𝑠𝑎))2)&#x3D;𝑑𝑑𝑠∫𝑡0𝑡1𝑑𝑡(12𝑚𝑥̇2)&#x3D;0So similar to #link(&lt;calculation-2-action-point-particle-non-relativity&gt;)[the case of energy], with δ diffeomorphism 𝑑𝑑𝑠(𝑥+𝑠𝑎)&#x3D;𝑎&#x3D;𝑋(𝑡)0&#x3D;∫𝑡0𝑡1𝑑𝑡(𝑑𝑑𝑡(∂𝐿∂𝑥̇⋅𝑋))&#x3D;∂𝐿∂𝑥̇|𝑡0𝑡1⋅𝑎  momentum-point-particle-non-relativity_(tag)   The momentum of the action ∫𝑑𝑡(12𝑚𝑥̇2)𝑚𝑥̇⋅𝑎is invariant along time 𝑡, forall 𝑎∈ℝ3, i.e. conservedMore generally, let the action ∫𝑑𝑡(𝐿(𝑥,𝑥̇)) with ∂𝐿∂𝑎&#x3D;0 such that the endpoints in this direction do not affect the action, then the momentum∂𝐿∂𝑥̇⋅𝑎is conservedHomogeneity of Space &#x3D;&#x3D;&gt; Translation Invariance of 𝐿 &#x3D;&#x3D;&gt; Conservation of Total Linear MomentumLagrangian𝐿(𝑥,𝑥̇)&#x3D;12∑𝑚𝑖𝑥̇𝑖2−∑𝑖&lt;𝑖′𝑈(|𝑥𝑖−𝑥𝑖′|)∂𝐿∂𝑎&#x3D;0 forall 𝑎∈ℝ3 (by (𝑥𝑖+𝑎)−(𝑥𝑖′+𝑎)&#x3D;𝑥𝑖−𝑥𝑖′) so the momentum∑𝑚𝑥̇𝑖⋅𝑎is conservedSpatial rotationChoose an origin. Lagrangian𝐿(𝑥,𝑥̇)&#x3D;12∑𝑚𝑥̇2−𝑈(|𝑥|)so(3) is represented as a rotation around axis 𝑛, cross product 𝑛×𝑥 is δ rotationRotation around axis &#x3D;&#x3D;&gt; (𝑛×𝑥)⟂𝑛in ℂ, 𝑒𝜃 i𝑧&#x3D;𝑧+𝜃 i 𝑧+𝑜(𝑧) with 𝜃 i ∈Im(ℂ)&#x3D; u (1)&#x3D;so(2), 𝑧⟂ i 𝑧 and magnitude |𝜃 i|&#x3D;|𝑛|Length is invariant to direction ∂|𝑥|∂𝑥⋅(𝑛×𝑥)&#x3D;0Similar to the case of momentum, if the Lagrangian is invariant to rotation, the δ diffeomorphism (tangent vector field) is 𝑛×𝑥, thus  rotation-momentum-point-particle-non-relativity_(tag)   Rotation momentum rotation-momentum alias angular momentum angular-momentum𝑚𝑥̇⋅(𝑛×𝑥)&#x3D;𝑛⋅(𝑥×𝑚𝑥̇)is invariant along time 𝑡, forall 𝑛∈so(3)quantity𝑥×𝑚𝑥̇is also called rotation momentumMore generally, 𝐿(𝑥,𝑥̇) with 𝑛⋅(𝑥×∂)𝑓&#x3D;0 such that the Lagrangian is invariant under rotation about 𝑛, then the rotational momentum about 𝑛 is𝑥×∂𝐿∂𝑥̇Isotropy of Space &#x3D;&#x3D;&gt; Rotational Invariance of 𝐿 &#x3D;&#x3D;&gt; Conservation of Total Angular Momentum𝑎⋅(𝑏×𝑐) &#x3D; #link(&lt;volume-of-parallelogram&gt;)[parallelepiped directed volume] span by 𝑎,𝑏,𝑐 in Euclidean ℝ3The rotational momentum 𝑥×𝑚𝑥̇ is constant with respect to time, so span(𝑥×𝑥̇)⟂ is a constant 2d plane. Since (𝑥×𝑥̇)⟂𝑥,𝑥̇, span(𝑥,𝑥̇)⊂span(𝑥×𝑥̇)⟂, 𝑥(𝑡) is in the constant two-dimensional plane span(𝑥×𝑥̇)⟂For the Lagrangian of a system of point particles𝐿(𝑥,𝑥̇)&#x3D;12∑𝑚𝑖𝑥̇𝑖2−∑𝑖&lt;𝑖′𝑈(|𝑥𝑖−𝑥𝑖′|)Total rotational momentum𝑛⋅∑(𝑥𝑖×𝑚𝑥̇𝑖)is invariant along time 𝑡Non-relativistic boostNon-relativistic boost 𝑥⇝𝑥+𝑡⋅𝑣The conserved quantity of the action ∫12𝑚𝑥̇2𝑑𝑡 is𝑚(𝑡⋅𝑥̇−𝑥)⋅𝑣forall 𝑣∈ℝ3The action 12𝑚𝑥̇2 has all δ symmetries of non-relativistic spacetime ℝ×ℝ3, a 10 dimensional conserved quantityThe action 12𝑚𝑥̇2−𝑈(𝑥) has conserved energyThe action ∑12𝑚𝑖𝑥̇𝑖2−∑𝑖&lt;𝑖′𝑈(𝑥𝑖−𝑥𝑖′) has conserved energy and momentumThe action 12𝑚𝑥̇2−𝑈(|𝑥|) has conserved energy and rotational momentumThe action ∑12𝑚𝑖𝑥̇𝑖2−∑𝑖&lt;𝑖′𝑈(|𝑥𝑖−𝑥𝑖′|) has conserved energy, momentum, rotational momentum, 7 dimensionNon-relativistic potential (𝑉,𝐴)∈ℝ×ℝ3Rigid bodyParameterized by SO(3) (or SO(2)), so it can be regarded as a non-relativistic particle on the Euclidean manifold SO(3). But the use of metric or the use of kinetic energy is not the #link(&lt;Killing-form&gt;)[] of so(3), because for objects that are not uniformly mass-distributed spheres, rotations in different directions have different inertias. Moment of inertia i.e. metric 𝑔 may need to be calculated additionallyThe moment of inertia can also be used as a symmetric operator under the Killing-form, with the characteristic basis being the principal axes of inertia and the eigenvalues being the moments of inertia.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/item/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/item/feature.html"><strong aria-hidden="true">1.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/item/logic.html"><strong aria-hidden="true">2.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/item/set-theory.html"><strong aria-hidden="true">3.</strong> 集合论</a></li><li class="chapter-item expanded "><a href="/item/map.html"><strong aria-hidden="true">4.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/item/order.html"><strong aria-hidden="true">5.</strong> 序</a></li><li class="chapter-item expanded "><a href="/item/combinatorics.html"><strong aria-hidden="true">6.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/item/real-numbers.html"><strong aria-hidden="true">7.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/item/limit-sequence.html"><strong aria-hidden="true">8.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/item/ℝ^n.html"><strong aria-hidden="true">9.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item/Euclidean-space.html"><strong aria-hidden="true">10.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/item/Minkowski-space.html"><strong aria-hidden="true">11.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/item/polynomial.html"><strong aria-hidden="true">12.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/item/analytic-Euclidean.html"><strong aria-hidden="true">13.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/item/analytic-Minkowski.html"><strong aria-hidden="true">14.</strong> 解析 (Minkowski)</a></li><li class="chapter-item expanded "><a href="/item/analytic-struct-operation.html"><strong aria-hidden="true">15.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/ordinary-differential-equation.html"><strong aria-hidden="true">16.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/item/volume.html"><strong aria-hidden="true">17.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/item/integral.html"><strong aria-hidden="true">18.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/item/divergence.html"><strong aria-hidden="true">19.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/item/limit-net.html"><strong aria-hidden="true">20.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/item/compact.html"><strong aria-hidden="true">21.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/item/connected.html"><strong aria-hidden="true">22.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/item/topology-struct-operation.html"><strong aria-hidden="true">23.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/item/exponential.html"><strong aria-hidden="true">24.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/item/angle.html"><strong aria-hidden="true">25.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/item/manifold.html"><strong aria-hidden="true">26.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/item/metric.html"><strong aria-hidden="true">27.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/item/metric-connection.html"><strong aria-hidden="true">28.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/item/geodesic-derivative.html"><strong aria-hidden="true">29.</strong> Levi-Civita 导数</a></li><li class="chapter-item expanded "><a href="/item/curvature-of-metric.html"><strong aria-hidden="true">30.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">31.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/constant-sectional-curvature.html"><strong aria-hidden="true">32.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/item/simple-symmetric-space.html"><strong aria-hidden="true">33.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item/principal-bundle.html"><strong aria-hidden="true">34.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/item/group-action.html"><strong aria-hidden="true">35.</strong> 群作用</a></li><li class="chapter-item expanded "><a href="/item/stereographic-projection.html"><strong aria-hidden="true">36.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/item/Hopf-bundle.html"><strong aria-hidden="true">37.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/item/point-particle-non-relativity.html"><strong aria-hidden="true">38.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/point-particle-relativity.html"><strong aria-hidden="true">39.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/item/scalar-field.html"><strong aria-hidden="true">40.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-current.html"><strong aria-hidden="true">41.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/scalar-field-non-relativity.html"><strong aria-hidden="true">42.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/item/projective-lightcone.html"><strong aria-hidden="true">43.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/item/spacetime-momentum-spinor-representation.html"><strong aria-hidden="true">44.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/item/Lorentz-group.html"><strong aria-hidden="true">45.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/item/spinor-field.html"><strong aria-hidden="true">46.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/item/spinor-field-current.html"><strong aria-hidden="true">47.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/item/electromagnetic-field.html"><strong aria-hidden="true">48.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/item/Laplacian-of-tensor-field.html"><strong aria-hidden="true">49.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/item/Einstein-metric.html"><strong aria-hidden="true">50.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/item/interaction.html"><strong aria-hidden="true">51.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/item/harmonic-oscillator-quantization.html"><strong aria-hidden="true">52.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">53.</strong> 参考</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded "><a href="/item_en/notice_en.html"><strong aria-hidden="true">54.</strong> notice</a></li><li class="chapter-item expanded "><a href="/item_en/feature_en.html"><strong aria-hidden="true">55.</strong> feature</a></li><li class="chapter-item expanded affix "><li class="part-title">logic-topic</li><li class="chapter-item expanded "><a href="/item_en/logic_en.html"><strong aria-hidden="true">56.</strong> logic</a></li><li class="chapter-item expanded "><a href="/item_en/set-theory_en.html"><strong aria-hidden="true">57.</strong> set-theory</a></li><li class="chapter-item expanded "><a href="/item_en/map_en.html"><strong aria-hidden="true">58.</strong> map</a></li><li class="chapter-item expanded "><a href="/item_en/order_en.html"><strong aria-hidden="true">59.</strong> order</a></li><li class="chapter-item expanded "><a href="/item_en/combinatorics_en.html"><strong aria-hidden="true">60.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/item_en/real-numbers_en.html"><strong aria-hidden="true">61.</strong> real-numbers</a></li><li class="chapter-item expanded "><a href="/item_en/limit-sequence_en.html"><strong aria-hidden="true">62.</strong> limit-sequence</a></li><li class="chapter-item expanded "><a href="/item_en/ℝ^n_en.html"><strong aria-hidden="true">63.</strong> ℝ^n</a></li><li class="chapter-item expanded "><a href="/item_en/Euclidean-space_en.html"><strong aria-hidden="true">64.</strong> Euclidean-space</a></li><li class="chapter-item expanded "><a href="/item_en/Minkowski-space_en.html"><strong aria-hidden="true">65.</strong> Minkowski-space</a></li><li class="chapter-item expanded "><a href="/item_en/polynomial_en.html"><strong aria-hidden="true">66.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Euclidean_en.html"><strong aria-hidden="true">67.</strong> analytic-Euclidean</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-Minkowski_en.html"><strong aria-hidden="true">68.</strong> analytic-Minkowski</a></li><li class="chapter-item expanded "><a href="/item_en/analytic-struct-operation_en.html"><strong aria-hidden="true">69.</strong> analytic-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/ordinary-differential-equation_en.html"><strong aria-hidden="true">70.</strong> ordinary-differential-equation</a></li><li class="chapter-item expanded "><a href="/item_en/volume_en.html"><strong aria-hidden="true">71.</strong> volume</a></li><li class="chapter-item expanded "><a href="/item_en/integral_en.html"><strong aria-hidden="true">72.</strong> integral</a></li><li class="chapter-item expanded "><a href="/item_en/divergence_en.html"><strong aria-hidden="true">73.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/item_en/limit-net_en.html"><strong aria-hidden="true">74.</strong> limit-net</a></li><li class="chapter-item expanded "><a href="/item_en/compact_en.html"><strong aria-hidden="true">75.</strong> compact</a></li><li class="chapter-item expanded "><a href="/item_en/connected_en.html"><strong aria-hidden="true">76.</strong> connected</a></li><li class="chapter-item expanded "><a href="/item_en/topology-struct-operation_en.html"><strong aria-hidden="true">77.</strong> topology-struct-operation</a></li><li class="chapter-item expanded "><a href="/item_en/exponential_en.html"><strong aria-hidden="true">78.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/item_en/angle_en.html"><strong aria-hidden="true">79.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/item_en/manifold_en.html"><strong aria-hidden="true">80.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/item_en/metric_en.html"><strong aria-hidden="true">81.</strong> metric</a></li><li class="chapter-item expanded "><a href="/item_en/metric-connection_en.html"><strong aria-hidden="true">82.</strong> metric-connection</a></li><li class="chapter-item expanded "><a href="/item_en/geodesic-derivative_en.html"><strong aria-hidden="true">83.</strong> geodesic-derivative</a></li><li class="chapter-item expanded "><a href="/item_en/curvature-of-metric_en.html"><strong aria-hidden="true">84.</strong> curvature-of-metric</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">85.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/constant-sectional-curvature_en.html"><strong aria-hidden="true">86.</strong> constant-sectional-curvature</a></li><li class="chapter-item expanded "><a href="/item_en/simple-symmetric-space_en.html"><strong aria-hidden="true">87.</strong> simple-symmetric-space</a></li><li class="chapter-item expanded "><a href="/item_en/principal-bundle_en.html"><strong aria-hidden="true">88.</strong> principal-bundle</a></li><li class="chapter-item expanded "><a href="/item_en/group-action_en.html"><strong aria-hidden="true">89.</strong> group-action</a></li><li class="chapter-item expanded "><a href="/item_en/stereographic-projection_en.html"><strong aria-hidden="true">90.</strong> stereographic-projection</a></li><li class="chapter-item expanded "><a href="/item_en/Hopf-bundle_en.html"><strong aria-hidden="true">91.</strong> Hopf-bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field-theory</li><li class="chapter-item expanded "><a href="/item_en/point-particle-non-relativity_en.html" class="active"><strong aria-hidden="true">92.</strong> point-particle-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/point-particle-relativity_en.html"><strong aria-hidden="true">93.</strong> point-particle-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field_en.html"><strong aria-hidden="true">94.</strong> scalar-field</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-current_en.html"><strong aria-hidden="true">95.</strong> scalar-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/scalar-field-non-relativity_en.html"><strong aria-hidden="true">96.</strong> scalar-field-non-relativity</a></li><li class="chapter-item expanded "><a href="/item_en/projective-lightcone_en.html"><strong aria-hidden="true">97.</strong> projective-lightcone</a></li><li class="chapter-item expanded "><a href="/item_en/spacetime-momentum-spinor-representation_en.html"><strong aria-hidden="true">98.</strong> spacetime-momentum-spinor-representation</a></li><li class="chapter-item expanded "><a href="/item_en/Lorentz-group_en.html"><strong aria-hidden="true">99.</strong> Lorentz-group</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field_en.html"><strong aria-hidden="true">100.</strong> spinor-field</a></li><li class="chapter-item expanded "><a href="/item_en/spinor-field-current_en.html"><strong aria-hidden="true">101.</strong> spinor-field-current</a></li><li class="chapter-item expanded "><a href="/item_en/electromagnetic-field_en.html"><strong aria-hidden="true">102.</strong> electromagnetic-field</a></li><li class="chapter-item expanded "><a href="/item_en/Laplacian-of-tensor-field_en.html"><strong aria-hidden="true">103.</strong> Laplacian-of-tensor-field</a></li><li class="chapter-item expanded "><a href="/item_en/Einstein-metric_en.html"><strong aria-hidden="true">104.</strong> Einstein-metric</a></li><li class="chapter-item expanded "><a href="/item_en/interaction_en.html"><strong aria-hidden="true">105.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/item_en/harmonic-oscillator-quantization_en.html"><strong aria-hidden="true">106.</strong> harmonic-oscillator-quantization</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">107.</strong> reference</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/item_en/point-particle-non-relativity_en", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none"><div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
+  <p>Non-relativistic spacetime <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+  <p>  <code>action-point-particle-non-relativity</code><em>_(tag)</em>   Action of path <span><math><mrow><mi>𝑡</mi><mo>⇝</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+  <math display="block"><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mi>𝑈</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+  <p>let <span><math><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> be a time-varying vector field or time-varying δ diffeomorphism, or <span><math><mrow><mo>(</mo><mrow><mrow><mn>1</mn><mo>,</mo><mi>𝑋</mi></mrow><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>,</mo><msub><mi>𝑥</mi><mrow><mn>1</mn><mrow><mo>.</mo><mo>.</mo></mrow><mn>3</mn></mrow></msub></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></math></span> is a special type of vector field of non-relativistic spacetime <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+  <p>let <span><math><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> <em>is zero at the boundary</em> — fix the endpoints of the path</p>
+  <p>let the differential of the action be zero</p>
+  <math display="block"><mrow><mn>0</mn><mo>=</mo><mo>∂</mo><mi>𝑆</mi><mo>⋅</mo><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>=</mo><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>⋅</mo><mover accent="true"><mi>𝑋</mi><mo stretchy="true">̇</mo></mover><mo>−</mo><mfrac><mrow><mo>∂</mo><mi>𝑈</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow></math>
+  <p>where <span><math><mrow><mfrac><mo>∂</mo><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></math></span></p>
+  <p>use product rule</p>
+  <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̈</mo></mover><mo>⋅</mo><mi>𝑋</mi><mo>+</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>⋅</mo><mover accent="true"><mi>𝑋</mi><mo stretchy="true">̇</mo></mover></mrow></math>
+  <p>and <span><math><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> is zero at the boundary, such that</p>
+  <math display="block"><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+  <p>So the differential of the action is</p>
+  <math display="block"><mrow><mn>0</mn><mo>=</mo><mo>−</mo><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̈</mo></mover><mo>+</mo><mfrac><mrow><mi>𝑑</mi><mi>𝑈</mi></mrow><mrow><mi>𝑑</mi><mi>𝑥</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow></math>
+  <p>holds for all δ diffeomorphism <span><math><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span>, thus giving the Lagrange-equation (<strong>alias</strong> Euler–Lagrange-equation), for non-relativistic point particles,   <code>Newton-equation</code><em>_(tag)</em>  </p>
+  <math display="block"><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̈</mo></mover><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝑈</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math>
+  <p>The momentum part of the action <span><math><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span> does not use the volume-form of <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span>, but instead uses the quadratic form <span><math><mrow><mo>|</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><msup><mo>|</mo><mn>2</mn></msup></mrow></math></span> of <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> and the volume-form <span><math><mrow><mrow><mo>#</mo><mi>𝑑</mi></mrow><mi>𝑡</mi></mrow></math></span> of time <span><math><mi mathvariant="normal">ℝ</mi></math></span></p>
+  <p>The Lagrangian can be written as a function <span><math><mrow><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mrow><mi>𝑈</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> (a function on the tangent bundle)</p>
+  <p>  <code>point-particle-Lagrange-equation</code><em>_(tag)</em>  </p>
+  <div class="indent">
+    <p>For a general <span><math><mi>𝐿</mi></math></span>, repeat the above process. Action</p>
+    <math display="block"><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Differential of the action</p>
+    <math display="block"><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑋</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow></math>
+    <p>use</p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑋</mi><mo stretchy="true">̇</mo></mover></mrow></math>
+    <p>is zero at the boundary + integral is zero for all δ diffeomorphism <span><math><mi>𝑋</mi></math></span> ==>   <code>point-particle-Lagrange-equation</code><em>_(tag)</em>  </p>
+    <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>−</mo><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math>
+  </div>
+  <p>Euclidean metric-manifold</p>
+  <div class="indent">
+    <p>Generalize to Euclidean metric-manifold</p>
+    <p>Needs <code>#link(&lt;metric-connection>)[]</code></p>
+    <p>Although the metric volume form is not used, due to the form of the kinetic energy part of the action, it is still related to the metric geodesic</p>
+  </div>
+  <p>Symmetry and conserved quantity</p>
+  <p>Handling the symmetry of non-relativistic spacetime <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> <strong>alias</strong> the Galileo group, generated from the translation of <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>, rotation, non-relativistic boost</p>
+  <p>let <span><math><mrow><mi>𝑡</mi><mo>⇝</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></math></span> be the solution to the action equation</p>
+  <p>Note that the variation of <span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> along the symmetry may make it no longer a solution to the equation, i.e., the symmetric δ diffeomorphism may not be zero at the boundary, i.e., it will change the endpoints of the path, so the relevant derivative of the action at the solution <span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> may not be zero</p>
+  <ul>
+    <li>Time translation</li>
+  </ul>
+  <div class="indent">
+    <p>In non-relativity, the mapping that preserves the measure and direction of time <span><math><mi mathvariant="normal">ℝ</mi></math></span> is the time translation <span><math><mrow><mi>𝑡</mi><mo>⇝</mo><mi>𝑡</mi><mo>+</mo><mi>𝑎</mi></mrow></math></span></p>
+    <p>δ variation of the integral area   <code>calculation-1-action-point-particle-non-relativity</code><em>_(tag)</em>  </p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><msub><mi>𝑡</mi><mn>1</mn></msub><mo>)</mo></mrow><mo>−</mo><mi>𝐿</mi><mrow><mo>(</mo><msub><mi>𝑡</mi><mn>0</mn></msub><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>The first equation can come from the fundamental theorem of calculus + derivative of composite functions</p>
+    <p>In general, changing the region <span><math><mi>𝐼</mi></math></span> by <span><math><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> <code>#link(&lt;vector-field-as-δ-diffeomorphism>)[by δ diffeomorphism]</code> <span><math><mrow><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><munder displaystyle="true"><mo>∫</mo><mrow><mrow><mtext>exp</mtext><mrow><mo>(</mo><mrow><mi>𝑠</mi><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mi>𝐼</mi></mrow></munder><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msub><mo>∫</mo><mi>𝐼</mi></msub><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mi>𝑓</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>On the other side, use <code>#link(&lt;integral-change-of-variable-formula>)[change of variable formula]</code></p>
+    <math display="block"><mrow><msubsup><mo>∫</mo><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Apply it to</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mrow><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+    <p>Then use the exchange of differential and integral</p>
+    <math display="block"><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mo>=</mo><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac></mrow></math>
+    <p>Derivative of composite function <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow><mrow><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑎</mi><mo>+</mo><mfrac><mrow><mi>𝑑</mi><mi>𝐿</mi></mrow><mrow><mi>𝑑</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̈</mo></mover><mi>𝑎</mi></mrow></math></span></p>
+    <p>is the variation of the action on the (changing endpoints) δ differentiation <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mrow><mi>𝑥</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mi>𝑎</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mo>=</mo><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></math></span> at the solution <span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span>   <code>calculation-2-action-point-particle-non-relativity</code><em>_(tag)</em>  </p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi><mo>+</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑋</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>−</mo><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝑋</mi><mo>+</mo><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> by product-rule of </mtext><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mtext> Lagrange-equation </mtext><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>−</mo><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>=</mo><mn>0</mn></mtd></mtr></mtable></math>
+    <p>recall</p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mrow><msub><mi>𝑡</mi><mn>1</mn></msub><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><msubsup><mo>|</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mo>⋅</mo><mi>𝑎</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mi>𝐿</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mo>⋅</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
+    <p>use <span><math><mrow><mi>𝑋</mi><mo>=</mo><mi>𝑎</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></math></span>, merge the previous item with the next item</p>
+    <math display="block"><mrow><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>⋅</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><msubsup><mo>|</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup></mrow></math>
+    <p>Get</p>
+    <math display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>−</mo><mi>𝐿</mi></mrow><mo>)</mo></mrow><msubsup><mo>|</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mo>⋅</mo><mi>𝑎</mi><mo>=</mo><mn>0</mn></mrow></math>
+    <p>Quantity</p>
+    <math display="block"><mrow><mi>𝐸</mi><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>−</mo><mi>𝐿</mi></mrow></math>
+    <p>Called the energy of the action <span><math><mi>𝐿</mi></math></span>, is invariant along time <span><math><mi>𝑡</mi></math></span>, forall <span><math><mrow><mi>𝑎</mi><mo>∈</mo><mi mathvariant="normal">ℝ</mi></mrow></math></span>, i.e. conserved. This is true for <span><math><mrow><msub><mi>𝑡</mi><mn>0</mn></msub><mo>&lt;</mo><msub><mi>𝑡</mi><mn>1</mn></msub></mrow></math></span> also imply <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mi>𝐸</mi><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>For <span><math><mrow><mi>𝐿</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><mrow><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><msup><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span> the energy is   <code>energy-point-particle-non-relativity</code><em>_(tag)</em>  </p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝐸</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mi>𝑈</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>+</mo><mi>𝑈</mi></mtd></mtr></mtable></math>
+    <p>Homogeneity of Time ==> Conservation of Energy</p>
+  </div>
+  <ul>
+    <li>Spatial translation</li>
+  </ul>
+  <div class="indent">
+    <p>Kinetic energy part of the action</p>
+    <math display="block"><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math>
+    <p>Although the spatial translation δ diffeomorphism is not zero at the boundary or changes the path endpoints, the time endpoints remain unchanged, and spatial translation does not change kinetic energy. with <span><math><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow></math></span>, <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>=</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></math></span></p>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑠</mi><mo>=</mo><mn>0</mn></mrow><mo>)</mo></mrow><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr></mtable></math>
+    <p>So similar to <code>#link(&lt;calculation-2-action-point-particle-non-relativity>)[the case of energy]</code>, with δ diffeomorphism <span><math><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑠</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>+</mo><mi>𝑠</mi><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑎</mi><mo>=</mo><mrow><mi>𝑋</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <math display="block"><mrow><mn>0</mn><mo>=</mo><msubsup><mo>∫</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mi>𝑑</mi><mrow><mi>𝑑</mi><mi>𝑡</mi></mrow></mfrac><mrow><mo>(</mo><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑋</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><msubsup><mo>|</mo><msub><mi>𝑡</mi><mn>0</mn></msub><msub><mi>𝑡</mi><mn>1</mn></msub></msubsup><mo>⋅</mo><mi>𝑎</mi></mrow></math>
+    <p>  <code>momentum-point-particle-non-relativity</code><em>_(tag)</em>   The momentum of the action <span><math><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+    <math display="block"><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>⋅</mo><mi>𝑎</mi></mrow></math>
+    <p>is invariant along time <span><math><mi>𝑡</mi></math></span>, forall <span><math><mrow><mi>𝑎</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>, i.e. conserved</p>
+    <p>More generally, let the action <span><math><mrow><mo>∫</mo><mi>𝑑</mi><mi>𝑡</mi><mrow><mo>(</mo><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span> with <span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑎</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span> such that the endpoints in this direction do not affect the action, then the momentum</p>
+    <math display="block"><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac><mo>⋅</mo><mi>𝑎</mi></mrow></math>
+    <p>is conserved</p>
+    <p>Homogeneity of Space ==> Translation Invariance of <span><math><mi>𝐿</mi></math></span> ==> Conservation of Total Linear Momentum</p>
+    <p>Lagrangian</p>
+    <math display="block"><mrow><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><msub><mi>𝑚</mi><mi>𝑖</mi></msub><msubsup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi><mn>2</mn></msubsup><mo>−</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></munder><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p><span><math><mrow><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mi>𝑎</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math></span> forall <span><math><mrow><mi>𝑎</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span> (by <span><math><mrow><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>+</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>−</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>+</mo><mi>𝑎</mi></mrow><mo>)</mo></mrow><mo>=</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>−</mo><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow></math></span>) so the momentum</p>
+    <math display="block"><mrow><mo>∑</mo><mi>𝑚</mi><msub><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi></msub><mo>⋅</mo><mi>𝑎</mi></mrow></math>
+    <p>is conserved</p>
+  </div>
+  <ul>
+    <li>Spatial rotation</li>
+  </ul>
+  <div class="indent">
+    <p>Choose an origin. Lagrangian</p>
+    <math display="block"><mrow><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p><span><math><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span> is represented as a rotation around axis <span><math><mi>𝑛</mi></math></span>, cross product <span><math><mrow><mi>𝑛</mi><mo>×</mo><mi>𝑥</mi></mrow></math></span> is δ rotation</p>
+    <p>Rotation around axis ==> <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>×</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>⟂</mo><mi>𝑛</mi></mrow></math></span></p>
+    <p>in <span><math><mi mathvariant="normal">ℂ</mi></math></span>, <span><math><mrow><msup><mi>𝑒</mi><mrow><mi>𝜃</mi><mtext> i</mtext></mrow></msup><mi>𝑧</mi><mo>=</mo><mi>𝑧</mi><mo>+</mo><mi>𝜃</mi><mtext> i </mtext><mi>𝑧</mi><mo>+</mo><mrow><mi>𝑜</mi><mrow><mo>(</mo><mi>𝑧</mi><mo>)</mo></mrow></mrow></mrow></math></span> with <span><math><mrow><mi>𝜃</mi><mtext> i </mtext><mo>∈</mo><mrow><mtext>Im</mtext><mrow><mo>(</mo><mi mathvariant="normal">ℂ</mi><mo>)</mo></mrow></mrow><mo>=</mo><mtext> u </mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></mrow></math></span>, <span><math><mrow><mi>𝑧</mi><mo>⟂</mo><mtext> i </mtext><mi>𝑧</mi></mrow></math></span> and magnitude <span><math><mrow><mrow><mo>|</mo><mi>𝜃</mi></mrow><mrow><mtext> i</mtext><mo>|</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>𝑛</mi><mo>|</mo></mrow></mrow></math></span></p>
+    <p>Length is invariant to direction <span><math><mrow><mfrac><mrow><mo>∂</mo><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mrow><mo>∂</mo><mi>𝑥</mi></mrow></mfrac><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>×</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+    <p>Similar to the case of momentum, if the Lagrangian is invariant to rotation, the δ diffeomorphism (tangent vector field) is <span><math><mrow><mi>𝑛</mi><mo>×</mo><mi>𝑥</mi></mrow></math></span>, thus</p>
+    <p>  <code>rotation-momentum-point-particle-non-relativity</code><em>_(tag)</em>   Rotation momentum rotation-momentum <strong>alias</strong> angular momentum angular-momentum</p>
+    <math display="block"><mrow><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>×</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow><mo>=</mo><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow></math>
+    <p>is invariant along time <span><math><mi>𝑡</mi></math></span>, forall <span><math><mrow><mi>𝑛</mi><mo>∈</mo><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></mrow></math></span></p>
+    <p>quantity</p>
+    <math display="block"><mrow><mi>𝑥</mi><mo>×</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></math>
+    <p>is also called rotation momentum</p>
+    <p>More generally, <span><math><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow></math></span> with <span><math><mrow><mi>𝑛</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mo>∂</mo></mrow><mo>)</mo></mrow><mi>𝑓</mi><mo>=</mo><mn>0</mn></mrow></math></span> such that the Lagrangian is invariant under rotation about <span><math><mi>𝑛</mi></math></span>, then the rotational momentum about <span><math><mi>𝑛</mi></math></span> is</p>
+    <math display="block"><mrow><mi>𝑥</mi><mo>×</mo><mfrac><mrow><mo>∂</mo><mi>𝐿</mi></mrow><mrow><mo>∂</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mfrac></mrow></math>
+    <p>Isotropy of Space ==> Rotational Invariance of <span><math><mi>𝐿</mi></math></span> ==> Conservation of Total Angular Momentum</p>
+    <p><span><math><mrow><mi>𝑎</mi><mo>⋅</mo><mrow><mo>(</mo><mrow><mi>𝑏</mi><mo>×</mo><mi>𝑐</mi></mrow><mo>)</mo></mrow></mrow></math></span> = <code>#link(&lt;volume-of-parallelogram>)[parallelepiped directed volume]</code> span by <span><math><mrow><mi>𝑎</mi><mo>,</mo><mi>𝑏</mi><mo>,</mo><mi>𝑐</mi></mrow></math></span> in Euclidean <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span></p>
+    <p>The rotational momentum <span><math><mrow><mi>𝑥</mi><mo>×</mo><mi>𝑚</mi><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></math></span> is constant with respect to time, so <span><math><msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>⟂</mo></msup></math></span> is a constant 2d plane. Since <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow><mo>⟂</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow></mrow></math></span>, <span><math><mrow><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>⊂</mo><msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>⟂</mo></msup></mrow></math></span>, <span><math><mrow><mi>𝑥</mi><mrow><mo>(</mo><mi>𝑡</mi><mo>)</mo></mrow></mrow></math></span> is in the constant two-dimensional plane <span><math><msup><mrow><mtext>span</mtext><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>×</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>⟂</mo></msup></math></span></p>
+    <p>For the Lagrangian of a system of point particles</p>
+    <math display="block"><mrow><mrow><mi>𝐿</mi><mrow><mo>(</mo><mrow><mi>𝑥</mi><mo>,</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>∑</mo><msub><mi>𝑚</mi><mi>𝑖</mi></msub><msubsup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi><mn>2</mn></msubsup><mo>−</mo><munder displaystyle="true"><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></munder><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math>
+    <p>Total rotational momentum</p>
+    <math display="block"><mrow><mi>𝑛</mi><mo>⋅</mo><mo>∑</mo><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>×</mo><mi>𝑚</mi><msub><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow></mrow></math>
+    <p>is invariant along time <span><math><mi>𝑡</mi></math></span></p>
+  </div>
+  <ul>
+    <li>Non-relativistic boost</li>
+  </ul>
+  <div class="indent">
+    <p>Non-relativistic boost <span><math><mrow><mi>𝑥</mi><mo>⇝</mo><mi>𝑥</mi><mo>+</mo><mi>𝑡</mi><mo>⋅</mo><mi>𝑣</mi></mrow></math></span></p>
+    <p>The conserved quantity of the action <span><math><mrow><mo>∫</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mi>𝑑</mi><mi>𝑡</mi></mrow></math></span> is</p>
+    <math display="block"><mrow><mrow><mi>𝑚</mi><mrow><mo>(</mo><mrow><mi>𝑡</mi><mo>⋅</mo><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mo>−</mo><mi>𝑥</mi></mrow><mo>)</mo></mrow></mrow><mo>⋅</mo><mi>𝑣</mi></mrow></math>
+    <p>forall <span><math><mrow><mi>𝑣</mi><mo>∈</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+  </div>
+  <ul>
+    <li>
+      <p>The action <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup></mrow></math></span> has all δ symmetries of non-relativistic spacetime <span><math><mrow><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>, a 10 dimensional conserved quantity</p>
+    </li>
+    <li>
+      <p>The action <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mrow><mi>𝑈</mi><mrow><mo>(</mo><mi>𝑥</mi><mo>)</mo></mrow></mrow></mrow></math></span> has conserved energy</p>
+    </li>
+    <li>
+      <p>The action <span><math><mrow><mo>∑</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>𝑚</mi><mi>𝑖</mi></msub><msubsup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi><mn>2</mn></msubsup><mo>−</mo><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><msub><mi>𝑥</mi><mi>𝑖</mi></msub><mo>−</mo><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>)</mo></mrow></mrow></mrow></math></span> has conserved energy and momentum</p>
+    </li>
+    <li>
+      <p>The action <span><math><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>𝑚</mi><msup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mn>2</mn></msup><mo>−</mo><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mo>|</mo><mi>𝑥</mi><mo>|</mo></mrow><mo>)</mo></mrow></mrow></mrow></math></span> has conserved energy and rotational momentum</p>
+    </li>
+    <li>
+      <p>The action <span><math><mrow><mo>∑</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>𝑚</mi><mi>𝑖</mi></msub><msubsup><mover accent="true"><mi>𝑥</mi><mo stretchy="true">̇</mo></mover><mi>𝑖</mi><mn>2</mn></msubsup><mo>−</mo><msub><mo>∑</mo><mrow><mi>𝑖</mi><mo>&lt;</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mrow><mi>𝑈</mi><mrow><mo>(</mo><mrow><mrow><mo>|</mo><msub><mi>𝑥</mi><mi>𝑖</mi></msub></mrow><mo>−</mo><mrow><msub><mi>𝑥</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>|</mo></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></span> has conserved energy, momentum, rotational momentum, 7 dimension</p>
+    </li>
+  </ul>
+  <p>Non-relativistic potential <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝑉</mi><mo>,</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∈</mo><mi mathvariant="normal">ℝ</mi><mo>×</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span></p>
+  <ul>
+    <li>Rigid body</li>
+  </ul>
+  <div class="indent">
+    <p>Parameterized by <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span> (or <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>), so it can be regarded as a non-relativistic particle on the Euclidean manifold <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span>. But the use of metric or the use of kinetic energy is not the <code>#link(&lt;Killing-form>)[]</code> of <span><math><mrow><mtext>so</mtext><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span>, because for objects that are not uniformly mass-distributed spheres, rotations in different directions have different inertias. Moment of inertia i.e. metric <span><math><mi>𝑔</mi></math></span> may need to be calculated additionally</p>
+    <p>The moment of inertia can also be used as a symmetric operator under the Killing-form, with the characteristic basis being the principal axes of inertia and the eigenvalues being the moments of inertia.</p>
+  </div>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>

@@ -1,9 +1,10 @@
 <div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
   <p>命题逻辑</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p>自然语言的例子</p>
     <table>
       <tr>
@@ -36,11 +37,8 @@
     </table>
     <p>这里不处理数字电路的硬件实现. 我也不知道细节</p>
   </div>
-  <p><code data-typst-label="logic-operator">&lt;logic-operator></code> logical and, or, not</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>logic-operator</code><em>_(tag)</em>   logical and, or, not</p>
+  <div class="indent">
     <ul>
       <li>且, <span><math><mo>∧</mo></math></span>, <code>and</code>, 逻辑合取 (conjunction)</li>
       <li>或, <span><math><mo>∨</mo></math></span>, <code>or</code>, 逻辑析取 (disjunction)</li>
@@ -137,31 +135,22 @@
     <p>"冗余性" e.g. 我们可以用 <span><math><mrow><mrow><mo>¬</mo><mo>,</mo></mrow><mo>∧</mo></mrow></math></span> 表示 <span><math><mo>∨</mo></math></span></p>
     <p>电路 gate 实现是用 <code>not,nand</code> or <span><math><mrow><mrow><mo>¬</mo><mo>,</mo></mrow><mrow><mo>(</mo><mrow><mo>¬</mo><mo>∧</mo></mrow><mo>)</mo></mrow></mrow></math></span> 作为开始. 但我觉得保持 <span><math><mrow><mrow><mo>∧</mo><mo>,</mo></mrow><mo>∨</mo></mrow></math></span> 的对称性是有用的, 认知上或者 negetive dual 上</p>
   </div>
-  <p><code data-typst-label="computability">&lt;computability></code> 电路的可计算性</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>computability</code><em>_(tag)</em>   电路的可计算性</p>
+  <div class="indent">
     <p>可用逻辑门制造任何 <span><math><mrow><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑛</mi></msup><mo>→</mo><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑚</mi></msup></mrow></math></span> 函数</p>
     <p>(image from p.85 of ref-1)</p>
     <img src="../image/compute-function-input.jpeg" width="30%"><img src="../image/decoder.jpeg" width="30%">
     <ul>
       <li><span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mi>𝑛</mi></msup></math></span> 输入的构造</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p><span><math><mi>𝑛</mi></math></span> 条电路 <span><math><mrow><msub><mi>𝐴</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐴</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span> 最多需要 <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> 个 <code>and</code> gate <span><math><mrow><msub><mi>𝑌</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑌</mi><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span>. 有些函数只需要 <span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> 输入的一部分, 此时不接一些线</p>
       <p><span><math><mrow><mi>𝑛</mi><mo>⇝</mo><msup><mn>2</mn><mi>𝑛</mi></msup></mrow></math></span> 代表了 <span><math><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow></math></span> 值并行电路的 "乘法" 性质</p>
     </div>
     <ul>
       <li><span><math><msup><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mn>1</mn></msup></math></span> 输出的构造</li>
     </ul>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <div class="indent">
       <p>在输入中, 将想要输出到 1 的电线接到 or gate</p>
       <p><strong>Example</strong> <code>not xor</code></p>
       <img src="../image/compute-function-output.jpeg" width="30%">
@@ -201,24 +190,18 @@
   </div>
   <p>计算单元中多条输入线或输出线的一种符号表示</p>
   <img src="../image/multi-lines-symbol.jpeg">
-  <p><code data-typst-label="control-circuit">&lt;control-circuit></code> 控制电路, 选择器 or 复用器 (multiplexer)</p>
+  <p>  <code>control-circuit</code><em>_(tag)</em>   控制电路, 选择器 or 复用器 (multiplexer)</p>
   <p><span><math><mrow><mi>𝑆</mi><mo>=</mo><mn>0</mn></mrow></math></span> 将 <span><math><msub><mi>𝐷</mi><mn>0</mn></msub></math></span> 输出到 <span><math><mi>𝑌</mi></math></span>, <span><math><mrow><mi>𝑆</mi><mo>=</mo><mn>1</mn></mrow></math></span> 将 <span><math><msub><mi>𝐷</mi><mn>1</mn></msub></math></span> 输出到 <span><math><mi>𝑌</mi></math></span></p>
   <img src="../image/multiplexer-function.jpeg" width="20%"><img src="../image/multiplexer-impl.jpeg" width="25%">
   <p><span><math><msup><mn>2</mn><mi>𝑛</mi></msup></math></span> 个输入 <span><math><mrow><msub><mi>𝐷</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝐷</mi><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span> 需要 <span><math><mi>𝑛</mi></math></span> 条控制电路 <span><math><mrow><msub><mi>𝑆</mi><mn>0</mn></msub><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><msub><mi>𝑆</mi><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></math></span></p>
-  <p><code data-typst-label="De-Morgan-law">&lt;De-Morgan-law></code> negative dual 律 or De Morgan 律</p>
+  <p>  <code>De-Morgan-law</code><em>_(tag)</em>   negative dual 律 or De Morgan 律</p>
   <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mo>¬</mo><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐴</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mo>¬</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
   <p>用穷举证明, 就像人类数数其实也是穷举. 下同</p>
-  <p><code data-typst-label="boolean-algebra">&lt;boolean-algebra></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>boolean-algebra</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>bool 代数记为 <span><math><mrow><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mrow><mo>,</mo><mo>+</mo><mo>,</mo><mo>⋅</mo></mrow></mrow></math></span> 或者 <span><math><mrow><mrow><mo>{</mo><mrow><mn>0</mn><mo>,</mo><mn>1</mn></mrow><mo>}</mo></mrow><mrow><mo>,</mo><mo>∨</mo><mo>,</mo><mo>∧</mo></mrow></mrow></math></span></p>
-    <p><code data-typst-label="bool-distributive-law">&lt;bool-distributive-law></code> 分配律</p>
-    <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+    <p>  <code>bool-distributive-law</code><em>_(tag)</em>   分配律</p>
+    <div class="indent">
       <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>⋅</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi><mo>⋅</mo><mi>𝐶</mi><mo>+</mo><mi>𝐵</mi><mo>⋅</mo><mi>𝐶</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or </mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∧</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
       <p>其 negative dual</p>
       <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>⋅</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝐴</mi><mo>⋅</mo><mi>𝐶</mi><mo>+</mo><mi>𝐵</mi><mo>⋅</mo><mi>𝐶</mi></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> or </mtext><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∧</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>∨</mo><mi>𝐶</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>∨</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow><mo>∧</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>∨</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mtd></mtr></mtable></math>
@@ -226,17 +209,14 @@
       <math display="block"><mrow><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑛</mi></mrow></munder><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑚</mi></mrow></munder><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><munder displaystyle="true"><mo>⋁</mo><mrow><mi>𝑖</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑛</mi></mrow></munder><munder displaystyle="true"><mo>⋀</mo><mrow><mi>𝑗</mi><mo>=</mo><mn>1</mn><mo>.</mo><mo>.</mo><mi>𝑚</mi></mrow></munder><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub></mrow></math>
       <p>以及 e.g. <span><math><mrow><msub><mo>⋀</mo><mi>𝑖</mi></msub><msub><mo>⋁</mo><mi>𝑗</mi></msub><msub><mo>⋀</mo><mi>𝑘</mi></msub><msub><mi>𝐴</mi><mrow><mi>𝑖</mi><mi>𝑗</mi><mi>𝑘</mi></mrow></msub><mo>=</mo><mo>⋯</mo></mrow></math></span></p>
     </div>
-    <p><code data-typst-label="bool-commutative-law">&lt;bool-commutative-law></code> 交换律 <span><math><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi><mo>=</mo><mi>𝐵</mi><mo>+</mo><mi>𝐴</mi></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
-    <p><code data-typst-label="bool-associative-law">&lt;bool-associative-law></code> 结合律 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝐶</mi><mo>=</mo><mi>𝐴</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>+</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
+    <p>  <code>bool-commutative-law</code><em>_(tag)</em>   交换律 <span><math><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi><mo>=</mo><mi>𝐵</mi><mo>+</mo><mi>𝐴</mi></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
+    <p>  <code>bool-associative-law</code><em>_(tag)</em>   结合律 <span><math><mrow><mrow><mo>(</mo><mrow><mi>𝐴</mi><mo>+</mo><mi>𝐵</mi></mrow><mo>)</mo></mrow><mo>+</mo><mi>𝐶</mi><mo>=</mo><mi>𝐴</mi><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝐵</mi><mo>+</mo><mi>𝐶</mi></mrow><mo>)</mo></mrow></mrow></math></span>. same for <span><math><mo>⋅</mo></math></span></p>
   </div>
-  <p><code data-typst-label="periodic-circuit">&lt;periodic-circuit></code> 周期电路</p>
+  <p>  <code>periodic-circuit</code><em>_(tag)</em>   周期电路</p>
   <img src="../image/periodic-circuit.jpeg" width="60%">
   <p>由晶体振荡器实现</p>
-  <p><code data-typst-label="memory-circuit">&lt;memory-circuit></code> 电路记忆</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>memory-circuit</code><em>_(tag)</em>   电路记忆</p>
+  <div class="indent">
     <p>黑箱模型</p>
     <img src="../image/memory-1.jpeg" width="60%">
     <p>可能的实现</p>
@@ -247,15 +227,12 @@
       <li>为了将 0 写入已有的 1, 需要在 <span><math><mover accent="true"><mtext>write</mtext><mo>¯</mo></mover></math></span> 写入 1 得到 <span><math><mrow><mover accent="true"><mi>𝑎</mi><mo>¯</mo></mover><mo>=</mo><mn>1</mn></mrow></math></span>, 然后反转为 <span><math><mrow><mi>𝑎</mi><mo>=</mo><mn>0</mn></mrow></math></span></li>
       <li>需要比循环里的电压更高的写入电压来覆盖循环中的先前已有的 <span><math><mn>1</mn></math></span>? e.g. 用更高电压 <span><math><mrow><mover accent="true"><mtext>write </mtext><mo>¯</mo></mover><mo>=</mo><mn>1</mn></mrow></math></span> 来覆盖已有的 <span><math><mrow><mi>𝑎</mi><mo>=</mo><mn>1</mn></mrow></math></span></li>
     </ul>
-    <p><code data-typst-label="finite-machine">&lt;finite-machine></code> 有限状态机</p>
-    <p><code data-typst-label="i/o">&lt;i/o></code> 电路的输入可能来自外界 (e.g. 传感器, 键盘), 电路的输出也可能到达外界 (e.g. 信号灯, 屏幕)</p>
+    <p>  <code>finite-machine</code><em>_(tag)</em>   有限状态机</p>
+    <p>  <code>i/o</code><em>_(tag)</em>   电路的输入可能来自外界 (e.g. 传感器, 键盘), 电路的输出也可能到达外界 (e.g. 信号灯, 屏幕)</p>
     <p>外界输入的节奏通常不一致于计算机内部周期电路的节奏, 因此需要让外界输入先经过同步元件</p>
   </div>
-  <p><code data-typst-label="memory-array">&lt;memory-array></code> 内存阵列</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>memory-array</code><em>_(tag)</em>   内存阵列</p>
+  <div class="indent">
     <p>二进制, 序, 自然数. <strong>Example</strong> <span><math><msup><mn>2</mn><mn>3</mn></msup></math></span> 就是从 000, 001, 010 数到 111 时经过的步数, 虽然这假设了我们能识别三位 bit. <span><math><mrow><msup><mn>2</mn><mi>𝑛</mi></msup><mo>=</mo><munder><munder accent="true"><mrow><mn>2</mn><mo>⋯</mo><mn>2</mn></mrow><mo>⏟</mo></munder><mrow><mi>𝑛</mi><mtext>-fold</mtext></mrow></munder></mrow></math></span>, <span><math><mrow><mn>101</mn><mo>=</mo><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mn>0</mn><mo>⋅</mo><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mn>0</mn></msup><mo>=</mo><mn>4</mn><mo>+</mo><mn>1</mn><mo>=</mo><mn>5</mn></mrow></math></span></p>
     <p>用多位 bit 包含的自然数范围, 例如 3 bit 的 <span><math><mrow><mrow><mn>0</mn><mo>,</mo></mrow><mn>1</mn><mrow><mo>,</mo><mo>…</mo><mo>,</mo></mrow><mn>7</mn></mrow></math></span> 作为参数, 去对应到真实世界的内容. <strong>Example</strong> 计算机的字符的表示方式 e.g. ASCII, Unicode, 屏幕的发光点位置和颜色</p>
     <img src="../image/ASCII.jpeg">
@@ -263,11 +240,8 @@
     <p>在实际应用中, 每个地址多个 bit 好于每个地址 1 bit, or 二维内存阵列比一维高效</p>
     <img src="../image/memory-array.jpeg" width="20%">
   </div>
-  <p><code data-typst-label="instruction">&lt;instruction></code> 指令</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>instruction</code><em>_(tag)</em>   指令</p>
+  <div class="indent">
     <p>通常由内存里一个地址中写着的多位 bit 数据来表示某些电路任务</p>
     <p>一些常用电路任务</p>
     <ul>
@@ -303,11 +277,8 @@
     <p>其它指令可能有多于两个的数据区 (非指令 index 区)</p>
   </div>
   <p>指令流</p>
-  <p><strong>Example</strong> <code data-typst-label="loop">&lt;loop></code> 循环</p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p><strong>Example</strong>   <code>loop</code><em>_(tag)</em>   循环</p>
+  <div class="indent">
     <p>周期电路的速度远远高过人类速度 (1 GHz = 每秒 10^9 次周期)</p>
     <p>高级编程语言的循环</p>
     <pre>i : int = 0;<br>while (i &lt; 10) {<br>    i = i + 1;<br>} // result = 10</pre>
@@ -325,10 +296,7 @@
         <ul>
           <li><span><math><mrow><mi>𝑖</mi><mo>&lt;</mo><mn>10</mn></mrow></math></span> 时</li>
         </ul>
-        <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+        <div class="indent">
           <p>算术元件根据此判断输出控制信号, 将 <code>adress_of_instruction</code> 存储的值改变为下一条指令的地址 <code>adress_0 + 1</code></p>
           <ul>
             <li>
@@ -344,18 +312,12 @@
         <ul>
           <li><span><math><mrow><mi>𝑖</mi><mo>≥</mo><mn>10</mn></mrow></math></span> 时</li>
         </ul>
-        <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">算术元件根据此判断, 输出控制信号, 将 <code>adress_of_instruction</code> 存储的值改变为 <code>adress_0 + 3</code>, 跳出 while 循环, 执行后面的指令</div>
+        <div class="indent">算术元件根据此判断, 输出控制信号, 将 <code>adress_of_instruction</code> 存储的值改变为 <code>adress_0 + 3</code>, 跳出 while 循环, 执行后面的指令</div>
       </li>
     </ol>
   </div>
-  <p><code data-typst-label="compile">&lt;compile></code> <code data-typst-label="parse">&lt;parse></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>compile</code><em>_(tag)</em>     <code>parse</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>用 parser or compiler (编译器) 验证 token 流语言正确性, 本质上是遍历所有语言规则, 或使用生成的有限状态机</p>
     <p>parser 的运行需要生成内存中大型复杂的数据结构 (一些形象的描述: 表格, 结点, 树)</p>
     <p>如果数据流是高级编程语言源代码, 还可以根据这个数据结构生成指令流. 此时称为 compile (编译), 但 parse 和 compile 经常混用</p>

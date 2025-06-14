@@ -1,4 +1,8 @@
 <div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
   <p>可能以后会迁移到 principal-bundle-connection?</p>
   <p>cf. <code>#link(&lt;motivation-of-gauge-field>)[]</code></p>
   <p>有很多可能的联络</p>
@@ -7,21 +11,15 @@
   <p>存在局部丛坐标 or 相位, 其中联络是零 <span><math><mrow><mi>𝐴</mi><mo>=</mo><mn>0</mn></mrow></math></span> &lt;==> 曲率是零 <span><math><mrow><msub><mi>𝐹</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo><mrow><mo>[</mo><mrow><msub><mi>𝐷</mi><mi>𝑖</mi></msub><mo>,</mo><msub><mi>𝐷</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>]</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> where <span><math><mrow><mi>𝐷</mi><mo>=</mo><mi>𝑑</mi><mo>+</mo><mi>𝐴</mi></mrow></math></span>, 在坐标中 <span><math><mrow><msub><mi>𝐹</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msub><mo>=</mo><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mi>𝐴</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mo>−</mo><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>+</mo><mrow><mo>[</mo><mrow><mrow><msub><mi>𝐴</mi><mi>𝑖</mi></msub><mo>,</mo></mrow><msub><mi>𝐴</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub></mrow><mo>]</mo></mrow></mrow></math></span></p>
   <p>不存在 flat connection 坐标时, 则选取基于 metric-volume-form 的 <span><math><msup><mi>𝐿</mi><mn>2</mn></msup></math></span> 最小曲率</p>
   <p><strong>Example</strong></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <div class="indent">
     <p><span><math><mrow><mtext>U </mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> 的情况. <span><math><mi>𝐴</mi></math></span> 是 <span><math><mrow><mtext>u </mtext><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></span> 值, 是交换的 <span><math><mrow><mrow><mo>[</mo><mrow><mi>𝐴</mi><mo>,</mo><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow><mo>]</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, 此时 <span><math><mrow><mi>𝐹</mi><mo>=</mo><mi>𝑑</mi><mi>𝐴</mi></mrow></math></span>, 在坐标中 <span><math><mrow><msub><mi>𝐹</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mo>=</mo><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mi>𝐴</mi><mi>𝑗</mi></msub><mo>−</mo><msub><mo>∂</mo><mi>𝑗</mi></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow></math></span></p>
     <p>从局部 flat-connection 坐标 <span><math><mrow><msup><mi>𝐴</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup><mo>=</mo><mn>0</mn></mrow></math></span> 转换到一般坐标给出 PDE</p>
     <math display="block"><mrow><mi>𝐴</mi><mo>=</mo><mi>𝑑</mi><mi>𝜃</mi></mrow></math>
     <p>PDE 可解条件 <span><math><mrow><mn>0</mn><mo>=</mo><mi>𝐹</mi><mo>=</mo><mi>𝑑</mi><mi>𝐴</mi></mrow></math></span></p>
     <p>从 PDE 的解 <span><math><mrow><mi>𝐴</mi><mo>=</mo><mi>𝑑</mi><mi>𝜃</mi></mrow></math></span>, 积分给出 <span><math><mi>𝜃</mi></math></span> 和相位变换 <span><math><msup><mi>𝑒</mi><mi>𝜃</mi></msup></math></span></p>
   </div>
-  <p><code data-typst-label="electromagnetic-field">&lt;electromagnetic-field></code></p>
-  <div style="
-    border-left: 1px solid #94828233;
-    padding-left: 1em
-  ">
+  <p>  <code>electromagnetic-field</code><em>_(tag)</em>  </p>
+  <div class="indent">
     <p>在 <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></math></span></p>
     <p>有很多可能的联络, 用曲率最小来选择</p>
     <p>注意 <span><math><mtext>Vol</mtext></math></span> 意味着这个作用量的定义需要时空 metric</p>
@@ -33,15 +31,14 @@
     <p>在时空分解坐标</p>
     <math display="block"><mrow><mi>𝐹</mi><mo>=</mo><msub><mi>𝐸</mi><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><mi>𝑑</mi><mi>𝑡</mi><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup></mrow><mo>)</mo></mrow><mo>−</mo><msub><mi>𝐵</mi><mrow><mi>𝑖</mi><mi>𝑗</mi></mrow></msub><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑗</mi></msup></mrow><mo>)</mo></mrow><mtext> with </mtext><mn>1</mn><mo>≤</mo><mi>𝑖</mi><mo>&lt;</mo><mi>𝑗</mi><mo>≤</mo><mn>3</mn></mrow></math>
     <p>当然这种分解方式不是 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span> invariant 的</p>
-    <p><strong>Question</strong> 如何让 <span><math><mrow><msub><mo>∑</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mi>𝐴</mi><mi>𝑗</mi></msub><mo>−</mo><msub><mo>∂</mo><mi>𝑗</mi></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> 显然地蕴含电磁场 <span><math><mrow><mi>𝐸</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 的方程的 <span><math><mrow><mrow><mtext>div</mtext><mo>,</mo></mrow><mtext> curl</mtext></mrow></math></span> 形式? <code data-typst-label="Maxwell-equation">&lt;Maxwell-equation></code></p>
+    <p><strong>Question</strong> 如何让 <span><math><mrow><msub><mo>∑</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><mi>𝑖</mi></msub><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mi>𝐴</mi><mi>𝑗</mi></msub><mo>−</mo><msub><mo>∂</mo><mi>𝑗</mi></msub><msub><mi>𝐴</mi><mi>𝑖</mi></msub></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span> 显然地蕴含电磁场 <span><math><mrow><mi>𝐸</mi><mo>,</mo><mi>𝐵</mi></mrow></math></span> 的方程的 <span><math><mrow><mrow><mtext>div</mtext><mo>,</mo></mrow><mtext> curl</mtext></mrow></math></span> 形式?   <code>Maxwell-equation</code><em>_(tag)</em>  </p>
     <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mtext>div </mtext><mi>𝐵</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><msub><mo>∂</mo><mi>𝑡</mi></msub><mi>𝐵</mi><mo>+</mo><mtext> curl </mtext><mi>𝐸</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mn>0</mn></mtd></mtr><mtr><mtd class="mathyml-align-right"><mtext> div </mtext><mi>𝐸</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝜌</mi></mtd><mtd class="mathyml-align-left"><mspace width="1em"></mspace></mtd><mtd class="mathyml-align-right"><mo>−</mo><msub><mo>∂</mo><mi>𝑡</mi></msub><mi>𝐸</mi><mo>+</mo><mtext> curl </mtext><mi>𝐵</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mi>𝑗</mi></mtd></mtr></mtable></math>
     <p>也有</p>
-    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝐸</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑡</mi></msub><mtext> A </mtext><mo>+</mo><mtext> grad </mtext><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝐵</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mtext>curl </mtext><mtext> A</mtext></mtd></mtr></mtable></math>
+    <math display="block"><mtable><mtr><mtd class="mathyml-align-right"><mi>𝐸</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mo>−</mo><mrow><mo>(</mo><mrow><msub><mo>∂</mo><mi>𝑡</mi></msub><mtext> A </mtext><mo>+</mo><mtext> grad </mtext><mi mathvariant="normal">ϕ</mi></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd class="mathyml-align-right"><mi>𝐵</mi></mtd><mtd class="mathyml-align-left"><mo>=</mo></mtd><mtd class="mathyml-align-right"><mtext> curl </mtext><mtext> A</mtext></mtd></mtr></mtable></math>
     <p>其中 <span><math><mrow><mi mathvariant="normal">ϕ</mi><mo>=</mo><mrow><mi>𝐴</mi><mo>.</mo><mtext>time</mtext><mo>,</mo></mrow><mtext> A </mtext><mo>=</mo><mrow><mi>𝐴</mi><mo>.</mo><mtext>space</mtext></mrow></mrow></math></span></p>
-    <p>可能联系到时空分解坐标中, Hodge star 在空间 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span> 的行为</p>
-    <p><span><math><mrow><mo>⋆</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑗</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mo>±</mo><mi>𝑑</mi><mi>𝑡</mi><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑘</mi></msup></mrow></math></span></p>
+    <p>注意, <span><math><mrow><mrow><mtext>curl</mtext><mo>,</mo></mrow><mtext> div</mtext></mrow></math></span> 和 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 外微分和 <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> Hodge star 有联系. <span><math><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mo>∼</mo><mo>⋆</mo><mi>𝑑</mi><mo>⋆</mo></mrow></math></span> 也能和 Hodge star 产生联系. 可能联系到时空分解坐标中, Hodge star 在空间 <span><math><mrow><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mrow><mn>1</mn><mo>,</mo><mn>3</mn></mrow></msup></mrow></math></span> 的行为. <span><math><mrow><mo>⋆</mo><mrow><mo>(</mo><mrow><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑖</mi></msup><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑗</mi></msup></mrow><mo>)</mo></mrow><mo>=</mo><mo>±</mo><mi>𝑑</mi><mi>𝑡</mi><mo>∧</mo><mi>𝑑</mi><msup><mi>𝑥</mi><mi>𝑘</mi></msup></mrow></math></span></p>
     <p>注意 Hodge star 需要 metric</p>
-    <p>使用特殊的规范 <code data-typst-label="Lorentz-gauge">&lt;Lorentz-gauge></code> <span><math><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mi>𝐴</mi><mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></span>, 方程 <span><math><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mi>𝑑</mi><mi>𝐴</mi><mo>=</mo><mn>0</mn></mrow></math></span> 变为</p>
+    <p>使用特殊的规范   <code>Lorentz-gauge</code><em>_(tag)</em>   <span><math><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mi>𝐴</mi><mrow><mo>=</mo><mn>0</mn></mrow></mrow></math></span>, 方程 <span><math><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mi>𝑑</mi><mi>𝐴</mi><mo>=</mo><mn>0</mn></mrow></math></span> 变为</p>
     <math display="block"><mrow><mn>0</mn><mo>=</mo><mrow><mo>(</mo><mrow><msup><mi>𝑑</mi><mo>†</mo></msup><mi>𝑑</mi><mo>+</mo><mi>𝑑</mi><msup><mi>𝑑</mi><mo>†</mo></msup></mrow><mo>)</mo></mrow><mi>𝐴</mi><mo>=</mo><mo>∆</mo><mi>𝐴</mi><mo>=</mo><msup><mi>𝜂</mi><mrow><mi>𝑖</mi><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></mrow></msup><msub><mo>∂</mo><mi>𝑖</mi></msub><msub><mo>∂</mo><msup><mi>𝑖</mi><mo lspace="0em" rspace="0em" style="padding-left: 0.08em">′</mo></msup></msub><mi>𝐴</mi></mrow></math>
   </div>
 </div>

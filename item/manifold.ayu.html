@@ -1,4 +1,8 @@
 <div>
+  <style>.indent {
+border-left: 1px solid #94828233;
+padding-left: 1em
+}</style>
   <p><strong>Example</strong> Euclidean 解析流形, 球面 <span><math><msup><mi mathvariant="normal">𝕊</mi><mi>𝑛</mi></msup></math></span> 的多种坐标</p>
   <ul>
     <li>函数图坐标, 函数方程 <span><math><mrow><mrow><mo>|</mo><mi>𝑥</mi><msup><mo>|</mo><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math></span> and 隐函数定理. e.g. <span><math><mrow><mi>𝑦</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>𝑥</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></span> for <span><math><mrow><msup><mi mathvariant="normal">𝕊</mi><mn>1</mn></msup><mo>⊂</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup></mrow></math></span></li>
@@ -7,28 +11,28 @@
     <li>测地线坐标</li>
   </ul>
   <p><strong>Example</strong> <span><math><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></math></span> 的参数曲线曲面. 解析函数 <span><math><mrow><mi>𝑓</mi><mo>:</mo><msup><mi mathvariant="normal">ℝ</mi><mn>2</mn></msup><mo>→</mo><msup><mi mathvariant="normal">ℝ</mi><mn>3</mn></msup></mrow></math></span>, <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>≠</mo><mn>0</mn></mrow></math></span> ==> 局部参数是局部解析同胚</p>
-  <p><code data-typst-label="manifold">&lt;manifold></code> := minimal structure to define manifold, 一族同维数坐标卡覆盖 <span><math><mi>𝑀</mi></math></span>, 用 Euclidean or Minkowski or 二次型解析的转换函数</p>
-  <p><code data-typst-label="orientable">&lt;orientable></code> 可定向 := 在切丛中可以解析地定义 <code>#link(&lt;orientation>)[]</code></p>
+  <p>  <code>manifold</code><em>_(tag)</em>   := minimal structure to define manifold, 一族同维数坐标卡覆盖 <span><math><mi>𝑀</mi></math></span>, 用 Euclidean or Minkowski or 二次型解析的转换函数</p>
+  <p>  <code>orientable</code><em>_(tag)</em>   可定向 := 在切丛中可以解析地定义 <code>#link(&lt;orientation>)[]</code></p>
   <p>等价于 <span><math><mtext>Diff</mtext></math></span> 的 <span><math><mrow><msup><mtext>det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>&lt;</mo><mn>0</mn></mrow></msub><mo>)</mo></mrow><mo>⊔</mo><msup><mtext> det</mtext><mrow><mo>−</mo><mn>1</mn></mrow></msup><mrow><mo>(</mo><msub><mi mathvariant="normal">ℝ</mi><mrow><mo>></mo><mn>0</mn></mrow></msub><mo>)</mo></mrow></mrow></math></span> 分解</p>
   <p>等价于存在坐标覆盖, 每个 transition function 微分 <span><math><mrow><mi>𝑑</mi><mi>𝑓</mi><mo>∈</mo><mtext> SO</mtext></mrow></math></span></p>
   <p><strong>Example</strong> <code>#link(&lt;Mobius-strip>)[]</code> 不可定向</p>
   <p>带边流形如果内部可定向, 则边界也可定向. 直觉上, 边界的局部有相同的内部 + 内部可定向 ==> 边界的局部有相同方向 ==> 边界方向被决定了</p>
-  <p><code data-typst-label="manifold-with-boundary">&lt;manifold-with-boundary></code> 带边流形. 坐标可以是 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维超平面包围的区域, 转换函数需要能够导出 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维子空间里的转换函数. 通常使用几乎处处解析来处理一些奇点</p>
-  <p><code data-typst-label="metric-manifold">&lt;metric-manifold></code> 流形上的 metric 是在每个切空间定义 metric, 等价于在流形切丛上选择 orthonormal frame bundle. 对 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> oritentable, 可以选择 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> 可定向的标架丛</p>
+  <p>  <code>manifold-with-boundary</code><em>_(tag)</em>   带边流形. 坐标可以是 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维超平面包围的区域, 转换函数需要能够导出 <span><math><mrow><mi>𝑛</mi><mo>−</mo><mn>1</mn></mrow></math></span> 维子空间里的转换函数. 通常使用几乎处处解析来处理一些奇点</p>
+  <p>  <code>metric-manifold</code><em>_(tag)</em>   流形上的 metric 是在每个切空间定义 metric, 等价于在流形切丛上选择 orthonormal frame bundle. 对 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> oritentable, 可以选择 <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow></math></span> 可定向的标架丛</p>
   <p>metric 可以继承自 submanifold 或 quotient manifold of <span><math><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup></math></span></p>
   <p><strong>Example</strong> …</p>
   <p>即使用二次型拓扑和微分定义了流形, 也仍然有很多不同的 metric. 一种性质良好的 metric 是 <code>#link(&lt;Einstein-metric.typ>)[]</code></p>
-  <p><code data-typst-label="isometry">&lt;isometry></code> := diffeomorphism 保持 metric <span><math><mi>𝑔</mi></math></span>. 通常也假设保持可定向流形的方向</p>
+  <p>  <code>isometry</code><em>_(tag)</em>   := diffeomorphism 保持 metric <span><math><mi>𝑔</mi></math></span>. 通常也假设保持可定向流形的方向</p>
   <p>微分同胚作用于 metric space, isometry 是这个群作用的 <code>#link(&lt;isotropy>)[]</code></p>
   <p>不同曲率的 metric 不能在相同的 orbit. 特别地, 零曲率和非零曲率的 metric 不能在相同的 oribt</p>
-  <p><code data-typst-label="δ-isometry">&lt;δ-isometry></code> <strong>alias</strong> <code data-typst-label="Killing-field">&lt;Killing-field></code></p>
+  <p>  <code>δ-isometry</code><em>_(tag)</em>   <strong>alias</strong>   <code>Killing-field</code><em>_(tag)</em>  </p>
   <p>将会用于流形上的作用量守恒流</p>
   <p><strong>Question</strong> δ-isometry 和 isometry 群的维数 <span><math><mrow><mo>≤</mo><mtext> dim </mtext><mrow><mo>(</mo><mrow><msup><mi mathvariant="normal">ℝ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mo>⋊</mo><mtext> SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></span></p>
   <p><strong>Example</strong> 一些具体的流形</p>
   <p>二次型流形 <span><math><mrow><msup><mi mathvariant="normal">ℚ</mi><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></msup><mrow><mo>(</mo><mrow><mo>±</mo><msup><mi>𝑟</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
   <p>(cf. ref-10 ref-11). group <span><math><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow><mo>)</mo></mrow></mrow><mo>,</mo><mtext>U</mtext><mo>,</mo><mtext>SU</mtext><mo>,</mo><mtext>Sp</mtext><mo>,</mo><mtext>SL</mtext><mo>,</mo><msub><mi>𝐺</mi><mn>2</mn></msub></mrow></math></span>. exp coordinate</p>
-  <p><code data-typst-label="Grassmannian-manifold">&lt;Grassmannian-manifold></code> <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></math></span> act on <span><math><mi>𝑘</mi></math></span> subspace <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑘</mi><mo>)</mo></mrow></mrow><mo>×</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mrow></mfrac></math></span> (orientable)</p>
-  <p><code data-typst-label="Stiefel-manifold">&lt;Stiefel-manifold></code> tautological frame bundle <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mfrac></math></span></p>
+  <p>  <code>Grassmannian-manifold</code><em>_(tag)</em>   <span><math><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow></math></span> act on <span><math><mi>𝑘</mi></math></span> subspace <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑘</mi><mo>)</mo></mrow></mrow><mo>×</mo><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mrow></mfrac></math></span> (orientable)</p>
+  <p>  <code>Stiefel-manifold</code><em>_(tag)</em>   tautological frame bundle <span><math><mfrac><mrow><mtext>SO</mtext><mrow><mo>(</mo><mi>𝑛</mi><mo>)</mo></mrow></mrow><mrow><mtext>SO</mtext><mrow><mo>(</mo><mrow><mi>𝑛</mi><mo>−</mo><mi>𝑘</mi></mrow><mo>)</mo></mrow></mrow></mfrac></math></span></p>
   <p>tautological bundle</p>
   <p>推广到 <span><math><mrow><mi>𝑝</mi><mo>,</mo><mi>𝑞</mi></mrow></math></span> 二次型的情况</p>
   <p>lens space</p>
