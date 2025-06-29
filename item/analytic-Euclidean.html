@@ -92,7 +92,7 @@ by 分部积分1𝑚!𝑑𝑚𝑓(𝑥+𝑡𝑣)𝑣𝑚&#x3D;−((1−𝑡)𝑚
 remainder estimation, 一致 𝑚+1 阶幂控制𝑓(𝑥+𝑣)−∑𝑚𝑛&#x3D;01𝑛!𝑑𝑛𝑓(𝑥)(𝑣𝑛)&#x3D;𝑜(𝑣𝑚)or𝑂(𝑣𝑚+1)
 ⩽1(𝑚+1)!|𝑣|𝑚+1sup𝑡∈[0,1]|𝑑𝑚+1𝑓(𝑥+𝑡𝑣)|
 
-let 幂级数 ∑𝐴𝑛(𝑣𝑛)  convergence-domain_(tag)   收敛域 :&#x3D; {𝑣∈𝕂𝑑:lim𝑁→∞∑𝑁𝑛&#x3D;0𝐴𝑛(𝑣𝑛)converge}计算幂级数的切换基点后的系数使用了求和的交换for 多项式, 求和有限, 求和顺序交换, 从而切换基点良定义 change-base-point-polynomial但是, 无限求和的极限, 如果不是绝对收敛, 并不总是兼容于求和顺序改变 series-rearrangement幂级数切换基点可能导致收敛域改变Example11−𝑧&#x3D;∑𝑧𝑛&#x3D;lim𝑛→∞1−𝑧𝑛+11−𝑧
+let 幂级数 ∑𝐴𝑛(𝑣𝑛)  convergence-domain_(tag)   在一点的收敛域 :&#x3D; {𝑣∈𝕂𝑑:lim𝑁→∞∑𝑁𝑛&#x3D;0𝐴𝑛(𝑣𝑛)converge}计算幂级数的切换基点后的系数使用了求和的交换for 多项式, 求和有限, 求和顺序交换, 从而切换基点良定义 change-base-point-polynomial但是, 无限求和的极限, 如果不是绝对收敛, 并不总是兼容于求和顺序改变 series-rearrangement幂级数切换基点可能导致收敛域改变Example11−𝑧&#x3D;∑𝑧𝑛&#x3D;lim𝑛→∞1−𝑧𝑛+11−𝑧
 
 with 𝑧𝑛+1&#x3D;|𝑧|𝑛+1𝑒𝐢(𝑛+1)𝜃收敛域是 |𝑧|&lt;1切换基点导致收敛域改变12∈{|𝑧|&lt;1}, 𝑤&#x3D;𝑧−12, 11−𝑧&#x3D;112−(𝑧−12)&#x3D;21−2𝑤收敛域 {𝑧&#x3D;𝑤+12:|𝑤|&lt;12}, 半径 12 的开球−12∈{|𝑧|&lt;1} 𝑤&#x3D;𝑧+12, 11−𝑧&#x3D;132−(𝑧+12)&#x3D;231−23𝑤收敛域 {𝑧&#x3D;𝑤−12:|𝑤|&lt;32}, 半径 32 的开球不断切换基点可以 &amp;quot;改变&amp;quot; 收敛到的值Examplelog(1−𝑧)∼∑1𝑛𝑧𝑛let Δ1,...,Δ𝑚∈ℂ with Δ1+···+Δ𝑚&#x3D;0let ∑1𝑛𝑧𝑛 逐次切换基点 Δ1,Δ1+Δ2,...,Δ1+···+Δ𝑚∈ℂ, 最后回到 0if 每次位移 Δ𝑖+1 都在基点 Δ1+···+Δ𝑖 的收敛域, 并使用幂级数极限then 最终的幂级数是 2𝑘𝜋𝐢+∑1𝑛𝑧𝑛, where 𝑘 是 Δ1,...,Δ𝑚 形成的道路绕 0 的圈数log(𝑧). 绕 1 转 𝑘 圈得到 2𝑘𝜋𝐢+log(𝑧)𝑧12&#x3D;𝑒12log𝑧绕 1 转 𝑘 圈得到 (−1)𝑘𝑧12, by 𝑒12⋅2𝑘𝜋𝐢&#x3D;(−1)𝑘  analytic-continuation_(tag)  良定义的延拓区域: 不受切换基点的影响极大延拓区域: 无法再良定义地延拓Examplelog(1−𝑧)∼∑1𝑛𝑧𝑛 收敛半径 1不能良定义地延拓到 ℂ∖{1}. by 绕 0 转 𝑘 圈得到 2𝑘𝜋𝐢+log(1−𝑧)极大良延拓区域是 ℂ∖{𝑥+𝐢0:𝑥⩽−1}11−𝑧∼∑𝑧𝑛 收敛半径 1可以良定义地延拓到 ℂ∖{1}, 重合于用 ℂ 除法定义的 11−𝑧𝑑𝑧log(1−𝑧)&#x3D;11−𝑧, or 𝑑𝑧log(𝑧)&#x3D;1𝑧1𝑥,𝑥∈(−∞,0) 和 1𝑥,𝑥∈(0,+∞) 已经是极大延拓1𝑧 的极大延拓是 ℂ∖01𝑧 的幂级数系数包含复数, 不同于 1𝑥 只包含实数  analytic-function_(tag)   解析函数 :&#x3D; 幂级数任何点收敛半径非零 + 极大解析延拓  analytic-isomorphism_(tag)   解析同胚 :&#x3D; 𝑓:𝐷↔𝐷′解析函数∀𝑥∈𝐷,𝑑𝑓(𝑥)∈GL(𝕂𝑑)same for 𝑓−1Example𝐴∈GL(𝑑,𝕂) 是解析同胚𝑓(𝑥)&#x3D;13𝑥3+𝑥𝑑𝑓𝑑𝑥&#x3D;𝑥2+1&gt;0 &#x3D;&#x3D;&gt; 𝑑𝑓−1𝑑𝑦&gt;0, 𝑓,𝑓−1 单调增 &#x3D;&#x3D;&gt; 𝑓 是 ℝ→ℝ 解析同胚𝑓(𝑧)&#x3D;13𝑧3+𝑧&#x3D;0, 𝑑𝑓𝑑𝑧&#x3D;𝑧2+1 in ℂ 有解 ±𝐢 &#x3D;&#x3D;&gt; 𝑑𝑓(±𝐢)∉GL &#x3D;&#x3D;&gt; 𝑓 不是 ℂ→ℂ 解析同胚𝑓(𝑥)&#x3D;𝑒𝑥 with 𝑑𝑓𝑑𝑥&#x3D;𝑒𝑥&gt;0 是 ℝ→ℝ&gt;0 解析同胚𝑓(𝑧)&#x3D;𝑒𝑧 with 𝑑𝑓𝑑𝑧&#x3D;𝑒𝑧≠0 是局部解析同胚, 但不是 ℂ→ℂ∖{0} 解析同胚. 非单射: 𝑒0&#x3D;𝑒𝐢2𝜋&#x3D;1尝试对幂级数空间定义距离. 启发自|𝐴𝑛(𝑣𝑛)|1𝑛⩽|𝐴𝑛|1𝑛|𝑣|1𝑅&#x3D;lim sup{|𝐴𝑛|1𝑛}三角不等式 |𝐴+𝐵|1𝑛⩽|𝐴|1𝑛+|𝐵|1𝑛 Proof by 两边 𝑛 power, 二项式展开  power-series-space_(tag)  幂级数空间⨁∞𝑛&#x3D;1Lin(⊙𝑛𝕂𝑑→𝕂𝑑′)
 
@@ -106,7 +106,7 @@ as 一致控制 for forall 𝑛⩾1幂级数空间是 distance 空间 and comple
 →0
   Sobolev-space_(tag)   for Sobolev anayltic space, try use 几乎处处解析 + ∫|1𝑛!𝑑𝑛𝑓|1𝑛 作为控制函数去逼近目标函数 ∫|1𝑛!𝜙𝑛−1𝑛!𝑑𝑛𝑔|1𝑛⩽∫|1𝑛!𝑑𝑛𝑓|1𝑛, where 𝜙𝑛 是 𝜙 的   weak-differential_(tag)   . (note: |𝐴| is linear-map-induced-norm) 或者只用带解析型积分 norm 限制的几乎处处解析空间, 或者对此空间进行积分 norm 的 Cauchy 网完备化更弱的网控制let 𝑟&lt;𝑅𝐴use data 𝐴,𝜀 and new data 𝑟{𝐵:∑𝑛⩾1|𝐴𝑛−𝐵𝑛|𝑟𝑛&lt;𝜀}
 
-Example 包括 𝐴 的截断多项式逼近, i.e. Taylor 多项式 by ∑𝑛&#x3D;0..∞|𝐴𝑛|𝑟𝑛&lt;∞⟹lim𝑁→∞∑𝑛&#x3D;𝑁..∞&#x3D;0出于对称性的考虑, 解析的定义应该不依赖于特定的幂级数展开基点不同基点的幂级数距离控制对比对基点 𝑥, 幂级数 𝐴,𝐵 with dist(𝐴,𝐵)&#x3D;𝜀同时切换基点到 𝑥+Δ系数估计|𝐴𝑚(𝑥+Δ)−𝐵𝑚(𝑥+Δ)|&#x3D;|∑∞𝑛&#x3D;𝑚⩾1(𝐴𝑛(𝑥)−𝐵𝑛(𝑥))(𝑛𝑚,𝑛−𝑚)Δ𝑛−𝑚|
+Example 包括 𝐴 的截断多项式逼近, i.e. Taylor 多项式 by ∑𝑛&#x3D;0..∞|𝐴𝑛|𝑟𝑛&lt;∞⟹lim𝑁→∞∑𝑛&#x3D;𝑁..∞&#x3D;0至于解析函数空间的拓扑, 直观是, 逐点用幂级数之间的距离, 然后全局定义域用类似连续函数空间所使用的 compact-open topology 技术出于对称性的考虑, 解析的定义应该不依赖于特定的幂级数展开基点不同基点的幂级数距离控制对比对基点 𝑥, 幂级数 𝐴,𝐵 with dist(𝐴,𝐵)&#x3D;𝜀同时切换基点到 𝑥+Δ系数估计|𝐴𝑚(𝑥+Δ)−𝐵𝑚(𝑥+Δ)|&#x3D;|∑∞𝑛&#x3D;𝑚⩾1(𝐴𝑛(𝑥)−𝐵𝑛(𝑥))(𝑛𝑚,𝑛−𝑚)Δ𝑛−𝑚|
 ⩽∑∞𝑛&#x3D;𝑚⩾1𝜀𝑛(𝑛𝑚,𝑛−𝑚)|Δ|𝑛−𝑚
 &#x3D;𝜀𝑚∑∞𝑝&#x3D;0(𝑝+𝑚𝑚,𝑝)|𝜀Δ|𝑝(use𝑝&#x3D;𝑛−𝑚)
 &#x3D;𝜀𝑚1(1−|𝜀Δ|)𝑚+1
@@ -117,7 +117,7 @@ Example 包括 𝐴 的截断多项式逼近, i.e. Taylor 多项式 by ∑𝑛&#
 
 let 𝑟&lt;𝑅(𝑥)&#x3D;&#x3D;&gt;limdist(𝐴,𝐵)(𝑥)→0sup|Δ|⩽𝑟{∑|𝐴𝑛(𝑥+Δ)−𝐵𝑛(𝑥+Δ)||𝑣|𝑛}&#x3D;0
 
-继续, 有限次let 𝑥𝑖&#x3D;𝑥+Δ1+···+Δ𝑖&#x3D;&#x3D;&gt; 一点 𝑥 的幂级数距离一致地控制区域 ⋃𝑁𝑖&#x3D;1𝔹(𝑥𝑖,𝑟𝑖) 的幂级数距离虽然这仍然无法保持解析延拓的良定义, e.g. log(𝑧)  analytic-space_(tag)  解析空间的网let 𝑓 解析, with domain 𝐷𝑓𝑓 的 网let 𝜀&gt;0let 𝐷⊂𝐷𝑓 and 𝐷 compact and 传递连通, i.e. for 𝑎,𝑏∈𝐷, 存在构造 ⋃𝑁𝑖&#x3D;1𝔹(𝑥𝑖,𝑟𝑖) 连接 𝑥1&#x3D;𝑎,𝑥𝑁&#x3D;𝑏forall 解析 𝑔 with property𝑔 收敛域包含 𝐷, sup𝑥∈𝐷dist(1𝑛!𝑑𝑛𝑓,1𝑛!𝑑𝑛𝑔)(𝑥)&lt;𝜀网的逼近方式: 𝐷→𝐷𝑓 and 𝜀→0when 验证网的性质 &amp;quot;∀𝐵′,𝐵″∈Net,∃𝐵∈Net,𝐵⊂𝐵′∩𝐵″&amp;quot;if 𝐷′,𝐷″ 分离, 需要构造传递连通的 𝐷 包含 𝐷′,𝐷″一种可能的构造方式: compact 折线连接 𝐷′,𝐷″, 使 dist(1𝑛!𝑑𝑛𝑓,1𝑛!𝑑𝑛𝑔)(𝑥)&lt;𝜀 的有界球覆盖道路每一点, use 有限覆盖幂级数空间和解析空间处理 𝑛⩾1 阶微分系数𝑛&#x3D;0 阶微分系数基本没影响一个基点的 𝑛&#x3D;0 系数的修改同时作用于其他基点, 且不影响 𝑛⩾1 系数, 𝐴𝑚(𝑥+Δ)&#x3D;∑∞𝑛&#x3D;𝑚⩾1𝐴𝑛(𝑥)(𝑛𝑚,𝑛−𝑚)Δ𝑛−𝑚compare 解析空间的网 vs 连续函数空间的网 (should be something compact open topology?)in 解析空间及其网  inverse-op-continous-in-analytic-space_(tag)   𝑓≈𝑔 &#x3D;&#x3D;&gt; 𝑓−1≈𝑔−1  compose-op-continous-in-analytic-space_(tag)   𝑓1≈𝑓2 and 𝑔1≈𝑔2 &#x3D;&#x3D;&gt; 𝑓1∘𝑔1≈𝑓2∘𝑔2或者说, −1,∘ 算子都是解析空间的连续函数same for linear 𝑓+𝑔, multiplication 𝑓𝑔, inversion 1𝑓?Example仿射线性𝑓(𝑥+𝑣)&#x3D;𝐴0+𝐴1𝑣收敛半径 ∞任何基点的幂级数的一阶项都是 const 𝐴1仿射线性空间内能定义一致距离 |𝐴1−𝐵1|&#x3D;sup𝑣∈𝕂ℙ𝑑−1|(𝐴1−𝐵1)(𝑣)|多项式映射𝑓(𝑥+𝑣)&#x3D;𝐴0+𝐴1𝑣+···+𝐴𝑛𝑣𝑛收敛半径 ∞多项式函数空间内无法定义一致距离  connected-analytic_(tag)   in 解析空间, 1𝑥,𝑥∈(−∞,0) 和 1𝑥,𝑥∈(0,+∞) 在不同的连通分支?连通分支内奇点的性质在解析同胚下不变  homotopy-analytic_(tag)   解析 同伦">
+继续, 有限次let 𝑥𝑖&#x3D;𝑥+Δ1+···+Δ𝑖&#x3D;&#x3D;&gt; 一点 𝑥 的幂级数距离一致地控制区域 ⋃𝑁𝑖&#x3D;1𝔹(𝑥𝑖,𝑟𝑖) 的幂级数距离虽然这仍然无法保持解析延拓的良定义, e.g. log(𝑧)  analytic-space_(tag)  解析空间的网let 𝑓 解析, with domain 𝐷𝑓𝑓 的 网let 𝜀&gt;0let 𝐷⊂𝐷𝑓 and 𝐷 compact and 传递连通, i.e. for 𝑎,𝑏∈𝐷, 存在构造 ⋃𝑁𝑖&#x3D;1𝔹(𝑥𝑖,𝑟𝑖) 连接 𝑥1&#x3D;𝑎,𝑥𝑁&#x3D;𝑏forall 解析 𝑔 with property𝑔 收敛域包含 𝐷, sup𝑥∈𝐷dist(1𝑛!𝑑𝑛𝑓,1𝑛!𝑑𝑛𝑔)(𝑥)&lt;𝜀网的逼近方式: 𝐷→𝐷𝑓 and 𝜀→0when 验证网的性质 &amp;quot;∀𝐵′,𝐵″∈Net,∃𝐵∈Net,𝐵⊂𝐵′∩𝐵″&amp;quot;if 𝐷′,𝐷″ 分离, 需要构造传递连通的 𝐷 包含 𝐷′,𝐷″一种可能的构造方式: compact 折线连接 𝐷′,𝐷″, 使 dist(1𝑛!𝑑𝑛𝑓,1𝑛!𝑑𝑛𝑔)(𝑥)&lt;𝜀 的有界球覆盖道路每一点, use 有限覆盖幂级数空间和解析空间处理 𝑛⩾1 阶微分系数𝑛&#x3D;0 阶微分系数基本没影响一个基点的 𝑛&#x3D;0 系数的修改同时作用于其他基点, 且不影响 𝑛⩾1 系数, 𝐴𝑚(𝑥+Δ)&#x3D;∑∞𝑛&#x3D;𝑚⩾1𝐴𝑛(𝑥)(𝑛𝑚,𝑛−𝑚)Δ𝑛−𝑚compare 解析空间的网 vs 连续函数空间的网 (should be something compact open topology?)in 解析空间及其网  inverse-op-continous-in-analytic-space_(tag)   𝑓≈𝑔 &#x3D;&#x3D;&gt; 𝑓−1≈𝑔−1  compose-op-continous-in-analytic-space_(tag)   𝑓1≈𝑓2 and 𝑔1≈𝑔2 &#x3D;&#x3D;&gt; 𝑓1∘𝑔1≈𝑓2∘𝑔2或者说, −1,∘ 算子都是解析空间的连续函数same for linear 𝑓+𝑔, multiplication 𝑓𝑔, inversion 1𝑓?Example仿射线性𝑓(𝑥+𝑣)&#x3D;𝐴0+𝐴1𝑣收敛半径 ∞任何基点的幂级数的一阶项都是 const 𝐴1仿射线性空间内能定义一致距离 |𝐴1−𝐵1|&#x3D;sup𝑣∈𝕂ℙ𝑑−1|(𝐴1−𝐵1)(𝑣)|多项式映射𝑓(𝑥+𝑣)&#x3D;𝐴0+𝐴1𝑣+···+𝐴𝑛𝑣𝑛收敛半径 ∞多项式函数空间内无法定义一致距离  connected-analytic_(tag)   in 解析空间, 1𝑥,𝑥∈(−∞,0) 和 1𝑥,𝑥∈(0,+∞) 在不同的连通分支?连通分支内奇点的性质在解析同胚下不变  homotopy-analytic_(tag)   解析 同伦  power-series-analytic-equivalent_(tag)   解析等价的幂级数 :&#x3D; 两个幂级数来自同一个解析函数在不同点的幂级数展开  power-series-analytic-homotopy-equivalent_(tag)   解析同伦等价的幂级数 :&#x3D; 两个幂级数来自同一个解析函数同伦类在不同点的幂级数展开然后可以幂级数之间的定义不等价版本的性质">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 
@@ -22613,7 +22613,7 @@ ol ::marker, ul ::marker {
     </defs>
 </svg>
 </span></p>
-  <p>  <code>convergence-domain</code><em>_(tag)</em>   收敛域 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 164.86188888888887 19.085000000000004" width="164.86188888888887pt" height="19.085000000000004pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+  <p>  <code>convergence-domain</code><em>_(tag)</em>   在一点的收敛域 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 164.86188888888887 19.085000000000004" width="164.86188888888887pt" height="19.085000000000004pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 12.956900000000001)">
             <g class="typst-text" transform="scale(1, -1)">
@@ -31815,6 +31815,7 @@ ol ::marker, ul ::marker {
 </svg>
 </span></p>
   </div>
+  <p>至于解析函数空间的拓扑, 直观是, 逐点用幂级数之间的距离, 然后全局定义域用类似连续函数空间所使用的 compact-open topology 技术</p>
   <p>出于对称性的考虑, 解析的定义应该不依赖于特定的幂级数展开基点</p>
   <p>不同基点的幂级数距离控制对比</p>
   <div class="indent">
@@ -36787,6 +36788,9 @@ ol ::marker, ul ::marker {
 </span> 在不同的连通分支?</p>
   <p>连通分支内奇点的性质在解析同胚下不变</p>
   <p>  <code>homotopy-analytic</code><em>_(tag)</em>   解析 同伦</p>
+  <p>  <code>power-series-analytic-equivalent</code><em>_(tag)</em>   解析等价的幂级数 := 两个幂级数来自同一个解析函数在不同点的幂级数展开</p>
+  <p>  <code>power-series-analytic-homotopy-equivalent</code><em>_(tag)</em>   解析同伦等价的幂级数 := 两个幂级数来自同一个解析函数同伦类在不同点的幂级数展开</p>
+  <p>然后可以幂级数之间的定义不等价版本的性质</p>
 </div>
 </div>
                     </main>
