@@ -1,0 +1,55 @@
+/* Globals */
+
+:root {
+  --sidebar-width: min(300px, max(23.6vw, 200px));
+  --page-padding: 15px;
+  --content-max-width: 750px;
+  --menu-bar-height: 50px;
+  --mono-font: 'Source Code Pro', Consolas, 'Ubuntu Mono', Menlo, 'DejaVu Sans Mono', monospace,
+    monospace;
+  --code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
+}
+
+/* Themes */
+
+.coal {
+  --bg: hsl(0, 0%, 0%);
+  --fg: #0058b1;
+
+  --sidebar-bg: #000000;
+  --sidebar-fg: #0058b1;
+  --sidebar-non-existant: #505254;
+  --sidebar-active: #2b8900;
+  --sidebar-spacer: #393939;
+
+  --scrollbar: var(--sidebar-fg);
+
+  --icons: #43484d;
+  --icons-hover: #b3c0cc;
+
+  --links: #008690;
+
+  --inline-code-color: #c5c8c6;
+
+  --theme-popup-bg: #000000;
+  --theme-popup-border: #43484d;
+  --theme-hover: #1f2124;
+
+  --quote-bg: hsl(0, 0%, 0%);
+  --quote-border: hsl(234, 21%, 23%);
+
+  --table-border-color: hsl(200, 7%, 13%);
+  --table-header-bg: hsl(0, 0%, 0%);
+  --table-alternate-bg: hsl(0, 0%, 0%);
+
+  --searchbar-border-color: #aaa;
+  --searchbar-bg: #000000;
+  --searchbar-fg: #2f00ff;
+  --searchbar-shadow-color: #aaa;
+  --searchresults-header-fg: #666;
+  --searchresults-border-color: #98a3ad;
+  --searchresults-li-bg: #000000;
+  --search-mark-bg: #355c7d;
+
+  --color-scheme: dark;
+}
