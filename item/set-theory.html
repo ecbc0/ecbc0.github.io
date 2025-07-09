@@ -62,7 +62,7 @@ property-group-multiplication(𝐺,𝑚)
 (e.g. 𝑚∈(𝐺2→𝐺))
 }
 
-可以被分成多句, 使得可以方便的加入/移除 property, 来得到不同的 structSet0,Set1,... 看起来像自然数集 ℕ, 所以应该再假设新的 hierarchy Setℕ 吗? 然后对 Setℕ, 继续使用 object construct rule ...Set0 语言是潜无穷的, hierarchy-order-of-set 语言也是如此. 当然绝大多数编程语言都是潜无穷的似乎有两种 math object已经用有限步构造出来的 math object. 它代表以一些规则所构造的类型直接假设的 math object 类型或者抽象的 type, 内存中的类型及其变量作为一种 placeholder (占位符). 在编程中, 这种概念叫做 generics (泛型). 它代表抽象符号之间的类型关系type 之间的同态的使用可以对证明带来方便. 有时可以让计算从特殊情况推出一般情况的证明, 如果特殊情况的证明没有用到特殊情况的专有性质, 则实际上是隐藏的对一般情况的证明  universal-type_(tag)  如果不假设可以随意使用 universal-type, 我发现自己真的无法理解很多事情. 所以, 我的选择是, 可以随意使用 universal-type, 即使进入了死循环或自指悖论, 也是正确的语言, 虽然此时是无用的结果Example   Russell-paradox_(tag)  使用 set theory rules 定义𝐴≔{𝑥∈universal-set:¬(𝑥∈𝑥)}∈universal-set
+可以被分成多句, 使得可以方便的加入/移除 property, 来得到不同的 structSet0,Set1,... 看起来像自然数集 ℕ, 所以应该再假设新的 hierarchy Setℕ 吗? 然后对 Setℕ, 继续使用 object construct rule ...Set0 语言是潜无穷的, hierarchy-order-of-set 语言也是如此. 当然绝大多数编程语言都是潜无穷的似乎有两种 math object已经用有限步构造出来的 math object. 它代表以一些规则所构造的类型直接假设的 math object 类型或者抽象的 type, 内存中的类型及其变量作为一种 placeholder (占位符). 在编程中, 这种概念叫做 generics (泛型). 它代表抽象符号之间的类型关系type 之间的同态的使用可以对证明带来方便. 有时可以让计算从特殊情况推出一般情况的证明, 如果特殊情况的证明没有用到特殊情况的专有性质, 则实际上是隐藏的对一般情况的证明  universal-type_(tag)  如果不假设可以随意使用 universal-type, 我发现自己真的无法理解很多事情. 所以, 我的选择是, 可以随意使用 universal-type, 即使进入了死循环或自指悖论, 也是正确的语言, 虽然此时是无用的结果. 类似的东西是, 一般编程语言可以手动构造死循环, 但这并不能说明这种编程语言是错的Example   Russell-paradox_(tag)  使用 set theory rules 定义𝐴≔{𝑥∈universal-set:¬(𝑥∈𝑥)}∈universal-set
 
 然后让编译器去计算命题 𝐴∈𝐴 的 bool, 由于 𝐴∈universal-set &#x3D; true, 编译器只计算 ¬(𝐴∈𝐴) 的 bool, 然后发现 not 函数, 所以计算 not 里面的 bool, 但这又回到了计算 𝐴∈𝐴 的 bool, 编译器可能选择进入电路死循环对于有限集, 𝑥∉𝑥, 或者无法判断 𝑥∈𝑥, e.g. {1}∉{1}, 因为 {1}≠1∈{1}, 或者没有定义 𝑥∈1 这个命题是 true propositionExample   self-referential-paradox_(tag)   自指悖论. &amp;quot;这个句子是错的&amp;quot;this_sentence_is_false : bool &#x3D; false;loop:  switch (this_sentence_is_false) {    false &#x3D;&gt; this_sentence_is_false &#x3D; true,    true &#x3D;&gt; this_sentence_is_false &#x3D; false  }   goto loop};或者用分层绕过自指悖论 (this_sentence &#x3D; false) &#x3D; true. 认为它们是不同的句子和判断, 认为它并不能自指  dependent-distributive_(tag)  union &amp;amp; interset⋂𝑎∈𝐴⋃𝑥∈∏𝐴𝑥(𝑎)&#x3D;⋃𝑥∈∏𝐴⋂𝑎∈𝐴𝑥(𝑎)
 
@@ -10191,7 +10191,7 @@ ol ::marker, ul ::marker {
   <p>type 之间的同态的使用可以对证明带来方便. 有时可以让计算从特殊情况推出一般情况的证明, 如果特殊情况的证明没有用到特殊情况的专有性质, 则实际上是隐藏的对一般情况的证明</p>
   <p>  <code>universal-type</code>_(<em>tag</em>)  </p>
   <div class="indent">
-    <p>如果不假设可以随意使用 universal-type, 我发现自己真的无法理解很多事情. 所以, 我的选择是, 可以随意使用 universal-type, 即使进入了死循环或自指悖论, 也是正确的语言, 虽然此时是无用的结果</p>
+    <p>如果不假设可以随意使用 universal-type, 我发现自己真的无法理解很多事情. 所以, 我的选择是, 可以随意使用 universal-type, 即使进入了死循环或自指悖论, 也是正确的语言, 虽然此时是无用的结果. 类似的东西是, 一般编程语言可以手动构造死循环, 但这并不能说明这种编程语言是错的</p>
     <p><strong>Example</strong>   <code>Russell-paradox</code>_(<em>tag</em>)  </p>
     <div class="indent">
       <p>使用 set theory rules 定义</p>
