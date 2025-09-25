@@ -26,7 +26,7 @@ or¬(∀𝑎∈𝐴,𝑝(𝑎))⟺∃𝑎∈𝐴,¬𝑝(𝑎)
 
 same for ⋁ [distributive-forall-exists] ⋀𝑎∈𝐴⋁𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋁𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)
 
-推导的自然语言例子如果下雨, 我不会出门下雨了所以我不会出门这个例子类似于 conditional branch (条件分支)let rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,};let rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,}; [inference]  对于数学语言, 那就是编译器读取到 formula 𝑝,𝑞编译器读取到 formula 𝑝⇒𝑞 is true proposition (可能来自定义)编译器读取到 formula 𝑝 is true proposition然后语言规则设置是, 编译器根据这种条件 (来自内存), 赋予 formula 𝑞 的 bool 值为 true i.e. 设置 𝑞 is true proposition [proof]  证明就是编译通过 𝑝⇒𝑞 is true proposition虽然我对 ⋀𝑥∈2𝐴(𝑥∈∅2𝐴⇒𝑃(𝑥)) is always true proposition 这种类型的虚空论证感到很迷惑, 但是没什么理由放弃对某个集合 𝐴 的局部空集族定义交集, 只好以某种角度去接受, 例如, 不用构造证明就当作是对的所以自动跳过 …如果接受这种类型的虚空蕴含, 那么会有 (𝑝⇒𝑞)&#x3D;(¬𝑝)∨𝑞𝑝⇔𝑞≔(𝑝⇒𝑞)∧(𝑞⇒𝑝) 并发现 𝑝⇔𝑞 就是 𝑝&#x3D;𝑞 [reverse-inference]  反向推导. 如果结果是我出门了, 那么肯定不是下雨的结果. 如果条件分支的结果是 out &#x3D; true, 这不是 rain &#x3D; true 的结果. 由于理想二进制计算机的 bool 值必定二选一, 所以只能是 rain &#x3D; false 的结果. 这可以被写为条件分支match (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};match (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};数学上, 反向推导写为 formula ¬𝑞⇒¬𝑝, 并定义等价到 𝑝⇒𝑞 [reverse-proof]  反证明就是编译通过 ¬𝑝⇒¬𝑞 is true proposition演绎证明还需要三段论 (syllogism)所有生物都会死人是生物所以所有人都会死其中 &amp;quot;所有生物都会死&amp;quot; 是特殊构造的一种命题 [syllogism]  三段论推导是语言规则编译器读取到 formula (∀𝑎∈𝐴,𝑝(𝑎)) is true proposition (可能来自定义 e.g. union))编译器读取到声明 let 𝑎′∈𝐴 is true proposition编译器读取到 formula 𝑝(𝑎′)然后编译器根据这种条件 (来自内存) 设置 𝑝(𝑎′) is true proposition也即, 编译器根据声明 (∀𝑎∈𝐴,𝑝(𝑎)) (可能 &amp;quot;无限&amp;quot;) 来实现对数据的具体构造 (有限)或者理解为, 这种规则和行为就是在定义 (∀𝑎∈𝐴,𝑝(𝑎)) 这种概念本身通常也被写为等价的规则 let 𝑎′∈𝐴, then 特殊的推导 formula (∀𝑎∈𝐴,𝑝(𝑎))⟹𝑝(𝑎′) is always true proposition. 这种形式通常被用于 前面 所说的 &amp;quot;证明就是编译通过 𝑝⇒𝑞 is true proposition&amp;quot;反向三段论: let 𝑎′∈𝐴, then 等价的 formula ¬𝑝(𝑎′)⟹¬(∀𝑎∈𝐴,𝑝(𝑎))or∃𝑎∈𝐴,¬𝑝(𝑎) is true proposition我们可能永远不知道一个 bool unknow 的 proposition 是否能被构造性地证明, i.e. 有限步骤编译成功target proposition 来自哪里? 可能是相关于现实世界的模型证明需要展开大量句子, 尽管计算机处理 string 是非常快的. 无论如何, 性能优化? 仅在需要时使用 (lazy load)? 两个 proposition 不相互依赖时, 并行 (parallel)? 假设已经证明过的结果 (incremental compilation)?A proposition has many proofs with different runtime data flow以下讨论 math-object-construct-rule (数学对象构造规则) alias set-theory (集合论) [natural-number]  ℕnatrual number (自然数) 0,1,2,… and natrual number set (自然数集) ℕ is object. 0,1,2,…∈ℕ is true proposition但是计算机无法处理无限. 为了让计算机能用有限的字符和内存去表示自然数集, 把 𝑛,ℕ 和 +1 函数作为内存地址里的有限 symbol, 定义以下为 true proposition0∈ℕ𝑛∈ℕ⟹𝑛+1∈ℕ等价于用指令流告诉计算机如何连续地 +1? 也联系到归纳法有限的字符的代价是潜在无限的时间, 总是借助了数数或者周期电路定义语言展开𝑎≠𝑏≔¬(𝑎&#x3D;𝑏)𝑎∉𝐴≔¬(𝑎∈𝐴)由于 “定义语言展开” 很长, 因此通常 abbreviated to &amp;quot;definition&amp;quot; &amp;quot;def&amp;quot;其实 symbol &#x3D; 通常也被用来表示定义语言展开或者规定语言转化. 具体自然数的 &#x3D; 可以直接定义为用计算机电路比较内存的值 [declare-element-of-set] If 𝐴 is non empty 𝐴≠∅ (此信息来自 𝐴 的定义), we can define symbol 𝑎 and construct true proposition (let) 𝑎∈𝐴可以构造有限个 declare 语句 [product] let 𝐴0,…,𝐴𝑛 be set, let 𝐴0×⋯×𝐴𝑛 is set𝑥∈𝐴0×⋯×𝐴𝑛≔⋀𝑖∈{0,…,𝑛}⋁𝑎∈𝐴𝑖(𝑥,𝑖)&#x3D;𝑎
+推导的自然语言例子如果下雨, 我不会出门下雨了所以我不会出门这个例子类似于 conditional branch (条件分支)let rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,};let rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,};类似于通常的编程语言的 if block, 在条件不满足时自动跳过执行区if (rain &#x3D; true) {  out &#x3D; false}if (rain &#x3D; true) {  out &#x3D; false} [inference]  对于数学语言, 那就是编译器读取到 formula 𝑝,𝑞编译器读取到 formula 𝑝⇒𝑞 is true proposition (可能来自定义)编译器读取到 formula 𝑝 is true proposition然后语言规则设置是, 编译器根据这种条件 (来自内存), 赋予 formula 𝑞 的 bool 值为 true i.e. 设置 𝑞 is true proposition [proof]  证明就是编译通过 𝑝⇒𝑞 is true proposition虽然我对 ⋀𝑥∈2𝐴(𝑥∈∅2𝐴⇒𝑃(𝑥)) is always true proposition 这种类型的虚空论证感到很迷惑, 但是没什么理由放弃对某个集合 𝐴 的局部空集族定义交集, 只好以某种角度去接受, 例如, 不用构造证明就当作是对的所以自动跳过, 或者编程语言中的 if block 的跳过, 没有产生 error …如果接受这种类型的虚空蕴含, 那么会有 (𝑝⇒𝑞)&#x3D;(¬𝑝)∨𝑞𝑝⇔𝑞≔(𝑝⇒𝑞)∧(𝑞⇒𝑝) 并发现 𝑝⇔𝑞 就是 𝑝&#x3D;𝑞 [reverse-inference]  反向推导. 如果结果是我出门了, 那么肯定不是下雨的结果. 如果条件分支的结果是 out &#x3D; true, 这不是 rain &#x3D; true 的结果. 由于理想二进制计算机的 bool 值必定二选一, 所以只能是 rain &#x3D; false 的结果. 这可以被写为条件分支match (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};match (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};数学上, 反向推导写为 formula ¬𝑞⇒¬𝑝, 并定义等价到 𝑝⇒𝑞 [reverse-proof]  反证明就是编译通过 ¬𝑝⇒¬𝑞 is true proposition演绎证明还需要三段论 (syllogism)所有生物都会死人是生物所以所有人都会死其中 &amp;quot;所有生物都会死&amp;quot; 是特殊构造的一种命题 [syllogism]  三段论推导是语言规则编译器读取到 formula (∀𝑎∈𝐴,𝑝(𝑎)) is true proposition (可能来自定义 e.g. union))编译器读取到声明 let 𝑎′∈𝐴 is true proposition编译器读取到 formula 𝑝(𝑎′)然后编译器根据这种条件 (来自内存) 设置 𝑝(𝑎′) is true proposition也即, 编译器根据声明 (∀𝑎∈𝐴,𝑝(𝑎)) (可能 &amp;quot;无限&amp;quot;) 来实现对数据的具体构造 (有限)或者理解为, 这种规则和行为就是在定义 (∀𝑎∈𝐴,𝑝(𝑎)) 这种概念本身通常也被写为等价的规则 let 𝑎′∈𝐴, then 特殊的推导 formula (∀𝑎∈𝐴,𝑝(𝑎))⟹𝑝(𝑎′) is always true proposition. 这种形式通常被用于 前面 所说的 &amp;quot;证明就是编译通过 𝑝⇒𝑞 is true proposition&amp;quot;反向三段论: let 𝑎′∈𝐴, then 等价的 formula ¬𝑝(𝑎′)⟹¬(∀𝑎∈𝐴,𝑝(𝑎))or∃𝑎∈𝐴,¬𝑝(𝑎) is true proposition我们可能永远不知道一个 bool unknow 的 proposition 是否能被构造性地证明, i.e. 有限步骤编译成功target proposition 来自哪里? 可能是相关于现实世界的模型证明需要展开大量句子, 尽管计算机处理 string 是非常快的. 无论如何, 性能优化? 仅在需要时使用 (lazy load)? 两个 proposition 不相互依赖时, 并行 (parallel)? 假设已经证明过的结果 (incremental compilation)?A proposition has many proofs with different runtime data flow以下讨论 math-object-construct-rule (数学对象构造规则) alias set-theory (集合论) [natural-number]  ℕnatrual number (自然数) 0,1,2,… and natrual number set (自然数集) ℕ is object. 0,1,2,…∈ℕ is true proposition但是计算机无法处理无限. 为了让计算机能用有限的字符和内存去表示自然数集, 把 𝑛,ℕ 和 +1 函数作为内存地址里的有限 symbol, 定义以下为 true proposition0∈ℕ𝑛∈ℕ⟹𝑛+1∈ℕ等价于用指令流告诉计算机如何连续地 +1? 也联系到归纳法有限的字符的代价是潜在无限的时间, 总是借助了数数或者周期电路定义语言展开𝑎≠𝑏≔¬(𝑎&#x3D;𝑏)𝑎∉𝐴≔¬(𝑎∈𝐴)由于 “定义语言展开” 很长, 因此通常 abbreviated to &amp;quot;definition&amp;quot; &amp;quot;def&amp;quot;其实 symbol &#x3D; 通常也被用来表示定义语言展开或者规定语言转化. 具体自然数的 &#x3D; 可以直接定义为用计算机电路比较内存的值 [declare-element-of-set] If 𝐴 is non empty 𝐴≠∅ (此信息来自 𝐴 的定义), we can define symbol 𝑎 and construct true proposition (let) 𝑎∈𝐴可以构造有限个 declare 语句 [product] let 𝐴0,…,𝐴𝑛 be set, let 𝐴0×⋯×𝐴𝑛 is set𝑥∈𝐴0×⋯×𝐴𝑛≔⋀𝑖∈{0,…,𝑛}⋁𝑎∈𝐴𝑖(𝑥,𝑖)&#x3D;𝑎
 
 表达式 (𝑥,𝑖) 在内存中的数据结构含义应该是清晰的Abbreviation 𝐴×𝐴&#x3D;𝐴2. in finite case, number of elements |∏𝑛1𝐴(𝑖)|&#x3D;∏𝑛1|𝐴(𝑖)| [sum] let 𝐴0,…,𝐴𝑛 be set then 𝐴0+⋯+𝐴𝑛 is a set𝑥∈𝐴0+⋯+𝐴𝑛≔⋁𝑖∈{0,…,𝑛}⋁𝑎∈𝐴𝑖𝑥&#x3D;(𝑖,𝑎)
 
@@ -2847,6 +2847,77 @@ body {
   });
 });</script>
   </div>
+  <p>类似于通常的编程语言的 if block, 在条件不满足时自动跳过执行区</p>
+  <div style="position: relative; width: 100%; font-size: 0.8em" class="zebraw-code-block">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; pointer-events: none; border-radius: 0.34em">
+      <div style="background: #f5f5f5; width: 100%">
+        <div style="padding: 0.34em 0.34em; user-select: none; opacity: 0; color: transparent"></div>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%; background: #f5f5f5">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; user-select: none; opacity: 0; color: transparent"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative"><span style="user-select: none; opacity: 0; color: transparent">if</span><span style="user-select: none; opacity: 0; color: transparent"> </span><span style="user-select: none; opacity: 0; color: transparent">(</span><span style="user-select: none; opacity: 0; color: transparent">rain </span><span style="user-select: none; opacity: 0; color: transparent">=</span><span style="user-select: none; opacity: 0; color: transparent"> </span><span style="user-select: none; opacity: 0; color: transparent">true</span><span style="user-select: none; opacity: 0; color: transparent">)</span><span style="user-select: none; opacity: 0; color: transparent"> </span><span style="user-select: none; opacity: 0; color: transparent">{</span></pre>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%; background: #f5f5f5">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; user-select: none; opacity: 0; color: transparent"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative"><span style="user-select: none; opacity: 0; color: transparent">  out </span><span style="user-select: none; opacity: 0; color: transparent">=</span><span style="user-select: none; opacity: 0; color: transparent"> </span><span style="user-select: none; opacity: 0; color: transparent">false</span></pre>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%; background: #f5f5f5">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; user-select: none; opacity: 0; color: transparent"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative"><span style="user-select: none; opacity: 0; color: transparent">}</span></pre>
+      </div>
+      <div style="background: #f5f5f5; width: 100%">
+        <div style="padding: 0.34em 0.34em; user-select: none; opacity: 0; color: transparent"></div>
+      </div>
+    </div>
+    <div style="overflow-x: auto; overflow-y: hidden">
+      <div style="width: 100%">
+        <div style="padding: 0.34em 0.34em"></div>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%" class="zebraw-code-line-container">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; opacity: 0.7"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative" class="zebraw-code-line"><span style="color: #d73a49; font-weight: medium">if</span><span style="color: #000000; font-weight: medium"> </span><span style="color: #000000; font-weight: medium">(</span><span style="color: #000000; font-weight: medium">rain </span><span style="color: #d73a49; font-weight: medium">=</span><span style="color: #000000; font-weight: medium"> </span><span style="color: #d73a49; font-weight: medium">true</span><span style="color: #000000; font-weight: medium">)</span><span style="color: #000000; font-weight: medium"> </span><span style="color: #000000; font-weight: medium">{</span></pre>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%" class="zebraw-code-line-container">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; opacity: 0.7"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative" class="zebraw-code-line"><span style="color: #000000; font-weight: medium">  out </span><span style="color: #d73a49; font-weight: medium">=</span><span style="color: #000000; font-weight: medium"> </span><span style="color: #d73a49; font-weight: medium">false</span></pre>
+      </div>
+      <div style="text-align: left; display: flex; align-items: center; width: 100%" class="zebraw-code-line-container">
+        <pre style="margin: 0; text-align: right; vertical-align: top; user-select: none; flex-shrink: 0; width: 0; padding: 0.34em 0.65em 0.34em 0.35em; height: 100%; opacity: 0.7"></pre>
+        <pre style="padding-top: 0.34em; padding-bottom: 0.34em; margin: 0; padding-left: 0.34em; padding-right: 0.34em; position: relative" class="zebraw-code-line"><span style="color: #000000; font-weight: medium">}</span></pre>
+      </div>
+      <div style="width: 100%">
+        <div style="padding: 0.34em 0.34em"></div>
+      </div>
+    </div>
+    <script>document.querySelectorAll('.zebraw-code-block').forEach(codeBlock => {
+  const copyButton = codeBlock.querySelector('.zebraw-code-lang');
+  if (!copyButton) return;
+
+  copyButton.style.cursor = 'pointer';
+  copyButton.title = 'Click to copy code';
+
+  copyButton.addEventListener('click', () => {
+    const code = Array.from(codeBlock.querySelectorAll('.zebraw-code-line'))
+      .map(line => line.textContent)
+      .join('\n');
+
+    navigator.clipboard.writeText(code)
+      .catch(() => {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      });
+
+    const originalTitle = copyButton.title;
+    copyButton.title = 'Code copied!';
+    setTimeout(() => copyButton.title = originalTitle, 2000);
+  });
+});</script>
+  </div>
   <p> <strong>[</strong><span class="typst-tag">inference</span><strong data-typst-label="inference">]</strong>  对于数学语言, 那就是</p>
   <ul>
     <li>编译器读取到 formula <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 19.616 8.568" width="19.616pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
@@ -3128,7 +3199,7 @@ body {
         </symbol>
     </defs>
 </svg>
-</span> 的局部空集族定义交集, 只好以某种角度去接受, 例如, 不用构造证明就当作是对的所以自动跳过 …</p>
+</span> 的局部空集族定义交集, 只好以某种角度去接受, 例如, 不用构造证明就当作是对的所以自动跳过, 或者编程语言中的 if block 的跳过, 没有产生 error …</p>
   <p>如果接受这种类型的虚空蕴含, 那么会有 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 97.65066666666667 8.568" width="97.65066666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 8.988)">
