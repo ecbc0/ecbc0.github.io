@@ -9,7 +9,7 @@
 
     <!-- Custom HTML head -->
     <!-- Put your customized HTML <head> meta here. -->
-    <meta name="description" content="Typst Book自然数 ℕ 的加法𝑎 是数 𝑎 次 1, 𝑎+𝑏 是先数 𝑎 次, 再数 𝑏 次结合律: (𝑎+𝑏)+𝑐&#x3D;𝑎+(𝑏+𝑐)交换律: 𝑎+𝑏&#x3D;𝑏+𝑎Proof 在现实世界的直观是, 对于数数 +1, 无论怎样把数数任务手动分成几个子任务, 都不会影响结果, 而且总的分解方式有限. 加法结合律和交换律只是其中的特殊情况. 就像我们通过数数来认识自然数一样, 我们总是可以通过数数认识交换律和结合律. 所有东西都 reduce to 完全加法分解的情况, 只有大量 1 的交换律和结合律对计算机来说似乎难以表达这种直观, 但似乎所有的有限结果一定会正确. 类似于 自然数中所做的, 为了让计算机能用有限的字符和内存以及有限的时间 (以及潜在的无限时间) 去表达这种对所有自然数成立的性质, 需要定义 (假设, 公理) 它是 true proposition通常的证明是使用最小的假设 (公理), 1 的结合律 (𝑎+𝑏)+1&#x3D;𝑎+(𝑏+1) 或者加法的定义 (𝑎+1)+𝑏&#x3D;(𝑎+𝑏)+1, 然后推出其它极端地说, 如果我们总是将可以用少量公理证明的结论设为公理, 那么我们就没有任何证明了. 因此我们可能会使用最少公理, 不过至少我让选择假设更对称性的 (𝑎+𝑏)+1&#x3D;(𝑎+1)+𝑏&#x3D;𝑎+(𝑏+1)自然数 ℕ 的乘法𝑎⋅𝑏 是数 𝑎 次的数 𝑏 次也满足交换律和结合律. 在现实世界的直观是 &amp;quot;二维和三维矩形&amp;quot;, 对于数数 +1, 无论分解成怎么样的 product 分解的子任务, 都不影响结果. 所以乘法交换律和结合律只是完全乘法分解 i.e. 素数分解的特殊情况, 而且总分解次数有限自然数运算分配律(𝑎+𝑏)⋅𝑐&#x3D;𝑎⋅𝑐+𝑏⋅𝑐直观是用二维矩形的边长的 sum 分解整数 ℤ数轴有两个方向有理数 ℚ𝑛 等分操作, 乘法的逆 1𝑛不要混淆于 ℕ,ℤ 的除, 余, 那是一个数 𝑎 另一个数 𝑏 的逐次减法, 而不是等分实数 ℝ实数的一种直观是长度. 或者包含有理数 + 线序 + 序完备鉴于实数的直观性, 可以认为它存在, 用很多公理去定义实数 i.e. 假设 true proposition. 但也可以从有理数 &amp;quot;恢复&amp;quot; 实数无理数的例子代数整数 algebraic-integer≔{𝑥∈ℝ:(𝑥𝑛+𝑎𝑛−1𝑥𝑛−1+⋯+𝑎0&#x3D;0)∧(𝑎0,𝑎1,…,𝑎𝑛−1∈ℤ)}代数整数里的 &amp;quot;整数&amp;quot; 是因为 algebraic-integer∩ℚ&#x3D;ℤProof (p.43 of ref-8)取 𝑝,𝑞∈ℤ 互素. 𝑥&#x3D;𝑝𝑞 代入方程, 乘 𝑞𝑛𝑝𝑛+𝑎𝑛−1𝑞𝑝𝑛−1+⋯+𝑎0𝑞𝑛&#x3D;0
+    <meta name="description" content="Typst Book自然数 ℕ 的加法𝑎 是数 𝑎 次 1, 𝑎+𝑏 是先数 𝑎 次, 再数 𝑏 次结合律: (𝑎+𝑏)+𝑐&#x3D;𝑎+(𝑏+𝑐)交换律: 𝑎+𝑏&#x3D;𝑏+𝑎Proof 在现实世界的直观是, 对于数数 +1, 无论怎样把数数任务手动分成几个子任务, 都不会影响结果, 而且总的分解方式有限. 加法结合律和交换律只是其中的特殊情况. 就像我们通过数数来认识自然数一样, 我们总是可以通过数数认识交换律和结合律. 所有东西都 reduce to 完全加法分解的情况, 只有大量 1 的交换律和结合律有两种加法的定义, (𝑎+𝑏)+1&#x3D;𝑎+(𝑏+1) 或者 (𝑎+1)+𝑏&#x3D;(𝑎+𝑏)+1. 在一种加法定义中通过交换输入, 可以得到另一种加法定义. 证明加法交换性就是证明这两种定义对相同的输入给出相同的输出结果. 直觉上当然是结果相同的, 只是把要数数的量放到了不同的 &amp;quot;插槽位置&amp;quot;, 从而有 &amp;quot;交换性&amp;quot;自然数 ℕ 的乘法𝑎⋅𝑏 是数 𝑎 次的数 𝑏 次也满足交换律和结合律. 在现实世界的直观是 &amp;quot;二维和三维矩形&amp;quot;, 对于数数 +1, 无论分解成怎么样的 product 分解的子任务, 都不影响结果. 所以乘法交换律和结合律只是完全乘法分解 i.e. 素数分解的特殊情况, 而且总分解次数有限自然数运算分配律(𝑎+𝑏)⋅𝑐&#x3D;𝑎⋅𝑐+𝑏⋅𝑐直观是用二维矩形的边长的 sum 分解整数 ℤ数轴有两个方向有理数 ℚ𝑛 等分操作, 乘法的逆 1𝑛不要混淆于 ℕ,ℤ 的除, 余, 那是一个数 𝑎 另一个数 𝑏 的逐次减法, 而不是等分实数 ℝ实数的一种直观是长度. 或者包含有理数 + 线序 + 序完备鉴于实数的直观性, 可以认为它存在, 用很多公理去定义实数 i.e. 假设 true proposition. 但也可以从有理数 &amp;quot;恢复&amp;quot; 实数无理数的例子代数整数 algebraic-integer≔{𝑥∈ℝ:(𝑥𝑛+𝑎𝑛−1𝑥𝑛−1+⋯+𝑎0&#x3D;0)∧(𝑎0,𝑎1,…,𝑎𝑛−1∈ℤ)}代数整数里的 &amp;quot;整数&amp;quot; 是因为 algebraic-integer∩ℚ&#x3D;ℤProof (p.43 of ref-8)取 𝑝,𝑞∈ℤ 互素. 𝑥&#x3D;𝑝𝑞 代入方程, 乘 𝑞𝑛𝑝𝑛+𝑎𝑛−1𝑞𝑝𝑛−1+⋯+𝑎0𝑞𝑛&#x3D;0
 𝑝𝑛&#x3D;−𝑞(𝑎𝑛−1𝑝𝑛−1+⋯+𝑎0𝑞𝑛−1)
 
 右边被 𝑞 整除. 但 𝑝,𝑞 互素, 所以 𝑞&#x3D;±1 或 𝑝&#x3D;±1.𝑝≠±1⟹𝑞&#x3D;±1𝑝&#x3D;±1⟹±1&#x3D;𝑝𝑛&#x3D;𝑞⋅some-integer⟹𝑞&#x3D;±1从而 𝑞&#x3D;±1. 从而 𝑥&#x3D;±𝑝∈ℤ特殊情况 {𝑥∈ℚ:𝑥2−2&#x3D;0}. 但是 (±1)2&#x3D;1 且 |𝑥|≥2⟹|𝑥|2≥4所以 {𝑥∈ℚ:𝑥2−2&#x3D;0}&#x3D;∅ 即 √2 不是有理数代数数 algebraic-number≔{𝑥∈ℝ:(𝑎𝑛𝑥𝑛+𝑎𝑛−1𝑥𝑛−1+⋯+𝑎0&#x3D;0)∧(𝑎0,𝑎1,…,𝑎𝑛∈ℤ)}注意不要求 𝑎𝑛&#x3D;1, 不限制 𝑥∈ℚ, 包含所有有理数 𝑝𝑞, 部分无理数 e.g. √2代数数 algebraic-number 是可数集, 实数 ℝ 是不可数集超越数 transcendental-number≔ℝ∖algebraic-number≠∅. 𝑒,𝜋 是超越数十进制, 二进制 vs 区间套 vs 分割十进制 (区间套) 似乎很直观然而十进制并不能原生地处理 𝑒&#x3D;∑∞𝑛&#x3D;01𝑛!很多不同 ℕ 区间套有相同极限, e.g. [0,1𝑛] vs [−1𝑛,0], 需要 limit-distance-vanish 系 quotientlet distance(𝐴)&#x3D;sup𝑥,𝑥′∈𝐴|𝑥−𝑥′|. let 𝐴0⊃𝐴1⋯,𝐵0⊃𝐵1⋯ and lim𝑛→∞distance(𝐴𝑛),distance(𝐵𝑛)&#x3D;0, 定义 𝐴,𝐵 的 limit-distance-vanish 等价关系 (alias Cauchy 收敛) :&#x3D;∀(𝜀∈ℚ)∧(𝜀&gt;0),∃𝑁∈ℕ,∀𝑛,𝑚&gt;𝑁,distance(𝐴𝑛∪𝐵𝑚)&lt;𝜀
@@ -20,7 +20,7 @@
 𝑎&lt;𝑐&lt;𝑏
 𝑐∈𝐴
 
-从操作简单性来说, 应该用 Dedekind-cut. &amp;quot;操作简单&amp;quot; 是指let 𝑥∈ℝ, {𝑥}↔ℝ∖{𝑥} 一一对应(ℝ∖{𝑥})∩ℚ&#x3D;ℚ∖{𝑥}&#x3D;ℚ&lt;𝑥⊔ℚ&gt;𝑥所以 𝑥∈ℝ 和 ℚ&lt;𝑥⊔ℚ&gt;𝑥 一一对应 [Dedekind-cut]  无理数 ℝ∖ℚ𝑥∈ℝ∖ℚ 一一对应到 {(𝐴,𝐵)∈Subset(ℚ)2:(ℚ&#x3D;𝐴⊔𝐵)∧(∀(𝑎,𝑏)∈(𝐴,𝐵),𝑎&lt;𝑏)}𝑥≔(𝐴,𝐵). 将 (𝐴,𝐵) 重新记为 (ℚ&lt;𝑥,ℚ&gt;𝑥)实数 ℝ≔ℚ⊔(ℝ∖ℚ) [order-real]  ℝ 序 𝑥&lt;𝑦⟺(ℚ&lt;𝑥⊊ℚ&lt;𝑦)let𝐴+𝐴′≔{𝑎+𝑎′:(𝑎,𝑎′)∈(𝐴,𝐴′)}
+从操作简单性来说, 应该用 Dedekind-cut. &amp;quot;操作简单&amp;quot; 是指let 𝑥∈ℝ, {𝑥}↔ℝ∖{𝑥} 一一对应(ℝ∖{𝑥})∩ℚ&#x3D;ℚ∖{𝑥}&#x3D;ℚ&lt;𝑥⊔ℚ&gt;𝑥所以 𝑥∈ℝ 和 ℚ&lt;𝑥⊔ℚ&gt;𝑥 一一对应 [Dedekind-cut]  无理数 ℝ∖ℚ𝑥∈ℝ∖ℚ 一一对应到 {(𝐴,𝐵)∈Subset(ℚ)2:(ℚ&#x3D;𝐴⊔𝐵)∧(∀(𝑎,𝑏)∈(𝐴,𝐵),𝑎&lt;𝑏)}𝑥≔(𝐴,𝐵). 将 (𝐴,𝐵) 重新记为 (ℚ&lt;𝑥,ℚ&gt;𝑥)实数 ℝ≔ℚ⊔(ℝ∖ℚ)逻辑上等价地可以只使用一半, 例如, 有理数 ℚ 的任何左半无限区间, 然后自动通过做 ℚ 中的补集得到右半无限区间. 但这里用更对称的表示 [order-real]  ℝ 序 𝑥&lt;𝑦⟺(ℚ&lt;𝑥⊊ℚ&lt;𝑦)let𝐴+𝐴′≔{𝑎+𝑎′:(𝑎,𝑎′)∈(𝐴,𝐴′)}
 𝐴⋅𝐴′≔{𝑎⋅𝑎′:(𝑎,𝑎′)∈(𝐴,𝐴′)}
 
  [add-real]  ℝ 加法. let 𝑥,𝑦∈ℝ𝑥+𝑦≔(ℚ&lt;𝑥+ℚ&lt;𝑦,ℚ&gt;𝑥+ℚ&gt;𝑦)expect(ℚ&lt;𝑥+𝑦,ℚ&gt;𝑥+𝑦)
@@ -630,22 +630,7 @@ body {
     </defs>
 </svg>
 </span> 的交换律和结合律</p>
-  <p>对计算机来说似乎难以表达这种直观, 但似乎所有的有限结果一定会正确. 类似于 <a href="#natural-number">自然数中所做的</a>, 为了让计算机能用有限的字符和内存以及有限的时间 (以及潜在的无限时间) 去表达这种对所有自然数成立的性质, 需要定义 (假设, 公理) 它是 true proposition</p>
-  <p>通常的证明是使用最小的假设 (公理), <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 6.864 8.568" width="6.864pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
-    <g>
-        <g transform="translate(0 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-    </g>
-    <defs id="glyph">
-        <symbol id="g7D03C374D8E462F84BC1E1C880E394D7" overflow="visible">
-            <path d="M 3.228 0 L 3.228 5.988 Q 3.228 6.504 3.24 6.816 Q 3.252 7.1280003 3.276 7.464 Q 3.084 7.284 2.928 7.146 Q 2.772 7.008 2.532 6.804 L 1.62 6.06 L 1.068 6.768 L 3.384 8.568 L 4.26 8.568 L 4.26 0 L 3.228 0 Z "/>
-        </symbol>
-    </defs>
-</svg>
-</span> 的结合律 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 119.32 8.568" width="119.32pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+  <p>有两种加法的定义, <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 119.32 8.568" width="119.32pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 8.988)">
             <g class="typst-text" transform="scale(1, -1)">
@@ -747,7 +732,7 @@ body {
         </symbol>
     </defs>
 </svg>
-</span> 或者加法的定义 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 119.31999999999998 8.568" width="119.31999999999998pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+</span> 或者 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 119.31999999999998 8.568" width="119.31999999999998pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 8.988)">
             <g class="typst-text" transform="scale(1, -1)">
@@ -849,150 +834,7 @@ body {
         </symbol>
     </defs>
 </svg>
-</span>, 然后推出其它</p>
-  <p>极端地说, 如果我们总是将可以用少量公理证明的结论设为公理, 那么我们就没有任何证明了. 因此我们可能会使用最少公理, 不过至少我让选择假设更对称性的 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 185.74533333333332 8.568" width="185.74533333333332pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
-    <g>
-        <g transform="translate(0 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(3.936 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(13.418666666666665 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(22.949333333333332 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(29.89733333333333 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(36.5 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(46.03066666666666 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(56.227999999999994 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(66.42533333333333 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(70.36133333333333 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(79.844 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(89.37466666666666 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(96.23866666666665 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(102.84133333333332 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(112.37199999999997 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(122.65333333333331 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(132.85066666666663 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(142.3333333333333 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(151.864 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(155.79999999999998 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(165.41466666666668 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(174.94533333333334 8.568)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-        <g transform="translate(181.80933333333334 8.988)">
-            <g class="typst-text" transform="scale(1, -1)">
-                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
-            </g>
-        </g>
-    </g>
-    <defs id="glyph">
-        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
-            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
-        </symbol>
-        <symbol id="g18EA3FA566C6BAE28029F84508185B05" overflow="visible">
-            <path d="M 2.364 -0.120000005 Q 1.5 -0.120000005 1.014 0.366 Q 0.528 0.852 0.528 1.548 Q 0.528 2.352 1.008 2.844 Q 1.488 3.336 2.286 3.576 Q 3.084 3.816 4.044 3.8400002 L 5.1480002 3.876 L 5.232 4.26 Q 5.256 4.356 5.268 4.476 Q 5.28 4.596 5.28 4.8 Q 5.28 5.184 4.992 5.436 Q 4.704 5.688 4.08 5.688 Q 3.78 5.688 3.246 5.61 Q 2.7120001 5.532 2.028 5.196 L 1.8000001 5.94 Q 2.316 6.252 2.946 6.396 Q 3.576 6.54 4.14 6.54 Q 4.908 6.54 5.382 6.306 Q 5.856 6.072 6.078 5.676 Q 6.3 5.28 6.3 4.8 Q 6.3 4.5360003 6.276 4.338 Q 6.252 4.14 6.204 3.936 L 5.352 0 L 4.584 0 L 4.572 0.912 L 4.524 0.912 Q 3.996 0.384 3.504 0.132 Q 3.012 -0.120000005 2.364 -0.120000005 Z M 2.568 0.732 Q 3.1200001 0.732 3.606 1.026 Q 4.092 1.32 4.44 1.7820001 Q 4.788 2.244 4.896 2.748 L 4.98 3.144 L 4.02 3.108 Q 3.348 3.084 2.802 2.94 Q 2.256 2.796 1.938 2.484 Q 1.62 2.172 1.62 1.632 Q 1.62 1.2360001 1.89 0.984 Q 2.16 0.732 2.568 0.732 Z "/>
-        </symbol>
-        <symbol id="g51024EAF833BA6C78C579BF2E22F10A4" overflow="visible">
-            <path d="M 3 0.432 L 3 2.904 L 0.612 2.904 L 0.612 3.756 L 3 3.756 L 3 6.2400002 L 3.864 6.2400002 L 3.864 3.756 L 6.252 3.756 L 6.252 2.904 L 3.864 2.904 L 3.864 0.432 L 3 0.432 Z "/>
-        </symbol>
-        <symbol id="gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" overflow="visible">
-            <path d="M 3.228 -0.120000005 Q 2.58 -0.120000005 2.178 0.21000001 Q 1.776 0.54 1.584 0.984 L 1.524 0.984 L 1.128 0 L 0.336 0 L 2.2680001 9.12 L 3.3240001 9.12 L 2.868 6.96 Q 2.784 6.552 2.682 6.162 Q 2.58 5.772 2.5080001 5.514 Q 2.436 5.256 2.424 5.232 L 2.4720001 5.232 Q 2.904 5.76 3.414 6.15 Q 3.924 6.54 4.596 6.54 Q 5.388 6.54 5.874 5.988 Q 6.36 5.436 6.36 4.356 Q 6.36 3.48 6.144 2.676 Q 5.928 1.872 5.52 1.242 Q 5.112 0.612 4.5360003 0.246 Q 3.96 -0.120000005 3.228 -0.120000005 Z M 3.144 0.756 Q 3.624 0.756 4.02 1.062 Q 4.416 1.368 4.698 1.8840001 Q 4.98 2.4 5.13 3.048 Q 5.28 3.696 5.28 4.368 Q 5.28 5.664 4.26 5.664 Q 3.864 5.664 3.45 5.37 Q 3.036 5.076 2.688 4.566 Q 2.34 4.056 2.13 3.408 Q 1.9200001 2.76 1.9200001 2.052 Q 1.9200001 1.4760001 2.22 1.116 Q 2.52 0.756 3.144 0.756 Z "/>
-        </symbol>
-        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
-            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
-        </symbol>
-        <symbol id="g7D03C374D8E462F84BC1E1C880E394D7" overflow="visible">
-            <path d="M 3.228 0 L 3.228 5.988 Q 3.228 6.504 3.24 6.816 Q 3.252 7.1280003 3.276 7.464 Q 3.084 7.284 2.928 7.146 Q 2.772 7.008 2.532 6.804 L 1.62 6.06 L 1.068 6.768 L 3.384 8.568 L 4.26 8.568 L 4.26 0 L 3.228 0 Z "/>
-        </symbol>
-        <symbol id="g5146CFAFFD4C9551660817838711A7F" overflow="visible">
-            <path d="M 0.612 4.104 L 0.612 4.956 L 6.252 4.956 L 6.252 4.104 L 0.612 4.104 Z M 0.612 1.716 L 0.612 2.568 L 6.252 2.568 L 6.252 1.716 L 0.612 1.716 Z "/>
-        </symbol>
-    </defs>
-</svg>
-</span></p>
+</span>. 在一种加法定义中通过交换输入, 可以得到另一种加法定义. 证明加法交换性就是证明这两种定义对相同的输入给出相同的输出结果. 直觉上当然是结果相同的, 只是把要数数的量放到了不同的 "插槽位置", 从而有 "交换性"</p>
   <p>自然数 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 9.336 8.568" width="9.336pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 8.568)">
@@ -6027,6 +5869,35 @@ body {
     </defs>
 </svg>
 </span></p>
+  <p>逻辑上等价地可以只使用一半, 例如, 有理数 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 9.372000000000002 8.568" width="9.372000000000002pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D6A50C6B30D71F3E29F0D4BDFA47E40" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g7D6A50C6B30D71F3E29F0D4BDFA47E40" overflow="visible">
+            <path d="M 5.76 -2.04 L 4.476 -0.120000005 Q 2.616 -0.024 1.674 1.146 Q 0.732 2.316 0.732 4.308 Q 0.732 5.6280003 1.182 6.612 Q 1.632 7.596 2.514 8.148 Q 3.3960001 8.7 4.704 8.7 Q 5.988 8.7 6.864 8.148 Q 7.7400002 7.596 8.190001 6.606 Q 8.64 5.616 8.64 4.296 Q 8.64 2.724 8.094 1.746 Q 7.548 0.768 6.672 0.312 L 9.216 -2.04 L 5.76 -2.04 Z M 4.692 0.456 Q 5.616 0.456 6.276 0.78000003 L 6.276 7.788 Q 5.94 7.956 5.55 8.04 Q 5.16 8.124 4.704 8.124 Q 3.7680001 8.124 3.096 7.776 L 3.096 0.792 Q 3.756 0.456 4.692 0.456 Z M 6.912 1.212 Q 7.452 1.704 7.728 2.49 Q 8.004 3.276 8.004 4.296 Q 8.004 5.316 7.734 6.096 Q 7.464 6.876 6.912 7.368 L 6.912 1.212 Z M 2.46 1.224 L 2.46 7.344 Q 1.908 6.852 1.638 6.072 Q 1.368 5.292 1.368 4.296 Q 1.368 3.288 1.638 2.502 Q 1.908 1.716 2.46 1.224 Z M 6.18 -1.464 L 7.668 -1.464 L 6.0360003 0.048 Q 5.88 0 5.64 -0.042 Q 5.4 -0.084 5.2200003 -0.096 L 6.18 -1.464 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的任何左半无限区间, 然后自动通过做 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 9.372000000000002 8.568" width="9.372000000000002pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D6A50C6B30D71F3E29F0D4BDFA47E40" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g7D6A50C6B30D71F3E29F0D4BDFA47E40" overflow="visible">
+            <path d="M 5.76 -2.04 L 4.476 -0.120000005 Q 2.616 -0.024 1.674 1.146 Q 0.732 2.316 0.732 4.308 Q 0.732 5.6280003 1.182 6.612 Q 1.632 7.596 2.514 8.148 Q 3.3960001 8.7 4.704 8.7 Q 5.988 8.7 6.864 8.148 Q 7.7400002 7.596 8.190001 6.606 Q 8.64 5.616 8.64 4.296 Q 8.64 2.724 8.094 1.746 Q 7.548 0.768 6.672 0.312 L 9.216 -2.04 L 5.76 -2.04 Z M 4.692 0.456 Q 5.616 0.456 6.276 0.78000003 L 6.276 7.788 Q 5.94 7.956 5.55 8.04 Q 5.16 8.124 4.704 8.124 Q 3.7680001 8.124 3.096 7.776 L 3.096 0.792 Q 3.756 0.456 4.692 0.456 Z M 6.912 1.212 Q 7.452 1.704 7.728 2.49 Q 8.004 3.276 8.004 4.296 Q 8.004 5.316 7.734 6.096 Q 7.464 6.876 6.912 7.368 L 6.912 1.212 Z M 2.46 1.224 L 2.46 7.344 Q 1.908 6.852 1.638 6.072 Q 1.368 5.292 1.368 4.296 Q 1.368 3.288 1.638 2.502 Q 1.908 1.716 2.46 1.224 Z M 6.18 -1.464 L 7.668 -1.464 L 6.0360003 0.048 Q 5.88 0 5.64 -0.042 Q 5.4 -0.084 5.2200003 -0.096 L 6.18 -1.464 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 中的补集得到右半无限区间. 但这里用更对称的表示</p>
   <ul>
     <li> <strong>[</strong><span class="typst-tag">order-real</span><strong data-typst-label="order-real">]</strong>  <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 8.568 8.568" width="8.568pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
