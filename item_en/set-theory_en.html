@@ -24,7 +24,8 @@ or¬(∀𝑎∈𝐴,𝑝(𝑎))⟺∃𝑎∈𝐴,¬𝑝(𝑎)
 
 The concept of &amp;quot;infinity&amp;quot; is limited by using the symbol string 𝑎∈𝐴 of declare-element-of-setformula, proposition is a special data structure in memory. It can be considered that math_object, formula, proposition are the type of programming languageMany propositions are equivalent, so we can consider the &amp;quot;quotient&amp;quot; type of propositions, but the possibility of equivalence is infinite, whether it is possible to have an exhaustive algorithm, first depends on whether it is countable …Similar to the redundancy of ∧,∨,¬, set theory construction rules may also have redundancy, or there are many equivalent definitionsSpecify (finite)&#x3D; transitive :&#x3D; (𝑎&#x3D;𝑏)∧(𝑏&#x3D;𝑐)⟹(𝑎&#x3D;𝑐)⇔ transitive :&#x3D; (𝑝⇔𝑞)∧(𝑞⇔𝑟)⟹(𝑝⇔𝑟)follow various rules of bool in the finite case, define language transformation rules: let 𝑝(𝑎,𝑏) is formula built with independent/parallel 𝑎,𝑏 i.e. independent/parallel in memory read and used by specific cuntion, then [commutative-forall-exists] ⋀𝑎∈𝐴⋀𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋀𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)
 
-same for ⋁ [distributive-forall-exists] ⋀𝑎∈𝐴⋁𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋁𝑏∈𝐵⋀𝑎∈𝐴𝑝(𝑎,𝑏)
+same for ⋁ [distributive-forall-exists] (need to assume existence of function 𝐴→𝐵?)⋀𝑎∈𝐴⋁𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋁𝑏(𝑎)∈𝐵(𝑎)⋀𝑎∈𝐴𝑝(𝑎,𝑏(𝑎))
+⋁𝑎∈𝐴⋀𝑏∈𝐵𝑝(𝑎,𝑏)⟺⋀𝑏(𝑎)∈𝐵(𝑎)⋁𝑎∈𝐴𝑝(𝑎,𝑏(𝑎))
 
 Natural language example of derivationIf it rains, I won&#x27;t go outIt&#x27;s rainingSo I won&#x27;t go outThis example is similar to a conditional branchlet rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,};let rain : bool;let out : bool;match (rain) {  true &#x3D;&gt; out &#x3D; false,  false &#x3D;&gt; out &#x3D; undefined,};similar to if block in many programming language, automatically skips the execution area when the condition is not metif (rain &#x3D; true) {  out &#x3D; false}if (rain &#x3D; true) {  out &#x3D; false} [inference]  For mathematical language, that isThe compiler reads the formula 𝑝,𝑞The compiler reads the formula 𝑝⇒𝑞 is true proposition (may be custom)The compiler reads the formula 𝑝 is true propositionThen the language rule setting is that the compiler, according to this condition (from memory), assigns the bool value of the formula 𝑞 to true i.e. sets 𝑞 is true proposition [proof]  The proof is that compiling passes 𝑝⇒𝑞 is true propositionAlthough I am confused by this type of vacuous argument like ⋀𝑥∈2𝐴(𝑥∈∅2𝐴⇒𝑃(𝑥)) is always true proposition, there is no reason to abandon defining the intersection of local empty set families for a certain set 𝐴. I can only accept it from a certain perspective, for example, treating it as true without a constructive proof, thus automatically skipping it, or skipping over an if block in a programming language without generating an error …If this type of vacuous implication is accepted, then (𝑝⇒𝑞)&#x3D;(¬𝑝)∨𝑞𝑝⇔𝑞≔(𝑝⇒𝑞)∧(𝑞⇒𝑝) and find that 𝑝⇔𝑞 is 𝑝&#x3D;𝑞 [reverse-inference]  Reverse inference. If the result is that I went out, then it is definitely not the result of rain. If the result of the conditional branch is out &#x3D; true, this is not the result of rain &#x3D; true. Since the bool value of an ideal binary computer must be one of two, it can only be the result of rain &#x3D; false. This can be written as a conditional branchmatch (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};match (out) {  true &#x3D;&gt; rain &#x3D; false,  false &#x3D;&gt; rain &#x3D; undefined,};Mathematically, reverse inference is written as formula ¬𝑞⇒¬𝑝, and defined equivalent to 𝑝⇒𝑞 [reverse-proof]  Proof by contradiction is that compiling passes ¬𝑝⇒¬𝑞 is true propositionDeductive proof also requires syllogismAll living things dieHumans are living thingsTherefore, all humans will dieWhere &amp;quot;all living things die&amp;quot; is a specially constructed proposition [syllogism]  Syllogistic reasoning is a language ruleThe compiler reads the formula (∀𝑎∈𝐴,𝑝(𝑎)) is true proposition (possibly from a definition e.g. union))The compiler reads the declaration let 𝑎′∈𝐴 is true propositionThe compiler reads the formula 𝑝(𝑎′)Then the compiler sets 𝑝(𝑎′) is true proposition according to this condition (from memory)That is, the compiler implements the specific construction of data (finite) according to the declaration (∀𝑎∈𝐴,𝑝(𝑎)) (possibly &amp;quot;infinite&amp;quot;)Or understand it as, this rule and behavior are defining the concept of (∀𝑎∈𝐴,𝑝(𝑎)) itselfIt is also usually written as the equivalent rule let 𝑎′∈𝐴, then the special inference formula (∀𝑎∈𝐴,𝑝(𝑎))⟹𝑝(𝑎′) is always true proposition. This form is often used in what previously said, &amp;quot;proving is compiling passes 𝑝⇒𝑞 is true proposition&amp;quot;Reverse syllogism: let 𝑎′∈𝐴, then the equivalent formula ¬𝑝(𝑎′)⟹¬(∀𝑎∈𝐴,𝑝(𝑎))or∃𝑎∈𝐴,¬𝑝(𝑎) is true propositionWe may never know whether a proposition of bool unknow can be constructively proved, i.e. compiled successfully in a limited number of stepsWhere does the target proposition come from? It may be related to a model of the real worldThe proof requires expanding a large number of sentences, although computers are very fast at processing strings. In any case, performance optimization? Use only when needed (lazy load)? Parallel (parallel) when two propositions are not interdependent? Assume already proven results (incremental compilation)?A proposition has many proofs with different runtime data flowThe following discusses math-object-construct-rule alias set-theoryFrom a practical perspective, as long as the underlying logic is equivalent, we should choose the most convenient and easy-to-use ones, no need to strictly follow an existing framework. [natural-number]  ℕnatural number 0,1,2,… and natural number set ℕ is object. 0,1,2,…∈ℕ is true propositionHowever, computers cannot handle infinity. In order for computers to represent the natural number set using a finite number of characters and memory, 𝑛,ℕ and the +1 function are treated as finite symbols in memory addresses, and the following is defined as a true proposition:0∈ℕ𝑛∈ℕ⟹𝑛+1∈ℕIs it equivalent to telling the computer how to continuously +1 with an instruction stream? Also related to induction.The cost of finite characters is potentially infinite time, always relying on counting or periodic circuits.Definition language expansion𝑎≠𝑏≔¬(𝑎&#x3D;𝑏)𝑎∉𝐴≔¬(𝑎∈𝐴)Since &amp;quot;definition language expansion&amp;quot; is long, it is usually abbreviated to &amp;quot;definition&amp;quot; &amp;quot;def&amp;quot;In fact, the symbol &#x3D; is often used to represent definition language expansion or specified language transformation. The &#x3D; for specific natural numbers can be directly defined as comparing memory values using computer circuits. [declare-element-of-set] If 𝐴 is non empty 𝐴≠∅ (this information comes from the definition of 𝐴), we can define symbol 𝑎 and construct true proposition (let) 𝑎∈𝐴Finite declare statements can be constructed. [product] let 𝐴0,…,𝐴𝑛 be set, let 𝐴0×⋯×𝐴𝑛 is set𝑥∈𝐴0×⋯×𝐴𝑛≔⋀𝑖∈{0,…,𝑛}⋁𝑎∈𝐴𝑖(𝑥,𝑖)&#x3D;𝑎
 
@@ -67,9 +68,9 @@ Then let the compiler calculate the boolean value of the proposition 𝐴∈𝐴
 
 ⋃𝑖∈𝐼⋂𝑥(𝑖)∈𝐴(𝑖)𝑥(𝑖)&#x3D;⋂𝑥∈∏𝑖∈𝐼𝐴(𝑖)⋃𝑖∈𝐼𝑥(𝑖)
 
-sum &amp;amp; product∏𝑖∈𝐼∑𝑥(𝑖)∈𝐴(𝑖)𝑥(𝑖)&#x3D;∑𝑥∈∏𝑖∈𝐼𝐴(𝑖)∏𝑖∈𝐼𝑥(𝑖)
+draft of proof: expand, use parallel distributive cf. distributive-forall-existssum &amp;amp; product∏𝑖∈𝐼∑𝑥(𝑖)∈𝐴(𝑖)𝑥(𝑖)&#x3D;∑𝑥∈∏𝑖∈𝐼𝐴(𝑖)∏𝑖∈𝐼𝑥(𝑖)
 
-draft of proof: expand, use parallel distributive cf. distributive-forall-exists [set-minus] 𝐴∖𝐵≔{𝑥∈𝐴:𝑥∉𝐵}. if 𝐵⊂𝐴 then define 𝐵∁≔𝐴∖𝐵 [symmetric-set-minus] 𝐴Δ𝐵≔(𝐴∖𝐵)⊔(𝐵∖𝐴)&#x3D;(𝐴∪𝐵)∖(𝐴∩𝐵)">
+ [set-minus] 𝐴∖𝐵≔{𝑥∈𝐴:𝑥∉𝐵}. if 𝐵⊂𝐴 then define 𝐵∁≔𝐴∖𝐵 [symmetric-set-minus] 𝐴Δ𝐵≔(𝐴∖𝐵)⊔(𝐵∖𝐴)&#x3D;(𝐴∪𝐵)∖(𝐴∩𝐵)">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 
@@ -2543,7 +2544,38 @@ body {
   </div>
   <p> <strong>[</strong><span class="typst-tag">distributive-forall-exists</span><strong data-typst-label="distributive-forall-exists">]</strong> </p>
   <div class="indent">
-    <p class="block-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 163.31466666666665 23.8944" width="163.31466666666665pt" height="23.8944pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <p>(need to assume existence of function <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 33.43866666666667 8.568" width="33.43866666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g1029D0953F40CC9D70C74A6CE2EBFD41" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(26.238666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g1029D0953F40CC9D70C74A6CE2EBFD41" overflow="visible">
+            <path d="M 8.892 0.996 L 8.208 0.996 Q 8.7960005 2.28 9.36 2.9160001 L 0.612 2.9160001 L 0.612 3.7680001 L 9.36 3.7680001 Q 8.784 4.404 8.208 5.676 L 8.892 5.676 Q 9.528 4.9440002 10.188 4.3980002 Q 10.848001 3.852 11.532001 3.504 L 11.532001 3.168 Q 10.848001 2.82 10.188 2.28 Q 9.528 1.74 8.892 0.996 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>?)</p>
+    <p class="block-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 197.2194666666667 57.8592" width="197.2194666666667pt" height="57.8592pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 0)">
             <g class="typst-group">
@@ -2626,72 +2658,325 @@ body {
                                         <use xlink:href="#gEEE560A6D291DC40058603300D349C86" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(95.05866666666668 10.86)">
+                                <g transform="translate(104.66706666666668 10.86)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gC71C08ABFED22195F4ECE1871C64A29A" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(95.35746666666668 23.592000000000002)">
-                                    <g class="typst-text" transform="scale(1, -1)">
-                                        <use xlink:href="#g6285610BA5D5268FFDF2576ED22281A6" x="0" fill="#000000" fill-rule="nonzero"/>
+                                <g transform="translate(95.05866666666668 17.947200000000002)">
+                                    <g class="typst-group">
+                                        <g>
+                                            <g transform="translate(0 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g6285610BA5D5268FFDF2576ED22281A6" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(4.5504 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gEA26352E46D765994390BB39CFAD69F0" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(7.2863999999999995 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(11.7216 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g62B6ADA62C655C350500255904623417" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(14.4576 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(19.641599999999997 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gE6A12BD333E8AFC901976B29BBB9C5D1" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(24.2856 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gEA26352E46D765994390BB39CFAD69F0" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(27.0216 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(31.456799999999998 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g62B6ADA62C655C350500255904623417" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                        </g>
                                     </g>
                                 </g>
-                                <g transform="translate(99.90786666666669 23.592000000000002)">
-                                    <g class="typst-text" transform="scale(1, -1)">
-                                        <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
-                                    </g>
-                                </g>
-                                <g transform="translate(105.09186666666669 23.592000000000002)">
-                                    <g class="typst-text" transform="scale(1, -1)">
-                                        <use xlink:href="#gE6A12BD333E8AFC901976B29BBB9C5D1" x="0" fill="#000000" fill-rule="nonzero"/>
-                                    </g>
-                                </g>
-                                <g transform="translate(112.03466666666668 10.86)">
+                                <g transform="translate(131.25146666666672 10.86)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gE9CB546F012907D1C11AB6E055A8EAC2" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(112.19306666666668 23.592000000000002)">
+                                <g transform="translate(131.4098666666667 23.592000000000002)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(116.62826666666669 23.592000000000002)">
+                                <g transform="translate(135.8450666666667 23.592000000000002)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(121.81226666666667 23.592000000000002)">
+                                <g transform="translate(141.0290666666667 23.592000000000002)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gED1F6728308A684899F2BB61F6A1A79" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(129.01066666666665 11.352)">
+                                <g transform="translate(148.22746666666671 11.352)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gAA6F20881370472BB463DBD4A5CDD1F1" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(136.46266666666665 11.771999999999998)">
+                                <g transform="translate(155.6794666666667 11.771999999999998)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(140.39866666666666 11.352)">
+                                <g transform="translate(159.6154666666667 11.352)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(147.21466666666666 11.352)">
+                                <g transform="translate(166.4314666666667 11.352)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(152.43066666666667 11.352)">
+                                <g transform="translate(171.6474666666667 11.352)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
                                 </g>
-                                <g transform="translate(159.37866666666667 11.771999999999998)">
+                                <g transform="translate(178.5954666666667 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(182.53146666666672 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(189.34746666666672 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(193.28346666666673 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(0 33.1296)">
+                        <g class="typst-group">
+                            <g>
+                                <g transform="translate(0 10.86)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC71C08ABFED22195F4ECE1871C64A29A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(0.15840000000000098 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(4.593600000000001 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(9.7776 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gED1F6728308A684899F2BB61F6A1A79" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(16.976000000000003 10.86)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gE9CB546F012907D1C11AB6E055A8EAC2" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(17.274800000000003 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g6285610BA5D5268FFDF2576ED22281A6" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(21.825200000000002 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(27.0092 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gE6A12BD333E8AFC901976B29BBB9C5D1" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(33.952000000000005 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gAA6F20881370472BB463DBD4A5CDD1F1" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(41.40400000000001 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(45.34000000000001 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(52.156000000000006 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(57.37200000000001 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(64.32000000000001 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(71.58933333333334 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gEEE560A6D291DC40058603300D349C86" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(104.66706666666668 10.86)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gE9CB546F012907D1C11AB6E055A8EAC2" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(95.05866666666668 17.947200000000002)">
+                                    <g class="typst-group">
+                                        <g>
+                                            <g transform="translate(0 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g6285610BA5D5268FFDF2576ED22281A6" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(4.5504 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gEA26352E46D765994390BB39CFAD69F0" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(7.2863999999999995 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(11.7216 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g62B6ADA62C655C350500255904623417" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(14.4576 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(19.641599999999997 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gE6A12BD333E8AFC901976B29BBB9C5D1" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(24.2856 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gEA26352E46D765994390BB39CFAD69F0" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(27.0216 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                            <g transform="translate(31.456799999999998 5.6448)">
+                                                <g class="typst-text" transform="scale(1, -1)">
+                                                    <use xlink:href="#g62B6ADA62C655C350500255904623417" x="0" fill="#000000" fill-rule="nonzero"/>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g transform="translate(131.25146666666672 10.86)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC71C08ABFED22195F4ECE1871C64A29A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(131.4098666666667 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC6C9D903F69383ABC0F500D1945EA12A" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(135.8450666666667 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g32781BBA9D879615B7C6A3600ED2124C" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(141.0290666666667 23.592000000000002)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gED1F6728308A684899F2BB61F6A1A79" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(148.22746666666671 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gAA6F20881370472BB463DBD4A5CDD1F1" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(155.6794666666667 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(159.6154666666667 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(166.4314666666667 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(171.6474666666667 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(178.5954666666667 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(182.53146666666672 11.352)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(189.34746666666672 11.771999999999998)">
+                                    <g class="typst-text" transform="scale(1, -1)">
+                                        <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                                    </g>
+                                </g>
+                                <g transform="translate(193.28346666666673 11.771999999999998)">
                                     <g class="typst-text" transform="scale(1, -1)">
                                         <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
                                     </g>
@@ -2745,6 +3030,12 @@ body {
         </symbol>
         <symbol id="gEEE560A6D291DC40058603300D349C86" overflow="visible">
             <path d="M 4.716 -0.396 L 4.02 -0.396 Q 3.384 0.348 2.544 1.242 Q 1.704 2.136 0.612 3.192 L 0.612 3.504 Q 1.704 4.56 2.544 5.46 Q 3.384 6.36 4.02 7.092 L 4.716 7.092 Q 4.152 6 3.3960001 4.896 L 11.532001 4.896 L 11.532001 4.044 L 2.772 4.044 Q 2.484 3.672 2.208 3.348 Q 2.484 3.024 2.772 2.652 L 11.532001 2.652 L 11.532001 1.8000001 L 3.3960001 1.8000001 Q 4.152 0.696 4.716 -0.396 Z M 8.604 1.8000001 L 8.604 2.652 L 17.364 2.652 Q 17.652 3.024 17.928 3.348 Q 17.652 3.672 17.364 4.044 L 8.604 4.044 L 8.604 4.896 L 16.74 4.896 Q 15.984 6 15.42 7.092 L 16.116 7.092 Q 16.752 6.36 17.592001 5.46 Q 18.432 4.56 19.524 3.504 L 19.524 3.192 Q 18.432 2.136 17.592001 1.242 Q 16.752 0.348 16.116 -0.396 L 15.42 -0.396 Q 15.984 0.696 16.74 1.8000001 L 8.604 1.8000001 Z "/>
+        </symbol>
+        <symbol id="gEA26352E46D765994390BB39CFAD69F0" overflow="visible">
+            <path d="M 1.5264 -1.1376 Q 1.0008 -0.4752 0.71279997 0.3672 Q 0.42479998 1.2096 0.42479998 2.2752 Q 0.42479998 3.2544 0.70559996 4.1219997 Q 0.9864 4.9895997 1.5264 5.6447997 L 2.3112 5.6447997 Q 1.9368 5.1912 1.6812 4.6224 Q 1.4255999 4.0536 1.296 3.4487998 Q 1.1664 2.8439999 1.1664 2.268 Q 1.1664 1.6919999 1.2924 1.0799999 Q 1.4183999 0.468 1.6704 -0.1044 Q 1.9224 -0.6768 2.3112 -1.1376 L 1.5264 -1.1376 Z "/>
+        </symbol>
+        <symbol id="g62B6ADA62C655C350500255904623417" overflow="visible">
+            <path d="M 0.42479998 -1.1376 Q 0.8136 -0.6768 1.0692 -0.1044 Q 1.3248 0.468 1.4472 1.0799999 Q 1.5696 1.6919999 1.5696 2.268 Q 1.5696 2.8439999 1.4399999 3.4487998 Q 1.3104 4.0536 1.0548 4.6224 Q 0.7992 5.1912 0.42479998 5.6447997 L 1.2096 5.6447997 Q 1.7495999 4.9895997 2.0304 4.1219997 Q 2.3112 3.2544 2.3112 2.2752 Q 2.3112 1.2096 2.0232 0.3672 Q 1.7351999 -0.4752 1.2096 -1.1376 L 0.42479998 -1.1376 Z "/>
         </symbol>
     </defs>
 </svg>
@@ -14276,6 +14567,7 @@ body {
     </defs>
 </svg>
 </p>
+    <p>draft of proof: expand, use parallel distributive cf. <a href="#distributive-forall-exists">distributive-forall-exists</a></p>
     <p>sum &amp; product</p>
     <p class="block-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 160.86626666666666 26.296799999999998" width="160.86626666666666pt" height="26.296799999999998pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
@@ -14552,7 +14844,6 @@ body {
     </defs>
 </svg>
 </p>
-    <p>draft of proof: expand, use parallel distributive cf. <a href="#distributive-forall-exists">distributive-forall-exists</a></p>
   </div>
   <p> <strong>[</strong><span class="typst-tag">set-minus</span><strong data-typst-label="set-minus">]</strong> </p>
   <img src="../image/set-minus.jpeg" width="30%">
