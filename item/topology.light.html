@@ -1,0 +1,1763 @@
+<div>
+  <style>.indent {
+  border-left: 1px solid #9482823f;
+  padding-left: 1em
+}
+a:link {
+  text-decoration: underline
+}
+::selection {
+  background: inheritance
+}
+code, pre {
+  font-size: 0.9em;
+  font-weight: 500
+}
+ol, ul {
+  padding-left: 0.7em;
+  padding-bottom: 0em;
+  padding-top: 0em;
+}
+body {
+  font-family: 'Hanken Grotesk','Sarasa Gothic SC'
+}</style>
+  <style>.inline-equation {
+  display: inline-block;
+  width: fit-content;
+}
+.block-equation {
+  display: grid;
+  place-items: center;
+  overflow-x: auto;
+}</style>
+  <p> <strong>[</strong><span class="typst-tag">topology</span><strong data-typst-label="topology">]</strong>  拓扑 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 8.172 8.568" width="8.172pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g853F2830E1DA500EB285DACA1536CF6B" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g853F2830E1DA500EB285DACA1536CF6B" overflow="visible">
+            <path d="M 0 0 L 3.492 4.5360003 L 1.968 8.568 L 3.048 8.568 L 4.212 5.292 L 6.756 8.568 L 7.932 8.568 L 4.692 4.488 L 6.3120003 0 L 5.184 0 L 3.96 3.708 L 1.176 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 每个点都有一个 <a href="#net">点网</a> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 22.74 8.568" width="22.74pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gFA33A03BFC89A58F71A200A0DDA27F46" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(8.064000000000002 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(12.000000000000002 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(18.804000000000002 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gFA33A03BFC89A58F71A200A0DDA27F46" overflow="visible">
+            <path d="M 1.08 0 L 1.08 8.568 L 3.744 8.568 Q 5.46 8.568 6.336 8.088 Q 7.212 7.6080003 7.212 6.396 Q 7.212 5.664 6.87 5.16 Q 6.528 4.656 5.892 4.548 L 5.892 4.488 Q 6.324 4.404 6.672 4.188 Q 7.02 3.9720001 7.224 3.5640001 Q 7.428 3.1560001 7.428 2.484 Q 7.428 1.32 6.588 0.66 Q 5.748 0 4.284 0 L 1.08 0 Z M 2.892 5.172 L 3.948 5.172 Q 4.7400002 5.172 5.046 5.4240003 Q 5.352 5.676 5.352 6.156 Q 5.352 6.6480002 4.992 6.864 Q 4.632 7.08 3.852 7.08 L 2.892 7.08 L 2.892 5.172 Z M 2.892 1.5 L 4.08 1.5 Q 4.896 1.5 5.2200003 1.818 Q 5.544 2.136 5.544 2.664 Q 5.544 3.144 5.214 3.438 Q 4.884 3.732 4.02 3.732 L 2.892 3.732 L 2.892 1.5 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>. 这样的点网系统记为 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 12.936 8.568" width="12.936pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF917F42D253E5645C0AE2594FC2B6718" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(6.9479999999999995 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF178BEF0EA88E42CB59BB538611A8D54" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gF917F42D253E5645C0AE2594FC2B6718" overflow="visible">
+            <path d="M 2.568 0 L 2.568 7.056 L 0.24000001 7.056 L 0.24000001 8.568 L 6.708 8.568 L 6.708 7.056 L 4.38 7.056 L 4.38 0 L 2.568 0 Z "/>
+        </symbol>
+        <symbol id="gF178BEF0EA88E42CB59BB538611A8D54" overflow="visible">
+            <path d="M 0.144 0 L 2.1959999 2.6928 L 1.332 5.1408 L 2.3112 5.1408 L 2.9016 3.276 L 4.2552 5.1408 L 5.3064 5.1408 L 3.3839998 2.628 L 4.3343997 0 L 3.3192 0 L 2.6712 2.0016 L 1.1952 0 L 0.144 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>, 是 Euclidean 空间的类似物</p>
+  <p><em><strong>Todo</strong></em> 这里有错, 需要修改. 这种拓扑空间的定义是不够的, 无法证明闭包是闭集. 还需要对极限点和闭包的额外的假设, 来模拟拓扑空间的 "任意闭集的交集是闭集"</p>
+  <p><strong>Example</strong> Euclidean 空间的所有球 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 33.344 8.568" width="33.344pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB0C2F59846E20F260FCFD2FCCDEAF356" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(8.064000000000002 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(12.000000000000002 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(18.804000000000002 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(24.02 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g48629D4286756634B1EAFAD19240EE9F" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(29.407999999999998 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gB0C2F59846E20F260FCFD2FCCDEAF356" overflow="visible">
+            <path d="M 0.924 0 L 0.924 8.568 L 4.8 8.568 Q 6.168 8.568 6.7860003 8.028 Q 7.4040003 7.488 7.4040003 6.348 Q 7.4040003 4.752 6.084 4.488 Q 7.4040003 4.08 7.4040003 2.436 Q 7.4040003 0 4.8 0 L 0.924 0 Z M 1.5600001 0.636 L 2.364 0.636 L 2.364 7.932 L 1.5600001 7.932 L 1.5600001 0.636 Z M 3 4.788 L 5.004 4.788 L 5.004 7.932 L 3 7.932 L 3 4.788 Z M 5.64 4.8120003 Q 6.12 4.908 6.4440002 5.268 Q 6.768 5.6280003 6.768 6.348 Q 6.768 6.984 6.522 7.386 Q 6.276 7.788 5.64 7.896 L 5.64 4.8120003 Z M 3 0.636 L 5.004 0.636 L 5.004 4.176 L 3 4.176 L 3 0.636 Z M 5.64 0.696 Q 6.228 0.804 6.498 1.278 Q 6.768 1.752 6.768 2.424 Q 6.768 3.9 5.64 4.152 L 5.64 0.696 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="g48629D4286756634B1EAFAD19240EE9F" overflow="visible">
+            <path d="M 0.336 0 L 1.704 6.432 L 2.568 6.432 L 2.436 5.244 L 2.496 5.244 Q 2.748 5.58 3.024 5.874 Q 3.3 6.168 3.648 6.36 Q 3.996 6.552 4.452 6.552 Q 4.62 6.552 4.806 6.534 Q 4.992 6.5160003 5.1480002 6.468 L 4.92 5.52 Q 4.596 5.592 4.308 5.592 Q 3.708 5.592 3.24 5.196 Q 2.772 4.8 2.46 4.188 Q 2.148 3.576 2.016 2.94 L 1.392 0 L 0.336 0 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 组成的点网系统</p>
+  <p><a href="#Minkowski-space">Minkowski-space</a> 中, 一点 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 6.804 8.568" width="6.804pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 有多个不极限等价的网</p>
+  <p> <strong>[</strong><span class="typst-tag">continuous</span><strong data-typst-label="continuous">]</strong>  拓扑连续 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 51.45733333333334 8.568" width="51.45733333333334pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g8EBE7E22A1F5C9CEB21532E85B48B088" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.473333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gE918675408A59D67A4E31B55419DA958" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(17.02266666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g853F2830E1DA500EB285DACA1536CF6B" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(28.528000000000002 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g1029D0953F40CC9D70C74A6CE2EBFD41" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(44.00533333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD98C56B75246279296D98B8E1A56DCDC" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g8EBE7E22A1F5C9CEB21532E85B48B088" overflow="visible">
+            <path d="M 1.008 -2.88 Q 0.78000003 -2.88 0.588 -2.844 Q 0.396 -2.808 0.24000001 -2.76 L 0.24000001 -1.872 Q 0.408 -1.9200001 0.564 -1.962 Q 0.72 -2.004 0.912 -2.004 Q 1.344 -2.004 1.584 -1.65 Q 1.824 -1.296 1.968 -0.636 L 3.288 5.6280003 L 2.172 5.6280003 L 2.256 6.072 L 3.456 6.468 L 3.588 7.044 Q 3.78 7.872 4.062 8.334 Q 4.344 8.7960005 4.764 8.988 Q 5.184 9.18 5.772 9.18 Q 6.072 9.18 6.39 9.114 Q 6.708 9.048 6.9 8.952 L 6.624 8.148 Q 6.456 8.208 6.258 8.262 Q 6.06 8.316 5.82 8.316 Q 5.352 8.316 5.0820003 8.052 Q 4.8120003 7.788 4.644 7.044 L 4.5 6.432 L 5.88 6.432 L 5.724 5.6280003 L 4.344 5.6280003 L 3 -0.756 Q 2.796 -1.752 2.334 -2.316 Q 1.872 -2.88 1.008 -2.88 Z "/>
+        </symbol>
+        <symbol id="gE918675408A59D67A4E31B55419DA958" overflow="visible">
+            <path d="M 1.596 4.968 Q 1.296 4.968 1.08 5.16 Q 0.864 5.352 0.864 5.784 Q 0.864 6.2400002 1.08 6.42 Q 1.296 6.6 1.596 6.6 Q 1.908 6.6 2.13 6.42 Q 2.352 6.2400002 2.352 5.784 Q 2.352 5.352 2.13 5.16 Q 1.908 4.968 1.596 4.968 Z M 1.596 -0.168 Q 1.296 -0.168 1.08 0.024 Q 0.864 0.216 0.864 0.648 Q 0.864 1.092 1.08 1.272 Q 1.296 1.452 1.596 1.452 Q 1.908 1.452 2.13 1.272 Q 2.352 1.092 2.352 0.648 Q 2.352 0.216 2.13 0.024 Q 1.908 -0.168 1.596 -0.168 Z "/>
+        </symbol>
+        <symbol id="g853F2830E1DA500EB285DACA1536CF6B" overflow="visible">
+            <path d="M 0 0 L 3.492 4.5360003 L 1.968 8.568 L 3.048 8.568 L 4.212 5.292 L 6.756 8.568 L 7.932 8.568 L 4.692 4.488 L 6.3120003 0 L 5.184 0 L 3.96 3.708 L 1.176 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g1029D0953F40CC9D70C74A6CE2EBFD41" overflow="visible">
+            <path d="M 8.892 0.996 L 8.208 0.996 Q 8.7960005 2.28 9.36 2.9160001 L 0.612 2.9160001 L 0.612 3.7680001 L 9.36 3.7680001 Q 8.784 4.404 8.208 5.676 L 8.892 5.676 Q 9.528 4.9440002 10.188 4.3980002 Q 10.848001 3.852 11.532001 3.504 L 11.532001 3.168 Q 10.848001 2.82 10.188 2.28 Q 9.528 1.74 8.892 0.996 Z "/>
+        </symbol>
+        <symbol id="gD98C56B75246279296D98B8E1A56DCDC" overflow="visible">
+            <path d="M 1.8000001 0 L 2.496 3.216 L 1.104 8.568 L 2.172 8.568 L 3.192 4.272 L 6 8.568 L 7.212 8.568 L 3.54 3.18 L 2.88 0 L 1.8000001 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 在每一点都是 <a href="#hom-limit">hom-limit</a></p>
+  <p>let <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 30.654666666666667 8.568" width="30.654666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g12A89F27EF5033BF67CDA8BB33DE47F5" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.482666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g853F2830E1DA500EB285DACA1536CF6B" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g12A89F27EF5033BF67CDA8BB33DE47F5" overflow="visible">
+            <path d="M 4.548 -0.144 Q 2.592 -0.144 1.602 0.75 Q 0.612 1.644 0.612 3.348 Q 0.612 5.064 1.602 5.952 Q 2.592 6.84 4.548 6.84 L 7.776 6.84 L 7.776 5.988 L 4.548 5.988 Q 2.988 5.988 2.232 5.364 Q 1.4760001 4.7400002 1.4760001 3.348 Q 1.4760001 1.968 2.232 1.332 Q 2.988 0.696 4.548 0.696 L 7.776 0.696 L 7.776 -0.144 L 4.548 -0.144 Z "/>
+        </symbol>
+        <symbol id="g853F2830E1DA500EB285DACA1536CF6B" overflow="visible">
+            <path d="M 0 0 L 3.492 4.5360003 L 1.968 8.568 L 3.048 8.568 L 4.212 5.292 L 6.756 8.568 L 7.932 8.568 L 4.692 4.488 L 6.3120003 0 L 5.184 0 L 3.96 3.708 L 1.176 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p> <strong>[</strong><span class="typst-tag">limit-point</span><strong data-typst-label="limit-point">]</strong>  极限点 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 150.88000000000002 8.568" width="150.88000000000002pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.137333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(21.858666666666664 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g853F2830E1DA500EB285DACA1536CF6B" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(33.364 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gE918675408A59D67A4E31B55419DA958" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(39.91333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g32E2F0131DD2083548BB9F23C4EC3B75" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(48.91333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(59.446666666666665 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(71.168 0)">
+            <g class="typst-group">
+                <g>
+                    <g transform="translate(0 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gFA33A03BFC89A58F71A200A0DDA27F46" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(8.064000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(12.000000000000002 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(18.804000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(22.74 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(27.956000000000003 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(38.05066666666667 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g763B707C2EA539CF622FFD0F2F2DAE64" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="translate(120.09333333333335 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(130.62666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD567C83400EB290F61ABF2427579754" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(140.824 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g94FB82838C61DA07FED3F3627CC1216A" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="g853F2830E1DA500EB285DACA1536CF6B" overflow="visible">
+            <path d="M 0 0 L 3.492 4.5360003 L 1.968 8.568 L 3.048 8.568 L 4.212 5.292 L 6.756 8.568 L 7.932 8.568 L 4.692 4.488 L 6.3120003 0 L 5.184 0 L 3.96 3.708 L 1.176 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="gE918675408A59D67A4E31B55419DA958" overflow="visible">
+            <path d="M 1.596 4.968 Q 1.296 4.968 1.08 5.16 Q 0.864 5.352 0.864 5.784 Q 0.864 6.2400002 1.08 6.42 Q 1.296 6.6 1.596 6.6 Q 1.908 6.6 2.13 6.42 Q 2.352 6.2400002 2.352 5.784 Q 2.352 5.352 2.13 5.16 Q 1.908 4.968 1.596 4.968 Z M 1.596 -0.168 Q 1.296 -0.168 1.08 0.024 Q 0.864 0.216 0.864 0.648 Q 0.864 1.092 1.08 1.272 Q 1.296 1.452 1.596 1.452 Q 1.908 1.452 2.13 1.272 Q 2.352 1.092 2.352 0.648 Q 2.352 0.216 2.13 0.024 Q 1.908 -0.168 1.596 -0.168 Z "/>
+        </symbol>
+        <symbol id="g32E2F0131DD2083548BB9F23C4EC3B75" overflow="visible">
+            <path d="M 3.984 -0.048 L 0.612 8.58 L 1.776 8.58 L 2.76 5.9040003 L 6.192 5.9040003 L 7.224 8.58 L 8.3880005 8.58 L 4.968 -0.048 L 3.984 -0.048 Z M 4.5 0.984 Q 4.524 1.116 4.59 1.3560001 Q 4.656 1.596 4.776 1.932 Q 4.896 2.28 5.16 3.024 Q 5.4240003 3.7680001 5.856 4.92 L 3.144 4.92 Q 3.66 3.48 3.948 2.652 Q 4.236 1.824 4.32 1.584 Q 4.476 1.116 4.5 0.984 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="gFA33A03BFC89A58F71A200A0DDA27F46" overflow="visible">
+            <path d="M 1.08 0 L 1.08 8.568 L 3.744 8.568 Q 5.46 8.568 6.336 8.088 Q 7.212 7.6080003 7.212 6.396 Q 7.212 5.664 6.87 5.16 Q 6.528 4.656 5.892 4.548 L 5.892 4.488 Q 6.324 4.404 6.672 4.188 Q 7.02 3.9720001 7.224 3.5640001 Q 7.428 3.1560001 7.428 2.484 Q 7.428 1.32 6.588 0.66 Q 5.748 0 4.284 0 L 1.08 0 Z M 2.892 5.172 L 3.948 5.172 Q 4.7400002 5.172 5.046 5.4240003 Q 5.352 5.676 5.352 6.156 Q 5.352 6.6480002 4.992 6.864 Q 4.632 7.08 3.852 7.08 L 2.892 7.08 L 2.892 5.172 Z M 2.892 1.5 L 4.08 1.5 Q 4.896 1.5 5.2200003 1.818 Q 5.544 2.136 5.544 2.664 Q 5.544 3.144 5.214 3.438 Q 4.884 3.732 4.02 3.732 L 2.892 3.732 L 2.892 1.5 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g763B707C2EA539CF622FFD0F2F2DAE64" overflow="visible">
+            <path d="M 0.6 0 L 0.6 3.852 Q 0.6 5.868 1.494 6.918 Q 2.388 7.968 4.104 7.968 Q 5.8320003 7.968 6.7200003 6.918 Q 7.6080003 5.868 7.6080003 3.852 L 7.6080003 0 L 6.744 0 L 6.744 3.888 Q 6.744 7.152 4.104 7.152 Q 1.464 7.152 1.464 3.888 L 1.464 0 L 0.6 0 Z "/>
+        </symbol>
+        <symbol id="gD567C83400EB290F61ABF2427579754" overflow="visible">
+            <path d="M 0.612 1.716 L 0.612 2.568 L 2.7120001 2.568 L 3.312 4.104 L 0.612 4.104 L 0.612 4.956 L 3.636 4.956 L 4.272 6.576 L 5.004 6.288 L 4.488 4.956 L 6.252 4.956 L 6.252 4.104 L 4.152 4.104 L 3.552 2.568 L 6.252 2.568 L 6.252 1.716 L 3.228 1.716 L 2.592 0.096 L 1.86 0.384 L 2.376 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+        <symbol id="g94FB82838C61DA07FED3F3627CC1216A" overflow="visible">
+            <path d="M 1.152 -0.132 L 0.612 0.408 L 1.656 1.452 Q 1.176 2.028 0.90000004 2.748 Q 0.624 3.468 0.624 4.284 Q 0.624 5.196 0.966 5.994 Q 1.308 6.7920003 1.914 7.3980002 Q 2.52 8.004 3.318 8.346 Q 4.116 8.688 5.028 8.688 Q 5.844 8.688 6.564 8.412 Q 7.284 8.136 7.86 7.656 L 8.904 8.7 L 9.444 8.16 L 8.4 7.116 Q 8.88 6.54 9.156 5.82 Q 9.432 5.1 9.432 4.284 Q 9.432 3.372 9.09 2.5740001 Q 8.748 1.776 8.136 1.17 Q 7.524 0.564 6.726 0.222 Q 5.928 -0.120000005 5.028 -0.120000005 Q 4.212 -0.120000005 3.492 0.156 Q 2.772 0.432 2.196 0.912 L 1.152 -0.132 Z M 1.488 4.284 Q 1.488 3.648 1.6980001 3.084 Q 1.908 2.52 2.2680001 2.0640001 L 7.248 7.044 Q 6.7920003 7.4040003 6.228 7.614 Q 5.664 7.824 5.028 7.824 Q 4.296 7.824 3.654 7.548 Q 3.012 7.272 2.526 6.7860003 Q 2.04 6.3 1.764 5.658 Q 1.488 5.0160003 1.488 4.284 Z M 5.028 0.744 Q 5.76 0.744 6.402 1.02 Q 7.044 1.296 7.53 1.7820001 Q 8.016 2.2680001 8.292 2.91 Q 8.568 3.552 8.568 4.284 Q 8.568 4.92 8.358 5.484 Q 8.148 6.048 7.788 6.504 L 2.808 1.524 Q 3.264 1.164 3.828 0.954 Q 4.392 0.744 5.028 0.744 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 29.28666666666667 8.568" width="29.28666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.137333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(21.858666666666664 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> ==> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 6.804 8.568" width="6.804pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的极限点</p>
+  <p>对一般网, 需要分类不同的类型极限点</p>
+  <p> <strong>[</strong><span class="typst-tag">closure</span><strong data-typst-label="closure">]</strong>  闭包 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 30.030666666666665 8.568" width="30.030666666666665pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.137333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(21.858666666666664 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g853F2830E1DA500EB285DACA1536CF6B" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="g853F2830E1DA500EB285DACA1536CF6B" overflow="visible">
+            <path d="M 0 0 L 3.492 4.5360003 L 1.968 8.568 L 3.048 8.568 L 4.212 5.292 L 6.756 8.568 L 7.932 8.568 L 4.692 4.488 L 6.3120003 0 L 5.184 0 L 3.96 3.708 L 1.176 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>, <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 6.804 8.568" width="6.804pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 极限点</p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的闭包 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是所有 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 极限点的集合</p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 29.910666666666664 8.568" width="29.910666666666664pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g12A89F27EF5033BF67CDA8BB33DE47F5" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(25.410666666666664 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.482666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g12A89F27EF5033BF67CDA8BB33DE47F5" overflow="visible">
+            <path d="M 4.548 -0.144 Q 2.592 -0.144 1.602 0.75 Q 0.612 1.644 0.612 3.348 Q 0.612 5.064 1.602 5.952 Q 2.592 6.84 4.548 6.84 L 7.776 6.84 L 7.776 5.988 L 4.548 5.988 Q 2.988 5.988 2.232 5.364 Q 1.4760001 4.7400002 1.4760001 3.348 Q 1.4760001 1.968 2.232 1.332 Q 2.988 0.696 4.548 0.696 L 7.776 0.696 L 7.776 -0.144 L 4.548 -0.144 Z "/>
+        </symbol>
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p><strong>Example</strong> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 8.568 8.568" width="8.568pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g17B8C9E58813A2F356294AFC3353042" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g17B8C9E58813A2F356294AFC3353042" overflow="visible">
+            <path d="M 1.164 0 L 1.164 8.568 L 4.272 8.568 Q 5.808 8.568 6.528 7.974 Q 7.248 7.38 7.248 6.288 Q 7.248 5.496 6.846 4.938 Q 6.4440002 4.38 5.712 4.104 L 8.3880005 0 L 6.048 0 L 3.756 3.8040001 L 3.24 3.8040001 L 3.24 0 L 1.164 0 Z M 1.8000001 0.636 L 2.604 0.636 L 2.604 7.932 L 1.8000001 7.932 L 1.8000001 0.636 Z M 3.24 4.44 L 4.908 4.44 L 4.908 7.932 L 3.24 7.932 L 3.24 4.44 Z M 5.556 4.644 Q 5.988 4.848 6.27 5.208 Q 6.552 5.568 6.552 6.288 Q 6.552 6.948 6.3 7.29 Q 6.048 7.632 5.556 7.788 L 5.556 4.644 Z M 6.372 0.624 L 7.26 0.624 L 5.16 3.924 Q 4.8 3.852 4.428 3.828 L 6.372 0.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 拓扑下, 开区间 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 26.851999999999997 8.568" width="26.851999999999997pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(3.936 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.751999999999999 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(15.968 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.916 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g18EA3FA566C6BAE28029F84508185B05" overflow="visible">
+            <path d="M 2.364 -0.120000005 Q 1.5 -0.120000005 1.014 0.366 Q 0.528 0.852 0.528 1.548 Q 0.528 2.352 1.008 2.844 Q 1.488 3.336 2.286 3.576 Q 3.084 3.816 4.044 3.8400002 L 5.1480002 3.876 L 5.232 4.26 Q 5.256 4.356 5.268 4.476 Q 5.28 4.596 5.28 4.8 Q 5.28 5.184 4.992 5.436 Q 4.704 5.688 4.08 5.688 Q 3.78 5.688 3.246 5.61 Q 2.7120001 5.532 2.028 5.196 L 1.8000001 5.94 Q 2.316 6.252 2.946 6.396 Q 3.576 6.54 4.14 6.54 Q 4.908 6.54 5.382 6.306 Q 5.856 6.072 6.078 5.676 Q 6.3 5.28 6.3 4.8 Q 6.3 4.5360003 6.276 4.338 Q 6.252 4.14 6.204 3.936 L 5.352 0 L 4.584 0 L 4.572 0.912 L 4.524 0.912 Q 3.996 0.384 3.504 0.132 Q 3.012 -0.120000005 2.364 -0.120000005 Z M 2.568 0.732 Q 3.1200001 0.732 3.606 1.026 Q 4.092 1.32 4.44 1.7820001 Q 4.788 2.244 4.896 2.748 L 4.98 3.144 L 4.02 3.108 Q 3.348 3.084 2.802 2.94 Q 2.256 2.796 1.938 2.484 Q 1.62 2.172 1.62 1.632 Q 1.62 1.2360001 1.89 0.984 Q 2.16 0.732 2.568 0.732 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" overflow="visible">
+            <path d="M 3.228 -0.120000005 Q 2.58 -0.120000005 2.178 0.21000001 Q 1.776 0.54 1.584 0.984 L 1.524 0.984 L 1.128 0 L 0.336 0 L 2.2680001 9.12 L 3.3240001 9.12 L 2.868 6.96 Q 2.784 6.552 2.682 6.162 Q 2.58 5.772 2.5080001 5.514 Q 2.436 5.256 2.424 5.232 L 2.4720001 5.232 Q 2.904 5.76 3.414 6.15 Q 3.924 6.54 4.596 6.54 Q 5.388 6.54 5.874 5.988 Q 6.36 5.436 6.36 4.356 Q 6.36 3.48 6.144 2.676 Q 5.928 1.872 5.52 1.242 Q 5.112 0.612 4.5360003 0.246 Q 3.96 -0.120000005 3.228 -0.120000005 Z M 3.144 0.756 Q 3.624 0.756 4.02 1.062 Q 4.416 1.368 4.698 1.8840001 Q 4.98 2.4 5.13 3.048 Q 5.28 3.696 5.28 4.368 Q 5.28 5.664 4.26 5.664 Q 3.864 5.664 3.45 5.37 Q 3.036 5.076 2.688 4.566 Q 2.34 4.056 2.13 3.408 Q 1.9200001 2.76 1.9200001 2.052 Q 1.9200001 1.4760001 2.22 1.116 Q 2.52 0.756 3.144 0.756 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的闭包是闭区间 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 26.876 8.568" width="26.876pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gC4946CEF386744A835465D0465F7010" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(3.948 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g18EA3FA566C6BAE28029F84508185B05" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.764 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(15.98 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.927999999999997 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD891F9DCCD2B2693C47EA438A9D8E899" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gC4946CEF386744A835465D0465F7010" overflow="visible">
+            <path d="M 0.96000004 -1.896 L 0.96000004 9.408 L 3.648 9.408 L 3.648 8.544 L 1.992 8.544 L 1.992 -1.0320001 L 3.648 -1.0320001 L 3.648 -1.896 L 0.96000004 -1.896 Z "/>
+        </symbol>
+        <symbol id="g18EA3FA566C6BAE28029F84508185B05" overflow="visible">
+            <path d="M 2.364 -0.120000005 Q 1.5 -0.120000005 1.014 0.366 Q 0.528 0.852 0.528 1.548 Q 0.528 2.352 1.008 2.844 Q 1.488 3.336 2.286 3.576 Q 3.084 3.816 4.044 3.8400002 L 5.1480002 3.876 L 5.232 4.26 Q 5.256 4.356 5.268 4.476 Q 5.28 4.596 5.28 4.8 Q 5.28 5.184 4.992 5.436 Q 4.704 5.688 4.08 5.688 Q 3.78 5.688 3.246 5.61 Q 2.7120001 5.532 2.028 5.196 L 1.8000001 5.94 Q 2.316 6.252 2.946 6.396 Q 3.576 6.54 4.14 6.54 Q 4.908 6.54 5.382 6.306 Q 5.856 6.072 6.078 5.676 Q 6.3 5.28 6.3 4.8 Q 6.3 4.5360003 6.276 4.338 Q 6.252 4.14 6.204 3.936 L 5.352 0 L 4.584 0 L 4.572 0.912 L 4.524 0.912 Q 3.996 0.384 3.504 0.132 Q 3.012 -0.120000005 2.364 -0.120000005 Z M 2.568 0.732 Q 3.1200001 0.732 3.606 1.026 Q 4.092 1.32 4.44 1.7820001 Q 4.788 2.244 4.896 2.748 L 4.98 3.144 L 4.02 3.108 Q 3.348 3.084 2.802 2.94 Q 2.256 2.796 1.938 2.484 Q 1.62 2.172 1.62 1.632 Q 1.62 1.2360001 1.89 0.984 Q 2.16 0.732 2.568 0.732 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="gC5694D8B3AC2B3A9D15F1C3AC6E84FBC" overflow="visible">
+            <path d="M 3.228 -0.120000005 Q 2.58 -0.120000005 2.178 0.21000001 Q 1.776 0.54 1.584 0.984 L 1.524 0.984 L 1.128 0 L 0.336 0 L 2.2680001 9.12 L 3.3240001 9.12 L 2.868 6.96 Q 2.784 6.552 2.682 6.162 Q 2.58 5.772 2.5080001 5.514 Q 2.436 5.256 2.424 5.232 L 2.4720001 5.232 Q 2.904 5.76 3.414 6.15 Q 3.924 6.54 4.596 6.54 Q 5.388 6.54 5.874 5.988 Q 6.36 5.436 6.36 4.356 Q 6.36 3.48 6.144 2.676 Q 5.928 1.872 5.52 1.242 Q 5.112 0.612 4.5360003 0.246 Q 3.96 -0.120000005 3.228 -0.120000005 Z M 3.144 0.756 Q 3.624 0.756 4.02 1.062 Q 4.416 1.368 4.698 1.8840001 Q 4.98 2.4 5.13 3.048 Q 5.28 3.696 5.28 4.368 Q 5.28 5.664 4.26 5.664 Q 3.864 5.664 3.45 5.37 Q 3.036 5.076 2.688 4.566 Q 2.34 4.056 2.13 3.408 Q 1.9200001 2.76 1.9200001 2.052 Q 1.9200001 1.4760001 2.22 1.116 Q 2.52 0.756 3.144 0.756 Z "/>
+        </symbol>
+        <symbol id="gD891F9DCCD2B2693C47EA438A9D8E899" overflow="visible">
+            <path d="M 0.3 -1.896 L 0.3 -1.0320001 L 1.956 -1.0320001 L 1.956 8.544 L 0.3 8.544 L 0.3 9.408 L 2.988 9.408 L 2.988 -1.896 L 0.3 -1.896 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>. <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 9.372000000000002 8.568" width="9.372000000000002pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D6A50C6B30D71F3E29F0D4BDFA47E40" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g7D6A50C6B30D71F3E29F0D4BDFA47E40" overflow="visible">
+            <path d="M 5.76 -2.04 L 4.476 -0.120000005 Q 2.616 -0.024 1.674 1.146 Q 0.732 2.316 0.732 4.308 Q 0.732 5.6280003 1.182 6.612 Q 1.632 7.596 2.514 8.148 Q 3.3960001 8.7 4.704 8.7 Q 5.988 8.7 6.864 8.148 Q 7.7400002 7.596 8.190001 6.606 Q 8.64 5.616 8.64 4.296 Q 8.64 2.724 8.094 1.746 Q 7.548 0.768 6.672 0.312 L 9.216 -2.04 L 5.76 -2.04 Z M 4.692 0.456 Q 5.616 0.456 6.276 0.78000003 L 6.276 7.788 Q 5.94 7.956 5.55 8.04 Q 5.16 8.124 4.704 8.124 Q 3.7680001 8.124 3.096 7.776 L 3.096 0.792 Q 3.756 0.456 4.692 0.456 Z M 6.912 1.212 Q 7.452 1.704 7.728 2.49 Q 8.004 3.276 8.004 4.296 Q 8.004 5.316 7.734 6.096 Q 7.464 6.876 6.912 7.368 L 6.912 1.212 Z M 2.46 1.224 L 2.46 7.344 Q 1.908 6.852 1.638 6.072 Q 1.368 5.292 1.368 4.296 Q 1.368 3.288 1.638 2.502 Q 1.908 1.716 2.46 1.224 Z M 6.18 -1.464 L 7.668 -1.464 L 6.0360003 0.048 Q 5.88 0 5.64 -0.042 Q 5.4 -0.084 5.2200003 -0.096 L 6.18 -1.464 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的闭包是 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 8.568 8.568" width="8.568pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g17B8C9E58813A2F356294AFC3353042" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g17B8C9E58813A2F356294AFC3353042" overflow="visible">
+            <path d="M 1.164 0 L 1.164 8.568 L 4.272 8.568 Q 5.808 8.568 6.528 7.974 Q 7.248 7.38 7.248 6.288 Q 7.248 5.496 6.846 4.938 Q 6.4440002 4.38 5.712 4.104 L 8.3880005 0 L 6.048 0 L 3.756 3.8040001 L 3.24 3.8040001 L 3.24 0 L 1.164 0 Z M 1.8000001 0.636 L 2.604 0.636 L 2.604 7.932 L 1.8000001 7.932 L 1.8000001 0.636 Z M 3.24 4.44 L 4.908 4.44 L 4.908 7.932 L 3.24 7.932 L 3.24 4.44 Z M 5.556 4.644 Q 5.988 4.848 6.27 5.208 Q 6.552 5.568 6.552 6.288 Q 6.552 6.948 6.3 7.29 Q 6.048 7.632 5.556 7.788 L 5.556 4.644 Z M 6.372 0.624 L 7.26 0.624 L 5.16 3.924 Q 4.8 3.852 4.428 3.828 L 6.372 0.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p> <strong>[</strong><span class="typst-tag">closed</span><strong data-typst-label="closed">]</strong>  <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是闭集 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 28.386666666666667 8.568" width="28.386666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(20.95866666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g5146CFAFFD4C9551660817838711A7F" overflow="visible">
+            <path d="M 0.612 4.104 L 0.612 4.956 L 6.252 4.956 L 6.252 4.104 L 0.612 4.104 Z M 0.612 1.716 L 0.612 2.568 L 6.252 2.568 L 6.252 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是闭集 &lt;==> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 包含所有 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 极限点</p>
+  <p>forall <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span>, <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是闭集. <em>Proof</em> 其它点不满足 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 110.96666666666667 8.568" width="110.96666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g32E2F0131DD2083548BB9F23C4EC3B75" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(9 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(19.533333333333335 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(31.25466666666667 0)">
+            <g class="typst-group">
+                <g>
+                    <g transform="translate(0 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gFA33A03BFC89A58F71A200A0DDA27F46" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(8.064000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(12.000000000000002 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(18.804000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(22.74 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(27.956000000000003 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(38.05066666666667 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g763B707C2EA539CF622FFD0F2F2DAE64" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="translate(80.18 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(90.71333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD567C83400EB290F61ABF2427579754" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(100.91066666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g94FB82838C61DA07FED3F3627CC1216A" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g32E2F0131DD2083548BB9F23C4EC3B75" overflow="visible">
+            <path d="M 3.984 -0.048 L 0.612 8.58 L 1.776 8.58 L 2.76 5.9040003 L 6.192 5.9040003 L 7.224 8.58 L 8.3880005 8.58 L 4.968 -0.048 L 3.984 -0.048 Z M 4.5 0.984 Q 4.524 1.116 4.59 1.3560001 Q 4.656 1.596 4.776 1.932 Q 4.896 2.28 5.16 3.024 Q 5.4240003 3.7680001 5.856 4.92 L 3.144 4.92 Q 3.66 3.48 3.948 2.652 Q 4.236 1.824 4.32 1.584 Q 4.476 1.116 4.5 0.984 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="gFA33A03BFC89A58F71A200A0DDA27F46" overflow="visible">
+            <path d="M 1.08 0 L 1.08 8.568 L 3.744 8.568 Q 5.46 8.568 6.336 8.088 Q 7.212 7.6080003 7.212 6.396 Q 7.212 5.664 6.87 5.16 Q 6.528 4.656 5.892 4.548 L 5.892 4.488 Q 6.324 4.404 6.672 4.188 Q 7.02 3.9720001 7.224 3.5640001 Q 7.428 3.1560001 7.428 2.484 Q 7.428 1.32 6.588 0.66 Q 5.748 0 4.284 0 L 1.08 0 Z M 2.892 5.172 L 3.948 5.172 Q 4.7400002 5.172 5.046 5.4240003 Q 5.352 5.676 5.352 6.156 Q 5.352 6.6480002 4.992 6.864 Q 4.632 7.08 3.852 7.08 L 2.892 7.08 L 2.892 5.172 Z M 2.892 1.5 L 4.08 1.5 Q 4.896 1.5 5.2200003 1.818 Q 5.544 2.136 5.544 2.664 Q 5.544 3.144 5.214 3.438 Q 4.884 3.732 4.02 3.732 L 2.892 3.732 L 2.892 1.5 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g763B707C2EA539CF622FFD0F2F2DAE64" overflow="visible">
+            <path d="M 0.6 0 L 0.6 3.852 Q 0.6 5.868 1.494 6.918 Q 2.388 7.968 4.104 7.968 Q 5.8320003 7.968 6.7200003 6.918 Q 7.6080003 5.868 7.6080003 3.852 L 7.6080003 0 L 6.744 0 L 6.744 3.888 Q 6.744 7.152 4.104 7.152 Q 1.464 7.152 1.464 3.888 L 1.464 0 L 0.6 0 Z "/>
+        </symbol>
+        <symbol id="gD567C83400EB290F61ABF2427579754" overflow="visible">
+            <path d="M 0.612 1.716 L 0.612 2.568 L 2.7120001 2.568 L 3.312 4.104 L 0.612 4.104 L 0.612 4.956 L 3.636 4.956 L 4.272 6.576 L 5.004 6.288 L 4.488 4.956 L 6.252 4.956 L 6.252 4.104 L 4.152 4.104 L 3.552 2.568 L 6.252 2.568 L 6.252 1.716 L 3.228 1.716 L 2.592 0.096 L 1.86 0.384 L 2.376 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+        <symbol id="g94FB82838C61DA07FED3F3627CC1216A" overflow="visible">
+            <path d="M 1.152 -0.132 L 0.612 0.408 L 1.656 1.452 Q 1.176 2.028 0.90000004 2.748 Q 0.624 3.468 0.624 4.284 Q 0.624 5.196 0.966 5.994 Q 1.308 6.7920003 1.914 7.3980002 Q 2.52 8.004 3.318 8.346 Q 4.116 8.688 5.028 8.688 Q 5.844 8.688 6.564 8.412 Q 7.284 8.136 7.86 7.656 L 8.904 8.7 L 9.444 8.16 L 8.4 7.116 Q 8.88 6.54 9.156 5.82 Q 9.432 5.1 9.432 4.284 Q 9.432 3.372 9.09 2.5740001 Q 8.748 1.776 8.136 1.17 Q 7.524 0.564 6.726 0.222 Q 5.928 -0.120000005 5.028 -0.120000005 Q 4.212 -0.120000005 3.492 0.156 Q 2.772 0.432 2.196 0.912 L 1.152 -0.132 Z M 1.488 4.284 Q 1.488 3.648 1.6980001 3.084 Q 1.908 2.52 2.2680001 2.0640001 L 7.248 7.044 Q 6.7920003 7.4040003 6.228 7.614 Q 5.664 7.824 5.028 7.824 Q 4.296 7.824 3.654 7.548 Q 3.012 7.272 2.526 6.7860003 Q 2.04 6.3 1.764 5.658 Q 1.488 5.0160003 1.488 4.284 Z M 5.028 0.744 Q 5.76 0.744 6.402 1.02 Q 7.044 1.296 7.53 1.7820001 Q 8.016 2.2680001 8.292 2.91 Q 8.568 3.552 8.568 4.284 Q 8.568 4.92 8.358 5.484 Q 8.148 6.048 7.788 6.504 L 2.808 1.524 Q 3.264 1.164 3.828 0.954 Q 4.392 0.744 5.028 0.744 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 28.386666666666667 8.568" width="28.386666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 5.220000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(23.886666666666667 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(20.95866666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g5146CFAFFD4C9551660817838711A7F" overflow="visible">
+            <path d="M 0.612 4.104 L 0.612 4.956 L 6.252 4.956 L 6.252 4.104 L 0.612 4.104 Z M 0.612 1.716 L 0.612 2.568 L 6.252 2.568 L 6.252 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p><span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 是包围 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 7.428 8.568" width="7.428pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 的最小闭集. <em>Proof</em> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 84.728 8.568" width="84.728pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g12A89F27EF5033BF67CDA8BB33DE47F5" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.482666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(33.016 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g346676E6EBA5BB46F785121B7D5FFAE3" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(57.97333333333333 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(55.04533333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(65.80666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g12A89F27EF5033BF67CDA8BB33DE47F5" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(80.01200000000001 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(77.528 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g12A89F27EF5033BF67CDA8BB33DE47F5" overflow="visible">
+            <path d="M 4.548 -0.144 Q 2.592 -0.144 1.602 0.75 Q 0.612 1.644 0.612 3.348 Q 0.612 5.064 1.602 5.952 Q 2.592 6.84 4.548 6.84 L 7.776 6.84 L 7.776 5.988 L 4.548 5.988 Q 2.988 5.988 2.232 5.364 Q 1.4760001 4.7400002 1.4760001 3.348 Q 1.4760001 1.968 2.232 1.332 Q 2.988 0.696 4.548 0.696 L 7.776 0.696 L 7.776 -0.144 L 4.548 -0.144 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="g346676E6EBA5BB46F785121B7D5FFAE3" overflow="visible">
+            <path d="M 14.676001 -0.396 L 13.992001 -0.396 Q 14.532001 0.672 15.312 1.8000001 L 0.612 1.8000001 L 0.612 2.652 L 15.936 2.652 Q 16.212 3.024 16.5 3.348 Q 16.212 3.672 15.936 4.044 L 0.612 4.044 L 0.612 4.896 L 15.312 4.896 Q 14.532001 6.024 13.992001 7.092 L 14.676001 7.092 Q 15.312 6.36 16.152 5.46 Q 16.992 4.56 18.084 3.504 L 18.084 3.192 Q 16.992 2.136 16.152 1.242 Q 15.312 0.348 14.676001 -0.396 Z "/>
+        </symbol>
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> and 闭集 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 27.930666666666667 8.568" width="27.930666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.533333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(23.214666666666666 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(20.730666666666668 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="g5146CFAFFD4C9551660817838711A7F" overflow="visible">
+            <path d="M 0.612 4.104 L 0.612 4.956 L 6.252 4.956 L 6.252 4.104 L 0.612 4.104 Z M 0.612 1.716 L 0.612 2.568 L 6.252 2.568 L 6.252 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> ==> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 29.682666666666666 8.568" width="29.682666666666666pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(2.9279999999999995 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.761333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g12A89F27EF5033BF67CDA8BB33DE47F5" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.482666666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g12A89F27EF5033BF67CDA8BB33DE47F5" overflow="visible">
+            <path d="M 4.548 -0.144 Q 2.592 -0.144 1.602 0.75 Q 0.612 1.644 0.612 3.348 Q 0.612 5.064 1.602 5.952 Q 2.592 6.84 4.548 6.84 L 7.776 6.84 L 7.776 5.988 L 4.548 5.988 Q 2.988 5.988 2.232 5.364 Q 1.4760001 4.7400002 1.4760001 3.348 Q 1.4760001 1.968 2.232 1.332 Q 2.988 0.696 4.548 0.696 L 7.776 0.696 L 7.776 -0.144 L 4.548 -0.144 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p>极限点 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 29.28666666666667 8.568" width="29.28666666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.137333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(24.786666666666665 6.672000000000001)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g4B386E3FD10131123BA2918EA4949884" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(21.858666666666664 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="g4B386E3FD10131123BA2918EA4949884" overflow="visible">
+            <path d="M 4.044 8.124 L 4.044 7.272 L 0.48000002 7.272 L 0.48000002 8.124 L 4.044 8.124 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 可以分类为孤立点或聚点</p>
+  <p>孤立点 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 162.2618666666667 8.568" width="162.2618666666667pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.137333333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(21.858666666666664 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(31.953333333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gA365B4FAA2BA16D5E0BB396E38FF7D76" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(43.188 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g32EFFE328E94E63864C9A8DB1E069DD2" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(50.076 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(57.275999999999996 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g61F3793CEA70056E4B4B8B220FA00E9D" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(65.71893333333334 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(77.44026666666667 0)">
+            <g class="typst-group">
+                <g>
+                    <g transform="translate(0 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gFA33A03BFC89A58F71A200A0DDA27F46" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(8.064000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(12.000000000000002 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(18.804000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(22.74 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(27.956000000000003 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(38.05066666666667 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g763B707C2EA539CF622FFD0F2F2DAE64" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="translate(126.3656 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(133.56560000000002 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g61F3793CEA70056E4B4B8B220FA00E9D" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(142.00853333333333 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g5146CFAFFD4C9551660817838711A7F" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(152.20586666666668 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g94FB82838C61DA07FED3F3627CC1216A" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="gA365B4FAA2BA16D5E0BB396E38FF7D76" overflow="visible">
+            <path d="M 0.612 0 L 3.984 6.96 L 4.584 6.96 L 7.956 0 L 6.96 0 L 4.284 5.736 L 1.608 0 L 0.612 0 Z "/>
+        </symbol>
+        <symbol id="g32EFFE328E94E63864C9A8DB1E069DD2" overflow="visible">
+            <path d="M 0.612 0 L 0.612 0.96000004 L 5.28 0.96000004 L 5.28 3.9720001 L 0.96000004 3.9720001 L 0.96000004 4.932 L 5.28 4.932 L 5.28 7.62 L 0.708 7.62 L 0.708 8.58 L 6.276 8.58 L 6.276 0 L 0.612 0 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="g61F3793CEA70056E4B4B8B220FA00E9D" overflow="visible">
+            <path d="M 0 0 L 1.6848 2.0088 L 0.87839997 3.9096 L 1.8576 3.9096 L 2.3184 2.6568 L 3.2616 3.9096 L 4.356 3.9096 L 2.7216 1.9584 L 3.5928 0 L 2.592 0 L 2.0952 1.296 L 1.0871999 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="gFA33A03BFC89A58F71A200A0DDA27F46" overflow="visible">
+            <path d="M 1.08 0 L 1.08 8.568 L 3.744 8.568 Q 5.46 8.568 6.336 8.088 Q 7.212 7.6080003 7.212 6.396 Q 7.212 5.664 6.87 5.16 Q 6.528 4.656 5.892 4.548 L 5.892 4.488 Q 6.324 4.404 6.672 4.188 Q 7.02 3.9720001 7.224 3.5640001 Q 7.428 3.1560001 7.428 2.484 Q 7.428 1.32 6.588 0.66 Q 5.748 0 4.284 0 L 1.08 0 Z M 2.892 5.172 L 3.948 5.172 Q 4.7400002 5.172 5.046 5.4240003 Q 5.352 5.676 5.352 6.156 Q 5.352 6.6480002 4.992 6.864 Q 4.632 7.08 3.852 7.08 L 2.892 7.08 L 2.892 5.172 Z M 2.892 1.5 L 4.08 1.5 Q 4.896 1.5 5.2200003 1.818 Q 5.544 2.136 5.544 2.664 Q 5.544 3.144 5.214 3.438 Q 4.884 3.732 4.02 3.732 L 2.892 3.732 L 2.892 1.5 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="g763B707C2EA539CF622FFD0F2F2DAE64" overflow="visible">
+            <path d="M 0.6 0 L 0.6 3.852 Q 0.6 5.868 1.494 6.918 Q 2.388 7.968 4.104 7.968 Q 5.8320003 7.968 6.7200003 6.918 Q 7.6080003 5.868 7.6080003 3.852 L 7.6080003 0 L 6.744 0 L 6.744 3.888 Q 6.744 7.152 4.104 7.152 Q 1.464 7.152 1.464 3.888 L 1.464 0 L 0.6 0 Z "/>
+        </symbol>
+        <symbol id="g5146CFAFFD4C9551660817838711A7F" overflow="visible">
+            <path d="M 0.612 4.104 L 0.612 4.956 L 6.252 4.956 L 6.252 4.104 L 0.612 4.104 Z M 0.612 1.716 L 0.612 2.568 L 6.252 2.568 L 6.252 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+        <symbol id="g94FB82838C61DA07FED3F3627CC1216A" overflow="visible">
+            <path d="M 1.152 -0.132 L 0.612 0.408 L 1.656 1.452 Q 1.176 2.028 0.90000004 2.748 Q 0.624 3.468 0.624 4.284 Q 0.624 5.196 0.966 5.994 Q 1.308 6.7920003 1.914 7.3980002 Q 2.52 8.004 3.318 8.346 Q 4.116 8.688 5.028 8.688 Q 5.844 8.688 6.564 8.412 Q 7.284 8.136 7.86 7.656 L 8.904 8.7 L 9.444 8.16 L 8.4 7.116 Q 8.88 6.54 9.156 5.82 Q 9.432 5.1 9.432 4.284 Q 9.432 3.372 9.09 2.5740001 Q 8.748 1.776 8.136 1.17 Q 7.524 0.564 6.726 0.222 Q 5.928 -0.120000005 5.028 -0.120000005 Q 4.212 -0.120000005 3.492 0.156 Q 2.772 0.432 2.196 0.912 L 1.152 -0.132 Z M 1.488 4.284 Q 1.488 3.648 1.6980001 3.084 Q 1.908 2.52 2.2680001 2.0640001 L 7.248 7.044 Q 6.7920003 7.4040003 6.228 7.614 Q 5.664 7.824 5.028 7.824 Q 4.296 7.824 3.654 7.548 Q 3.012 7.272 2.526 6.7860003 Q 2.04 6.3 1.764 5.658 Q 1.488 5.0160003 1.488 4.284 Z M 5.028 0.744 Q 5.76 0.744 6.402 1.02 Q 7.044 1.296 7.53 1.7820001 Q 8.016 2.2680001 8.292 2.91 Q 8.568 3.552 8.568 4.284 Q 8.568 4.92 8.358 5.484 Q 8.148 6.048 7.788 6.504 L 2.808 1.524 Q 3.264 1.164 3.828 0.954 Q 4.392 0.744 5.028 0.744 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p>聚点 := <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 146.0312 8.568" width="146.0312pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g32E2F0131DD2083548BB9F23C4EC3B75" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(9 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(16.2 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g61F3793CEA70056E4B4B8B220FA00E9D" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(24.642933333333335 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g54593370DE5CD9743B3B83D6976FBF72" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(36.364266666666666 0)">
+            <g class="typst-group">
+                <g>
+                    <g transform="translate(0 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gFA33A03BFC89A58F71A200A0DDA27F46" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(8.064000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(12.000000000000002 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(18.804000000000002 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(22.74 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(27.956000000000003 8.988)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(31.892 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#gBF6AA13B6859C795E2AEB1C4AFD2DCC0" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                    <g transform="translate(41.98666666666667 8.568)">
+                        <g class="typst-text" transform="scale(1, -1)">
+                            <use xlink:href="#g18B9AF6654DACCD98F9DF546CB9C034C" x="0" fill="#000000" fill-rule="nonzero"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="translate(85.8536 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(92.6576 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF12282ABC52867E2343ADF08E7F85DC3" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(99.26026666666665 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g763B707C2EA539CF622FFD0F2F2DAE64" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(110.13493333333332 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB74897A19A1FA0D017DD565136CD3BD8" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(117.33493333333332 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g61F3793CEA70056E4B4B8B220FA00E9D" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(125.77786666666667 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD567C83400EB290F61ABF2427579754" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(135.9752 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g94FB82838C61DA07FED3F3627CC1216A" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g32E2F0131DD2083548BB9F23C4EC3B75" overflow="visible">
+            <path d="M 3.984 -0.048 L 0.612 8.58 L 1.776 8.58 L 2.76 5.9040003 L 6.192 5.9040003 L 7.224 8.58 L 8.3880005 8.58 L 4.968 -0.048 L 3.984 -0.048 Z M 4.5 0.984 Q 4.524 1.116 4.59 1.3560001 Q 4.656 1.596 4.776 1.932 Q 4.896 2.28 5.16 3.024 Q 5.4240003 3.7680001 5.856 4.92 L 3.144 4.92 Q 3.66 3.48 3.948 2.652 Q 4.236 1.824 4.32 1.584 Q 4.476 1.116 4.5 0.984 Z "/>
+        </symbol>
+        <symbol id="gB74897A19A1FA0D017DD565136CD3BD8" overflow="visible">
+            <path d="M 0.492 0 L 2.304 8.568 L 4.524 8.568 Q 5.712 8.568 6.39 8.1 Q 7.068 7.632 7.068 6.6 Q 7.068 5.724 6.54 5.178 Q 6.012 4.632 5.136 4.464 L 5.136 4.404 Q 5.724 4.248 6.12 3.816 Q 6.5160003 3.384 6.5160003 2.664 Q 6.5160003 1.788 6.09 1.194 Q 5.664 0.6 4.926 0.3 Q 4.188 0 3.228 0 L 0.492 0 Z M 2.604 4.92 L 4.008 4.92 Q 4.548 4.92 4.986 5.088 Q 5.4240003 5.256 5.688 5.598 Q 5.952 5.94 5.952 6.468 Q 5.952 7.032 5.592 7.3380003 Q 5.232 7.644 4.392 7.644 L 3.18 7.644 L 2.604 4.92 Z M 1.752 0.912 L 3.264 0.912 Q 4.284 0.912 4.836 1.368 Q 5.388 1.824 5.388 2.664 Q 5.388 3.24 5.0160003 3.636 Q 4.644 4.032 3.756 4.032 L 2.412 4.032 L 1.752 0.912 Z "/>
+        </symbol>
+        <symbol id="g61F3793CEA70056E4B4B8B220FA00E9D" overflow="visible">
+            <path d="M 0 0 L 1.6848 2.0088 L 0.87839997 3.9096 L 1.8576 3.9096 L 2.3184 2.6568 L 3.2616 3.9096 L 4.356 3.9096 L 2.7216 1.9584 L 3.5928 0 L 2.592 0 L 2.0952 1.296 L 1.0871999 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g54593370DE5CD9743B3B83D6976FBF72" overflow="visible">
+            <path d="M 4.728 -0.168 Q 2.724 -0.168 1.668 0.72 Q 0.612 1.608 0.612 3.3240001 Q 0.612 5.04 1.656 5.928 Q 2.7 6.816 4.728 6.816 L 7.776 6.816 L 7.776 5.964 L 4.584 5.964 Q 1.764 5.964 1.5 3.756 L 7.776 3.756 L 7.776 2.904 L 1.5 2.904 Q 1.62 1.812 2.412 1.248 Q 3.204 0.684 4.584 0.684 L 7.776 0.684 L 7.776 -0.168 L 4.728 -0.168 Z "/>
+        </symbol>
+        <symbol id="gFA33A03BFC89A58F71A200A0DDA27F46" overflow="visible">
+            <path d="M 1.08 0 L 1.08 8.568 L 3.744 8.568 Q 5.46 8.568 6.336 8.088 Q 7.212 7.6080003 7.212 6.396 Q 7.212 5.664 6.87 5.16 Q 6.528 4.656 5.892 4.548 L 5.892 4.488 Q 6.324 4.404 6.672 4.188 Q 7.02 3.9720001 7.224 3.5640001 Q 7.428 3.1560001 7.428 2.484 Q 7.428 1.32 6.588 0.66 Q 5.748 0 4.284 0 L 1.08 0 Z M 2.892 5.172 L 3.948 5.172 Q 4.7400002 5.172 5.046 5.4240003 Q 5.352 5.676 5.352 6.156 Q 5.352 6.6480002 4.992 6.864 Q 4.632 7.08 3.852 7.08 L 2.892 7.08 L 2.892 5.172 Z M 2.892 1.5 L 4.08 1.5 Q 4.896 1.5 5.2200003 1.818 Q 5.544 2.136 5.544 2.664 Q 5.544 3.144 5.214 3.438 Q 4.884 3.732 4.02 3.732 L 2.892 3.732 L 2.892 1.5 Z "/>
+        </symbol>
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="gF12282ABC52867E2343ADF08E7F85DC3" overflow="visible">
+            <path d="M 0.372 -1.896 Q 1.368 -0.684 1.878 0.762 Q 2.388 2.208 2.388 3.72 Q 2.388 5.256 1.878 6.726 Q 1.368 8.196 0.36 9.408 L 1.3560001 9.408 Q 2.436 8.244 2.946 6.768 Q 3.456 5.292 3.456 3.708 Q 3.456 2.148 2.946 0.696 Q 2.436 -0.756 1.3560001 -1.896 L 0.372 -1.896 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="gBF6AA13B6859C795E2AEB1C4AFD2DCC0" overflow="visible">
+            <path d="M 0 0 L 4.656 8.568 L 5.784 8.568 L 6.84 0 L 5.784 0 L 5.46 2.664 L 2.568 2.664 L 1.176 0 L 0 0 Z M 3.084 3.624 L 5.352 3.624 L 5.16 5.4240003 Q 5.112 5.88 5.07 6.432 Q 5.028 6.984 5.0160003 7.4040003 L 4.98 7.4040003 Q 4.788 6.948 4.5360003 6.426 Q 4.284 5.9040003 4.008 5.376 L 3.084 3.624 Z "/>
+        </symbol>
+        <symbol id="g18B9AF6654DACCD98F9DF546CB9C034C" overflow="visible">
+            <path d="M 3.372 -1.944 L 0.612 8.628 L 1.464 8.628 L 4.224 -1.944 L 3.372 -1.944 Z "/>
+        </symbol>
+        <symbol id="g763B707C2EA539CF622FFD0F2F2DAE64" overflow="visible">
+            <path d="M 0.6 0 L 0.6 3.852 Q 0.6 5.868 1.494 6.918 Q 2.388 7.968 4.104 7.968 Q 5.8320003 7.968 6.7200003 6.918 Q 7.6080003 5.868 7.6080003 3.852 L 7.6080003 0 L 6.744 0 L 6.744 3.888 Q 6.744 7.152 4.104 7.152 Q 1.464 7.152 1.464 3.888 L 1.464 0 L 0.6 0 Z "/>
+        </symbol>
+        <symbol id="gD567C83400EB290F61ABF2427579754" overflow="visible">
+            <path d="M 0.612 1.716 L 0.612 2.568 L 2.7120001 2.568 L 3.312 4.104 L 0.612 4.104 L 0.612 4.956 L 3.636 4.956 L 4.272 6.576 L 5.004 6.288 L 4.488 4.956 L 6.252 4.956 L 6.252 4.104 L 4.152 4.104 L 3.552 2.568 L 6.252 2.568 L 6.252 1.716 L 3.228 1.716 L 2.592 0.096 L 1.86 0.384 L 2.376 1.716 L 0.612 1.716 Z "/>
+        </symbol>
+        <symbol id="g94FB82838C61DA07FED3F3627CC1216A" overflow="visible">
+            <path d="M 1.152 -0.132 L 0.612 0.408 L 1.656 1.452 Q 1.176 2.028 0.90000004 2.748 Q 0.624 3.468 0.624 4.284 Q 0.624 5.196 0.966 5.994 Q 1.308 6.7920003 1.914 7.3980002 Q 2.52 8.004 3.318 8.346 Q 4.116 8.688 5.028 8.688 Q 5.844 8.688 6.564 8.412 Q 7.284 8.136 7.86 7.656 L 8.904 8.7 L 9.444 8.16 L 8.4 7.116 Q 8.88 6.54 9.156 5.82 Q 9.432 5.1 9.432 4.284 Q 9.432 3.372 9.09 2.5740001 Q 8.748 1.776 8.136 1.17 Q 7.524 0.564 6.726 0.222 Q 5.928 -0.120000005 5.028 -0.120000005 Q 4.212 -0.120000005 3.492 0.156 Q 2.772 0.432 2.196 0.912 L 1.152 -0.132 Z M 1.488 4.284 Q 1.488 3.648 1.6980001 3.084 Q 1.908 2.52 2.2680001 2.0640001 L 7.248 7.044 Q 6.7920003 7.4040003 6.228 7.614 Q 5.664 7.824 5.028 7.824 Q 4.296 7.824 3.654 7.548 Q 3.012 7.272 2.526 6.7860003 Q 2.04 6.3 1.764 5.658 Q 1.488 5.0160003 1.488 4.284 Z M 5.028 0.744 Q 5.76 0.744 6.402 1.02 Q 7.044 1.296 7.53 1.7820001 Q 8.016 2.2680001 8.292 2.91 Q 8.568 3.552 8.568 4.284 Q 8.568 4.92 8.358 5.484 Q 8.148 6.048 7.788 6.504 L 2.808 1.524 Q 3.264 1.164 3.828 0.954 Q 4.392 0.744 5.028 0.744 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p>连续函数不保证把闭集映射到闭集. <strong>Example</strong> <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 32.92133333333334 13.332000000000003" width="32.92133333333334pt" height="13.332000000000003pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(13.028666666666666 2.6880000000000015)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(1.2000000000000006 19.212)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.730666666666666 19.212)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g51024EAF833BA6C78C579BF2E22F10A4" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(20.261333333333333 19.212)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g391962C64DC08E3DAC8A0E6099FD842E" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(27.065333333333335 15.852000000000002)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g3FA1CD7E8E1DF253A958101F70355E5C" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(1.2000000000000006 7.800000000000001)">
+            <path class="typst-shape" fill="none" stroke="#000000" stroke-width="0.852" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="4" d="M 0 0 L 30.521334 0 "/>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g7D03C374D8E462F84BC1E1C880E394D7" overflow="visible">
+            <path d="M 3.228 0 L 3.228 5.988 Q 3.228 6.504 3.24 6.816 Q 3.252 7.1280003 3.276 7.464 Q 3.084 7.284 2.928 7.146 Q 2.772 7.008 2.532 6.804 L 1.62 6.06 L 1.068 6.768 L 3.384 8.568 L 4.26 8.568 L 4.26 0 L 3.228 0 Z "/>
+        </symbol>
+        <symbol id="g51024EAF833BA6C78C579BF2E22F10A4" overflow="visible">
+            <path d="M 3 0.432 L 3 2.904 L 0.612 2.904 L 0.612 3.756 L 3 3.756 L 3 6.2400002 L 3.864 6.2400002 L 3.864 3.756 L 6.252 3.756 L 6.252 2.904 L 3.864 2.904 L 3.864 0.432 L 3 0.432 Z "/>
+        </symbol>
+        <symbol id="g391962C64DC08E3DAC8A0E6099FD842E" overflow="visible">
+            <path d="M 0 0 L 2.784 3.312 L 1.392 6.432 L 2.46 6.432 L 3.456 4.056 L 5.34 6.432 L 6.564 6.432 L 3.888 3.264 L 5.364 0 L 4.296 0 L 3.204 2.496 L 1.224 0 L 0 0 Z "/>
+        </symbol>
+        <symbol id="g3FA1CD7E8E1DF253A958101F70355E5C" overflow="visible">
+            <path d="M 0.396 0 L 0.396 0.648 L 1.7712 1.9872 Q 2.1312 2.34 2.358 2.5884 Q 2.5848 2.8367999 2.7108 3.0276 Q 2.8367999 3.2184 2.8836 3.3948 Q 2.9304 3.5712 2.9304 3.7728 Q 2.9304 4.1544 2.7108 4.3452 Q 2.4912 4.536 2.1312 4.536 Q 1.7712 4.536 1.476 4.3956 Q 1.1808 4.2552 0.87119997 4.0248 L 0.4536 4.572 Q 0.8064 4.8672 1.2204 5.0471997 Q 1.6344 5.2272 2.1384 5.2272 Q 2.9016 5.2272 3.3408 4.8528 Q 3.78 4.4783998 3.78 3.8232 Q 3.78 3.4271998 3.6216 3.0923998 Q 3.4631999 2.7576 3.1571999 2.4192 Q 2.8511999 2.0808 2.4048 1.6632 L 1.4327999 0.7416 L 3.7656 0.7416 L 3.7656 0 L 0.396 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 将 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 8.568 8.568" width="8.568pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g17B8C9E58813A2F356294AFC3353042" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="g17B8C9E58813A2F356294AFC3353042" overflow="visible">
+            <path d="M 1.164 0 L 1.164 8.568 L 4.272 8.568 Q 5.808 8.568 6.528 7.974 Q 7.248 7.38 7.248 6.288 Q 7.248 5.496 6.846 4.938 Q 6.4440002 4.38 5.712 4.104 L 8.3880005 0 L 6.048 0 L 3.756 3.8040001 L 3.24 3.8040001 L 3.24 0 L 1.164 0 Z M 1.8000001 0.636 L 2.604 0.636 L 2.604 7.932 L 1.8000001 7.932 L 1.8000001 0.636 Z M 3.24 4.44 L 4.908 4.44 L 4.908 7.932 L 3.24 7.932 L 3.24 4.44 Z M 5.556 4.644 Q 5.988 4.848 6.27 5.208 Q 6.552 5.568 6.552 6.288 Q 6.552 6.948 6.3 7.29 Q 6.048 7.632 5.556 7.788 L 5.556 4.644 Z M 6.372 0.624 L 7.26 0.624 L 5.16 3.924 Q 4.8 3.852 4.428 3.828 L 6.372 0.624 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 映射到 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 26.828 8.568" width="26.828pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gB3719DEBBAE206CB21683F8F6A61F423" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(3.936 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g1523967C0004DF19C46EFF7A2DF128E1" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(10.799999999999999 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g62957FE033E08933590C0F3E449AB444" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(16.016 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#g7D03C374D8E462F84BC1E1C880E394D7" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(22.88 8.988)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD891F9DCCD2B2693C47EA438A9D8E899" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gB3719DEBBAE206CB21683F8F6A61F423" overflow="visible">
+            <path d="M 2.58 -1.896 Q 1.5 -0.756 0.99 0.696 Q 0.48000002 2.148 0.48000002 3.708 Q 0.48000002 5.292 0.99 6.768 Q 1.5 8.244 2.58 9.408 L 3.576 9.408 Q 2.568 8.196 2.058 6.726 Q 1.548 5.256 1.548 3.72 Q 1.548 2.208 2.0640001 0.762 Q 2.58 -0.684 3.5640001 -1.896 L 2.58 -1.896 Z "/>
+        </symbol>
+        <symbol id="g1523967C0004DF19C46EFF7A2DF128E1" overflow="visible">
+            <path d="M 3.42 -0.120000005 Q 1.968 -0.120000005 1.278 1.05 Q 0.588 2.22 0.588 4.296 Q 0.588 5.688 0.87 6.672 Q 1.152 7.656 1.776 8.178 Q 2.4 8.7 3.42 8.7 Q 4.86 8.7 5.568 7.5420003 Q 6.276 6.384 6.276 4.296 Q 6.276 2.9160001 5.988 1.926 Q 5.7000003 0.936 5.076 0.408 Q 4.452 -0.120000005 3.42 -0.120000005 Z M 3.42 0.78000003 Q 4.38 0.78000003 4.794 1.65 Q 5.208 2.52 5.208 4.296 Q 5.208 6.048 4.794 6.9240003 Q 4.38 7.8 3.42 7.8 Q 2.448 7.8 2.046 6.9240003 Q 1.644 6.048 1.644 4.296 Q 1.644 2.532 2.046 1.656 Q 2.448 0.78000003 3.42 0.78000003 Z "/>
+        </symbol>
+        <symbol id="g62957FE033E08933590C0F3E449AB444" overflow="visible">
+            <path d="M 0.492 -1.548 Q 0.66 -0.864 0.834 -0.048 Q 1.008 0.768 1.092 1.392 L 2.22 1.392 L 2.304 1.26 Q 2.148 0.624 1.854 -0.138 Q 1.5600001 -0.90000004 1.272 -1.548 L 0.492 -1.548 Z "/>
+        </symbol>
+        <symbol id="g7D03C374D8E462F84BC1E1C880E394D7" overflow="visible">
+            <path d="M 3.228 0 L 3.228 5.988 Q 3.228 6.504 3.24 6.816 Q 3.252 7.1280003 3.276 7.464 Q 3.084 7.284 2.928 7.146 Q 2.772 7.008 2.532 6.804 L 1.62 6.06 L 1.068 6.768 L 3.384 8.568 L 4.26 8.568 L 4.26 0 L 3.228 0 Z "/>
+        </symbol>
+        <symbol id="gD891F9DCCD2B2693C47EA438A9D8E899" overflow="visible">
+            <path d="M 0.3 -1.896 L 0.3 -1.0320001 L 1.956 -1.0320001 L 1.956 8.544 L 0.3 8.544 L 0.3 9.408 L 2.988 9.408 L 2.988 -1.896 L 0.3 -1.896 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span></p>
+  <p>根据极限点的定义</p>
+  <p> <strong>[</strong><span class="typst-tag">continuous-closed</span><strong data-typst-label="continuous-closed">]</strong>  连续 &lt;==> 每个 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 12.2448 8.568" width="12.2448pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF917F42D253E5645C0AE2594FC2B6718" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(6.9479999999999995 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD684CF4FF7997D9B1673ACFE75CBCE41" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gF917F42D253E5645C0AE2594FC2B6718" overflow="visible">
+            <path d="M 2.568 0 L 2.568 7.056 L 0.24000001 7.056 L 0.24000001 8.568 L 6.708 8.568 L 6.708 7.056 L 4.38 7.056 L 4.38 0 L 2.568 0 Z "/>
+        </symbol>
+        <symbol id="gD684CF4FF7997D9B1673ACFE75CBCE41" overflow="visible">
+            <path d="M 1.0799999 0 L 1.4976 1.9584 L 0.6624 5.1408 L 1.62 5.1408 L 2.124 2.9088 L 3.5496 5.1408 L 4.6152 5.1408 L 2.4264 1.9512 L 2.016 0 L 1.0799999 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 拓扑闭集的逆像都是 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 12.936 8.568" width="12.936pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF917F42D253E5645C0AE2594FC2B6718" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(6.9479999999999995 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF178BEF0EA88E42CB59BB538611A8D54" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gF917F42D253E5645C0AE2594FC2B6718" overflow="visible">
+            <path d="M 2.568 0 L 2.568 7.056 L 0.24000001 7.056 L 0.24000001 8.568 L 6.708 8.568 L 6.708 7.056 L 4.38 7.056 L 4.38 0 L 2.568 0 Z "/>
+        </symbol>
+        <symbol id="gF178BEF0EA88E42CB59BB538611A8D54" overflow="visible">
+            <path d="M 0.144 0 L 2.1959999 2.6928 L 1.332 5.1408 L 2.3112 5.1408 L 2.9016 3.276 L 4.2552 5.1408 L 5.3064 5.1408 L 3.3839998 2.628 L 4.3343997 0 L 3.3192 0 L 2.6712 2.0016 L 1.1952 0 L 0.144 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 拓扑闭集</p>
+  <p> <strong>[</strong><span class="typst-tag">open</span><strong data-typst-label="open">]</strong>  开集 := 闭集的补</p>
+  <p> <strong>[</strong><span class="typst-tag">continuous-open</span><strong data-typst-label="continuous-open">]</strong>  连续 &lt;==> 每个 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 12.2448 8.568" width="12.2448pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF917F42D253E5645C0AE2594FC2B6718" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(6.9479999999999995 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gD684CF4FF7997D9B1673ACFE75CBCE41" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gF917F42D253E5645C0AE2594FC2B6718" overflow="visible">
+            <path d="M 2.568 0 L 2.568 7.056 L 0.24000001 7.056 L 0.24000001 8.568 L 6.708 8.568 L 6.708 7.056 L 4.38 7.056 L 4.38 0 L 2.568 0 Z "/>
+        </symbol>
+        <symbol id="gD684CF4FF7997D9B1673ACFE75CBCE41" overflow="visible">
+            <path d="M 1.0799999 0 L 1.4976 1.9584 L 0.6624 5.1408 L 1.62 5.1408 L 2.124 2.9088 L 3.5496 5.1408 L 4.6152 5.1408 L 2.4264 1.9512 L 2.016 0 L 1.0799999 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 拓扑开集的逆像都是 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 12.936 8.568" width="12.936pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
+    <g>
+        <g transform="translate(0 8.568)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF917F42D253E5645C0AE2594FC2B6718" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+        <g transform="translate(6.9479999999999995 11.088)">
+            <g class="typst-text" transform="scale(1, -1)">
+                <use xlink:href="#gF178BEF0EA88E42CB59BB538611A8D54" x="0" fill="#000000" fill-rule="nonzero"/>
+            </g>
+        </g>
+    </g>
+    <defs id="glyph">
+        <symbol id="gF917F42D253E5645C0AE2594FC2B6718" overflow="visible">
+            <path d="M 2.568 0 L 2.568 7.056 L 0.24000001 7.056 L 0.24000001 8.568 L 6.708 8.568 L 6.708 7.056 L 4.38 7.056 L 4.38 0 L 2.568 0 Z "/>
+        </symbol>
+        <symbol id="gF178BEF0EA88E42CB59BB538611A8D54" overflow="visible">
+            <path d="M 0.144 0 L 2.1959999 2.6928 L 1.332 5.1408 L 2.3112 5.1408 L 2.9016 3.276 L 4.2552 5.1408 L 5.3064 5.1408 L 3.3839998 2.628 L 4.3343997 0 L 3.3192 0 L 2.6712 2.0016 L 1.1952 0 L 0.144 0 Z "/>
+        </symbol>
+    </defs>
+</svg>
+</span> 拓扑开集</p>
+</div>
