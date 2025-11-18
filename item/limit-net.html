@@ -9,7 +9,7 @@
 
     <!-- Custom HTML head -->
     <!-- Put your customized HTML <head> meta here. -->
-    <meta name="description" content="Typst Book网介于偏序和线序之间. 在偏序集 𝑃 中加上 ∀𝑎,𝑏∈𝑃⟹∃𝑐∈𝑃,𝑐≤𝑎∧𝑐≤𝑏通常也用等价的集合网形式 [set-net] 𝐁 a net of 𝐴 :&#x3D; 𝐁⊂Subset(𝐴) (a collection of subset of 𝐴) with property∀𝐵∈𝐁,𝐵≠∅∀𝐵1,…,𝐵𝑛∈𝐁,∃𝐵∈𝐁,𝐵⊂𝐵1∩⋯∩𝐵𝑛(含义: 收敛到极限之前非空. 如果 𝐁 元素无限那么有限交集控制着收敛方向, 尽管可能 ∅&#x3D;⋂𝐁. 如果 𝐁&#x3D;{𝐵1,…,𝐵𝑛} 元素有限那么 ∅≠𝐵1∩⋯∩𝐵𝑛∈𝐁)Example 𝑋&#x3D;ℕ, 在 𝑋(≤)≔ℕ(≥) 下是网. 或者用集合网 𝐁&#x3D;{𝑛,𝑛+1,⋯}𝑛&#x3D;0..∞点网 or 包含点 𝑥∈𝑋 的网 𝐁(𝑥)≔∀𝐵∈𝐁(𝑥),𝑥∈𝐵网 𝐁 细于 𝐁′ :&#x3D; ∀𝐵′∈𝐁′,∃𝐵∈𝐁,𝐵⊂𝐵′并且这蕴含 ⋂𝐁⊂⋂𝐁′ [net-same-limit]  𝐁,𝐁′ 极限相同 :&#x3D; 相互细于并不是所有极限相同的网都有用. 集合论上可用 ∪ 构造出新的极限相同的网, 但有很多冗余任何网都可以补充所有的有限交集 {𝐵1∩⋯∩𝐵𝑛:𝑛∈ℕ,𝐵1,…,𝐵𝑛∈𝐁} 成为新的网, 并保持相同的极限 [hom-limit]  网之间的极限同态 :&#x3D;𝑓:𝑋→𝑌. 网 𝑓(𝐁𝑋) 细于 𝐁𝑌∀𝐵𝑌∈𝐁𝑌
+    <meta name="description" content="Typst Book拓扑似乎并不能作为使用网的概念的足够的动机, 但测度和积分的定义应该能网介于偏序和线序之间. 在偏序集 𝑃 中加上 ∀𝑎,𝑏∈𝑃⟹∃𝑐∈𝑃,𝑐≤𝑎∧𝑐≤𝑏通常也用等价的集合网形式 [set-net] 𝐁 a net of 𝐴 :&#x3D; 𝐁⊂Subset(𝐴) (a collection of subset of 𝐴) with property∀𝐵∈𝐁,𝐵≠∅∀𝐵1,…,𝐵𝑛∈𝐁,∃𝐵∈𝐁,𝐵⊂𝐵1∩⋯∩𝐵𝑛(含义: 收敛到极限之前非空. 如果 𝐁 元素无限那么有限交集控制着收敛方向, 尽管可能 ∅&#x3D;⋂𝐁. 如果 𝐁&#x3D;{𝐵1,…,𝐵𝑛} 元素有限那么 ∅≠𝐵1∩⋯∩𝐵𝑛∈𝐁)Example 𝑋&#x3D;ℕ, 在 𝑋(≤)≔ℕ(≥) 下是网. 或者用集合网 𝐁&#x3D;{𝑛,𝑛+1,⋯}𝑛&#x3D;0..∞点网 or 包含点 𝑥∈𝑋 的网 𝐁(𝑥)≔∀𝐵∈𝐁(𝑥),𝑥∈𝐵网 𝐁 细于 𝐁′ :&#x3D; ∀𝐵′∈𝐁′,∃𝐵∈𝐁,𝐵⊂𝐵′并且这蕴含 ⋂𝐁⊂⋂𝐁′ [net-same-limit]  𝐁,𝐁′ 极限相同 :&#x3D; 相互细于并不是所有极限相同的网都有用. 集合论上可用 ∪ 构造出新的极限相同的网, 但有很多冗余任何网都可以补充所有的有限交集 {𝐵1∩⋯∩𝐵𝑛:𝑛∈ℕ,𝐵1,…,𝐵𝑛∈𝐁} 成为新的网, 并保持相同的极限 [hom-limit]  网之间的极限同态 :&#x3D;𝑓:𝑋→𝑌. 网 𝑓(𝐁𝑋) 细于 𝐁𝑌∀𝐵𝑌∈𝐁𝑌
 ∃𝐵𝑋∈𝐁𝑋
 𝑓(𝐵𝑋)⊂𝐵𝑌or𝐵𝑋⊂𝑓−1(𝐵𝑌)
 
@@ -286,6 +286,7 @@ body {
   place-items: center;
   overflow-x: auto;
 }</style>
+  <p>拓扑似乎并不能作为使用网的概念的足够的动机, 但测度和积分的定义应该能</p>
   <p>网介于偏序和线序之间. 在偏序集 <span class="inline-equation"><svg style="overflow: visible;" class="typst-doc" viewBox="0 0 6.803999999999999 8.568" width="6.803999999999999pt" height="8.568pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:h5="http://www.w3.org/1999/xhtml">
     <g>
         <g transform="translate(0 8.568)">
