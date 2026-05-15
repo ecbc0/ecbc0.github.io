@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="" class="sidebar-visible no-js ayu">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>notice - note-math</title>
+
+
+    <!-- Custom HTML head -->
+    <!-- Put your customized HTML <head> meta here. -->
+    <meta name="description" content="Typst Book中文 | English整理和记录的想法, 关于数学, 不保证正确性和可读性和细节完整性, 有无证明的猜测. 目前很多只能算是 草稿. 可能随时需要修改错误或需要改进不好的处理或需要删改大量的东西你也可以用 typst 文件 和 tinymist 的 preview 功能, 来看这份文档Typst 的 HTML 输出还没完善, 所以显示效果可能不太好">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/theme/css/variables.css">
+    <link rel="stylesheet" href="/theme/css/general.css">
+    <link rel="stylesheet" href="/theme/css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/theme/FontAwesome/css/font-awesome.css">
+
+    <!-- Custom theme stylesheets -->
+
+    <style>
+        .typst-app { position: relative; }
+    </style>
+    <script>
+        /// https://segmentfault.com/a/1190000016574288
+        (function () {
+            var ie = !!(window.attachEvent && !window.opera);
+            var wk = /webkit\/(\d+)/i.test(navigator.userAgent) && RegExp.$1 < 525;
+            var fn = [];
+            var run = function () {
+                for (var i = 0; i < fn.length; i++) fn[i]();
+            };
+            var d = document;
+            d.ready = function (f) {
+                if (!ie && !wk && d.addEventListener) return d.addEventListener('DOMContentLoaded', f, false);
+                if (fn.push(f) > 1) return;
+                if (ie)
+                    (function () {
+                        try {
+                            d.documentElement.doScroll('left');
+                            run();
+                        } catch (err) {
+                            setTimeout(arguments.callee, 0);
+                        }
+                    })();
+                else if (wk)
+                    var t = setInterval(function () {
+                        if (/^(loaded|complete)$/.test(d.readyState)) clearInterval(t), run();
+                    }, 0);
+            };
+        })();
+
+        window.captureStack = function() { }
+    </script>
+
+    <script id="shiroa-js" type="module" src="/internal/shiroa.js"></script>
+    <script>
+        window.typstRerender = () => { };
+        window.typstChangeTheme = () => { };
+
+        var typstBookJsLoaded = new Promise((resolve, reject) => {
+            document.getElementById('shiroa-js').addEventListener('load', resolve);
+            document.getElementById('shiroa-js').addEventListener('error', reject);
+        });
+
+        var rendererWasmModule = fetch('/internal/typst_ts_renderer_bg.wasm');
+        window.typstBookJsLoaded = typstBookJsLoaded;
+        window.typstRenderModuleReady = typstBookJsLoaded.then(() => {
+            var typstRenderModule = window.typstRenderModule =
+                window.TypstRenderModule.createTypstRenderer();
+            return typstRenderModule
+                .init({
+                    getModule: () => rendererWasmModule,
+                }).then(() => typstRenderModule);
+        }).catch((err) => {
+            console.error('shiroa.js failed to load', err);
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "/";
+            window.typstPathToRoot = path_to_root;
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            // reserved util next major release
+            try {
+                localStorage.removeItem('mdbook-theme');
+                localStorage.removeItem('mdbook-sidebar');
+            } catch (e) { }
+            try {
+                var theme = localStorage.getItem('shiroa-theme');
+                var sidebar = localStorage.getItem('shiroa-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('shiroa-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('shiroa-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            window.getTypstTheme = function getTypstTheme() {
+                var _theme;
+                try { _theme = localStorage.getItem('shiroa-theme'); } catch (e) { }
+                if (_theme === null || _theme === undefined) { _theme = default_theme; }
+                window.typstBookTheme = _theme;
+                return _theme;
+            }
+            window.isTypstLightTheme = function isLightTheme(theme) {
+                return theme === 'light' || theme === 'rust';
+            }
+            var theme = getTypstTheme();
+            // todo: consistent theme between html and typst
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 800) {
+                try { sidebar = localStorage.getItem('shiroa-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="/en/notice.html">notice</a></li><li class="chapter-item expanded affix "><li class="part-title">English</li><li class="chapter-item expanded affix "><li class="part-title">logic_topic</li><li class="chapter-item expanded "><a href="/en/logic.html"><strong aria-hidden="true">1.</strong> logic</a></li><li class="chapter-item expanded "><a href="/en/basic.html"><strong aria-hidden="true">2.</strong> basic</a></li><li class="chapter-item expanded "><a href="/en/map.html"><strong aria-hidden="true">3.</strong> map</a></li><li class="chapter-item expanded "><a href="/en/order.html"><strong aria-hidden="true">4.</strong> order</a></li><li class="chapter-item expanded "><a href="/en/combinatorics.html"><strong aria-hidden="true">5.</strong> combinatorics</a></li><li class="chapter-item expanded affix "><li class="part-title">calculus</li><li class="chapter-item expanded "><a href="/en/real_numbers.html"><strong aria-hidden="true">6.</strong> real_numbers</a></li><li class="chapter-item expanded "><a href="/en/limit_sequence.html"><strong aria-hidden="true">7.</strong> limit_sequence</a></li><li class="chapter-item expanded "><a href="/en/division_algebra.html"><strong aria-hidden="true">8.</strong> division_algebra</a></li><li class="chapter-item expanded "><a href="/en/Euclidean_space.html"><strong aria-hidden="true">9.</strong> Euclidean_space</a></li><li class="chapter-item expanded "><a href="/en/Minkowski_space.html"><strong aria-hidden="true">10.</strong> Minkowski_space</a></li><li class="chapter-item expanded "><a href="/en/polynomial.html"><strong aria-hidden="true">11.</strong> polynomial</a></li><li class="chapter-item expanded "><a href="/en/analytic_Euclidean.html"><strong aria-hidden="true">12.</strong> analytic_Euclidean</a></li><li class="chapter-item expanded "><a href="/en/analytic_struct_operation.html"><strong aria-hidden="true">13.</strong> analytic_struct_operation</a></li><li class="chapter-item expanded "><a href="/en/ordinary_differential_equation.html"><strong aria-hidden="true">14.</strong> ordinary_differential_equation</a></li><li class="chapter-item expanded "><a href="/en/convex_hull.html"><strong aria-hidden="true">15.</strong> convex_hull</a></li><li class="chapter-item expanded "><a href="/en/volume.html"><strong aria-hidden="true">16.</strong> volume</a></li><li class="chapter-item expanded "><a href="/en/integral.html"><strong aria-hidden="true">17.</strong> integral</a></li><li class="chapter-item expanded "><a href="/en/divergence.html"><strong aria-hidden="true">18.</strong> divergence</a></li><li class="chapter-item expanded "><a href="/en/limit_net.html"><strong aria-hidden="true">19.</strong> limit_net</a></li><li class="chapter-item expanded "><a href="/en/topology.html"><strong aria-hidden="true">20.</strong> topology</a></li><li class="chapter-item expanded "><a href="/en/compact.html"><strong aria-hidden="true">21.</strong> compact</a></li><li class="chapter-item expanded "><a href="/en/connected.html"><strong aria-hidden="true">22.</strong> connected</a></li><li class="chapter-item expanded "><a href="/en/topology_struct_operation.html"><strong aria-hidden="true">23.</strong> topology_struct_operation</a></li><li class="chapter-item expanded "><a href="/en/exponential.html"><strong aria-hidden="true">24.</strong> exponential</a></li><li class="chapter-item expanded "><a href="/en/angle.html"><strong aria-hidden="true">25.</strong> angle</a></li><li class="chapter-item expanded affix "><li class="part-title">geometry</li><li class="chapter-item expanded "><a href="/en/manifold.html"><strong aria-hidden="true">26.</strong> manifold</a></li><li class="chapter-item expanded "><a href="/en/metric.html"><strong aria-hidden="true">27.</strong> metric</a></li><li class="chapter-item expanded "><a href="/en/metric_connection.html"><strong aria-hidden="true">28.</strong> metric_connection</a></li><li class="chapter-item expanded "><a href="/en/geodesic_derivative.html"><strong aria-hidden="true">29.</strong> geodesic_derivative</a></li><li class="chapter-item expanded "><a href="/en/curvature_of_metric.html"><strong aria-hidden="true">30.</strong> curvature_of_metric</a></li><li class="chapter-item expanded "><a href="/en/Einstein_metric.html"><strong aria-hidden="true">31.</strong> Einstein_metric</a></li><li class="chapter-item expanded "><a href="/en/constant_sectional_curvature.html"><strong aria-hidden="true">32.</strong> constant_sectional_curvature</a></li><li class="chapter-item expanded "><a href="/en/simple_symmetric_space.html"><strong aria-hidden="true">33.</strong> simple_symmetric_space</a></li><li class="chapter-item expanded "><a href="/en/principal_bundle.html"><strong aria-hidden="true">34.</strong> principal_bundle</a></li><li class="chapter-item expanded "><a href="/en/group.html"><strong aria-hidden="true">35.</strong> group</a></li><li class="chapter-item expanded "><a href="/en/stereographic_projection.html"><strong aria-hidden="true">36.</strong> stereographic_projection</a></li><li class="chapter-item expanded "><a href="/en/Hopf_bundle.html"><strong aria-hidden="true">37.</strong> Hopf_bundle</a></li><li class="chapter-item expanded affix "><li class="part-title">field_theory</li><li class="chapter-item expanded "><a href="/en/point_particle_non_relativity.html"><strong aria-hidden="true">38.</strong> point_particle_non_relativity</a></li><li class="chapter-item expanded "><a href="/en/point_particle_relativity.html"><strong aria-hidden="true">39.</strong> point_particle_relativity</a></li><li class="chapter-item expanded "><a href="/en/scalar_field.html"><strong aria-hidden="true">40.</strong> scalar_field</a></li><li class="chapter-item expanded "><a href="/en/scalar_field_current.html"><strong aria-hidden="true">41.</strong> scalar_field_current</a></li><li class="chapter-item expanded "><a href="/en/scalar_field_non_relativity.html"><strong aria-hidden="true">42.</strong> scalar_field_non_relativity</a></li><li class="chapter-item expanded "><a href="/en/projective_lightcone.html"><strong aria-hidden="true">43.</strong> projective_lightcone</a></li><li class="chapter-item expanded "><a href="/en/spacetime_momentum_spinor_representation.html"><strong aria-hidden="true">44.</strong> spacetime_momentum_spinor_representation</a></li><li class="chapter-item expanded "><a href="/en/Lorentz_group.html"><strong aria-hidden="true">45.</strong> Lorentz_group</a></li><li class="chapter-item expanded "><a href="/en/spinor_field.html"><strong aria-hidden="true">46.</strong> spinor_field</a></li><li class="chapter-item expanded "><a href="/en/spinor_field_current.html"><strong aria-hidden="true">47.</strong> spinor_field_current</a></li><li class="chapter-item expanded "><a href="/en/electromagnetic_field.html"><strong aria-hidden="true">48.</strong> electromagnetic_field</a></li><li class="chapter-item expanded "><a href="/en/Laplacian_of_tensor_field.html"><strong aria-hidden="true">49.</strong> Laplacian_of_tensor_field</a></li><li class="chapter-item expanded "><a href="/en/Einstein_metric.html"><strong aria-hidden="true">50.</strong> Einstein_metric</a></li><li class="chapter-item expanded "><a href="/en/interaction.html"><strong aria-hidden="true">51.</strong> interaction</a></li><li class="chapter-item expanded "><a href="/en/harmonic_oscillator_quantization.html"><strong aria-hidden="true">52.</strong> harmonic_oscillator_quantization</a></li><li class="chapter-item expanded "><a href="/en/spinor_field_misc.html"><strong aria-hidden="true">53.</strong> spinor_field_misc</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">54.</strong> reference</a></li><li class="chapter-item expanded affix "><li class="part-title">中文</li><li class="chapter-item expanded "><a href="/zh/notice.html" class="active"><strong aria-hidden="true">55.</strong> notice</a></li><li class="chapter-item expanded affix "><li class="part-title">逻辑</li><li class="chapter-item expanded "><a href="/zh/logic.html"><strong aria-hidden="true">56.</strong> 逻辑</a></li><li class="chapter-item expanded "><a href="/zh/basic.html"><strong aria-hidden="true">57.</strong> 基础</a></li><li class="chapter-item expanded "><a href="/zh/map.html"><strong aria-hidden="true">58.</strong> 映射</a></li><li class="chapter-item expanded "><a href="/zh/order.html"><strong aria-hidden="true">59.</strong> 序</a></li><li class="chapter-item expanded "><a href="/zh/combinatorics.html"><strong aria-hidden="true">60.</strong> 组合</a></li><li class="chapter-item expanded affix "><li class="part-title">微积分</li><li class="chapter-item expanded "><a href="/zh/real_numbers.html"><strong aria-hidden="true">61.</strong> 实数</a></li><li class="chapter-item expanded "><a href="/zh/limit_sequence.html"><strong aria-hidden="true">62.</strong> 数列极限</a></li><li class="chapter-item expanded "><a href="/zh/division_algebra.html"><strong aria-hidden="true">63.</strong> 可除代数</a></li><li class="chapter-item expanded "><a href="/zh/Euclidean_space.html"><strong aria-hidden="true">64.</strong> Euclidean 空间</a></li><li class="chapter-item expanded "><a href="/zh/Minkowski_space.html"><strong aria-hidden="true">65.</strong> Minkowski 空间</a></li><li class="chapter-item expanded "><a href="/zh/polynomial.html"><strong aria-hidden="true">66.</strong> 多项式</a></li><li class="chapter-item expanded "><a href="/zh/analytic_Euclidean.html"><strong aria-hidden="true">67.</strong> 解析 (Euclidean)</a></li><li class="chapter-item expanded "><a href="/zh/analytic_struct_operation.html"><strong aria-hidden="true">68.</strong> 解析 struct 的操作</a></li><li class="chapter-item expanded "><a href="/zh/ordinary_differential_equation.html"><strong aria-hidden="true">69.</strong> 常微分方程</a></li><li class="chapter-item expanded "><a href="/zh/convex_hull.html"><strong aria-hidden="true">70.</strong> convex_hull</a></li><li class="chapter-item expanded "><a href="/zh/volume.html"><strong aria-hidden="true">71.</strong> 体积</a></li><li class="chapter-item expanded "><a href="/zh/integral.html"><strong aria-hidden="true">72.</strong> 积分</a></li><li class="chapter-item expanded "><a href="/zh/divergence.html"><strong aria-hidden="true">73.</strong> 散度</a></li><li class="chapter-item expanded "><a href="/zh/limit_net.html"><strong aria-hidden="true">74.</strong> 网极限</a></li><li class="chapter-item expanded "><a href="/zh/topology.html"><strong aria-hidden="true">75.</strong> 拓扑</a></li><li class="chapter-item expanded "><a href="/zh/compact.html"><strong aria-hidden="true">76.</strong> 紧致</a></li><li class="chapter-item expanded "><a href="/zh/connected.html"><strong aria-hidden="true">77.</strong> 连通</a></li><li class="chapter-item expanded "><a href="/zh/topology_struct_operation.html"><strong aria-hidden="true">78.</strong> 拓扑 struct 的操作</a></li><li class="chapter-item expanded "><a href="/zh/exponential.html"><strong aria-hidden="true">79.</strong> 指数函数</a></li><li class="chapter-item expanded "><a href="/zh/angle.html"><strong aria-hidden="true">80.</strong> 角度</a></li><li class="chapter-item expanded affix "><li class="part-title">几何</li><li class="chapter-item expanded "><a href="/zh/manifold.html"><strong aria-hidden="true">81.</strong> 流形</a></li><li class="chapter-item expanded "><a href="/zh/metric.html"><strong aria-hidden="true">82.</strong> 度规</a></li><li class="chapter-item expanded "><a href="/zh/metric_connection.html"><strong aria-hidden="true">83.</strong> 度规的联络</a></li><li class="chapter-item expanded "><a href="/zh/geodesic_derivative.html"><strong aria-hidden="true">84.</strong> Levi_Civita 导数</a></li><li class="chapter-item expanded "><a href="/zh/curvature_of_metric.html"><strong aria-hidden="true">85.</strong> 度规的曲率</a></li><li class="chapter-item expanded "><a href="/zh/Einstein_metric.html"><strong aria-hidden="true">86.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/zh/constant_sectional_curvature.html"><strong aria-hidden="true">87.</strong> 常截面曲率</a></li><li class="chapter-item expanded "><a href="/zh/simple_symmetric_space.html"><strong aria-hidden="true">88.</strong> simple_symmetric_space</a></li><li class="chapter-item expanded "><a href="/zh/principal_bundle.html"><strong aria-hidden="true">89.</strong> 主丛</a></li><li class="chapter-item expanded "><a href="/zh/group.html"><strong aria-hidden="true">90.</strong> 群</a></li><li class="chapter-item expanded "><a href="/zh/stereographic_projection.html"><strong aria-hidden="true">91.</strong> 球极投影</a></li><li class="chapter-item expanded "><a href="/zh/Hopf_bundle.html"><strong aria-hidden="true">92.</strong> Hopf 丛</a></li><li class="chapter-item expanded affix "><li class="part-title">场论</li><li class="chapter-item expanded "><a href="/zh/point_particle_non_relativity.html"><strong aria-hidden="true">93.</strong> 非相对论点粒子</a></li><li class="chapter-item expanded "><a href="/zh/point_particle_relativity.html"><strong aria-hidden="true">94.</strong> 相对论点粒子</a></li><li class="chapter-item expanded "><a href="/zh/scalar_field.html"><strong aria-hidden="true">95.</strong> 纯量场</a></li><li class="chapter-item expanded "><a href="/zh/scalar_field_current.html"><strong aria-hidden="true">96.</strong> 纯量场的守恒流</a></li><li class="chapter-item expanded "><a href="/zh/scalar_field_non_relativity.html"><strong aria-hidden="true">97.</strong> 非相对论纯量场</a></li><li class="chapter-item expanded "><a href="/zh/projective_lightcone.html"><strong aria-hidden="true">98.</strong> 光锥射影</a></li><li class="chapter-item expanded "><a href="/zh/spacetime_momentum_spinor_representation.html"><strong aria-hidden="true">99.</strong> 时空动量的自旋表示</a></li><li class="chapter-item expanded "><a href="/zh/Lorentz_group.html"><strong aria-hidden="true">100.</strong> Lorentz 群</a></li><li class="chapter-item expanded "><a href="/zh/spinor_field.html"><strong aria-hidden="true">101.</strong> 旋量场</a></li><li class="chapter-item expanded "><a href="/zh/spinor_field_current.html"><strong aria-hidden="true">102.</strong> 旋量场的守恒流</a></li><li class="chapter-item expanded "><a href="/zh/electromagnetic_field.html"><strong aria-hidden="true">103.</strong> 电磁场</a></li><li class="chapter-item expanded "><a href="/zh/Laplacian_of_tensor_field.html"><strong aria-hidden="true">104.</strong> 张量场的 Laplacian</a></li><li class="chapter-item expanded "><a href="/zh/Einstein_metric.html"><strong aria-hidden="true">105.</strong> Einstein 度规</a></li><li class="chapter-item expanded "><a href="/zh/interaction.html"><strong aria-hidden="true">106.</strong> 相互作用</a></li><li class="chapter-item expanded "><a href="/zh/harmonic_oscillator_quantization.html"><strong aria-hidden="true">107.</strong> 谐振子量子化</a></li><li class="chapter-item expanded "><a href="/zh/spinor_field_misc.html"><strong aria-hidden="true">108.</strong> 旋量场杂项</a></li><li class="chapter-item expanded "><a href="/reference.html"><strong aria-hidden="true">109.</strong> 参考</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <script>
+            var default_language = "";
+            window.typstCurrentLangDir = "";
+            window.getTypstLanguage = function getTypstLanguage() {
+                var _lang;
+                try { _lang = localStorage.getItem('shiroa-lang-dir'); } catch (e) { }
+                if (_lang === null || _lang === undefined) {
+                    _lang = "";  // empty string in default_language
+                }
+                window.typstCurrentLangDir = _lang;
+                return _lang;
+            }
+            var current_language = getTypstLanguage();
+            document.documentElement.setAttribute('lang', current_language || default_language);
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <!-- Put your customized page header here. -->                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                            aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="language-toggle" class="icon-button" type="button" title="Change language"
+                            aria-label="Change language" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="language-list">
+                            <i class="fa fa-language"></i>
+                        </button>
+                        <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" data-lang-dir="en">English</button></li>
+                            <li role="none"><button role="menuitem" class="theme" data-lang-dir="zh">中文</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">note-math</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/ecbc0/note-math" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+    let appContainer = document.currentScript && document.currentScript.parentElement;
+    window.typstBookJsLoaded.then(() => {
+       window.typstBookRenderHtmlPage("/zh/notice", appContainer);
+    });
+</script><div class="typst-preload-content" style="display: none">
+<div>
+  <style>
+    .indent {
+      border-left: 1px solid;
+      padding-left: 1em
+    }
+    a:link {
+      text-decoration: underline
+    }
+    ::selection {
+      background: inheritance
+    }
+    code, pre {
+      font-size: 0.9em;
+      font-weight: 500
+    }
+    ol, ul {
+      padding-left: 0.7em;
+      padding-bottom: 0em;
+      padding-top: 0em;
+    }
+  </style>
+  <style>
+    .inline-equation {
+      display: inline-block;
+      width: fit-content;
+    }
+    .block-equation {
+      display: grid;
+      place-items: center;
+      overflow-x: auto;
+    }
+  </style>
+  <p><span style="text-decoration: underline"><a href="../zh/notice.html">中文</a></span> | <span style="text-decoration: underline"><a href="../en/notice_en.html">English</a></span></p>
+  <p>整理和记录的想法, 关于数学, 不保证正确性和可读性和细节完整性, 有无证明的猜测. 目前很多只能算是 <strong>草稿</strong>. 可能随时需要修改错误或需要改进不好的处理或需要删改大量的东西</p>
+  <p>你也可以用 <span style="text-decoration: underline"><a href="https://github.com/ecbc0/note-math">typst 文件</a></span> 和 <span style="text-decoration: underline"><a href="https://github.com/Myriad-Dreamin/tinymist">tinymist</a></span> 的 preview 功能, 来看这份文档</p>
+  <p>Typst 的 HTML 输出还没完善, 所以显示效果可能不太好</p>
+</div>
+</div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script src="/internal/elasticlunr.min.js"></script>
+        <script src="/internal/mark.min.js"></script>
+        <script src="/internal/searcher.js"></script>
+
+        <script src="/internal/svg_utils.js"></script>
+        <script src="/theme/index.js"></script>
+
+    </div>
+</body>
+
+</html>
